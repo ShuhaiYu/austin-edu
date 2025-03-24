@@ -16,10 +16,12 @@ export default function RootLayout({ children }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="bg-white text-gray-900 dark:bg-gray-100">
+      <body className="bg-white text-gray-900">
         <LangContext.Provider value={{ lang, setLang }}>
           <NavBar />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1">
+            <div className="container mx-auto px-4">{children}</div>
+          </main>
           <Footer />
         </LangContext.Provider>
       </body>

@@ -10,6 +10,7 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 export default function FindCourse() {
   const langContext = useContext(LangContext);
@@ -34,7 +35,7 @@ export default function FindCourse() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row md:items-center md:space-x-4">
+    <div className="flex flex-col md:flex-row md:items-center md:space-x-4 justify-center py-4">
       <span className="font-medium mb-2 md:mb-0 md:mr-2">
         {lang === "zh" ? "搜索课程:" : "Find a Course:"}
       </span>
@@ -84,9 +85,10 @@ export default function FindCourse() {
       {/* Search button */}
       <Button
         onClick={handleSearch}
-        variant={ "secondary" }
+        variant="outline"
+        className="shadow-lg"
       >
-        {lang === "zh" ? "搜索" : "Search"}
+        <Image src="/home/search icon.png" alt="Search" width={20} height={20} />
       </Button>
     </div>
   );

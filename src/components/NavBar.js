@@ -1,10 +1,12 @@
 import { useContext } from "react";
 import { LangContext } from "@/app/layout";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { Button } from '@/components/ui/button'
+import Link from "next/link";
 
 export default function Header() {
-  const langContext = useContext(LangContext);
-  const currentLang = langContext?.lang || "en";
+  const { lang } = useContext(LangContext) || { lang: "en" };
+
 
   // 示例导航菜单（可自定义或移除）
   const menuItems = [
@@ -19,28 +21,36 @@ export default function Header() {
   ];
 
   return (
-    <header className="w-full bg-white shadow-sm">
-      <nav className="container mx-auto flex items-center justify-between py-4 px-4">
-        {/* 左侧: Logo + 名称 */}
-        <div className="flex items-center space-x-2">
-          {/* 示例Logo，可以替换为图片 <img src="/logo.png" alt="Austin Edu" /> */}
-          <div className="w-6 h-6 bg-primary rounded-sm" />
-          <span className="font-bold text-lg text-gray-800">Austin Edu</span>
+    <header className="sticky top-0 z-50 bg-background shadow-sm">
+      {/* 第一行 */}
+      <div className="border-b">
+        <div className="container flex h-16 items-center justify-between px-4">
+          <div className="flex items-center gap-2">
+            <div className="h-8 w-8 bg-primary rounded" />
+            <span className="text-xl font-bold">Austin Edu</span>
+          </div>
+          
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            <Button className="gap-2">
+              <span>👤</span>
+              {lang === "zh" ? "我的账户" : "My Austin"}
+            </Button>
+          </div>
         </div>
+      </div>
 
-        {/* 中间: 导航菜单（可选） */}
-        <ul className="hidden md:flex space-x-6">
-          {menuItems.map((item) => (
-            <li key={item.key} className="text-gray-700 hover:text-primary">
-              <a href="#">
-                {currentLang === "zh" ? item.label_zh : item.label_en}
-              </a>
-            </li>
-          ))}
-        </ul>
-
-        {/* 右侧: 语言切换 */}
-        <LanguageSwitcher />
+      {/* 第二行导航 */}
+      <nav className="container hidden h-12 items-center gap-8 px-4 md:flex">
+        {menuItems.map((item) => (
+          <Link
+            key={item.key}
+            href="#"
+            className="text-sm font-medium hover:text-primary transition-colors"
+          >
+            {lang === "zh" ? item.label_zh : item.label_en}
+          </Link>
+        ))}
       </nav>
     </header>
   );

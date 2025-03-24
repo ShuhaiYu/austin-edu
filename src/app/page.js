@@ -6,6 +6,8 @@ import FindCourse from "@/components/FindCourse";
 import AdmissionProcess from "@/components/AdmissionProcess";
 import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
+import Hero from "@/components/Hero";
+import Features from "@/components/Features";
 
 export default function HomePage() {
   const langContext = useContext(LangContext);
@@ -39,17 +41,13 @@ export default function HomePage() {
     <div className="flex flex-col items-center">
       {/* Hero 区域 */}
       <section className="w-full bg-gray-50 py-12 px-6 text-center">
-        <h1 className="text-2xl md:text-4xl font-bold text-gray-800 mb-4">
-          {t.heroTitle}
-        </h1>
-        <p className="text-gray-600 max-w-xl mx-auto mb-6">{t.heroSubtitle}</p>
-        <button className="bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90">
-          {t.heroButton}
-        </button>
+      <div className="container mx-auto">
+        <Hero />
+      </div>
       </section>
 
       {/* Find a Course */}
-      <section className="w-full bg-primary text-white py-6 px-4">
+      <section className="w-full bg-primary text-white py-6 px-4 rounded-full">
         <div className="container mx-auto">
           <FindCourse />
         </div>
@@ -57,39 +55,7 @@ export default function HomePage() {
 
       {/* Why Choose Austin: 简化示例 */}
       <section className="w-full py-12 px-6 bg-white text-center">
-        <h2 className="text-2xl font-bold text-gray-800 mb-8">{t.whyTitle}</h2>
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 border border-gray-200 rounded-lg">
-            <h3 className="text-xl font-semibold mb-2">
-              {lang === "zh" ? "顶尖师资团队" : "Top-tier Tutoring Team"}
-            </h3>
-            <p className="text-sm text-gray-600">
-              {lang === "zh"
-                ? "我们拥有严格筛选的优秀导师，确保教学质量。"
-                : "Our tutors are carefully selected to ensure top teaching quality."}
-            </p>
-          </div>
-          <div className="p-6 border border-gray-200 rounded-lg">
-            <h3 className="text-xl font-semibold mb-2">
-              {lang === "zh" ? "全面而灵活的课程" : "Comprehensive Courses"}
-            </h3>
-            <p className="text-sm text-gray-600">
-              {lang === "zh"
-                ? "课程涵盖各年级各科目，可根据学生需求定制。"
-                : "Courses cover all grades and subjects, customizable to student needs."}
-            </p>
-          </div>
-          <div className="p-6 border border-gray-200 rounded-lg">
-            <h3 className="text-xl font-semibold mb-2">
-              {lang === "zh" ? "良好的口碑与认可" : "Well-Recognized"}
-            </h3>
-            <p className="text-sm text-gray-600">
-              {lang === "zh"
-                ? "我们在社区中享有良好声誉，获得超过10000名学生的信赖。"
-                : "Trusted by over 10,000 students, with an excellent reputation."}
-            </p>
-          </div>
-        </div>
+        <Features />
       </section>
 
       {/* Admission Service Process */}
