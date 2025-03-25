@@ -1,55 +1,56 @@
+"use client";
+
 import { useContext } from "react";
-import { LangContext } from "@/app/layout";
 import Image from "next/image";
+import { LangContext } from "@/app/layout";
 import { Button } from "./ui/button";
 
 export default function Hero() {
   const { lang } = useContext(LangContext) || { lang: "en" };
-  
-  // 多语言文本配置
+
   const content = {
     en: {
-      titlePart1: "Melbourne's Leading",
-      titlePart2: "All-In-One Tutorial Service",
+      title: "Melbourne's Leading All-In-One Tutorial Service",
       description: `Founded in 2013, Austin Education is dedicated to providing every student
       with the highest-quality educational resources, including exceptional
       teachers, premium materials, structured courses, and extensive practice,
       empowering each student to achieve success in the most efficient way.`,
       getStarted: "Get Started",
-      contact: "Contact Us"
+      contact: "Contact",
     },
     zh: {
-      titlePart1: "墨尔本领先的",
-      titlePart2: "一体化辅导服务",
+      title: "墨尔本领先的一体化辅导服务",
       description: `奥斯汀教育成立于2013年，致力于为每位学生提供最优质的教育资源，
       包括卓越的教师团队、精品教材、系统化课程和丰富实践，
       帮助每位学生以最高效的方式取得成功。`,
       getStarted: "立即开始",
-      contact: "联系我们"
-    }
+      contact: "联系我们",
+    },
   }[lang];
 
   return (
     <section className="container py-16">
+      {/* 两列布局：左文字 + 右图 */}
       <div className="grid md:grid-cols-2 gap-8 items-center">
-        {/* 文字内容区域 */}
+        {/* 左侧文字区域 */}
         <div className="space-y-6">
-          <h1 className="text-4xl md:text-5xl font-bold leading-tight">
-            {content.titlePart1}
-            <span className="text-primary block mt-2">{content.titlePart2}</span>
+          <h1 className="font-bold leading-tight text-left
+                    text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl
+                    whitespace-normal">
+            <span className="block">{content.title}</span>
           </h1>
-          
-          <p className="text-sm text-gray-600 leading-relaxed">
+
+          <p className="leading-relaxed text-left lg:text-justify text-sm sm:text-base text-gray-600">
             {content.description}
           </p>
 
-          <div className="flex gap-4 items-center justify-center"> 
+          <div className="flex gap-4 items-center justify-start">
             <Button size="lg" className="px-8">
               {content.getStarted}
             </Button>
-            <Button 
-              size="lg" 
-              variant="outline" 
+            <Button
+              size="lg"
+              variant="outline"
               className="px-8 border-primary text-primary hover:bg-primary/10"
             >
               {content.contact}
@@ -57,48 +58,53 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* 图片叠加区域 */}
-        <div className="relative h-[600px] w-full">
-          {/* 底层背景 */}
-          <div className="absolute inset-0 z-0">
+        {/* 右侧：多图叠加容器 */}
+        <div className="relative w-full aspect-[600/600]">
+          {/* 底层背景图：撑满容器 */}
+          <div className="absolute z-0 right-1/3 top-10 transform translate-x-1/3 ">
             <Image
               src="/home/banner decor 2.png"
               alt="Background"
-              fill
+              width={479}
+              height={615}
+              unoptimized
               className="object-cover rounded-lg"
             />
           </div>
 
-          {/* 左上图片 */}
-          <div className="absolute top-0 left-0 w-1/2 z-10">
+          {/* 左上图片：占容器一半宽度 */}
+          <div className="absolute top-5 left-0 w-4/9 z-10">
             <Image
               src="/home/banner image1.png"
               alt="Student"
-              width={400}
-              height={500}
-              className="rounded-lg object-cover shadow-xl"
+              width={368}
+              height={551}
+              unoptimized
+              className="object-cover w-full h-auto rounded-lg shadow-xl"
             />
           </div>
 
-          {/* 右下图片 */}
-          <div className="absolute bottom-0 right-0 w-1/2 z-10">
+          {/* 右下图片：占容器一半宽度 */}
+          <div className="absolute bottom-0 right-0 w-4/9 z-10">
             <Image
               src="/home/banner image2.png"
               alt="Classroom"
-              width={400}
-              height={500}
-              className="rounded-lg object-cover shadow-xl"
+              width={368}
+              height={551}
+              unoptimized
+              className="object-cover w-full h-auto rounded-lg shadow-xl"
             />
           </div>
 
-          {/* 顶层装饰 */}
-          <div className="absolute top-0 left-0  z-20 w-3/4">
+          {/* 顶层装饰：占容器 3/4 宽度，可根据需要微调 */}
+          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 z-20">
             <Image
               src="/home/banner decor.png"
               alt="Decoration"
-              width={800}
-              height={400}
-              className="object-contain"
+              width={358}
+              height={217}
+              unoptimized
+              className="object-contain w-full h-auto"
             />
           </div>
         </div>

@@ -40,34 +40,33 @@ export default function HomePage() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero 区域 */}
-      <section className="w-full bg-gray-50 py-12 px-6 text-center">
+      <section className="w-[80%] mx-auto py-12 px-6 text-center">
       <div className="container mx-auto">
         <Hero />
       </div>
       </section>
 
       {/* Find a Course */}
-      <section className="w-full bg-primary text-white py-6 px-4 rounded-full">
+      <section className="w-full bg-primary text-white py-6 px-4 rounded-4xl">
         <div className="container mx-auto">
           <FindCourse />
         </div>
       </section>
 
       {/* Why Choose Austin: 简化示例 */}
-      <section className="w-full py-12 px-6 bg-white text-center">
+      <section className="w-full py-12 px-6 text-center">
         <Features />
       </section>
 
       {/* Admission Service Process */}
-      <section className="w-full py-12 px-6 bg-gray-50">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">{t.admissionTitle}</h2>
+      <section className="w-full py-12 px-6 ">
         <div className="max-w-5xl mx-auto">
           <AdmissionProcess />
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="w-full py-12 px-6 bg-white">
+      <section className="w-full py-12 px-6 ">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">{t.testimonialTitle}</h2>
         <div className="max-w-4xl mx-auto">
           <Testimonials />
@@ -75,7 +74,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ: 如果需要放置，可以在此添加相应内容 */}
-      <section className="w-full py-12 px-6 bg-gray-50 text-center">
+      <section className="w-full py-12 px-6 text-center">
         <div className="max-w-4xl mx-auto">
           <FAQ />
         </div>

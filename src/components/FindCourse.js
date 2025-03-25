@@ -35,61 +35,62 @@ export default function FindCourse() {
   };
 
   return (
-    <div className="flex flex-col md:flex-row md:items-center md:space-x-4 justify-center py-4">
-      <span className="font-medium mb-2 md:mb-0 md:mr-2">
-        {lang === "zh" ? "搜索课程:" : "Find a Course:"}
-      </span>
+    // 最外层容器，撑满页面可用宽度 
+    <div className="w-full px-4 py-4">
+      {/* 使用grid布局，小屏幕1列，中屏幕5列 */}
+      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+        {/* 1. Label */}
+        <span className="font-medium md:text-right text-lg">
+          {lang === "zh" ? "搜索课程:" : "Find a Course:"}
+        </span>
 
-      {/* State */}
-      <Select value={state} onValueChange={(val) => setState(val)}>
-        <SelectTrigger className="w-[150px] bg-white text-gray-800">
-          <SelectValue placeholder={placeholderText.state} />
-        </SelectTrigger>
-        <SelectContent>
-          {stateOptions.map((opt) => (
-            <SelectItem key={opt} value={opt}>
-              {opt}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+        {/* 2. State 下拉 */}
+        <Select value={state} onValueChange={(val) => setState(val)}>
+          <SelectTrigger className="bg-white text-gray-800 w-full">
+            <SelectValue placeholder={placeholderText.state} />
+          </SelectTrigger>
+          <SelectContent>
+            {stateOptions.map((opt) => (
+              <SelectItem key={opt} value={opt}>
+                {opt}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
-      {/* Grade */}
-      <Select value={grade} onValueChange={(val) => setGrade(val)}>
-        <SelectTrigger className="w-[150px] bg-white text-gray-800">
-          <SelectValue placeholder={placeholderText.grade} />
-        </SelectTrigger>
-        <SelectContent>
-          {gradeOptions.map((opt) => (
-            <SelectItem key={opt} value={opt}>
-              {opt}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+        {/* 3. Grade 下拉 */}
+        <Select value={grade} onValueChange={(val) => setGrade(val)}>
+          <SelectTrigger className="bg-white text-gray-800 w-full">
+            <SelectValue placeholder={placeholderText.grade} />
+          </SelectTrigger>
+          <SelectContent>
+            {gradeOptions.map((opt) => (
+              <SelectItem key={opt} value={opt}>
+                {opt}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
-      {/* Subject */}
-      <Select value={subject} onValueChange={(val) => setSubject(val)}>
-        <SelectTrigger className="w-[150px] bg-white text-gray-800">
-          <SelectValue placeholder={placeholderText.subject} />
-        </SelectTrigger>
-        <SelectContent>
-          {subjectOptions.map((opt) => (
-            <SelectItem key={opt} value={opt}>
-              {opt}
-            </SelectItem>
-          ))}
-        </SelectContent>
-      </Select>
+        {/* 4. Subject 下拉 */}
+        <Select value={subject} onValueChange={(val) => setSubject(val)}>
+          <SelectTrigger className="bg-white text-gray-800 w-full">
+            <SelectValue placeholder={placeholderText.subject} />
+          </SelectTrigger>
+          <SelectContent>
+            {subjectOptions.map((opt) => (
+              <SelectItem key={opt} value={opt}>
+                {opt}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
 
-      {/* Search button */}
-      <Button
-        onClick={handleSearch}
-        variant="outline"
-        className="shadow-lg"
-      >
-        <Image src="/home/search icon.png" alt="Search" width={20} height={20} />
-      </Button>
+        {/* 5. Search 按钮 */}
+        <Button onClick={handleSearch} variant="outline" className="shadow-lg w-9 h-9 p-0 flex items-center justify-center bg-primary">
+          <Image src="/home/search icon.png" alt="Search" width={20} height={20} />
+        </Button>
+      </div>
     </div>
   );
 }

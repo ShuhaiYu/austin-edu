@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="bg-white text-gray-900">
+      <body className="bg-background text-gray-900">
         <LangContext.Provider value={{ lang, setLang }}>
           <NavBar />
           <main className="flex-1">

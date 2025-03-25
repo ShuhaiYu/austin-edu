@@ -1,4 +1,3 @@
-// src/components/Features.js
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -10,9 +9,9 @@ export default function Features() {
   const { lang } = useContext(LangContext) || { lang: "en" };
 
   const stats = [
-    { num: "99", text: ["ATAR achieved by 6", "of our students"] },
-    { num: "90%", text: ["Graduates entered", "top universities"] },
-    { num: "10K+", text: ["Students trusted", "our service"] },
+    { num: "99.95", text: ["ATAR achieved by 6", "of our students."] },
+    { num: "99", text: ["ATAR or above by 46", "of our students"] },
+    { num: "90", text: ["ATAR or above by", "84% of our students"] },
   ];
 
   const features = [
@@ -23,29 +22,31 @@ export default function Features() {
     },
     {
       icon: "/home/course icon.png",
-      title: "Comprehensive courses",
+      title: "Comprehensive and high-quality courses",
       desc: "Our curated collection covers a wide range of subjects and topics.",
     },
     {
       icon: "/home/study icon.png",
-      title: "Well-equipped space",
-      desc: "Join live lectures and activities led by experienced instructors.",
+      title: "Well-equipped learning space",
+      desc: "Join live lectures, interactive discussions, and group activities led by experienced.",
     },
   ];
+
+  const achievementsText = lang === "zh" ? "查看成就" : "Our Achievements";
 
   return (
     <section className="py-20">
       {/* 上半部分 */}
-      <div className="grid md:grid-cols-2 gap-12 mb-20">
+      <div className="grid xl:grid-cols-2 gap-12 mb-20">
         {/* 左侧统计卡片 */}
-        <div className="flex flex-row items-start justify-center gap-4 relative h-[400px]">
+        <div className="flex flex-row items-start justify-center gap-2 sm:gap-8 relative min-h-[400px]">
           {stats.map((stat, i) => (
             <div
               key={i}
               className="relative transition-all duration-300 hover:-translate-y-2"
               style={{
+                // 高低错落
                 marginTop: i === 0 ? "2rem" : i === 1 ? "-1rem" : "3rem",
-                marginLeft: i !== 0 ? "-4rem" : 0,
                 zIndex: 3 - i,
               }}
             >
@@ -58,10 +59,9 @@ export default function Features() {
                   height={326}
                   className="object-contain drop-shadow-lg"
                 />
-
                 {/* 文字内容 */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-                  <div className="text-5xl font-bold mb-2 text-white">
+                  <div className="text-3xl sm:text-5xl font-bold mb-2 text-white">
                     {stat.num}
                   </div>
                   <div className="h-[2px] w-16 bg-white mb-4 opacity-50" />
@@ -69,7 +69,7 @@ export default function Features() {
                     {stat.text.map((line, j) => (
                       <div
                         key={j}
-                        className="text-sm font-medium text-white"
+                        className="text-[8px] sm:text-sm font-medium text-white"
                       >
                         {line}
                       </div>
@@ -81,55 +81,118 @@ export default function Features() {
           ))}
         </div>
 
-        {/* 右侧文案 */}
-        <div className="space-y-6">
-          <h2 className="text-4xl font-bold">
-            {lang === "zh"
-              ? "为什么超过10,000名学生选择"
-              : "What makes over 10,000 students choose"}
-            <br />
-            <span className="text-primary">AUSTIN EDUCATION</span>
-          </h2>
+        {/* 右侧文字区 */}
+        <div className="space-y-6 mx-auto">
+          {/* 让关键词明显突出；标题居中，列表与按钮左对齐 */}
+          <div className="text-center">
+            <h2 className="font-bold leading-tight">
+              {/* 行1: "What makes over" */}
+              <div className="text-xl sm:text-2xl 2xl:text-3xl mb-2">
+                {lang === "zh" ? "为什么超过" : "What makes over"}{" "}
+                <span className="text-3xl sm:text-4xl 2xl:text-5xl">
+                  10,000
+                </span>{" "}
+                {lang === "zh" ? "名学生选择" : "students choose"}
+              </div>
 
-          <ul className="space-y-4 text-gray-600">
-            <li>✓ Australia&apos;s most rigorously selected teaching team</li>
-            <li>✓ 90% high-achieving graduates & experts</li>
-            <li>✓ Well-structured curriculum & support system</li>
+              {/* 行2: "AUSTIN EDUCATION" */}
+              <div className="text-3xl md:text-5xl 2xl:text-6xl">
+                AUSTIN EDUCATION
+              </div>
+            </h2>
+          </div>
+
+          <ul className="text-gray-600 list-disc list-outside pl-4 space-y-2 text-left w-2/3 xl:w-full mx-auto">
+            <li>
+              Australia&apos;s most rigorously selected teaching team, with over
+              90% consisting of high-achieving graduates and subject experts.
+            </li>
+            <li>
+              We help students achieve top scores, ensuring visible and tangible
+              progress for everyone.
+            </li>
+            <li>
+              A well-structured curriculum and strong support system make
+              learning more efficient and breakthroughs easier.
+            </li>
           </ul>
 
-          <Button size="lg">
-            {lang === "zh" ? "查看成就" : "Our Achievements"}
-          </Button>
+          <div className="flex justify-center xl:justify-start">
+            <Button size="lg">{achievementsText}</Button>
+          </div>
         </div>
       </div>
 
       {/* Why Choose Austin */}
-      <div className="text-center mb-12">
+      <div className="text-center mb-16">
         <h2 className="text-4xl font-bold mb-4">
           {lang === "zh" ? "为什么选择奥斯汀" : "Why Choose Austin"}
         </h2>
-        <p className="text-gray-600 max-w-2xl mx-auto">
+        <p className="text-gray-600 max-w-4xl mx-auto">
           {lang === "zh"
             ? "奥斯汀教育以卓越的师资团队、全面的高质量课程和非凡的学习环境而闻名。"
-            : "Renowned for outstanding teaching team, comprehensive courses and exceptional learning environment."}
+            : "Austin Education is renowned for its outstanding teaching team, comprehensive high-quality course offerings, and exceptional learning environment. As a result, students often affectionately refer to it as their second day school."}
         </p>
       </div>
 
       {/* 功能卡片 */}
-      <div className="grid md:grid-cols-3 gap-8">
+      {/* 网格布局：3列，卡片居中 */}
+      <div className="grid md:grid-cols-3 gap-2 justify-items-center">
         {features.map((feat) => (
           <div
             key={feat.title}
-            className="p-8 border rounded-lg hover:shadow-lg transition"
+            className="
+              relative 
+              bg-white 
+              rounded-3xl 
+              shadow-xl 
+              transition 
+              p-8 
+              pt-16 
+              max-w-sm
+              overflow-visible
+            "
           >
-            <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mb-6">
-              <Image src={feat.icon} width={40} height={40} alt="Icon" />
+            {/* 
+              图标容器：绝对定位在卡片顶部中央，负top值让一半露出在卡片外 
+              w-16 h-16 => 4rem x 4rem
+            */}
+            <div
+              className="
+                absolute 
+                -top-8 
+                left-1/2 
+                transform 
+                -translate-x-1/2 
+                w-16 
+                h-16 
+                bg-primary 
+                rounded-full 
+                flex 
+                items-center 
+                justify-center
+                
+              "
+            >
+              <Image src={feat.icon} width={40} height={40} alt="Icon" className="p-1"/>
             </div>
-            <h3 className="text-xl font-bold mb-4">{feat.title}</h3>
-            <p className="text-gray-600 mb-6">{feat.desc}</p>
-            <Button variant="outline">
-              {lang === "zh" ? "了解更多" : "Learn More"}
-            </Button>
+
+            {/* 卡片内容 */}
+            <div className="">
+              <h3 className="text-xl font-bold mb-4 text-center w-2/3 mx-auto">
+              {feat.title}
+            </h3>
+            <p className="text-gray-600 mb-6 text-center">
+              {feat.desc}
+            </p>
+
+            <div className="flex justify-center">
+              <Button >
+                {lang === "zh" ? "了解更多" : "Learn More"}
+              </Button>
+            </div>
+            </div>
+            
           </div>
         ))}
       </div>
