@@ -28,7 +28,7 @@ export default function Header() {
   // 或者直接传递给 useRouter()
 
   return (
-    <header className="sticky top-0 z-50 bg-background w-[80%] mx-auto">
+    <header className="sticky top-0 z-50 bg-background mx-auto">
       {/* 第一行：Logo + 语言切换 + 用户按钮 */}
       <div className="bg-background">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -49,7 +49,7 @@ export default function Header() {
       </div>
 
       {/* 第二行导航：白底，等宽分布，当前项下方横线 */}
-      <nav className="bg-white mx-auto mt-2 py-4 px-8 shadow-xl">
+      <nav className="bg-white mx-auto mt-2 py-4 px-8 shadow-xl w-[80%] ">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
           {menuItems.map((item) => {
             // 根据当前路由进行判断（此处仅示例，可根据实际业务逻辑改造）

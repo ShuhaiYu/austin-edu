@@ -1,5 +1,3 @@
-"use client";
-
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useContext } from "react";
@@ -137,7 +135,7 @@ export default function Features() {
 
       {/* 功能卡片 */}
       {/* 网格布局：3列，卡片居中 */}
-      <div className="grid md:grid-cols-3 gap-2 justify-items-center">
+      <div className="flex flex-col xl:flex-row gap-4 xl:gap-8 justify-center items-center">
         {features.map((feat) => (
           <div
             key={feat.title}
@@ -147,7 +145,7 @@ export default function Features() {
               rounded-3xl 
               shadow-xl 
               transition 
-              p-8 
+              p-2 
               pt-16 
               max-w-sm
               overflow-visible
@@ -178,11 +176,11 @@ export default function Features() {
             </div>
 
             {/* 卡片内容 */}
-            <div className="">
+            <div className="p-6">
               <h3 className="text-xl font-bold mb-4 text-center w-2/3 mx-auto">
               {feat.title}
             </h3>
-            <p className="text-gray-600 mb-6 text-center">
+            <p className="text-gray-600 mb-12 text-center">
               {feat.desc}
             </p>
 
