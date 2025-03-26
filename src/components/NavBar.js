@@ -30,7 +30,7 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 bg-background mx-auto">
       {/* 第一行：Logo + 语言切换 + 用户按钮 */}
-      <div className="bg-background">
+      <div className="bg-background w-[80%] mx-auto">
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           {/* 左侧 Logo */}
           <div className="flex items-center gap-2">

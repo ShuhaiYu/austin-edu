@@ -208,39 +208,44 @@ Services include:
 export default function AdmissionProcess() {
   const { lang } = useContext(LangContext) || { lang: "en" };
 
-  // 为每个 Part 记录当前选中的 Step Index，初始都设为 0
-  const [activeSteps, setActiveSteps] = useState(
-    () => steps.map(() => 0) // 数组长度与 steps 一致，每个 Part 默认选中第 0 个 Step
-  );
+  // 初始状态设为-1表示所有步骤默认关闭
+  const [activeSteps, setActiveSteps] = useState(() => steps.map(() => -1));
 
-  // 点击某个步骤时，更新对应 Part 的 activeStep
   const handleStepClick = (partIndex, stepIndex) => {
     setActiveSteps((prev) => {
       const newActiveSteps = [...prev];
-      newActiveSteps[partIndex] = stepIndex;
+      newActiveSteps[partIndex] =
+        prev[partIndex] === stepIndex ? -1 : stepIndex;
       return newActiveSteps;
     });
   };
 
+  // 根据 partIndex 获取颜色配置
+  const getColorConfig = (partIndex) => {
+    const colors = [
+      { dot: "bg-blue-500", border: "border-blue-500" },
+      { dot: "bg-red-500", border: "border-red-500" },
+      { dot: "bg-orange-500", border: "border-orange-500" },
+    ];
+    return colors[partIndex % 3];
+  };
+
   return (
     <section className="py-20">
-      {/* 大标题 */}
       <h2 className="text-4xl font-bold text-center mb-12">
         {lang === "zh" ? "入学服务流程" : "Admission Service Process"}
       </h2>
 
       {steps.map((part, i) => {
-        // 当前 Part 的标题
         const partTitle = lang === "zh" ? part.title.zh : part.title.en;
-
-        // 当前 Part 的“选中” Step 索引
         const currentStepIndex = activeSteps[i];
-        // 取出对应的 Step 数据
-        const currentStep = part.steps[currentStepIndex];
+        const currentStep =
+          currentStepIndex !== -1 ? part.steps[currentStepIndex] : null;
+        const { dot: dotColor, border: borderColor } = getColorConfig(i);
 
         return (
           <div key={i} className="mb-16">
-            {/* Part 标题：居中显示 */}
+            {/* Part 标题 */}
             <div className="relative w-[150px] h-[150px] mb-8 justify-center mx-auto">
               <Image
                 src={`/home/title-bg${part.part}.png`}
@@ -255,38 +260,89 @@ export default function AdmissionProcess() {
               </div>
             </div>
 
-            {/* 分割布局：左边是 description，右边是 steps */}
-            <div className="flex w-full">
-              {/* 左侧 - 显示当前选中 Step 的描述 */}
-              <div className="w-1/2 pr-8 border-r border-gray-300">
-                <h3 className="text-xl font-bold mb-4">
-                  {/* 比如显示 Step 的编号 + 标题 */}
+            {/* 分割布局 */}
+            <div className="flex w-full relative">
+              {/* 左侧 - 描述（只在有选择时显示） */}
+              {currentStep ? (
+                <div className="w-1/2 ">
+                  <div className="bg-white shadow-2xl mr-8 p-8 ">
+                    {/* <h3 className="text-xl font-bold mb-4 ">
+                      {lang === "zh"
+                        ? currentStep.title.zh
+                        : currentStep.title.en}
+                    </h3> */}
+                    <p className="text-gray-600 whitespace-pre-line">
+                      {lang === "zh"
+                        ? currentStep.desc.zh
+                        : currentStep.desc.en}
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <div className="w-1/2"></div>
+              )}
 
-                  {lang === "zh" ? currentStep.title.zh : currentStep.title.en}
-                </h3>
-                <p className="text-gray-600 whitespace-pre-line">
-                  {lang === "zh" ? currentStep.desc.zh : currentStep.desc.en}
-                </p>
-              </div>
+              {/* 右侧 - 步骤列表 */}
+              <div className={`pl-8 relative w-1/2`}>
+                <div className="absolute left-0 top-0 h-full w-px bg-gray-300">
+                  {/* 虚线分界线 */}
+                  <div className="absolute inset-0 border-l-2 border-dotted border-gray-300" />
+                </div>
 
-              {/* 右侧 - Step 列表（只显示标题），点击切换 */}
-              <div className="w-1/2 pl-8 space-y-4">
-                {part.steps.map((stepData, j) => (
-                  <button
-                    key={j}
-                    onClick={() => handleStepClick(i, j)}
-                    className={`block w-full text-left p-4 rounded-lg transition border 
-                      ${
-                        currentStepIndex === j
-                          ? "bg-primary/10 border-primary"
-                          : "border-gray-200 hover:bg-gray-50"
-                      }`}
-                  >
-                    <span className="font-semibold">
-                      {lang === "zh" ? stepData.title.zh : stepData.title.en}
-                    </span>
-                  </button>
-                ))}
+                <div className="space-y-4 relative">
+                  {part.steps.map((stepData, j) => {
+                    const isActive = currentStepIndex === j;
+                    return (
+                      <div key={j} className="relative group">
+                        {/* 连接线 */}
+                        <div
+                          className={`absolute left-[-24px] top-1/2 w-6 h-[1px] ${dotColor}`}
+                          style={{ transform: "translateY(-50%)" }}
+                        />
+
+                        {/* 圆形指示点 */}
+                        <div
+                          className={`absolute left-[-39px] top-1/2 w-4 h-4 rounded-full border-2 ${dotColor} 
+                            ${
+                              isActive
+                                ? "border-white scale-125"
+                                : "border-gray-300"
+                            }`}
+                          style={{
+                            transform: "translateY(-50%)",
+                            transition: "all 0.2s ease",
+                          }}
+                        />
+
+                        <button
+                          onClick={() => handleStepClick(i, j)}
+                          className={`block w-full text-left p-4 rounded-r-lg transition-all 
+                            ${
+                              isActive
+                                ? `${borderColor} border-l-4 bg-gradient-to-r from-white via-${borderColor}/10 to-white`
+                                : "border-gray-200 hover:bg-gray-50"
+                            }`}
+                        >
+                          <div className="flex items-center justify-start">
+                          <span
+                            className={`font-bold text-5xl mr-4 text-gray-500`}
+                          >
+                            {stepData.step.toString().padStart(2, "0")}
+                          </span>
+                          <span
+                            className={`font-semibold `}
+                          >
+                            {lang === "zh"
+                              ? stepData.title.zh
+                              : stepData.title.en}
+                          </span>
+                          </div>
+                          
+                        </button>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>

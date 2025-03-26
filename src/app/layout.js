@@ -4,6 +4,8 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { createContext, useState } from "react";
 import "./globals.css";
+import { Toaster } from "@/components/ui/sonner"
+
 
 export const LangContext = createContext(null);
 
@@ -22,6 +24,7 @@ export default function RootLayout({ children }) {
           <main className="flex-1">
             <div className="container mx-auto px-4">{children}</div>
           </main>
+          <Toaster />
           <Footer />
         </LangContext.Provider>
       </body>

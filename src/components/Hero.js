@@ -1,5 +1,3 @@
-"use client";
-
 import { useContext } from "react";
 import Image from "next/image";
 import { LangContext } from "@/app/layout";

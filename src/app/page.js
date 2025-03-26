@@ -68,7 +68,7 @@ export default function HomePage() {
       {/* Testimonials */}
       <section className="w-full py-12 px-6 ">
         <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">{t.testimonialTitle}</h2>
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <Testimonials />
         </div>
       </section>
