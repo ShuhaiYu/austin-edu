@@ -142,12 +142,13 @@ export default function Features() {
               relative 
               bg-white 
               rounded-3xl 
-              shadow-xl 
+              shadow-2xl 
               transition 
               p-2 
               pt-16 
               max-w-sm
               overflow-visible
+              transition-all duration-300 hover:-translate-y-2
             "
           >
             {/* 

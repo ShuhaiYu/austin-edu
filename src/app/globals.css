@@ -2,14 +2,14 @@
 @import "tw-animate-css";
 
 @theme {
-  --font-display: "Satoshi", "sans-serif";
+  --font-sans: "Poppins", sans-serif;
   --breakpoint-3xl: 120rem;
-  --color-primary: #1e40af;   /* 主色调：深蓝 (示例) */
+  --color-primary: #285ea9;   /* 主色调：深蓝 (示例) */
   --color-primary-foreground: #f1f5f9;
   --color-secondary: #e11d48; /* 次要色调：红色 (示例) */
   --color-secondary-foreground: #f1f5f9;
   --color-accent: #ca8a04;    /* 强调色：橘黄 (示例) */
-  --color-accent-foreground: #f1f5f9;
+  --color-accent-foreground: #848485;
   --color-success: #10b981;   /* 成功色：绿色 (示例) */
   --color-success-foreground: #f1f5f9;
   --color-warning: #f59e0b;   /* 警告色：黄色 (示例) */

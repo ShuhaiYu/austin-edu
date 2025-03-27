@@ -255,7 +255,9 @@ export default function AdmissionProcess() {
                 className="object-contain"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-2xl font-bold text-center">
-                <h1 className="mt-4 md:mt-6 text-2xl md:text-3xl uppercase">Part {part.part}</h1>
+                <h1 className="mt-4 md:mt-6 text-2xl md:text-3xl uppercase">
+                  Part {part.part}
+                </h1>
                 <span className="text-[11px] md:text-sm">{partTitle}</span>
               </div>
             </div>
@@ -324,20 +326,19 @@ export default function AdmissionProcess() {
                             }`}
                         >
                           <div className="flex items-center justify-start">
-                          <span
-                            className={`font-bold text-3xl md:text-4xl xl:text-5xl mr-4 text-gray-500`}
-                          >
-                            {stepData.step.toString().padStart(2, "0")}
-                          </span>
-                          <span
-                            className={`font-semibold text-sm md:text-lg text-gray-800`}
-                          >
-                            {lang === "zh"
-                              ? stepData.title.zh
-                              : stepData.title.en}
-                          </span>
+                            <span
+                              className={`font-bold text-3xl md:text-4xl xl:text-5xl mr-4 text-gray-500`}
+                            >
+                              {stepData.step.toString().padStart(2, "0")}
+                            </span>
+                            <span
+                              className={`font-semibold text-sm md:text-lg text-gray-700`}
+                            >
+                              {lang === "zh"
+                                ? stepData.title.zh
+                                : stepData.title.en}
+                            </span>
                           </div>
-                          
                         </button>
                       </div>
                     );
