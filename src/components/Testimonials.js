@@ -133,7 +133,7 @@ export default function Testimonials() {
             return (
               <CarouselItem
                 key={index}
-                className="pl-4 basis-1/5 " // 显示5个
+                className="pl-4 basis-1/1 md:basis-1/3 xl:basis-1/5" // 显示5个
               >
                 <div className={`
                     p-2 

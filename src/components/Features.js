@@ -15,17 +15,17 @@ export default function Features() {
   const features = [
     {
       icon: "/home/team icon.png",
-      title: "Top-tier teaching team",
+      title: "Top-tier\n teaching team",
       desc: "Dive into our diverse range of online courses tailored to suit various interests.",
     },
     {
       icon: "/home/course icon.png",
-      title: "Comprehensive and high-quality courses",
+      title: "Comprehensive and\n high-quality courses",
       desc: "Our curated collection covers a wide range of subjects and topics.",
     },
     {
       icon: "/home/study icon.png",
-      title: "Well-equipped learning space",
+      title: "Well-equipped\n learning space",
       desc: "Join live lectures, interactive discussions, and group activities led by experienced.",
     },
   ];
@@ -37,7 +37,7 @@ export default function Features() {
       {/* 上半部分 */}
       <div className="grid xl:grid-cols-2 gap-12 mb-20">
         {/* 左侧统计卡片 */}
-        <div className="flex flex-row items-start justify-center gap-2 sm:gap-8 relative min-h-[400px]">
+        <div className="flex flex-row items-start justify-center gap-2 sm:gap-8 relative md:min-h-[400px]">
           {stats.map((stat, i) => (
             <div
               key={i}
@@ -81,7 +81,6 @@ export default function Features() {
 
         {/* 右侧文字区 */}
         <div className="space-y-6 mx-auto">
-          {/* 让关键词明显突出；标题居中，列表与按钮左对齐 */}
           <div className="text-center">
             <h2 className="font-bold leading-tight">
               {/* 行1: "What makes over" */}
@@ -135,7 +134,7 @@ export default function Features() {
 
       {/* 功能卡片 */}
       {/* 网格布局：3列，卡片居中 */}
-      <div className="flex flex-col xl:flex-row gap-4 xl:gap-8 justify-center items-center">
+      <div className="flex flex-col xl:flex-row gap-16 xl:gap-8 justify-center items-center">
         {features.map((feat) => (
           <div
             key={feat.title}
@@ -177,10 +176,10 @@ export default function Features() {
 
             {/* 卡片内容 */}
             <div className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-center w-2/3 mx-auto">
+              <h3 className="text-xl font-bold mb-4 text-center mx-auto line-clamp-2 whitespace-pre-wrap">
               {feat.title}
             </h3>
-            <p className="text-gray-600 mb-12 text-center">
+            <p className="text-gray-600 mb-12 text-center line-clamp-2">
               {feat.desc}
             </p>
 

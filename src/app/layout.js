@@ -4,6 +4,7 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { createContext, useState } from "react";
 import "./globals.css";
+import "@flaticon/flaticon-uicons/css/all/all.css";
 import { Toaster } from "@/components/ui/sonner"
 
 

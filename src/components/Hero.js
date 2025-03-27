@@ -27,7 +27,7 @@ export default function Hero() {
   }[lang];
 
   return (
-    <section className="container py-16">
+    <section className="container py-2 md:py-16">
       {/* 两列布局：左文字 + 右图 */}
       <div className="grid md:grid-cols-2 gap-8 items-center">
         {/* 左侧文字区域 */}
