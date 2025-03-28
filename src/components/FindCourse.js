@@ -36,7 +36,7 @@ export default function FindCourse() {
 
   return (
     // 最外层容器，撑满页面可用宽度 
-    <div className="w-full px-4 py-4">
+    <div className="w-full px-4 py-2">
       {/* 使用grid布局，小屏幕1列，中屏幕5列 */}
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
         {/* 1. Label */}

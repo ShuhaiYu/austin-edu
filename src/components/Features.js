@@ -121,8 +121,8 @@ export default function Features() {
       </div>
 
       {/* Why Choose Austin */}
-      <div className="text-center mb-16">
-        <h2 className="text-4xl font-bold mb-4">
+      <div className="text-center mb-16 py-8">
+        <h2 className="text-5xl font-bold mb-4 uppercase">
           {lang === "zh" ? "为什么选择奥斯汀" : "Why Choose Austin"}
         </h2>
         <p className="text-gray-600 max-w-4xl mx-auto">

@@ -47,14 +47,14 @@ export default function HomePage() {
       </section>
 
       {/* Find a Course */}
-      <section className="w-full bg-primary text-white py-6 px-4 rounded-4xl">
+      <section className="w-[80%] bg-primary text-white py-6 px-4 rounded-4xl">
         <div className="container mx-auto">
           <FindCourse />
         </div>
       </section>
 
       {/* Why Choose Austin: 简化示例 */}
-      <section className="w-full py-12 px-6 text-center">
+      <section className="max-w-[80%] py-12 px-6 text-center">
         <Features />
       </section>
 
@@ -67,7 +67,7 @@ export default function HomePage() {
 
       {/* Testimonials */}
       <section className="w-full py-12 px-6 ">
-        <h2 className="text-2xl font-bold text-center text-gray-800 mb-8">{t.testimonialTitle}</h2>
+        <h2 className="text-5xl font-bold text-center text-gray-800 mb-8">{t.testimonialTitle}</h2>
         <div className="max-w-5xl mx-auto">
           <Testimonials />
         </div>

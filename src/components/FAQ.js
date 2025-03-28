@@ -140,9 +140,9 @@ export default function FAQ() {
     <section className="py-16 dark:bg-gray-900">
       <div className="container flex flex-col gap-8">
         {/* 标题部分 */}
-        <div className="text-center space-y-4">
-          <h2 className="text-3xl font-bold dark:text-gray-100">{title}</h2>
-          <p className="text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+        <div className="text-center space-y-8">
+          <h2 className="text-5xl text-gray-800 font-bold dark:text-gray-100">{title}</h2>
+          <p className=" dark:text-gray-400 max-w-2xl mx-auto">
             {description}
           </p>
         </div>
@@ -150,7 +150,7 @@ export default function FAQ() {
         <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
           {/* 左侧：FAQ */}
           <div className="max-w-2xl mx-auto px-4 w-full">
-            <Accordion type="single" collapsible className="space-y-4">
+            <Accordion type="single" collapsible className="space-y-4 ">
               {faqItems.map((item, index) => (
                 <AccordionItem key={`item-${index}`} value={`item-${index}`}>
                   <AccordionTrigger>{item.question}</AccordionTrigger>

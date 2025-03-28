@@ -231,8 +231,8 @@ export default function AdmissionProcess() {
   };
 
   return (
-    <section className="py-4 xl:py-20">
-      <h2 className="text-4xl font-bold text-center mb-12">
+    <section className="py-4 xl:py-8">
+      <h2 className="text-5xl font-bold text-center mb-12 uppercase">
         {lang === "zh" ? "入学服务流程" : "Admission Service Process"}
       </h2>
 
@@ -255,7 +255,7 @@ export default function AdmissionProcess() {
                 className="object-contain"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-2xl font-bold text-center">
-                <h1 className="mt-4 md:mt-6 text-2xl md:text-3xl uppercase">
+                <h1 className="font-bebas mt-4 md:mt-6 text-3xl md:text-4xl uppercase">
                   Part {part.part}
                 </h1>
                 <span className="text-[11px] md:text-sm">{partTitle}</span>
@@ -327,7 +327,7 @@ export default function AdmissionProcess() {
                         >
                           <div className="flex items-center justify-start">
                             <span
-                              className={`font-bold text-3xl md:text-4xl xl:text-5xl mr-4 text-gray-500`}
+                              className={`font-bebas font-bold text-3xl md:text-4xl xl:text-5xl mr-4 text-gray-500`}
                             >
                               {stepData.step.toString().padStart(2, "0")}
                             </span>
