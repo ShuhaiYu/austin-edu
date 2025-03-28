@@ -15,18 +15,27 @@ export default function Features() {
   const features = [
     {
       icon: "/home/team icon.png",
-      title: "Top-tier\n teaching team",
-      desc: "Dive into our diverse range of online courses tailored to suit various interests.",
+      title_en: "Top-tier\n teaching team",
+      title_zh: "顶尖师资团队",
+      desc_en:
+        "Dive into our diverse range of online courses tailored to suit various interests.",
+      desc_zh: "深入了解我们多样化的在线课程，满足不同兴趣需求。",
     },
     {
       icon: "/home/course icon.png",
-      title: "Comprehensive and\n high-quality courses",
-      desc: "Our curated collection covers a wide range of subjects and topics.",
+      title_en: "Comprehensive and\n high-quality courses",
+      title_zh: "全面高质量课程",
+      desc_en:
+        "Our curated collection covers a wide range of subjects and topics.",
+      desc_zh: "我们精心策划的课程涵盖了多个学科和主题。",
     },
     {
       icon: "/home/study icon.png",
-      title: "Well-equipped\n learning space",
-      desc: "Join live lectures, interactive discussions, and group activities led by experienced.",
+      title_en: "Well-equipped\n learning space",
+      title_zh: "优质学习环境",
+      desc_en:
+        "Join live lectures, interactive discussions, and group activities led by experienced.",
+      desc_zh: "参加由经验丰富的老师主持的直播讲座、互动讨论和小组活动。",
     },
   ];
 
@@ -101,16 +110,19 @@ export default function Features() {
 
           <ul className="text-gray-600 list-disc list-outside pl-4 space-y-2 text-left w-2/3 xl:w-full mx-auto">
             <li>
-              Australia&apos;s most rigorously selected teaching team, with over
-              90% consisting of high-achieving graduates and subject experts.
+              {lang === "zh"
+                ? "澳大利亚最严格筛选的师资团队，超过90%为高分毕业生和学科专家。"
+                : "Australia's most rigorously selected teaching team, with over 90% consisting of high-achieving graduates and subject experts."}
             </li>
             <li>
-              We help students achieve top scores, ensuring visible and tangible
-              progress for everyone.
+              {lang === "zh"
+                ? "我们帮助学生取得顶尖成绩，确保每个人都能看到明显和实质性的进步。"
+                : "We help students achieve top scores, ensuring visible and tangible progress for everyone."}
             </li>
             <li>
-              A well-structured curriculum and strong support system make
-              learning more efficient and breakthroughs easier.
+              {lang === "zh"
+                ? "系统化的课程结构和强大的支持体系，让学习更高效，突破更容易。"
+                : "A well-structured curriculum and strong support system make learning more efficient and breakthroughs easier"}
             </li>
           </ul>
 
@@ -149,6 +161,7 @@ export default function Features() {
               max-w-sm
               overflow-visible
               transition-all duration-300 hover:-translate-y-2
+              min-h-[400px]
             "
           >
             {/* 
@@ -172,25 +185,38 @@ export default function Features() {
                 
               "
             >
-              <Image src={feat.icon} width={40} height={40} alt="Icon" className="p-1"/>
+              <Image
+                src={feat.icon}
+                width={40}
+                height={40}
+                alt="Icon"
+                className="p-1"
+              />
             </div>
 
             {/* 卡片内容 */}
             <div className="p-6">
               <h3 className="text-xl font-bold mb-4 text-center mx-auto line-clamp-2 whitespace-pre-wrap">
-              {feat.title}
-            </h3>
-            <p className="text-gray-600 mb-12 text-center line-clamp-2">
-              {feat.desc}
-            </p>
+                {lang === "zh" ? feat.title_zh : feat.title_en}
+              </h3>
+              <p className="text-gray-600 mb-12 text-center ">
+                {lang === "zh" ? feat.desc_zh : feat.desc_en}
+              </p>
 
-            <div className="flex justify-center">
-              <Button >
-                {lang === "zh" ? "了解更多" : "Learn More"}
-              </Button>
+              {/* <div className="flex justify-center">
+                <Button>{lang === "zh" ? "了解更多" : "Learn More"}</Button>
+              </div> */}
             </div>
+
+            <div
+              className="absolute 
+                bottom-16 
+                left-1/2 
+                transform 
+                -translate-x-1/2 "
+            >
+              <Button size="lg">{lang === "zh" ? "了解更多" : "Learn More"}</Button>
             </div>
-            
           </div>
         ))}
       </div>

@@ -27,7 +27,14 @@ export default function FindCourse() {
   };
 
   const stateOptions = ["Victoria", "New South Wales", "Queensland"];
-  const gradeOptions = ["Year 7", "Year 8", "Year 9", "Year 10", "Year 11", "Year 12"];
+  const gradeOptions = [
+    "Year 7",
+    "Year 8",
+    "Year 9",
+    "Year 10",
+    "Year 11",
+    "Year 12",
+  ];
   const subjectOptions = ["Math", "Science", "English", "History"];
 
   const handleSearch = () => {
@@ -35,7 +42,7 @@ export default function FindCourse() {
   };
 
   return (
-    // 最外层容器，撑满页面可用宽度 
+    // 最外层容器，撑满页面可用宽度
     <div className="w-full px-4 py-2">
       {/* 使用grid布局，小屏幕1列，中屏幕5列 */}
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
@@ -87,8 +94,19 @@ export default function FindCourse() {
         </Select>
 
         {/* 5. Search 按钮 */}
-        <Button onClick={handleSearch} variant="outline" className="shadow-lg w-9 h-9 p-0 flex items-center justify-center bg-primary">
-          <Image src="/home/search icon.png" alt="Search" width={20} height={20} />
+        <Button
+          onClick={handleSearch}
+          // variant="outline"
+          size="icon"
+          className="bg-primary hover:bg-secondary text-white border border-white"
+        >
+          <Image
+            src="/home/search icon.png"
+            alt="Search"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
         </Button>
       </div>
     </div>
