@@ -48,8 +48,8 @@ export default function Footer() {
           <h4 className="text-xl font-semibold mb-3">
             {lang === "zh" ? "联系我们" : "Contact Us"}
           </h4>
-          <p className="text-sm">Email: info@austinedu.com</p>
-          <p className="text-sm">Phone: +61 0123 456 789</p>
+          <p className="text-sm text-gray-100">Email: info@austinedu.com</p>
+          <p className="text-sm text-gray-100">Phone: +61 0123 456 789</p>
           <div className="mt-3 space-x-3">
             <a
               href="#"
