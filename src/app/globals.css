@@ -38,9 +38,9 @@
   --radius: 0.625rem;
   --background: oklch(96.29% 0 243.93);
   --foreground: oklch(0.129 0.042 264.695);
-  --card: oklch(1 0 0);
+  --card: oklch(96.29% 0 243.93);
   --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
+  --popover: oklch(96.29% 0 243.93);
   --popover-foreground: oklch(0.129 0.042 264.695);
   --primary: oklch(0.208 0.042 265.755);
   --primary-foreground: oklch(0.984 0.003 247.858);
@@ -103,6 +103,30 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-.default-p {
-  @apply text-neutral-500;
+@layer components {
+  /* 段落文本 */
+  .default-p {
+    @apply text-neutral-500;
+    @apply text-sm sm:text-base;
+  }
+
+  /* 列表文本 */
+  .default-li {
+    @apply text-neutral-500;
+    @apply text-sm sm:text-base md:text-base lg:text-lg xl:text-lg 2xl:text-xl;
+  }
+
+  /* 一级标题 */
+  .default-h1 {
+    @apply font-bold text-neutral-900;
+    @apply text-3xl md:text-4xl xl:text-[42px] 2xl:text-5xl;
+  }
+
+  /* 二级标题 */
+  .default-h2 {
+    @apply font-semibold text-neutral-800;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl;
+  }
 }
+
+

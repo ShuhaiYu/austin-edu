@@ -4,7 +4,6 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import { createContext, useState } from "react";
 import "./globals.css";
-import "@flaticon/flaticon-uicons/css/all/all.css";
 import { Toaster } from "@/components/ui/sonner"
 
 
@@ -22,7 +21,7 @@ export default function RootLayout({ children }) {
       <body className="bg-background text-gray-900">
         <LangContext.Provider value={{ lang, setLang }}>
           <NavBar />
-          <main className="flex-1">
+          <main className="flex-1 mt-32 md:mt-24">
             <div className="container mx-auto px-4">{children}</div>
           </main>
           <Toaster />

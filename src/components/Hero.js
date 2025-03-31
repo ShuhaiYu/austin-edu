@@ -33,12 +33,12 @@ export default function Hero() {
         {/* 左侧文字区域 */}
         <div className="space-y-6">
           <h1 className="font-bold leading-tight text-left
-                    text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl
+                    default-h1
                     whitespace-normal">
             <span className="block">{content.title}</span>
           </h1>
 
-          <p className="leading-relaxed text-left lg:text-justify text-sm sm:text-base text-gray-600">
+          <p className="leading-relaxed text-left lg:text-justify default-p">
             {content.description}
           </p>
 

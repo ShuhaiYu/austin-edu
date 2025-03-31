@@ -7,9 +7,9 @@ export default function Features() {
   const { lang } = useContext(LangContext) || { lang: "en" };
 
   const stats = [
-    { num: "99.95", text: ["ATAR achieved by 6", "of our students."] },
-    { num: "99", text: ["ATAR or above by 46", "of our students"] },
-    { num: "90", text: ["ATAR or above by", "84% of our students"] },
+    { num: "99.95", text: ["ATAR achieved by 6 of our students."] },
+    { num: "99", text: ["ATAR or above by 46 of our students"] },
+    { num: "90", text: ["ATAR or above by 84% of our students"] },
   ];
 
   const features = [
@@ -68,15 +68,15 @@ export default function Features() {
                 />
                 {/* 文字内容 */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-                  <div className="text-3xl sm:text-5xl font-bold mb-2 text-white">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl 2xl:5xl font-bold mb-2 mt-4 md:mt-6 text-white">
                     {stat.num}
                   </div>
-                  <div className="h-[2px] w-16 bg-white mb-4 opacity-50" />
+                  <div className="h-[2px] w-16 bg-white mb-4 opacity-100" />
                   <div className="text-center">
                     {stat.text.map((line, j) => (
                       <div
                         key={j}
-                        className="text-[8px] sm:text-sm font-medium text-white"
+                        className="text-[10px] sm:text-[12px] font-medium text-white"
                       >
                         {line}
                       </div>
@@ -93,22 +93,22 @@ export default function Features() {
           <div className="text-center">
             <h2 className="font-bold leading-tight">
               {/* 行1: "What makes over" */}
-              <div className="text-xl sm:text-2xl 2xl:text-3xl mb-2">
+              <div className="text-lg lg:text-2xl xl:text-lg 2xl:text-xl mb-2">
                 {lang === "zh" ? "为什么超过" : "What makes over"}{" "}
-                <span className="text-3xl sm:text-4xl 2xl:text-5xl">
+                <span className="text-3xl md:text-5xl xl:text-4xl 2xl:text-5xl">
                   10,000
                 </span>{" "}
                 {lang === "zh" ? "名学生选择" : "students choose"}
               </div>
 
               {/* 行2: "AUSTIN EDUCATION" */}
-              <div className="text-3xl md:text-5xl 2xl:text-6xl">
+              <div className="text-3xl md:text-5xl xl:text-4xl 2xl:text-5xl">
                 AUSTIN EDUCATION
               </div>
             </h2>
           </div>
 
-          <ul className="text-gray-600 list-disc list-outside pl-4 space-y-2 text-left w-2/3 xl:w-full mx-auto">
+          <ul className="text-gray-600 list-disc list-outside pl-4 space-y-2 text-left w-2/3 xl:w-full mx-auto text-sm sm:text-base xl:text-sm">
             <li>
               {lang === "zh"
                 ? "澳大利亚最严格筛选的师资团队，超过90%为高分毕业生和学科专家。"
@@ -133,11 +133,11 @@ export default function Features() {
       </div>
 
       {/* Why Choose Austin */}
-      <div className="text-center mb-16 py-8">
-        <h2 className="text-5xl font-bold mb-4 uppercase">
+      <div className="text-center mb-16 py-8 w-[80%] mx-auto">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase">
           {lang === "zh" ? "为什么选择奥斯汀" : "Why Choose Austin"}
         </h2>
-        <p className="text-gray-600 max-w-4xl mx-auto">
+        <p className="default-p max-w-4xl mx-auto">
           {lang === "zh"
             ? "奥斯汀教育以卓越的师资团队、全面的高质量课程和非凡的学习环境而闻名。"
             : "Austin Education is renowned for its outstanding teaching team, comprehensive high-quality course offerings, and exceptional learning environment. As a result, students often affectionately refer to it as their second day school."}
@@ -149,16 +149,15 @@ export default function Features() {
       <div className="flex flex-col xl:flex-row gap-16 xl:gap-8 justify-center items-center">
         {features.map((feat) => (
           <div
-            key={feat.title}
+            key={feat.title_en}
             className="
               relative 
               bg-white 
               rounded-3xl 
               shadow-2xl 
-              transition 
               p-2 
               pt-16 
-              max-w-sm
+              w-[300px]
               overflow-visible
               transition-all duration-300 hover:-translate-y-2
               min-h-[400px]

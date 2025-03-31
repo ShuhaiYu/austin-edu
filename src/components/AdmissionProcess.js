@@ -4,6 +4,7 @@
 import { useState, useContext } from "react";
 import { LangContext } from "@/app/layout";
 import Image from "next/image";
+import { motion, AnimatePresence } from "framer-motion";
 
 // 全部的中英文内容，按 Part 分段
 const steps = [
@@ -209,13 +210,22 @@ export default function AdmissionProcess() {
   const { lang } = useContext(LangContext) || { lang: "en" };
 
   // 初始状态设为-1表示所有步骤默认关闭
-  const [activeSteps, setActiveSteps] = useState(() => steps.map(() => -1));
+  const [activeSteps, setActiveSteps] = useState(() => steps.map(() => 0));
 
   const handleStepClick = (partIndex, stepIndex) => {
     setActiveSteps((prev) => {
       const newActiveSteps = [...prev];
       newActiveSteps[partIndex] =
         prev[partIndex] === stepIndex ? -1 : stepIndex;
+      return newActiveSteps;
+    });
+  };
+
+  // 处理hover事件
+  const handleStepHover = (partIndex, stepIndex) => {
+    setActiveSteps((prev) => {
+      const newActiveSteps = [...prev];
+      newActiveSteps[partIndex] = stepIndex;
       return newActiveSteps;
     });
   };
@@ -232,7 +242,7 @@ export default function AdmissionProcess() {
 
   return (
     <section className="py-4 xl:py-8">
-      <h2 className="text-5xl font-bold text-center mb-12 uppercase">
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 uppercase">
         {lang === "zh" ? "入学服务流程" : "Admission Service Process"}
       </h2>
 
@@ -246,43 +256,52 @@ export default function AdmissionProcess() {
         return (
           <div key={i} className="mb-16">
             {/* Part 标题 */}
-            <div className="relative w-[120px] h-[120px] md:w-[150px] md:h-[150px] mb-8 justify-center mx-auto">
+            <motion.div
+              initial={{ scale: 0.5, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              className="relative w-[120px] h-[120px] md:w-[150px] md:h-[150px] xl:w-[180px] xl:h-[180px] mb-8 justify-center mx-auto"
+            >
               <Image
                 src={`/home/title-bg${part.part}.png`}
                 alt="Part background"
-                width={150}
-                height={150}
+                width={240}
+                height={240}
                 className="object-contain"
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-2xl font-bold text-center">
                 <h1 className="font-bebas mt-4 md:mt-6 text-3xl md:text-4xl uppercase">
                   Part {part.part}
                 </h1>
-                <span className="text-[11px] md:text-sm">{partTitle}</span>
+                <span className="text-[11px] md:text-sm xl:text-base">{partTitle}</span>
               </div>
-            </div>
+            </motion.div>
 
             {/* 分割布局 */}
             <div className="flex w-full relative">
               {/* 左侧 - 描述（只在有选择时显示） */}
+              <AnimatePresence mode="wait">
               {currentStep ? (
-                <div className="w-1/2 ">
-                  <div className="bg-white shadow-2xl mr-8 p-3 md:p-8 ">
-                    {/* <h3 className="text-xl font-bold mb-4 ">
-                      {lang === "zh"
-                        ? currentStep.title.zh
-                        : currentStep.title.en}
-                    </h3> */}
-                    <p className="text-gray-600 whitespace-pre-line text-[10px] md:text-base">
+                <motion.div
+                key={currentStep.step}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: 20 }}
+                transition={{ duration: 0.2 }}
+                className="w-1/2">
+                  <div className="bg-white shadow-2xl mr-8 p-2 sm:p-4 md:p-8 ">
+                    <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base">
                       {lang === "zh"
                         ? currentStep.desc.zh
                         : currentStep.desc.en}
                     </p>
                   </div>
-                </div>
+                </motion.div>
               ) : (
                 <div className="w-1/2"></div>
               )}
+              </AnimatePresence>
 
               {/* 右侧 - 步骤列表 */}
               <div className={`pl-8 relative w-1/2`}>
@@ -317,8 +336,8 @@ export default function AdmissionProcess() {
                         />
 
                         <button
-                          onClick={() => handleStepClick(i, j)}
-                          className={`block w-full text-left p-4 rounded-r-lg transition-all 
+                          onMouseEnter={() => handleStepHover(i, j)}
+                          className={`block w-full text-left p-4 my-16 rounded-r-lg transition-all 
                             ${
                               isActive
                                 ? `${borderColor} border-l-4 bg-gradient-to-r from-white via-${borderColor}/10 to-white`

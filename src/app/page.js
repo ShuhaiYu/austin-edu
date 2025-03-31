@@ -26,7 +26,8 @@ export default function HomePage() {
     },
     zh: {
       heroTitle: "墨尔本领先的一站式辅导服务",
-      heroSubtitle: "Austin Education 提供全面的全科目全年级辅导，帮助学生充分发挥潜能。",
+      heroSubtitle:
+        "Austin Education 提供全面的全科目全年级辅导，帮助学生充分发挥潜能。",
       heroButton: "了解更多",
       whyTitle: "为什么选择 Austin",
       admissionTitle: "入学服务流程",
@@ -41,9 +42,9 @@ export default function HomePage() {
     <div className="flex flex-col items-center">
       {/* Hero 区域 */}
       <section className="w-[80%] mx-auto py-12 px-6 text-center">
-      <div className="container mx-auto">
-        <Hero />
-      </div>
+        <div className="container mx-auto">
+          <Hero />
+        </div>
       </section>
 
       {/* Find a Course */}
@@ -54,7 +55,7 @@ export default function HomePage() {
       </section>
 
       {/* Why Choose Austin: 简化示例 */}
-      <section className="max-w-[80%] py-12 px-6 text-center">
+      <section className="w-full md:max-w-[80%] py-12 px-6 text-center">
         <Features />
       </section>
 
@@ -67,7 +68,9 @@ export default function HomePage() {
 
       {/* Testimonials */}
       <section className="w-full py-12 px-6 ">
-        <h2 className="text-5xl font-bold text-center text-gray-800 mb-8">{t.testimonialTitle}</h2>
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
+          {t.testimonialTitle}
+        </h2>
         <div className="max-w-5xl mx-auto">
           <Testimonials />
         </div>
