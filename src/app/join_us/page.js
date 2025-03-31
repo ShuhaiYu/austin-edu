@@ -92,7 +92,7 @@ export default function JoinUsPage() {
         {/* 左侧图片 */}
         <div className="w-full md:w-1/2">
           <img
-            src="https://via.placeholder.com/600x400"
+            src="https://placehold.co/600x400"
             alt="Placeholder Image"
             className="w-full h-auto"
           />
@@ -118,7 +118,7 @@ export default function JoinUsPage() {
         {/* 右侧图片 */}
         <div className="w-full md:w-1/2 mt-8 md:mt-0">
           <img
-            src="https://via.placeholder.com/600x400"
+            src="https://placehold.co/600x400"
             alt="Placeholder Image"
             className="w-full h-auto"
           />

@@ -93,9 +93,9 @@ export default function Features() {
           <div className="text-center">
             <h2 className="font-bold leading-tight">
               {/* 行1: "What makes over" */}
-              <div className="text-lg lg:text-2xl xl:text-lg 2xl:text-xl mb-2">
+              <div className="text-sm sm:text-lg lg:text-2xl xl:text-lg 2xl:text-xl mb-2">
                 {lang === "zh" ? "为什么超过" : "What makes over"}{" "}
-                <span className="text-3xl md:text-5xl xl:text-4xl 2xl:text-5xl">
+                <span className="text-2xl sm:text-3xl md:text-5xl xl:text-4xl 2xl:text-5xl">
                   10,000
                 </span>{" "}
                 {lang === "zh" ? "名学生选择" : "students choose"}
@@ -108,7 +108,7 @@ export default function Features() {
             </h2>
           </div>
 
-          <ul className="text-gray-600 list-disc list-outside pl-4 space-y-2 text-left w-2/3 xl:w-full mx-auto text-sm sm:text-base xl:text-sm">
+          <ul className="text-gray-600 list-disc list-outside pl-4 space-y-2 text-left w-2/3 xl:w-full mx-auto text-sm md:text-base xl:text-sm">
             <li>
               {lang === "zh"
                 ? "澳大利亚最严格筛选的师资团队，超过90%为高分毕业生和学科专家。"
@@ -137,7 +137,7 @@ export default function Features() {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase">
           {lang === "zh" ? "为什么选择奥斯汀" : "Why Choose Austin"}
         </h2>
-        <p className="default-p max-w-4xl mx-auto">
+        <p className="text-sm md:text-base max-w-4xl mx-auto">
           {lang === "zh"
             ? "奥斯汀教育以卓越的师资团队、全面的高质量课程和非凡的学习环境而闻名。"
             : "Austin Education is renowned for its outstanding teaching team, comprehensive high-quality course offerings, and exceptional learning environment. As a result, students often affectionately refer to it as their second day school."}

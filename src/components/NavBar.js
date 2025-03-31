@@ -1,7 +1,7 @@
 "use client";
 
 import { useContext, useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { LangContext } from "@/app/layout";
 import LanguageSwitcher from "./LanguageSwitcher";
@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { AlignJustify } from "lucide-react";
 
 const menuItems = [
-  { key: "home", label_en: "Home", label_zh: "首页", href: "/home" },
+  { key: "home", label_en: "Home", label_zh: "首页", href: "/" },
   {
     key: "achievements",
     label_en: "Achievements",
@@ -47,20 +47,46 @@ const menuItems = [
 export default function Header() {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const router = useRouter();
+  const pathname = usePathname(); // 获取当前路径
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  // 用于检测滚动方向
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [scrollDirection, setScrollDirection] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 100;
-      setIsScrolled(scrolled);
+      const currentScrollY = window.scrollY;
+      
+      // 检测滚动方向
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection('down');
+      } else if (currentScrollY < lastScrollY) {
+        setScrollDirection('up');
+      }
+      
+      // 更新最后滚动位置
+      setLastScrollY(currentScrollY);
+      
+      // 当滚动到顶部时强制显示
+      if (currentScrollY < 10) {
+        setIsScrolled(false);
+      }
     };
 
-    // 添加防抖处理
     const debouncedScroll = throttle(handleScroll, 100);
-    window.addEventListener("scroll", debouncedScroll);
-    return () => window.removeEventListener("scroll", debouncedScroll);
-  }, []);
+    window.addEventListener('scroll', debouncedScroll);
+    return () => window.removeEventListener('scroll', debouncedScroll);
+  }, [lastScrollY]);
+
+  // 根据滚动方向控制显示
+  useEffect(() => {
+    if (scrollDirection === 'up' && lastScrollY > 100) {
+      setIsScrolled(false);
+    } else if (scrollDirection === 'down' && lastScrollY > 100) {
+      setIsScrolled(true);
+    }
+  }, [scrollDirection, lastScrollY]);
 
   // 节流函数
   function throttle(fn, wait) {
@@ -84,10 +110,12 @@ export default function Header() {
         <div className="w-[80%] mx-auto">
           <div className="container mx-auto flex h-16 items-center justify-between px-4">
             {/* 左侧 Logo */}
-            <div className="flex items-center gap-2">
-              <div className="h-8 w-8 rounded bg-primary" />
-              <span className="text-xl font-bold">Austin</span>
-            </div>
+            <Link href="/" className="flex items-center gap-2">
+              <>
+                <div className="h-8 w-8 rounded bg-primary" />
+                <span className="text-xl font-bold">Austin</span>
+              </>
+            </Link>
 
             {/* 右侧：语言切换 & 用户按钮 */}
             <div className="flex items-center gap-4">
@@ -132,8 +160,10 @@ export default function Header() {
               <nav className="bg-white shadow-xl rounded-b-2xl">
                 <div className="flex flex-col space-y-2 p-4">
                   {menuItems.map((item) => {
-                    // 示例：这里简单将 "home" 作为激活项，实际可根据路由判断
-                    const isActive = item.key === "home";
+                    const isActive =
+                      item.href === "/"
+                        ? pathname === item.href
+                        : pathname.startsWith(item.href);
                     return (
                       <Link
                         key={item.key}
@@ -160,7 +190,10 @@ export default function Header() {
           <nav className="hidden md:block mx-auto py-4">
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
               {menuItems.map((item) => {
-                const isActive = item.key === "home"; // 替换成实际激活逻辑
+                const isActive =
+                item.href === "/"
+                  ? pathname === item.href
+                  : pathname.startsWith(item.href);
                 return (
                   <Link
                     key={item.key}

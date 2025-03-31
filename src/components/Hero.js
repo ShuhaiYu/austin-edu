@@ -27,13 +27,13 @@ export default function Hero() {
   }[lang];
 
   return (
-    <section className="container py-2 md:py-16">
+    <section className="container py-2">
       {/* 两列布局：左文字 + 右图 */}
-      <div className="grid md:grid-cols-2 gap-8 items-center">
+      <div className="grid lg:grid-cols-2 gap-8 items-center">
         {/* 左侧文字区域 */}
         <div className="space-y-6">
           <h1 className="font-bold leading-tight text-left
-                    default-h1
+                    text-[28px] sm:text-4xl md:text-5xl lg:text-4xl xl:text-[42px] 2xl:text-5xl;
                     whitespace-normal">
             <span className="block">{content.title}</span>
           </h1>
