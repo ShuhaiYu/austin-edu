@@ -120,7 +120,7 @@ export default function Header() {
             {/* 右侧：语言切换 & 用户按钮 */}
             <div className="flex items-center gap-4">
               <LanguageSwitcher />
-              <Button className="gap-2">
+              <Button className="gap-2" onClick={() => router.push("/my_austin")}>
                 {lang === "zh" ? "我的账户" : "My Austin"}
               </Button>
             </div>

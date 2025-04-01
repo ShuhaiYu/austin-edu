@@ -274,7 +274,9 @@ export default function AdmissionProcess() {
                 <h1 className="font-bebas mt-4 md:mt-6 text-3xl md:text-4xl uppercase">
                   Part {part.part}
                 </h1>
-                <span className="text-[11px] md:text-sm xl:text-base">{partTitle}</span>
+                <span className="text-[11px] md:text-sm xl:text-base">
+                  {partTitle}
+                </span>
               </div>
             </motion.div>
 
@@ -282,25 +284,26 @@ export default function AdmissionProcess() {
             <div className="flex w-full relative">
               {/* 左侧 - 描述（只在有选择时显示） */}
               <AnimatePresence mode="wait">
-              {currentStep ? (
-                <motion.div
-                key={currentStep.step}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: 20 }}
-                transition={{ duration: 0.2 }}
-                className="w-1/2">
-                  <div className="bg-white shadow-2xl mr-8 p-2 sm:p-4 md:p-8 ">
-                    <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base">
-                      {lang === "zh"
-                        ? currentStep.desc.zh
-                        : currentStep.desc.en}
-                    </p>
-                  </div>
-                </motion.div>
-              ) : (
-                <div className="w-1/2"></div>
-              )}
+                {currentStep ? (
+                  <motion.div
+                    key={currentStep.step}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    exit={{ opacity: 0, x: 20 }}
+                    transition={{ duration: 0.2 }}
+                    className="w-1/2"
+                  >
+                    <div className="bg-white shadow-2xl mr-8 p-2 sm:p-4 md:p-8 ">
+                      <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base">
+                        {lang === "zh"
+                          ? currentStep.desc.zh
+                          : currentStep.desc.en}
+                      </p>
+                    </div>
+                  </motion.div>
+                ) : (
+                  <div className="w-1/2"></div>
+                )}
               </AnimatePresence>
 
               {/* 右侧 - 步骤列表 */}

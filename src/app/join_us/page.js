@@ -163,7 +163,7 @@ export default function JoinUsPage() {
           </Accordion>
         </div>
 
-        {/* 右侧：在线申请表（使用 shadcn 组件构建） */}
+        {/* 右侧：在线申请表 */}
         <div className="w-full md:w-1/2 mt-8 md:mt-0">
           <h2 className="text-3xl font-bold mb-6">
             {lang === "en" ? "Online Job Application Form" : "在线申请表"}

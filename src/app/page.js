@@ -41,21 +41,21 @@ export default function HomePage() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero 区域 */}
-      <section className="w-[80%] mx-auto py-12 px-6 text-center">
+      <section className="py-12 px-6 text-center">
         <div className="container mx-auto">
           <Hero />
         </div>
       </section>
 
       {/* Find a Course */}
-      <section className="w-[80%] bg-primary text-white py-6 px-4 rounded-4xl">
+      <section className=" bg-primary text-white py-6 px-4 rounded-4xl">
         <div className="container mx-auto">
           <FindCourse />
         </div>
       </section>
 
       {/* Why Choose Austin: 简化示例 */}
-      <section className="w-full md:max-w-[80%] py-12 px-6 text-center">
+      <section className="py-12 px-6 text-center">
         <Features />
       </section>
 
