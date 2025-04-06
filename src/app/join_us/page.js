@@ -725,7 +725,7 @@ export default function JoinUsPage() {
    */
   function renderField(field) {
     const commonClassNames =
-      "bg-primary-foreground text-gray-800 placeholder:text-gray-400 text-sm md:text-base";
+      "bg-primary-foreground text-gray-800 placeholder:text-gray-400 placeholder:text-sm text-sm md:text-base";
     // 生成带星号的placeholder
     const placeholderText = field.required ? `${field.label} *` : field.label;
 
