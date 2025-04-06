@@ -724,10 +724,11 @@ export default function JoinUsPage() {
    * - 给表单控件添加 className，确保背景、文字、placeholder 等符合需求
    */
   function renderField(field) {
-    const commonClassNames = "bg-primary-foreground text-gray-800 placeholder:text-gray-400";
+    const commonClassNames =
+      "bg-primary-foreground text-gray-800 placeholder:text-gray-400 text-sm md:text-base";
     // 生成带星号的placeholder
     const placeholderText = field.required ? `${field.label} *` : field.label;
-  
+
     switch (field.type) {
       case "select": {
         return (
@@ -745,7 +746,7 @@ export default function JoinUsPage() {
           </Select>
         );
       }
-  
+
       case "text": {
         return (
           <Textarea
@@ -756,7 +757,7 @@ export default function JoinUsPage() {
           />
         );
       }
-  
+
       default: {
         return (
           <Input
@@ -772,14 +773,14 @@ export default function JoinUsPage() {
   }
 
   return (
-    <div className="container mx-auto px-4 py-12 space-y-16">
+    <div className="container mx-auto px-4 py-8 md:py-12 space-y-12 md:space-y-16">
       {/* 页面标题 */}
       <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">{t.title}</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">{t.title}</h1>
       </div>
 
       {/* 1. 左右布局：左边图片，右边文字 */}
-      <section className="flex flex-col md:flex-row items-center md:space-x-8">
+      <section className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0">
         {/* 左侧图片 */}
         <div className="w-full md:w-1/2">
           <Image
@@ -790,45 +791,66 @@ export default function JoinUsPage() {
           />
         </div>
         {/* 右侧文字 */}
-        <div className="w-full md:w-1/2 mt-8 md:mt-0">
-          <h2 className="text-3xl font-bold mb-4">{t.section1.heading}</h2>
-          <p className="text-base mb-6">{t.section1.desc}</p>
-          <div className="flex space-x-4">
-            <Button>{t.section1.button1}</Button>
-            <Button variant="outline">{t.section1.button2}</Button>
+        <div className="w-full md:w-1/2 space-y-4 px-2 md:px-0">
+          <h2 className="text-2xl md:text-3xl font-bold">
+            {t.section1.heading}
+          </h2>
+          <p className="text-sm md:text-base leading-relaxed">
+            {t.section1.desc}
+          </p>
+          <div className="flex flex-col md:flex-row gap-3">
+            <Button className="text-sm md:text-base">
+              {t.section1.button1}
+            </Button>
+            <Button variant="outline" className="text-sm md:text-base">
+              {t.section1.button2}
+            </Button>
           </div>
         </div>
       </section>
 
-      {/* 2. 左右布局：左边文字，右边图片 */}
-      <section className="flex flex-col md:flex-row items-center md:space-x-8">
+      {/* 2. 文字+图片区块 */}
+      <section className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0">
         {/* 左侧文字 */}
-        <div className="w-full md:w-1/2">
-          <h2 className="text-3xl font-bold mb-4">{t.section2.heading}</h2>
-          <p className="text-base mb-6">{t.section2.desc}</p>
+        <div className="w-full md:w-1/2 space-y-4 px-2 md:px-0 order-2 md:order-1">
+          <h2 className="text-2xl md:text-3xl font-bold">
+            {t.section2.heading}
+          </h2>
+          <p className="text-sm md:text-base leading-relaxed whitespace-pre-line">
+            {t.section2.desc}
+          </p>
         </div>
         {/* 右侧图片 */}
-        <div className="w-full md:w-1/2 mt-8 md:mt-0">
+        <div className="w-full md:w-1/2 order-1 md:order-2">
           <Image
             src="/join_us/2.png"
             alt="Placeholder Image"
             width={600}
             height={400}
+            priority
           />
         </div>
       </section>
 
       {/* 3. 左右布局：职位列表 + 申请表 */}
-      <section className="flex flex-col md:flex-row items-start md:space-x-8">
+      <section className="flex flex-col md:flex-row items-start gap-8">
         {/* 左侧：职位列表（Accordion 格式） */}
-        <div className="w-full md:w-1/2">
+        <div className="w-full md:w-1/2 pb-12">
           <h2 className="text-3xl font-bold mb-6">{t.positions.title}</h2>
           <Accordion type="multiple" className="space-y-4">
             {t.positions.list.map((position, index) => (
-              <AccordionItem key={index} value={`item-${index}`}>
-                <AccordionTrigger>{position.title}</AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-4">
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="px-3"
+              >
+                <AccordionTrigger className="py-3 text-left">
+                  <span className="text-base md:text-lg font-medium">
+                    {position.title}
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="pb-2 pt-1">
+                  <div className="space-y-3 text-sm md:text-base">
                     <div>
                       <h4 className="font-bold mb-2">
                         {lang === "en" ? "Responsibilities" : "工作职责"}
@@ -857,9 +879,9 @@ export default function JoinUsPage() {
         </div>
 
         {/* 右侧：在线申请表 */}
-        <div className="w-full md:w-1/2 mt-8 md:mt-0">
+        <div className="w-full md:w-1/2 sticky top-4">
           <h2 className="text-3xl font-bold mb-6">{t.form.title}</h2>
-          <form className="space-y-6 bg-card p-8 rounded-lg shadow-lg bg-primary text-primary-foreground">
+          <form className="space-y-4 bg-card p-4 md:p-8 rounded-lg shadow-lg bg-primary text-primary-foreground">
             {t.form.sections.map((section) => (
               <div key={section.id} className="space-y-4">
                 <h3 className="text-xl font-semibold border-b pb-2">
@@ -870,7 +892,7 @@ export default function JoinUsPage() {
                 {["personalInformation", "positionAppliedFor"].includes(
                   section.id
                 ) || section.id === "educationalBackground" ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     {section.fields
                       // 教育背景特殊处理前四个
                       .filter(
@@ -890,9 +912,7 @@ export default function JoinUsPage() {
                             field.type === "select-multiple" ? "col-span-2" : ""
                           }
                         >
-                          <div className="space-y-2">
-                            {renderField(field)}
-                          </div>
+                          <div className="space-y-2">{renderField(field)}</div>
                         </div>
                       ))}
 
@@ -911,7 +931,7 @@ export default function JoinUsPage() {
                         .map((field) => (
                           <div
                             key={field.name}
-                            className="col-span-2 space-y-2"
+                            className="col-span-1 md:col-span-2 space-y-2"
                           >
                             {renderField(field)}
                           </div>
@@ -931,7 +951,10 @@ export default function JoinUsPage() {
             ))}
 
             <div className="flex justify-start mt-6">
-              <Button type="submit" className="w-full sm:w-auto bg-red-700 text-white hover:bg-red-900">
+              <Button
+                type="submit"
+                className="w-full md:w-auto bg-red-700 text-white hover:bg-red-900"
+              >
                 {t.form.submitButtonLabel}
               </Button>
             </div>

@@ -239,7 +239,7 @@ export default function FAQ() {
 
                 <Button
                   type="submit"
-                  className="w-full bg-red-500 hover:bg-red-600 text-primary-foreground font-semibold"
+                  className="w-full bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold"
                 >
                   {submitButton}
                 </Button>
