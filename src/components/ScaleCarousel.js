@@ -55,11 +55,10 @@ const ScaleCarousel = ({ items }) => {
           return (
             <CarouselItem
               key={index}
-              className="pl-4 basis-full lg:basis-1/3"
+              className="pl-2 basis-full lg:basis-1/3"
             >
               <div
                 className={`
-                    p-2 
                     transition-transform duration-300 
                     ${isCenter ? "scale-105 z-10" : "scale-95 opacity-70"}
                   `}
