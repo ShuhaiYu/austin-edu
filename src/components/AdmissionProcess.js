@@ -233,9 +233,9 @@ export default function AdmissionProcess() {
   // 根据 partIndex 获取颜色配置
   const getColorConfig = (partIndex) => {
     const colors = [
-      { dot: "bg-blue-500", border: "border-blue-500" },
-      { dot: "bg-red-500", border: "border-red-500" },
-      { dot: "bg-orange-500", border: "border-orange-500" },
+      { dot: "bg-[#4664aa]", border: "border-[#4664aa]" },
+      { dot: "bg-[#c12731]", border: "border-[#c12731]" },// red
+      { dot: "bg-[#dfb67e]", border: "border-[#dfb67e]" },
     ];
     return colors[partIndex % 3];
   };

@@ -22,6 +22,7 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
+import FAQ from "@/components/FAQ";
 
 const content = {
   en: {
@@ -912,7 +913,15 @@ export default function JoinUsPage() {
                             field.type === "select-multiple" ? "col-span-2" : ""
                           }
                         >
-                          <div className="space-y-2">{renderField(field)}</div>
+                          <div className="space-y-2">
+                            <Label>
+                              {field.label}
+                              {field.required && (
+                                <span className="text-red-500"> *</span>
+                              )}
+                            </Label>
+                            {renderField(field)}
+                          </div>
                         </div>
                       ))}
 
@@ -933,6 +942,12 @@ export default function JoinUsPage() {
                             key={field.name}
                             className="col-span-1 md:col-span-2 space-y-2"
                           >
+                            <Label>
+                              {field.label}
+                              {field.required && (
+                                <span className="text-red-500"> *</span>
+                              )}
+                            </Label>
                             {renderField(field)}
                           </div>
                         ))}
@@ -942,6 +957,13 @@ export default function JoinUsPage() {
                   <div className="space-y-4">
                     {section.fields.map((field) => (
                       <div key={field.name} className="space-y-2">
+                        <Label>
+                          {field.label}
+                          {field.required && (
+                            <span className="text-red-500"> *</span>
+                          )}
+                        </Label>
+
                         {renderField(field)}
                       </div>
                     ))}
@@ -960,7 +982,9 @@ export default function JoinUsPage() {
             </div>
           </form>
         </div>
+        
       </section>
+      <FAQ /> {/* FAQ 组件放在这里 */}
     </div>
   );
 }

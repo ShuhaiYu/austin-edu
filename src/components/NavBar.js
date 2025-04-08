@@ -107,7 +107,7 @@ export default function Header() {
           isScrolled ? "-translate-y-full" : "translate-y-0"
         }`}
       >
-        <div className="w-[80%] mx-auto">
+        <div className="w-[95%] max-w-screen-2xl mx-auto">
           <div className="container mx-auto flex h-16 items-center justify-between px-4">
             {/* 左侧 Logo */}
             <Link href="/" className="flex items-center gap-2">
@@ -134,7 +134,7 @@ export default function Header() {
           isScrolled ? "top-0" : "top-16"
         } transition-all duration-300  z-40`}
       >
-        <div className="w-[80%] mx-auto bg-white shadow-xl">
+        <div className="w-[95%] max-w-screen-2xl mx-auto bg-white shadow-xl">
           {/* 移动端菜单按钮和小屏菜单 */}
           {/* 小屏：菜单按钮和折叠菜单容器 */}
           <div className="md:hidden relative">

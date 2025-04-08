@@ -19,13 +19,13 @@ const i18nContent = {
   myAustin: {
     en: {
       hero: {
-        title: "Austin Education LMS System",
-        desc: "Experience our state-of-the-art Learning Management System designed to empower students and educators.",
+        title: "Austin Education Homework System",
+        desc: "At Austin Education, we go beyond high-quality courses by offering a powerful, intelligent, and efficient homework system designed to support students at every step of their learning journey.",
         button: "Access My Austin",
       },
       slider: {
-        title: 'Platform Features',
-        desc: 'Discover key functionalities',
+        title: 'Diverse Practice Types, Aligned with Learning Stages',
+        desc: 'Austin Education’s homework system offers a variety of question types, including multiple-choice, fill-in-the-blank, short-answer, and writing tasks, tailored to different learning stages to help students improve comprehensively.',
         items: [
           { image: 'https://placehold.co/600x400', title: 'Dashboard' },
           { image: 'https://placehold.co/600x400', title: 'Analytics' },
@@ -49,7 +49,7 @@ const i18nContent = {
             desc: `Detailed description for advanced feature ${i + 1}`,
           })),
         centered: {
-          title: "Core Platform",
+          title: "Structured Course Planning for Clear Learning Progress",
           desc: "Centralized learning management interface",
         },
       },
@@ -60,9 +60,9 @@ const i18nContent = {
     },
     zh: {
       hero: {
-        title: "奥斯汀教育管理系统",
-        desc: "体验我们专为学生和教师设计的先进学习管理系统。",
-        button: "进入我的奥斯汀",
+        title: "Austin Education 作业系统",
+        desc: "在 Austin Education，我们不仅提供优质的课程，更打造了一套功能强大、智能高效的作业系统。帮助学生提升学习效率，精准攻克难题。",
+        button: "进入作业系统",
       },
       slider: {
         title: '平台功能',

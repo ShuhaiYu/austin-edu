@@ -41,44 +41,47 @@ export default function HomePage() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero 区域 */}
-      <section className="py-12 px-6 text-center">
-        <div className="container mx-auto">
+      <section className="w-full py-12 px-[clamp(1rem,3vw,3rem)]">
+        <div className="w-full mx-auto">
           <Hero />
         </div>
       </section>
 
       {/* Find a Course */}
-      <section className=" bg-primary text-white py-6 px-4 rounded-4xl">
-        <div className="container mx-auto">
+      <section className=" bg-primary text-white py-6 rounded-4xl w-full px-[clamp(1rem,3vw,3rem)]">
+        <div className="w-full px-4 mx-auto">
           <FindCourse />
         </div>
       </section>
 
       {/* Why Choose Austin: 简化示例 */}
-      <section className="py-12 px-6 text-center">
+      <section className="w-full py-12 px-[clamp(1rem,3vw,3rem)]">
+        <div className="w-full mx-auto">
         <Features />
+        </div>
       </section>
 
       {/* Admission Service Process */}
-      <section className="w-full py-12 px-6 ">
-        <div className="max-w-5xl mx-auto">
+      <section className="w-full py-12 px-[clamp(1rem,3vw,3rem)]">
+        <div className="w-full mx-auto">
           <AdmissionProcess />
         </div>
       </section>
+      
 
       {/* Testimonials */}
       <section className="w-full py-12 px-6 ">
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
           {t.testimonialTitle}
         </h2>
-        <div className="max-w-5xl mx-auto">
+        <div className="w-full px-4">
           <Testimonials />
         </div>
       </section>
 
       {/* FAQ: 如果需要放置，可以在此添加相应内容 */}
-      <section className="w-full py-12 px-6 text-center">
-        <div className="max-w-4xl mx-auto">
+      <section className="w-full py-12 px-[clamp(1rem,3vw,3rem)]">
+        <div className="w-full mx-auto">
           <FAQ />
         </div>
       </section>

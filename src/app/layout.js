@@ -21,8 +21,8 @@ export default function RootLayout({ children }) {
       <body className="bg-background text-gray-900">
         <LangContext.Provider value={{ lang, setLang }}>
           <NavBar />
-          <main className="flex-1 mt-32 md:mt-40 w-[80%] mx-auto">
-            <div className="container mx-auto px-4">{children}</div>
+          <main className="flex-1 mt-32 md:mt-40 mx-auto w-[95%] max-w-screen-2xl px-4" >
+            <div className="w-full px-4">{children}</div>
           </main>
           <Toaster />
           <Footer />

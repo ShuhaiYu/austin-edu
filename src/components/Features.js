@@ -67,8 +67,8 @@ export default function Features() {
                   className="object-contain drop-shadow-lg"
                 />
                 {/* 文字内容 */}
-                <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-                  <div className="text-2xl sm:text-3xl lg:text-4xl 2xl:5xl font-bold mb-2 mt-4 md:mt-6 text-white">
+                {/* <div className="absolute inset-0 flex flex-col items-center justify-center p-4 xl:p-2">
+                  <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-bold mb-2 mt-4 md:mt-6 2xl:mt-0 text-white">
                     {stat.num}
                   </div>
                   <div className="h-[2px] w-16 bg-white mb-4 opacity-100" />
@@ -76,17 +76,18 @@ export default function Features() {
                     {stat.text.map((line, j) => (
                       <div
                         key={j}
-                        className="text-[10px] sm:text-[12px] font-medium text-white"
+                        className="text-[10px] sm:text-[12px] xl:text-lg font-medium text-white"
                       >
                         {line}
                       </div>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           ))}
         </div>
+        
 
         {/* 右侧文字区 */}
         <div className="space-y-6 mx-auto">
