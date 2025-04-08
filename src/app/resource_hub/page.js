@@ -1,6 +1,5 @@
 // app/resource-hub/page.tsx
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Calendar } from "@/components/ui/calendar";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
@@ -59,7 +58,6 @@ export default function ResourceHub() {
             <div className="bg-card rounded-xl p-8 shadow-lg">
               <h2 className="text-2xl font-bold mb-6">Book Trial Lesson</h2>
               <div className="grid md:grid-cols-2 gap-8">
-                <Calendar mode="single" className="rounded-md border" />
                 <div className="space-y-6">
                   <Input placeholder="Select Subject" />
                   <Input placeholder="Preferred Time" type="time" />
