@@ -32,9 +32,11 @@ export default function Hero() {
       <div className="grid lg:grid-cols-2 gap-8 items-center">
         {/* 左侧文字区域 */}
         <div className="space-y-6">
-          <h1 className="font-bold leading-tight text-left
-                    text-[28px] sm:text-4xl md:text-5xl lg:text-4xl xl:text-[42px] 2xl:text-5xl;
-                    whitespace-normal">
+          <h1
+            className="font-bold leading-tight text-left
+                    text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl;
+                    whitespace-normal"
+          >
             <span className="block">{content.title}</span>
           </h1>
 
