@@ -38,6 +38,8 @@
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
 }
 
 

@@ -2,29 +2,32 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { ConsultationTab } from "./components/ConsultationTab";
+import { WebinarTab } from "./components/WebinarTab";
+import FAQ from "@/components/FAQ";
+import { BlogTab } from "./components/BlogTab";
 
 export default function ResourceHub() {
   return (
     <div className="min-h-screen flex flex-col items-center p-8 bg-background">
-      <div className="w-full max-w-6xl">
-        <h1 className="text-4xl font-bold mb-8 text-center">Learning Resources Center</h1>
-
-        <Tabs defaultValue="consultation" className="w-full">
+      <div className="w-full">
+        
+        <Tabs defaultValue="consultation" className="w-full gap-0">
           {/* Tab导航 */}
-          <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full h-auto mb-8">
-            <TabsTrigger value="consultation" className="py-4">
+          <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full h-auto rounded-b-none gap-2 bg-background items-end">
+            <TabsTrigger value="consultation" className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200">
               Free Consultation
             </TabsTrigger>
-            <TabsTrigger value="trial" className="py-4">
+            <TabsTrigger value="trial" className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200">
               Trial Lesson
             </TabsTrigger>
-            <TabsTrigger value="webinar" className="py-4">
+            <TabsTrigger value="webinar" className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200">
               Free Webinar
             </TabsTrigger>
-            <TabsTrigger value="atar" className="py-4">
+            <TabsTrigger value="atar" className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200">
               ATAR Calculator
             </TabsTrigger>
-            <TabsTrigger value="blogs" className="py-4">
+            <TabsTrigger value="blogs" className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200">
               Blogs
             </TabsTrigger>
           </TabsList>
@@ -32,36 +35,18 @@ export default function ResourceHub() {
           {/* 各Tab内容 */}
           {/* 免费咨询 */}
           <TabsContent value="consultation">
-            <div className="bg-card rounded-xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold mb-6">
-                Book Free Consultation
-              </h2>
-              <form className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Input placeholder="Student Name" />
-                <Input placeholder="Email" type="email" />
-                <Input placeholder="Phone Number" type="tel" />
-                <Input placeholder="Preferred Date" type="date" />
-                <div className="md:col-span-2">
-                  <textarea
-                    className="w-full p-3 rounded-lg border"
-                    rows={4}
-                    placeholder="Additional Notes"
-                  />
-                </div>
-                <Button className="md:col-span-2">Submit Request</Button>
-              </form>
-            </div>
+            <ConsultationTab />
           </TabsContent>
 
           {/* 试听课预约 */}
           <TabsContent value="trial">
-            <div className="bg-card rounded-xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold mb-6">Book Trial Lesson</h2>
-              <div className="grid md:grid-cols-2 gap-8">
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <h2 className="text-2xl font-bold mb-6 text-center">Book Trial Lesson</h2>
+              <div className="grid md:grid-cols-1 gap-8">
                 <div className="space-y-6">
                   <Input placeholder="Select Subject" />
                   <Input placeholder="Preferred Time" type="time" />
-                  <Button className="w-full">Confirm Booking</Button>
+                  <Button >Confirm Booking</Button>
                 </div>
               </div>
             </div>
@@ -69,26 +54,13 @@ export default function ResourceHub() {
 
           {/* 在线研讨会 */}
           <TabsContent value="webinar">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {[1, 2, 3].map((item) => (
-                <div key={item} className="bg-card rounded-xl p-6 shadow-lg">
-                  <div className="aspect-video bg-muted rounded-lg mb-4" />
-                  <h3 className="font-bold text-lg mb-2">
-                    VCE Preparation Webinar
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Wed, 25 Sep 2024 · 7:00 PM AEST
-                  </p>
-                  <Button className="w-full">Register Now</Button>
-                </div>
-              ))}
-            </div>
+            <WebinarTab />
           </TabsContent>
 
           {/* ATAR计算器 */}
           <TabsContent value="atar">
-            <div className="bg-card rounded-xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold mb-6">ATAR Calculator</h2>
+            <div className="bg-white rounded-xl p-8 shadow-lg">
+              <h2 className="text-2xl font-bold mb-6 text-center">ATAR Calculator</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-4">
                   <Input placeholder="English Score" type="number" />
@@ -111,35 +83,12 @@ export default function ResourceHub() {
 
           {/* 博客文章 */}
           <TabsContent value="blogs">
-            <div className="grid gap-6">
-              {[1, 2, 3].map((item) => (
-                <article
-                  key={item}
-                  className="bg-card rounded-xl p-6 shadow-lg"
-                >
-                  <div className="flex gap-6">
-                    <div className="w-32 h-32 bg-muted rounded-lg flex-shrink-0" />
-                    <div>
-                      <h3 className="text-xl font-bold mb-2">
-                        How to Prepare for VCE Exams
-                      </h3>
-                      <p className="text-muted-foreground line-clamp-2 mb-4">
-                        Essential strategies and tips for VCE exam success...
-                      </p>
-                      <div className="flex items-center text-sm text-muted-foreground">
-                        <span>Sep 15, 2024</span>
-                        <Button variant="link" className="ml-auto">
-                          Read More →
-                        </Button>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-              ))}
-            </div>
+            <BlogTab />
           </TabsContent>
         </Tabs>
+        <FAQ />
       </div>
+      
     </div>
   );
 }
