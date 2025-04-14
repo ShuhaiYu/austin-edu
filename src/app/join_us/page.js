@@ -843,14 +843,14 @@ export default function JoinUsPage() {
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
-                className="px-3"
+                className="px-3 border-b-0"
               >
-                <AccordionTrigger className="py-3 text-left">
+                <AccordionTrigger className="py-3 px-2 text-left bg-white border border-gray-200">
                   <span className="text-base md:text-lg font-medium">
                     {position.title}
                   </span>
                 </AccordionTrigger>
-                <AccordionContent className="pb-2 pt-1">
+                <AccordionContent className="py-2">
                   <div className="space-y-3 text-sm md:text-base">
                     <div>
                       <h4 className="font-bold mb-2">

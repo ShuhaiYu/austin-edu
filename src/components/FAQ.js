@@ -152,9 +152,9 @@ export default function FAQ() {
           <div className="max-w-2xl mx-auto px-4 w-full">
             <Accordion type="multiple" className="space-y-4 ">
               {faqItems.map((item, index) => (
-                <AccordionItem key={`item-${index}`} value={`item-${index}`}>
-                  <AccordionTrigger>{item.question}</AccordionTrigger>
-                  <AccordionContent>{item.answer}</AccordionContent>
+                <AccordionItem key={`item-${index}`} value={`item-${index}`} className="border-b-0">
+                  <AccordionTrigger className="bg-white border border-gray-200 px-2">{item.question}</AccordionTrigger>
+                  <AccordionContent className="mt-2">{item.answer}</AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
