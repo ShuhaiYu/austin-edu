@@ -23,12 +23,12 @@ export const CourseContent = () => {
       {/* 功能卡片 */}
       <div className="grid grid-cols-5 gap-8 mb-24">
         {t.features.map((feature, index) => {
-          const [title, desc] = feature.split(': ');
+          const [title, desc] = feature.split(": ");
           return (
-            <div 
+            <div
               key={title}
               className={`
-                ${index !== 2 ? 'col-span-2' : 'col-span-2 col-start-2'}
+                ${index !== 2 ? "col-span-2" : "col-span-2 col-start-2"}
                 transition-all hover:scale-105
               `}
             >
@@ -43,41 +43,54 @@ export const CourseContent = () => {
 
       {/* 年级Tabs */}
       <Tabs defaultValue="y1-y6">
-        {/* Tab导航带中间蓝线 */}
-        <div className="relative mb-12">
-          <TabsList className="grid grid-cols-3 relative bg-transparent gap-x-8 p-0 h-auto">
-            {t.gradeTabs.map((tab) => (
-              <TabsTrigger 
+        {/* Tab导航带横线 */}
+        <div className="relative mb-16">
+          {/* 蓝色横线 */}
+          <div className="absolute top-1/2 left-0 right-0 h-px bg-blue-500 transform -translate-y-1/2 z-0" />
+
+          <TabsList className="flex w-full bg-transparent p-0 h-auto justify-between">
+            {t.gradeTabs.map((tab, index) => (
+              <div
                 key={tab.value}
-                value={tab.value}
-                className="data-[state=active]:bg-primary data-[state=active]:text-white rounded-[2rem] py-6 text-lg border border-gray-200"
+                className="relative z-10 bg-background px-4" // 添加背景色覆盖横线
               >
-                {tab.label}
-              </TabsTrigger>
+                <TabsTrigger
+                  value={tab.value}
+                  className="data-[state=active]:text-primary data-[state=active]:border-none data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
+               text-lg 
+              min-w-[180px] mx-auto flex justify-center
+                "
+                >
+                  {tab.label}
+                </TabsTrigger>
+              </div>
             ))}
           </TabsList>
-          <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-            <div className="w-1/3 h-px bg-blue-500 mx-auto" />
-          </div>
         </div>
 
         {/* 内容区域 */}
         {t.gradeContents.map((grade) => (
-          <TabsContent key={grade.value} value={grade.value} className="space-y-16">
+          <TabsContent
+            key={grade.value}
+            value={grade.value}
+            className="space-y-16"
+          >
             {grade.contents.map((content, index) => (
-              <div 
+              <div
                 key={content.title}
                 className={`grid grid-cols-2 gap-16 items-center ${
-                  index % 2 === 0 ? '' : 'flex-row-reverse'
+                  index % 2 === 0 ? "" : "flex-row-reverse"
                 }`}
               >
                 {/* 文字描述 */}
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 rounded-full bg-blue-100 text-blue-600">
-                      {content.icon === 'book' && <BookOpenText size={24} />}
-                      {content.icon === 'graduation' && <GraduationCap size={24} />}
-                      {content.icon === 'school' && <School size={24} />}
+                      {content.icon === "book" && <BookOpenText size={24} />}
+                      {content.icon === "graduation" && (
+                        <GraduationCap size={24} />
+                      )}
+                      {content.icon === "school" && <School size={24} />}
                     </div>
                     <h3 className="text-2xl font-bold">{content.title}</h3>
                   </div>

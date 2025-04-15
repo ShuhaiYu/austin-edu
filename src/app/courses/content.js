@@ -48,7 +48,8 @@ export const coursesContent = {
               description:
                 "Develop core learning skills through interactive activities...",
               icon: "book",
-              image: "/images/y1-y6-1.jpg",
+            //   image: "/images/y1-y6-1.jpg",
+            image: "https://placehold.co/600x400",
             },
             // 更多内容...
           ],
