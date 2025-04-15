@@ -2,7 +2,6 @@
 
 import { useContext } from "react";
 import { LangContext } from "@/app/layout";
-import Link from "next/link";
 import Image from "next/image";
 import {
   Accordion,
@@ -796,7 +795,7 @@ export default function JoinUsPage() {
           <h2 className="text-2xl md:text-3xl font-bold">
             {t.section1.heading}
           </h2>
-          <p className="text-sm md:text-base leading-relaxed">
+          <p className="text-sm md:text-base leading-relaxed text-justify whitespace-pre-line text-gray-600">
             {t.section1.desc}
           </p>
           <div className="flex flex-col md:flex-row gap-3">
@@ -817,7 +816,7 @@ export default function JoinUsPage() {
           <h2 className="text-2xl md:text-3xl font-bold">
             {t.section2.heading}
           </h2>
-          <p className="text-sm md:text-base leading-relaxed whitespace-pre-line">
+          <p className="text-sm md:text-base leading-relaxed text-justify whitespace-pre-line text-gray-600">
             {t.section2.desc}
           </p>
         </div>
@@ -881,7 +880,7 @@ export default function JoinUsPage() {
 
         {/* 右侧：在线申请表 */}
         <div className="w-full md:w-1/2 sticky top-4">
-          <h2 className="text-3xl font-bold mb-6">{t.form.title}</h2>
+          <h2 className="text-5xl font-bold mb-6">{t.form.title}</h2>
           <form className="space-y-4 bg-card p-4 md:p-8 rounded-lg shadow-lg bg-primary text-primary-foreground">
             {t.form.sections.map((section) => (
               <div key={section.id} className="space-y-4">

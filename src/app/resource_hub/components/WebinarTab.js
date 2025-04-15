@@ -7,9 +7,9 @@ import MultiSelect from "@/components/multiselect";
 
 const content = {
   en: {
-    title: "Register for Free Webinar",
+    title: "Please leave your details to receive the latest updates on our free Webinar",
     description:
-      "Join our expert-led webinars to gain valuable insights into academic planning and school selection.",
+      "Before you officially start the trial class, we will provide you with a free consultation based on the information you provide, helping you find the most suitable class for your trial.",
     subscriptionTitle:
       "1. Subscription Information (Please fill in either one of these two fields)",
     parentInfo: "Parent / Guardian Information",
@@ -80,7 +80,7 @@ export const WebinarTab = () => {
         {/* Left Text Section */}
         <div className="w-1/3 pr-8 border-r border-gray-200">
           <h2 className="text-2xl font-bold mb-6">{t.title}</h2>
-          <p className="text-muted-foreground">{t.description}</p>
+          <p className="text-muted-foreground text-justify">{t.description}</p>
         </div>
 
         {/* Right Form Section */}

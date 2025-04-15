@@ -1,11 +1,11 @@
 // app/resource-hub/page.tsx
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { ConsultationTab } from "./components/ConsultationTab";
+import { TrialLessonTab } from "./components/TrialLessonTab";
 import { WebinarTab } from "./components/WebinarTab";
 import FAQ from "@/components/FAQ";
 import { BlogTab } from "./components/BlogTab";
+import { ConsultationTab } from "./components/ConsultationTab";
+import { ATARCalculatorTab } from "./components/ATARCalculatorTab";
 
 export default function ResourceHub() {
   return (
@@ -40,16 +40,7 @@ export default function ResourceHub() {
 
           {/* 试听课预约 */}
           <TabsContent value="trial">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold mb-6 text-center">Book Trial Lesson</h2>
-              <div className="grid md:grid-cols-1 gap-8">
-                <div className="space-y-6">
-                  <Input placeholder="Select Subject" />
-                  <Input placeholder="Preferred Time" type="time" />
-                  <Button >Confirm Booking</Button>
-                </div>
-              </div>
-            </div>
+          <TrialLessonTab />
           </TabsContent>
 
           {/* 在线研讨会 */}
@@ -59,26 +50,7 @@ export default function ResourceHub() {
 
           {/* ATAR计算器 */}
           <TabsContent value="atar">
-            <div className="bg-white rounded-xl p-8 shadow-lg">
-              <h2 className="text-2xl font-bold mb-6 text-center">ATAR Calculator</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <Input placeholder="English Score" type="number" />
-                  <Input placeholder="Math Score" type="number" />
-                  <Input placeholder="Science Score" type="number" />
-                  <Input placeholder="Humanities Score" type="number" />
-                </div>
-                <div className="bg-muted rounded-lg p-6 flex items-center justify-center">
-                  <div className="text-center">
-                    <p className="text-sm text-muted-foreground">
-                      Predicted ATAR
-                    </p>
-                    <div className="text-4xl font-bold mt-2">-</div>
-                    <Button className="mt-6">Calculate</Button>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ATARCalculatorTab />
           </TabsContent>
 
           {/* 博客文章 */}

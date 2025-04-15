@@ -242,7 +242,7 @@ const FeatureRow = ({ title, desc, index, lang, image }) => (
     </div>
     <div className="md:w-1/2 space-y-4 mx-12">
       {title && <h3 className="text-2xl font-bold">{title}</h3>}
-      <p className="text-gray-600 whitespace-pre-line">{desc}</p>
+      <p className="text-gray-600 whitespace-pre-line text-justify leading-relaxed">{desc}</p>
     </div>
   </motion.section>
 );
@@ -279,7 +279,7 @@ export default function MyAustinPage() {
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        className="py-20 text-center w-2/3 mx-auto"
+        className="py-20 text-center max-w-2/3 mx-auto"
       >
         <h1 className="text-5xl font-bold mb-4 whitespace-pre-line">
           {i18nContent.myAustin[lang].hero.title}
@@ -332,7 +332,7 @@ export default function MyAustinPage() {
           <h2 className="text-3xl font-bold mb-8 whitespace-pre-line">
             {i18nContent.myAustin[lang].sections.centeredFeature1.title}
           </h2>
-          <p className="text-gray-600 whitespace-pre-line">
+          <p className="text-gray-600 whitespace-pre-line leading-relaxed">
             {i18nContent.myAustin[lang].sections.centeredFeature1.desc}
           </p>
         </div>
@@ -370,7 +370,7 @@ export default function MyAustinPage() {
           <h2 className="text-3xl font-bold mb-8">
             {i18nContent.myAustin[lang].sections.centeredFeature2.title}
           </h2>
-          <p className="text-gray-600 whitespace-pre-line">
+          <p className="text-gray-600 whitespace-pre-line leading-relaxed">
             {i18nContent.myAustin[lang].sections.centeredFeature2.desc}
           </p>
         </div>

@@ -294,7 +294,7 @@ export default function AdmissionProcess() {
                     className="w-1/2"
                   >
                     <div className="bg-white shadow-2xl mr-8 p-2 sm:p-4 md:p-8 ">
-                      <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base">
+                      <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base text-justify">
                         {lang === "zh"
                           ? currentStep.desc.zh
                           : currentStep.desc.en}
