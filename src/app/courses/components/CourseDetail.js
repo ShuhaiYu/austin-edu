@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 export const CourseDetail = () => {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = coursesContent[lang].detail;
-  const [selectedCourse, setSelectedCourse] = useState("");
+  const [selectedCourse, setSelectedCourse] = useState("Y1-6 English Enrichment (Eng/EAL)");
 
   return (
     <div className="flex gap-8 mb-16">
@@ -26,25 +26,25 @@ export const CourseDetail = () => {
               <AccordionItem
                 key={category}
                 value={category}
-                className="rounded-[2rem] border border-gray-200 p-2 mb-4 bg-white"
+                className="gap-4 rounded-[2rem] border border-gray-200 p-2 mb-4 bg-white"
               >
                 <AccordionTrigger
                   className={`rounded-[2rem] border border-gray-200 p-6 ${bgColor} font-semibold hover:bg-primary hover:text-white transition-colors duration-300`}
                 >
                   {category}
                 </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-2 pl-4">
+                <AccordionContent className="">
+                  <ul className="space-y-2 mt-4 pl-4 grid grid-cols-2 list-disc list-inside">
                     {t.courses[category]?.map((course) => (
-                      <button
+                      <li
                         key={course.title}
                         onClick={() => setSelectedCourse(course.title)}
-                        className="text-left hover:text-primary w-full p-2 rounded-lg hover:bg-accent"
+                        className="text-left hover:text-primary w-full p-2 rounded-lg cursor-pointer transition-colors duration-300 hover:bg-blue-50"
                       >
                         {course.title}
-                      </button>
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </AccordionContent>
               </AccordionItem>
             );
@@ -69,7 +69,7 @@ export const CourseDetail = () => {
               </Button>
             <div className="space-y-4">
               <h3 className="text-xl font-semibold">
-                {lang === "en" ? "Program Details" : "课程详情"}
+                {lang === "en" ? "What Does the Program Involve?" : "课程详情"}
               </h3>
               
               <ul className="list-disc pl-6 space-y-2">
