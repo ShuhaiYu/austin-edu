@@ -147,15 +147,34 @@ export const coursesContent = {
               //   image: "/images/y1-y6-1.jpg",
               image: "https://placehold.co/600x400",
             },
-
             {
-              title: "Foundation Building",
+              title: "Consistent Practice and Reinforcement",
               description:
-                "Develop core learning skills through interactive activities...",
-              icon: "book",
+                "A combination of in-class exercises, paper-based homework, and an online assignment system helps students consolidate their learning, strengthen problem-solving skills, and develop logical thinking.",
+              icon: "repeat",
               image: "https://placehold.co/600x400",
             },
-            // 更多内容...
+            {
+              title: "Regular Progress Checks",
+              description:
+                "End-of-term assessments and structured test practice help familiarise students with exam conditions, developing resilience and preparing them for future academic challenges.",
+              icon: "check",
+              image: "https://placehold.co/600x400",
+            },
+            {
+              title: "Exam Preparation and Mock Testing",
+              description:
+                "Structured support is available for key assessments such as NAPLAN, scholarship tests, AEAS, and AMC, helping students refine their exam techniques and build confidence.",
+              icon: "test",
+              image: "https://placehold.co/600x400",
+            },
+            {
+              title: "Parent–School Communication",
+              description:
+                "Regular progress reports and parent–teacher meetings provide insights into students’ learning progress, ensuring a supportive partnership in their education journey.",
+              icon: "communication",
+              image: "https://placehold.co/600x400",
+            },
           ],
         },
         // 其他年级...
@@ -188,8 +207,209 @@ export const coursesContent = {
           },
         ],
         button: {
-          text: "Learn More",
+          text: "Learn More About Our Teachers",
           link: "/about-us",
+          fromColor: "from-blue-500",
+          toColor: "to-blue-700",
+        },
+      },
+      {
+        title: "Visible Learning Outcomes",
+        subtitle: "Progress You Can Observe and Experience",
+        color: "bg-yellow-500/80",
+        textColor: "text-yellow-500/80",
+        advantages: [
+          {
+            title: "Significant Score Improvement",
+            description:
+              "Our data speaks for itself, as our courses have helped numerous students achieve breakthroughs in key exams like VCE, NAPLAN, and scholarship tests.",
+            icon: "Presentation",
+          },
+          {
+            title: "Comprehensive Skill Enhancement",
+            description:
+              "By focusing on problem‑solving techniques, time management, critical thinking, and other essential skills, we help students gain long‑term competitive advantages.",
+            icon: "Presentation",
+          },
+          {
+            title: "Boosted Learning Confidence",
+            description:
+              "Beyond academic achievement, our courses also help students build confidence and a positive mindset, instilling a genuine passion and eagerness for learning.",
+            icon: "Presentation",
+          },
+        ],
+        button: {
+          text: "Learn More About Our Achievements",
+          link: "/achievements",
+          fromColor: "from-yellow-500",
+          toColor: "to-yellow-700",
+        },
+      },
+      {
+        title: "An Effective Teaching Methodology",
+        subtitle: "Combining Structure with Adaptability",
+        color: "bg-red-700/80",
+        textColor: "text-red-700/80",
+        advantages: [
+          {
+            title: "Course Design",
+            description:
+              "Our courses are carefully structured to progress from foundational to advanced levels, ensuring a solid knowledge base and preventing gaps in learning.",
+            icon: "Presentation",
+          },
+          {
+            title: "Diverse Teaching Formats",
+            description:
+              "We offer in‑person classes, interactive online lessons, and blended learning options to cater to different needs, providing flexibility without sacrificing effectiveness.",
+            icon: "Presentation",
+          },
+          {
+            title: "High Interaction",
+            description:
+              "Our classrooms are designed for frequent questions, interactive discussions, practice exercises, and feedback sessions, ensuring deep understanding and engagement.",
+            icon: "Presentation",
+          },
+        ],
+        carousel: {
+          images: [
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+          ],
+        },
+      },
+      {
+        title: "Comprehensive Resource Support",
+        subtitle: "Empowering Every Step of the Learning Journey",
+        color: "bg-primary",
+        textColor: "text-primary",
+        advantages: [
+          {
+            title: "High‑Quality Internal Materials",
+            description:
+              "We've developed exclusive, high‑quality resources and offer abundant supplementary learning materials to reinforce every lesson.",
+            icon: "Presentation",
+          },
+          {
+            title: "Assignments and Practice",
+            description:
+              "Our courses include a diverse range of homework exercises and online assignments to consolidate knowledge and enhance problem‑solving skills.",
+            icon: "Presentation",
+          },
+          {
+            title: "Periodic Assessments",
+            description:
+              "Regular evaluations and full‑scale mock exams help students track progress, adjust strategies, and steadily improve performance.",
+            icon: "Presentation",
+          },
+        ],
+        carousel: {
+          images: [
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+          ],
+        },
+      },
+      {
+        title: "High Satisfaction from Students and Parents",
+        subtitle: "Efficient Learning and Rich Rewards",
+        color: "bg-yellow-500/80",
+        textColor: "text-yellow-500/80",
+        advantages: [
+          {
+            title: "Exceptional Student Experience",
+            description:
+              "Students consistently find our courses engaging and efficient, enjoying both a sense of academic achievement and the thrill of discovering new knowledge.",
+            icon: "Presentation",
+          },
+          {
+            title: "Close Parent–School Communication",
+            description:
+              "Through regular progress reports and parent‑teacher meetings, we provide real‑time feedback and maintain a collaborative partnership in each student’s journey.",
+            icon: "Presentation",
+          },
+          {
+            title: "Outstanding Social Reputation",
+            description:
+              "With years of successful case studies, we’ve earned widespread recognition and strong support from students, parents, and the wider community.",
+            icon: "Presentation",
+          },
+        ],
+        carousel: {
+          images: [
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+            "https://placehold.co/600x400",
+          ],
+        },
+      },
+      {
+        title: "Comprehensive Support",
+        subtitle: "More Than Just Classes",
+        color: "bg-red-700/80",
+        textColor: "text-red-700/80",
+        advantages: [
+          {
+            title: "All‑Round Service",
+            description:
+              "From course planning to academic and psychological support, we cover every aspect of a student’s learning needs.",
+            icon: "Presentation",
+          },
+          {
+            title: "Flexible & Personalised",
+            description:
+              "Tailored course plans fit each student’s schedule and goals, maximising efficiency and outcomes.",
+            icon: "Presentation",
+          },
+          {
+            title: "Commitment to Results",
+            description:
+              "We offer fair refund and compensation policies as a sign of our confidence in course effectiveness and responsibility for student outcomes.",
+            icon: "Presentation",
+          },
+        ],
+        button: {
+          text: "Learn More About Our Support",
+          link: "/support",
+          fromColor: "from-red-500",
+          toColor: "to-red-700",
+        },
+      },
+      {
+        title: "Exceptional Value",
+        subtitle: "Rich Resources, Beyond Expectations",
+        color: "bg-primary",
+        textColor: "text-primary",
+        advantages: [
+          {
+            title: "Wide Range of Resources",
+            description:
+              "Students receive excellent teaching, extensive learning materials, and full support services, all at a competitive price.",
+            icon: "Presentation",
+          },
+          {
+            title: "Extra Benefits",
+            description:
+              "We provide additional services such as course planning, university guidance, and subject‑interest nurturing to prepare students for future success.",
+            icon: "Presentation",
+          },
+        ],
+        button: {
+          text: "Learn More",
+          link: "/value",
           fromColor: "from-blue-500",
           toColor: "to-blue-700",
         },

@@ -56,9 +56,17 @@ export const CourseContent = () => {
               >
                 <TabsTrigger
                   value={tab.value}
-                  className="data-[state=active]:text-primary data-[state=active]:border-none data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
+                  className="relative data-[state=active]:text-primary data-[state=active]:border-none data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
                text-lg 
               min-w-[180px] mx-auto flex justify-center
+              /* 激活时启用伪元素 */
+    data-[state=active]:after:content-['']
+    data-[state=active]:after:absolute
+    data-[state=active]:after:left-0
+    data-[state=active]:after:right-0
+    data-[state=active]:after:-bottom-5
+    data-[state=active]:after:h-2
+    data-[state=active]:after:bg-primary
                 "
                 >
                   {tab.label}
@@ -127,9 +135,17 @@ export const CourseContent = () => {
               >
                 <TabsTrigger
                   value={tab.value}
-                  className="data-[state=active]:text-primary data-[state=active]:border-none data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
+                  className="relative data-[state=active]:text-primary data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
                text-lg 
               min-w-[180px] mx-auto flex justify-center
+              /* 激活时启用伪元素 */
+    data-[state=active]:after:content-['']
+    data-[state=active]:after:absolute
+    data-[state=active]:after:left-0
+    data-[state=active]:after:right-0
+    data-[state=active]:after:-top-5
+    data-[state=active]:after:h-2
+    data-[state=active]:after:bg-primary
                 "
                 >
                   {tab.label}
