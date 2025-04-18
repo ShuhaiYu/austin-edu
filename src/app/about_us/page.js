@@ -68,15 +68,23 @@ export default function AboutPage() {
               {content.visionSection.content}
             </p>
             <ul className="space-y-4">
-              {content.visionSection.points.map((item, i) => (
-                <li key={i} className="flex gap-2">
-                  <span className="text-primary">✓</span>
-                  {item}
-                </li>
-              ))}
+              {content.visionSection.points.map((item, i) => {
+                const [title, description] = item.split("; ");
+                return (
+                  <div key={i} className="flex items-start gap-2">
+                    <span className="text-primary">✓</span>
+                    <li key={i} className="flex flex-col items-start">
+                      <span className="font-bold">{title}</span>
+                      <span className="text-muted-foreground">
+                        {description}
+                      </span>
+                    </li>
+                  </div>
+                );
+              })}
             </ul>
           </div>
-          <div className="flex-1">
+          <div className="flex-1 items-center justify-center">
             <Image
               src={content.visionSection.image}
               width={600}
@@ -84,6 +92,9 @@ export default function AboutPage() {
               alt="Our Vision"
               className="rounded-lg shadow-lg"
             />
+            <p className="text-muted-foreground text-sm mt-4">
+              {content.visionSection.conclusion}
+            </p>
           </div>
         </div>
       </section>
@@ -95,9 +106,9 @@ export default function AboutPage() {
             <h2 className="text-4xl font-bold mb-6">{section.title}</h2>
             <div className="grid md:grid-cols-2  gap-8">
               {section.campuses.map((campus, i) => (
-                <div key={i} className="border rounded-lg p-6">
-                  <h3 className="text-xl font-bold mb-4">{campus.name}</h3>
-
+                <div key={i} className="rounded-lg p-6">
+                  <h3 className="text-xl font-bold">{campus.name}</h3>
+                  <div className="h-1 bg-primary w-10 mb-4" />
                   <div className="space-y-4">
                     <div className="flex items-center gap-2">
                       <MapPin className="w-5 h-5 text-primary" />

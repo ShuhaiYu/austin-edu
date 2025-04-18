@@ -37,12 +37,13 @@ export const aboutUsContent = {
     },
     visionSection: {
       title: "Our Vision",
-      content: `In Australia, the quality...`, 
+      content: `In Australia, the quality of teachers and educational resources in day schools varies greatly. Finding outstanding teachers and accessing high-quality learning materials often comes down to luck. However, at Austin Education, we uphold the highest standards. Our teaching faculty, courses, and academic support system undergo rigorous selection and refinement to ensure that every student has access to the best educational resources and the most exceptional teachers, eliminating the role of “luck” in their learning journey.`, 
       image: "https://placehold.co/600x400",
+      pointTitle:"We strive to:",
       points: [
-        "Ensure every student sees real progress...",
-        "Provide Australia's highest-quality teaching team...",
-        "Build the most comprehensive academic support system...",
+        "Ensure every student sees real progress; Regardless of their starting point, students can steadily improve through a structured learning process, overcome academic challenges, and achieve their personal goals",
+        "Provide Australia's highest-quality teaching team; With a rigorous teacher selection process and ongoing professional training, we ensure that our courses precisely align with exam standards while fostering students' critical thinking and independent learning skills",
+        "Build the most comprehensive academic support system; From pre-class planning to post-class review, from SACs to final exams, Australia's courses not only help students excel in VCE, IB, and other assessments but also equip them with lifelong learning abilities.",
       ],
       conclusion: `We are more than just an education institution—we are every student's 'second day school' ond the most reliable partner in their academic journey. Moving forward, we will continue to enhance our curriculum, expand our educational resources, ond provide o world-class learning experience in a more professional efficient, and student-centered way`,
     },
