@@ -5,8 +5,27 @@ import { useContext } from "react";
 import { LangContext } from "@/app/layout";
 import { coursesContent } from "../content";
 import Image from "next/image";
-import { BookOpenText, GraduationCap, School } from "lucide-react";
-
+import {
+  BookOpen,
+  Repeat,
+  Check,
+  TestTube,
+  MessageCircle,
+  GraduationCap,
+  School,
+  Compass,
+  FileText,
+  SlidersHorizontal,
+  Users,
+  ClipboardList,
+  BarChart2,
+  Target,
+  ListChecks,
+  Presentation ,
+  Clock,
+  Award,
+  Calendar,
+} from "lucide-react";
 export const CourseContent = () => {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = coursesContent[lang].content;
@@ -98,11 +117,39 @@ export const CourseContent = () => {
                 <div className="w-1/2 space-y-4">
                   <div className="flex items-center gap-3 mb-4">
                     <div className="p-3 rounded-full bg-blue-100 text-blue-600">
-                      {content.icon === "book" && <BookOpenText size={24} />}
+                      {content.icon === "book" && <BookOpen size={24} />}
+                      {content.icon === "repeat" && <Repeat size={24} />}
+                      {content.icon === "check" && <Check size={24} />}
+                      {content.icon === "test" && <TestTube size={24} />}
+                      {content.icon === "communication" && (
+                        <MessageCircle size={24} />
+                      )}
                       {content.icon === "graduation" && (
                         <GraduationCap size={24} />
                       )}
                       {content.icon === "school" && <School size={24} />}
+                      {content.icon === "compass" && <Compass size={24} />}
+                      {content.icon === "file-text" && <FileText size={24} />}
+                      {content.icon === "sliders-horizontal" && (
+                        <SlidersHorizontal size={24} />
+                      )}
+                      {content.icon === "users" && <Users size={24} />}
+                      {content.icon === "clipboard-list" && (
+                        <ClipboardList size={24} />
+                      )}
+                      {content.icon === "bar-chart-2" && (
+                        <BarChart2 size={24} />
+                      )}
+                      {content.icon === "target" && <Target size={24} />}
+                      {content.icon === "list-checks" && (
+                        <ListChecks size={24} />
+                      )}
+                      {content.icon === "chalkboard" && (
+                        <Presentation size={24} />
+                      )}
+                      {content.icon === "clock" && <Clock size={24} />}
+                      {content.icon === "award" && <Award size={24} />}
+                      {content.icon === "calendar" && <Calendar size={24} />}
                     </div>
                     <h3 className="text-2xl font-bold">{content.title}</h3>
                   </div>

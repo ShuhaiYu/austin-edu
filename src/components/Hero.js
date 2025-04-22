@@ -51,7 +51,7 @@ export default function Hero() {
             <Button
               size="lg"
               variant="outline"
-              className="px-8 border-primary text-primary hover:bg-primary/10"
+              className="px-8"
             >
               {content.contact}
             </Button>

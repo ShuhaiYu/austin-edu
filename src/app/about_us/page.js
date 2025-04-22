@@ -3,9 +3,10 @@
 import { useContext } from "react";
 import { LangContext } from "@/app/layout";
 import Image from "next/image";
-import { CalendarDays, Clock, Mail, MapPin, Phone } from "lucide-react";
+import { Mail, MapPin, Phone } from "lucide-react";
 import { aboutUsContent } from "./content";
 import FAQ from "@/components/FAQ";
+import TimelineSection from "./components/TimeLine";
 
 export default function AboutPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -32,32 +33,7 @@ export default function AboutPage() {
       </section>
 
       {/* History Timeline */}
-      <section className="py-16">
-        <h2 className="text-4xl font-bold text-center mb-16">
-          {content.historySection.title}
-          <br />
-          <span className="text-2xl text-muted-foreground whitespace-pre-line">
-            {content.historySection.subtitle}
-          </span>
-        </h2>
-
-        {/* Timeline渲染逻辑 */}
-        <div className="relative max-w-4xl mx-auto">
-          {content.historySection.timeline.map((item, index) => (
-            <div key={index} className="relative pl-16 mb-12">
-              <h3 className="text-2xl font-bold mb-2">{item.year}</h3>
-              <ul className="space-y-2 text-muted-foreground">
-                {item.events.map((event, i) => (
-                  <li key={i} className="flex items-start gap-2">
-                    <span>•</span>
-                    {event}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
+      <TimelineSection content={content.historySection} />
 
       {/* Vision Section */}
       <section className="py-16">
@@ -67,6 +43,9 @@ export default function AboutPage() {
             <p className="text-lg text-muted-foreground">
               {content.visionSection.content}
             </p>
+            <h2 className="text-2xl font-bold mb-4">
+              {lang === "en" ? "We strive to:" : "我们希望："}
+            </h2>
             <ul className="space-y-4">
               {content.visionSection.points.map((item, i) => {
                 const [title, description] = item.split("; ");
@@ -84,15 +63,40 @@ export default function AboutPage() {
               })}
             </ul>
           </div>
-          <div className="flex-1 items-center justify-center">
-            <Image
-              src={content.visionSection.image}
-              width={600}
-              height={400}
-              alt="Our Vision"
-              className="rounded-lg shadow-lg"
-            />
-            <p className="text-muted-foreground text-sm mt-4">
+          {/* 图片容器 */}
+          <div className="flex-1 w-full relative min-h-[400px]">
+            {/* 主图 */}
+            <div className="relative w-full aspect-[3/2]">
+              <Image
+                src={content.visionSection.imageMain}
+                fill
+                alt="Main Vision"
+                className="rounded-lg shadow-lg object-cover z-10"
+              />
+
+              {/* 叠加小图1 */}
+              <div className="absolute -left-8 top-2 w-[40%] aspect-[4/3] z-20">
+                <Image
+                  src={content.visionSection.imageOverlay1}
+                  fill
+                  alt="Overlay 1"
+                  className="rounded-lg shadow-xl border-4 border-background object-cover"
+                />
+              </div>
+
+              {/* 叠加小图2 */}
+              <div className="absolute -left-8 bottom-2 w-[40%] aspect-[4/3] z-20">
+                <Image
+                  src={content.visionSection.imageOverlay2}
+                  fill
+                  alt="Overlay 2"
+                  className="rounded-lg shadow-xl border-4 border-background object-cover"
+                />
+              </div>
+            </div>
+
+            {/* 底部文字 */}
+            <p className="text-muted-foreground text-sm mt-8 pl-4">
               {content.visionSection.conclusion}
             </p>
           </div>

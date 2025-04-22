@@ -97,7 +97,7 @@ export default function FindCourse() {
           onClick={handleSearch}
           // variant="outline"
           size="icon"
-          className="bg-primary hover:bg-secondary text-white border border-white"
+          className=" text-white border border-white hover:bg-accent "
         >
           <Image
             src="/home/search icon.png"
