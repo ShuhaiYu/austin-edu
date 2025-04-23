@@ -226,7 +226,12 @@ const FeatureRow = ({ title, desc, index, lang, image }) => (
   <motion.section
     initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50 }}
     whileInView={{ opacity: 1, x: 0 }}
-    transition={{ duration: 2 }}
+    transition={{
+      type: "spring",
+      bounce: 0.1,
+      duration: 2,
+      ease: "easeOut"
+    }}
     viewport={{ once: true }}
     className={`py-16 flex flex-col ${
       index % 2 ? "md:flex-row-reverse" : "md:flex-row"
@@ -325,7 +330,12 @@ export default function MyAustinPage() {
       <motion.section
         initial={{ scale: 0.5, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1.5 }}
+        transition={{
+          type: "spring",
+          bounce: 0.1,
+          duration: 2,
+          ease: "easeOut"
+        }}
         viewport={{ once: true }}
         className="py-16 text-center"
       >
@@ -364,7 +374,12 @@ export default function MyAustinPage() {
       <motion.section
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        transition={{ duration: 1.5 }}
+        transition={{
+          type: "spring",
+          bounce: 0.1,
+          duration: 2,
+          ease: "easeOut"
+        }}
         viewport={{ once: true }}
         className="py-16 text-center"
       >
