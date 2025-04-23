@@ -73,18 +73,20 @@ const TimelineSection = ({ content }) => {
   return (
     <section className="py-16" ref={sectionRef}>
       <div className="flex flex-col items-center justify-center mb-16">
-
-      <h2 className="text-4xl font-bold text-center mb-2">
-        {content.title}
-      </h2>
-      <p className="text-2xl text-muted-foreground whitespace-pre-line">
-          Where <span className="text-primary uppercase text-3xl font-bold">DEDICATION</span> 
+        <h2 className="text-4xl font-bold text-center mb-2">{content.title}</h2>
+        <p className="text-2xl text-muted-foreground whitespace-pre-line">
+          Where{" "}
+          <span className="text-primary uppercase text-3xl font-bold">
+            DEDICATION
+          </span>
         </p>
         <p className="text-2xl text-muted-foreground whitespace-pre-line">
-          Meets <span className="text-primary uppercase text-3xl font-bold">DISTINCTION</span>
+          Meets{" "}
+          <span className="text-primary uppercase text-3xl font-bold">
+            DISTINCTION
+          </span>
         </p>
       </div>
-      
 
       <div className="relative max-w-4xl mx-auto">
         <div className="relative">
