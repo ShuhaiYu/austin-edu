@@ -81,6 +81,22 @@ export const contactUsContent = {
           
         ],
       },
+      {
+        title: "Mount Waverley Ausyouth Campus - Melbourne",
+        location: "Level 1, 304 Stephensons Road, Mount Waverley",
+        email: "email@austin.com.au",
+        QRCode: "https://placehold.co/400x400",
+        about: [
+          {
+            title: "Y1-6",
+            phone: ["0468541027", "0426800815(Chinese)", "0452570815(Chinese)"],
+            we_chat: "Austin_bh",
+            whatsapp: "+61 3 9899 8888",
+            discord: "ryanyanaustinbh",
+          },
+          
+        ],
+      },
     ],
     OtherMethods: "You can also find us in",
   },
