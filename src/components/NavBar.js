@@ -7,6 +7,7 @@ import { LangContext } from "@/app/layout";
 import LanguageSwitcher from "./LanguageSwitcher";
 import { Button } from "@/components/ui/button";
 import { AlignJustify } from "lucide-react";
+import Image from "next/image";
 
 const menuItems = [
   { key: "home", label_en: "Home", label_zh: "首页", href: "/" },
@@ -110,11 +111,14 @@ export default function Header() {
         <div className="w-[95%] max-w-screen-2xl mx-auto">
           <div className="container mx-auto flex h-16 items-center justify-between px-4">
             {/* 左侧 Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <>
-                <div className="h-8 w-8 rounded bg-primary" />
-                <span className="text-xl font-bold">Austin</span>
-              </>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo/logo3.svg"
+                alt="Logo"
+                width={300}
+                height={40}
+                priority
+              />
             </Link>
 
             {/* 右侧：语言切换 & 用户按钮 */}

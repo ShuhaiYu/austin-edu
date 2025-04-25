@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Creator: CorelDRAW -->
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="4.89689in" height="2.94187in" version="1.1" style="shape-rendering:geometricPrecision; text-rendering:geometricPrecision; image-rendering:optimizeQuality; fill-rule:evenodd; clip-rule:evenodd"
+viewBox="0 0 240.41 144.43"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns:xodm="http://www.corel.com/coreldraw/odm/2003">
+ <defs>
+  <style type="text/css">
+   <![CDATA[
+    .str0 {stroke:#C1C4C9;stroke-width:1.64;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313;stroke-dasharray:4.909682 6.546243}
+    .fil8 {fill:none}
+    .fil0 {fill:#3071C6;fill-rule:nonzero}
+    .fil1 {fill:url(#id0);fill-rule:nonzero;fill-opacity:0.109804}
+    .fil6 {fill:url(#id1);fill-rule:nonzero;fill-opacity:0.109804}
+    .fil2 {fill:url(#id2);fill-rule:nonzero;fill-opacity:0.109804}
+    .fil7 {fill:url(#id3);fill-rule:nonzero;fill-opacity:0.109804}
+    .fil5 {fill:url(#id4);fill-rule:nonzero;fill-opacity:0.109804}
+    .fil3 {fill:url(#id5);fill-rule:nonzero;fill-opacity:0.109804}
+    .fil4 {fill:url(#id6);fill-rule:nonzero;fill-opacity:0.109804}
+   ]]>
+  </style>
+  <linearGradient id="id0" gradientUnits="userSpaceOnUse" x1="0.87" y1="13.99" x2="13.23" y2="14.87">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="0.701961" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:black"/>
+  </linearGradient>
+  <linearGradient id="id1" gradientUnits="userSpaceOnUse" x1="80.67" y1="69.77" x2="69.67" y2="60.97">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="0.721569" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:black"/>
+  </linearGradient>
+  <linearGradient id="id2" gradientUnits="userSpaceOnUse" x1="7.13" y1="16.04" x2="21.18" y2="27.05">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="0.729412" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:black"/>
+  </linearGradient>
+  <linearGradient id="id3" gradientUnits="userSpaceOnUse" x1="87.55" y1="23.76" x2="63.28" y2="15.62">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="0.811765" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:black"/>
+  </linearGradient>
+  <linearGradient id="id4" gradientUnits="userSpaceOnUse" x1="69.38" y1="53.73" x2="54.72" y2="62.71">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="0.690196" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:black"/>
+  </linearGradient>
+  <linearGradient id="id5" gradientUnits="userSpaceOnUse" x1="52.17" y1="30.86" x2="35.63" y2="54.94">
+   <stop offset="0" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="0.839216" style="stop-opacity:1; stop-color:white"/>
+   <stop offset="1" style="stop-opacity:1; stop-color:black"/>
+  </linearGradient>
+  <linearGradient id="id6" gradientUnits="userSpaceOnUse" xlink:href="#id5" x1="-948.63" y1="-4370.76" x2="-5106.37" y2="-2768.92">
+  </linearGradient>
+ </defs>
+ <g id="图层_x0020_1">
+  <metadata id="CorelCorpID_0Corel-Layer"/>
+  <g id="_105553363014880">
+   <g>
+    <g>
+     <g id="Layer_2">
+      <g id="OBJECTS">
+       <polygon class="fil0" points="13.51,7.89 -0,21.14 12.51,22.03 "/>
+       <polygon class="fil1" points="13.51,7.89 -0,21.14 12.51,22.03 "/>
+       <polygon class="fil0" points="13.51,7.89 11.36,38.18 29.94,16.16 "/>
+       <polygon class="fil2" points="13.51,7.89 11.36,38.18 29.94,16.16 "/>
+       <polygon class="fil0" points="29.94,16.16 11.36,38.18 60.1,71.77 "/>
+       <polygon class="fil3" points="29.94,16.16 11.36,38.18 60.1,71.77 "/>
+       <polygon class="fil0" points="29.94,16.16 69.07,0 50.01,53.22 "/>
+       <polygon class="fil4" points="29.94,16.16 69.07,0 50.01,53.22 "/>
+       <polygon class="fil0" points="50.01,53.22 72.15,58.73 60.1,71.77 "/>
+       <polygon class="fil5" points="50.01,53.22 72.15,58.73 60.1,71.77 "/>
+       <polygon class="fil0" points="72.15,58.73 80.09,70.44 67.32,63.96 "/>
+       <polygon class="fil6" points="72.15,58.73 80.09,70.44 67.32,63.96 "/>
+       <polygon class="fil0" points="69.07,0 95.12,1.85 55.5,37.89 "/>
+       <polygon class="fil7" points="69.07,0 95.12,1.85 55.5,37.89 "/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <path class="fil8 str0" d="M87.11 66.34c3.18,2.87 21.58,18.66 42.91,19.08 23.43,0.46 42.24,-14.48 68.79,0.47 25.45,14.34 35.98,39.86 41.61,58.53"/>
+  </g>
+ </g>
+</svg>

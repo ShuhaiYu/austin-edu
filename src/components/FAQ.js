@@ -24,6 +24,7 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { toast } from "sonner";
+import Image from "next/image";
 
 import { LangContext } from "@/app/layout";
 
@@ -137,8 +138,23 @@ export default function FAQ() {
   }
 
   return (
-    <section className="py-16 ">
-      <div className="container flex flex-col gap-8">
+    <section className="py-16 relative overflow-hidden">
+      <div
+        className="
+          absolute top-0 right-0 z-0 pointer-events-none
+          w-24 h-24       /* 手机：6rem */
+          sm:w-32 sm:h-32 /* ≥640px：8rem */
+         md:w-40 md:h-40 /* ≥768px：10rem */
+        "
+      >
+        <Image
+          src="/decoration/2.svg"
+          alt=""
+          fill
+          className="object-contain"
+        />
+     </div>
+      <div className="container flex flex-col gap-8 relative z-10">
         {/* 标题部分 */}
         <div className="text-center space-y-8">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold ">{title}</h2>

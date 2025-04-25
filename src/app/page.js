@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import Image from "next/image";
 
 export default function HomePage() {
   const langContext = useContext(LangContext);
@@ -70,7 +71,23 @@ export default function HomePage() {
       
 
       {/* Testimonials */}
-      <section className="w-full py-12 px-6 ">
+      <section className="relative w-full py-12 px-6 ">
+        {/* 左上角装饰 */}
+      <div
+        className="
+          absolute -top-0 left-0 z-0 pointer-events-none
+          md:w-32 md:h-32   /* ≥768px：8rem */
+          lg:w-48 lg:h-48   /* ≥1024px：12rem */
+
+        "
+      >
+        <Image
+          src="/decoration/4.svg"
+          alt=""
+          fill
+          className="object-contain"
+        />
+      </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
           {t.testimonialTitle}
         </h2>

@@ -774,11 +774,24 @@ export default function JoinUsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12 space-y-12 md:space-y-16">
-      {/* 页面标题 */}
-      <div className="text-center">
+      {/* 页面标题：相对定位 + 装饰 */}
+      <div className="text-center relative">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{t.title}</h1>
-      </div>
+        <div
+          className="
+            absolute top-0 right-0 z-0 pointer-events-none
 
+          "
+        >
+          <Image
+            src="/decoration/1.svg"
+            alt=""
+            width={200}
+            height={200}
+            className="object-contain"
+          />
+        </div>
+      </div>
       {/* 1. 左右布局：左边图片，右边文字 */}
       <section className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0">
         {/* 左侧图片 */}
@@ -791,7 +804,7 @@ export default function JoinUsPage() {
           />
         </div>
         {/* 右侧文字 */}
-        <div className="w-full md:w-1/2 space-y-4 px-2 md:px-0">
+        <div className="w-full md:w-1/2 space-y-4 px-2 md:px-0 relative">
           <h2 className="text-2xl md:text-3xl font-bold">
             {t.section1.heading}
           </h2>
@@ -806,19 +819,50 @@ export default function JoinUsPage() {
               {t.section1.button2}
             </Button>
           </div>
+          {/* decoration 2 */}
+          <div
+            className="
+              absolute bottom-0 right-0 z-0 pointer-events-none
+             
+              transform translate-y-1/2
+            "
+          >
+            <Image
+              src="/decoration/2.svg"
+              alt=""
+              width={200}
+              height={200}
+              className="object-contain "
+            />
+          </div>
+        
         </div>
       </section>
-
       {/* 2. 文字+图片区块 */}
       <section className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0">
         {/* 左侧文字 */}
-        <div className="w-full md:w-1/2 space-y-4 px-2 md:px-0 order-2 md:order-1">
+        <div className="w-full md:w-1/2 space-y-4 px-2 md:px-0 order-2 md:order-1 relative">
           <h2 className="text-2xl md:text-3xl font-bold">
             {t.section2.heading}
           </h2>
           <p className="text-sm md:text-base leading-relaxed text-justify whitespace-pre-line text-gray-600">
             {t.section2.desc}
           </p>
+          {/* decoration 3 */}
+          <div
+            className="
+              absolute bottom-0 left-0 z-0 pointer-events-none
+              transform translate-y-1/2 -translate-x-1/2
+            "
+          >
+            <Image
+              src="/decoration/3.svg"
+              alt=""
+              width={200}
+              height={200}
+              className="object-contain"
+            />
+          </div>
         </div>
         {/* 右侧图片 */}
         <div className="w-full md:w-1/2 order-1 md:order-2">
@@ -831,9 +875,8 @@ export default function JoinUsPage() {
           />
         </div>
       </section>
-
       {/* 3. 左右布局：职位列表 + 申请表 */}
-      <section className="flex flex-col md:flex-row items-start gap-8">
+      <section className="flex flex-col md:flex-row items-start gap-8 mt-32">
         {/* 左侧：职位列表（Accordion 格式） */}
         <div className="w-full md:w-1/2 pb-12">
           <h2 className="text-3xl font-bold mb-6">{t.positions.title}</h2>
@@ -981,7 +1024,6 @@ export default function JoinUsPage() {
             </div>
           </form>
         </div>
-        
       </section>
       <FAQ /> {/* FAQ 组件放在这里 */}
     </div>

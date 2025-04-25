@@ -42,7 +42,15 @@ export default function Features() {
   const achievementsText = lang === "zh" ? "查看成就" : "Our Achievements";
 
   return (
-    <section className="py-20">
+    <section className="py-20 relative overflow-hidden">
+      {/* decorative SVG in the top-right */}
+      <div className="absolute top-0 right-0 z-0 pointer-events-none
+       w-24 h-24       /* 默认手机上 6rem × 6rem */
+    sm:w-32 sm:h-32 /* ≥640px 时 8rem × 8rem */
+    md:w-48 md:h-48 /* ≥768px 时 12rem × 12rem */
+    ">
+        <Image src="/decoration/2.svg" alt="" width={200} height={200} />
+      </div>
       {/* 上半部分 */}
       <div className="grid xl:grid-cols-2 gap-12 mb-20">
         {/* 左侧统计卡片 */}
@@ -87,7 +95,6 @@ export default function Features() {
             </div>
           ))}
         </div>
-        
 
         {/* 右侧文字区 */}
         <div className="space-y-6 mx-auto">
@@ -134,7 +141,16 @@ export default function Features() {
       </div>
 
       {/* Why Choose Austin */}
-      <div className="text-center mb-16 py-8 w-[80%] mx-auto">
+      <div className="relative z-10 text-center mb-16 py-8 w-[80%] mx-auto">
+        {/* 左上角装饰 */}
+        <div className="absolute -top-40 md:-top-20 -left-10 z-0 pointer-events-none">
+          <Image
+            src="/decoration/3.svg"
+            alt=""
+            width={150}
+            height={150}
+          />
+        </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase">
           {lang === "zh" ? "为什么选择奥斯汀" : "Why Choose Austin"}
         </h2>
@@ -215,7 +231,9 @@ export default function Features() {
                 transform 
                 -translate-x-1/2 "
             >
-              <Button size="lg">{lang === "zh" ? "了解更多" : "Learn More"}</Button>
+              <Button size="lg">
+                {lang === "zh" ? "了解更多" : "Learn More"}
+              </Button>
             </div>
           </div>
         ))}
