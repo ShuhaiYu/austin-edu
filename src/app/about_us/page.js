@@ -32,8 +32,47 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* History Timeline */}
-      <TimelineSection content={content.historySection} />
+      {/* History Timeline with decorations */}
+      <div className="relative overflow-hidden py-16">
+        {/* Top-left decoration (svg 1) */}
+        <div
+          className="
+            absolute top-0 left-0 z-0 pointer-events-none
+            w-24 h-24         /* 手机 6rem */
+            sm:w-32 sm:h-32   /* ≥640px 8rem */
+            md:w-40 md:h-40   /* ≥768px 10rem */
+          "
+        >
+          <Image
+            src="/decoration/3.svg"
+            alt=""
+            fill
+            className="object-contain"
+          />
+        </div>
+
+        {/* Bottom-right decoration (svg 2) */}
+        <div
+          className="
+            absolute bottom-0 right-0 z-0 pointer-events-none
+            w-24 h-24
+            sm:w-32 sm:h-32
+            md:w-40 md:h-40
+          "
+        >
+          <Image
+            src="/decoration/2.svg"
+            alt=""
+            fill
+            className="object-contain"
+          />
+        </div>
+
+        {/* Your TimelineSection lifted above decorations */}
+        <div className="relative z-10">
+          <TimelineSection content={content.historySection} />
+        </div>
+      </div>
 
       {/* Vision Section */}
       <section className="py-16">

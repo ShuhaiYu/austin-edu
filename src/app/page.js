@@ -58,7 +58,7 @@ export default function HomePage() {
       {/* Why Choose Austin: 简化示例 */}
       <section className="w-full py-12 px-[clamp(1rem,3vw,3rem)]">
         <div className="w-full mx-auto">
-        <Features />
+          <Features />
         </div>
       </section>
 
@@ -68,26 +68,25 @@ export default function HomePage() {
           <AdmissionProcess />
         </div>
       </section>
-      
 
       {/* Testimonials */}
       <section className="relative w-full py-12 px-6 ">
         {/* 左上角装饰 */}
-      <div
-        className="
+        <div
+          className="
           absolute -top-0 left-0 z-0 pointer-events-none
           md:w-32 md:h-32   /* ≥768px：8rem */
           lg:w-48 lg:h-48   /* ≥1024px：12rem */
 
         "
-      >
-        <Image
-          src="/decoration/4.svg"
-          alt=""
-          fill
-          className="object-contain"
-        />
-      </div>
+        >
+          <Image
+            src="/decoration/4.svg"
+            alt=""
+            fill
+            className="object-contain"
+          />
+        </div>
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
           {t.testimonialTitle}
         </h2>

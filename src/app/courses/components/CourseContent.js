@@ -21,7 +21,7 @@ import {
   BarChart2,
   Target,
   ListChecks,
-  Presentation ,
+  Presentation,
   Clock,
   Award,
   Calendar,
@@ -32,11 +32,31 @@ export const CourseContent = () => {
 
   return (
     <section className="mb-16">
-      {/* 标题部分 */}
-      <div className="max-w-4xl mb-16">
-        <h2 className="text-5xl font-bold mb-4">{t.title}</h2>
-        <h3 className="text-xl text-muted-foreground mb-6">{t.subtitle}</h3>
-        <p className="text-muted-foreground">{t.description}</p>
+      {/* 标题部分 with decoration */}
+      <div className="w-full mb-16 relative overflow-hidden">
+        {/* decoration svg2 in the top-right */}
+        <div
+          className="
+      absolute top-0 right-0 z-0 pointer-events-none
+      w-16 h-16         /* 手机上 4rem */
+      sm:w-24 sm:h-24   /* ≥640px 上 6rem */
+      md:w-32 md:h-32   /* ≥768px 上 8rem */
+    "
+        >
+          <Image
+            src="/decoration/2.svg"
+            alt=""
+            fill
+            className="object-contain"
+          />
+        </div>
+
+        {/* 原内容提到上层 */}
+        <div className="relative z-10 max-w-4xl">
+          <h2 className="text-5xl font-bold mb-4">{t.title}</h2>
+          <h3 className="text-xl text-muted-foreground mb-6">{t.subtitle}</h3>
+          <p className="text-muted-foreground">{t.description}</p>
+        </div>
       </div>
 
       {/* 功能卡片 */}

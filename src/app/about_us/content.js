@@ -9,8 +9,7 @@ export const aboutUsContent = {
       image: "https://placehold.co/600x400",
     },
     historySection: {
-      title: "Brand's History",
-      subtitle: "Where DEDICATION\n Meets DISTINCTION",
+      title: "Brand's History —",
       timeline: [
         {
           year: "2014",

@@ -50,7 +50,7 @@ export const CourseFeature = () => {
                 >
                   <div className="flex items-start gap-4">
                     <div
-                      className={`bg-white flex items-center justify-center ${feature.textColor}`}
+                      className={`bg-white shadow-lg flex items-center justify-center ${feature.textColor}`}
                     >
                       {adv.icon === "Presentation" && (
                         <Presentation className="w-24 h-24 p-2" />
