@@ -12,7 +12,7 @@ export const aboutUsContent = {
       title: "Brand's History —",
       timeline: [
         {
-          year: "2014",
+          year: "2034",
           events: [
             "Austin established the Syndal Campus.",
             "Austin introduced VCE English, Mathematics, Scholarship Entrance Exam, and Selective School Exam preparation courses.",
