@@ -172,50 +172,154 @@ export const aboutUsContent = {
             email: "Rachelle@austinedu.com",
             phone: "042 680 0811",
           },
-          // 其他校区英文数据
         ],
       },
     ],
   },
-  cn: {
+  zh: {
     aboutSection: {
       title: "关于奥斯汀教育",
-      content: `奥斯汀教育成立于2013年底...`, // 完整中文翻译
+      content: 
+        "奥斯汀教育成立于2013年底，专注于为1至12年级学生提供全面的辅导。我们拥有数百名教师阵容，包括多位VCE阅卷官、官方教材作者和拥有20年以上一线教学经验的资深老师。奥斯汀自主研发的权威教学资料，已被百余所知名公私立学校广泛采用。我们始终致力于提升学生的学业成绩和综合素质。",
+      image: "https://placehold.co/600x400",
     },
     historySection: {
-      title: "品牌历程",
-      subtitle: "以专注铸就卓越",
+      title: "品牌历程 —",
       timeline: [
         {
           year: "2014",
           events: [
-            "奥斯汀教育Syndal校区成立...",
-            // 完整中文事件列表
+            "Syndal 校区成立，首批30名学员入学，平均提升40名。",
+            "首创 VCE 数学全真模拟考试，成为维州首家提供数学模拟的机构。",
           ],
         },
-        // 其他年份中文数据
+        {
+          year: "2015",
+          events: [
+            "Box Hill 校区成立，新增物理、化学与 AEAS 课程。",
+            "在校生人数突破100人，首位学生 ATAR 超过99。",
+          ],
+        },
+        {
+          year: "2016",
+          events: [
+            "City 校区成立，开设 VCE 中文课程。",
+            "在校生人数突破300人，产生多位 ATAR 99+ 学员。",
+          ],
+        },
+        {
+          year: "2017",
+          events: [
+            "组建行政团队，成为首家拥有专职行政和全职教师的辅导机构。",
+            "在校生人数突破1,000人，新增会计等全科模拟考试。",
+          ],
+        },
+        {
+          year: "2018",
+          events: [
+            "Syndal 校区搬迁至 Mount Waverley。",
+            "教研团队超百人，R&D 体系全面上线，累计在校生超2,000人。",
+          ],
+        },
+        {
+          year: "2019",
+          events: [
+            "产生多位 ATAR 99.95 学员，90%以上学员取得99+成绩。",
+            "数学类状元人数创新高。",
+          ],
+        },
+        {
+          year: "2020",
+          events: [
+            "AusYouth 校区开幕，线上教学系统快速完善。",
+            "疫情期间平稳转入线上，累计在校生超3,000人。",
+          ],
+        },
+        {
+          year: "2021",
+          events: [
+            "定期举办全国性免费在线讲座，在线学员超5,000人。",
+            "产生多位 ATAR 99.95 学员，98%学员成绩稳定提升。",
+          ],
+        },
+        {
+          year: "2022",
+          events: [
+            "推出多学科假期课程，学员人数突破5,000人。",
+            "再度产生多位 ATAR 99.95 学员，教学质量获广泛认可。",
+          ],
+        },
+        {
+          year: "2023",
+          events: [
+            "AusYouth Music 成立，研究与教研力度升级。",
+            "学员人数突破8,000人，99+学员数持续创新高。",
+          ],
+        },
+        {
+          year: "2024",
+          events: [
+            "Point Cook 和 Adelaide 校区相继开幕。",
+            "获批成为官方 AMC 考点，教学团队超200人。",
+          ],
+        },
       ],
     },
     visionSection: {
       title: "我们的愿景",
-      content: `在澳大利亚，日校的教师质量和教育资源参差不齐...`, // 完整中文翻译
+      content: `在澳大利亚，不同学校的师资水平和教育资源差异巨大。奥斯汀教育坚持最高标准，严格筛选和培养教师，精心打磨课程与学术支持体系，确保每位学生都能享有顶级教学和优质资源，摆脱“运气”成分，稳步实现学业突破。`,
+      imageMain: "https://placehold.co/600x400",
+      imageOverlay1: "https://placehold.co/200x133",
+      imageOverlay2: "https://placehold.co/200x133",
+      pointTitle: "我们的核心目标：",
       points: [
-        "确保每个学生都能看到真正的进步...",
-        "提供澳大利亚最高质量的教学团队...",
-        "建立最全面的学术支持体系...",
+        "确保每位学生都能看到真实进步，循序渐进，实现个人学习目标",
+        "提供澳大利亚最高水准的教学团队，培养批判性思维与独立学习能力",
+        "构建最全面的学术支持体系，从备课到考后，全方位服务学生",
       ],
+      conclusion: `我们不仅是一家教育机构，更是每位学生的“第二日校”和最可信赖的学业伙伴。未来，奥斯汀将继续完善课程与资源，提供更专业、高效、以学生为中心的世界级学习体验。`,
     },
-    campusesSection: {
-      title: "维多利亚校区",
-      campuses: [
-        {
-          name: "Box Hill校区",
-          address: "899 Whitehorse Road, Box Hill, VIC 3128",
-          phone: "0426 800 811",
-          email: "Rachelle@austinedu.com",
-        },
-        // 其他校区中文数据
-      ],
-    },
+    campusesSection: [
+      {
+        title: "维多利亚校区",
+        campuses: [
+          {
+            name: "Box Hill 校区",
+            address: "899 Whitehorse Road, Box Hill, VIC 3128",
+            email: "Rachelle@austinedu.com",
+            phone: "042 680 0811",
+          },
+          {
+            name: "Mount Waverley 校区",
+            address: "899 Whitehorse Road, Box Hill, VIC 3128",
+            email: "Rachelle@austinedu.com",
+            phone: "042 680 0811",
+          },
+          {
+            name: "City 校区",
+            address: "Level 6/51 Queen St, Melbourne VIC 3000",
+            email: "Rachelle@austinedu.com",
+            phone: "042 680 0811",
+          },
+          {
+            name: "Point Cook 校区",
+            address: "899 Whitehorse Road, Box Hill, VIC 3128",
+            email: "Rachelle@austinedu.com",
+            phone: "042 680 0811",
+          },
+        ],
+      },
+      {
+        title: "南澳大利亚校区",
+        campuses: [
+          {
+            name: "Adelaide 校区",
+            address: "899 Whitehorse Road, Box Hill, VIC 3128",
+            email: "Rachelle@austinedu.com",
+            phone: "042 680 0811",
+          },
+        ],
+      },
+    ],
   },
 };
