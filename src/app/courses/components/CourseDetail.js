@@ -1,34 +1,43 @@
+// src/app/courses/components/CourseDetail.tsx
 "use client";
+import Link from "next/link";
+import { useContext, useEffect, useState } from "react";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useContext, useState } from "react";
+import { Button } from "@/components/ui/button";
 import { LangContext } from "@/app/layout";
 import { coursesContent } from "../content";
-import { Button } from "@/components/ui/button";
 
 export const CourseDetail = () => {
   const { lang } = useContext(LangContext) || { lang: "en" };
-  const t = coursesContent[lang].detail;
-  const [selectedCourse, setSelectedCourse] = useState(
-    "Y1-6 English Enrichment (Eng/EAL)"
-  );
+  const detail = coursesContent[lang].detail;
+  const { categories, courses } = detail;
+
+  // 初始默认课程：第一分类的第一门课
+  const defaultCourse = courses[categories[0]][0];
+  const [selectedCourse, setSelectedCourse] = useState(defaultCourse);
+
+  useEffect(() => {
+    console.log("Selected Course:", selectedCourse);
+  }, [selectedCourse]);
 
   return (
     <div className="flex gap-8 mb-16">
+      {/* 左侧 Accordion */}
       <div className="w-1/2">
         <Accordion type="multiple">
-          {t.categories.map((category, index) => {
+          {categories.map((category, idx) => {
             const bgShades = [
               "bg-gradient-to-r from-[#D8E9F8] to-[#BCD6ED]",
               "bg-gradient-to-r from-[#C6DCF2] to-[#C6DCF2]",
               "bg-gradient-to-r from-[#B2CEEA] to-[#81A7D1]",
               "bg-gradient-to-r from-[#A3C4E6] to-[#6C92C4]",
             ];
-            const bgColor = bgShades[index % bgShades.length]; // 防止越界
+            const bgColor = bgShades[idx % bgShades.length];
             return (
               <AccordionItem
                 key={category}
@@ -40,12 +49,12 @@ export const CourseDetail = () => {
                 >
                   {category}
                 </AccordionTrigger>
-                <AccordionContent className="">
+                <AccordionContent>
                   <ul className="space-y-2 mt-4 pl-4 grid grid-cols-2 list-disc list-inside">
-                    {t.courses[category]?.map((course) => (
+                    {courses[category]?.map((course) => (
                       <li
-                        key={course.title}
-                        onClick={() => setSelectedCourse(course.title)}
+                        key={course.slug}
+                        onClick={() => setSelectedCourse(course)}
                         className="text-left hover:text-primary w-full p-2 rounded-lg cursor-pointer transition-colors duration-300 hover:bg-blue-50"
                       >
                         {course.title}
@@ -59,39 +68,29 @@ export const CourseDetail = () => {
         </Accordion>
       </div>
 
+      {/* 右侧 详情面板 */}
       <div className="w-1/2 space-y-8 border-6 border-blue-200 bg-white rounded-[2rem] p-8 shadow-lg">
-        {selectedCourse && (
-          <>
-            <h2 className="text-3xl font-bold">{selectedCourse}</h2>
-            <Button
-              onClick={() => {
-                const course = t.courses[t.categories[0]].find(
-                  (c) => c.title === selectedCourse
-                );
-                if (course) {
-                  window.open(course.link, "_blank");
-                }
-              }}
-            >
-              {lang === "en" ? "Find out more about this course" : "查看课程"}
-            </Button>
-            <div className="space-y-4">
-              <h3 className="text-xl font-semibold">
-                {lang === "en" ? "What Does the Program Involve?" : "课程详情"}
-              </h3>
+        <h2 className="text-3xl font-bold">{selectedCourse.title}</h2>
 
-              <ul className="list-disc pl-6 space-y-2">
-                {t.courses[t.categories[0]]
-                  .find((c) => c.title === selectedCourse)
-                  ?.content.map((item, index) => (
-                    <li key={index} className="text-muted-foreground">
-                      {item}
-                    </li>
-                  ))}
-              </ul>
-            </div>
-          </>
-        )}
+        {/* 跳转按钮，直接用 selectedCourse.slug */}
+        <Link href={`/courses/${selectedCourse.slug}`} passHref>
+          <Button>
+            {lang === "en" ? "Find out more about this course" : "查看课程详情"}
+          </Button>
+        </Link>
+
+        <div className="space-y-4 mt-12">
+          <h3 className="text-xl font-semibold">
+            {lang === "en" ? "What Does the Program Involve?" : "课程详情"}
+          </h3>
+          <ul className="list-disc pl-6 space-y-2">
+            {selectedCourse.content.map((item, i) => (
+              <li key={i} className="text-muted-foreground">
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </div>
   );
