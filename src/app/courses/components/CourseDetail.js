@@ -73,7 +73,7 @@ export const CourseDetail = () => {
         <h2 className="text-3xl font-bold">{selectedCourse.title}</h2>
 
         {/* 跳转按钮，直接用 selectedCourse.slug */}
-        <Link href={`/courses/${selectedCourse.slug}`} passHref>
+        <Link href={`/courses/${selectedCourse.slug}`}>
           <Button>
             {lang === "en" ? "Find out more about this course" : "查看课程详情"}
           </Button>

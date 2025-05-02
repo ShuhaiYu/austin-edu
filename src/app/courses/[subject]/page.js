@@ -1,5 +1,9 @@
 import { notFound } from "next/navigation";
+import SchoolsCarousel from "./components/SchoolsCarousel";
 import Image from "next/image";
+import { CourseStructure } from "./components/CourseStructure";
+import { ArrowBigRight, ArrowRight } from "lucide-react";
+import { CourseFeature } from "../components/CourseFeature";
 
 // 静态课程列表
 const COURSES = {
@@ -25,6 +29,17 @@ async function getCourseData(subject) {
     return null;
   }
 }
+
+const SCHOOL_IMAGES = [
+  { name: "Scotch College", image: "school_SC.png" },
+  { name: "Presbyterian Ladies’ College", image: "school_PLC.png" },
+  { name: "Melbourne Grammar", image: "school_MGS.png" },
+  { name: "Trinity Grammar", image: "school_TGS.jpg" },
+  { name: "Caulfield Grammar", image: "school_CGS.png" },
+  { name: "Yarra Valley Grammar", image: "school_YVG.jpg" },
+  { name: "Wesley College", image: "school_WC.jpg" },
+  { name: "Korowa Anglican Girls’ School", image: "school_KAGS.jpg" },
+];
 
 export default async function CoursePage(props) {
   const { subject } = await props.params;
@@ -59,12 +74,21 @@ export default async function CoursePage(props) {
 
         {/* Historical Achievements */}
         <div className="bg-gray-50 p-8 rounded-2xl mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">
-            Achievements {course.heroSection.achievements.historical.range}
+          <h3 className="text-2xl text-gray-900 mb-6">
+            {course.heroSection.achievements.historical.range}
           </h3>
-          <div className="grid md:grid-cols-4 gap-6">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Austin Education has developed:
+          </h2>
+          <div className="grid md:grid-cols-5 gap-6 ">
             {course.heroSection.achievements.historical.items.map((item, i) => (
-              <div key={i} className="text-center">
+              <div
+                key={i}
+                className="text-center bg-blue-50 p-6 rounded-[2rem]"
+              >
+                {item.title && (
+                  <p className="text-gray-800 font-medium">{item.title}</p>
+                )}
                 <div className="text-3xl font-bold text-blue-700">
                   {item.number}
                 </div>
@@ -78,75 +102,152 @@ export default async function CoursePage(props) {
         </div>
 
         {/* Partner Schools */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Featured in Top Schools
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {course.heroSection.schoolLogos.map((school, i) => (
+
+        <SchoolsCarousel schools={SCHOOL_IMAGES} />
+      </section>
+
+      {/* Core Features Section */}
+      <section className="py-16 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+            Core Highlights
+          </h2>
+          <p className="text-2xl text-gray-700 mb-12 text-center">
+            Key Features of Austin Education&apos;s {course.title}:
+          </p>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {course.coreFeatures.sections.map((section, i) => (
               <div
                 key={i}
-                className="bg-white p-4 rounded-lg shadow-sm text-center border border-gray-200"
+                className={`bg-white p-8 rounded-2xl shadow-lg ${
+                  section.paragraph ? "lg:col-span-2" : "lg:col-span-1"
+                }`}
               >
-                <span className="text-gray-700 font-medium">{school}</span>
+                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                  {section.title}
+                </h3>
+                <div
+                  className={`${
+                    section.paragraph ? "grid lg:grid-cols-2 gap-8" : ""
+                  }`}
+                >
+                  <div>
+                    {section.list && (
+                      <ul className="space-y-4">
+                        {section.list.map((item, j) => (
+                          <li
+                            key={j}
+                            className="flex items-start text-gray-700"
+                          >
+                            <svg
+                              className="w-5 h-5 text-blue-600 mr-3 mt-1 flex-shrink-0"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                            <span className="text-lg">{item}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+
+                  {section.paragraph && (
+                    <div className="mt-6 lg:mt-0">
+                      <p className="text-gray-600 text-lg leading-relaxed">
+                        {section.paragraph}
+                      </p>
+                    </div>
+                  )}
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Core Features Section */}
-      <section className="py-16 border-b border-gray-200">
-        <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-          Core Highlights
-        </h2>
+      {/* Custom Course Feature */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+            {course.customCourseFeature.title}
+          </h2>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {course.coreFeatures.sections.map((section, i) => (
-            <div key={i} className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                {section.title}
-              </h3>
-              <div className="space-y-6">
-                {section.items.map((item, j) => (
-                  <div key={j} className="flex items-start">
-                    <div className="text-3xl mr-4">{item.icon}</div>
-                    <div>
-                      <h4 className="text-xl font-semibold text-gray-900">
-                        {item.title}
-                      </h4>
-                      <p className="text-gray-600 mt-2">{item.content}</p>
-                    </div>
-                  </div>
-                ))}
+          {/* 网格容器 */}
+          <div className="grid grid-cols-3 grid-rows-2 gap-6 mb-16 min-h-[600px]">
+            {/* 描述段落1+2 */}
+            <div className="col-span-1 row-span-1 p-6">
+              <p className="text-sm text-gray-700 leading-relaxed">
+                {course.customCourseFeature.description[0]}
+              </p>
+              <p className="text-sm text-gray-700 leading-relaxed mt-4">
+                {course.customCourseFeature.description[1]}
+              </p>
+            </div>
+
+            {/* 图片1 */}
+            <div className="col-span-1 row-span-1 relative rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={course.customCourseFeature.images[0]}
+                alt="Step 1"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+
+            {/* 图片2（跨两行） */}
+            <div className="col-span-1 row-span-2 relative rounded-xl overflow-hidden shadow-lg">
+              <Image
+                src={course.customCourseFeature.images[1]}
+                alt="Process Overview"
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+
+            {/* 描述段落3+4（合并单元格） */}
+            <div className="col-span-2 row-span-1 p-6 flex gap-6">
+              <div className="flex-1">
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  {course.customCourseFeature.description[2]}
+                </p>
+                <p className="text-sm text-gray-700 leading-relaxed mt-4">
+                  {course.customCourseFeature.description[3]}
+                </p>
               </div>
             </div>
-          ))}
-        </div>
-      </section>
+          </div>
 
-      {/* Essay Refinement Process */}
-      <section className="py-16 bg-blue-50">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-            {course.essayRefinement.title}
-          </h2>
-          
-          <div className="grid md:grid-cols-5 gap-6">
-            {course.essayRefinement.steps.map((step) => (
-              <div 
-                key={step.step}
-                className="bg-white p-6 rounded-xl shadow-md text-center"
-              >
-                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  {step.step}
+          {/* 步骤流程（保持垂直排列） */}
+          <div className="max-w-3xl mx-auto">
+            <div className="space-y-8">
+              {course.customCourseFeature.steps.map((step) => (
+                <div
+                  key={step.step}
+                  className="bg-white p-6 rounded-xl shadow-md"
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
+                      {step.step}
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-semibold text-gray-900">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-600 mt-2">{step.content}</p>
+                    </div>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-sm text-gray-600">{step.content}</p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -158,34 +259,25 @@ export default async function CoursePage(props) {
             Comprehensive Resources
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Learning Package
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
+          <div className="">
+            <div className="">
+              <div className="grid grid-cols-3 gap-8">
                 {course.resources.packages.map((pkg, i) => (
-                  <div key={i} className="bg-gray-50 p-4 rounded-lg">
-                    <div className="text-3xl mb-2">{pkg.icon}</div>
-                    <div className="font-medium text-gray-900">{pkg.title}</div>
-                    <div className="text-sm text-gray-600">{pkg.count}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Support System
-              </h3>
-              <div className="space-y-4">
-                {course.resources.support.map((item, i) => (
-                  <div 
+                  <div
                     key={i}
-                    className="flex items-center bg-gray-50 px-4 py-3 rounded-lg"
+                    className="flex bg-white p-4 rounded-full shadow-md"
                   >
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-800">{item}</span>
+                    <div className="text-3xl mb-2">{pkg.icon}</div>
+                    <div>
+                      <div className="font-medium text-gray-900">
+                        {pkg.title}
+                      </div>
+                      {pkg.desc && (
+                        <div className="text-sm text-gray-600 mt-1">
+                          {pkg.desc}
+                        </div>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -193,6 +285,34 @@ export default async function CoursePage(props) {
           </div>
         </div>
       </section>
+
+      {/* Course Structure Section */}
+      <CourseStructure data={course.courseStructure} />
+
+      {/* Related Courses */}
+      <section className="py-16 border-t border-gray-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+            Related Courses
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {course.relatedCourses.map((relatedCourse, i) => (
+              <div key={i} className="flex items-center justify-center bg-white p-6 rounded-xl shadow-lg">
+                <div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">
+                    {relatedCourse.title}
+                  </h3>
+                  <p className="text-gray-700">{relatedCourse.subtitle}</p>
+                </div>
+                <ArrowRight className="w-8 h-8 p-2 rounded-full bg-blue-50 ml-auto" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer Section */}
+      <CourseFeature />
     </div>
   );
 }
