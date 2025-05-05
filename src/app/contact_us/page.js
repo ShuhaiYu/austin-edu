@@ -217,84 +217,96 @@ export default function ContactPage() {
         </div>
       </div>
 
-      {/* 校区信息卡片部分 */}
-      <section className="mt-16 space-y-12">
-        <h2 className="text-4xl font-bold">{t.contactUsTitle}</h2>
+{/* 校区信息卡片部分 */}
+<section className="mt-16 space-y-12">
+  <h2 className="text-4xl font-bold lg:text-5xl md:text-4xl sm:text-3xl">{t.contactUsTitle}</h2>
 
-        <div className="grid grid-cols-1 gap-8">
-          {contactUsContent[lang].contactUs.map((campus, index) => (
-            <div key={index} className="bg-white rounded-xl shadow-lg p-8">
-              <div className="flex gap-6">
-                {/* QR Code 部分 */}
-                <div className="w-1/3">
-                  <Image
-                    src={campus.QRCode}
-                    width={400}
-                    height={400}
-                    alt={`QR Code - ${campus.title}`}
-                    className="rounded-lg"
-                  />
+  <div className="grid grid-cols-1 gap-8">
+    {contactUsContent[lang].contactUs.map((campus, index) => (
+      <div key={index} className="bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-visible relative">
+        <div className="flex flex-col md:flex-row gap-8">
+          {/* QR Code - 响应式定位 */}
+          <div className="md:w-[200px] lg:w-[240px] relative md:-left-16 lg:-left-20 -top-8 md:-top-0 mx-auto md:mx-0">
+            <Image
+              src={campus.QRCode}
+              width={600}
+              height={600}
+              alt={`QR Code - ${campus.title}`}
+              className="rounded-lg shadow-xl w-[140px] md:w-full"
+            />
+          </div>
+
+          {/* 内容区域 */}
+          <div className="flex-1 flex flex-col lg:flex-row gap-6 md:gap-8">
+            {/* 左侧校区信息 - 响应式宽度 */}
+            <div className="lg:w-1/4 xl:w-1/3 space-y-4">
+              <h3 className="text-xl lg:text-2xl font-bold">
+                {campus.title}
+                <span className="block mt-2 text-sm lg:text-base text-muted-foreground">
+                  {campus.subtitle}
+                </span>
+              </h3>
+              
+              <div className="space-y-3 text-sm lg:text-base">
+                <div className="flex items-start gap-2">
+                  <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+                  <span className="break-words">{campus.location}</span>
                 </div>
+                <div className="flex items-center gap-2">
+                  <Mail className="w-4 h-4 flex-shrink-0" />
+                  <span className="break-all">{campus.email}</span>
+                </div>
+              </div>
+            </div>
 
-                {/* 校区基本信息 + 年级联系方式 */}
-                <div className="flex-1 flex flex-col gap-4">
-                  <h3 className="text-2xl font-bold">{campus.title}</h3>
-                  <div className="space-y-2 text-muted-foreground">
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-5 h-5" />
-                      <span>{campus.location}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Mail className="w-5 h-5" />
-                      <span>{campus.email}</span>
-                    </div>
-                  </div>
-
-                  {/* 年级联系方式 */}
-                  <div className="flex flex-wrap gap-8 mt-4">
-                    {campus.about.map((grade, gradeIndex) => (
-                      <div key={gradeIndex} className="flex-1 min-w-[200px]">
-                        <h4 className="font-semibold text-lg">{grade.title}</h4>
-                        <div className="space-y-2 text-sm text-muted-foreground">
-                          {grade.phone.map((num, i) => (
-                            <div key={i} className="flex items-center gap-2">
-                              <Phone className="w-4 h-4" />
-                              <span>{num}</span>
+            {/* 右侧联系方式 - 响应式网格 */}
+            <div className="lg:w-3/4 xl:w-2/3 overflow-x-auto pb-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 min-w-[300px] gap-6 md:gap-8">
+                {campus.about.map((grade, gradeIndex) => (
+                  <div 
+                    key={gradeIndex} 
+                  >
+                    <h4 className="text-base lg:text-lg font-semibold mb-3">
+                      {grade.title}
+                    </h4>
+                    <div className="space-y-2 text-sm lg:text-base">
+                            {grade.phone.map((num, i) => (
+                              <div key={i} className="flex items-center gap-2">
+                                <Phone className="w-4 h-4" />
+                                <span>{num}</span>
+                              </div>
+                            ))}
+                            <div className="flex items-center gap-2">
+                              <Image
+                                src="/contact_us/wechat.svg"
+                                alt="WeChat"
+                                width={16}
+                                height={16}
+                              />
+                              <span>{grade.we_chat}</span>
                             </div>
-                          ))}
-                          <div className="flex items-center gap-2">
-                            <Image
-                              src="/contact_us/wechat.svg"
-                              alt="WeChat"
-                              width={16}
-                              height={16}
-                              className="inline-block"
-                            />
-                            <span>{grade.we_chat}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Image
-                              src="/contact_us/whatsapp.svg"
-                              alt="WhatsApp"
-                              width={16}
-                              height={16}
-                              className="inline-block"
-                            />
-                            <span>{grade.whatsapp}</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <Image
-                              src="/contact_us/discord.svg"
-                              alt="Discord"
-                              width={16}
-                              height={16}
-                              className="inline-block"
-                            />
-                            <span>{grade.discord}</span>
+                            <div className="flex items-center gap-2">
+                              <Image
+                                src="/contact_us/whatsapp.svg"
+                                alt="WhatsApp"
+                                width={16}
+                                height={16}
+                              />
+                              <span>{grade.whatsapp}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                              <Image
+                                src="/contact_us/discord.svg"
+                                alt="Discord"
+                                width={16}
+                                height={16}
+                              />
+                              <span>{grade.discord}</span>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>

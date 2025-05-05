@@ -163,7 +163,7 @@ export default function Features() {
 
       {/* 功能卡片 */}
       {/* 网格布局：3列，卡片居中 */}
-      <div className="flex flex-col xl:flex-row gap-16 xl:gap-8 justify-center items-center">
+      <div className="flex flex-col xl:flex-row gap-16 xl:gap-24 justify-center items-center">
         {features.map((feat) => (
           <div
             key={feat.title_en}

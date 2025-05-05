@@ -2,7 +2,7 @@ import { notFound } from "next/navigation";
 import SchoolsCarousel from "./components/SchoolsCarousel";
 import Image from "next/image";
 import { CourseStructure } from "./components/CourseStructure";
-import { ArrowBigRight, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { CourseFeature } from "../components/CourseFeature";
 
 // 静态课程列表

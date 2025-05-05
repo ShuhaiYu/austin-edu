@@ -45,7 +45,7 @@ export const CourseDetail = () => {
                 className="gap-4 rounded-[2rem] border border-gray-200 p-2 mb-4 bg-white"
               >
                 <AccordionTrigger
-                  className={`rounded-[2rem] border border-gray-200 p-6 ${bgColor} font-semibold hover:bg-primary hover:text-muted-foreground transition-colors duration-300`}
+                  className={`rounded-[2rem] border border-gray-200 p-6 ${bgColor} font-semibold hover:from-primary hover:to-primary hover:text-white [&>svg]:hover:stroke-white transition-colors duration-300`}
                 >
                   {category}
                 </AccordionTrigger>
