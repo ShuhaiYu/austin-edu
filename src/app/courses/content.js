@@ -554,6 +554,7 @@ export const coursesContent = {
         "Primary Y1-Y6": [
           {
             title: "Y1-6 English Enrichment (Eng/EAL)",
+            slug: "y1-6-english-enrichment",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -563,6 +564,7 @@ export const coursesContent = {
           },
           {
             title: "Y1-6 Maths Enrichment",
+            slug: "y1-6-maths-enrichment",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -572,6 +574,7 @@ export const coursesContent = {
           },
           {
             title: "Y1-6 Chinese Enrichment",
+            slug: "y1-6-chinese-enrichment",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -581,6 +584,7 @@ export const coursesContent = {
           },
           {
             title: "Y3-6 Writing",
+            slug: "y3-6-writing",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -590,6 +594,7 @@ export const coursesContent = {
           },
           {
             title: "Y3, Y5 Naplan",
+            slug: "y3-y5-naplan",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -599,6 +604,7 @@ export const coursesContent = {
           },
           {
             title: "AEAS",
+            slug: "aeas",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -608,6 +614,7 @@ export const coursesContent = {
           },
           {
             title: "3-to-5 Scholarship Victoria",
+            slug: "3-to-5-scholarship-victoria",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -617,6 +624,7 @@ export const coursesContent = {
           },
           {
             title: "5-to-7 Scholarship Victoria",
+            slug: "5-to-7-scholarship-victoria",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -626,6 +634,7 @@ export const coursesContent = {
           },
           {
             title: "3-to-5 Scholarship South Australia",
+            slug: "3-to-5-scholarship-south-australia",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -635,6 +644,7 @@ export const coursesContent = {
           },
           {
             title: "5-to-7 Scholarship South Australia",
+            slug: "5-to-7-scholarship-south-australia",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -644,6 +654,7 @@ export const coursesContent = {
           },
           {
             title: "5-to-7 Selective School South Australia",
+            slug: "5-to-7-selective-school-south-australia",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",

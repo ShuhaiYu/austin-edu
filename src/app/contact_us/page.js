@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { useContext, useState } from "react";
 import { LangContext } from "@/app/layout";
 import MultiSelect from "@/components/multiselect";
-import { contactUsContent } from "./content";
+import { contactUsContent } from "./contact_us_content";
 import Image from "next/image";
 
 import { MapPin, Mail, Phone } from "lucide-react";
