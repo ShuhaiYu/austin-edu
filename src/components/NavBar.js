@@ -18,7 +18,12 @@ const menuItems = [
     href: "/achievements",
   },
   { key: "courses", label_en: "Courses", label_zh: "课程", href: "/courses" },
-  { key: "teacher", label_en: "Teacher", label_zh: "教师", href: "/teacher" },
+  {
+    key: "my_austin",
+    label_en: "Homework System",
+    label_zh: "作业系统",
+    href: "/my_austin",
+  },
   {
     key: "resource_hub",
     label_en: "Resource Hub",
@@ -58,17 +63,17 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       // 检测滚动方向
       if (currentScrollY > lastScrollY) {
-        setScrollDirection('down');
+        setScrollDirection("down");
       } else if (currentScrollY < lastScrollY) {
-        setScrollDirection('up');
+        setScrollDirection("up");
       }
-      
+
       // 更新最后滚动位置
       setLastScrollY(currentScrollY);
-      
+
       // 当滚动到顶部时强制显示
       if (currentScrollY < 10) {
         setIsScrolled(false);
@@ -76,15 +81,15 @@ export default function Header() {
     };
 
     const debouncedScroll = throttle(handleScroll, 100);
-    window.addEventListener('scroll', debouncedScroll);
-    return () => window.removeEventListener('scroll', debouncedScroll);
+    window.addEventListener("scroll", debouncedScroll);
+    return () => window.removeEventListener("scroll", debouncedScroll);
   }, [lastScrollY]);
 
   // 根据滚动方向控制显示
   useEffect(() => {
-    if (scrollDirection === 'up' && lastScrollY > 100) {
+    if (scrollDirection === "up" && lastScrollY > 100) {
       setIsScrolled(false);
-    } else if (scrollDirection === 'down' && lastScrollY > 100) {
+    } else if (scrollDirection === "down" && lastScrollY > 100) {
       setIsScrolled(true);
     }
   }, [scrollDirection, lastScrollY]);
@@ -124,9 +129,15 @@ export default function Header() {
             {/* 右侧：语言切换 & 用户按钮 */}
             <div className="flex items-center gap-4">
               <LanguageSwitcher />
-              <Button className="gap-2" onClick={() => router.push("/my_austin")}>
-                {lang === "zh" ? "我的账户" : "My Austin"}
-              </Button>
+              <Link
+                href="https://myaustin.com.au/login.html"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button className="gap-2">
+                  {lang === "zh" ? "我的账户" : "My Austin"}
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
@@ -195,9 +206,9 @@ export default function Header() {
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8">
               {menuItems.map((item) => {
                 const isActive =
-                item.href === "/"
-                  ? pathname === item.href
-                  : pathname.startsWith(item.href);
+                  item.href === "/"
+                    ? pathname === item.href
+                    : pathname.startsWith(item.href);
                 return (
                   <Link
                     key={item.key}

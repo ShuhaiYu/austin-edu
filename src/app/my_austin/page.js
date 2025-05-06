@@ -92,7 +92,7 @@ export default function MyAustinPage() {
         </p>
         <Button size="lg" asChild>
           <a
-            href="https://lms.austinedu.com"
+            href="https://myaustin.com.au/login.html"
             target="_blank"
             rel="noopener noreferrer"
           >
