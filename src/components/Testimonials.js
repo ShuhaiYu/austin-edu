@@ -83,11 +83,7 @@ export default function Testimonials() {
                       <div className="flex flex-col justify-between items-center">
                         <div className="font-semibold text-gray-900 text-sm">
                           - {item.name} (
-                          {lang === "zh"
-                            ? item.role === "Student"
-                              ? "学生"
-                              : "家长"
-                            : item.role}
+                          {item.role}
                           )
                         </div>
                         <div className="text-yellow-500 text-sm">
