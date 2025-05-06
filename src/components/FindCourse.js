@@ -9,33 +9,23 @@ import {
   SelectContent,
   SelectItem,
 } from "@/components/ui/select";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { homeContent } from "@/app/content";
 
 export default function FindCourse() {
-  const langContext = useContext(LangContext);
-  const lang = langContext?.lang || "en";
+  const { lang = "en" } = useContext(LangContext) || {};
+  const t = homeContent[lang].findCourse;
 
-  const [state, setState] = useState("");
-  const [grade, setGrade] = useState("");
+  const [state,   setState]   = useState("");
+  const [grade,   setGrade]   = useState("");
   const [subject, setSubject] = useState("");
 
-  const placeholderText = {
-    state: lang === "zh" ? "选择州/地区" : "State",
-    grade: lang === "zh" ? "选择年级" : "Grade",
-    subject: lang === "zh" ? "选择科目" : "Subject",
-  };
-
-  const stateOptions = ["Victoria", "New South Wales", "Queensland"];
-  const gradeOptions = [
-    "Year 7",
-    "Year 8",
-    "Year 9",
-    "Year 10",
-    "Year 11",
-    "Year 12",
+  const fields = [
+    { key: "state",   value: state,   onChange: setState   },
+    { key: "grade",   value: grade,   onChange: setGrade   },
+    { key: "subject", value: subject, onChange: setSubject },
   ];
-  const subjectOptions = ["Math", "Science", "English", "History"];
 
   const handleSearch = () => {
     console.log("Searching with:", { state, grade, subject });
@@ -43,61 +33,37 @@ export default function FindCourse() {
 
   return (
     <div className="px-4 py-2">
-      {/* 使用grid布局，小屏幕1列，中屏幕5列 */}
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
         {/* 1. Label */}
         <span className="font-medium md:text-right text-lg">
-          {lang === "zh" ? "搜索课程:" : "Find a Course:"}
+          {t.label}
         </span>
 
-        {/* 2. State 下拉 */}
-        <Select value={state} onValueChange={(val) => setState(val)}>
-          <SelectTrigger className="bg-white text-gray-800 w-full">
-            <SelectValue placeholder={placeholderText.state} />
-          </SelectTrigger>
-          <SelectContent>
-            {stateOptions.map((opt) => (
-              <SelectItem key={opt} value={opt}>
-                {opt}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-
-        {/* 3. Grade 下拉 */}
-        <Select value={grade} onValueChange={(val) => setGrade(val)}>
-          <SelectTrigger className="bg-white text-gray-800 w-full">
-            <SelectValue placeholder={placeholderText.grade} />
-          </SelectTrigger>
-          <SelectContent>
-            {gradeOptions.map((opt) => (
-              <SelectItem key={opt} value={opt}>
-                {opt}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
-
-        {/* 4. Subject 下拉 */}
-        <Select value={subject} onValueChange={(val) => setSubject(val)}>
-          <SelectTrigger className="bg-white text-gray-800 w-full">
-            <SelectValue placeholder={placeholderText.subject} />
-          </SelectTrigger>
-          <SelectContent>
-            {subjectOptions.map((opt) => (
-              <SelectItem key={opt} value={opt}>
-                {opt}
-              </SelectItem>
-            ))}
-          </SelectContent>
-        </Select>
+        {/* 动态渲染 3 个下拉 */}
+        {fields.map(({ key, value, onChange }) => (
+          <Select
+            key={key}
+            value={value}
+            onValueChange={onChange}
+          >
+            <SelectTrigger className="bg-white text-gray-800 w-full">
+              <SelectValue placeholder={t.placeholders[key]} />
+            </SelectTrigger>
+            <SelectContent>
+              {t.options[key].map((opt) => (
+                <SelectItem key={opt} value={opt}>
+                  {opt}
+                </SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        ))}
 
         {/* 5. Search 按钮 */}
         <Button
           onClick={handleSearch}
-          // variant="outline"
           size="icon"
-          className=" text-white border border-white hover:bg-accent "
+          className="text-white border border-white hover:bg-accent"
         >
           <Image
             src="/home/search icon.png"

@@ -11,82 +11,13 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
+import { homeContent } from "@/app/content";
 
-const testimonialsData = [
-  {
-    name: "Alice",
-    role: "Student",
-    rating: 5,
-    feedback_en: "Great tutoring service! I improved my scores a lot.",
-    feedback_zh: "很棒的辅导服务！我的成绩提升显著。",
-  },
-  {
-    name: "Bob",
-    role: "Parent",
-    rating: 4,
-    feedback_en: "The tutors are very patient.",
-    feedback_zh: "导师非常有耐心。",
-  },
-  {
-    name: "Gloria",
-    role: "Student",
-    rating: 5,
-    feedback_en: "Flexible schedule and personalized approach.",
-    feedback_zh: "时间灵活，辅导方案也很个性化。",
-  },
-  {
-    name: "David",
-    role: "Parent",
-    rating: 5,
-    feedback_en: "The tutors are very knowledgeable and professional.",
-    feedback_zh: "导师非常有知识和专业。",
-  },
-  {
-    name: "Eva",
-    role: "Student",
-    rating: 4,
-    feedback_en: "The tutors are very knowledgeable and professional.",
-    feedback_zh: "导师非常有知识和专业。",
-  },
-  {
-    name: "Frank",
-    role: "Parent",
-    rating: 5,
-    feedback_en: "The tutors are very knowledgeable and professional.",
-    feedback_zh: "导师非常有知识和专业。",
-  },
-  {
-    name: "Helen",
-    role: "Student",
-    rating: 5,
-    feedback_en: "The tutors are very knowledgeable and professional.",
-    feedback_zh: "导师非常有知识和专业。",
-  },
-  {
-    name: "Ivy",
-    role: "Parent",
-    rating: 5,
-    feedback_en: "The tutors are very knowledgeable and professional.",
-    feedback_zh: "导师非常有知识和专业。",
-  },
-  {
-    name: "Jack",
-    role: "Student",
-    rating: 5,
-    feedback_en: "The tutors are very knowledgeable and professional.",
-    feedback_zh: "导师非常有知识和专业。",
-  },
-  {
-    name: "Kelly",
-    role: "Parent",
-    rating: 5,
-    feedback_en: "The tutors are very knowledgeable and professional.",
-    feedback_zh: "导师非常有知识和专业。",
-  },
-];
+
 
 export default function Testimonials() {
   const { lang } = useContext(LangContext) || { lang: "en" };
+  const testimonialsData = homeContent[lang].testimonials;
 
   // Carousel 的 API 实例
   const [api, setApi] = useState(null)
@@ -147,7 +78,7 @@ export default function Testimonials() {
                   >
                     <div className="flex flex-col justify-between items-center h-full">
                       <p className="italic text-sm text-gray-600 line-clamp-4">
-                        {lang === "zh" ? item.feedback_zh : item.feedback_en}
+                        {item.feedback}
                       </p>
                       <div className="flex flex-col justify-between items-center">
                         <div className="font-semibold text-gray-900 text-sm">

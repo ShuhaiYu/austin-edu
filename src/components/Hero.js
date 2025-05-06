@@ -2,29 +2,12 @@ import { useContext } from "react";
 import Image from "next/image";
 import { LangContext } from "@/app/layout";
 import { Button } from "./ui/button";
+import { homeContent } from "@/app/content";
 
 export default function Hero() {
   const { lang } = useContext(LangContext) || { lang: "en" };
 
-  const content = {
-    en: {
-      title: "Melbourne's Leading All-In-One Tutorial Service",
-      description: `Founded in 2013, Austin Education is dedicated to providing every student
-      with the highest-quality educational resources, including exceptional
-      teachers, premium materials, structured courses, and extensive practice,
-      empowering each student to achieve success in the most efficient way.`,
-      getStarted: "Get Started",
-      contact: "Contact",
-    },
-    zh: {
-      title: "墨尔本领先的一体化辅导服务",
-      description: `奥斯汀教育成立于2013年，致力于为每位学生提供最优质的教育资源，
-      包括卓越的教师团队、精品教材、系统化课程和丰富实践，
-      帮助每位学生以最高效的方式取得成功。`,
-      getStarted: "立即开始",
-      contact: "联系我们",
-    },
-  }[lang];
+  const content = homeContent[lang].hero
 
   return (
     <section className="container py-2">
