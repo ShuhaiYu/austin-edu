@@ -15,7 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import ScaleCarousel from "@/components/ScaleCarousel";
 import FAQ from "@/components/FAQ";
-import { myAustinContent } from "./content";
+import { myAustinContent } from "./my_austin_content";
 
 
 const FeatureRow = ({ title, desc, index, lang, image }) => (
