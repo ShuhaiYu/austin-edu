@@ -3,7 +3,7 @@ export const coursesContent = {
     detail: {
       categories: [
         "Primary Y1-Y6",
-        "Secondary Y1-Y6",
+        "Secondary Y7-Y9",
         "Secondary Y10-Y12",
         "Medical Program",
       ],
@@ -31,7 +31,7 @@ export const coursesContent = {
           },
           {
             title: "Y1-6 Chinese Enrichment",
-            slug: "y1-6-chinese-enrichment",
+            slug: "y1-6-chinese",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -122,7 +122,75 @@ export const coursesContent = {
 
           // 添加更多课程...
         ],
-        // 其他分类...
+        
+        "Secondary Y7-Y9": [
+          {
+            title: "Y7-9 English Enrichment (Eng/EAL)",
+            slug: "y7-9-english-enrichment",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "Y7-9 Maths Enrichment",
+            slug: "y7-9-maths",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+        ],
+
+        "Secondary Y10-Y12": [
+          {
+            title: "Y10-12 English Enrichment (Eng/EAL)",
+            slug: "y10-12-english-enrichment",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "Y10 Maths Standard",
+            slug: "y10-maths-standard",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "Y10 Maths Advance",
+            slug: "y10-maths-advance",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+        ],
+
+        "Medical Program": [
+          {
+            title: "Medical Program",
+            slug: "medical-program",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+        ],
       },
     },
     content: {
@@ -574,7 +642,7 @@ export const coursesContent = {
           },
           {
             title: "Y1-6 Chinese Enrichment",
-            slug: "y1-6-chinese-enrichment",
+            slug: "y1-6-chinese",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -663,9 +731,30 @@ export const coursesContent = {
             ],
           },
 
-          // 添加更多课程...
+          
         ],
-        // 其他分类...
+        "Secondary Y7-Y9": [
+          {
+            title: "Y7-9 English Enrichment (Eng/EAL)",
+            slug: "y7-9-english-enrichment",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "Y7-9 Maths Enrichment",
+            slug: "y7-9-maths-enrichment",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+        ],
       },
     },
     content: {

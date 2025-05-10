@@ -5,6 +5,7 @@ import CoursePageClient from "./CoursePageClient";
 const COURSES = {
   "y1-6-english-enrichment": () =>
     import("@/data/courses/y1-6-english-enrichment"),
+
   // 添加其他课程...
 };
 

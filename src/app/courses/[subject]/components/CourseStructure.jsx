@@ -1,5 +1,4 @@
-// app/components/CourseStructure.jsx
-'use client';
+`use client`;
 
 import { useState } from 'react';
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs';
@@ -7,13 +6,22 @@ import { Card, CardTitle, CardContent } from '@/components/ui/card';
 import { ChevronRight } from 'lucide-react';
 
 export function CourseStructure({ data }) {
+  // 仅当有 sections 数据时才渲染
+  const sections = data?.sections || [];
+  if (sections.length === 0) {
+    return null;
+  }
+
   // 0 = year1, 1 = year2, ...
   const [selectedYear, setSelectedYear] = useState(0);
   // 0 = module1, 1 = module2, ...
   const [selectedModule, setSelectedModule] = useState(0);
 
-  const years = data.sections;                  // [{ title: 'year 1', modules: [...] }, ...]
-  const modules = years[selectedYear].modules;  // 当前年级的模块列表
+  const years = sections; // [{ title: 'year 1', modules: [...] }, ...]
+  const modules = years[selectedYear]?.modules || [];
+  if (modules.length === 0) {
+    return null;
+  }
 
   return (
     <section className="py-16 bg-white">
@@ -81,15 +89,15 @@ export function CourseStructure({ data }) {
           <div className="w-full md:w-2/3 bg-white p-8 rounded-xl shadow-lg border border-gray-200">
             <div className="mb-6">
               <h3 className="text-2xl font-bold text-gray-900">
-                {modules[selectedModule].subtitle}
+                {modules[selectedModule]?.subtitle}
               </h3>
               <p className="text-lg text-gray-600 mt-2">
-                {modules[selectedModule].title}
+                {modules[selectedModule]?.title}
               </p>
             </div>
 
             <div className="space-y-4">
-              {modules[selectedModule].lessons.map((lesson, i) => (
+              {modules[selectedModule]?.lessons?.map((lesson, i) => (
                 <div
                   key={i}
                   className="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors"
