@@ -7,6 +7,27 @@ import Image from "next/image";
 import { CourseStructure } from "./components/CourseStructure";
 import { ArrowRight } from "lucide-react";
 import { CourseFeature } from "../components/CourseFeature";
+import {
+  BookOpen,
+  Repeat,
+  Check,
+  TestTube,
+  MessageCircle,
+  GraduationCap,
+  School,
+  Compass,
+  FileText,
+  SlidersHorizontal,
+  Users,
+  ClipboardList,
+  BarChart2,
+  Target,
+  ListChecks,
+  Presentation,
+  Clock,
+  Award,
+  Calendar,
+} from "lucide-react";
 
 const SCHOOL_IMAGES = [
   { name: "Scotch College", image: "school_SC.png" },
@@ -93,8 +114,89 @@ export default function CoursePageClient({ localizedData }) {
         {SCHOOL_IMAGES?.length > 0 && (
           <SchoolsCarousel schools={SCHOOL_IMAGES} />
         )}
+
+        {/* Extra Description */}
+        {course.heroSection?.extraDescription && (
+          <div className="mt-12 text-left">
+            <p className="text-lg text-gray-700 mb-4">
+              {course.heroSection.extraDescription}
+            </p>
+          </div>
+        )}
       </section>
 
+      {/* Course Description Section */}
+      {course.courseDescription && (
+        <section className="py-16 border-b border-gray-200">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center">
+              {course.courseDescription.title}
+            </h2>
+            <p className="text-xl text-gray-700 mb-12 text-center">
+              {course.courseDescription.subtitle}
+            </p>
+
+            {/* 课程概述 */}
+            {course.courseDescription.courseOverview && (
+              <div className="space-y-8">
+                {/* 前置描述 */}
+                <div className="space-y-4 text-lg text-gray-700">
+                  {course.courseDescription.courseOverview.descriptionBeforeFeature?.map(
+                    (paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    )
+                  )}
+                </div>
+
+                {/* 关键特性 */}
+                {course.courseDescription.courseOverview.features && (
+                  <div className="bg-blue-50 p-8 rounded-2xl">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                      {course.courseDescription.courseOverview.featureTitle}
+                    </h3>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      {course.courseDescription.courseOverview.features.map(
+                        (feature, index) => (
+                          <div key={index} className="flex items-start">
+                            <svg
+                              className="w-5 h-5 text-blue-600 mr-3 mt-1 flex-shrink-0"
+                              fill="currentColor"
+                              viewBox="0 0 20 20"
+                            >
+                              <path
+                                fillRule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clipRule="evenodd"
+                              />
+                            </svg>
+                            <span className="text-lg text-gray-800">
+                              {feature}
+                            </span>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  </div>
+                )}
+
+                {/* 后置描述 */}
+                <div className="space-y-4 text-lg text-gray-700">
+                  {course.courseDescription.courseOverview.descriptionAfterFeature?.map(
+                    (paragraph, index) => (
+                      <p key={index}>{paragraph}</p>
+                    )
+                  )}
+                </div>
+              </div>
+            )}
+
+            {/* 主段落 */}
+            <p className="text-lg text-gray-700 mt-12 text-center">
+              {course.courseDescription.paragraph}
+            </p>
+          </div>
+        </section>
+      )}
       {/* Core Features Section */}
       {course.coreFeatures?.sections?.length > 0 && (
         <section className="py-16 border-b border-gray-200">
@@ -159,7 +261,244 @@ export default function CoursePageClient({ localizedData }) {
                 </div>
               ))}
             </div>
+            {/* Extra Description */}
+            {course.coreFeatures?.extraDescription && (
+              <div className="mt-12 text-left">
+                <p className="text-lg text-gray-700 mb-4">
+                  {course.coreFeatures.extraDescription}
+                </p>
+              </div>
+            )}
           </div>
+        </section>
+      )}
+
+      {/* Course Structure Section */}
+      {course.courseStructure?.overview?.length > 0 && (
+        <section className="py-16 border-b border-gray-200">
+          <div className="max-w-7xl mx-auto">
+            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+              {course.courseStructure.title}
+            </h2>
+            <div className="space-y-16">
+              {course.courseStructure.overview.map((section, index) => (
+                <div key={index} className="grid md:grid-cols-2 gap-8">
+                  <div className="bg-blue-50 p-8 rounded-2xl">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      {section.leftTitle}
+                    </h3>
+                  </div>
+                  <div className="bg-white p-8 rounded-2xl shadow-lg">
+                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                      {section.rightTitle}
+                    </h3>
+                    <ul className="list-disc pl-6 space-y-3">
+                      {section.rightContent?.map((item, i) => (
+                        <li key={i} className="text-gray-700 text-lg">
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Why Choose Us Section */}
+      {course.whyChooseUs && (
+        <section className="py-16 border-b border-gray-200">
+          {/* Part A */}
+          {course.whyChooseUs.partA?.content?.length > 0 && (
+            <div className="max-w-7xl mx-auto mb-20">
+              <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+                {course.whyChooseUs.partA.title}
+              </h2>
+              <div className="grid lg:grid-cols-3 gap-8">
+                <div className="lg:col-span-1 space-y-8">
+                  <div className="relative h-[600px] rounded-2xl overflow-hidden">
+                    <Image
+                      src={course.whyChooseUs.partA.image1}
+                      alt="Why choose us"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="relative h-[1000px] rounded-2xl overflow-hidden">
+                    <Image
+                      src={course.whyChooseUs.partA.image2}
+                      alt="Process"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+                <div className="lg:col-span-2 space-y-8">
+                  {course.whyChooseUs.partA.content.map((item, i) => (
+                    <div key={i} className="bg-white p-8 rounded-2xl shadow-lg">
+                      <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-700 text-lg leading-relaxed">
+                        {item.paragraph}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Part B */}
+          {course.whyChooseUs.partB?.contents?.length > 0 && (
+            <div className="max-w-7xl mx-auto mb-20">
+              <div className="grid grid-cols-2 gap-16 items-center">
+                <h2 className="text-5xl font-bold">
+                  {course.whyChooseUs.partB.title}
+                </h2>
+                <p className="text-muted-foreground">
+                  {course.whyChooseUs.partB.description}
+                </p>
+              </div>
+
+              {course.whyChooseUs.partB.contents.map((content, index) => (
+                <div
+                  key={content.title}
+                  className={`flex flex-col gap-16 items-center ${
+                    index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
+                  }`}
+                >
+                  {/* 文字描述 */}
+                  <div className="w-1/2 space-y-4">
+                    <div className="flex items-center gap-3 mb-4">
+                      <div className="p-3 rounded-full bg-blue-100 text-blue-600">
+                        {content.icon === "book" && <BookOpen size={24} />}
+                        {content.icon === "repeat" && <Repeat size={24} />}
+                        {content.icon === "check" && <Check size={24} />}
+                        {content.icon === "test" && <TestTube size={24} />}
+                        {content.icon === "communication" && (
+                          <MessageCircle size={24} />
+                        )}
+                        {content.icon === "graduation" && (
+                          <GraduationCap size={24} />
+                        )}
+                        {content.icon === "school" && <School size={24} />}
+                        {content.icon === "compass" && <Compass size={24} />}
+                        {content.icon === "file-text" && <FileText size={24} />}
+                        {content.icon === "sliders-horizontal" && (
+                          <SlidersHorizontal size={24} />
+                        )}
+                        {content.icon === "users" && <Users size={24} />}
+                        {content.icon === "clipboard-list" && (
+                          <ClipboardList size={24} />
+                        )}
+                        {content.icon === "bar-chart-2" && (
+                          <BarChart2 size={24} />
+                        )}
+                        {content.icon === "target" && <Target size={24} />}
+                        {content.icon === "list-checks" && (
+                          <ListChecks size={24} />
+                        )}
+                        {content.icon === "chalkboard" && (
+                          <Presentation size={24} />
+                        )}
+                        {content.icon === "clock" && <Clock size={24} />}
+                        {content.icon === "award" && <Award size={24} />}
+                        {content.icon === "calendar" && <Calendar size={24} />}
+                      </div>
+                      <h3 className="text-2xl font-bold">{content.title}</h3>
+                    </div>
+                    <p className="text-muted-foreground">
+                      {content.description}
+                    </p>
+                  </div>
+
+                  {/* 图片 */}
+                  <div className="w-1/2 relative h-96 rounded-[2rem] overflow-hidden shadow-lg">
+                    <Image
+                      src={content.image}
+                      alt={content.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {/* Part C */}
+          {course.whyChooseUs.partC?.list?.length > 0 && (
+            <div className="max-w-7xl mx-auto mb-20">
+              <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+                {course.whyChooseUs.partC.title}
+              </h2>
+              <ul className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                {course.whyChooseUs.partC.list.map((item, i) => (
+                  <li
+                    key={i}
+                    className="flex items-start bg-blue-50 p-4 rounded-lg"
+                  >
+                    <svg
+                      className="w-5 h-5 text-blue-600 mr-3 mt-1 flex-shrink-0"
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    <span className="text-gray-800 text-lg">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+
+          {/* Part D */}
+          {course.whyChooseUs.partD?.table && (
+            <div className="max-w-7xl mx-auto">
+              <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+                {course.whyChooseUs.partD.title}
+              </h2>
+              <div className="overflow-x-auto rounded-lg border border-gray-200">
+                <table className="min-w-full divide-y divide-gray-200">
+                  <thead className="bg-gray-50">
+                    <tr>
+                      {course.whyChooseUs.partD.table.headers?.map(
+                        (header, i) => (
+                          <th
+                            key={i}
+                            className="px-6 py-3 text-left text-sm font-semibold text-gray-900"
+                          >
+                            {header}
+                          </th>
+                        )
+                      )}
+                    </tr>
+                  </thead>
+                  <tbody className="bg-white divide-y divide-gray-200">
+                    {course.whyChooseUs.partD.table.rows?.map((row, i) => (
+                      <tr key={i}>
+                        {row.map((cell, j) => (
+                          <td
+                            key={j}
+                            className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
+                          >
+                            {cell}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          )}
         </section>
       )}
 
@@ -241,6 +580,14 @@ export default function CoursePageClient({ localizedData }) {
                     </div>
                   ))}
                 </div>
+              </div>
+            )}
+            {/* 额外描述段落 */}
+            {course.customCourseFeature?.extraDescription && (
+              <div className="mt-12 text-left">
+                <p className="text-lg text-gray-700 mb-4">
+                  {course.customCourseFeature.extraDescription}
+                </p>
               </div>
             )}
           </div>

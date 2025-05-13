@@ -1,3 +1,5 @@
+import { list } from "postcss";
+
 const courseData = {
   en: {
     slug: "y1-6-english-enrichment",
@@ -75,6 +77,33 @@ const courseData = {
         "Wesley College",
         "Korowa Anglican Girls’ School",
       ],
+      extraDescription: "这是在学校logo的下方的额外描述",
+    },
+
+    courseDescription: {
+      title: "Course Description",
+      subtitle:
+        "The Year 1-6 English Enrichment Program is designed to enhance students' English language skills and prepare them for future academic challenges.",
+      paragraph:
+        "The program is tailored to meet the needs of students in Year 1-6, providing a comprehensive curriculum that covers various aspects of English language and literature. With a strong emphasis on essay writing, reading comprehension, and vocabulary development, students will gain the skills necessary to succeed in their academic pursuits.",
+      courseOverview: {
+        title: "Course Overview",
+        descriptionBeforeFeature: [
+          "The Year 1-6 English Enrichment Program is designed to enhance students' English language skills and prepare them for future academic challenges.",
+          "The program is tailored to meet the needs of students in Year 1-6, providing a comprehensive curriculum that covers various aspects of English language and literature. With a strong emphasis on essay writing, reading comprehension, and vocabulary development, students will gain the skills necessary to succeed in their academic pursuits.",
+        ],
+        featureTitle: "Key Features",
+        features: [
+          "Comprehensive curriculum covering all aspects of English language and literature",
+          "Emphasis on essay writing, reading comprehension, and vocabulary development",
+          "Regular assessments and feedback to track progress",
+          "Supportive learning environment with experienced instructors",
+        ],
+        descriptionAfterFeature: [
+          "The Year 1-6 English Enrichment Program is designed to enhance students' English language skills and prepare them for future academic challenges.",
+          "The program is tailored to meet the needs of students in Year 1-6, providing a comprehensive curriculum that covers various aspects of English language and literature. With a strong emphasis on essay writing, reading comprehension, and vocabulary development, students will gain the skills necessary to succeed in their academic pursuits.",
+        ],
+      },
     },
     coreFeatures: {
       sections: [
@@ -131,6 +160,133 @@ const courseData = {
           ],
         },
       ],
+      extraDescription:
+        "这是在课程特色的下方的额外描述，可能是一些课程的亮点或其他相关信息。",
+    },
+    courseStructure: {
+      title: "Course Structure",
+      overview: [
+        {
+          leftTitle: "Course Overview 1",
+          rightTitle: "Course Overview 1",
+          rightContent: ["list item 1", "list item 2", "list item 3"],
+        },
+        {
+          leftTitle: "Course Overview 2",
+          rightTitle: "Course Overview 2",
+          rightContent: ["list item 1", "list item 2", "list item 3"],
+        },
+      ],
+    },
+    whyChooseUs: {
+      partA: {
+        title: "Why Choose Us ......",
+        image1: "https://placehold.co/400x600?text=Image+1",
+        image2: "https://placehold.co/400x1000?text=Image+2",
+        content: [
+          {
+            title: "1. High-Standard Essay Refinement Process",
+            paragraph:
+              "One of the key factors for achieving high scores in the VCE English exam is receiving precise, personalised refinement and guidance for each essay. At Austin, our English team refines nearly a thousand student essays each year, ensuring that every essay is meticulously polished word by word. Our teachers not only focus on improving language expression and optimising structure but also guide students to think critically, expand their viewpoints, and enhance their writing logic.",
+          },
+          {
+            title: "2. High-Standard Essay Refinement Process",
+            paragraph:
+              "Austin teachers accurately predicted the essay topic, led students through practice, and meticulously refined this particular piece.",
+          },
+          {
+            title: "3. High-Standard Essay Refinement Process",
+            paragraph:
+              "At most day schools, essay corrections often only provide simple feedback. However, at Austin, we insist on in-depth revisions and one-on-one communication, helping students truly understand and improve their writing skills. We do not encourage rote memorisation, but instead, through a systematic revision process, we cultivate students’ independent thinking and high-quality writing abilities.",
+          },
+          {
+            title: "4. High-Standard Essay Refinement Process",
+            paragraph:
+              "Our high-standard essay refinement process includes five core steps, ensuring that every student can achieve their best performance in SACs and exams.",
+          },
+          {
+            title: "5. High-Standard Essay Refinement Process",
+            paragraph:
+              "Austin teachers accurately predicted the essay topic, led students through practice, and meticulously refined this particular piece.",
+          },
+        ],
+      },
+      partB: {
+        title: "Building strong Foundations and Positive Learning Habits",
+        description:
+          "The primary years are a crucial stage for developing foundational skills, fostering curiosity, and building positive study habits.Austin Education provides structured learning designed to support young learners in developing confidence and a love for learning:",
+        contents: [
+          {
+            title: "Engaging and Interactive Lessons",
+            description:
+              "Lessons incorporate diverse content and interactive teaching methods to broaden students' knowledge and enhance their focus and independent learning skills. Course materials extend beyond school curricula, offering students additional challenges to build a strong academic foundation.",
+            icon: "book",
+            //   image: "/images/y1-y6-1.jpg",
+            image: "https://placehold.co/600x400",
+          },
+          {
+            title: "Consistent Practice and Reinforcement",
+            description:
+              "A combination of in-class exercises, paper-based homework, and an online assignment system helps students consolidate their learning, strengthen problem-solving skills, and develop logical thinking.",
+            icon: "repeat",
+            image: "https://placehold.co/600x400",
+          },
+          {
+            title: "Regular Progress Checks",
+            description:
+              "End-of-term assessments and structured test practice help familiarise students with exam conditions, developing resilience and preparing them for future academic challenges.",
+            icon: "check",
+            image: "https://placehold.co/600x400",
+          },
+          {
+            title: "Exam Preparation and Mock Testing",
+            description:
+              "Structured support is available for key assessments such as NAPLAN, scholarship tests, AEAS, and AMC, helping students refine their exam techniques and build confidence.",
+            icon: "test",
+            image: "https://placehold.co/600x400",
+          },
+          {
+            title: "Parent–School Communication",
+            description:
+              "Regular progress reports and parent–teacher meetings provide insights into students’ learning progress, ensuring a supportive partnership in their education journey.",
+            icon: "communication",
+            image: "https://placehold.co/600x400",
+          },
+        ],
+      },
+      partC: {
+        title: "适合的学生",
+        list: [
+          "Year 1-6 students who want to improve their English skills",
+          "Students who are preparing for VCE English exams",
+          "Students who want to enhance their essay writing and reading comprehension skills",
+          "Students who are looking for a supportive and engaging learning environment",
+        ],
+      },
+      partD: {
+        title: "课程目标",
+        table: {
+          headers: ["目标", "描述"],
+          rows: [
+            [
+              "提高英语技能",
+              "Year 1-6 students who want to improve their English skills",
+            ],
+            [
+              "准备VCE英语考试",
+              "Students who are preparing for VCE English exams",
+            ],
+            [
+              "增强写作和阅读理解能力",
+              "Students who want to enhance their essay writing and reading comprehension skills",
+            ],
+            [
+              "支持性学习环境",
+              "Students who are looking for a supportive and engaging learning environment",
+            ],
+          ],
+        },
+      },
     },
     customCourseFeature: {
       title: "High-Standard Essay Refinement Process",
@@ -171,6 +327,8 @@ const courseData = {
           content: "Sample paragraphs for quality benchmarking",
         },
       ],
+      extraDescription:
+        "这是在课程特色的下方的额外描述，可能是一些课程的亮点或其他相关信息。",
     },
     resources: {
       packages: [
@@ -620,7 +778,6 @@ const courseData = {
                 "Topic Test and Miarking & Feedback",
               ],
             },
-            
           ],
         },
       ],
