@@ -12,7 +12,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 
-export default function SchoolsCarousel({ schools }) {
+export default function SchoolsCarousel({ schools, desc }) {
   const plugin = useRef(Autoplay({ delay: 3000, stopOnInteraction: true }));
 
   return (
@@ -30,6 +30,7 @@ export default function SchoolsCarousel({ schools }) {
         <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
           Featured in Top Schools
         </h3>
+        <p className="text-gray-500 mb-8 text-center">{desc}</p>
 
         <CarouselContent className="-ml-1">
           {schools.map((school, index) => (

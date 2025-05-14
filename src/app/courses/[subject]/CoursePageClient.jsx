@@ -44,7 +44,7 @@ export default function CoursePageClient({ localizedData }) {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const course = localizedData?.[lang] || {};
 
-  console.log("CoursePageClient course", course);
+  // console.log("CoursePageClient course", course);
   
 
   return (
@@ -115,17 +115,10 @@ export default function CoursePageClient({ localizedData }) {
 
         {/* Partner Schools */}
         {SCHOOL_IMAGES?.length > 0 && (
-          <SchoolsCarousel schools={SCHOOL_IMAGES} />
+          <SchoolsCarousel schools={SCHOOL_IMAGES} desc={course.heroSection?.extraDescription} />
         )}
 
-        {/* Extra Description */}
-        {course.heroSection?.extraDescription && (
-          <div className="mt-12 text-left">
-            <p className="text-lg text-gray-700 mb-4">
-              {course.heroSection.extraDescription}
-            </p>
-          </div>
-        )}
+        
       </section>
 
       {/* Course Description Section */}
