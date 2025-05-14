@@ -163,8 +163,8 @@ const courseData = {
       extraDescription:
         "这是在课程特色的下方的额外描述，可能是一些课程的亮点或其他相关信息。",
     },
-    courseStructure: {
-      title: "Course Structure",
+    courseStructureOverview: {
+      title: "Course Structure Overview",
       overview: [
         {
           leftTitle: "Course Overview 1",

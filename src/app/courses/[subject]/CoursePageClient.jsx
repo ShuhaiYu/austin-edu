@@ -44,6 +44,9 @@ export default function CoursePageClient({ localizedData }) {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const course = localizedData?.[lang] || {};
 
+  console.log("CoursePageClient course", course);
+  
+
   return (
     <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Hero Section */}
@@ -274,14 +277,14 @@ export default function CoursePageClient({ localizedData }) {
       )}
 
       {/* Course Structure Section */}
-      {course.courseStructure?.overview?.length > 0 && (
+      {course.courseStructureOverview?.overview?.length > 0 && (
         <section className="py-16 border-b border-gray-200">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-              {course.courseStructure.title}
+              {course.courseStructureOverview.title}
             </h2>
             <div className="space-y-16">
-              {course.courseStructure.overview.map((section, index) => (
+              {course.courseStructureOverview.overview.map((section, index) => (
                 <div key={index} className="grid md:grid-cols-2 gap-8">
                   <div className="bg-blue-50 p-8 rounded-2xl">
                     <h3 className="text-2xl font-bold text-gray-900 mb-4">
