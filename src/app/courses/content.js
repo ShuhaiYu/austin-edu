@@ -2,138 +2,148 @@ export const coursesContent = {
   en: {
     detail: {
       categories: [
-        "Primary Y1-Y6",
-        "Secondary Y7-Y9",
-        "Secondary Y10-Y12",
+        "Primary Year 1-6",
+        "Secondary Year 7-9",
+        "Secondary Year 10-12",
         "Medical Program",
       ],
       courses: {
-        "Primary Y1-Y6": [
+        "Primary Year 1-6": [
           {
-            title: "Y1-6 English Enrichment (Eng/EAL)",
+            title: "Year1-6 English Enrichment (Eng/EAL)",
             slug: "y1-6-english-enrichment",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "1.5 hours of weekly class sessions",
+              "4 exclusive Austin Education textbooks",
+              "30mins-1 hours of weekly homework",
+              "12 stage/topic assessments",
+              "4 semester assessment exams",
+              "1 exam reports",
+              "2 parent-teacher meetings",
+              "Recorded lessons",
+              "Unlimited Q&A and academic support",
+              "Dedicated learning consultant for one-on-one issue resolution",
+              "Free academic consultation",
             ],
           },
           {
             title: "Y1-6 Maths Enrichment",
-            slug: "y1-6-maths-enrichment",
+            slug: "y1-6-maths",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "1.5 hours of weekly class sessions",
+              "4 exclusive Austin Education textbooks each year",
+              "1 exclusive Austin Education workbooks",
+              "0.5-1 hours of weekly homework",
+              "20-40 advanced questions per week",
+              "4 term assessments",
+              "2 exam reports",
+              "1 parent-teacher meetings",
+              "Recorded lessons",
+              "Unlimited Q&A and academic support",
+              "Dedicated learning consultant for one-on-one issue resolution",
+              "Free academic consultation",
             ],
           },
           {
             title: "Y1-6 Chinese Enrichment",
             slug: "y1-6-chinese",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "1.5 hours of weekly small group class sessions",
+              "4 exclusive Austin Education textbooks each year",
+              "2 hours of weekly homework",
+              "30 advanced online questions per week",
+              "4 stage/topic assessments",
+              "4 term assessments",
+              "4 exam reports, including weekly tracking of dictation and homework completion",
+              "2 parent-teacher meetings",
+              "Recorded lessons",
+              "Unlimited Q&A and academic support",
+              "Dedicated learning consultant for one-on-one issue resolution",
+              "Free academic consultation",
             ],
           },
           {
             title: "Y3-6 Writing",
             slug: "y3-6-writing",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "1.5 hours of weekly class sessions",
+              "4 exclusive Austin Education textbooks each year",
+              "1-2 hours of weekly homework",
+              "3 fully reviewed essays per term",
+              "12 stage/topic assessments",
+              "4 semester assessment exams",
+              "2 parent-teacher meetings",
+              "Recorded lessons",
+              "Unlimited Q&A and academic support",
+              "Dedicated learning consultant for one-on-one issue resolution",
+              "Free academic consultation",
             ],
           },
           {
             title: "Y3, Y5 Naplan",
             slug: "y3-y5-naplan",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
             title: "AEAS",
             slug: "aeas",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
             title: "3-to-5 Scholarship Victoria",
             slug: "3-to-5-scholarship-victoria",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
             title: "5-to-7 Scholarship Victoria",
             slug: "5-to-7-scholarship-victoria",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "3 hours of weekly class sessions",
+              "8 exclusive Austin Education textbooks each year",
+              "3 hours of weekly homework",
+              "For English: Includes 3-5 fully reviewed essays per term",
+              "100 advanced questions per week",
+              "20 stage/topic assessments",
+              "8 semester assessment exams",
+              "20 exclusive Austin Education full-length mock exams",
+              "4 exam reports",
+              "4 parent-teacher meetings",
+              "Recorded lessons",
+              "Unlimited Q&A and academic support",
+              "Dedicated learning consultant for one-on-one issue resolution",
+              "Free academic consultation",
             ],
           },
           {
             title: "3-to-5 Scholarship South Australia",
             slug: "3-to-5-scholarship-south-australia",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
             title: "5-to-7 Scholarship South Australia",
             slug: "5-to-7-scholarship-south-australia",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
             title: "5-to-7 Selective School South Australia",
             slug: "5-to-7-selective-school-south-australia",
             content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
+              "For details about our term-based courses, please contact us for more information.",
             ],
           },
-
-          // 添加更多课程...
         ],
 
-        "Secondary Y7-Y9": [
-          // {
-          //   title: "Y7-9 English Enrichment (Eng/EAL)",
-          //   slug: "y7-9-english-enrichment",
-          //   content: [
-          //     "Weekly 2-hour Small Group Classes with native English Tutoring",
-          //     "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-          //     "45+ Weekly Content Workbooks with Theory and Strategies",
-          //     "30+ Weekly Homework Booklets with Model Responses",
-          //   ],
-          // },
+        "Secondary Year 7-9": [
           {
             title: "Y7-9 Maths Enrichment",
             slug: "y7-9-maths",
@@ -146,17 +156,7 @@ export const coursesContent = {
           },
         ],
 
-        "Secondary Y10-Y12": [
-          // {
-          //   title: "Y10-12 English Enrichment (Eng/EAL)",
-          //   slug: "y10-12-english-enrichment",
-          //   content: [
-          //     "Weekly 2-hour Small Group Classes with native English Tutoring",
-          //     "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-          //     "45+ Weekly Content Workbooks with Theory and Strategies",
-          //     "30+ Weekly Homework Booklets with Model Responses",
-          //   ],
-          // },
+        "Secondary Year 10-12": [
           {
             title: "Y10 Maths Standard",
             slug: "y10-maths-standard",
@@ -663,15 +663,15 @@ export const coursesContent = {
   zh: {
     detail: {
       categories: [
-        "Primary Y1-Y6",
-        "Secondary Y1-Y6",
-        "Secondary Y10-Y12",
-        "Medical Program",
+        "小学 1-6 年级",
+        "初中 7-9 年级",
+        "高中 10-12 年级",
+        "医学备考班",
       ],
       courses: {
-        "Primary Y1-Y6": [
+        "小学 1-6 年级": [
           {
-            title: "Y1-6 English Enrichment (Eng/EAL)",
+            title: "1-6年级英文培优班",
             slug: "y1-6-english-enrichment",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
@@ -692,7 +692,7 @@ export const coursesContent = {
           },
           {
             title: "Y1-6 Chinese Enrichment",
-            slug: "y1-6-chinese",
+            slug: "y1-6-chinese-enrichment",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -781,10 +781,23 @@ export const coursesContent = {
             ],
           },
         ],
-        "Secondary Y7-Y9": [
+        "初中 7-9 年级": [
           {
-            title: "Y7-9 English Enrichment (Eng/EAL)",
-            slug: "y7-9-english-enrichment",
+            title: "Y7-9 Maths Enrichment",
+            slug: "y7-9-maths",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+        ],
+
+        "高中 10-12 年级": [
+          {
+            title: "Y10 Maths Standard",
+            slug: "y10-maths-standard",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -793,8 +806,71 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Y7-9 Maths Enrichment",
-            slug: "y7-9-maths-enrichment",
+            title: "Y10 Maths Advance",
+            slug: "y10-maths-advance",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "VCE English EAL Unit 1-4",
+            slug: "vce-english-eal-unit1-4",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "VCE English Language Unit 1-4",
+            slug: "vce-english-language-unit1-4",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "VCE Maths Methods Unit 1-4",
+            slug: "vce-maths-methods-unit1-4",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "VCE Specialist Maths Unit 1-4",
+            slug: "vce-specialist-maths-unit1-4",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "VCE Chinese First Language Unit 1-4",
+            slug: "vce-chinese-first-language-unit1-4",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+        ],
+
+        "医学备考班": [
+          {
+            title: "医学备考班",
+            slug: "medical-program",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
