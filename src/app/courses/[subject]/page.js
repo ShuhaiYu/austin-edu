@@ -5,6 +5,23 @@ import CoursePageClient from "./CoursePageClient";
 const COURSES = {
   "y1-6-english-enrichment": () =>
     import("@/data/courses/y1-6-english-enrichment"),
+  "y1-6-chinese": () =>
+    import("@/data/courses/y1-6-chinese"),
+  "y7-9-maths": () => import("@/data/courses/y7-9-maths"),
+  "y10-maths-advance": () =>
+    import("@/data/courses/y10-maths-advance"),
+  "y10-maths-standard": () =>
+    import("@/data/courses/y10-maths-standard"),
+  "vce-english-eal-unit1-4": () =>
+    import("@/data/courses/vce-english-eal-unit1-4"),
+  "vce-english-language-unit1-4": () =>
+    import("@/data/courses/vce-english-language-unit1-4"),
+  "vce-maths-methods-unit1-4": () =>
+    import("@/data/courses/vce-maths-methods-unit1-4"),
+  "vce-specialist-maths-unit1-4": () =>
+    import("@/data/courses/vce-specialist-maths-unit1-4"),
+  "vce-chinese-first-language-unit1-4": () =>
+    import("@/data/courses/vce-chinese-first-language-unit1-4"),
 
   // 添加其他课程...
 };

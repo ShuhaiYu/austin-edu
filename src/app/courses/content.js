@@ -122,18 +122,18 @@ export const coursesContent = {
 
           // 添加更多课程...
         ],
-        
+
         "Secondary Y7-Y9": [
-          {
-            title: "Y7-9 English Enrichment (Eng/EAL)",
-            slug: "y7-9-english-enrichment",
-            content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
-            ],
-          },
+          // {
+          //   title: "Y7-9 English Enrichment (Eng/EAL)",
+          //   slug: "y7-9-english-enrichment",
+          //   content: [
+          //     "Weekly 2-hour Small Group Classes with native English Tutoring",
+          //     "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+          //     "45+ Weekly Content Workbooks with Theory and Strategies",
+          //     "30+ Weekly Homework Booklets with Model Responses",
+          //   ],
+          // },
           {
             title: "Y7-9 Maths Enrichment",
             slug: "y7-9-maths",
@@ -147,16 +147,16 @@ export const coursesContent = {
         ],
 
         "Secondary Y10-Y12": [
-          {
-            title: "Y10-12 English Enrichment (Eng/EAL)",
-            slug: "y10-12-english-enrichment",
-            content: [
-              "Weekly 2-hour Small Group Classes with native English Tutoring",
-              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
-              "45+ Weekly Content Workbooks with Theory and Strategies",
-              "30+ Weekly Homework Booklets with Model Responses",
-            ],
-          },
+          // {
+          //   title: "Y10-12 English Enrichment (Eng/EAL)",
+          //   slug: "y10-12-english-enrichment",
+          //   content: [
+          //     "Weekly 2-hour Small Group Classes with native English Tutoring",
+          //     "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+          //     "45+ Weekly Content Workbooks with Theory and Strategies",
+          //     "30+ Weekly Homework Booklets with Model Responses",
+          //   ],
+          // },
           {
             title: "Y10 Maths Standard",
             slug: "y10-maths-standard",
@@ -170,6 +170,56 @@ export const coursesContent = {
           {
             title: "Y10 Maths Advance",
             slug: "y10-maths-advance",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "VCE English EAL Unit 1-4",
+            slug: "vce-english-eal-unit1-4",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "VCE English Language Unit 1-4",
+            slug: "vce-english-language-unit1-4",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "VCE Maths Methods Unit 1-4",
+            slug: "vce-maths-methods-unit1-4",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "VCE Specialist Maths Unit 1-4",
+            slug: "vce-specialist-maths-unit1-4",
+            content: [
+              "Weekly 2-hour Small Group Classes with native English Tutoring",
+              "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
+              "45+ Weekly Content Workbooks with Theory and Strategies",
+              "30+ Weekly Homework Booklets with Model Responses",
+            ],
+          },
+          {
+            title: "VCE Chinese First Language Unit 1-4",
+            slug: "vce-chinese-first-language-unit1-4",
             content: [
               "Weekly 2-hour Small Group Classes with native English Tutoring",
               "Engaging and experienced Tutors (99+ ATARS, 4+ Study Scores)",
@@ -730,8 +780,6 @@ export const coursesContent = {
               "30+ Weekly Homework Booklets with Model Responses",
             ],
           },
-
-          
         ],
         "Secondary Y7-Y9": [
           {
