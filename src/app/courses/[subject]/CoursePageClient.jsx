@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useState, useEffect } from "react";
 import { LangContext } from "@/app/layout";
 import SchoolsCarousel from "./components/SchoolsCarousel";
 import Image from "next/image";
@@ -28,6 +28,7 @@ import {
   Award,
   Calendar,
 } from "lucide-react";
+import dynamic from "next/dynamic";
 
 const SCHOOL_IMAGES = [
   { name: "Scotch College", image: "school_SC.png" },
@@ -44,7 +45,33 @@ export default function CoursePageClient({ localizedData }) {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const course = localizedData?.[lang] || {};
 
-  // console.log("CoursePageClient course", course);
+  const IconRenderer = ({ name, className }) => {
+    // 判断是否是emoji
+    const isEmoji = /\p{Emoji}/u.test(name);
+
+    // 如果是emoji直接渲染
+    if (isEmoji) {
+      return <span className={className}>{name}</span>;
+    }
+
+    // 动态加载Lucide图标并添加Suspense边界
+    try {
+      const LucideIcon = lazy(() =>
+        import("lucide-react").then((mod) => ({
+          default:
+            mod[name] || (() => <span className={className}>{name}</span>),
+        }))
+      );
+
+      return (
+        <Suspense fallback={<span className={className}>...</span>}>
+          <LucideIcon className={className} />
+        </Suspense>
+      );
+    } catch (error) {
+      return <span className={className}>{name}</span>;
+    }
+  };
 
   return (
     <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -720,21 +747,23 @@ export default function CoursePageClient({ localizedData }) {
               Comprehensive Resources
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 px-4">
               {course.resources.packages.map((pkg, i) => (
                 <div
                   key={i}
-                  className="relative flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
+                  className="relative flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 group"
                 >
-                  {/* 图标背景 */}
-                  <div className="flex-shrink-0 relative">
-                    <div className="absolute inset-0 bg-blue-100/50 blur-[12px]"></div>
-                    <span className="relative z-10 text-3xl">{pkg.icon}</span>
+                  {/* 图标容器 */}
+                  <div className="flex-shrink-0 relative bg-primary rounded-full p-4 transition-colors">
+                    <IconRenderer
+                      name={pkg.icon}
+                      className="w-12 h-12 text-white stroke-[1.5]"
+                    />
                   </div>
 
                   {/* 文字内容 */}
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-gray-900">
+                    <h3 className=" font-semibold text-gray-900">
                       {pkg.title}
                     </h3>
                     {pkg.desc && (
