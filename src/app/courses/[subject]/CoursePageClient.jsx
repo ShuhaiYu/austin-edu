@@ -49,150 +49,232 @@ export default function CoursePageClient({ localizedData }) {
   return (
     <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Hero Section */}
+      <section className="relative py-20">
+        <div className="max-w-7xl mx-auto px-4">
+          {/* 主标题 */}
+          <h1 className="text-6xl font-bold text-center mb-16">
+            <span className="bg-clip-text bg-primary text-transparent">
+              {course.title}
+            </span>
+            <div className="mt-4 h-1.5 bg-gradient-to-r from-blue-400 to-blue-200 w-32 mx-auto rounded-full" />
+          </h1>
 
-      <section className="py-16 border-b border-gray-200">
-        <h1 className="text-5xl font-bold text-gray-900 mb-12 text-center">
-          {course.title}
-        </h1>
-        {/* Achievement Grid */}
-        {course.heroSection?.achievements?.currentYear?.items?.length > 0 && (
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {course.heroSection.achievements.currentYear.items.map(
-              (item, i) => (
-                <div key={i} className="bg-blue-50 p-8 rounded-2xl text-center">
-                  <div className="text-5xl font-bold text-blue-700 mb-2">
-                    {item.number}
-                  </div>
-                  <p className="text-lg font-semibold text-gray-800">
-                    {item.label}
-                  </p>
-                  {item.subtitle && (
-                    <p className="text-sm text-gray-600 mt-2">
-                      {item.subtitle}
-                    </p>
-                  )}
-                </div>
-              )
-            )}
-          </div>
-        )}
-
-        {/* Historical Achievements */}
-        {course.heroSection?.achievements?.historical?.items?.length > 0 && (
-          <div className="bg-gray-50 p-8 rounded-2xl mb-16">
-            <h3 className="text-2xl text-gray-900 mb-6">
-              {course.heroSection.achievements.historical.range}
-            </h3>
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Austin Education has developed:
-            </h2>
-            <div className="grid md:grid-cols-4 gap-6">
-              {course.heroSection.achievements.historical.items.map(
-                (item, j) => (
+          {/* 当前年度成就 */}
+          {course.heroSection?.achievements?.currentYear?.items?.length > 0 && (
+            <div className="grid md:grid-cols-3 gap-8 mb-20" data-aos="fade-up">
+              {course.heroSection.achievements.currentYear.items.map(
+                (item, i) => (
                   <div
-                    key={j}
-                    className="text-center bg-blue-50 p-6 rounded-[2rem]"
+                    key={i}
+                    className="group relative bg-white p-8 rounded-[2rem] shadow-xl transition-all border-2 border-blue-100/50 hover:border-blue-300 hover:shadow-2xl"
                   >
-                    {item.title && (
-                      <p className="text-gray-800 font-medium">{item.title}</p>
-                    )}
-                    <div className="text-3xl font-bold text-blue-700">
-                      {item.number}
-                    </div>
-                    <p className="text-gray-800 font-medium">{item.label}</p>
-                    {item.subtitle && (
-                      <p className="text-sm text-gray-600 mt-1">
-                        {item.subtitle}
+                    <div className="absolute inset-0 bg-gradient-to-br from-white to-blue-50/50 opacity-0  transition-opacity" />
+                    <div className="relative">
+                      <div className="text-5xl font-bold bg-gradient-to-r from-blue-800 to-blue-600 bg-clip-text text-transparent mb-3">
+                        {item.number}
+                      </div>
+                      <p className="text-xl font-semibold text-gray-900 mb-2">
+                        {item.label}
                       </p>
-                    )}
+                      {item.subtitle && (
+                        <p className="text-sm text-gray-600 font-medium">
+                          {item.subtitle}
+                        </p>
+                      )}
+                    </div>
+                    {/* 装饰性角标 */}
+                    <div className="absolute right-6 top-6 w-8 h-8 bg-blue-100/30 rounded-full flex items-center justify-center">
+                      <div className="w-4 h-4 bg-gradient-to-r from-blue-600 to-blue-400 rounded-full" />
+                    </div>
                   </div>
                 )
               )}
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Partner Schools */}
-        {SCHOOL_IMAGES?.length > 0 && (
-          <SchoolsCarousel
-            schools={SCHOOL_IMAGES}
-            desc={course.heroSection?.extraDescription}
-          />
+          {/* 历史成就 */}
+          {course.heroSection?.achievements?.historical?.items?.length > 0 && (
+            <div
+              className="bg-primary rounded-3xl p-10 shadow-2xl overflow-hidden relative"
+              data-aos="fade-up"
+            >
+              {/* 背景装饰 */}
+              <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZmZmIiBvcGFjaXR5PSIwLjEiLz48L3N2Zz4=')]" />
+
+              <div className="relative">
+                <h3 className="text-xl text-blue-200 font-medium mb-4">
+                  {course.heroSection.achievements.historical.range}
+                </h3>
+                <h2 className="text-3xl font-bold text-white mb-8">
+                  Austin Education has developed:
+                </h2>
+
+                <div className="grid md:grid-cols-4 gap-6">
+                  {course.heroSection.achievements.historical.items.map(
+                    (item, j) => (
+                      <div
+                        key={j}
+                        className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl hover:bg-white transition-all shadow-lg hover:shadow-xl"
+                      >
+                        {item.title && (
+                          <p className="text-sm text-primary font-medium mb-2">
+                            {item.title}
+                          </p>
+                        )}
+                        <div className="text-3xl font-bold text-primary mb-1">
+                          {item.number}
+                        </div>
+                        <p className="text-base text-gray-800 font-medium">
+                          {item.label}
+                        </p>
+                        {item.subtitle && (
+                          <p className="text-xs text-gray-600 mt-2">
+                            {item.subtitle}
+                          </p>
+                        )}
+                      </div>
+                    )
+                  )}
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+        {/* Partner Schools */}{" "}
+        {course.heroSection?.schoolLogos?.length > 0 && (
+          <div className="mt-16">
+            <SchoolsCarousel
+              schools={course.heroSection.schoolLogos.map((schoolName) => {
+                const school = SCHOOL_IMAGES.find(
+                  (img) =>
+                    img.name.toLowerCase() === schoolName.toLowerCase().trim()
+                );
+                return {
+                  name: schoolName,
+                  image: school
+                    ? `${school.image}`
+                    : "/fallback-school-image.png",
+                };
+              })}
+            />
+          </div>
         )}
       </section>
 
       {/* Course Description Section */}
       {course.courseDescription && (
-        <section className="py-16 border-b border-gray-200">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6 text-center">
-              {course.courseDescription.title}
-            </h2>
-            <p className="text-xl text-gray-700 mb-12 text-center">
-              {course.courseDescription.subtitle}
-            </p>
+        <section className="py-16 bg-gradient-to-b from-white to-blue-50/30">
+          <div className="max-w-7xl mx-auto px-4">
+            {/* 标题部分 */}
+            <div className="mb-16 text-center" data-aos="fade-up">
+              <h2 className="text-5xl font-bold text-gray-900 mb-4 bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
+                {course.courseDescription.title}
+              </h2>
+              <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed">
+                {course.courseDescription.subtitle}
+              </p>
+              <div className="mt-8 h-1.5 w-24 bg-gradient-to-r from-blue-400 to-purple-400 mx-auto rounded-full" />
+            </div>
 
-            {/* 课程概述 */}
+            {/* 课程内容 */}
             {course.courseDescription.courseOverview && (
-              <div className="space-y-8">
-                {/* 前置描述 */}
-                <div className="space-y-4 text-lg text-gray-700">
+              <div className="space-y-12" data-aos="fade-up">
+                {/* 前置描述 - 卡片式设计 */}
+                <div className="grid gap-8">
                   {course.courseDescription.courseOverview.descriptionBeforeFeature?.map(
                     (paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
+                      <div
+                        key={index}
+                        className="p-8 bg-white rounded-2xl shadow-lg border border-gray-100/50 hover:shadow-xl transition-shadow"
+                      >
+                        <p className="text-lg text-gray-700 leading-relaxed">
+                          {paragraph}
+                        </p>
+                      </div>
                     )
                   )}
                 </div>
 
-                {/* 关键特性 */}
+                {/* 关键特性 - 渐变玻璃效果 */}
                 {course.courseDescription.courseOverview.features && (
-                  <div className="bg-blue-50 p-8 rounded-2xl">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                      {course.courseDescription.courseOverview.featureTitle}
-                    </h3>
-                    <div className="grid md:grid-cols-2 gap-6">
-                      {course.courseDescription.courseOverview.features.map(
-                        (feature, index) => (
-                          <div key={index} className="flex items-start">
-                            <svg
-                              className="w-5 h-5 text-blue-600 mr-3 mt-1 flex-shrink-0"
-                              fill="currentColor"
-                              viewBox="0 0 20 20"
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-purple-500/10 blur-3xl opacity-30" />
+                    <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-100/50">
+                      <h3 className="text-3xl font-bold text-gray-900 mb-8 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+                        {course.courseDescription.courseOverview.featureTitle}
+                      </h3>
+                      <div className="grid md:grid-cols-2 gap-6">
+                        {course.courseDescription.courseOverview.features.map(
+                          (feature, index) => (
+                            <div
+                              key={index}
+                              className="flex items-start p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all group"
                             >
-                              <path
-                                fillRule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                clipRule="evenodd"
-                              />
-                            </svg>
-                            <span className="text-lg text-gray-800">
-                              {feature}
-                            </span>
-                          </div>
-                        )
-                      )}
+                              <div className="flex-shrink-0 mr-4">
+                                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-purple-500 rounded-xl flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform">
+                                  <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                  >
+                                    <path
+                                      strokeLinecap="round"
+                                      strokeLinejoin="round"
+                                      strokeWidth="2"
+                                      d="M5 13l4 4L19 7"
+                                    />
+                                  </svg>
+                                </div>
+                              </div>
+                              <span className="text-lg text-gray-800 font-medium leading-relaxed">
+                                {feature}
+                              </span>
+                            </div>
+                          )
+                        )}
+                      </div>
                     </div>
                   </div>
                 )}
 
-                {/* 后置描述 */}
-                <div className="space-y-4 text-lg text-gray-700">
+                {/* 后置描述 - 带引号装饰 */}
+                <div className="grid gap-8 relative">
                   {course.courseDescription.courseOverview.descriptionAfterFeature?.map(
                     (paragraph, index) => (
-                      <p key={index}>{paragraph}</p>
+                      <div
+                        key={index}
+                        className="relative pl-12 border-l-4 border-blue-500/20"
+                      >
+                        <div className="absolute left-0 top-0 text-6xl font-bold text-blue-500/20 -translate-x-12 -translate-y-4">
+                          “
+                        </div>
+                        <p className="text-lg text-gray-700 leading-relaxed">
+                          {paragraph}
+                        </p>
+                      </div>
                     )
                   )}
                 </div>
               </div>
             )}
 
-            {/* 主段落 */}
-            <p className="text-lg text-gray-700 mt-12 text-center">
-              {course.courseDescription.paragraph}
-            </p>
+            {/* 主段落 - 强调样式 */}
+            <div
+              className="mt-16 max-w-4xl mx-auto text-center"
+              data-aos="fade-up"
+            >
+              <div className="relative inline-block">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-purple-100 transform -rotate-2 rounded-xl" />
+                <p className="relative text-xl text-gray-800 leading-relaxed font-medium px-8 py-6">
+                  {course.courseDescription.paragraph}
+                </p>
+              </div>
+            </div>
           </div>
         </section>
       )}
+
       {/* Core Features Section */}
       {course.coreFeatures?.sections?.length > 0 && (
         <section className="py-16 border-b border-gray-200">
@@ -427,31 +509,41 @@ export default function CoursePageClient({ localizedData }) {
 
           {/* Part C */}
           {course.whyChooseUs.partC?.list?.length > 0 && (
-            <div className="max-w-7xl mx-auto mb-20">
-              <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-                {course.whyChooseUs.partC.title}
-              </h2>
-              <ul className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
-                {course.whyChooseUs.partC.list.map((item, i) => (
-                  <li
-                    key={i}
-                    className="flex items-start bg-blue-50 p-4 rounded-lg"
-                  >
-                    <svg
-                      className="w-5 h-5 text-blue-600 mr-3 mt-1 flex-shrink-0"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
+            <div className="max-w-7xl mx-auto mb-20 px-4">
+              <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl p-8 shadow-2xl">
+                <h2 className="text-4xl font-bold text-white mb-12 text-center">
+                  {course.whyChooseUs.partC.title}
+                  <div className="mt-4 h-1.5 bg-white/30 w-24 mx-auto rounded-full" />
+                </h2>
+
+                <ul className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                  {course.whyChooseUs.partC.list.map((item, i) => (
+                    <li
+                      key={i}
+                      className="flex items-start bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
                     >
-                      <path
-                        fillRule="evenodd"
-                        d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                    <span className="text-gray-800 text-lg">{item}</span>
-                  </li>
-                ))}
-              </ul>
+                      <div className="flex-shrink-0">
+                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-4">
+                          <svg
+                            className="w-5 h-5 text-blue-600"
+                            fill="currentColor"
+                            viewBox="0 0 20 20"
+                          >
+                            <path
+                              fillRule="evenodd"
+                              d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                              clipRule="evenodd"
+                            />
+                          </svg>
+                        </div>
+                      </div>
+                      <span className="text-white text-lg font-medium leading-relaxed">
+                        {item}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           )}
 
