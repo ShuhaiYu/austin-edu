@@ -45,7 +45,6 @@ export default function CoursePageClient({ localizedData }) {
   const course = localizedData?.[lang] || {};
 
   // console.log("CoursePageClient course", course);
-  
 
   return (
     <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -115,10 +114,11 @@ export default function CoursePageClient({ localizedData }) {
 
         {/* Partner Schools */}
         {SCHOOL_IMAGES?.length > 0 && (
-          <SchoolsCarousel schools={SCHOOL_IMAGES} desc={course.heroSection?.extraDescription} />
+          <SchoolsCarousel
+            schools={SCHOOL_IMAGES}
+            desc={course.heroSection?.extraDescription}
+          />
         )}
-
-        
       </section>
 
       {/* Course Description Section */}
@@ -457,41 +457,54 @@ export default function CoursePageClient({ localizedData }) {
 
           {/* Part D */}
           {course.whyChooseUs.partD?.table && (
-            <div className="max-w-7xl mx-auto">
+            <div className="max-w-7xl mx-auto px-4">
               <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
                 {course.whyChooseUs.partD.title}
+                <div className="mt-4 h-1.5 bg-blue-600 w-24 mx-auto rounded-full" />
               </h2>
-              <div className="overflow-x-auto rounded-lg border border-gray-200">
-                <table className="min-w-full divide-y divide-gray-200">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      {course.whyChooseUs.partD.table.headers?.map(
-                        (header, i) => (
-                          <th
-                            key={i}
-                            className="px-6 py-3 text-left text-sm font-semibold text-gray-900"
-                          >
-                            {header}
-                          </th>
-                        )
-                      )}
-                    </tr>
-                  </thead>
-                  <tbody className="bg-white divide-y divide-gray-200">
-                    {course.whyChooseUs.partD.table.rows?.map((row, i) => (
-                      <tr key={i}>
-                        {row.map((cell, j) => (
-                          <td
-                            key={j}
-                            className="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
-                          >
-                            {cell}
-                          </td>
-                        ))}
+
+              <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+                <div className="overflow-x-auto">
+                  <table className="min-w-full divide-y divide-gray-200/50">
+                    <thead className="bg-blue-600">
+                      <tr>
+                        {course.whyChooseUs.partD.table.headers?.map(
+                          (header, i) => (
+                            <th
+                              key={i}
+                              className="px-8 py-6 text-left text-lg font-semibold text-white uppercase tracking-wider"
+                            >
+                              {header}
+                            </th>
+                          )
+                        )}
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody className="bg-white divide-y divide-gray-200/50">
+                      {course.whyChooseUs.partD.table.rows?.map((row, i) => (
+                        <tr
+                          key={i}
+                          className="hover:bg-blue-50/50 transition-colors"
+                        >
+                          {row.map((cell, j) => (
+                            <td
+                              key={j}
+                              className="px-8 py-5 text-gray-800 text-lg font-medium"
+                            >
+                              {j === 0 ? (
+                                <span className="text-blue-600 font-semibold">
+                                  {cell}
+                                </span>
+                              ) : (
+                                cell
+                              )}
+                            </td>
+                          ))}
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           )}
@@ -553,24 +566,41 @@ export default function CoursePageClient({ localizedData }) {
               </div>
             )}
 
-            {/* 步骤流程（保持垂直排列） */}
+            {/* Custom Course Feature - 步骤流程 */}
             {course.customCourseFeature?.steps && (
-              <div className="max-w-3xl mx-auto">
-                <div className="space-y-8">
+              <div className="max-w-4xl mx-auto">
+                <div className="relative space-y-12">
+                  {/* 时间线竖线 */}
+                  <div
+                    className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-400 to-transparent"
+                    aria-hidden="true"
+                  ></div>
+
                   {course.customCourseFeature.steps.map((step) => (
                     <div
                       key={step.step}
-                      className="bg-white p-6 rounded-xl shadow-md"
+                      className="group relative flex gap-6 transition-transform duration-300 hover:scale-[1.02]"
                     >
-                      <div className="flex items-center gap-4">
-                        <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold">
-                          {step.step}
-                        </div>
-                        <div>
-                          <h3 className="text-xl font-semibold text-gray-900">
-                            {step.title}
-                          </h3>
-                          <p className="text-gray-600 mt-2">{step.content}</p>
+                      {/* 步骤指示器 */}
+                      <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-purple-400 text-lg font-bold text-white shadow-lg transition-all duration-300 group-hover:scale-110">
+                        {step.step}
+                        {/* 微光效果 */}
+                        <div className="absolute inset-0 rounded-full bg-white/10 mix-blend-overlay"></div>
+                      </div>
+
+                      {/* 内容卡片 */}
+                      <div className="flex-1 rounded-xl border border-gray-100 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg">
+                        <div className="flex items-start gap-4">
+                          <div className="flex-1">
+                            <h3 className="text-xl font-semibold text-gray-900">
+                              {step.title}
+                            </h3>
+                            <p className="mt-2 text-gray-600 leading-relaxed">
+                              {step.content}
+                            </p>
+                          </div>
+                          {/* 动态箭头 */}
+                          <ArrowRight className="h-6 w-6 text-gray-400 transition-transform duration-300 group-hover:translate-x-1" />
                         </div>
                       </div>
                     </div>
@@ -593,29 +623,46 @@ export default function CoursePageClient({ localizedData }) {
       {/* Resources Section */}
       {course.resources?.packages?.length > 0 && (
         <section className="py-16">
-          <div className="max-w-5xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
               Comprehensive Resources
             </h2>
 
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 px-4">
               {course.resources.packages.map((pkg, i) => (
                 <div
                   key={i}
-                  className="flex bg-white p-4 rounded-full shadow-md"
+                  className="relative flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
                 >
-                  <div className="text-3xl mb-2">{pkg.icon}</div>
-                  <div>
-                    <div className="font-medium text-gray-900">{pkg.title}</div>
+                  {/* 图标背景 */}
+                  <div className="flex-shrink-0 relative">
+                    <div className="absolute inset-0 bg-blue-100/50 blur-[12px]"></div>
+                    <span className="relative z-10 text-3xl">{pkg.icon}</span>
+                  </div>
+
+                  {/* 文字内容 */}
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-gray-900">
+                      {pkg.title}
+                    </h3>
                     {pkg.desc && (
-                      <div className="text-sm text-gray-600 mt-1">
+                      <p className="mt-1 text-sm text-gray-500 font-medium">
                         {pkg.desc}
-                      </div>
+                      </p>
                     )}
                   </div>
+
+                  {/* 悬浮装饰点 */}
+                  <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-blue-600/20"></div>
                 </div>
               ))}
             </div>
+
+            {/* 渐变背景装饰 */}
+            <div
+              className="absolute inset-x-0 -bottom-32 -top-48 bg-gradient-to-b from-blue-50/30 to-transparent -z-10"
+              aria-hidden="true"
+            ></div>
           </div>
         </section>
       )}
