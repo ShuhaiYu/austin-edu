@@ -7,6 +7,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { aboutUsContent } from "./about_us_content";
 import FAQ from "@/components/FAQ";
 import TimelineSection from "./components/TimeLine";
+import Map from "@/components/Map";
 
 export default function AboutPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -169,8 +170,10 @@ export default function AboutPage() {
                     </div>
                   </div>
 
-                  {/* Map placeholder */}
-                  <div className="mt-6 bg-muted h-48 rounded-lg"></div>
+                  {/* Map  */}
+                  <div className="mt-6 rounded-lg overflow-hidden">
+                    <Map address={campus.address} />
+                  </div>
                 </div>
               ))}
             </div>
