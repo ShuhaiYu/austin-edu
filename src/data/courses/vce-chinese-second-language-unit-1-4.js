@@ -1,9 +1,7 @@
-import { list } from "postcss";
-
 const courseData = {
   en: {
-    slug: "vce-chinese-first-language-unit-1-4",
-    title: "VCE Chinese First Language Unit 1-4",
+    slug: "vce-chinese-second-language-unit-1-4",
+    title: "VCE Chinese Second Language Unit 1-4",
     coreFeatures: {
       sections: [
         {
@@ -79,36 +77,36 @@ const courseData = {
     },
     resources: {
       packages: [
-        { icon: "📘", title: "2 hours of weekly class sessions", desc: "" },
-        { icon: "📝", title: "8 exclusive Austin Education textbooks", desc: "" },
-        { icon: "✍️", title: "5 exclusive Austin Education exercise books", desc: "" },
-        { icon: "📊", title: "1–2 hours of homework per week", desc: "" },
-        { icon: "📚", title: "50 sets of listening and reading comprehension exercises", desc: "" },
-        { icon: "🗣️", title: "1 free online listening practice session per week", desc: "" },
-        { icon: "📅", title: "5–6 essays per term with detailed corrections and feedback", desc: "" },
-        { icon: "📖", title: "4 semester exams (Units 1 & 2)", desc: "" },
-        { icon: "📖", title: "6 full-length Austin mock exams (Units 3 & 4)", desc: "" },
-        { icon: "📖", title: "10+ one-on-one oral exam mock interviews (Units 3 & 4)", desc: "" },
-        { icon: "📖", title: "4 one-on-one targeted oral script review sessions (1 hour each)", desc: "" },
-        { icon: "📖", title: "20 high-quality sample essays and model responses", desc: "" },
-        { icon: "📖", title: "1 detailed report after each major exam", desc: "1 detailed report after each major exam" },
-        { icon: "📖", title: "Austin parent-teacher meeting", desc: "" },
-        { icon: "📖", title: "SAC-focused revision and strategy sessions", desc: "" },
-        { icon: "📖", title: "Full access to class video recordings", desc: "" },
-        { icon: "📖", title: "Unlimited Q&A and academic support", desc: "" },
-        { icon: "📖", title: "Dedicated learning consultant for personalised 1-on-1 academic management", desc: "" },
-        { icon: "📖", title: "Free academic consultation for ongoing planning and progress tracking", desc: "" },
+        { icon: "school", title: "2 hours of weekly class sessions", desc: "" },
+        { icon: "book-copy", title: "8 exclusive Austin Education textbooks", desc: "" },
+        { icon: "book-open-text️", title: "5 exclusive Austin Education exercise books", desc: "" },
+        { icon: "user-pen", title: "1–2 hours of homework per week", desc: "" },
+        { icon: "book-headphones", title: "50 sets of listening and reading comprehension exercises", desc: "" },
+        { icon: "headphones️", title: "1 free online listening practice session per week", desc: "" },
+        { icon: "notebook-pen", title: "5–6 essays per term with detailed corrections and feedback", desc: "" },
+        { icon: "calendar-1", title: "4 semester exams (Units 1 & 2)", desc: "" },
+        { icon: "file-clock", title: "6 full-length Austin mock exams (Units 3 & 4)", desc: "" },
+        { icon: "mic", title: "10+ one-on-one oral exam mock interviews (Units 3 & 4)", desc: "" },
+        { icon: "send-horizontal", title: "4 one-on-one targeted oral script review sessions (1 hour each)", desc: "" },
+        { icon: "trophy", title: "20 high-quality sample essays and model responses", desc: "" },
+        { icon: "chart-column", title: "1 detailed report after each major exam", desc: " " },
+        { icon: "speech", title: "Austin parent-teacher meeting", desc: "" },
+        { icon: "goal", title: "SAC-focused revision and strategy sessions", desc: "" },
+        { icon: "monitor-play", title: "Full access to class video recordings", desc: "" },
+        { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: "" },
+        { icon: "message-square-dot", title: "Dedicated learning consultant for personalised 1-on-1 academic management", desc: "" },
+        { icon: "users", title: "Free academic consultation for ongoing planning and progress tracking", desc: "" },
       ],
     },
     courseStructure: {
       title: "Course Structure",
       sections: [
         {
-          title: "year 1",
+          title: "Unit 1-2",
           modules: [
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 1",
+              title: "Term 1",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -122,8 +120,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 2",
+              title: "Term 2",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -137,8 +135,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 3",
+              title: "Term 3",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -152,8 +150,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 4",
+              title: "Term 4",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -169,11 +167,11 @@ const courseData = {
           ],
         },
         {
-          title: "year 2",
+          title: "Unit 3-4",
           modules: [
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 1",
+              title: "Term 1",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -187,8 +185,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 2",
+              title: "Term 2",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -202,8 +200,23 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 3",
+              title: "Term 3",
+              subtitle: " ",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Term 4",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -223,24 +236,24 @@ const courseData = {
     relatedCourses: [
       {
         title: "VCE",
-        subtitle: "English Unit 1-4",
-        slug: "y1-6-english-enrichment",
+        subtitle: "English & EAL Unit 1-4",
+        slug: "vce-english-eal-unit1-4",
       },
       {
         title: "VCE",
-        subtitle: "SM Unit 1-4",
-        slug: "y1-6-english-enrichment",
+        subtitle: "Mathematical Methods Unit 1-4",
+        slug: "vce-maths-methods-unit1-4",
       },
       {
         title: "VCE",
-        subtitle: "Science Unit 1-4",
-        slug: "y1-6-english-enrichment",
+        subtitle: "Specialist Maths Unit 1-4",
+        slug: "vce-specialist-maths-unit1-4",
       },
     ],
   },
   zh: {
-    slug: "vce-chinese-first-language-unit-1-4",
-    title: "VCE 中文第一语言",
+    slug: "vce-chinese-second-language-unit-1-4",
+    title: "VCE 中文第二语言",
     coreFeatures: {
       sections: [
         {
@@ -313,36 +326,36 @@ const courseData = {
     },
     resources: {
       packages: [
-        { icon: "📘", title: "每周2小时班课", desc: "" },
-        { icon: "📝", title: "8本澳升独家教材", desc: "" },
-        { icon: "✍️", title: "5本澳升独家习题册", desc: "" },
-        { icon: "📊", title: "1-2小时每周课后作业", desc: "" },
-        { icon: "📚", title: "50套听力阅读练习", desc: "" },
-        { icon: "📅", title: "每周1次免费线上听力练习", desc: "" },
-        { icon: "📖", title: "每学期5-6篇作文精改", desc: "" },
-        { icon: "📖", title: "4次学期检测考试（Unit 1&2）", desc: "" },
-        { icon: "📖", title: "6次澳升独家全真模拟笔试考试 （Unit 3&4）", desc: "" },
-        { icon: "📖", title: "10+澳升一对一口语模考模拟练习 (Unit 3&4)", desc: "" },
-        { icon: "📖", title: "4次澳升口语稿一对一单项针对性修改（每次一小时）", desc: "" },
-        { icon: "📖", title: "20篇高质量范文", desc: "" },
-        { icon: "📖", title: "考试Report", desc: "" },
-        { icon: "📖", title: "澳升家长会", desc: "" },
-        { icon: "📖", title: "SAC 专项复习", desc: "" },
-        { icon: "📖", title: "课程录像", desc: "" },
-        { icon: "📖", title: "无限的沟通答疑", desc: "" },
-        { icon: "📖", title: "私人学管一对一解决问题", desc: "" },
-        { icon: "📖", title: "免费学业咨询", desc: "" },
+        { icon: "school", title: "每周2小时班课", desc: "" },
+        { icon: "book-copy", title: "8本澳升独家教材", desc: "" },
+        { icon: "book-open-text️", title:  "5本澳升独家习题册", desc: "" },
+        { icon: "user-pen", title: "每周1-2小时课后作业", desc: "" },
+        { icon: "book-headphones", title: "50套听力阅读练习", desc: "" },
+        { icon: "headphones️", title: "每周1次免费线上听力练习", desc: "" },
+        { icon: "notebook-pen", title: "每学期5-6篇作文精改", desc: "" },
+        { icon: "calendar-1", title: "4次学期检测考试 unit 1&2", desc: "" },
+        { icon: "file-clock", title: "6次澳升独家全真模拟笔试考试 unit 3&4", desc: "" },
+        { icon: "mic", title: "10+澳升一对一口语模考模拟练习 unit 3&4", desc: "" },
+        { icon: "send-horizontal", title: "4次澳升口语稿一对一单项针对性修改（每次一小时）", desc: "" },
+        { icon: "trophy", title: "20篇高质量范文", desc: "" },
+        { icon: "chart-column", title: "考试成绩汇报单", desc: " " },
+        { icon: "speech", title: "澳升家长会", desc: "" },
+        { icon: "goal", title: "SAC 专项复习", desc: "" },
+        { icon: "monitor-play", title: "课程录像", desc: "" },
+        { icon: "circle-help", title: "无限的沟通答疑", desc: "" },
+        { icon: "message-square-dot", title: "私人学管一对一解决问题", desc: "" },
+        { icon: "users", title: "免费学业咨询", desc: "" },
       ],
     },
     courseStructure: {
       title: "Course Structure",
       sections: [
         {
-          title: "year 1",
+          title: "Unit 1-2",
           modules: [
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 1",
+              title: "Term 1",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -356,8 +369,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 2",
+              title: "Term 2",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -371,8 +384,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 3",
+              title: "Term 3",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -386,8 +399,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 4",
+              title: "Term 4",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -403,11 +416,11 @@ const courseData = {
           ],
         },
         {
-          title: "year 2",
+          title: "Unit 3-4",
           modules: [
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 1",
+              title: "Term 1",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -421,8 +434,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 2",
+              title: "Term 2",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -436,8 +449,23 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 3",
+              title: "Term 3",
+              subtitle: " ",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Term 4",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -457,18 +485,18 @@ const courseData = {
     relatedCourses: [
       {
         title: "VCE",
-        subtitle: "English Unit 1-4",
-        slug: "y1-6-english-enrichment",
+        subtitle: "English & EAL Unit 1-4",
+        slug: "vce-english-eal-unit1-4",
       },
       {
         title: "VCE",
-        subtitle: "SM Unit 1-4",
-        slug: "y1-6-english-enrichment",
+        subtitle: "中数 Mathematical Methods Unit 1-4",
+        slug: "vce-maths-methods-unit1-4",
       },
       {
         title: "VCE",
-        subtitle: "Science Unit 1-4",
-        slug: "y1-6-english-enrichment",
+        subtitle: "高数 Specialist Maths Unit 1-4",
+        slug: "vce-specialist-maths-unit1-4",
       },
     ],
   },

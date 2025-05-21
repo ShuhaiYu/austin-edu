@@ -18,7 +18,8 @@ export function CourseStructure({ data }) {
 
   const isLockGlobally = data.islock ?? true;
   // Only Year0→Module0 is truly “unlocked”
-  const isContentLocked = isLockGlobally && !(selectedYear === 0 && selectedModule === 0);
+  const isContentLocked =
+    isLockGlobally && !(selectedYear === 0 && selectedModule === 0);
 
   return (
     <section className="py-16 bg-white">
@@ -28,39 +29,42 @@ export function CourseStructure({ data }) {
         </h2>
 
         {/* Year Tabs */}
-        <Tabs
-          value={selectedYear.toString()}
-          onValueChange={(val) => {
-            const idx = Number(val);
-            setSelectedYear(idx);
-            setSelectedModule(0);
-          }}
-          className="mb-8"
-        >
-          <TabsList className="justify-center space-x-4">
-            {years.map((year, idx) => {
-              const lockedTab = isLockGlobally && idx !== 0;
-              return (
-                <TabsTrigger
-                  key={year.title}
-                  value={idx.toString()}
-                  className="relative px-4 py-2 rounded-lg data-[state=active]:bg-blue-500 data-[state=active]:text-white"
-                >
-                  {year.title}
-                  {lockedTab && (
-                    <Lock className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-yellow-300 text-yellow-600 p-1" />
-                  )}
-                </TabsTrigger>
-              );
-            })}
-          </TabsList>
-        </Tabs>
+        {years[0].title && (
+          <Tabs
+            value={selectedYear.toString()}
+            onValueChange={(val) => {
+              const idx = Number(val);
+              setSelectedYear(idx);
+              setSelectedModule(0);
+            }}
+            className="mb-8"
+          >
+            <TabsList className="justify-center space-x-4">
+              {years.map((year, idx) => {
+                const lockedTab = isLockGlobally && idx !== 0;
+                return (
+                  <TabsTrigger
+                    key={year.title}
+                    value={idx.toString()}
+                    className="relative px-4 py-2 rounded-lg data-[state=active]:bg-blue-500 data-[state=active]:text-white capitalize"
+                  >
+                    {year.title}
+                    {lockedTab && (
+                      <Lock className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-yellow-300 text-yellow-600 p-1" />
+                    )}
+                  </TabsTrigger>
+                );
+              })}
+            </TabsList>
+          </Tabs>
+        )}
 
         <div className="flex flex-col md:flex-row gap-8">
           {/* Module List */}
           <div className="w-full md:w-1/3 space-y-4">
             {modules.map((mod, idx) => {
-              const lockedModule = isLockGlobally && !(selectedYear === 0 && idx === 0);
+              const lockedModule =
+                isLockGlobally && !(selectedYear === 0 && idx === 0);
               return (
                 <button
                   key={idx}
@@ -82,7 +86,9 @@ export function CourseStructure({ data }) {
                     </div>
                     <ChevronRight
                       className={`w-6 h-6 ${
-                        selectedModule === idx ? "text-blue-500" : "text-gray-400"
+                        selectedModule === idx
+                          ? "text-blue-500"
+                          : "text-gray-400"
                       }`}
                     />
                   </div>
@@ -97,7 +103,9 @@ export function CourseStructure({ data }) {
           {/* Content Panel */}
           <div className="w-full md:w-2/3 bg-white p-8 rounded-xl shadow-lg border border-gray-200 relative">
             <div
-              className={isContentLocked ? "filter blur-sm pointer-events-none" : ""}
+              className={
+                isContentLocked ? "filter blur-sm pointer-events-none" : ""
+              }
             >
               <div className="mb-6">
                 <h3 className="text-2xl font-bold text-gray-900">
@@ -128,7 +136,8 @@ export function CourseStructure({ data }) {
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/70">
                 <Lock className="w-12 h-12 text-gray-500 mb-4" />
                 <p className="text-gray-700 mb-4 text-center px-4">
-                  This content is locked. Please <strong>contact us</strong> to unlock.
+                  This content is locked. Please <strong>contact us</strong> to
+                  unlock.
                 </p>
                 <button
                   onClick={() => router.push("/contact_us")}

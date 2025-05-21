@@ -1,5 +1,3 @@
-import { list } from "postcss";
-
 const courseData = {
   en: {
     slug: "y7-9-maths",
@@ -51,159 +49,185 @@ const courseData = {
         },
       ],
     },
-  },
-  whyChooseUs: {
-    partA: {
-      title: "Why Choose Austin’s Maths Program?",
-      image1: "https://placehold.co/400x600?text=Image+1",
-      image2: "https://placehold.co/400x1000?text=Image+2",
-      content: [
+    whyChooseUs: {
+      partA: {
+        title: "Why Choose Austin’s Maths Program?",
+        image1: "https://placehold.co/400x600?text=Image+1",
+        image2: "https://placehold.co/400x1000?text=Image+2",
+        content: [
+          {
+            title: "1. Bridging the Gap Left by Day School",
+            paragraph:
+              "Australian schools often adopt a “consolidation-based” approach—slow-paced and exam-light—while VCE and scholarship exams are highly competitive. Waiting until high school to catch up can leave students behind.",
+          },
+          {
+            title: "2. Foundation + Extension = Real Mathematical Thinking",
+            paragraph:
+              "Austin’s courses strengthen core skills while stretching student potential. We focus not only on getting the right answer, but on developing true mathematical reasoning.",
+          },
+          {
+            title: "3. Aligned Yet Advanced",
+            paragraph:
+              "Our curriculum aligns seamlessly with school content but moves approximately 20% ahead, keeping students confidently ahead of their peers.",
+          },
+          {
+            title: "4. Structured, Exam-Ready Solutions",
+            paragraph:
+              "We train students from an early stage to use clear, formal working and structured responses—building the habits needed for top VCE scores.",
+          },
+          {
+            title: "5. Tailored Teaching, Targeted Growth",
+            paragraph:
+              "With multiple class types and personalised guidance, we ensure the most efficient learning for every student. No matter their starting point, every learner will see real, measurable progress.",
+          },
+        ],
+      },
+    },
+    resources: {
+      packages: [
+        { icon: "school", title: "2 hours of weekly class sessions", desc: "" },
         {
-          title: "1. Bridging the Gap Left by Day School",
-          paragraph:
-            "Australian schools often adopt a “consolidation-based” approach—slow-paced and exam-light—while VCE and scholarship exams are highly competitive. Waiting until high school to catch up can leave students behind.",
+          icon: "book-copy",
+          title: "4 exclusive Austin Education textbooks",
+          desc: "",
         },
         {
-          title: "2. Foundation + Extension = Real Mathematical Thinking",
-          paragraph:
-            "Austin’s courses strengthen core skills while stretching student potential. We focus not only on getting the right answer, but on developing true mathematical reasoning.",
+          icon: "book-open-text",
+          title: "9 exclusive Austin Education workbooks",
+          desc: "",
         },
         {
-          title: "3. Aligned Yet Advanced",
-          paragraph:
-            "Our curriculum aligns seamlessly with school content but moves approximately 20% ahead, keeping students confidently ahead of their peers.",
+          icon: "user-pen",
+          title: "1 hour of structured weekly homework",
+          desc: "",
         },
         {
-          title: "4. Structured, Exam-Ready Solutions",
-          paragraph:
-            "We train students from an early stage to use clear, formal working and structured responses—building the habits needed for top VCE scores.",
+          icon: "chart-no-axes-combined",
+          title: "10 optional or extension challenge questions per week",
+          desc: "",
         },
         {
-          title: "5. Tailored Teaching, Targeted Growth",
-          paragraph:
-            "With multiple class types and personalised guidance, we ensure the most efficient learning for every student. No matter their starting point, every learner will see real, measurable progress.",
+          icon: "square-check-big",
+          title: "2 unit/topic-based progress tests",
+          desc: "",
+        },
+        {
+          icon: "File-clock",
+          title: "4 term-level assessment exams",
+          desc: "",
+        },
+        {
+          icon: "chart-column",
+          title: "2 detailed exam performance reports",
+          desc: "",
+        },
+        {
+          icon: "speech",
+          title: "2 parent-teacher meetings per year",
+          desc: "",
+        },
+        {
+          icon: "monitor-play",
+          title: "Full access to class video recordings for revision",
+          desc: "",
+        },
+        {
+          icon: "circle-help",
+          title: "Unlimited Q&A and academic support",
+          desc: "",
+        },
+        {
+          icon: "message-square-dot",
+          title:
+            "Dedicated learning consultant for one-on-one issue resolution",
+          desc: "",
+        },
+        { icon: "users", title: "Free academic consultation", desc: "" },
+      ],
+    },
+    courseStructure: {
+      title: "Course Structure",
+      sections: [
+        {
+          title: "Term 1",
+          subtitle: "",
+          lessons: [
+            "lintroducing the Graphic Novel (Nimon ",
+            "Reading a Graphic Novel (Nimona ",
+            "Introduction to Genre (Nimona) ",
+            "Reading Fables (Nimona) ",
+            "A odern Fable (The Hobbit) ",
+            "The Moral of Animal Farm (The Hobbit ",
+            "Reading Fantasy (The Hobbit ",
+            "The Hobbit (The Hobbit) ",
+            "Topic Test and Miarking & Feedback",
+          ],
+        },
+        {
+          title: "Term 2",
+          subtitle: "",
+          lessons: [
+            "lintroducing the Graphic Novel (Nimon ",
+            "Reading a Graphic Novel (Nimona ",
+            "Introduction to Genre (Nimona) ",
+            "Reading Fables (Nimona) ",
+            "A odern Fable (The Hobbit) ",
+            "The Moral of Animal Farm (The Hobbit ",
+            "Reading Fantasy (The Hobbit ",
+            "The Hobbit (The Hobbit) ",
+            "Topic Test and Miarking & Feedback",
+          ],
+        },
+        {
+          title: "Term 3",
+          subtitle: "",
+          lessons: [
+            "lintroducing the Graphic Novel (Nimon ",
+            "Reading a Graphic Novel (Nimona ",
+            "Introduction to Genre (Nimona) ",
+            "Reading Fables (Nimona) ",
+            "A odern Fable (The Hobbit) ",
+            "The Moral of Animal Farm (The Hobbit ",
+            "Reading Fantasy (The Hobbit ",
+            "The Hobbit (The Hobbit) ",
+            "Topic Test and Miarking & Feedback",
+          ],
+        },
+        {
+          title: "Term 4",
+          subtitle: "",
+          lessons: [
+            "lintroducing the Graphic Novel (Nimon ",
+            "Reading a Graphic Novel (Nimona ",
+            "Introduction to Genre (Nimona) ",
+            "Reading Fables (Nimona) ",
+            "A odern Fable (The Hobbit) ",
+            "The Moral of Animal Farm (The Hobbit ",
+            "Reading Fantasy (The Hobbit ",
+            "The Hobbit (The Hobbit) ",
+            "Topic Test and Miarking & Feedback",
+          ],
         },
       ],
     },
-  },
-  resources: {
-    packages: [
-      { icon: "📘", title: "Exclusive Textbooks", desc: "4 volumes" },
-      { icon: "📝", title: "Weekly Homework", desc: "6-8 hours" },
-      { icon: "✍️", title: "Reviewed Essays", desc: "34/term" },
-      { icon: "📊", title: "Mock Exams", desc: "Full-length x12" },
-      { icon: "📚", title: "Recorded Lessons", desc: "Full access" },
-      { icon: "🗣️", title: "1-on-1 Consultations", desc: "Full access" },
-      { icon: "📅", title: "Parent-Teacher Meetings", desc: "Full access" },
-      { icon: "📖", title: "SAC Revision Kits", desc: "Full access" },
+    relatedCourses: [
       {
-        icon: "📖",
-        title: "Recorded Lessons Library",
-        desc: "Full access",
+        title: "Year 7-9",
+        subtitle: "Year 7-9 English Enrichment",
+        slug: "y7-9-english",
       },
-      { icon: "📖", title: "SAC Revision Kits", desc: "Full access" },
       {
-        icon: "📖",
-        title: "Recorded Lessons Library",
-        desc: "Full access",
+        title: "Year 7-9",
+        subtitle: "Year 7-9 Writing",
+        slug: "y7-9-writing",
       },
-      { icon: "📖", title: "SAC Revision Kits", desc: "Full access" },
       {
-        icon: "📖",
-        title: "Recorded Lessons Library",
-        desc: "Full access",
-      },
-      { icon: "📖", title: "SAC Revision Kits", desc: "Full access" },
-      {
-        icon: "📖",
-        title: "Recorded Lessons Library",
-        desc: "Full access",
+        title: "Year 8-9",
+        subtitle: "Year 8-9 Science",
+        slug: "y8-9-science",
       },
     ],
   },
-  courseStructure: {
-    title: "Course Structure",
-    sections: [
-      {
-        title: "Introduction to Genres",
-        subtitle: "Module 1",
-        lessons: [
-          "lintroducing the Graphic Novel (Nimon ",
-          "Reading a Graphic Novel (Nimona ",
-          "Introduction to Genre (Nimona) ",
-          "Reading Fables (Nimona) ",
-          "A odern Fable (The Hobbit) ",
-          "The Moral of Animal Farm (The Hobbit ",
-          "Reading Fantasy (The Hobbit ",
-          "The Hobbit (The Hobbit) ",
-          "Topic Test and Miarking & Feedback",
-        ],
-      },
-      {
-        title: "Introduction to Genres",
-        subtitle: "Module 2",
-        lessons: [
-          "lintroducing the Graphic Novel (Nimon ",
-          "Reading a Graphic Novel (Nimona ",
-          "Introduction to Genre (Nimona) ",
-          "Reading Fables (Nimona) ",
-          "A odern Fable (The Hobbit) ",
-          "The Moral of Animal Farm (The Hobbit ",
-          "Reading Fantasy (The Hobbit ",
-          "The Hobbit (The Hobbit) ",
-          "Topic Test and Miarking & Feedback",
-        ],
-      },
-      {
-        title: "Introduction to Genres",
-        subtitle: "Module 3",
-        lessons: [
-          "lintroducing the Graphic Novel (Nimon ",
-          "Reading a Graphic Novel (Nimona ",
-          "Introduction to Genre (Nimona) ",
-          "Reading Fables (Nimona) ",
-          "A odern Fable (The Hobbit) ",
-          "The Moral of Animal Farm (The Hobbit ",
-          "Reading Fantasy (The Hobbit ",
-          "The Hobbit (The Hobbit) ",
-          "Topic Test and Miarking & Feedback",
-        ],
-      },
-      {
-        title: "Introduction to Genres",
-        subtitle: "Module 4",
-        lessons: [
-          "lintroducing the Graphic Novel (Nimon ",
-          "Reading a Graphic Novel (Nimona ",
-          "Introduction to Genre (Nimona) ",
-          "Reading Fables (Nimona) ",
-          "A odern Fable (The Hobbit) ",
-          "The Moral of Animal Farm (The Hobbit ",
-          "Reading Fantasy (The Hobbit ",
-          "The Hobbit (The Hobbit) ",
-          "Topic Test and Miarking & Feedback",
-        ],
-      },
-    ],
-  },
-  relatedCourses: [
-    {
-      title: "VCE",
-      subtitle: "English Unit 1-4",
-      slug: "y7-9-maths",
-    },
-    {
-      title: "VCE",
-      subtitle: "Specialist Maths Unit 1-4",
-      slug: "y7-9-maths",
-    },
-    {
-      title: "VCE",
-      subtitle: "Science Unit 1-4",
-      slug: "y7-9-maths",
-    },
-  ],
-
   zh: {
     slug: "y7-9-maths",
     title: "7-9年级数学培优课程",
@@ -287,53 +311,35 @@ const courseData = {
     },
     resources: {
       packages: [
-        { icon: "📘", title: "Exclusive Textbooks", desc: "4 volumes" },
-        { icon: "📝", title: "Weekly Homework", desc: "6-8 hours" },
-        { icon: "✍️", title: "Reviewed Essays", desc: "34/term" },
-        { icon: "📊", title: "Mock Exams", desc: "Full-length x12" },
-        { icon: "📚", title: "Recorded Lessons", desc: "Full access" },
+        { icon: "school", title: "每周 2 小时班课", desc: "" },
+        { icon: "book-copy", title: "4 本澳升独家教材", desc: "" },
+        { icon: "book-open-text", title: "9 本澳升独家习题册", desc: "" },
+        { icon: "user-pen", title: "每周 1 小时课后作业", desc: "" },
         {
-          icon: "🗣️",
-          title: "1-on-1 Consultations",
-          desc: "Full access",
+          icon: "chart-no-axes-combined",
+          title: "每周 10 题额外/选做/高阶题",
+          desc: "",
         },
+        { icon: "square-check-big", title: "2 次阶段/主题测试", desc: "" },
+        { icon: "File-clock", title: "4 次学期检测考试", desc: "" },
+        { icon: "chart-column", title: "2 次考试报告", desc: "" },
+        { icon: "speech", title: "2 次家长会", desc: "" },
+        { icon: "monitor-play", title: "提供课程录像", desc: "" },
+        { icon: "circle-help", title: "提供无限的沟通答疑", desc: "" },
         {
-          icon: "📅",
-          title: "Parent-Teacher Meetings",
-          desc: "Full access",
+          icon: "message-square-dot",
+          title: "提供私人学管一对一解决问题",
+          desc: "",
         },
-        { icon: "📖", title: "SAC Revision Kits", desc: "Full access" },
-        {
-          icon: "📖",
-          title: "Recorded Lessons Library",
-          desc: "Full access",
-        },
-        { icon: "📖", title: "SAC Revision Kits", desc: "Full access" },
-        {
-          icon: "📖",
-          title: "Recorded Lessons Library",
-          desc: "Full access",
-        },
-        { icon: "📖", title: "SAC Revision Kits", desc: "Full access" },
-        {
-          icon: "📖",
-          title: "Recorded Lessons Library",
-          desc: "Full access",
-        },
-        { icon: "📖", title: "SAC Revision Kits", desc: "Full access" },
-        {
-          icon: "📖",
-          title: "Recorded Lessons Library",
-          desc: "Full access",
-        },
+        { icon: "users", title: "提供免费学业咨询", desc: "" },
       ],
     },
     courseStructure: {
       title: "Course Structure",
       sections: [
         {
-          title: "Introduction to Genres",
-          subtitle: "Module 1",
+          title: "Term 1",
+          subtitle: "",
           lessons: [
             "lintroducing the Graphic Novel (Nimon ",
             "Reading a Graphic Novel (Nimona ",
@@ -347,8 +353,8 @@ const courseData = {
           ],
         },
         {
-          title: "Introduction to Genres",
-          subtitle: "Module 2",
+          title: "Term 2",
+          subtitle: "",
           lessons: [
             "lintroducing the Graphic Novel (Nimon ",
             "Reading a Graphic Novel (Nimona ",
@@ -362,8 +368,8 @@ const courseData = {
           ],
         },
         {
-          title: "Introduction to Genres",
-          subtitle: "Module 3",
+          title: "Term 3",
+          subtitle: "",
           lessons: [
             "lintroducing the Graphic Novel (Nimon ",
             "Reading a Graphic Novel (Nimona ",
@@ -377,8 +383,8 @@ const courseData = {
           ],
         },
         {
-          title: "Introduction to Genres",
-          subtitle: "Module 4",
+          title: "Term 4",
+          subtitle: "",
           lessons: [
             "lintroducing the Graphic Novel (Nimon ",
             "Reading a Graphic Novel (Nimona ",
@@ -395,19 +401,19 @@ const courseData = {
     },
     relatedCourses: [
       {
-        title: "VCE",
-        subtitle: "English Unit 1-4",
-        slug: "y7-9-maths",
+        title: "Year 7-9",
+        subtitle: "7-9年级英文培优课程",
+        slug: "y7-9-english",
       },
       {
-        title: "VCE",
-        subtitle: "Specialist Maths Unit 1-4",
-        slug: "y7-9-maths",
+        title: "Year 7-9",
+        subtitle: "7-9年级写作课程",
+        slug: "y7-9-writing",
       },
       {
-        title: "VCE",
-        subtitle: "Science Unit 1-4",
-        slug: "y7-9-maths",
+        title: "Year 8-9",
+        subtitle: "8-9年级科学课程",
+        slug: "y8-9-science",
       },
     ],
   },

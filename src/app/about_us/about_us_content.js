@@ -140,13 +140,13 @@ export const aboutUsContent = {
             name: "Box Hill Campus",
             address: "899 Whitehorse Road, Box Hill, VIC 3128",
             email: "info@autinedu.com.au",
-            phone: "0466 822 995 (English)",
+            phone: "0466 822 995",
           },
           {
             name: "Mount Waverley VCE Campus",
             address: "8 The Highway, Mount Waverley, VIC 3149",
             email: "mt.admin@austinedu.com.au",
-            phone: "0432 546 815 (English) ", 
+            phone: "0432 546 815",
           },
           {
             name: "Mount Waverley Ausyouth Campus",
@@ -332,13 +332,13 @@ export const aboutUsContent = {
             name: "Box Hill 校区",
             address: "899 Whitehorse Road, Box Hill, VIC 3128",
             email: "info@autinedu.com.au",
-            phone: "0466 822 995 (English)",
+            phone: "0466 822 995 ",
           },
           {
             name: "Mount Waverley VCE 校区",
             address: "8 The Highway， Mount Waverley， VIC 3149",
             email: "mt.admin@austinedu.com.au",
-            phone: "0432 546 815 (English) ", 
+            phone: "0432 546 815",
           },
           {
             name: "Mount Waverley Ausyouth 青少部校区",

@@ -1,6 +1,11 @@
 "use client";
 
-import { useContext, useState, useEffect } from "react";
+import {
+  useContext,
+  useMemo,
+  lazy,
+  Suspense,
+} from "react";
 import { LangContext } from "@/app/layout";
 import SchoolsCarousel from "./components/SchoolsCarousel";
 import Image from "next/image";
@@ -28,7 +33,6 @@ import {
   Award,
   Calendar,
 } from "lucide-react";
-import dynamic from "next/dynamic";
 
 const SCHOOL_IMAGES = [
   { name: "Scotch College", image: "school_SC.png" },
@@ -46,31 +50,36 @@ export default function CoursePageClient({ localizedData }) {
   const course = localizedData?.[lang] || {};
 
   const IconRenderer = ({ name, className }) => {
-    // 判断是否是emoji
+    // 1. 先判断是不是 emoji
     const isEmoji = /\p{Emoji}/u.test(name);
-
-    // 如果是emoji直接渲染
     if (isEmoji) {
       return <span className={className}>{name}</span>;
     }
 
-    // 动态加载Lucide图标并添加Suspense边界
-    try {
-      const LucideIcon = lazy(() =>
+    // 2. 把 kebab-case 或 snake_case 转成 PascalCase
+    const pascalName = useMemo(() => {
+      return name
+        .split(/[-_]/) // 按横杠或下划线分割
+        .map((s) => s.charAt(0).toUpperCase() + s.slice(1)) // 每段首字母大写
+        .join("");
+    }, [name]);
+
+    // 3. 动态 import 对应的 Lucide 图标
+    const LucideIcon = useMemo(() => {
+      return lazy(() =>
         import("lucide-react").then((mod) => ({
           default:
-            mod[name] || (() => <span className={className}>{name}</span>),
+            mod[pascalName] ||
+            (() => <span className={className}>{name}</span>),
         }))
       );
+    }, [pascalName, className, name]);
 
-      return (
-        <Suspense fallback={<span className={className}>...</span>}>
-          <LucideIcon className={className} />
-        </Suspense>
-      );
-    } catch (error) {
-      return <span className={className}>{name}</span>;
-    }
+    return (
+      <Suspense fallback={<span className={className}>...</span>}>
+        <LucideIcon className={className} />
+      </Suspense>
+    );
   };
 
   return (
