@@ -1,13 +1,28 @@
-import { useContext } from "react";
+import { useContext, useRef } from "react";
 import Image from "next/image";
 import { LangContext } from "@/app/layout";
 import { Button } from "./ui/button";
 import { homeContent } from "@/app/content";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 
 export default function Hero() {
   const { lang } = useContext(LangContext) || { lang: "en" };
 
-  const content = homeContent[lang].hero
+  const content = homeContent[lang].hero;
+
+// 生成左右侧独立图片数组
+const leftImageNumbers = [1, 3, 6, 8]; // 左侧图片编号
+const rightImageNumbers = [2, 4, 5, 7, 9]; // 右侧图片编号
+
+const leftImages = leftImageNumbers.map(n => 
+  `/home/hero_carousel/${n}.png`
+);
+
+const rightImages = rightImageNumbers.map(n => 
+  `/home/hero_carousel/${n}.png`
+);
+
 
   return (
     <section className="container py-2">
@@ -31,64 +46,76 @@ export default function Hero() {
             <Button size="lg" className="px-8">
               {content.getStarted}
             </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="px-8"
-            >
+            <Button size="lg" variant="outline" className="px-8">
               {content.contact}
             </Button>
           </div>
         </div>
 
-        {/* 右侧：多图叠加容器 */}
+        {/* 右侧双列轮播容器 */}
         <div className="relative w-full aspect-[600/600]">
-          {/* 底层背景图：撑满容器 */}
-          <div className="absolute z-0 right-1/3 top-10 transform translate-x-1/3 ">
-            <Image
-              src="/home/banner decor 2.png"
-              alt="Background"
-              width={479}
-              height={615}
-              unoptimized
-              className="object-cover rounded-lg"
-            />
+          {/* 左侧列 - 主轮播 */}
+          <div className="absolute left-0 w-1/2 h-full z-10 ">
+            <Swiper
+              direction="vertical"
+              slidesPerView={"2"}
+              spaceBetween={30}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+              }}
+              centeredSlides={true}
+              loop={true}
+              speed={2000}
+              modules={[Autoplay]}
+              className="h-full"
+            >
+              {leftImages.map((src, index) => (
+                <SwiperSlide key={`left-${index}`}>
+                  <div className="relative h-full w-full ">
+                    <Image
+                      src={src}
+                      alt={`Carousel Image ${index + 1}`}
+                      width={400}
+                      height={300}
+                      unoptimized
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
 
-          {/* 左上图片：占容器一半宽度 */}
-          <div className="absolute top-5 left-0 w-4/9 z-10">
-            <Image
-              src="/home/banner image1.png"
-              alt="Student"
-              width={368}
-              height={551}
-              unoptimized
-              className="object-cover w-full h-auto rounded-lg shadow-xl"
-            />
-          </div>
-
-          {/* 右下图片：占容器一半宽度 */}
-          <div className="absolute bottom-0 right-0 w-4/9 z-10">
-            <Image
-              src="/home/banner image2.png"
-              alt="Classroom"
-              width={368}
-              height={551}
-              unoptimized
-              className="object-cover w-full h-auto rounded-lg shadow-xl"
-            />
-          </div>
-
-          {/* 顶层装饰：占容器 3/4 宽度，可根据需要微调 */}
-          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 z-20">
-            <Image
-              src="/home/banner decor.png"
-              alt="Decoration"
-              width={358}
-              height={217}
-              unoptimized
-              className="object-contain w-full h-auto"
-            />
+          {/* 右侧列 - 覆盖轮播 */}
+          <div className="absolute right-0 w-1/2 h-full z-20">
+            <Swiper
+              direction="vertical"
+              slidesPerView={"2"}
+              spaceBetween={30}
+              autoplay={{
+                delay: 0,
+                disableOnInteraction: false,
+              }}
+              loop={true}
+              speed={2000}
+              modules={[Autoplay]}
+              className="h-full"
+              initialSlide={5}
+            >
+              {rightImages.map((src, index) => (
+                <SwiperSlide key={`right-${index}`}>
+                  <div className="relative h-full w-full">
+                    <Image
+                      src={src}
+                      alt={`Carousel Image ${index + 1}`}
+                      width={400}
+                      height={300}
+                      unoptimized
+                    />
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </div>
