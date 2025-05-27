@@ -27,7 +27,7 @@ export default function AdmissionProcess() {
   const getColorConfig = (partIndex) => {
     const colors = [
       { dot: "bg-[#4664aa]", border: "border-[#4664aa]" },
-      { dot: "bg-[#c12731]", border: "border-[#c12731]" },// red
+      { dot: "bg-[#c12731]", border: "border-[#c12731]" }, // red
       { dot: "bg-[#dfb67e]", border: "border-[#dfb67e]" },
     ];
     return colors[partIndex % 3];
@@ -36,7 +36,7 @@ export default function AdmissionProcess() {
   return (
     <section className="py-4 xl:py-8">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 uppercase">
-      {title}
+        {title}
       </h2>
 
       {parts.map((part, i) => {
@@ -67,7 +67,7 @@ export default function AdmissionProcess() {
                   Part {part.part}
                 </h1>
                 <span className="text-[11px] md:text-sm xl:text-base whitespace-pre-line text-gray-700 font-semibold">
-                {part.title}
+                  {part.title}
                 </span>
               </div>
             </motion.div>
@@ -87,9 +87,13 @@ export default function AdmissionProcess() {
                   >
                     <div className="bg-white shadow-2xl mr-8 p-2 sm:p-4 md:p-8 ">
                       <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base">
-                       {currentStep.desc}
-                       
+                        {currentStep.desc}
                       </p>
+                      <div className="flex items-center justify-end mt-8">
+                        <span className="text-gray-500 text-xs sm:text-sm md:text-base">
+                          {currentStep.title}
+                        </span>
+                      </div>
                     </div>
                   </motion.div>
                 ) : (
