@@ -192,6 +192,55 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
             },
           ],
         },
+         {
+          part: 4,
+          title: "Additional\n Services",
+          steps: [
+            {
+              step: 'Service 1',
+              title: "Authentic Mock Exams",
+              desc: `• Austin’s mock exams are renowned for their exceptional quality, covering nearly 100% of VCE exam content. They are recognised as one of Victoria’s top four mock exams and are the only ones provided by a Chinese-run institution.
+                     • Full mock exams serve as an additional assurance for Austin students to deliver outstanding results every year. With extensive experience and unmatched professionalism, our academic team ensures the difficulty level and question types of the mock exams align with actual VCE exams. We also recreate exam conditions and timing to provide a fully authentic simulation. After the exams, teachers thoroughly analyse each student's papers to identify weak areas and offer targeted revision plans, helping students build exam readiness, adapt to the test environment, and achieve exceptional results.
+    
+                     Mock Exams Offered:
+                   • NAPLAN Mock Exams
+                     • Selective School Mock Exams
+                     • Scholarship Mock Exams & Interview Simulations
+                     • VCE Comprehensive Mock Exams
+                     
+                     Key Subjects:
+                    • Mathematics: Three full mock exams, earning the title “The King of Predictions.
+                     • English: Mock exams designed to develop writing strategies and improve writing speed in exam conditions.
+                     • Chinese: \n Speaking: Students undertake at least six internal mock exams with Austin teachers and five face-to-face mock exams with experienced VCE oral examiners. Feedback and recommendations are provided to help students improve. \n Writing: Students complete two authentic mock exams simulating real test scenarios.
+                     • Other Subjects: Physics, Chemistry, Biology, Accounting, Economics, and Japanese—all include at least one full mock exam opportunity.`,
+            },
+            {
+              step: "Service 2",
+              title: "Free Seminars Throughout the Year",
+              desc: `Austin Education hosts over 20 free seminars each year, aimed at helping parents gain in-depth knowledge about the educational field in Victoria, bridging any information gaps. Seminar details will be promptly shared with our internal students and parents to ensure that no one misses out on topics of interest.
+                     
+              Seminar topics include:
+                     For Years 1-9:
+                     • NAPLAN Seminar
+                     • Scholarship & Elite Public School Seminar
+                     • Ausyouth English/Math Seminar
+                     • Public vs. Private School Rankings, Pros and Cons, and Comparisons.
+                     
+                     For Years 10-12:
+                     • VCE Curriculum Overview Seminar (Years 10-12)
+                     • University Admission and Application Seminars
+                     • VCE Subject Selection Seminars (Introductory and Advanced)
+                     • VCE Mathematics Seminar
+                     • VCE English Seminar
+                     • Seminar on the Differences Between EAL, ENGLISH, and English Language
+                     • VCE Chinese Seminar
+                     • Study Abroad in the U.S. Seminar
+                     • Medical Studies Seminar
+                     • High-Performing Student Experience Sharing Seminars`
+            },
+           
+          ],
+        },
       ],
     },
     //     additionalServices:{
@@ -478,6 +527,49 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               title: "Step 11 根据考试情况二次咨询 & 免费规划",
               desc: `• 学生在澳升完成一段时间的学习后，可以根据自身的学习情况再次预约学管和任课老师进行一对一咨询，并重新规划学习路线。`,
             },
+          ],
+        },
+        {
+          part: 4,
+          title: "附加服务",
+          steps: [
+            {
+              step: 'Service 1',
+              title: "全真模拟考试",
+              desc: `• 澳升的模考卷以极高的质量著称，覆盖了近百分之百的VCE真题知识点，因此被誉为维州四大模考卷之一，也是其中唯一由华人机构提供的全真模考试卷。
+               • 全真模拟考试是澳升的学生每年都能交出优异答卷的另一份保障。澳升教研团队凭借多年的教育经验和过硬的专业素质，确保了模拟考试难度和题型与真实考试相对应，同时还完成了考场状态和考试时间一比一还原的全真模拟。考完老师会详细分析每个学生的试卷，找出学生的薄弱项，在最后时间针对性复习。致力于帮助学生锻炼考试素质，熟悉考场状态，最终以良好的心态取得满意的成绩。
+            
+               澳升模考提供:,
+                • Naplan模拟考试
+                • 精英公校模拟考试
+                • 奖学金模拟考试 & 面试模拟
+                • VCE全科模考`,
+            },
+            {
+              step: "Service 2",
+              title: "全年免费讲座",
+              desc: `澳升全年会举办20余场免费讲座，旨在帮助家长深入了解维州教育领域的相关知识，消除家长的信息差。工作人员会将讲座信息第一时间通知澳升内部学员及家长，以确保各位不会错过任何感兴趣的讲座。
+              
+              讲座内容涵盖： 
+              1-9年级:
+                • Naplan讲座
+                • 奖学金 ＆ 精英公校专题讲座
+                 • Ausyouth青少部英文/数学讲座
+                 • 公私校排名、优缺点及对比讲座
+
+              10-12年级:
+               • VCE课程体系介绍讲座
+               • 大学志愿报考讲座
+               • VCE选课专题讲座（基础版和深度版）
+               • VCE数学讲座
+               • VCE英语讲座
+               • EAL/ENGLISH/English language的区别专题讲座
+               • VCE中文讲座
+               • 留学美国讲座
+               • 医学讲座
+               • 优秀学员分享讲座`,
+            },
+           
           ],
         },
       ],

@@ -66,7 +66,7 @@ export default function AdmissionProcess() {
                 <h1 className="font-bebas mt-4 md:mt-6 text-3xl md:text-4xl uppercase">
                   Part {part.part}
                 </h1>
-                <span className="text-[11px] md:text-sm xl:text-base">
+                <span className="text-[11px] md:text-sm xl:text-base whitespace-pre-line text-gray-700 font-semibold">
                 {part.title}
                 </span>
               </div>

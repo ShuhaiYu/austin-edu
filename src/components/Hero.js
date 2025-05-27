@@ -38,7 +38,7 @@ const rightImages = rightImageNumbers.map(n =>
             <span className="block">{content.title}</span>
           </h1>
 
-          <p className="leading-relaxed text-left lg:text-justify default-p">
+          <p className="leading-relaxed default-p whitespace-break-spaces">
             {content.description}
           </p>
 
