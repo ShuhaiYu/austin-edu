@@ -83,7 +83,7 @@ export default function AdmissionProcess() {
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: 20 }}
                     transition={{ duration: 0.2 }}
-                    className="w-1/2"
+                    className="w-1/2 sticky top-1/4 self-start"
                   >
                     <div className="bg-white shadow-2xl mr-8 p-2 sm:p-4 md:p-8 ">
                       <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base">
