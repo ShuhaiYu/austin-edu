@@ -7,7 +7,7 @@ import {
 } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const AnimatedNumber = ({ value }) => {
+const AnimatedNumber = ({ value, textSize }) => {
   const [displayValue, setDisplayValue] = useState("");
   const numericPart = parseFloat(value);
   const suffix = value.replace(/[-\d.]/g, "");
@@ -38,7 +38,7 @@ const AnimatedNumber = ({ value }) => {
         animate={{ y: 0, opacity: 1 }}
         exit={{ y: -20, opacity: 0 }}
         transition={{ duration: 0.2 }}
-        className="text-4xl font-bold"
+        className={`inline-block ${textSize} font-bold`}
       >
         {displayValue}
       </motion.span>
@@ -68,7 +68,7 @@ export const PercentageCircle = ({
       className={`${size} rounded-full bg-white flex items-center justify-center`}
     >
       <span className={`${color} ${textSize} font-bold`}>
-        <AnimatedNumber value={value} />
+        <AnimatedNumber value={value} textSize={textSize} />
       </span>
     </div>
   </div>

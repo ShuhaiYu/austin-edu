@@ -14,7 +14,7 @@ export const VCEEnglishSubject = ({ data }) => (
           <div key={index} className="flex flex-col items-center">
             <PercentageCircle
               value={stat.value}
-              size="w-20 h-20"
+              size="w-24 h-24"
               color="text-primary"
               borderColor="border-primary/60"
             />
@@ -64,7 +64,7 @@ export const VCEEnglishSubject = ({ data }) => (
               >
                 <div className="flex items-start mb-2 gap-6">
                   <span className="text-white text-center p-2 font-bold bg-primary rounded-full w-[40px] h-[40px]">{i + 1}</span>
-                  <h5 className="font-bold">{point.title}</h5>
+                  <h5 className="font-bold my-auto">{point.title}</h5>
                 </div>
                 <p className="text-sm">{point.description}</p>
               </motion.div>

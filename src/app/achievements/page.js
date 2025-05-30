@@ -11,8 +11,8 @@ import { PercentageCircle } from "@/components/PercentageCircle";
 import { MDProgramSubject } from "./components/MDProgramSubject";
 import { SelectiveSchoolSubject } from "./components/SelectiveSchoolSubject";
 import { AMCSubject } from "./components/AMCSubject";
-import { ScholarshipSubject1 } from "./components/ScholarshipSubject-1";
-import { ScholarshipSubject2 } from "./components/ScholarshipSubject-2";
+import { ScholarshipSubject } from "./components/ScholarshipSubject-1";
+// import { ScholarshipSubject2 } from "./components/ScholarshipSubject-2";
 import { AdvancedProgram35 } from "./components/AdvancedProgram35";
 import { AdvancedProgram79 } from "./components/AdvancedProgram79";
 
@@ -129,7 +129,7 @@ export default function Achievements() {
                 (item, index) => (
                   <div
                     key={index}
-                    className="flex items-center justify-between gap-8"
+                    className="flex items-center gap-8"
                   >
                     <div>
                       <PercentageCircle
@@ -138,7 +138,7 @@ export default function Achievements() {
                         borderColor="border-[#feddab]"
                       />
                     </div>
-                    <p className="text-sm">{item.label}</p>
+                    <p className="text-sm text-left">{item.label}</p>
                   </div>
                 )
               )}
@@ -163,26 +163,24 @@ export default function Achievements() {
 
       <div className="max-w-7xl mx-auto grid gap-6">
         <h2 className="text-3xl font-bold mb-6">
-          高中
-          {lang === "en" ? "Subjects" : "科目"}
+          {lang === "en" ? "Senior High School Subjects" : "高中科目"}
         </h2>
         <VCEEnglishSubject data={content.subjects.english} />
         <VCEMathSubject data={content.subjects.math} />
         <VCEScienceSubject data={content.subjects.science} />
         <MDProgramSubject data={content.subjects.md} />
         <h2 className="text-3xl font-bold mb-6">
-          初中
-          {lang === "en" ? "Subjects" : "科目"}
+          {lang === "en" ? "Junior High School Subjects" : "初中科目"}
         </h2>
         <SelectiveSchoolSubject data={content.subjects.selective} />
         <AMCSubject data={content.subjects.amc} />
-        <ScholarshipSubject1 data={content.subjects.scholarship} />
+        <ScholarshipSubject data={content.subjects.scholarship} />
         <AdvancedProgram79 data={content.subjects.advanced79} />
         <h2 className="text-3xl font-bold mb-6">
-          小学
-          {lang === "en" ? "Subjects" : "科目"}
+          {lang === "en" ? "Primary School Subjects" : "小学科目"}
         </h2>
-        <ScholarshipSubject2 data={content.subjects.scholarship} />
+        {/* <ScholarshipSubject2 data={content.subjects.scholarship} /> */}
+        <ScholarshipSubject data={content.subjects.scholarship} />
         <AdvancedProgram35 data={content.subjects.advanced35} />
         
       </div>

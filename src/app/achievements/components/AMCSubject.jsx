@@ -10,29 +10,10 @@ export const AMCSubject = ({ data }) => (
     title={data.title}
     color="[#c12731]"
     compactContent={
-      <div className="flex justify-center gap-6">
-        <motion.div
-          className="flex flex-col items-center"
-          whileHover={{ scale: 1.05 }}
-        >
-          <PercentageCircle
-            value={data.hd.value}
-            size="w-20 h-20"
-            color="text-emerald-500"
-          />
-          <p className="text-sm mt-2">{data.hd.label}</p>
-        </motion.div>
-        <motion.div
-          className="flex flex-col items-center"
-          whileHover={{ scale: 1.05 }}
-        >
-          <PercentageCircle
-            value={data.d.value}
-            size="w-20 h-20"
-            color="text-amber-500"
-          />
-          <p className="text-sm mt-2">{data.d.label}</p>
-        </motion.div>
+      <div className="flex items-center justify-center">
+        <div className="w-full text-center">
+          {data.compactStats}
+        </div>
       </div>
     }
     // 无展开内容
