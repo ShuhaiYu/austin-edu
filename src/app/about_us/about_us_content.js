@@ -6,7 +6,7 @@ export const aboutUsContent = {
       title: "About Austin",
       content:
         "Founded at the end of 2013, Austin Education focuses on providing comprehensive tutoring for students from Year l to Year 12. Austin boasts a faculty of hundreds of teachers, comparable to those of top private schools in Victoria. Our team includes several VCE examiners, quthors of official Victorian textbooks, experiences teachers with over 20 years of experience in day schools, and many star teachers. Additionally, Austin has exclusively developed authoritative comprehensive teaching materials, which have beer widely purchased or adopted by over a hundred well-known public and private schools for their math, business, and humanities exam preparation resources. Austin Education has been steadfastly dedicated to improving and enhancing students' academic performance and overall quality.",
-      image: "https://placehold.co/600x400",
+      image: "/about_us/heading.png",
     },
     historySection: {
       title: "Brand's History —",
@@ -122,7 +122,7 @@ export const aboutUsContent = {
       title: "Our Vision",
       content: `In Australia, the quality of teachers and educational resources in day schools varies greatly. Finding outstanding teachers and accessing high-quality learning materials often comes down to luck. However, at Austin Education, we uphold the highest standards. Our teaching faculty, courses, and academic support system undergo rigorous selection and refinement to ensure that every student has access to the best educational resources and the most exceptional teachers, eliminating the role of “luck” in their learning journey.`,
       imageMain: "https://placehold.co/600x400",
-      imageOverlay1: "https://placehold.co/200x133",
+      imageOverlay1: "/about_us/small_1.png",
       imageOverlay2: "https://placehold.co/200x133",
       pointTitle: "We strive to:",
       points: [
@@ -187,7 +187,7 @@ export const aboutUsContent = {
       title: "澳升教育",
       content: 
         "于2013年年底成立，专注于提供Y1-12全科辅导。澳升拥有数百名老师， 媲美维州顶尖私校的师资力量，包括多位VCE考官、维州官方教材编写者、日校20年以上教龄的资深教师、以及一众明星教师。此外，澳升拥有独家研发的全科权威教材，至今已经有百余所知名公私校广泛购买或采用我们的数学、商科和文科高考模拟卷资料。澳升教育一直在致力于发展和提升学生的学术成绩和综合素质的道路上砥砺前行。",
-      image: "https://placehold.co/600x400",
+      image: "/about_us/heading.png",
     },
     historySection: {
       title: "澳升的十年 · 教育改变的力量",
@@ -314,7 +314,7 @@ export const aboutUsContent = {
       title: "我们的愿景",
       content: `在澳洲，日校的师资和教学资源良莠不齐，能否遇到优秀的老师、获得高质量的学习资源，往往要靠运气。然而，Austin Education 始终坚守最高标准，我们的师资、课程、学术支持体系都经过严格筛选与精心打磨，确保每一位学生都能接触到最优质的教学资源和最优秀的教师团队，不让任何一个孩子的学习机会被“运气”左右。`,
       imageMain: "https://placehold.co/600x400",
-      imageOverlay1: "https://placehold.co/200x133",
+      imageOverlay1: "/about_us/small_1.png",
       imageOverlay2: "https://placehold.co/200x133",
       pointTitle: "我们的核心目标：",
       points: [
