@@ -26,7 +26,7 @@ export const CourseDetail = () => {
   }, [selectedCourse]);
 
   return (
-    <div className="flex gap-8 mb-16">
+    <div className="flex gap-8 mb-16 items-start">
       {/* 左侧 Accordion */}
       <div className="w-1/2">
         <Accordion type="multiple">
@@ -69,7 +69,7 @@ export const CourseDetail = () => {
       </div>
 
       {/* 右侧 详情面板 */}
-      <div className="w-1/2 space-y-8 border-6 border-blue-200 bg-white rounded-[2rem] p-8 shadow-lg">
+      <div className="w-1/2 space-y-8 border-6 border-blue-200 bg-white rounded-[2rem] p-8 shadow-lg sticky top-40 self-start">
         <h2 className="text-3xl font-bold">{selectedCourse.title}</h2>
 
         {/* 跳转按钮，直接用 selectedCourse.slug */}

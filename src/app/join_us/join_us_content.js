@@ -3,7 +3,7 @@ export const joinUsContent = {
     title: "Join Us",
     section1: {
       heading: "Education with Heart, Results with Impact.",
-      desc: "Austin Education is a leading educational institution specialising in comprehensive tutoring services for students from Year 1 to Year 12. Since our establishment in 2014, we have been dedicated to fostering academic excellence and personal growth in our students. Our team consists of 40 full-time staff and over 220 part-time and casual professionals, including subject teachers, teaching assistants, and academic advisors. With campuses in Box Hill, Mt Waverley, Melbourne CBD, Point Cook (Victoria), and Adelaide (South Australia), we provide accessible, high-quality learning environments for both staff and students.",
+      desc: "Austin Education is a leading educational institution specialising in comprehensive tutoring services for students from Year 1 to Year 12. Since our establishment in 2014, we have been dedicated to fostering academic excellence and personal growth in our students. Our team consists of 40 full-time staff and over 300 part-time and casual professionals, including subject teachers, teaching assistants, and academic advisors. With campuses in Box Hill, Mt Waverley, Melbourne CBD, Point Cook (Victoria), and Adelaide (South Australia), we provide accessible, high-quality learning environments for both staff and students.",
       button1: "Join Us",
       button2: "Contact",
     },
@@ -48,9 +48,9 @@ export const joinUsContent = {
           ],
         },
         {
-          title: "Year 7-9 Science Teacher",
+          title: "Year 7-10 Science Teacher",
           responsibilities: [
-            "Teach general Science to students in Years 7-9, covering topics in Biology, Chemistry, Physics, and Earth Sciences.",
+            "Teach general Science to students in Years 7-10, covering topics in Biology, Chemistry, Physics, and Earth Sciences.",
             "Develop lesson plans that align with the curriculum and cater to different learning styles.",
             "Design engaging and inquiry-based lessons that promote critical thinking.",
             "Assess student progress and provide constructive feedback.",
@@ -376,7 +376,7 @@ export const joinUsContent = {
     title: "加入我们",
     section1: {
       heading: "用心教育，成就卓越",
-      desc: "澳升教育是一家行业领先的教育机构，专注于为小学到高中的学生提供优质辅导。自 2014 年成立以来，我们致力于帮助学生提升学业成绩，实现个人成长。目前，我们有 40 多名全职员工，以及 220 多名兼职员工，包括各科老师、助教和学术顾问。我们的校区遍布 Box Hill、Mt Waverley、墨尔本 CBD、Point Cook（维州）和阿德莱德（南澳），旨在为员工和学生提供良好的工作及教学环境。",
+      desc: "澳升教育是一家行业领先的教育机构，专注于为小学到高中的学生提供优质辅导。自 2014 年成立以来，我们致力于帮助学生提升学业成绩，实现个人成长。目前，我们有 40 多名全职员工，以及 300 多名兼职员工，包括各科老师、助教和学术顾问。我们的校区遍布 Box Hill、Mt Waverley、墨尔本 CBD、Point Cook（维州）和阿德莱德（南澳），旨在为员工和学生提供良好的工作及教学环境。",
       button1: "加入我们",
       button2: "联系我们",
     },
@@ -421,9 +421,9 @@ export const joinUsContent = {
           ],
         },
         {
-          title: "7-9年级科学教师",
+          title: "7-10年级科学教师",
           responsibilities: [
-            "为7-9年级的学生教授科学课程，包括生物、化学、物理及地理等内容。",
+            "为7-10年级的学生教授科学课程，包括生物、化学、物理及地理等内容。",
             "设计符合课程标准的教学计划，并满足不同学生的学习需求。",
             "采用探究式教学方法，培养学生的批判性思维。",
             "估学生进度，并及时提供反馈。",

@@ -10,7 +10,7 @@ export const coursesContent = {
       courses: {
         "Primary Year 1-6": [
           {
-            title: "Year1-6 English Enrichment (Eng/EAL)",
+            title: "Year 1-6 English Enrichment (Eng/EAL)",
             slug: "y1-6-english-enrichment",
             content: [
               "1.5 hours of weekly class sessions",
@@ -24,10 +24,11 @@ export const coursesContent = {
               "Unlimited Q&A and academic support",
               "Dedicated learning consultant for one-on-one issue resolution",
               "Free academic consultation",
+
             ],
           },
           {
-            title: "Year1-6 Maths Enrichment",
+            title: "Year 1-6 Maths Enrichment",
             slug: "y1-6-maths-enrichment",
             content: [
               "1.5 hours of weekly class sessions",
@@ -45,7 +46,7 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year1-6 Chinese Enrichment",
+            title: "Year 1-6 Chinese Enrichment",
             slug: "y1-6-chinese-enrichment",
             content: [
               "1.5 hours of weekly small group class sessions",
@@ -63,7 +64,7 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year3-6 Writing",
+            title: "Year 3-6 Writing",
             slug: "y3-6-writing",
             content: [
               "1.5 hours of weekly class sessions",
@@ -80,46 +81,28 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year5-6 AMC",
-            slug: "y5-6-amc",
-            content: [
-              "28 lessons, each 2 hours long",
-              "1 hour of weekly homework",
-              "20 complete practice papers",
-              "1000+ practice questions in the question bank",
-              "4 full-length mock exams",
-              "4 topic tests",
-              "2 original practice papers",
-              "2 one-on-one post-exam paper analysis sessions",
-              "Recorded lessons",
-              "Unlimited Q&A and academic support",
-              "Dedicated learning consultant for one-on-one issue resolution",
-              "Free academic consultation",
-            ],
-          },
-          {
-            title: "Year3, Year5 Naplan",
-            slug: "y3-y5-naplan",
-            content: [
-              "For details about our term-based courses, please contact us for more information.",
-            ],
-          },
-          {
-            title: "AEAS",
-            slug: "aeas",
-            content: [
-              "For details about our term-based courses, please contact us for more information.",
-            ],
-          },
-          {
-            title: "Year3-to-5 Scholarship Victoria",
+            title: "Year 3-to-5 Scholarship Victoria",
             slug: "3-to-5-scholarship-victoria",
             content: [
               "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
-            title: "Year5-to-7 Scholarship Victoria",
+            title: "Year 3-to-5 Scholarship Interview Victoria",
+            slug: "3-to-5-scholarship-interview-victoria",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Year 3-to-5 Scholarship Mock Exam Victoria",
+            slug: "3-to-5-scholarship-mock-exam-victoria",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Year 5-to-7 Scholarship Victoria",
             slug: "5-to-7-scholarship-victoria",
             content: [
               "3 hours of weekly class sessions",
@@ -139,30 +122,93 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year3-to-5 Scholarship South Australia",
+            title: "Year 5-to-7 Scholarship Interview Victoria",
+            slug: "5-to-7-scholarship-interview-victoria",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Year 5-to-7 Scholarship Mock Exam Victoria",
+            slug: "5-to-7-scholarship-mock-exam-victoria",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Year 3-4 AMC ",
+            slug: "y3-4-amc",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Year 5-6 AMC",
+            slug: "y5-6-amc",
+            content: [
+              "28 lessons, each 2 hours long",
+              "1 hour of weekly homework",
+              "20 complete practice papers",
+              "1000+ practice questions in the question bank",
+              "4 full-length mock exams",
+              "4 topic tests",
+              "2 original practice papers",
+              "2 one-on-one post-exam paper analysis sessions",
+              "Recorded lessons",
+              "Unlimited Q&A and academic support",
+              "Dedicated learning consultant for one-on-one issue resolution",
+              "Free academic consultation",
+            ],
+          },
+          {
+            title: "Year 3, Year 5 Naplan & holiday program",
+            slug: "y3-y5-naplan",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "AEAS",
+            slug: "aeas",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Extra holiday class",
+            slug: "y1-6-extra-holiday-class",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Year 3-to-5 Scholarship South Australia",
             slug: "3-to-5-scholarship-south-australia",
             content: [
               "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
-            title: "Year5-to-7 Scholarship South Australia",
+            title: "Year 5-to-7 Scholarship South Australia",
             slug: "5-to-7-scholarship-south-australia",
             content: [
               "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
-            title: "Year5-to-7 Selective School South Australia",
+            title: "Year 5-to-7 Selective School South Australia",
             slug: "5-to-7-selective-school-south-australia",
             content: [
               "For details about our term-based courses, please contact us for more information.",
             ],
           },
+
+          
         ],
-        "Secondary Year 7-9": [
+        // 这里是其他年级的内容
+         "Secondary Year 7-9": [
           {
-            title: "Year7-9 English Enrichment （Eng/EAL）",
+            title: "Year 7-9 English Enrichment （Eng/EAL）",
             slug: "y7-9-english",
             content: [
               "2 hours of weekly class sessions",
@@ -179,7 +225,7 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year7-9 Maths Enrichment",
+            title: "Year 7-9 Maths Enrichment",
             slug: "y7-9-maths",
             content: [
               "2-hour weekly group class",
@@ -198,7 +244,7 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year7-9 Writing",
+            title: "Year 7-9 Writing",
             slug: "y7-9-writing",
             content: [
               "1.5 hours of weekly class sessions",
@@ -216,7 +262,7 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year8-9 Science",
+            title: "Year 8-9 Science",
             slug: "y8-9-science",
             content: [
               "2 hours of weekly class sessions",
@@ -232,32 +278,49 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year7-8 AMC",
-            slug: "y7-8-amc",
+            title: "Year 7-9 Latin Enrichment",
+            slug: "y7-9-latin-enrichment",
             content: [
-              "28 lessons, each 2 hours long",
-              "1 hour of weekly homework",
-              "20 complete practice papers",
-              "1000+ practice questions in the question bank",
-              "4 full-length mock exams",
-              "4 topic tests",
-              "2 original practice papers",
-              "2 one-on-one post-exam paper analysis sessions",
-              "Recorded lessons",
-              "Unlimited Q&A and academic support",
-              "Dedicated learning consultant for one-on-one issue resolution",
-              "Free academic consultation",
+              "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
-            title: "Year7-to-9 Scholarship Victoria",
+            title: "Year 7-9 France Enrichment",
+            slug: "y7-9-france-enrichment",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Year 7-9 Japanese Enrichment",
+            slug: "y7-9-japanese-enrichment",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Year 7-to-9 Scholarship Victoria",
             slug: "7-to-9-scholarship-victoria",
             content: [
               "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
-            title: "Year8-to-9 Selective School Program",
+            title: "Year 7-to-9 Scholarship Interview Victoria",
+            slug: "7-to-9-scholarship-interview-victoria",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Year 7-to-9 Scholarship Mock Exam Victoria",
+            slug: "7-to-9-scholarship-mock-exam-victoria",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Year 8-to-9 Selective School Program",
             slug: "y8-9-selective",
             content: [
               "4 hours of weekly class sessions",
@@ -275,8 +338,33 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year7, Year9 Naplan",
+            title: "Year 7-8 AMC",
+            slug: "y7-8-amc",
+            content: [
+              "28 lessons, each 2 hours long",
+              "1 hour of weekly homework",
+              "20 complete practice papers",
+              "1000+ practice questions in the question bank",
+              "4 full-length mock exams",
+              "4 topic tests",
+              "2 original practice papers",
+              "2 one-on-one post-exam paper analysis sessions",
+              "Recorded lessons",
+              "Unlimited Q&A and academic support",
+              "Dedicated learning consultant for one-on-one issue resolution",
+              "Free academic consultation",
+            ],
+          },
+          {
+            title: "Year 7, Year 9 Naplan",
             slug: "y7-y9-naplan",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Extra holiday class",
+            slug: "y7-9-extra-holiday-class",
             content: [
               "For details about our term-based courses, please contact us for more information.",
             ],
@@ -304,6 +392,13 @@ export const coursesContent = {
             ],
           },
           {
+            title: "Year 10 EAL Foundation Class",
+            slug: "y10-eal",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
             title: "Year 10 Pre-VCE Maths Advance",
             slug: "y10-maths-advance",
             content: [
@@ -324,7 +419,7 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year 10 Pre-VCE Maths",
+            title: "Year 10 Pre-VCE Maths Standard",
             slug: "y10-maths-standard",
             content: [
               "2 hours of weekly class sessions",
@@ -341,7 +436,7 @@ export const coursesContent = {
             ],
           },
           {
-            title: "Year9-10 Pre-VCE Science",
+            title: "Year 9-10 Pre-VCE Science",
             slug: "y9-10-science",
             content: [
               "2 hours of weekly class sessions",
@@ -369,6 +464,13 @@ export const coursesContent = {
               "Unlimited Q&A and academic support",
               "Dedicated 1-on-1 learning manager for personalised issue resolution",
               "Free academic consultation included",
+            ],
+          },
+          {
+            title: "Year 10 Pre-VCE Latin",
+            slug: "y10-latin",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
@@ -555,6 +657,13 @@ export const coursesContent = {
             ],
           },
           {
+            title: "VCE Lantin Unit 1-4",
+            slug: "vce-lantin-unit-1-4",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
             title: "VCE Chinese First Language Unit 1–4",
             slug: "vce-chinese-first-language-unit-1-4",
             content: [
@@ -671,8 +780,142 @@ export const coursesContent = {
               "For details about our courses, please contact us for more information.",
             ],
           },
+          {
+            title: "Extra holiday class",
+            slug: "y10-12-extra-holiday-class",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "Mock Exam",
+            slug: "y10-12-mock-exam",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB English A: Literature — Standard Level",
+            slug: "ib-english-a-literature-standard-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB English A: Literature — Higher Level",
+            slug: "ib-english-a-literature-higher-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB English A: Language and Literature — Standard Level",
+            slug: "ib-english-a-language-literature-standard-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB English A: Language and Literature — Higher Level",
+            slug: "ib-english-a-language-literature-higher-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB English B: Standard Level",
+            slug: "ib-english-b-standard-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB English B: Higher Level",
+            slug: "ib-english-b-higher-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB Mathematics: Analysis and Approaches (AA) — Standard Level",
+            slug: "ib-maths-analysis-approaches-standard-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB Mathematics: Analysis and Approaches (AA) — Higher Level",
+            slug: "ib-maths-analysis-approaches-higher-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB Chemistry (Sciences) — Standard Level",
+            slug: "ib-chemistry-standard-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB Chemistry (Sciences) — Higher Level",
+            slug: "ib-chemistry-higher-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB Chinese A: Literature / Chinese A: Language and Literature — Standard Level",
+            slug: "ib-chinese-a-standard-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB Chinese A: Literature / Chinese A: Language and Literature — Higher Level",
+            slug: "ib-chinese-a-higher-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB Chinese  B: Standard Level",
+            slug: "ib-chinese-b-standard-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB Chinese  B: Higher Level",
+            slug: "ib-chinese-b-higher-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB  Chinese ab initio: Standard Level",
+            slug: "ib-chinese-ab-initio-standard-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB Economics (Individuals and Societies) — Standard Level",
+            slug: "ib-economics-standard-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
+          {
+            title: "IB Economics  (Individuals and Societies) — Higher Level",
+            slug: "ib-economics-higher-level",
+            content: [
+              "For details about our term-based courses, please contact us for more information.",
+            ],
+          },
         ],
-
+          
+          
         "Medical Program": [
           {
             title: "UCAT Preparation Program",
@@ -693,14 +936,21 @@ export const coursesContent = {
               "Free academic consultation",
             ],
           },
+          {
+            title: "Y12 Medical Interview Preparation Program",
+            slug: "y12-ucat-medical-interview",
+            content: [
+              "For details about our courses, please contact us for more information.",
+            ],
+          },
         ],
       },
     },
     content: {
       title: "Well-Structured Course Content",
-      subtitle: "Six Core Strengths of Austin Education's Curriculum",
+      subtitle: "Six Core Strengths of Austin Education’s Curriculum",
       description:
-        "Austin Education's courses are built on six core principles: comprehensive coverage, appropriate depth, clear objectives, structured progression, real-time updates, and personalised design. These elements work together to support students in making significant academic progress while equipping them for future success.",
+        "Austin Education's courses are buit on six core principles: comprehensive coverage, appropriate depth, clear objectives, structured progression, real-time updates, and personalised design. These elements work together to support students in making significant academic progress while equipping them for future success.",
       features: [
         "Thorough Coverage: A Complete Learning Experience; Our courses comprehensively address all essential areas of the exam syllabus, ensuring a solid academic foundation. With a structured progression tailored to different learning levels, students can advance with confidence. Real-world applications and interdisciplinary links further enrich their understanding.",
         "In-Depth Learning: Beyond School Standards; Our courses go beyond regular school lessons, offering more advanced content and effective exam techniques. We focus on developing critical thinking and problem-solving skills, with a well-planned structure that helps students improve steadily and gain full mastery of the subject.",
@@ -717,14 +967,14 @@ export const coursesContent = {
       gradeContents: [
         {
           value: "y1-y6",
-          title: "Building strong Foundations and Positive Learning Habits",
+          title: "Building Strong Foundations and Positive Learning Habits",
           description:
-            "The primary years are a crucial stage for developing foundational skills, fostering curiosity, and building positive study habits.Austin Education provides structured learning designed to support young learners in developing confidence and a love for learning:",
+            "The primary years are a crucial stage for developing foundational skills, fostering curiosity, and building positive study habits. Austin Education provides structured learning designed to support young learners in developing confidence and a love for learning.",
           contents: [
             {
               title: "Engaging and Interactive Lessons",
               description:
-                "Lessons incorporate diverse content and interactive teaching methods to broaden students' knowledge and enhance their focus and independent learning skills. Course materials extend beyond school curricula, offering students additional challenges to build a strong academic foundation.",
+                "Lessons incorporate diverse content and interactive teaching methods to broaden students’ knowledge and enhance their focus and independent learning skills. Course materials extend beyond school curricula, offering students additional challenges to build a strong academic foundation.",
               icon: "book",
               //   image: "/images/y1-y6-1.jpg",
               image: "https://placehold.co/600x400",
@@ -753,7 +1003,7 @@ export const coursesContent = {
             {
               title: "Parent–School Communication",
               description:
-                "Regular progress reports and parent–teacher meetings provide insights into students’ learning progress, ensuring a supportive partnership in their education journey.",
+                "Regular progress reports and parent-teacher meetings provide insights into students’ learning progress, ensuring a supportive partnership in their education journey.",
               icon: "communication",
               image: "https://placehold.co/600x400",
             },
@@ -825,51 +1075,50 @@ export const coursesContent = {
               image: "https://placehold.co/600x400",
             },
             {
-              title: "Specialist Curriculum & Study Plans",
+              title: "Specialist Curriculum and Study Plans",
               description:
-                "A structured learning approach, developed from years of experience, covering key content, revision cycles, and exam‑focused strategies.",
+                " A structured learning approach, developed from years of experience, covering key content, revision cycles, and exam-focused strategies.",
               icon: "file-text",
               image: "https://placehold.co/600x400",
             },
             {
               title: "Personalised Learning Options",
               description:
-                "Courses are offered in various formats—including group classes, small cohorts, and one‑on‑one tutoring—so each student can learn at their own pace.",
+                "Courses are available in different formats, including group classes, small groups, and one-on-one tutoring, allowing students to find a study approach that best suits their needs.",
               icon: "sliders-horizontal",
               image: "https://placehold.co/600x400",
             },
             {
               title: "Experienced VCE Educators",
               description:
-                "Specialist teachers deliver in‑depth lessons aligned with exam requirements, focusing on critical topics to maximise learning outcomes.",
+                "Specialist teachers deliver in-depth lessons aligned with exam requirements, focusing on key topics to support learning progression.",
               icon: "users",
               image: "https://placehold.co/600x400",
             },
             {
-              title: "Comprehensive Practice & Homework",
+              title: "Comprehensive Practice and Homework System",
               description:
-                "A blend of paper‑based assignments and online exercises strengthens problem‑solving skills and familiarises students with all question types.",
+                "A blend of written exercises and online tools strengthens students’ problem-solving skills and familiarises them with a variety of question types.",
               icon: "clipboard-list",
               image: "https://placehold.co/600x400",
             },
             {
-              title: "Benchmark Testing & Analysis",
+              title: "Benchmark Testing and Performance Analysis",
               description:
-                "End‑of‑term ranking assessments, powered by our decade of data, help students gauge their performance statewide and refine study strategies.",
+                "End-of-term ranking assessments, informed by data insights, help students evaluate their progress and refine their study strategies.",
               icon: "bar-chart-2",
               image: "https://placehold.co/600x400",
             },
             {
               title: "Structured SAC Preparation",
               description:
-                "Targeted revision and focused practice for School‑Assessed Coursework ensure students excel in every scoring criterion.",
-              icon: "target",
+                "Focused revision and targeted practice for school-based assessments help students build confidence and maintain strong results.",
               image: "https://placehold.co/600x400",
             },
             {
-              title: "Mock Exams & Intensive Review",
+              title: "Mock Exams and Intensive Review",
               description:
-                "Realistic test simulations assess readiness, followed by final‑stage review sessions to close knowledge gaps and lock in high marks.",
+                "Realistic test simulations assess students’ VCE readiness, followed by structured revision and targeted review sessions to consolidate learning and enhance performance.",
               icon: "list-checks",
               image: "https://placehold.co/600x400",
             },
@@ -891,15 +1140,15 @@ export const coursesContent = {
             icon: "Presentation",
           },
           {
-            title: "Teaching Experience",
+            title: "Teaching Style",
             description:
-              "Our educators have extensive experience in tutoring and teaching, with many having taught at renowned schools or universities.",
+              "Our teachers are skilled at simplifying complex concepts, using humour and interactive methods to engage students and create an enjoyable learning atmosphere.",
             icon: "Presentation",
           },
           {
-            title: "Passion for Teaching",
+            title: "Personalised Guidance",
             description:
-              "Our teachers are not just experts in their fields; they are also passionate about education and dedicated to inspiring students to reach their full potential.",
+              "We understand that every student is unique, and we tailor our teaching approach to meet their specific needs and pace, ensuring a personalised and effective learning journey.",
             icon: "Presentation",
           },
         ],
@@ -925,7 +1174,7 @@ export const coursesContent = {
           {
             title: "Comprehensive Skill Enhancement",
             description:
-              "By focusing on problem‑solving techniques, time management, critical thinking, and other essential skills, we help students gain long‑term competitive advantages.",
+              "By focusing on problem-solving techniques, time management, critical thinking, and other essential skills, we help students gain long-term competitive advantages.",
             icon: "Presentation",
           },
           {
@@ -951,19 +1200,19 @@ export const coursesContent = {
           {
             title: "Course Design",
             description:
-              "Our courses are carefully structured to progress from foundational to advanced levels, ensuring a solid knowledge base and preventing gaps in learning.",
+              "Our courses are carefully structured to progress from foundational to advanced levels, ensuring students build a solid knowledge base step by step and preventing any gaps in learning.",
             icon: "Presentation",
           },
           {
             title: "Diverse Teaching Formats",
             description:
-              "We offer in‑person classes, interactive online lessons, and blended learning options to cater to different needs, providing flexibility without sacrificing effectiveness.",
+              "We offer in-person classes, interactive online lessons, and blended learning options to cater to different learning needs, providing flexibility while maintaining efficiency.",
             icon: "Presentation",
           },
           {
             title: "High Interaction",
             description:
-              "Our classrooms are designed for frequent questions, interactive discussions, practice exercises, and feedback sessions, ensuring deep understanding and engagement.",
+              "Our classrooms are designed to engage students with frequent questions, interactive discussions, practice exercises, and feedback sessions, ensuring deep understanding and enhancing the overall learning experience.",
             icon: "Presentation",
           },
         ],
@@ -988,19 +1237,19 @@ export const coursesContent = {
           {
             title: "High‑Quality Internal Materials",
             description:
-              "We've developed exclusive, high‑quality resources and offer abundant supplementary learning materials to reinforce every lesson.",
+              "We’ve developed exclusive, high-quality resources that cover all key exam topics and offer abundant supplementary learning materials.",
             icon: "Presentation",
           },
           {
             title: "Assignments and Practice",
             description:
-              "Our courses include a diverse range of homework exercises and online assignments to consolidate knowledge and enhance problem‑solving skills.",
+              "Our courses include a sufficient and diverse range of homework and exercises, designed to reinforce knowledge and enhance problem-solving abilities, providing full support for students’ learning progress.",
             icon: "Presentation",
           },
           {
             title: "Periodic Assessments",
             description:
-              "Regular evaluations and full‑scale mock exams help students track progress, adjust strategies, and steadily improve performance.",
+              "Regular evaluations and full-scale mock exams allow students to track their learning progress, adjust strategies, and steadily improve their performance.",
             icon: "Presentation",
           },
         ],
@@ -1025,19 +1274,19 @@ export const coursesContent = {
           {
             title: "Exceptional Student Experience",
             description:
-              "Students consistently find our courses engaging and efficient, enjoying both a sense of academic achievement and the thrill of discovering new knowledge.",
+              "Students consistently express that the courses are engaging and efficient, offering both a sense of academic achievement and the enjoyment of exploring new knowledge.",
             icon: "Presentation",
           },
           {
             title: "Close Parent–School Communication",
             description:
-              "Through regular progress reports and parent‑teacher meetings, we provide real‑time feedback and maintain a collaborative partnership in each student’s journey.",
+              "Through regular progress reports and parent-teacher meetings, we provide real-time feedback on students’ learning progress and maintain close communication with parents to collaboratively optimise learning plans.",
             icon: "Presentation",
           },
           {
             title: "Outstanding Social Reputation",
             description:
-              "With years of successful case studies, we’ve earned widespread recognition and strong support from students, parents, and the wider community.",
+              "With years of successful case studies, we have earned widespread recognition and strong support from students, parents, and the wider community.",
             icon: "Presentation",
           },
         ],
@@ -1062,19 +1311,19 @@ export const coursesContent = {
           {
             title: "All‑Round Service",
             description:
-              "From course planning to academic and psychological support, we cover every aspect of a student’s learning needs.",
+              "From course planning to academic and psychological support, we cover all aspects of a student’s learning.",
             icon: "Presentation",
           },
           {
             title: "Flexible & Personalised",
             description:
-              "Tailored course plans fit each student’s schedule and goals, maximising efficiency and outcomes.",
+              "Tailored course plans to fit schedules and goals, maximising learning efficiency.",
             icon: "Presentation",
           },
           {
             title: "Commitment to Results",
             description:
-              "We offer fair refund and compensation policies as a sign of our confidence in course effectiveness and responsibility for student outcomes.",
+              "Offering fair refund or compensation policies as a sign of our confidence in course effectiveness and responsibility for student outcomes.",
             icon: "Presentation",
           },
         ],
@@ -1100,7 +1349,7 @@ export const coursesContent = {
           {
             title: "Extra Benefits",
             description:
-              "We provide additional services such as course planning, university guidance, and subject‑interest nurturing to prepare students for future success.",
+              "We provide additional services such as course planning, university guidance, and nurturing subject interests, ensuring students are well-prepared for their academic and career future.",
             icon: "Presentation",
           },
         ],
@@ -1196,6 +1445,67 @@ export const coursesContent = {
             ],
           },
           {
+            title: "3考5奖学金班（维洲）",
+            slug: "3-to-5-scholarship-victoria",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "3考5奖学金面试班（维洲）",
+            slug: "3-to-5-scholarship-interview-victoria",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "3考5奖学金模拟考试（维洲）",
+            slug: "3-to-5-scholarship-mock-exam-victoria",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "5考7奖学金班（维洲）",
+            slug: "5-to-7-scholarship-victoria",
+            content: [
+              "每周3小时班课",
+              "8本澳升独家教材",
+              "每周3小时课后作业",
+              "英文包含每学期3-5篇作文精改",
+              "20次阶段/主题测试",
+              "8次学期检测考试",
+              "4次考试成绩报告单",
+              "4次家长会",
+              "20次澳升独家全真模拟考试",
+              "课程录像",
+              "无限的沟通答疑",
+              "私人学管一对一解决问题",
+              "免费学业咨询",
+            ],
+          },
+          {
+            title: "5考7奖学金面试班（维洲）",
+            slug: "5-to-7-scholarship-interview-victoria",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "5考7奖学金模拟考试（维洲）",
+            slug: "5-to-7-scholarship-mock-exam-victoria",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "3-4年级 AMC竞赛班",
+            slug: "y3-4-amc",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
             title: "5-6年级 AMC竞赛班",
             slug: "y5-6-amc",
             content: [
@@ -1228,29 +1538,10 @@ export const coursesContent = {
             ],
           },
           {
-            title: "3考5奖学金班（维洲）",
-            slug: "3-to-5-scholarship-victoria",
+            title: "假期班",
+            slug: "y1-6-extra-holiday-class",
             content: [
               "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
-          },
-          {
-            title: "5考7奖学金班（维洲）",
-            slug: "5-to-7-scholarship-victoria",
-            content: [
-              "每周3小时班课",
-              "8本澳升独家教材",
-              "每周3小时课后作业",
-              "英文包含每学期3-5篇作文精改",
-              "20次阶段/主题测试",
-              "8次学期检测考试",
-              "4次考试成绩报告单",
-              "4次家长会",
-              "20次澳升独家全真模拟考试",
-              "课程录像",
-              "无限的沟通答疑",
-              "私人学管一对一解决问题",
-              "免费学业咨询",
             ],
           },
           {
@@ -1350,26 +1641,43 @@ export const coursesContent = {
             ],
           },
           {
-            title: "7-8年级 AMC竞赛班",
-            slug: "y7-8-amc",
+            title: "7-9年级拉丁初级班",
+            slug: "y7-9-latin-enrichment",
             content: [
-              "共28节课，每周2小时课程",
-              "每周1小时课后作业",
-              "20套完整的练习试卷",
-              "1000题海量练习题库",
-              "4次全真模考",
-              "4次阶段/主题测试",
-              "2份原创试卷",
-              "2次一对一考后试卷分析",
-              "课程录像",
-              "无限的沟通答疑",
-              "私人学管一对一解决问题",
-              "免费学业咨询",
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "7-9年级法语初级班",
+            slug: "y7-9-france-enrichment",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "7-9年级日语初级班",
+            slug: "y7-9-japanese-enrichment",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
             ],
           },
           {
             title: "7考9奖学金班（维洲）",
             slug: "7-to-9-scholarship-victoria",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "7考9奖学金面试班（维洲）",
+            slug: "7-to-9-scholarship-interview-victoria",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "7考9奖学金模拟考试（维洲）",
+            slug: "7-to-9-scholarship-mock-exam-victoria",
             content: [
               "关于阶段性课程详情，欢迎联系我们获取更多信息。",
             ],
@@ -1393,8 +1701,33 @@ export const coursesContent = {
             ],
           },
           {
+            title: "7-8年级 AMC竞赛班",
+            slug: "y7-8-amc",
+            content: [
+              "共28节课，每周2小时课程",
+              "每周1小时课后作业",
+              "20套完整的练习试卷",
+              "1000题海量练习题库",
+              "4次全真模考",
+              "4次阶段/主题测试",
+              "2份原创试卷",
+              "2次一对一考后试卷分析",
+              "课程录像",
+              "无限的沟通答疑",
+              "私人学管一对一解决问题",
+              "免费学业咨询",
+            ],
+          },
+          {
             title: "7年级、9年级 Naplan考试刷题/冲刺班",
             slug: "y7-y9-naplan",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "假期班",
+            slug: "y7-9-extra-holiday-class",
             content: [
               "关于阶段性课程详情，欢迎联系我们获取更多信息。",
             ],
@@ -1419,6 +1752,13 @@ export const coursesContent = {
               "无限的沟通答疑",
               "私人学管一对一解决问题",
               "免费学业咨询",
+            ],
+          },
+          {
+            title: "10年级EAL进阶班",
+            slug: "y10-eal",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
             ],
           },
           {
@@ -1490,6 +1830,13 @@ export const coursesContent = {
             ],
           },
           {
+            title: "10年级拉丁进阶班 · VCE衔接",
+            slug: "y10-latin",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
             title: "VCE 英语/英语第二语言  Unit 1-4",
             slug: "vce-english-eal-unit1-4",
             content: [
@@ -1543,7 +1890,7 @@ export const coursesContent = {
               "澳升独家全真模拟考试",
               "SAC 专项复习",
               "课程录像",
-              "无限的沟通答疑t",
+              "无限的沟通答疑",
               "私人学管一对一解决问题",
               "免费学业咨询",
             ],
@@ -1674,6 +2021,13 @@ export const coursesContent = {
             ],
           },
           {
+            title: "VCE 拉丁 Unit 1-4",
+            slug: "vce-lantin-unit-1-4",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
             title: "VCE 中文第一语言 Unit 1–4",
             slug: "vce-chinese-first-language-unit-1-4",
             content: [
@@ -1790,6 +2144,139 @@ export const coursesContent = {
               "关于课程详情，欢迎联系我们获取更多信息。",
             ],
           },
+          {
+            title: "假期班",
+            slug: "y10-12-extra-holiday-class",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "模拟考试",
+            slug: "y10-12-mock-exam",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 英语 A：文学 — 标准水平",
+            slug: "ib-english-a-literature-standard-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 英语 A：文学 — 高级水平",
+            slug: "ib-english-a-literature-higher-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 英语 A：语言与文学 — 标准水平",
+            slug: "ib-english-a-language-literature-standard-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 英语 A：语言与文学 — 高级水平",
+            slug: "ib-english-a-language-literature-higher-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 英语 B — 标准水平",
+            slug: "ib-english-b-standard-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 英语 B — 高级水平",
+            slug: "ib-english-b-higher-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 数学：分析与方法（AA） — 标准水平",
+            slug: "ib-maths-analysis-approaches-standard-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 数学：分析与方法 (AA) — 高级水平",
+            slug: "ib-maths-analysis-approaches-higher-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 化学 — 标准水平",
+            slug: "ib-chemistry-standard-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 化学 — 高级水平",
+            slug: "ib-chemistry-higher-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 中文 A：文学 / 中文 A：语言与文学 — 标准水平",
+            slug: "ib-chinese-a-standard-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 中文 A：文学 / 中文 A：语言与文学 — 高级水平",
+            slug: "ib-chinese-a-higher-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 中文 B — 标准水平",
+            slug: "ib-chinese-b-standard-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 中文 B — 高级水平",
+            slug: "ib-chinese-b-higher-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 中文初级课程（ab initio）— 标准水平",
+            slug: "ib-chinese-ab-initio-standard-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 经济学 — 标准水平",
+            slug: "ib-economics-standard-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
+          {
+            title: "IB 经济学 — 高级水平",
+            slug: "ib-economics-higher-level",
+            content: [
+              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
+            ],
+          },
         ],
           
         "Medical Program": [
@@ -1810,6 +2297,13 @@ export const coursesContent = {
               "提供打造高竞争力申请人背景的个性化建议",
               "专属学管老师一对一解决问题",
               "免费学业咨询服务",
+            ],
+          },
+          {
+            title: "12年级医学面试辅导",
+            slug: "y12-ucat-medical-interview",
+            content: [
+              "关于课程详情，欢迎联系我们获取更多信息。",
             ],
           },
         ],
@@ -1998,7 +2492,7 @@ export const coursesContent = {
     },
     feature: [
       {
-        title: "教学团队的无可匹敌的实力",
+        title: "最高标准的教学团队",
         subtitle: "高水平师资，点燃学习兴趣",
         color: "bg-primary",
         textColor: "text-primary",
@@ -2038,7 +2532,7 @@ export const coursesContent = {
           {
             title: "显著的成绩提升",
             description:
-              "我们以数据说话，课程帮助无数学生在VCE、NAPLAN、奖学金考试等关键考试中实现分数突破。",
+              "我们以数据说话，课程帮助无数学生在VCE、UCAT、奖学金、精英公校、Naplan等关键考试中实现分数突破。",
             icon: "Presentation",
           },
           {
