@@ -10,7 +10,7 @@ const courseData = {
             "In the 2024 UCAT exam, Austin’s UCAT program achieved outstanding results.",
           year: "2024",
           items: [
-            { number: "100%" , label: "students met", subtitle: "the medical interview threshold" },
+            { number: "100%" , label: "Austin’s students met", subtitle: "the medical interview threshold" },
             { number: "80%", label: " students scored 3050+", subtitle: "secured medical school interview offers" },
             { number: "3260", label: "Highest score achieved", subtitle: "" },
           ],
@@ -19,7 +19,6 @@ const courseData = {
     },
     coreFeatures: {
       sections: [
-        //   desc:"Taught by Austin’s dedicated Medical Project team — experienced educators with medical expertise who understand exactly how to prepare Victorian students for success."
         {
           title: "Strategy is Key – Smart Solving + Time Mastery",
           list: [
@@ -68,7 +67,7 @@ const courseData = {
           title:
             "Proven Success – Outstanding Results Backed by Data",
           list: [
-            "2In 2024, 100% of Austin’s UCAT students met interview cut-offs, with a top score of 3260!",
+            "In 2024, 100% of Austin’s UCAT students met interview cut-offs, with a top score of 3260!",
             "80% scored 3050+, securing first-round interviews, and 20% scored 2950+, advancing to second-round interviews with strong ATAR support.",
           ],
         },
@@ -84,6 +83,7 @@ const courseData = {
           ],
         },
       ],
+      extraDescription: "Taught by Austin’s dedicated Medical Project team — experienced educators with medical expertise who understand exactly how to prepare Victorian students for success.",
     },
     resources: {
       packages: [
@@ -92,7 +92,7 @@ const courseData = {
         { icon: "user-pen", title: "2+ hours weekly homework（ depending on stage in course）", desc: "" },
         { icon: "chart-column", title: "5 exam reports", desc: "" },
         { icon: "File-clock", title: "5 Austin Education full-length mock exams", desc: "" },
-        { icon: "monitor-play", title: "To class video recordings for review", desc: "" },
+        { icon: "monitor-play", title: "Class video recordings for review", desc: "" },
         { icon: "info", title: "Unlimited Q&A and academic support", desc: "" },
         { icon: "speech", title: "Ongoing one-on-one subtest specific performance analysis", desc: "" },
         { icon: "shield-user", title: "Personalised guidance on strengths and weaknesses", desc: "" },
@@ -173,18 +173,18 @@ const courseData = {
     relatedCourses: [
       {
         title: "VCE",
-        subtitle: "VCE Chemstry Unit 1-4",
+        subtitle: "English & EAL Unit 1-4",
+        slug: "vce-english-eal-unit-1-4",
+      },
+      {
+        title: "VCE",
+        subtitle: "Chemistry Unit 1-4",
         slug: "vce-chemistry-unit-1-4",
       },
       {
         title: "VCE",
-        subtitle: "VCE Biology Unit 1-4",
-        slug: "vce-biology-unit-1-4",
-      },
-      {
-        title: "VCE",
-        subtitle: "VCE Physics Unit1-4",
-        slug: "vce-physics-unit1-4",
+        subtitle: "Specialist Maths Unit 1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
     ],
   },
@@ -199,7 +199,7 @@ const courseData = {
             "在2024年UCAT考试中，澳升UCAT班取得卓越的成就",
           year: "2024",
           items: [
-            { number: "100%" , label: "学生达到", subtitle: "面试标准" },
+            { number: "100%" , label: "澳升学生达到", subtitle: "面试标准" },
             { number: "80%", label: "学生分数突破3050+", subtitle: "稳进医学院面试" },
             { number: "3260", label: "澳升UCAT最高分", subtitle: "" },
           ],
@@ -208,7 +208,6 @@ const courseData = {
     },
     coreFeatures: {
       sections: [
-        //   desc:"由澳升医学Project团队亲授，结合医学背景与教育经验，制定最适合维州考生的UCAT备考方案。"
         {
           title: "战略取胜：精准解题 + 高效时间管理",
           list: [
@@ -273,6 +272,7 @@ const courseData = {
           ],
         },
       ],
+      extraDescription: "由澳升医学Project团队亲授，结合医学背景与教育经验，制定最适合维州考生的UCAT备考方案。",
     },
     customCourseFeature: {
     },
@@ -283,7 +283,7 @@ const courseData = {
         { icon: "user-pen", title: "每周 2小时以上 课后作业（根据课程进度阶段调整）", desc: "" },
         { icon: "chart-column", title: "5次考试成绩报告分析", desc: "" },
         { icon: "File-clock", title: "5次澳升独家全真模考", desc: "" },
-        { icon: "monitor-play", title: "课程录像可随时回放", desc: "" },
+        { icon: "monitor-play", title: "提供课程录像", desc: "" },
         { icon: "info", title: "无限次提问与学术支", desc: "" },
         { icon: "speech", title: "持续进行一对一子项目专项表现分析", desc: "" },
         { icon: "shield-user", title: "针对学生强项与弱项提供个性化学习指导", desc: "" },
@@ -359,20 +359,20 @@ const courseData = {
       ],
     },
     relatedCourses: [
+     {
+        title: "VCE",
+        subtitle: "English & EAL Unit 1-4",
+        slug: "vce-english-eal-unit-1-4",
+      },
       {
         title: "VCE",
-        subtitle: "VCE 化学 Unit 1-4",
+        subtitle: "化学 Unit 1-4",
         slug: "vce-chemistry-unit-1-4",
       },
       {
         title: "VCE",
-        subtitle: "VCE 生物 Unit 1-4",
-        slug: "vce-biology-unit-1-4",
-      },
-      {
-        title: "VCE",
-        subtitle: "VCE 物理 Unit 1-4",
-        slug: "vce-physics-unit1-4",
+        subtitle: "高数 Specialist Maths Unit 1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
     ],
   },

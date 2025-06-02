@@ -175,7 +175,7 @@ const courseData = {
           desc: " ",
         },
         {
-          icon: "calendar-1",
+          icon: "calendar",
           title: "2 semester-level assessment exams",
           desc: " ",
         },
@@ -444,7 +444,7 @@ const courseData = {
         { icon: "chart-no-axes-combined", title: "每周20+题高阶题", desc: " " },
         { icon: "list-todo", title: "不定期充足额外练习", desc: " " },
         { icon: "square-check-big", title: "4次阶段/主题测试 ", desc: " " },
-        { icon: "calendar-1", title: "2次学期检测考试 ", desc: " " },
+        { icon: "calendar", title: "2次学期检测考试 ", desc: " " },
         { icon: "chart-column", title: "2次semester report", desc: " " },
         { icon: "speech", title: "2次家长会", desc: " " },
         { icon: "monitor-play", title: "课程录像", desc: " " },

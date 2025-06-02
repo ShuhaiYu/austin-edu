@@ -93,7 +93,7 @@ const courseData = {
           title: "1 hours of structured weekly homework",
           desc: " ",
         },
-        { icon: "calendar-1", title: "1 Area of Study assessment", desc: " " },
+        { icon: "calendar", title: "1 Area of Study assessment", desc: " " },
         { icon: "chart-column", title: "1 exam report", desc: " " },
         { icon: "goal", title: "Targeted SAC revision sessions", desc: " " },
         {
@@ -315,7 +315,7 @@ const courseData = {
       packages: [
         { icon: "school", title: "每周2小时班课", desc: " " },
         { icon: "user-pen", title: "每周1小时课后作业", desc: " " },
-        { icon: "calendar-1", title: "1 次 area of study 检测考试", desc: " " },
+        { icon: "calendar", title: "1 次 area of study 检测考试", desc: " " },
         { icon: "chart-column", title: "1次考试report", desc: " " },
         { icon: "goal", title: "SAC 专项复习", desc: " " },
         { icon: "monitor-play", title: "课程录像", desc: " " },

@@ -2,7 +2,6 @@ const courseData = {
   en: {
     slug: "vce-chemistry-unit-1-4",
     title: "VCE Chemstry Unit 1-4",
-
     courseDescription: {
       title: "",
       subtitle:
@@ -12,8 +11,6 @@ const courseData = {
       courseOverview: {
         title: "Key Advantages of Austin’s Chemistry Class",
         descriptionBeforeFeature: [
-          "",
-          "",
         ],
         featureTitle: "Key Advantages of Austin’s Chemistry Class",
         features: [
@@ -54,10 +51,10 @@ const courseData = {
         { icon: "school", title: "2-hour weekly group class", desc: " " },
         { icon: "book-copy", title: "4 exclusive Austin Education textbooks", desc: " " },
         { icon: "user-pen", title: "1 hours of structured weekly homework", desc: " " },
-        { icon: "calendar-1", title: "2 semester assessment exams", desc: " " },
+        { icon: "calendar", title: "2 semester assessment exams", desc: " " },
         { icon: "file-clock", title: "1 exclusive Austin Education full-length mock exams", desc: " " },
         { icon: "goal", title: "Targeted SAC revision sessions", desc: " " },
-        { icon: "monitor-play", title: "Full access to class video recordings for review", desc: " " },
+        { icon: "monitor-play", title: "Class video recordings for review", desc: " " },
         { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: " " },
         { icon: "message-square-dot", title: "Dedicated 1-on-1 learning manager for personalised issue resolution", desc: " " },
         { icon: "users", title: "Free academic consultation included", desc: " " },
@@ -202,17 +199,17 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit1-4",
+        slug: "vce-english-eal-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "Mathematical Methods Unit 1-4",
-        slug: "vce-maths-methods-unit1-4",
+        slug: "vce-maths-methods-unit-1-4",
       },
       {
         title: "VCE",
-        subtitle: "Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit1-4",
+        subtitle: "Specialist Mathematics Unit 1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
     ],
   },
@@ -270,7 +267,7 @@ const courseData = {
         { icon: "school", title: "每周2小时班课", desc: " " },
         { icon: "book-copy", title: "4本澳升独家教材", desc: " " },
         { icon: "user-pen", title: "每周1小时课后作业", desc: " " },
-        { icon: "calendar-1", title: "2次学期检测考试", desc: " " },
+        { icon: "calendar", title: "2次学期检测考试", desc: " " },
         { icon: "file-clock", title: "1次澳升独家全真模拟考试", desc: " " },
         { icon: "goal", title: "SAC 专项复习", desc: " " },
         { icon: "monitor-play", title: "课程录像", desc: " " },
@@ -418,17 +415,17 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit1-4",
+        slug: "vce-english-eal-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "中数 Mathematical Methods Unit 1-4",
-        slug: "vce-maths-methods-unit1-4",
+        slug: "vce-maths-methods-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "高数 Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
     ],
   },

@@ -2,7 +2,6 @@ const courseData = {
   en: {
     slug: "vce-biology-unit-1-4",
     title: "VCE Biology Unit 1-4",
-
     coreFeatures: {
       sections: [
         {
@@ -54,8 +53,6 @@ const courseData = {
           ],
         },
       ],
-      extraDescription:
-        "这是在课程特色的下方的额外描述，可能是一些课程的亮点或其他相关信息。",
     },
     courseStructureOverview: {
       title: "Course Structure Overview",
@@ -95,7 +92,7 @@ const courseData = {
           desc: " ",
         },
         { icon: "chart-no-axes-combined", title: "4 Mock SACs", desc: " " },
-        { icon: "calendar-1", title: "2 practice exams", desc: " " },
+        { icon: "calendar", title: "2 practice exams", desc: " " },
         {
           icon: "file-clock",
           title: "1 exclusive Austin Education full-length mock exams",
@@ -264,20 +261,21 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit1-4",
+        slug: "vce-english-eal-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "Mathematical Methods Unit 1-4",
-        slug: "vce-maths-methods-unit1-4",
+        slug: "vce-maths-methods-unit-1-4",
       },
       {
         title: "VCE",
-        subtitle: "Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit1-4",
+        subtitle: "Specialist Mathematics Unit 1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
     ],
   },
+
   zh: {
     slug: "vce-biology-unit-1-4",
     title: "VCE 生物 Unit 1-4",
@@ -331,8 +329,6 @@ const courseData = {
           ],
         },
       ],
-      extraDescription:
-        "这是在课程特色的下方的额外描述，可能是一些课程的亮点或其他相关信息。",
     },
     courseStructureOverview: {
       title: "课程设置总览",
@@ -368,7 +364,7 @@ const courseData = {
           title: "4 次模拟 SAC 测试",
           desc: " ",
         },
-        { icon: "calendar-1", title: "2 套阶段性练习试卷", desc: " " },
+        { icon: "calendar", title: "2 套阶段性练习试卷", desc: " " },
         { icon: "file-clock", title: "1 套澳升独家全真模拟考试", desc: " " },
         { icon: "goal", title: "SAC 专项复习", desc: " " },
         { icon: "monitor-play", title: "课程录像", desc: " " },
@@ -520,17 +516,17 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit1-4",
+        slug: "vce-english-eal-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "中数 Mathematical Methods Unit 1-4",
-        slug: "vce-maths-methods-unit1-4",
+        slug: "vce-maths-methods-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "高数 Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
     ],
   },

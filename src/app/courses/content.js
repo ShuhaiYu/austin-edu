@@ -2279,7 +2279,7 @@ export const coursesContent = {
           },
         ],
           
-        "Medical Program": [
+        "医学备考班": [
           {
             title: "UCAT医学预科课程（Y10–Y12）",
             slug: "ucat",

@@ -92,7 +92,7 @@ const courseData = {
           desc: " ",
         },
         {
-          icon: "calendar-1",
+          icon: "calendar",
           title: "2 semester-level assessment exams",
           desc: " ",
         },
@@ -274,7 +274,7 @@ const courseData = {
         { icon: "book-open-text️", title: "1本澳升独家习题册", desc: "  " },
         { icon: "user-pen", title: "每周1小时课后作业", desc: " " },
         { icon: "square-check-big", title: "3次阶段/主题测试", desc: " " },
-        { icon: "calendar-1", title: "2次学期检测考试", desc: " " },
+        { icon: "calendar", title: "2次学期检测考试", desc: " " },
         { icon: "chart-column", title: "4次考试report", desc: " " },
         { icon: "monitor-play", title: "课程录像", desc: " " },
         { icon: "circle-help", title: "无限的沟通答疑", desc: " " },
