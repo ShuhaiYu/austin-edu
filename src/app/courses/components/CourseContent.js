@@ -26,6 +26,7 @@ import {
   Award,
   Calendar,
 } from "lucide-react";
+
 export const CourseContent = () => {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = coursesContent[lang].content;
@@ -71,9 +72,21 @@ export const CourseContent = () => {
                 transition-all hover:scale-105
               `}
             >
-              <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200">
-                <h4 className="text-xl font-bold mb-2">{title}</h4>
-                <p className="text-muted-foreground">{desc}</p>
+              <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200 relative">
+                {/* 序号标识 */}
+                <div className="absolute -top-2 -left-2 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg transform rotate-12">
+                  {String(index + 1).padStart(2, '0')}
+                </div>
+                
+                {/* 背景装饰圆圈 */}
+                <div className="absolute top-4 right-4 w-20 h-20 bg-primary/5 rounded-full" />
+                <div className="absolute top-8 right-8 w-12 h-12 bg-primary/10 rounded-full" />
+                
+                {/* 内容 */}
+                <div className="relative z-10 pt-4">
+                  <h4 className="text-xl font-bold mb-2">{title}</h4>
+                  <p className="text-muted-foreground">{desc}</p>
+                </div>
               </Card>
             </div>
           );
@@ -235,9 +248,21 @@ export const CourseContent = () => {
                 transition-all hover:scale-105
               `}
             >
-              <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200">
-                <h4 className="text-xl font-bold mb-2">{title}</h4>
-                <p className="text-muted-foreground">{desc}</p>
+              <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200 relative">
+                {/* 序号标识 */}
+                <div className="absolute -top-2 -left-2 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg transform rotate-12">
+                  {String(index + 5).padStart(2, '0')}
+                </div>
+                
+                {/* 背景装饰圆圈 */}
+                <div className="absolute top-4 right-4 w-20 h-20 bg-primary/5 rounded-full" />
+                <div className="absolute top-8 right-8 w-12 h-12 bg-primary/10 rounded-full" />
+                
+                {/* 内容 */}
+                <div className="relative z-10 pt-4">
+                  <h4 className="text-xl font-bold mb-2">{title}</h4>
+                  <p className="text-muted-foreground">{desc}</p>
+                </div>
               </Card>
             </div>
           );

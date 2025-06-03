@@ -24,7 +24,6 @@ export const coursesContent = {
               "Unlimited Q&A and academic support",
               "Dedicated learning consultant for one-on-one issue resolution",
               "Free academic consultation",
-
             ],
           },
           {
@@ -202,11 +201,9 @@ export const coursesContent = {
               "For details about our term-based courses, please contact us for more information.",
             ],
           },
-
-          
         ],
         // 这里是其他年级的内容
-         "Secondary Year 7-9": [
+        "Secondary Year 7-9": [
           {
             title: "Year 7-9 English Enrichment （Eng/EAL）",
             slug: "y7-9-english",
@@ -837,14 +834,16 @@ export const coursesContent = {
             ],
           },
           {
-            title: "IB Mathematics: Analysis and Approaches (AA) — Standard Level",
+            title:
+              "IB Mathematics: Analysis and Approaches (AA) — Standard Level",
             slug: "ib-maths-analysis-approaches-standard-level",
             content: [
               "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
-            title: "IB Mathematics: Analysis and Approaches (AA) — Higher Level",
+            title:
+              "IB Mathematics: Analysis and Approaches (AA) — Higher Level",
             slug: "ib-maths-analysis-approaches-higher-level",
             content: [
               "For details about our term-based courses, please contact us for more information.",
@@ -865,14 +864,16 @@ export const coursesContent = {
             ],
           },
           {
-            title: "IB Chinese A: Literature / Chinese A: Language and Literature — Standard Level",
+            title:
+              "IB Chinese A: Literature / Chinese A: Language and Literature — Standard Level",
             slug: "ib-chinese-a-standard-level",
             content: [
               "For details about our term-based courses, please contact us for more information.",
             ],
           },
           {
-            title: "IB Chinese A: Literature / Chinese A: Language and Literature — Higher Level",
+            title:
+              "IB Chinese A: Literature / Chinese A: Language and Literature — Higher Level",
             slug: "ib-chinese-a-higher-level",
             content: [
               "For details about our term-based courses, please contact us for more information.",
@@ -914,8 +915,7 @@ export const coursesContent = {
             ],
           },
         ],
-          
-          
+
         "Medical Program": [
           {
             title: "UCAT Preparation Program",
@@ -1137,19 +1137,19 @@ export const coursesContent = {
             title: "Teacher Qualifications",
             description:
               "Our team is made up of highly experienced educators from across Australia, many of whom have achieved top academic results or come from prestigious educational backgrounds.",
-            icon: "Presentation",
+            icon: "/courses/icons/team icon 1.svg",
           },
           {
             title: "Teaching Style",
             description:
               "Our teachers are skilled at simplifying complex concepts, using humour and interactive methods to engage students and create an enjoyable learning atmosphere.",
-            icon: "Presentation",
+            icon: "/courses/icons/team icon 2.svg",
           },
           {
             title: "Personalised Guidance",
             description:
               "We understand that every student is unique, and we tailor our teaching approach to meet their specific needs and pace, ensuring a personalised and effective learning journey.",
-            icon: "Presentation",
+            icon: "/courses/icons/team icon 3.svg",
           },
         ],
         button: {
@@ -1169,19 +1169,19 @@ export const coursesContent = {
             title: "Significant Score Improvement",
             description:
               "Our data speaks for itself, as our courses have helped numerous students achieve breakthroughs in key exams like VCE, NAPLAN, and scholarship tests.",
-            icon: "Presentation",
+            icon: "/courses/icons/outcome icon 1.svg",
           },
           {
             title: "Comprehensive Skill Enhancement",
             description:
               "By focusing on problem-solving techniques, time management, critical thinking, and other essential skills, we help students gain long-term competitive advantages.",
-            icon: "Presentation",
+            icon: "/courses/icons/outcome icon 2.svg",
           },
           {
             title: "Boosted Learning Confidence",
             description:
               "Beyond academic achievement, our courses also help students build confidence and a positive mindset, instilling a genuine passion and eagerness for learning.",
-            icon: "Presentation",
+            icon: "/courses/icons/outcome icon 3.svg",
           },
         ],
         button: {
@@ -1201,19 +1201,19 @@ export const coursesContent = {
             title: "Course Design",
             description:
               "Our courses are carefully structured to progress from foundational to advanced levels, ensuring students build a solid knowledge base step by step and preventing any gaps in learning.",
-            icon: "Presentation",
+            icon: "/courses/icons/meth icon 1.svg",
           },
           {
             title: "Diverse Teaching Formats",
             description:
               "We offer in-person classes, interactive online lessons, and blended learning options to cater to different learning needs, providing flexibility while maintaining efficiency.",
-            icon: "Presentation",
+            icon: "/courses/icons/meth icon 2.svg",
           },
           {
             title: "High Interaction",
             description:
               "Our classrooms are designed to engage students with frequent questions, interactive discussions, practice exercises, and feedback sessions, ensuring deep understanding and enhancing the overall learning experience.",
-            icon: "Presentation",
+            icon: "/courses/icons/meth icon 3.svg",
           },
         ],
         carousel: {
@@ -1237,20 +1237,20 @@ export const coursesContent = {
           {
             title: "High‑Quality Internal Materials",
             description:
-              "We’ve developed exclusive, high-quality resources that cover all key exam topics and offer abundant supplementary learning materials.",
-            icon: "Presentation",
+              "We've developed exclusive, high-quality resources that cover all key exam topics and offer abundant supplementary learning materials.",
+            icon: "/courses/icons/support icon 1.svg",
           },
           {
             title: "Assignments and Practice",
             description:
-              "Our courses include a sufficient and diverse range of homework and exercises, designed to reinforce knowledge and enhance problem-solving abilities, providing full support for students’ learning progress.",
-            icon: "Presentation",
+              "Our courses include a sufficient and diverse range of homework and exercises, designed to reinforce knowledge and enhance problem-solving abilities, providing full support for students' learning progress.",
+            icon: "/courses/icons/support icon 2.svg",
           },
           {
             title: "Periodic Assessments",
             description:
               "Regular evaluations and full-scale mock exams allow students to track their learning progress, adjust strategies, and steadily improve their performance.",
-            icon: "Presentation",
+            icon: "/courses/icons/support icon 3.svg",
           },
         ],
         carousel: {
@@ -1275,19 +1275,19 @@ export const coursesContent = {
             title: "Exceptional Student Experience",
             description:
               "Students consistently express that the courses are engaging and efficient, offering both a sense of academic achievement and the enjoyment of exploring new knowledge.",
-            icon: "Presentation",
+            icon: "/courses/icons/sat icon 1.svg",
           },
           {
             title: "Close Parent–School Communication",
             description:
-              "Through regular progress reports and parent-teacher meetings, we provide real-time feedback on students’ learning progress and maintain close communication with parents to collaboratively optimise learning plans.",
-            icon: "Presentation",
+              "Through regular progress reports and parent-teacher meetings, we provide real-time feedback on students' learning progress and maintain close communication with parents to collaboratively optimise learning plans.",
+            icon: "/courses/icons/sat icon 2.svg",
           },
           {
             title: "Outstanding Social Reputation",
             description:
               "With years of successful case studies, we have earned widespread recognition and strong support from students, parents, and the wider community.",
-            icon: "Presentation",
+            icon: "/courses/icons/sat icon 3.svg",
           },
         ],
         carousel: {
@@ -1311,20 +1311,20 @@ export const coursesContent = {
           {
             title: "All‑Round Service",
             description:
-              "From course planning to academic and psychological support, we cover all aspects of a student’s learning.",
-            icon: "Presentation",
+              "From course planning to academic and psychological support, we cover all aspects of a student's learning.",
+            icon: "/courses/icons/com icon 1.svg",
           },
           {
             title: "Flexible & Personalised",
             description:
               "Tailored course plans to fit schedules and goals, maximising learning efficiency.",
-            icon: "Presentation",
+            icon: "/courses/icons/com icon 2.svg",
           },
           {
             title: "Commitment to Results",
             description:
               "Offering fair refund or compensation policies as a sign of our confidence in course effectiveness and responsibility for student outcomes.",
-            icon: "Presentation",
+            icon: "/courses/icons/com icon 3.svg",
           },
         ],
         button: {
@@ -1344,13 +1344,13 @@ export const coursesContent = {
             title: "Wide Range of Resources",
             description:
               "Students receive excellent teaching, extensive learning materials, and full support services, all at a competitive price.",
-            icon: "Presentation",
+            icon: "/courses/icons/value icon 1.svg",
           },
           {
             title: "Extra Benefits",
             description:
               "We provide additional services such as course planning, university guidance, and nurturing subject interests, ensuring students are well-prepared for their academic and career future.",
-            icon: "Presentation",
+            icon: "/courses/icons/value icon 2.svg",
           },
         ],
         button: {
@@ -1387,7 +1387,6 @@ export const coursesContent = {
               "无限的沟通答疑",
               "私人学管一对一解决问题",
               "免费学业咨询",
-
             ],
           },
           {
@@ -1447,23 +1446,17 @@ export const coursesContent = {
           {
             title: "3考5奖学金班（维洲）",
             slug: "3-to-5-scholarship-victoria",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "3考5奖学金面试班（维洲）",
             slug: "3-to-5-scholarship-interview-victoria",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "3考5奖学金模拟考试（维洲）",
             slug: "3-to-5-scholarship-mock-exam-victoria",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "5考7奖学金班（维洲）",
@@ -1487,23 +1480,17 @@ export const coursesContent = {
           {
             title: "5考7奖学金面试班（维洲）",
             slug: "5-to-7-scholarship-interview-victoria",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "5考7奖学金模拟考试（维洲）",
             slug: "5-to-7-scholarship-mock-exam-victoria",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "3-4年级 AMC竞赛班",
             slug: "y3-4-amc",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "5-6年级 AMC竞赛班",
@@ -1526,50 +1513,36 @@ export const coursesContent = {
           {
             title: "3年级、5年级 Naplan考试刷题/冲刺班",
             slug: "y3-y5-naplan",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "AEAS备考",
             slug: "aeas",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "假期班",
             slug: "y1-6-extra-holiday-class",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "3考5奖学金班（南澳）",
             slug: "3-to-5-scholarship-south-australia",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "5考7奖学金班（南澳）",
             slug: "5-to-7-scholarship-south-australia",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "5考7精英公校班（南澳）",
             slug: "5-to-7-selective-school-south-australia",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
-
-          
         ],
         // 这里是其他年级的内容
-         "初中 7-9 年级": [
+        "初中 7-9 年级": [
           {
             title: "7-9年级 英文培优班（Eng/EAL）",
             slug: "y7-9-english",
@@ -1643,44 +1616,32 @@ export const coursesContent = {
           {
             title: "7-9年级拉丁初级班",
             slug: "y7-9-latin-enrichment",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "7-9年级法语初级班",
             slug: "y7-9-france-enrichment",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "7-9年级日语初级班",
             slug: "y7-9-japanese-enrichment",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "7考9奖学金班（维洲）",
             slug: "7-to-9-scholarship-victoria",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "7考9奖学金面试班（维洲）",
             slug: "7-to-9-scholarship-interview-victoria",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "7考9奖学金模拟考试（维洲）",
             slug: "7-to-9-scholarship-mock-exam-victoria",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "8考9精英公校班（维洲）",
@@ -1721,16 +1682,12 @@ export const coursesContent = {
           {
             title: "7年级、9年级 Naplan考试刷题/冲刺班",
             slug: "y7-y9-naplan",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "假期班",
             slug: "y7-9-extra-holiday-class",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
         ],
 
@@ -1757,9 +1714,7 @@ export const coursesContent = {
           {
             title: "10年级EAL进阶班",
             slug: "y10-eal",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "10年级数学精英班 · VCE衔接",
@@ -1832,9 +1787,7 @@ export const coursesContent = {
           {
             title: "10年级拉丁进阶班 · VCE衔接",
             slug: "y10-latin",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "VCE 英语/英语第二语言  Unit 1-4",
@@ -2023,9 +1976,7 @@ export const coursesContent = {
           {
             title: "VCE 拉丁 Unit 1-4",
             slug: "vce-lantin-unit-1-4",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "VCE 中文第一语言 Unit 1–4",
@@ -2105,181 +2056,131 @@ export const coursesContent = {
           {
             title: "VCE 日语第二语言 ",
             slug: "vce-japanese-second-language",
-            content: [
-              "关于课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "VCE 会计 Unit 1-4",
             slug: "vce-accounting-unit-1-4",
-            content: [
-              "关于课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "VCE 经济 Unit 1-4",
             slug: "vce-economics-unit-1-4",
-            content: [
-              "关于课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "VCE 工商管理 Unit 1-4",
             slug: "vce-business-management-unit-1-4",
-            content: [
-              "关于课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "VCE 法律研究 Unit 1-4",
             slug: "vce-legal-studies-unit-1-4",
-            content: [
-              "关于课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "VCE 视觉传达设计VCD Unit 1-4",
             slug: "vce-vcd-unit-1-4",
-            content: [
-              "关于课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "假期班",
             slug: "y10-12-extra-holiday-class",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "模拟考试",
             slug: "y10-12-mock-exam",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 英语 A：文学 — 标准水平",
             slug: "ib-english-a-literature-standard-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 英语 A：文学 — 高级水平",
             slug: "ib-english-a-literature-higher-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 英语 A：语言与文学 — 标准水平",
             slug: "ib-english-a-language-literature-standard-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 英语 A：语言与文学 — 高级水平",
             slug: "ib-english-a-language-literature-higher-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 英语 B — 标准水平",
             slug: "ib-english-b-standard-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 英语 B — 高级水平",
             slug: "ib-english-b-higher-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 数学：分析与方法（AA） — 标准水平",
             slug: "ib-maths-analysis-approaches-standard-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 数学：分析与方法 (AA) — 高级水平",
             slug: "ib-maths-analysis-approaches-higher-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 化学 — 标准水平",
             slug: "ib-chemistry-standard-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 化学 — 高级水平",
             slug: "ib-chemistry-higher-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 中文 A：文学 / 中文 A：语言与文学 — 标准水平",
             slug: "ib-chinese-a-standard-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 中文 A：文学 / 中文 A：语言与文学 — 高级水平",
             slug: "ib-chinese-a-higher-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 中文 B — 标准水平",
             slug: "ib-chinese-b-standard-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 中文 B — 高级水平",
             slug: "ib-chinese-b-higher-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 中文初级课程（ab initio）— 标准水平",
             slug: "ib-chinese-ab-initio-standard-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 经济学 — 标准水平",
             slug: "ib-economics-standard-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
           {
             title: "IB 经济学 — 高级水平",
             slug: "ib-economics-higher-level",
-            content: [
-              "关于阶段性课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于阶段性课程详情，欢迎联系我们获取更多信息。"],
           },
         ],
-          
-        "医学备考班": [
+
+        医学备考班: [
           {
             title: "UCAT医学预科课程（Y10–Y12）",
             slug: "ucat",
@@ -2302,9 +2203,7 @@ export const coursesContent = {
           {
             title: "12年级医学面试辅导",
             slug: "y12-ucat-medical-interview",
-            content: [
-              "关于课程详情，欢迎联系我们获取更多信息。",
-            ],
+            content: ["关于课程详情，欢迎联系我们获取更多信息。"],
           },
         ],
       },
@@ -2501,19 +2400,19 @@ export const coursesContent = {
             title: "教师资质",
             description:
               "我们拥有全澳最高水平的教师团队，授课老师均具备丰富的教学经验，许多人还拥有顶尖成绩或名校背景。",
-            icon: "Presentation",
+            icon: "/courses/icons/team icon 1.svg",
           },
           {
             title: "授课风格",
             description:
               "每位老师都善于将复杂概念讲解得通俗易懂，融入幽默与互动，激发学生学习兴趣，提升课堂参与度。",
-            icon: "Presentation",
+            icon: "/courses/icons/team icon 2.svg",
           },
           {
             title: "个性化指导",
             description:
               "我们尊重每位学生的差异，根据他们的需求和进度灵活调整教学内容与节奏，让学习更高效、更贴心。",
-            icon: "Presentation",
+            icon: "/courses/icons/team icon 3.svg",
           },
         ],
         button: {
@@ -2533,19 +2432,19 @@ export const coursesContent = {
             title: "显著的成绩提升",
             description:
               "我们以数据说话，课程帮助无数学生在VCE、UCAT、奖学金、精英公校、Naplan等关键考试中实现分数突破。",
-            icon: "Presentation",
+            icon: "/courses/icons/outcome icon 1.svg",
           },
           {
             title: "能力全面提升",
             description:
               "通过训练解题技巧、时间管理能力、批判性思维等核心技能，帮助学生获得长远竞争力。",
-            icon: "Presentation",
+            icon: "/courses/icons/outcome icon 2.svg",
           },
           {
             title: "学习信心倍增",
             description:
               "课程不仅提升成绩，还让学生变得更加自信和积极，对学习充满热情和期待。",
-            icon: "Presentation",
+            icon: "/courses/icons/outcome icon 3.svg",
           },
         ],
         button: {
@@ -2565,30 +2464,30 @@ export const coursesContent = {
             title: "课程设计",
             description:
               "课程设计循序渐进、结构严谨，从基础到高阶，每一步都为学生奠定坚实的知识基础，避免任何知识断层。",
-            icon: "Presentation",
+            icon: "/courses/icons/meth icon 1.svg",
           },
           {
             title: "多样化授课形式",
             description:
               "提供线下课堂、线上互动课、混合学习模式，满足不同学习需求，让学生在灵活中保持高效。",
-            icon: "Presentation",
+            icon: "/courses/icons/meth icon 2.svg",
           },
           {
             title: "强互动性",
             description:
               "课堂中充分设置提问、互动、练习和反馈环节，确保学生真正理解和内化知识，提升学习体验。",
-            icon: "Presentation",
+            icon: "/courses/icons/meth icon 3.svg",
           },
         ],
         carousel: {
           images: [
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
+            "/courses/carousel-2/1.png",
+            "/courses/carousel-2/2.png",
+            "/courses/carousel-2/3.png",
+            "/courses/carousel-2/4.png",
+            "/courses/carousel-2/5.png",
+            "/courses/carousel-2/6.png",
+            "/courses/carousel-2/7.png",
           ],
         },
       },
@@ -2602,30 +2501,30 @@ export const coursesContent = {
             title: "优质内部教材",
             description:
               "我们开发了独家高质量教材，涵盖所有考试重点，并提供丰富的补充学习资料。",
-            icon: "Presentation",
+            icon: "/courses/icons/com icon 1.svg",
           },
           {
             title: "作业与练习",
             description:
               "课程配备足量且高质量的课后练习，从巩固知识到提升解题能力，全方位支持学生的学习。",
-            icon: "Presentation",
+            icon: "/courses/icons/com icon 2.svg",
           },
           {
             title: "阶段性测试",
             description:
               "定期举行阶段性测评与全真模考，帮助学生及时检测学习成果，调整学习策略，直至稳步提升。",
-            icon: "Presentation",
+            icon: "/courses/icons/com icon 3.svg",
           },
         ],
         carousel: {
           images: [
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
+            "/courses/carousel-2/1.png",
+            "/courses/carousel-2/2.png",
+            "/courses/carousel-2/3.png",
+            "/courses/carousel-2/4.png",
+            "/courses/carousel-2/5.png",
+            "/courses/carousel-2/6.png",
+            "/courses/carousel-2/7.png",
           ],
         },
       },
@@ -2639,30 +2538,30 @@ export const coursesContent = {
             title: "学生体验优异",
             description:
               "学生普遍反映课程内容有趣、高效，既有学习的成就感，又能享受到知识探索的乐趣。",
-            icon: "Presentation",
+            icon: "/courses/icons/sat icon 1.svg",
           },
           {
             title: "紧密的家校互动",
             description:
               "我们通过成绩报告、家长会等形式，实时反馈学生的学习状态，与家长保持紧密沟通，共同优化学习计划。",
-            icon: "Presentation",
+            icon: "/courses/icons/sat icon 2.svg",
           },
           {
             title: "优秀的社会评价",
             description:
               "凭借多年成功案例，我们已赢得学生、家长和社会各界的广泛认可和口碑支持。",
-            icon: "Presentation",
+            icon: "/courses/icons/sat icon 3.svg",
           },
         ],
         carousel: {
           images: [
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
+            "/courses/carousel-3/1.png",
+            "/courses/carousel-3/2.png",
+            "/courses/carousel-3/3.png",
+            "/courses/carousel-3/4.png",
+            "/courses/carousel-3/5.png",
+            "/courses/carousel-3/6.png",
+            "/courses/carousel-3/7.png",
           ],
         },
       },
@@ -2676,19 +2575,19 @@ export const coursesContent = {
             title: "服务无死角",
             description:
               "从课程规划、学术答疑到心理辅导，我们提供全方位支持，解决学生学习中的所有问题。",
-            icon: "Presentation",
+            icon: "/courses/icons/support icon 1.svg",
           },
           {
             title: "灵活且贴心",
             description:
               "根据学生的时间安排和学习目标，我们随时调整课程规划，确保学习效果与效率最大化。",
-            icon: "Presentation",
+            icon: "/courses/icons/support icon 2.svg",
           },
           {
             title: "责任保障",
             description:
               "提供合理的退款或补偿政策，用我们的实际行动表达对课程效果的信心和对学生未来的责任感。",
-            icon: "Presentation",
+            icon: "/courses/icons/support icon 3.svg",
           },
         ],
         button: {
@@ -2708,13 +2607,13 @@ export const coursesContent = {
             title: "丰富资源",
             description:
               "以合理的价格，学生可获得超值的教学内容、丰富的学习资源和全方位支持服务。",
-            icon: "Presentation",
+            icon: "/courses/icons/value icon 1.svg",
           },
           {
             title: "附加价值",
             description:
               "我们还提供选课规划、升学指导、学科兴趣培养等增值服务，帮助学生为未来的升学和职业发展做好准备。",
-            icon: "Presentation",
+            icon: "/courses/icons/value icon 2.svg",
           },
         ],
         button: {
