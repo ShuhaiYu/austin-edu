@@ -42,42 +42,33 @@ export default function HomePage() {
   return (
     <div className="flex flex-col items-center">
       {/* Hero 区域 */}
-      <section className="w-full py-12 px-[clamp(1rem,3vw,3rem)]">
-        <div className="w-full mx-auto">
-          <Hero />
-        </div>
+      <section className="w-full py-12">
+        <Hero />
       </section>
 
       {/* Find a Course */}
-      <section className=" bg-primary text-white py-6 rounded-4xl w-full px-[clamp(1rem,3vw,3rem)]">
-        <div className="w-full px-4 mx-auto">
-          <FindCourse />
-        </div>
+      <section className="bg-primary text-white py-6 rounded-4xl w-full">
+        <FindCourse />
       </section>
 
-      {/* Why Choose Austin: 简化示例 */}
-      <section className="w-full py-12 px-[clamp(1rem,3vw,3rem)]">
-        <div className="w-full mx-auto">
-          <Features />
-        </div>
+      {/* Why Choose Austin */}
+      <section className="w-full py-12">
+        <Features />
       </section>
 
       {/* Admission Service Process */}
-      <section className="w-full py-12 px-[clamp(1rem,3vw,3rem)]">
-        <div className="w-full mx-auto">
-          <AdmissionProcess />
-        </div>
+      <section className="w-full py-12">
+        <AdmissionProcess />
       </section>
 
       {/* Testimonials */}
-      <section className="relative w-full py-12 px-6 ">
+      <section className="relative w-full py-12">
         {/* 左上角装饰 */}
         <div
           className="
           absolute -top-0 left-0 z-0 pointer-events-none
           md:w-32 md:h-32   /* ≥768px：8rem */
           lg:w-48 lg:h-48   /* ≥1024px：12rem */
-
         "
         >
           <Image
@@ -90,16 +81,12 @@ export default function HomePage() {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8">
           {t.testimonialTitle}
         </h2>
-        <div className="w-full px-4">
-          <Testimonials />
-        </div>
+        <Testimonials />
       </section>
 
-      {/* FAQ: 如果需要放置，可以在此添加相应内容 */}
-      <section className="w-full py-12 px-[clamp(1rem,3vw,3rem)]">
-        <div className="w-full mx-auto">
-          <FAQ />
-        </div>
+      {/* FAQ */}
+      <section className="w-full py-12">
+        <FAQ />
       </section>
     </div>
   );

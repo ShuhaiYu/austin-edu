@@ -32,7 +32,7 @@ export default function FindCourse() {
   };
 
   return (
-    <div className="px-4 py-2">
+    <div className="py-2">
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
         {/* 1. Label */}
         <span className="font-medium md:text-right text-lg">

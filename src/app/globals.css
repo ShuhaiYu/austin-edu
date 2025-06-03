@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "@flaticon/flaticon-uicons/css/all/all.css";
-
 
 @theme {
   --font-sans: "Poppins", sans-serif;
@@ -14,7 +13,7 @@
   --color-primary-foreground: #f1f5f9;
   --color-secondary: #00cee8; /* 次要色调：浅蓝 (示例) */
   --color-secondary-foreground: #797979;
-  --color-accent: #CFD8E3; /* 强调色：橘黄 (示例) */
+  --color-accent: #cfd8e3; /* 强调色：橘黄 (示例) */
   --color-accent-foreground: #f1f5f9;
   --color-success: #10b981; /* 成功色：绿色 (示例) */
   --color-success-foreground: #f1f5f9;
@@ -41,8 +40,6 @@
   --color-ring: var(--ring);
   --color-input: var(--input);
 }
-
-
 
 :root {
   --radius: 0.625rem;
@@ -139,7 +136,6 @@
   }
 }
 
-
 /* 确保图片容器保持比例 */
 .aspect-ratio-box {
   position: relative;
@@ -158,45 +154,60 @@
 }
 
 @keyframes scrollUp {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-50%);
-          }
-        }
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-50%);
+  }
+}
 
-        @keyframes scrollDown {
-          0% {
-            transform: translateY(-50%);
-          }
-          100% {
-            transform: translateY(0);
-          }
-        }
+@keyframes scrollDown {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 
-        .scroll-up {
-          animation: scrollUp 12s linear infinite;
-        }
+.scroll-up {
+  animation: scrollUp 12s linear infinite;
+}
 
-        .scroll-down {
-          animation: scrollDown 15s linear infinite;
-        }
+.scroll-down {
+  animation: scrollDown 15s linear infinite;
+}
 
-        .scroll-container {
-          overflow: hidden;
-          mask-image: linear-gradient(
-            to bottom,
-            transparent 0%,
-            black 10%,
-            black 90%,
-            transparent 100%
-          );
-          -webkit-mask-image: linear-gradient(
-            to bottom,
-            transparent 0%,
-            black 10%,
-            black 90%,
-            transparent 100%
-          );
-        }
+.scroll-container {
+  overflow: hidden;
+  mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+/* 为滚动条预留空间，防止宽度跳跃 */
+html {
+  overflow-y: scroll;
+}
+
+/* 防止shadcn隐藏滚动条 */
+body {
+  overflow-y: scroll !important;
+}
+
+/* 或者阻止shadcn添加overflow:hidden */
+body[style*="overflow: hidden"] {
+  overflow-y: scroll !important;
+}
