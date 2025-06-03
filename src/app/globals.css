@@ -153,48 +153,107 @@
   object-fit: contain;
 }
 
-@keyframes scrollUp {
+/* 动画定义 */
+/* 真正无缝的滚动动画 */
+@keyframes scrollUpSmooth {
   0% {
     transform: translateY(0);
   }
   100% {
-    transform: translateY(-50%);
+    /* 移动到原始图片组的长度，这样循环时看起来完全一样 */
+    transform: translateY(-25%);
   }
 }
 
-@keyframes scrollDown {
+@keyframes scrollDownSmooth {
   0% {
-    transform: translateY(-50%);
+    /* 从负位置开始，确保向下滚动效果 */
+    transform: translateY(-25%);
   }
   100% {
     transform: translateY(0);
   }
 }
 
-.scroll-up {
-  animation: scrollUp 12s linear infinite;
+/* 左侧向上滚动 */
+.scroll-up-smooth {
+  animation: scrollUpSmooth 12s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
-.scroll-down {
-  animation: scrollDown 15s linear infinite;
+/* 右侧向下滚动 */
+.scroll-down-smooth {
+  animation: scrollDownSmooth 15s linear infinite;
+  will-change: transform;
+  transform: translateZ(0);
 }
 
+/* 滚动容器 */
 .scroll-container {
   overflow: hidden;
   mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    black 10%,
-    black 90%,
+    black 15%,
+    black 85%,
     transparent 100%
   );
   -webkit-mask-image: linear-gradient(
     to bottom,
     transparent 0%,
-    black 10%,
-    black 90%,
+    black 15%,
+    black 85%,
     transparent 100%
   );
+  transform: translateZ(0);
+}
+
+/* 速度调整 - 修改这些duration值来改变速度 */
+/* 
+更快速度示例：
+.scroll-up-smooth {
+  animation: scrollUpSmooth 5s linear infinite;
+}
+
+.scroll-down-smooth {
+  animation: scrollDownSmooth 6s linear infinite;
+}
+
+更慢速度示例：
+.scroll-up-smooth {
+  animation: scrollUpSmooth 12s linear infinite;
+}
+
+.scroll-down-smooth {
+  animation: scrollDownSmooth 15s linear infinite;
+}
+*/
+
+/* 性能优化 */
+.scroll-up-smooth,
+.scroll-down-smooth {
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* 响应式速度调整 */
+@media (max-width: 768px) {
+  .scroll-up-smooth {
+    animation-duration: 10s;
+  }
+  
+  .scroll-down-smooth {
+    animation-duration: 12s;
+  }
+}
+
+/* 用户偏好设置 */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-up-smooth,
+  .scroll-down-smooth {
+    animation-duration: 20s;
+  }
 }
 
 /* 为滚动条预留空间，防止宽度跳跃 */

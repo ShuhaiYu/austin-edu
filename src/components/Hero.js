@@ -20,14 +20,24 @@ export default function Hero() {
     `/home/hero_carousel/${n}.png`
   );
 
-  // 为了无缝循环，复制一遍图片数组
-  const duplicatedLeftImages = [...leftImages, ...leftImages];
-  const duplicatedRightImages = [...rightImages, ...rightImages];
+  // 为了真正无缝循环，我们需要足够多的重复图片
+  // 确保在任何时候视窗内都有完整的图片
+  const extendedLeftImages = [
+    ...leftImages,
+    ...leftImages,
+    ...leftImages,
+    ...leftImages // 4倍重复确保无缝
+  ];
+
+  const extendedRightImages = [
+    ...rightImages,
+    ...rightImages,
+    ...rightImages,
+    ...rightImages // 4倍重复确保无缝
+  ];
 
   return (
     <>
-
-
       <section className="container py-2">
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* 左侧文字区域 */}
@@ -59,16 +69,16 @@ export default function Hero() {
             {/* 左侧列 - 向上滚动 */}
             <div className="absolute left-0 w-1/2 h-full z-10">
               <div className="scroll-container h-full">
-                <div className="scroll-up flex flex-col gap-8">
-                  {duplicatedLeftImages.map((src, index) => (
-                    <div key={`left-${index}`} className="flex-shrink-0 mb-8">
-                      <div className="relative w-full aspect-[4/3]">
+                <div className="scroll-up-smooth flex flex-col gap-8">
+                  {extendedLeftImages.map((src, index) => (
+                    <div key={`left-${index}`} className="flex-shrink-0">
+                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
                         <Image
                           src={src}
-                          alt={`Carousel Image ${index + 1}`}
+                          alt={`Carousel Image ${(index % leftImages.length) + 1}`}
                           width={600}
                           height={450}
-                          unoptimized
+                          priority={index < 6}
                         />
                       </div>
                     </div>
@@ -80,16 +90,16 @@ export default function Hero() {
             {/* 右侧列 - 向下滚动 */}
             <div className="absolute right-0 w-1/2 h-full z-20">
               <div className="scroll-container h-full">
-                <div className="scroll-down flex flex-col gap-8">
-                  {duplicatedRightImages.map((src, index) => (
-                    <div key={`right-${index}`} className="flex-shrink-0 mb-8">
-                      <div className="relative w-full aspect-[4/3]">
+                <div className="scroll-down-smooth flex flex-col gap-8">
+                  {extendedRightImages.map((src, index) => (
+                    <div key={`right-${index}`} className="flex-shrink-0">
+                      <div className="relative w-full aspect-[4/3] overflow-hidden rounded-lg">
                         <Image
                           src={src}
-                          alt={`Carousel Image ${index + 1}`}
+                          alt={`Carousel Image ${(index % rightImages.length) + 1}`}
                           width={600}
                           height={450}
-                          unoptimized
+                          priority={index < 6}
                         />
                       </div>
                     </div>
