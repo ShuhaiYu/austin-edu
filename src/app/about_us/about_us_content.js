@@ -123,7 +123,7 @@ export const aboutUsContent = {
       content: `In Australia, the quality of teachers and educational resources in day schools varies greatly. Finding outstanding teachers and accessing high-quality learning materials often comes down to luck. However, at Austin Education, we uphold the highest standards. Our teaching faculty, courses, and academic support system undergo rigorous selection and refinement to ensure that every student has access to the best educational resources and the most exceptional teachers, eliminating the role of “luck” in their learning journey.`,
       imageMain: "https://placehold.co/600x400",
       imageOverlay1: "/about_us/small_1.png",
-      imageOverlay2: "https://placehold.co/200x133",
+      imageOverlay2: "https://placehold.co/240x180",
       pointTitle: "We strive to:",
       points: [
         "Ensure every student sees real progress; Regardless of their starting point, students can steadily improve through a structured learning process, overcome academic challenges, and achieve their personal goals",
@@ -315,7 +315,7 @@ export const aboutUsContent = {
       content: `在澳洲，日校的师资和教学资源良莠不齐，能否遇到优秀的老师、获得高质量的学习资源，往往要靠运气。然而，Austin Education 始终坚守最高标准，我们的师资、课程、学术支持体系都经过严格筛选与精心打磨，确保每一位学生都能接触到最优质的教学资源和最优秀的教师团队，不让任何一个孩子的学习机会被“运气”左右。`,
       imageMain: "https://placehold.co/600x400",
       imageOverlay1: "/about_us/small_1.png",
-      imageOverlay2: "https://placehold.co/200x133",
+      imageOverlay2: "https://placehold.co/240x180",
       pointTitle: "我们的核心目标：",
       points: [
         "每一位学生都能看到真实的进步——无论基础如何，都能在系统的学习中稳步提升，突破学术瓶颈，实现个人目标",
