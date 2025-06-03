@@ -90,7 +90,7 @@ export default function Achievements() {
             className="w-full justify-start text-left"
             onClick={() => scrollToSection('vce-english')}
           >
-            {lang === "en" ? "VCE English" : "VCE 英语"}
+            {lang === "en" ? "VCE English & EAL" : "VCE 英语"}
           </Button>
           <Button
             variant="ghost"
@@ -98,7 +98,7 @@ export default function Achievements() {
             className="w-full justify-start text-left"
             onClick={() => scrollToSection('vce-math')}
           >
-            {lang === "en" ? "VCE Math" : "VCE 数学"}
+            {lang === "en" ? "VCE Mathematics" : "VCE 数学"}
           </Button>
           <Button
             variant="ghost"
@@ -114,7 +114,7 @@ export default function Achievements() {
             className="w-full justify-start text-left"
             onClick={() => scrollToSection('md-program')}
           >
-            {lang === "en" ? "MD Program" : "医学预科"}
+            {lang === "en" ? "Austin MD Program" : "澳升医学院项目"}
           </Button>
         </CollapsibleContent>
       </Collapsible>
@@ -134,7 +134,7 @@ export default function Achievements() {
             className="w-full justify-start text-left"
             onClick={() => scrollToSection('selective-school')}
           >
-            {lang === "en" ? "Selective School" : "精英学校"}
+            {lang === "en" ? "Selective School Program" : "精英公校项目"}
           </Button>
           <Button
             variant="ghost"
@@ -158,7 +158,7 @@ export default function Achievements() {
             className="w-full justify-start text-left"
             onClick={() => scrollToSection('advanced-79')}
           >
-            {lang === "en" ? "Advanced Program (7-9)" : "高级课程 (7-9年级)"}
+            {lang === "en" ? "Advanced Program (7-9)" : "Y7-9 培优班"}
           </Button>
         </CollapsibleContent>
       </Collapsible>
@@ -186,7 +186,7 @@ export default function Achievements() {
             className="w-full justify-start text-left"
             onClick={() => scrollToSection('advanced-35')}
           >
-            {lang === "en" ? "Advanced Program (3-5)" : "高级课程 (3-5年级)"}
+            {lang === "en" ? "Advanced Program (3-5)" : "Y3-5 培优班"}
           </Button>
         </CollapsibleContent>
       </Collapsible>
@@ -207,7 +207,7 @@ export default function Achievements() {
 
       {/* 侧边栏 */}
       <div className={`
-        fixed lg:sticky top-16 lg:top-32 left-0 h-[calc(100vh-4rem)] lg:h-[calc(100vh-8rem)] w-64 bg-background border-r z-20
+        fixed lg:sticky top-16 lg:top-40 left-0 h-[calc(100vh-4rem)] lg:h-[calc(100vh-8rem)] w-64 bg-background border-r border-gray-300 z-20
         transform transition-transform duration-300 ease-in-out
         ${sidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}
       `}>
