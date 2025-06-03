@@ -7,7 +7,6 @@ import "./globals.css";
 import 'swiper/css';
 import { Toaster } from "@/components/ui/sonner"
 
-
 export const LangContext = createContext(null);
 
 export default function RootLayout({ children }) {
@@ -22,8 +21,9 @@ export default function RootLayout({ children }) {
       <body className="bg-background text-gray-900">
         <LangContext.Provider value={{ lang, setLang }}>
           <NavBar />
-          <main className="flex-1 mt-32 md:mt-40 mx-auto w-[95%] max-w-screen-2xl px-4" >
-            <div className="w-full px-4">{children}</div>
+          {/* 调整主内容区域的顶部边距以适应新的导航栏高度 */}
+          <main className="flex-1 mt-24 md:mt-32 mx-auto w-[95%] max-w-screen-2xl" >
+            <div className="w-full">{children}</div>
           </main>
           <Toaster />
           <Footer />
