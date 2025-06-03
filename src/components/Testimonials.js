@@ -1,129 +1,80 @@
 "use client";
 
-import { useContext, useState, useEffect } from "react";
+import { useContext } from "react";
 import { LangContext } from "@/app/layout";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-import Autoplay from "embla-carousel-autoplay";
-import Image from "next/image";
 import { homeContent } from "@/app/content";
-
-
 
 export default function Testimonials() {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const testimonialsData = homeContent[lang].testimonials;
 
-  // Carousel 的 API 实例
-  const [api, setApi] = useState(null)
-  // 存储当前可见 slides 的中间索引
-  const [centerIndex, setCenterIndex] = useState(null);
-
-  useEffect(() => {
-    if (!api) return;
-
-    // 取当前选中的索引
-    setCenterIndex(api.selectedScrollSnap());
-
-    const handleSelect = () => {
-      setCenterIndex(api.selectedScrollSnap());
-    };
-
-    api.on("select", handleSelect);
-
-    // 卸载时记得清理
-    return () => {
-      api.off("select", handleSelect);
-    };
-  }, [api]);
-
   return (
-    <div className="w-full px-4 py-12">
-      
-      <Carousel
-        setApi={setApi}
-        opts={{
-          align: "center",
-          loop: true,
-        }}
-        plugins={[
-          Autoplay({
-            delay: 5000,
-          }),
-        ]}
-        className="px-12"
-      >
-        <CarouselContent className="-ml-4">
-          {testimonialsData.map((item, index) => {
-            // 判断当前 item 是否是可见列表中的“居中 slide”
-            const isCenter = centerIndex === index;
-            return (
-              <CarouselItem
-                key={index}
-                className="pl-4 basis-1/1 md:basis-1/3 xl:basis-1/5" // 显示5个
-              >
-                <div className={`
-                    p-2 
-                    transition-transform duration-300 
-                    ${isCenter ? "scale-105 z-10" : "scale-95"}
-                  `}>
-                  <div
-                    className="bg-white rounded-xl shadow-sm p-6 h-64 transition-all duration-300 
-                  group relative"
-                  >
-                    <div className="flex flex-col justify-between items-center h-full">
-                      <p className="italic text-sm text-gray-600 line-clamp-4">
-                        {item.feedback}
-                      </p>
-                      <div className="flex flex-col justify-between items-center">
-                        <div className="font-semibold text-gray-900 text-sm">
-                          - {item.name} (
-                          {item.role}
-                          )
-                        </div>
-                        <div className="text-yellow-500 text-sm">
-                          {"★".repeat(item.rating)}
-                          {"☆".repeat(5 - item.rating)}
-                        </div>
-                        <Image
-                          src={`/home/video-icon.png`}
-                          alt={item.name}
-                          width={40}
-                          height={40}
-                          className="rounded-full"
-                          priority
-                        />
-                      </div>
-                    </div>
-                    {/* 高亮边框 */}
-                    <div
-                      className="absolute inset-0 border-2 border-transparent 
-                    group-hover:border-primary/20 rounded-xl transition-all"
-                    />
+    <div className="w-full px-4 py-16">
+      <div className="max-w-7xl mx-auto">
+       
+
+        {/* 视频网格 */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {testimonialsData.map((testimonial, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+            >
+              {/* 视频容器 */}
+              <div className="relative aspect-video bg-gray-100">
+                <iframe
+                  src={`https://player.vimeo.com/video/${testimonial.videoUrl.split('/')[3].split('/')[0]}?h=${testimonial.videoUrl.split('/')[4]}&color=6366f1&title=0&byline=0&portrait=0&badge=0`}
+                  className="w-full h-full"
+                  frameBorder="0"
+                  allow="autoplay; fullscreen; picture-in-picture"
+                  allowFullScreen
+                  title={`${testimonial.name} Testimonial`}
+                />
+              </div>
+
+              {/* 学生信息 */}
+              <div className="p-6">
+                <div className="flex items-center justify-between mb-3">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {testimonial.name}
+                  </h3>
+                  <div className="px-3 py-1 bg-primary text-white text-sm font-medium rounded-full">
+                    {testimonial.achievement}
                   </div>
                 </div>
-              </CarouselItem>
-            );
-          })}
-        </CarouselContent>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {testimonial.description}
+                </p>
+              </div>
 
-        {/* 自定义导航按钮 */}
-        <CarouselPrevious
-          className="left-0 -translate-x-1/2"
-          variant="ghost"
-          size="lg"
-        />
-        <CarouselNext
-          className="right-0 translate-x-1/2"
-          variant="ghost"
-          size="lg"
-        />
-      </Carousel>
+              {/* 装饰性元素 */}
+              <div className="absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <div className="w-8 h-8 bg-white/90 rounded-full flex items-center justify-center">
+                  <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 底部装饰 */}
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center space-x-2 text-gray-500">
+            <div className="flex space-x-1">
+              {[...Array(5)].map((_, i) => (
+                <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </div>
+            <span className="text-sm font-medium">
+              {lang === "en" ? "Trusted by hundreds of students" : "数百名学生的信任选择"}
+            </span>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
