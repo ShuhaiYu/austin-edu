@@ -1070,7 +1070,7 @@ export const coursesContent = {
               description:
                 "Experienced teachers provide insights into subject choices based on students’ interests, strengths, and university aspirations, helping them build a clear academic pathway.",
               icon: "compass",
-              image: "/courses/content/y10-12-1.png",
+              // image: "/courses/content/y10-12-1.png",
             },
             {
               title: "Specialist Curriculum and Study Plans",
