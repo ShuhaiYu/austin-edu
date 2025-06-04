@@ -38,7 +38,7 @@ export default function Features() {
               <div className="relative">
                 {/* 图片容器 */}
                 <Image
-                  src={`/home/section bg${i + 1}.png`}
+                  src={`/home/section bg${i + 1}.svg`}
                   alt="Background"
                   width={247}
                   height={326}

@@ -192,7 +192,7 @@ export const CourseContent = () => {
                 {/* 图片 */}
                 <div className="w-1/2 relative h-96 rounded-[2rem] overflow-hidden shadow-lg">
                   <Image
-                    src={content.image}
+                    src={content.image || "https://placehold.co/600x400"}
                     alt={content.title}
                     fill
                     className="object-cover"

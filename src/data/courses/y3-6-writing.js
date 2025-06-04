@@ -42,8 +42,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "Why Choose Austin’s Unit-Based Writing Program?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y3-6-writing/1.png",
+        image2: "/courses/single/y3-6-writing/2.png",
         content: [
           {
             title: "1. Empower students to truly master writing—not just memorise techniques",
@@ -77,22 +77,21 @@ const courseData = {
             description:
               "Students are exposed to classic or high-quality writing samples to intuitively grasp the target writing style. \nFor example, when studying modern poetry, students read poems with various stylistic approaches; when learning persuasive writing, they analyse high-scoring essays to understand how arguments are constructed.",
             icon: "book",
-            //   image: "/images/y1-y6-1.jpg",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y3-6-writing/2.png",
           },
           {
             title: "Brainstorming & Discussion",
             description:
               "Through group discussions, students engage in divergent thinking around key issues from the reading material. \nTeachers guide students to express their viewpoints from multiple angles, encouraging independent thinking rather than enforcing a single “correct” answer. \nWhen inappropriate or extreme views arise, teachers provide constructive redirection to help students develop sound values.",
             icon: "repeat",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y3-6-writing/3.png",
           },
           {
             title: "Imitative & Creative Writing",
             description:
               "Students create original work based on what they’ve learned, with room for individual expression regardless of ability level. \nBy sharing their writing aloud, they gain insight from others and learn to evaluate and refine their own work.",
             icon: "check",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y3-6-writing/4.png",
           },
           {
             title: "Targeted Writing Training",
@@ -100,7 +99,7 @@ const courseData = {
               `Students practise under time constraints aligned with exam standards at each year level, including: \nNAPLAN: 250–300 words in 40 minutes \nSelective School Exams: Two high-difficulty essays in 40 minutes \nScholarship Tests: One high-level essay in 15 minutes \nVCE: Three 800–1000 word essays in 3 hours
               The training focuses not just on writing speed but also on logical structure, paragraph organisation, and refined grammar to improve performance under pressure.`,
             icon: "test",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y3-6-writing/5.png",
           },
         ],
       },
