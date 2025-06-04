@@ -113,12 +113,13 @@ const FeatureSection = ({ feature, index }) => {
           <h3 className="text-3xl font-bold mb-6">{title}</h3>
         </div>
         <div className="max-w-4xl mx-auto mb-8">
-          <div className="relative rounded-lg overflow-hidden shadow-lg">
+          <div className="relative rounded-lg overflow-hidden">
             <Image
               src={image}
               alt={title}
               width={800}
               height={600}
+              quality={100}
               className="w-full h-auto object-contain"
             />
           </div>
@@ -152,7 +153,7 @@ const FeatureSection = ({ feature, index }) => {
             {images.map((img, idx) => (
               <div
                 key={idx}
-                className="relative rounded-lg overflow-hidden shadow-lg"
+                className="relative rounded-lg overflow-hidden "
               >
                 <Image
                   src={img}
@@ -166,7 +167,7 @@ const FeatureSection = ({ feature, index }) => {
           </div>
         ) : (
           // 单张图片的情况
-          <div className="relative rounded-lg overflow-hidden shadow-lg">
+          <div className="relative rounded-lg overflow-hidden ">
             <Image
               src={image}
               alt={title}
