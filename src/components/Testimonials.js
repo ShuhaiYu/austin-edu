@@ -14,28 +14,30 @@ export default function Testimonials() {
 
   // 从Vimeo URL提取视频ID和hash
   const getVimeoVideoId = (url) => {
-    const parts = url.split('/');
-    return parts[3]?.split('/')[0];
+    const parts = url.split("/");
+    return parts[3]?.split("/")[0];
   };
 
   const getVimeoHash = (url) => {
-    return url.split('/')[4];
+    return url.split("/")[4];
   };
 
   // 使用Vimeo oEmbed API获取缩略图
   const fetchVimeoThumbnail = async (videoUrl) => {
     try {
-      const oEmbedUrl = `https://vimeo.com/api/oembed.json?url=${encodeURIComponent(videoUrl)}&width=640&height=360`;
+      const oEmbedUrl = `https://vimeo.com/api/oembed.json?url=${encodeURIComponent(
+        videoUrl
+      )}&width=640&height=360`;
       const response = await fetch(oEmbedUrl);
-      
+
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
-      
+
       const data = await response.json();
       return data.thumbnail_url || null;
     } catch (error) {
-      console.error('Failed to fetch Vimeo thumbnail via oEmbed:', error);
+      console.error("Failed to fetch Vimeo thumbnail via oEmbed:", error);
       return null;
     }
   };
@@ -44,10 +46,12 @@ export default function Testimonials() {
   useEffect(() => {
     const loadThumbnails = async () => {
       setLoadingThumbnails(true);
-      const thumbnailPromises = testimonialsData.map(async (testimonial, index) => {
-        const thumbnail = await fetchVimeoThumbnail(testimonial.videoUrl);
-        return { index, thumbnail };
-      });
+      const thumbnailPromises = testimonialsData.map(
+        async (testimonial, index) => {
+          const thumbnail = await fetchVimeoThumbnail(testimonial.videoUrl);
+          return { index, thumbnail };
+        }
+      );
 
       const results = await Promise.all(thumbnailPromises);
       const thumbnailMap = {};
@@ -76,19 +80,19 @@ export default function Testimonials() {
   // ESC键关闭
   useEffect(() => {
     const handleEscape = (e) => {
-      if (e.key === 'Escape') {
+      if (e.key === "Escape") {
         closeModal();
       }
     };
 
     if (selectedVideo) {
-      document.addEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'hidden';
+      document.addEventListener("keydown", handleEscape);
+      document.body.style.overflow = "hidden";
     }
 
     return () => {
-      document.removeEventListener('keydown', handleEscape);
-      document.body.style.overflow = 'unset';
+      document.removeEventListener("keydown", handleEscape);
+      document.body.style.overflow = "unset";
     };
   }, [selectedVideo]);
 
@@ -108,11 +112,13 @@ export default function Testimonials() {
                 className="group bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
               >
                 {/* 视频容器 */}
-                <div 
+                <div
                   className="relative aspect-video bg-gradient-to-br from-blue-50 to-purple-50 cursor-pointer overflow-hidden border-2 border-gray-100"
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
-                  onClick={() => setSelectedVideo({ videoId, hash, name: testimonial.name })}
+                  onClick={() =>
+                    setSelectedVideo({ videoId, hash, name: testimonial.name })
+                  }
                 >
                   {/* 显示真实的Vimeo缩略图或默认背景 */}
                   {thumbnail ? (
@@ -126,20 +132,21 @@ export default function Testimonials() {
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-100 via-purple-50 to-pink-50 flex items-center justify-center">
                       <div className="text-center">
                         {loadingThumbnails ? (
-                          <>
-                            <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center mb-3 mx-auto shadow-lg animate-pulse">
-                              <Play className="w-8 h-8 text-blue-600" fill="currentColor" />
-                            </div>
-                            <h4 className="font-semibold text-gray-700 mb-1">{testimonial.name}</h4>
-                            <p className="text-sm text-gray-500">正在加载缩略图...</p>
-                          </>
+                          <div className="w-8 h-8 border-3 border-primary border-t-transparent rounded-full animate-spin"></div>
                         ) : (
                           <>
                             <div className="w-16 h-16 bg-white/80 rounded-full flex items-center justify-center mb-3 mx-auto shadow-lg">
-                              <Play className="w-8 h-8 text-blue-600" fill="currentColor" />
+                              <Play
+                                className="w-8 h-8 text-blue-600"
+                                fill="currentColor"
+                              />
                             </div>
-                            <h4 className="font-semibold text-gray-700 mb-1">{testimonial.name}</h4>
-                            <p className="text-sm text-gray-500">点击观看视频见证</p>
+                            <h4 className="font-semibold text-gray-700 mb-1">
+                              {testimonial.name}
+                            </h4>
+                            <p className="text-sm text-gray-500">
+                              Click to watch video testimonial
+                            </p>
                           </>
                         )}
                       </div>
@@ -147,18 +154,21 @@ export default function Testimonials() {
                   )}
 
                   {/* 悬停时的播放按钮覆盖层 */}
-                  <div 
+                  <div
                     className={`absolute inset-0 bg-black/40 flex items-center justify-center transition-opacity duration-300 ${
-                      hoveredIndex === index ? 'opacity-100' : 'opacity-0'
+                      hoveredIndex === index ? "opacity-100" : "opacity-0"
                     }`}
                   >
                     <div className="w-20 h-20 bg-white/95 rounded-full flex items-center justify-center hover:bg-white hover:scale-110 transition-all duration-200 shadow-xl">
-                      <Play className="w-8 h-8 text-blue-600 ml-1" fill="currentColor" />
+                      <Play
+                        className="w-8 h-8 text-blue-600 ml-1"
+                        fill="currentColor"
+                      />
                     </div>
                   </div>
 
                   {/* 渐变边框效果 */}
-                  <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-400/20 to-purple-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <div className="absolute inset-0 rounded-lg bg-blue-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
 
                 {/* 学生信息 */}
@@ -167,7 +177,7 @@ export default function Testimonials() {
                     <h3 className="text-xl font-semibold text-gray-900">
                       {testimonial.name}
                     </h3>
-                    <div className="px-3 py-1 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium rounded-full shadow-sm">
+                    <div className="px-3 py-1 bg-primary text-white text-sm font-medium rounded-full shadow-sm">
                       {testimonial.achievement}
                     </div>
                   </div>
@@ -197,7 +207,9 @@ export default function Testimonials() {
               ))}
             </div>
             <span className="text-sm font-medium">
-              {lang === "en" ? "Trusted by hundreds of students" : "数百名学生的信任选择"}
+              {lang === "en"
+                ? "Trusted by hundreds of students"
+                : "数百名学生的信任选择"}
             </span>
           </div>
         </div>
@@ -205,7 +217,7 @@ export default function Testimonials() {
 
       {/* 全屏视频模态窗口 */}
       {selectedVideo && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4"
           onClick={handleBackdropClick}
         >
