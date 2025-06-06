@@ -11,23 +11,37 @@ export default function ResourceHub() {
   return (
     <div className="min-h-screen flex flex-col items-center p-8 bg-background">
       <div className="w-full">
-        
         <Tabs defaultValue="consultation" className="w-full gap-0">
           {/* Tab导航 */}
           <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full h-auto rounded-b-none gap-2 bg-background items-end">
-            <TabsTrigger value="consultation" className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200">
+            <TabsTrigger
+              value="consultation"
+              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+            >
               Free Consultation
             </TabsTrigger>
-            <TabsTrigger value="trial" className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200">
+            <TabsTrigger
+              value="trial"
+              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+            >
               Trial Lesson
             </TabsTrigger>
-            <TabsTrigger value="webinar" className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200">
+            <TabsTrigger
+              value="webinar"
+              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+            >
               Free Webinar
             </TabsTrigger>
-            <TabsTrigger value="atar" className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200">
+            <TabsTrigger
+              value="atar"
+              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+            >
               ATAR Calculator
             </TabsTrigger>
-            <TabsTrigger value="blogs" className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200">
+            <TabsTrigger
+              value="blogs"
+              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+            >
               Blogs
             </TabsTrigger>
           </TabsList>
@@ -40,7 +54,7 @@ export default function ResourceHub() {
 
           {/* 试听课预约 */}
           <TabsContent value="trial">
-          <TrialLessonTab />
+            <TrialLessonTab />
           </TabsContent>
 
           {/* 在线研讨会 */}
@@ -58,9 +72,7 @@ export default function ResourceHub() {
             <BlogTab />
           </TabsContent>
         </Tabs>
-        <FAQ />
       </div>
-      
     </div>
   );
 }

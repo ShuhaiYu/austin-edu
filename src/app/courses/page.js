@@ -1,8 +1,10 @@
 // app/courses/page.tsx
+
 import { CourseDetail } from "./components/CourseDetail";
 import { CourseContent } from "./components/CourseContent";
 import { CourseFeature } from "./components/CourseFeature";
 import FAQ from "@/components/FAQ";
+import { courseFaqItems } from "@/data/faq_content";
 
 export default function CoursesPage() {
   return (
@@ -18,7 +20,8 @@ export default function CoursesPage() {
         <CourseFeature />
       </div>
 
-      <FAQ />
+      <FAQ customFaqItems={courseFaqItems} />
     </div>
   );
 }
+

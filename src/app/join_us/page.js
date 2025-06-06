@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/select";
 import FAQ from "@/components/FAQ";
 import { joinUsContent } from "./join_us_content.js"; // 引入多语言内容
+import { joinUsFaqItems } from "@/data/faq_content.js";
 
 export default function JoinUsPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -332,7 +333,7 @@ export default function JoinUsPage() {
           </form>
         </div>
       </section>
-      <FAQ /> {/* FAQ 组件放在这里 */}
+      <FAQ customFaqItems={joinUsFaqItems} />
     </div>
   );
 }

@@ -10,6 +10,7 @@ import Image from "next/image";
 
 import { MapPin, Mail, Phone } from "lucide-react";
 import FAQ from "@/components/FAQ";
+import { contactUsFaqItems } from "@/data/faq_content";
 
 export default function ContactPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -350,7 +351,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <FAQ />
+      <FAQ customFaqItems={contactUsFaqItems} />
     </div>
   );
 }

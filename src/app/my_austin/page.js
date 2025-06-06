@@ -16,6 +16,7 @@ import { Separator } from "@/components/ui/separator";
 import Autoplay from "embla-carousel-autoplay";
 import { myAustinContent } from "./my_austin_content";
 import FAQ from "@/components/FAQ";
+import { homeworkSystemFaqItems } from "@/data/faq_content";
 
 // 轮播图组件
 const ImageSlider = ({ images }) => {
@@ -305,7 +306,7 @@ export default function MyAustinPage() {
         </div>
       </motion.section>
 
-      <FAQ />
+      <FAQ customFaqItems={homeworkSystemFaqItems}/>
     </main>
   );
 }

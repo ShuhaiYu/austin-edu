@@ -9,6 +9,7 @@ import FAQ from "@/components/FAQ";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
 import Image from "next/image";
+import { homeFAQContent } from "@/data/faq_content";
 
 export default function HomePage() {
   const langContext = useContext(LangContext);
@@ -38,7 +39,6 @@ export default function HomePage() {
   };
 
   const t = lang === "zh" ? textContent.zh : textContent.en;
-
   return (
     <div className="flex flex-col items-center">
       {/* Hero 区域 */}
@@ -84,9 +84,9 @@ export default function HomePage() {
         <Testimonials />
       </section>
 
-      {/* FAQ */}
+      {/* FAQ - 使用自定义内容 */}
       <section className="w-full py-12">
-        <FAQ />
+        <FAQ customFaqItems={homeFAQContent} />
       </section>
     </div>
   );

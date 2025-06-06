@@ -40,7 +40,8 @@ const FormSchema = z.object({
   }),
 });
 
-const content = {
+// 默认的通用内容
+const defaultContent = {
   en: {
     title: "Frequently Asked Questions",
     description:
@@ -103,19 +104,29 @@ const content = {
   },
 };
 
-export default function FAQ() {
+export default function FAQ({ 
+  customFaqItems = null, 
+  customTitle = null, 
+  customDescription = null,
+  showContactForm = true 
+}) {
   const { lang } = useContext(LangContext) || { lang: "en" };
+  
+  // 使用自定义内容或默认内容
+  const content = defaultContent[lang];
   const {
-    title,
-    description,
     formTitle,
     nameLabel,
     emailLabel,
     questionLabel,
     submitButton,
     placeholders,
-    faqItems,
-  } = content[lang];
+  } = content;
+  
+  // 使用传入的自定义内容或默认内容
+  const title = customTitle || content.title;
+  const description = customDescription || content.description;
+  const faqItems = customFaqItems[lang] || content.faqItems;
 
   const form = useForm({
     resolver: zodResolver(FormSchema),
@@ -138,7 +149,7 @@ export default function FAQ() {
   }
 
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section className="py-16 relative">
       <div
         className="
           absolute top-0 right-0 z-0 pointer-events-none
@@ -157,111 +168,118 @@ export default function FAQ() {
       <div className="container flex flex-col gap-8 relative z-10">
         {/* 标题部分 */}
         <div className="text-center space-y-8">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold ">{title}</h2>
-          <p className="  max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold">{title}</h2>
+          <p className="max-w-2xl mx-auto">
             {description}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className={`grid grid-cols-1 gap-6 ${showContactForm ? 'lg:grid-cols-2' : ''}`}>
           {/* 左侧：FAQ */}
-          <div className="max-w-2xl mx-auto px-4 w-full">
-            <Accordion type="multiple" className="space-y-4 ">
+          <div className={`${showContactForm ? 'max-w-2xl mx-auto px-4 w-full' : 'max-w-4xl mx-auto px-4 w-full'}`}>
+            <Accordion type="multiple" className="space-y-4">
               {faqItems.map((item, index) => (
                 <AccordionItem key={`item-${index}`} value={`item-${index}`} className="border-b-0">
-                  <AccordionTrigger className="bg-white border border-gray-200 px-2">{item.question}</AccordionTrigger>
-                  <AccordionContent className="mt-2">{item.answer}</AccordionContent>
+                  <AccordionTrigger className="bg-white border border-gray-200 px-6 py-4 rounded-lg hover:bg-gray-50 transition-colors">
+                    <span className="text-left font-semibold">{item.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="mt-2 px-6 py-4 bg-gray-50 rounded-lg">
+                    <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+                  </AccordionContent>
                 </AccordionItem>
               ))}
             </Accordion>
           </div>
 
-          {/* 右侧表单 */}
-          <div className="bg-primary p-6 rounded-md shadow-sm space-y-4">
-            <h3 className="text-xl font-semibold text-primary-foreground">
-              {formTitle}
-            </h3>
+          {/* 右侧表单 - 粘性布局 */}
+          {showContactForm && (
+            <div className="lg:sticky lg:top-40 lg:self-start">
+              <div className="bg-primary p-6 rounded-md shadow-sm space-y-4 max-h-[calc(100vh-3rem)] overflow-y-auto">
+                <h3 className="text-xl font-semibold text-primary-foreground">
+                  {formTitle}
+                </h3>
 
-            <Form {...form}>
-              <form
-                onSubmit={form.handleSubmit(onSubmit)}
-                className="space-y-4"
-              >
-                {/* Name 字段 */}
-                <FormField
-                  control={form.control}
-                  name="name"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-primary-foreground">
-                        {nameLabel} <span className="text-red-400">*</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          placeholder={placeholders.name}
-                          className="bg-primary-foreground border-none focus-visible:ring-1 focus-visible:ring-primary"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-300" />
-                    </FormItem>
-                  )}
-                />
+                <Form {...form}>
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-4"
+                  >
+                    {/* Name 字段 */}
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-primary-foreground">
+                            {nameLabel} <span className="text-red-400">*</span>
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              placeholder={placeholders.name}
+                              className="bg-primary-foreground border-none focus-visible:ring-1 focus-visible:ring-primary"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-red-300" />
+                        </FormItem>
+                      )}
+                    />
 
-                {/* 其他表单字段类似修改 */}
-                {/* Email 字段 */}
-                <FormField
-                  control={form.control}
-                  name="email"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-primary-foreground">
-                        {emailLabel} <span className="text-red-400">*</span>
-                      </FormLabel>
-                      <FormControl>
-                        <Input
-                          type="email"
-                          placeholder={placeholders.email}
-                          className="bg-primary-foreground border-none focus-visible:ring-1 focus-visible:ring-primary"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-300" />
-                    </FormItem>
-                  )}
-                />
+                    {/* Email 字段 */}
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-primary-foreground">
+                            {emailLabel} <span className="text-red-400">*</span>
+                          </FormLabel>
+                          <FormControl>
+                            <Input
+                              type="email"
+                              placeholder={placeholders.email}
+                              className="bg-primary-foreground border-none focus-visible:ring-1 focus-visible:ring-primary"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-red-300" />
+                        </FormItem>
+                      )}
+                    />
 
-                {/* Question 字段 */}
-                <FormField
-                  control={form.control}
-                  name="question"
-                  render={({ field }) => (
-                    <FormItem>
-                      <FormLabel className="text-primary-foreground">
-                        {questionLabel}
-                      </FormLabel>
-                      <FormControl>
-                        <Textarea
-                          rows={4}
-                          placeholder={placeholders.question}
-                          className="bg-primary-foreground border-none focus-visible:ring-1 focus-visible:ring-primary"
-                          {...field}
-                        />
-                      </FormControl>
-                      <FormMessage className="text-red-300" />
-                    </FormItem>
-                  )}
-                />
+                    {/* Question 字段 */}
+                    <FormField
+                      control={form.control}
+                      name="question"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel className="text-primary-foreground">
+                            {questionLabel}
+                          </FormLabel>
+                          <FormControl>
+                            <Textarea
+                              rows={4}
+                              placeholder={placeholders.question}
+                              className="bg-primary-foreground border-none focus-visible:ring-1 focus-visible:ring-primary resize-none"
+                              {...field}
+                            />
+                          </FormControl>
+                          <FormMessage className="text-red-300" />
+                        </FormItem>
+                      )}
+                    />
 
-                <Button
-                  type="submit"
-                  className="w-full bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold"
-                >
-                  {submitButton}
-                </Button>
-              </form>
-            </Form>
-          </div>
+                    <Button
+                      type="submit"
+                      className="w-full bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold"
+                    >
+                      {submitButton}
+                    </Button>
+                  </form>
+                </Form>
+              </div>
+            </div>
+            )}
         </div>
       </div>
     </section>

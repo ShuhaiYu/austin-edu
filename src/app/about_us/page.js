@@ -8,6 +8,7 @@ import { aboutUsContent } from "./about_us_content";
 import FAQ from "@/components/FAQ";
 import TimelineSection from "./components/TimeLine";
 import Map from "@/components/Map";
+import { aboutUsFAQContent } from "@/data/faq_content";
 
 export default function AboutPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -180,7 +181,7 @@ export default function AboutPage() {
           </div>
         ))}
       </section>
-      <FAQ />
+      <FAQ customFaqItems={aboutUsFAQContent}/>
     </div>
   );
 }
