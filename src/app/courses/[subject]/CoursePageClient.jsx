@@ -1,11 +1,6 @@
 "use client";
 
-import {
-  useContext,
-  useMemo,
-  lazy,
-  Suspense,
-} from "react";
+import { useContext, useMemo, lazy, Suspense } from "react";
 import { LangContext } from "@/app/layout";
 import SchoolsCarousel from "./components/SchoolsCarousel";
 import Image from "next/image";
@@ -534,8 +529,9 @@ export default function CoursePageClient({ localizedData }) {
                     <Image
                       src={content.image}
                       alt={content.title}
-                      fill
-                      className="object-cover"
+                      width={975}
+                      height={650}
+                      className="w-full h-full"
                     />
                   </div>
                 </div>
