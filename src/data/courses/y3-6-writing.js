@@ -43,7 +43,7 @@ const courseData = {
       partA: {
         title: "Why Choose Austin’s Unit-Based Writing Program?",
         image1: "/courses/single/y3-6-writing/1.png",
-        image2: "/courses/single/y3-6-writing/2.png",
+        image2: "https://placehold.co/975x650",
         content: [
           {
             title: "1. Empower students to truly master writing—not just memorise techniques",

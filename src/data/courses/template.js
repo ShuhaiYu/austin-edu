@@ -181,8 +181,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "Why Choose Us ......",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "https://placehold.co/600x400",
+        image2: "https://placehold.co/975x650",
         content: [
           {
             title: "1. High-Standard Essay Refinement Process",
@@ -635,8 +635,8 @@ const courseData = {
         "Our high-standard essay refinement process includes five core steps, ensuring that every student can achieve their best performance in SACs and exams.",
       ],
       images: [
-        "https://placehold.co/400x600?text=Image+1",
-        "https://placehold.co/400x1000?text=Image+2",
+        "https://placehold.co/975x650",
+        "https://placehold.co/975x650",
       ],
       steps: [
         {

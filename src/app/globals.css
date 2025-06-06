@@ -11,6 +11,8 @@
   --breakpoint-3xl: 120rem;
   --color-primary: #285ea9; /* 主色调：深蓝 (示例) */
   --color-primary-foreground: #f1f5f9;
+  --color-austin-yellow: #f1c40f; /* 奥斯汀黄 (示例) */
+  --color-austin-red: #e74c3c; /* 奥斯汀红 (示例) */
   --color-secondary: #00cee8; /* 次要色调：浅蓝 (示例) */
   --color-secondary-foreground: #797979;
   --color-accent: #cfd8e3; /* 强调色：橘黄 (示例) */
