@@ -106,7 +106,7 @@ export const CourseDetail = () => {
       </div>
 
       {/* 右侧 详情面板 */}
-      <div className="w-1/2 sticky top-20 self-start">
+      <div className="w-1/2 sticky top-40 self-start">
         <div className="space-y-8 border-6 border-blue-200 bg-white rounded-[2rem] p-8 shadow-lg">
           <h2 className="text-3xl font-bold">{selectedCourse.title}</h2>
 

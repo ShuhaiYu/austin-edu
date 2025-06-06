@@ -15,7 +15,7 @@ export const coursesContent = {
               ],
             },
             {
-              title: "Scholarship Courses",
+              title: "Scholarship / Selective Courses",
               courses: [
                 "3-to-5-scholarship-victoria",
                 "3-to-5-scholarship-interview-victoria",
@@ -63,7 +63,7 @@ export const coursesContent = {
               ],
             },
             {
-              title: "Scholarship Courses",
+              title: "Scholarship / Selective Courses",
               courses: [
                 "7-to-9-scholarship-victoria",
                 "7-to-9-scholarship-interview-victoria",
@@ -85,7 +85,7 @@ export const coursesContent = {
           title: "Senior High School 10-12 Years",
           subcategories: [
             {
-              title: "Year 10 Transition Courses",
+              title: "Year 10 Pre-VCE Courses",
               courses: [
                 "y10-english",
                 "y10-eal",
@@ -97,13 +97,23 @@ export const coursesContent = {
               ],
             },
             {
-              title: "VCE Core Subjects",
+              title: "VCE English Courses",
               courses: [
                 "vce-english-eal-unit1-4",
                 "vce-english-language-unit1-4",
+              ],
+            },
+            {
+              title: "VCE Maths Courses",
+              courses: [
                 "vce-maths-methods-unit1-4",
                 "vce-specialist-maths-unit1-4",
                 "vce-general-maths-unit-1-4",
+              ],
+            },
+            {
+              title: "VCE Science Courses",
+              courses: [
                 "vce-chemistry-unit-1-4",
                 "vce-biology-unit-1-4",
                 "vce-physics-unit-1-4",
@@ -111,7 +121,7 @@ export const coursesContent = {
               ],
             },
             {
-              title: "VCE Language Subjects",
+              title: "VCE Languages Courses",
               courses: [
                 "vce-lantin-unit-1-4",
                 "vce-chinese-first-language-unit-1-4",
@@ -121,14 +131,17 @@ export const coursesContent = {
               ],
             },
             {
-              title: "VCE Elective Subjects",
+              title: "VCE Business and Economics Courses",
               courses: [
                 "vce-accounting-unit-1-4",
                 "vce-economics-unit-1-4",
                 "vce-business-management-unit-1-4",
                 "vce-legal-studies-unit-1-4",
-                "vce-vcd-unit-1-4",
               ],
+            },
+            {
+              title: "VCE Other Courses",
+              courses: ["vce-vcd-unit-1-4","y10-12-extra-holiday-class", "y10-12-mock-exam"],
             },
             {
               title: "IB Courses",
@@ -151,10 +164,6 @@ export const coursesContent = {
                 "ib-economics-standard-level",
                 "ib-economics-higher-level",
               ],
-            },
-            {
-              title: "Other Courses",
-              courses: ["y10-12-extra-holiday-class", "y10-12-mock-exam"],
             },
           ],
         },
@@ -1526,7 +1535,7 @@ export const coursesContent = {
               ],
             },
             {
-              title: "奖学金课程",
+              title: "奖学金/精英公校课程",
               courses: [
                 "3-to-5-scholarship-victoria",
                 "3-to-5-scholarship-interview-victoria",
@@ -1574,7 +1583,7 @@ export const coursesContent = {
               ],
             },
             {
-              title: "奖学金/精英课程",
+              title: "奖学金/精英公校课程",
               courses: [
                 "7-to-9-scholarship-victoria",
                 "7-to-9-scholarship-interview-victoria",
@@ -1596,7 +1605,7 @@ export const coursesContent = {
           title: "高中 10-12 年级",
           subcategories: [
             {
-              title: "10年级衔接课程",
+              title: "10年级 VCE衔接课程",
               courses: [
                 "y10-english",
                 "y10-eal",
@@ -1608,13 +1617,23 @@ export const coursesContent = {
               ],
             },
             {
-              title: "VCE 核心科目",
+              title: "VCE 英文课程",
               courses: [
                 "vce-english-eal-unit1-4",
                 "vce-english-language-unit1-4",
+              ],
+            },
+            {
+              title: "VCE 数学课程",
+              courses: [
                 "vce-maths-methods-unit1-4",
                 "vce-specialist-maths-unit1-4",
                 "vce-general-maths-unit-1-4",
+              ],
+            },
+            {
+              title: "VCE 科学课程",
+              courses: [
                 "vce-chemistry-unit-1-4",
                 "vce-biology-unit-1-4",
                 "vce-physics-unit-1-4",
@@ -1622,7 +1641,7 @@ export const coursesContent = {
               ],
             },
             {
-              title: "VCE 语言科目",
+              title: "VCE 语言课程",
               courses: [
                 "vce-lantin-unit-1-4",
                 "vce-chinese-first-language-unit-1-4",
@@ -1632,14 +1651,17 @@ export const coursesContent = {
               ],
             },
             {
-              title: "VCE 选修科目",
+              title: "VCE 商业与经济课程",
               courses: [
                 "vce-accounting-unit-1-4",
                 "vce-economics-unit-1-4",
                 "vce-business-management-unit-1-4",
                 "vce-legal-studies-unit-1-4",
-                "vce-vcd-unit-1-4",
               ],
+            },
+            {
+              title: "VCE 其他课程",
+              courses: ["vce-vcd-unit-1-4","y10-12-extra-holiday-class", "y10-12-mock-exam"],
             },
             {
               title: "IB 课程",
@@ -1662,10 +1684,6 @@ export const coursesContent = {
                 "ib-economics-standard-level",
                 "ib-economics-higher-level",
               ],
-            },
-            {
-              title: "其他课程",
-              courses: ["y10-12-extra-holiday-class", "y10-12-mock-exam"],
             },
           ],
         },
