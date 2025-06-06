@@ -257,18 +257,3 @@
     animation-duration: 20s;
   }
 }
-
-/* 为滚动条预留空间，防止宽度跳跃 */
-html {
-  overflow-y: scroll;
-}
-
-/* 防止shadcn隐藏滚动条 */
-body {
-  overflow-y: scroll !important;
-}
-
-/* 或者阻止shadcn添加overflow:hidden */
-body[style*="overflow: hidden"] {
-  overflow-y: scroll !important;
-}
