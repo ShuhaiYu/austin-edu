@@ -42,7 +42,7 @@ export default function Features() {
                   alt="Background"
                   width={247}
                   height={326}
-                  className="object-contain drop-shadow-lg"
+                  className="object-contain drop-shadow-lg rounded-4xl"
                 />
                 {/* 文字内容 */}
                 {/* <div className="absolute inset-0 flex flex-col items-center justify-center p-4 xl:p-2">
