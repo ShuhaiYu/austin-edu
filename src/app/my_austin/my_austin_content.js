@@ -18,9 +18,8 @@ export const myAustinContent = {
       "/my_austin/new/6-learn.png",
       "/my_austin/new/7-recording.png",
       "/my_austin/new/8-mistake.png",
-      "/my_austin/new/9-complaint.png",
+      // "/my_austin/new/9-complaint.png",
       "/my_austin/new/10.png",
-      "/my_austin/new/11.png",
       "/my_austin/new/12.png",
     ],
     features: [
@@ -102,9 +101,8 @@ export const myAustinContent = {
       "/my_austin/new/6-learn.png",
       "/my_austin/new/7-recording.png",
       "/my_austin/new/8-mistake.png",
-      "/my_austin/new/9-complaint.png",
+      // "/my_austin/new/9-complaint.png",
       "/my_austin/new/10.png",
-      "/my_austin/new/11.png",
       "/my_austin/new/12.png",
     ],
     features: [
