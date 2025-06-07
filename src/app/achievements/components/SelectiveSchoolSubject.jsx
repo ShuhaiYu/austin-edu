@@ -1,4 +1,3 @@
-// components/subjects/SelectiveSchoolSubject.jsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -8,13 +7,14 @@ import { BaseSubject } from "./BaseSubject";
 export const SelectiveSchoolSubject = ({ data }) => (
   <BaseSubject
     title={data.title}
-    color="primary"
     compactContent={
       <div className="flex flex-col items-center space-y-4">
         <motion.div
           className="flex flex-col items-center"
-          whileHover={{ scale: 1.05 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 300 }}
+          whileHover={{ scale: 1.05 }}
         >
           <PercentageCircle
             value={data.compactStat.value}
@@ -40,29 +40,24 @@ export const SelectiveSchoolSubject = ({ data }) => (
       </div>
     }
     expandedContent={
-      <motion.div
-        className="space-y-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="space-y-8">
         {data.expandedContent?.title && (
-          <h4 className="text-lg font-semibold text-gray-800 mb-4">
+          <h4 className="text-xl font-semibold text-gray-800 text-center mb-6">
             {data.expandedContent.title}
           </h4>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
           {data.expandedContent?.admissions?.map((school, index) => (
             <motion.div
               key={index}
               className="group relative overflow-hidden"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
+              transition={{ delay: 0.1 + index * 0.05 }}
+              whileHover={{ y: -5, scale: 1.02 }}
             >
-              <div className="p-5 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 text-center transition-all duration-300 group-hover:shadow-lg group-hover:border-blue-200">
+              <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 text-center transition-all duration-300 group-hover:shadow-lg group-hover:border-blue-200">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
                 <div className="relative z-10">
                   <h5 className="text-base font-bold text-blue-900 mb-3 leading-tight">
@@ -78,7 +73,7 @@ export const SelectiveSchoolSubject = ({ data }) => (
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
     }
   />
 );

@@ -1,22 +1,17 @@
-// components/subjects/AMCSubject.jsx
 "use client";
 
-import { motion } from "framer-motion";
-import { PercentageCircle } from "@/components/PercentageCircle";
 import { BaseSubject } from "./BaseSubject";
 
 export const AMCSubject = ({ data }) => (
   <BaseSubject
     title={data.title}
-    color="[#c12731]"
     compactContent={
-      <div className="flex items-center justify-center">
-        <div className="w-full text-center">
+      <div className="flex items-center justify-center w-full">
+        <div className="text-center text-lg leading-relaxed max-w-2xl">
           {data.compactStats}
         </div>
       </div>
     }
-    // 无展开内容
     expandedContent={null}
   />
 );

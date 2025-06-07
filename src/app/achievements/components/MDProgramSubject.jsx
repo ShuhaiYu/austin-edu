@@ -10,22 +10,24 @@ import { ArrowRight } from "lucide-react";
 export const MDProgramSubject = ({ data }) => (
   <BaseSubject
     title={data.title}
-    color="primary"
     compactContent={
-      <div className="grid grid-cols-2 gap-4 md:gap-8">
+      <div className="grid grid-cols-2 gap-8 w-full max-w-lg">
         {data.compactStats.map((stat, index) => (
           <motion.div 
             key={index}
             className="flex flex-col items-center p-4"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: index * 0.1 }}
             whileHover={{ scale: 1.05 }}
           >
             <PercentageCircle 
               value={stat.value} 
-              size="w-16 h-16 md:w-24 md:h-24"
+              size="w-24 h-24"
               color="text-primary"
               borderColor="border-primary/30"
             />
-            <p className="text-xs md:text-sm mt-2 text-center font-medium max-w-[120px]">
+            <p className="text-sm mt-3 text-center font-medium max-w-[120px]">
               {stat.label}
             </p>
           </motion.div>
@@ -39,82 +41,82 @@ export const MDProgramSubject = ({ data }) => (
           className="text-center"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
         >
-          <h3 className="text-xl md:text-2xl font-bold text-primary mb-6">
+          <h3 className="text-2xl font-bold text-primary mb-6">
             {data.introText}
           </h3>
         </motion.div>
         
         {/* 主要统计卡片 */}
-        <motion.div 
-          className="grid grid-cols-1 md:grid-cols-3 gap-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ staggerChildren: 0.1 }}
-        >
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           {data.fullStats.map((stat, index) => (
             <motion.div 
               key={index}
-              className="p-6 bg-white rounded-xl shadow-sm border border-primary/20"
-              whileHover={{ y: -5 }}
+              className="p-8 bg-white rounded-xl shadow-sm border border-primary/20 hover:shadow-lg transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 + index * 0.1 }}
+              whileHover={{ y: -5, scale: 1.02 }}
             >
-              <div className="flex justify-center mb-4">
+              <div className="flex justify-center mb-6">
                 <PercentageCircle 
                   value={stat.value} 
-                  size="w-20 h-20 md:w-24 md:h-24"
+                  size="w-24 h-24"
                   color="text-primary"
                   borderColor="border-primary/30"
-                  textSize="text-xl md:text-2xl"
+                  textSize="text-2xl"
                 />
               </div>
               
               <div className="text-center">
-                <h4 className="text-lg font-bold text-gray-800 mb-2">
+                <h4 className="text-xl font-bold text-gray-800 mb-3">
                   {stat.label}
                 </h4>
                 {stat.subLabel && (
-                  <p className="text-sm text-primary font-medium mb-3">
+                  <p className="text-sm text-primary font-medium mb-4">
                     {stat.subLabel}
                   </p>
                 )}
-                <p className="text-sm text-gray-600">
+                <p className="text-sm text-gray-600 leading-relaxed">
                   {stat.description}
                 </p>
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
         
         {/* 附加信息 */}
         <motion.div 
-          className="pt-4"
+          className="space-y-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.5 }}
         >
-          <h4 className="text-lg font-bold text-center mb-4 text-gray-700">
+          <h4 className="text-xl font-bold text-center text-gray-700">
             Program Highlights
           </h4>
           
-          <div className="bg-primary/5 p-6 rounded-xl border border-primary/10">
-            <ul className="space-y-3">
+          <div className="bg-primary/5 p-8 rounded-xl border border-primary/10">
+            <ul className="space-y-4">
               {data.additionalInfo.map((info, index) => (
                 <motion.li 
                   key={index}
                   className="flex items-start"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.6 + index * 0.1 }}
                   whileHover={{ x: 5 }}
                 >
-                  <ArrowRight className="h-5 w-5 text-primary mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-gray-700">{info}</span>
+                  <ArrowRight className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
+                  <span className="text-gray-700 text-base leading-relaxed">{info}</span>
                 </motion.li>
               ))}
             </ul>
           </div>
           
-          <div className="mt-6 text-center">
-            <Button className="bg-primary hover:bg-primary/90 text-white">
+          <div className="text-center">
+            <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg">
               Learn More About Our MD Program
             </Button>
           </div>

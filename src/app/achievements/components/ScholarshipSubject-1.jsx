@@ -1,4 +1,3 @@
-// components/subjects/ScholarshipSubject.jsx
 "use client";
 
 import { motion } from "framer-motion";
@@ -8,9 +7,8 @@ import { BaseSubject } from "./BaseSubject";
 export const ScholarshipSubject = ({ data }) => (
   <BaseSubject
     title={data.title}
-    color="primary"
     compactContent={
-      <div className="flex flex-col items-center space-y-4">
+      <div className="flex flex-col items-center space-y-6">
         <div className="flex flex-col items-center">
           <PercentageCircle
             value={data.compactStat.value}
@@ -36,14 +34,9 @@ export const ScholarshipSubject = ({ data }) => (
       </div>
     }
     expandedContent={
-      <motion.div
-        className="space-y-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-      >
+      <div className="space-y-8">
         {data.expandedContent?.title && (
-          <h4 className="text-lg font-semibold text-gray-800 mb-6">
+          <h4 className="text-xl font-semibold text-gray-800 text-center mb-6">
             {data.expandedContent.title}
           </h4>
         )}
@@ -56,9 +49,9 @@ export const ScholarshipSubject = ({ data }) => (
                 className="break-inside-avoid mb-3"
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: Math.min(index * 0.02, 0.8) }}
+                transition={{ delay: 0.1 + Math.min(index * 0.02, 0.8) }}
               >
-                <div className="flex items-start gap-3 py-2 hover:bg-blue-50/50 rounded-lg px-2 transition-colors duration-200">
+                <div className="flex items-start gap-3 py-3 hover:bg-blue-50/50 rounded-lg px-3 transition-colors duration-200">
                   <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-3">
@@ -95,7 +88,7 @@ export const ScholarshipSubject = ({ data }) => (
             * Some admission rates may vary by year and application strength
           </motion.p>
         </div>
-      </motion.div>
+      </div>
     }
   />
 );
