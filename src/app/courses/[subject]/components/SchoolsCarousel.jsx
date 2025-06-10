@@ -38,7 +38,7 @@ export default function SchoolsCarousel({ schools, desc }) {
               <div className="bg-white p-4 rounded-lg shadow-sm text-center border border-gray-200 h-full flex flex-col items-center justify-center">
                 <div className="relative w-32 h-32 mb-2 mx-auto">
                   <Image
-                    src={`/courses/${school.image}`}
+                    src={`/courses/schools/${school.image}`}
                     alt={school.name}
                     fill
                     sizes="(max-width: 768px) 128px, 192px"

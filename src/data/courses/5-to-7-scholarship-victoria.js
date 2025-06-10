@@ -69,7 +69,7 @@ const courseData = {
         "Haileybury College",
         "Caulfield Grammar",
         "Huntingtower",
-        "Lauriston Grils School",
+        "Lauriston Girls' School",
       ],
       extraDescription: "这是在学校logo的下方的额外描述",
     },

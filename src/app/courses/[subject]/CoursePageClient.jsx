@@ -30,14 +30,50 @@ import {
 } from "lucide-react";
 
 const SCHOOL_IMAGES = [
-  { name: "Scotch College", image: "school_SC.png" },
-  { name: "Presbyterian Ladies' College", image: "school_PLC.png" },
-  { name: "Melbourne Grammar", image: "school_MGS.png" },
-  { name: "Trinity Grammar", image: "school_TGS.jpg" },
-  { name: "Caulfield Grammar", image: "school_CGS.png" },
-  { name: "Yarra Valley Grammar", image: "school_YVG.jpg" },
-  { name: "Wesley College", image: "school_WC.jpg" },
-  { name: "Korowa Anglican Girls' School", image: "school_KAGS.jpg" },
+  { name: "Balwyn High", image: "Balwyn high.png" },
+  { name: "Balwyn High School", image: "Balwyn high.png" },
+
+  { name: "Brighton Grammar", image: "brighton grammar.jpg" },
+  { name: "Camberwell High School", image: "camberwell high.jpg" },
+  { name: "Camberwell Grammar", image: "camberwell grammar.png" },
+  { name: "Camberwell Grammar School", image: "camberwell grammar.png" },
+
+  { name: "Carey Baptist Grammar School", image: "carey.png" },
+
+  { name: "Caulfield Grammar", image: "caulfield.jpg" },
+  { name: "East Doncaster Secondary College", image: "edsc-colour.png" },
+  { name: "Fintona Girls' School", image: "fintona.jpg" },
+  { name: "Glen Waverley Secondary College", image: "glen waverley sc.jpg" },
+  { name: "Haileybury", image: "Haileybury.png" },
+  { name: "Haileybury College", image: "Haileybury.png" },
+  { name: "Huntingtower", image: "hunting-tower.png" },
+  { name: "Kingswood College", image: "kingswood.png" },
+  { name: "Korowa Anglican Girls' School", image: "korowa.jpg" },
+  { name: "Lauriston Girls' School", image: "lauriston.png" },
+  { name: "The Mac.Robertson Girls' High School", image: "MacRob.png" },
+  { name: "McKinnon Secondary College", image: "mckinnon.jpg" },
+  { name: "Melbourne Girls Grammar", image: "melb girls grammar.jpg" },
+  { name: "Melbourne Grammar", image: "melb grammar.jpg" },
+  { name: "Melbourne High School", image: "melb high.png" },
+  { name: "Mentone Grammar", image: "mentone grammar.jpg" },
+  { name: "Methodist Ladies' College", image: "methodist ladies college.jpg" },
+  { name: "Nossal High School", image: "nossal high.jpg" },
+  { name: "Presbyterian Ladies' College", image: "plc.jpg" },
+  { name: "Ruyton Girls' School", image: "ruyton.jpg" },
+  { name: "Scotch College", image: "scotch.jpg" },
+  { name: "Suzanne Cory High School", image: "suzanne.png" },
+  { name: "Trinity Grammar", image: "trinity.jpg" },
+  { name: "Viewbank College", image: "viewbankcollege.png" },
+  { name: "Vermont Secondary College", image: "VSC.png" },
+
+  {
+    name: "Waverley Christian College",
+    image: "waverley-christian-college-melbourne-australia.jpg",
+  },
+  { name: "Wesley College", image: "wesley.jpg" },
+  { name: "Yarra Valley Grammar", image: "yarra.jpg" },
+
+  { name: "Nossal High School", image: "nossal.jpg" },
 ];
 
 export default function CoursePageClient({ localizedData }) {
@@ -81,10 +117,11 @@ export default function CoursePageClient({ localizedData }) {
   const hasContent = (data) => {
     if (!data) return false;
     if (Array.isArray(data)) return data.length > 0;
-    if (typeof data === 'object') {
-      return Object.values(data).some(value => {
+    if (typeof data === "object") {
+      return Object.values(data).some((value) => {
         if (Array.isArray(value)) return value.length > 0;
-        if (typeof value === 'object' && value !== null) return hasContent(value);
+        if (typeof value === "object" && value !== null)
+          return hasContent(value);
         return Boolean(value);
       });
     }
@@ -98,10 +135,18 @@ export default function CoursePageClient({ localizedData }) {
         <div className="max-w-7xl mx-auto px-4">
           {/* 主标题 */}
           <h1 className="text-6xl font-bold text-center mb-16">
-            <span className="bg-clip-text text-transparent" style={{ backgroundImage: 'linear-gradient(135deg, #285ea9, #1e4a87)' }}>
+            <span
+              className="bg-clip-text text-transparent"
+              style={{
+                backgroundImage: "linear-gradient(135deg, #285ea9, #1e4a87)",
+              }}
+            >
               {course.title}
             </span>
-            <div className="mt-4 h-1.5 w-32 mx-auto rounded-full" style={{ background: 'linear-gradient(90deg, #285ea9, #1e4a87)' }} />
+            <div
+              className="mt-4 h-1.5 w-32 mx-auto rounded-full"
+              style={{ background: "linear-gradient(90deg, #285ea9, #1e4a87)" }}
+            />
           </h1>
 
           {/* 当前年度成就 */}
@@ -185,7 +230,7 @@ export default function CoursePageClient({ localizedData }) {
             </div>
           )}
         </div>
-        
+
         {/* Partner Schools */}
         {hasContent(course.heroSection?.schoolLogos) && (
           <div className="mt-16">
@@ -228,7 +273,10 @@ export default function CoursePageClient({ localizedData }) {
             {hasContent(course.courseDescription.courseOverview) && (
               <div className="space-y-12" data-aos="fade-up">
                 {/* 前置描述 - 卡片式设计 */}
-                {hasContent(course.courseDescription.courseOverview.descriptionBeforeFeature) && (
+                {hasContent(
+                  course.courseDescription.courseOverview
+                    .descriptionBeforeFeature
+                ) && (
                   <div className="grid gap-8">
                     {course.courseDescription.courseOverview.descriptionBeforeFeature.map(
                       (paragraph, index) => (
@@ -246,7 +294,9 @@ export default function CoursePageClient({ localizedData }) {
                 )}
 
                 {/* 关键特性 */}
-                {hasContent(course.courseDescription.courseOverview.features) && (
+                {hasContent(
+                  course.courseDescription.courseOverview.features
+                ) && (
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 blur-3xl opacity-30" />
                     <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-100/50">
@@ -291,7 +341,10 @@ export default function CoursePageClient({ localizedData }) {
                 )}
 
                 {/* 后置描述 */}
-                {hasContent(course.courseDescription.courseOverview.descriptionAfterFeature) && (
+                {hasContent(
+                  course.courseDescription.courseOverview
+                    .descriptionAfterFeature
+                ) && (
                   <div className="grid gap-8 relative">
                     {course.courseDescription.courseOverview.descriptionAfterFeature.map(
                       (paragraph, index) => (
@@ -315,7 +368,10 @@ export default function CoursePageClient({ localizedData }) {
 
             {/* 主段落 */}
             {course.courseDescription.paragraph && (
-              <div className="mt-16 max-w-4xl mx-auto text-center" data-aos="fade-up">
+              <div
+                className="mt-16 max-w-4xl mx-auto text-center"
+                data-aos="fade-up"
+              >
                 <div className="relative inline-block">
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-primary/5 transform -rotate-2 rounded-xl" />
                   <p className="relative text-xl text-gray-800 leading-relaxed font-medium px-8 py-6">
@@ -329,21 +385,107 @@ export default function CoursePageClient({ localizedData }) {
       )}
 
       {/* Core Features Section - 支持重复显示 */}
-      {Array.isArray(course.coreFeatures) ? (
-        // 如果是数组，渲染多个核心特性部分
-        course.coreFeatures.map((coreFeature, sectionIndex) => (
-          hasContent(coreFeature?.sections) && (
-            <section key={sectionIndex} className="my-16 border-b border-gray-200">
+      {Array.isArray(course.coreFeatures)
+        ? // 如果是数组，渲染多个核心特性部分
+          course.coreFeatures.map(
+            (coreFeature, sectionIndex) =>
+              hasContent(coreFeature?.sections) && (
+                <section
+                  key={sectionIndex}
+                  className="my-16 border-b border-gray-200"
+                >
+                  <div className="max-w-7xl mx-auto">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+                      {coreFeature.title || "Core Highlights"}
+                    </h2>
+                    <p className="text-2xl text-gray-700 mb-12 text-center">
+                      {coreFeature.subtitle ||
+                        `Key Features of Austin Education's ${course.title}:`}
+                    </p>
+
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                      {coreFeature.sections.map((section, i) => (
+                        <div
+                          key={i}
+                          className={`bg-white p-8 rounded-2xl shadow-lg ${
+                            section.paragraph
+                              ? "lg:col-span-2"
+                              : "lg:col-span-1"
+                          }`}
+                        >
+                          <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                            {section.title}
+                          </h3>
+                          <div
+                            className={`${
+                              section.paragraph
+                                ? "grid lg:grid-cols-2 gap-8"
+                                : ""
+                            }`}
+                          >
+                            <div>
+                              {hasContent(section.list) && (
+                                <ul className="space-y-4">
+                                  {section.list.map((item, j) => (
+                                    <li
+                                      key={j}
+                                      className="flex items-start text-gray-700"
+                                    >
+                                      <svg
+                                        className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0"
+                                        fill="currentColor"
+                                        viewBox="0 0 20 20"
+                                      >
+                                        <path
+                                          fillRule="evenodd"
+                                          d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                          clipRule="evenodd"
+                                        />
+                                      </svg>
+                                      <span className="text-lg">{item}</span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
+
+                            {section.paragraph && (
+                              <div className="mt-6 lg:mt-0">
+                                <p className="text-gray-600 text-lg leading-relaxed">
+                                  {section.paragraph}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* Extra Description */}
+                    {coreFeature.extraDescription && (
+                      <div className="mt-12 text-left">
+                        <p className="text-lg text-gray-700 mb-4">
+                          {coreFeature.extraDescription}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </section>
+              )
+          )
+        : // 如果不是数组，按原来的方式渲染
+          hasContent(course.coreFeatures?.sections) && (
+            <section className="my-16 border-b border-gray-200">
               <div className="max-w-7xl mx-auto">
                 <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
-                  {coreFeature.title || "Core Highlights"}
+                  Core Highlights
                 </h2>
                 <p className="text-2xl text-gray-700 mb-12 text-center">
-                  {coreFeature.subtitle || `Key Features of Austin Education's ${course.title}:`}
+                  Key Features of Austin Education&apos;s {course.title}:
                 </p>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                  {coreFeature.sections.map((section, i) => (
+                  {course.coreFeatures.sections.map((section, i) => (
                     <div
                       key={i}
                       className={`bg-white p-8 rounded-2xl shadow-lg ${
@@ -395,97 +537,18 @@ export default function CoursePageClient({ localizedData }) {
                     </div>
                   ))}
                 </div>
-                
+
                 {/* Extra Description */}
-                {coreFeature.extraDescription && (
+                {course.coreFeatures?.extraDescription && (
                   <div className="mt-12 text-left">
                     <p className="text-lg text-gray-700 mb-4">
-                      {coreFeature.extraDescription}
+                      {course.coreFeatures.extraDescription}
                     </p>
                   </div>
                 )}
               </div>
             </section>
-          )
-        ))
-      ) : (
-        // 如果不是数组，按原来的方式渲染
-        hasContent(course.coreFeatures?.sections) && (
-          <section className="my-16 border-b border-gray-200">
-            <div className="max-w-7xl mx-auto">
-              <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
-                Core Highlights
-              </h2>
-              <p className="text-2xl text-gray-700 mb-12 text-center">
-                Key Features of Austin Education&apos;s {course.title}:
-              </p>
-
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {course.coreFeatures.sections.map((section, i) => (
-                  <div
-                    key={i}
-                    className={`bg-white p-8 rounded-2xl shadow-lg ${
-                      section.paragraph ? "lg:col-span-2" : "lg:col-span-1"
-                    }`}
-                  >
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                      {section.title}
-                    </h3>
-                    <div
-                      className={`${
-                        section.paragraph ? "grid lg:grid-cols-2 gap-8" : ""
-                      }`}
-                    >
-                      <div>
-                        {hasContent(section.list) && (
-                          <ul className="space-y-4">
-                            {section.list.map((item, j) => (
-                              <li
-                                key={j}
-                                className="flex items-start text-gray-700"
-                              >
-                                <svg
-                                  className="w-5 h-5 text-primary mr-3 mt-1 flex-shrink-0"
-                                  fill="currentColor"
-                                  viewBox="0 0 20 20"
-                                >
-                                  <path
-                                    fillRule="evenodd"
-                                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                                    clipRule="evenodd"
-                                  />
-                                </svg>
-                                <span className="text-lg">{item}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        )}
-                      </div>
-
-                      {section.paragraph && (
-                        <div className="mt-6 lg:mt-0">
-                          <p className="text-gray-600 text-lg leading-relaxed">
-                            {section.paragraph}
-                          </p>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </div>
-              
-              {/* Extra Description */}
-              {course.coreFeatures?.extraDescription && (
-                <div className="mt-12 text-left">
-                  <p className="text-lg text-gray-700 mb-4">
-                    {course.coreFeatures.extraDescription}
-                  </p>
-                </div>
-              )}
-            </div>
-          </section>
-        )
-      )}
+          )}
 
       {/* Course Structure Overview Section */}
       {hasContent(course.courseStructureOverview?.overview) && (
@@ -526,19 +589,19 @@ export default function CoursePageClient({ localizedData }) {
       {/* Why Choose Us Section - 修改为横向图片布局 */}
       {hasContent(course.whyChooseUs) && (
         <section className="my-16 border-b border-gray-200">
-         {/* Part A - 重新设计为更有趣的布局 */}
+          {/* Part A - 重新设计为更有趣的布局 */}
           {hasContent(course.whyChooseUs.partA?.content) && (
             <div className="max-w-7xl mx-auto mb-20">
               <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
                 {course.whyChooseUs.partA.title}
               </h2>
-              
+
               {/* 主要图片 - 如果存在的话 */}
               {course.whyChooseUs.partA.image1 && (
                 <div className="relative mb-16 group">
                   {/* 背景装饰 */}
                   <div className="absolute -inset-4 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 rounded-3xl blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
+
                   <div className="relative flex justify-center">
                     <div className="rounded-3xl overflow-hidden shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300">
                       <Image
@@ -552,7 +615,7 @@ export default function CoursePageClient({ localizedData }) {
                       <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     </div>
                   </div>
-                  
+
                   {/* 装饰性元素 */}
                   <div className="absolute -top-8 -right-8 w-24 h-24 bg-primary/10 rounded-full blur-xl"></div>
                   <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-primary/15 rounded-full blur-lg"></div>
@@ -562,10 +625,10 @@ export default function CoursePageClient({ localizedData }) {
               {/* 内容卡片 - 交错布局 */}
               <div className="space-y-16">
                 {course.whyChooseUs.partA.content.map((item, i) => (
-                  <div 
-                    key={i} 
+                  <div
+                    key={i}
                     className={`flex flex-col lg:flex-row items-center gap-12 ${
-                      i % 2 === 1 ? 'lg:flex-row-reverse' : ''
+                      i % 2 === 1 ? "lg:flex-row-reverse" : ""
                     }`}
                   >
                     {/* 内容区域 */}
@@ -577,7 +640,7 @@ export default function CoursePageClient({ localizedData }) {
                         </div>
                         <div className="h-1 flex-1 bg-gradient-to-r from-primary/30 to-transparent rounded-full"></div>
                       </div>
-                      
+
                       {/* 标题和内容 */}
                       <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100/50">
                         <h3 className="text-3xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
@@ -586,12 +649,16 @@ export default function CoursePageClient({ localizedData }) {
                         <p className="text-lg text-gray-700 leading-relaxed">
                           {item.paragraph}
                         </p>
-                        
+
                         {/* 装饰性引号 */}
                         <div className="mt-6 flex justify-end">
                           <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
-                            <svg className="w-4 h-4 text-primary" fill="currentColor" viewBox="0 0 24 24">
-                              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z"/>
+                            <svg
+                              className="w-4 h-4 text-primary"
+                              fill="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
                             </svg>
                           </div>
                         </div>
@@ -605,32 +672,68 @@ export default function CoursePageClient({ localizedData }) {
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full"></div>
                         <div className="absolute inset-4 bg-gradient-to-br from-primary/15 to-primary/5 rounded-full"></div>
                         <div className="absolute inset-8 bg-gradient-to-br from-primary/10 to-transparent rounded-full"></div>
-                        
+
                         {/* 中心图标 */}
                         <div className="absolute inset-0 flex items-center justify-center">
                           <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
                             {i === 0 && (
-                              <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                              <svg
+                                className="w-12 h-12"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="1.5"
+                                  d="M13 10V3L4 14h7v7l9-11h-7z"
+                                />
                               </svg>
                             )}
                             {i === 1 && (
-                              <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                              <svg
+                                className="w-12 h-12"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="1.5"
+                                  d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                                />
                               </svg>
                             )}
                             {i >= 2 && (
-                              <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                              <svg
+                                className="w-12 h-12"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path
+                                  strokeLinecap="round"
+                                  strokeLinejoin="round"
+                                  strokeWidth="1.5"
+                                  d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                                />
                               </svg>
                             )}
                           </div>
                         </div>
-                        
+
                         {/* 浮动装饰点 */}
                         <div className="absolute top-8 right-12 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                        <div className="absolute bottom-12 left-8 w-2 h-2 bg-primary/60 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                        <div className="absolute top-16 left-16 w-4 h-4 bg-primary/40 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                        <div
+                          className="absolute bottom-12 left-8 w-2 h-2 bg-primary/60 rounded-full animate-pulse"
+                          style={{ animationDelay: "0.5s" }}
+                        ></div>
+                        <div
+                          className="absolute top-16 left-16 w-4 h-4 bg-primary/40 rounded-full animate-pulse"
+                          style={{ animationDelay: "1s" }}
+                        ></div>
                       </div>
                     </div>
                   </div>
@@ -644,17 +747,22 @@ export default function CoursePageClient({ localizedData }) {
                   <div className="text-center mb-12">
                     <div className="inline-flex items-center gap-4 px-6 py-3 bg-primary/10 rounded-full">
                       <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                      <span className="text-primary font-semibold">Our Process</span>
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                      <span className="text-primary font-semibold">
+                        Our Process
+                      </span>
+                      <div
+                        className="w-2 h-2 bg-primary rounded-full animate-pulse"
+                        style={{ animationDelay: "0.5s" }}
+                      ></div>
                     </div>
                   </div>
-                  
+
                   {/* 图片容器 */}
                   <div className="relative group">
                     {/* 多层背景效果 */}
                     <div className="absolute -inset-8 bg-gradient-to-r from-transparent via-primary/10 to-transparent rounded-3xl blur-2xl"></div>
                     <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl"></div>
-                    
+
                     <div className="relative flex justify-center transform group-hover:scale-105 transition-transform duration-500">
                       <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                         <Image
@@ -666,7 +774,7 @@ export default function CoursePageClient({ localizedData }) {
                         />
                       </div>
                     </div>
-                    
+
                     {/* 角落装饰 */}
                     <div className="absolute -top-6 -left-6 w-12 h-12 bg-primary/20 rounded-full blur-md"></div>
                     <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-primary/15 rounded-full blur-lg"></div>
@@ -852,76 +960,200 @@ export default function CoursePageClient({ localizedData }) {
       )}
 
       {/* Custom Course Feature - 支持重复显示 */}
-      {Array.isArray(course.customCourseFeature) ? (
-        // 如果是数组，渲染多个自定义课程特性部分
-        course.customCourseFeature.map((customFeature, sectionIndex) => (
-          hasContent(customFeature) && (
-            <section key={sectionIndex} className="my-16">
+      {Array.isArray(course.customCourseFeature)
+        ? // 如果是数组，渲染多个自定义课程特性部分
+          course.customCourseFeature.map(
+            (customFeature, sectionIndex) =>
+              hasContent(customFeature) && (
+                <section key={sectionIndex} className="my-16">
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+                      {customFeature.title}
+                    </h2>
+
+                    {hasContent(customFeature.description) &&
+                      hasContent(customFeature.images) && (
+                        <div className="grid grid-cols-3 grid-rows-2 gap-6 mb-16 min-h-[600px]">
+                          {/* 描述段落1+2 */}
+                          <div className="col-span-1 row-span-1 p-6">
+                            <p className="text-sm text-gray-700 leading-relaxed">
+                              {customFeature.description[0]}
+                            </p>
+                            {customFeature.description[1] && (
+                              <p className="text-sm text-gray-700 leading-relaxed mt-4">
+                                {customFeature.description[1]}
+                              </p>
+                            )}
+                          </div>
+
+                          {/* 图片1 */}
+                          {customFeature.images[0] && (
+                            <div className="col-span-1 row-span-1 relative rounded-xl overflow-hidden shadow-lg">
+                              <Image
+                                src={customFeature.images[0]}
+                                alt="Step 1"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                              />
+                            </div>
+                          )}
+
+                          {/* 图片2（跨两行） */}
+                          {customFeature.images[1] && (
+                            <div className="col-span-1 row-span-2 relative rounded-xl overflow-hidden shadow-lg">
+                              <Image
+                                src={customFeature.images[1]}
+                                alt="Process Overview"
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 768px) 100vw, 33vw"
+                              />
+                            </div>
+                          )}
+
+                          {/* 描述段落3+4（合并单元格） */}
+                          <div className="col-span-2 row-span-1 p-6 flex gap-6">
+                            <div className="flex-1">
+                              {customFeature.description[2] && (
+                                <p className="text-sm text-gray-700 leading-relaxed">
+                                  {customFeature.description[2]}
+                                </p>
+                              )}
+                              {customFeature.description[3] && (
+                                <p className="text-sm text-gray-700 leading-relaxed mt-4">
+                                  {customFeature.description[3]}
+                                </p>
+                              )}
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
+                    {/* Custom Course Feature - 步骤流程 */}
+                    {hasContent(customFeature.steps) && (
+                      <div className="max-w-4xl mx-auto">
+                        <div className="relative space-y-12">
+                          {/* 时间线竖线 */}
+                          <div
+                            className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"
+                            aria-hidden="true"
+                          ></div>
+
+                          {customFeature.steps.map((step) => (
+                            <div
+                              key={step.step}
+                              className="group relative flex gap-6 transition-transform duration-300 hover:scale-[1.02]"
+                            >
+                              {/* 步骤指示器 */}
+                              <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-lg font-bold text-white shadow-lg transition-all duration-300 group-hover:scale-110">
+                                {step.step}
+                                {/* 微光效果 */}
+                                <div className="absolute inset-0 rounded-full bg-white/10 mix-blend-overlay"></div>
+                              </div>
+
+                              {/* 内容卡片 */}
+                              <div className="flex-1 rounded-xl border border-gray-100 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg">
+                                <div className="flex items-start gap-4">
+                                  <div className="flex-1">
+                                    <h3 className="text-xl font-semibold text-gray-900">
+                                      {step.title}
+                                    </h3>
+                                    <p className="mt-2 text-gray-600 leading-relaxed">
+                                      {step.content}
+                                    </p>
+                                  </div>
+                                  {/* 动态箭头 */}
+                                  <ArrowRight className="h-6 w-6 text-gray-400 transition-transform duration-300 group-hover:translate-x-1" />
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* 额外描述段落 */}
+                    {customFeature.extraDescription && (
+                      <div className="mt-12 text-left">
+                        <p className="text-lg text-gray-700 mb-4">
+                          {customFeature.extraDescription}
+                        </p>
+                      </div>
+                    )}
+                  </div>
+                </section>
+              )
+          )
+        : // 如果不是数组，按原来的方式渲染
+          hasContent(course.customCourseFeature) && (
+            <section className="my-16">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-                  {customFeature.title}
+                  {course.customCourseFeature.title}
                 </h2>
-                
-                {hasContent(customFeature.description) && hasContent(customFeature.images) && (
-                  <div className="grid grid-cols-3 grid-rows-2 gap-6 mb-16 min-h-[600px]">
-                    {/* 描述段落1+2 */}
-                    <div className="col-span-1 row-span-1 p-6">
-                      <p className="text-sm text-gray-700 leading-relaxed">
-                        {customFeature.description[0]}
-                      </p>
-                      {customFeature.description[1] && (
-                        <p className="text-sm text-gray-700 leading-relaxed mt-4">
-                          {customFeature.description[1]}
+
+                {hasContent(course.customCourseFeature.description) &&
+                  hasContent(course.customCourseFeature.images) && (
+                    <div className="grid grid-cols-3 grid-rows-2 gap-6 mb-16 min-h-[600px]">
+                      {/* 描述段落1+2 */}
+                      <div className="col-span-1 row-span-1 p-6">
+                        <p className="text-sm text-gray-700 leading-relaxed">
+                          {course.customCourseFeature.description[0]}
                         </p>
-                      )}
-                    </div>
-
-                    {/* 图片1 */}
-                    {customFeature.images[0] && (
-                      <div className="col-span-1 row-span-1 relative rounded-xl overflow-hidden shadow-lg">
-                        <Image
-                          src={customFeature.images[0]}
-                          alt="Step 1"
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                      </div>
-                    )}
-
-                    {/* 图片2（跨两行） */}
-                    {customFeature.images[1] && (
-                      <div className="col-span-1 row-span-2 relative rounded-xl overflow-hidden shadow-lg">
-                        <Image
-                          src={customFeature.images[1]}
-                          alt="Process Overview"
-                          fill
-                          className="object-cover"
-                          sizes="(max-width: 768px) 100vw, 33vw"
-                        />
-                      </div>
-                    )}
-
-                    {/* 描述段落3+4（合并单元格） */}
-                    <div className="col-span-2 row-span-1 p-6 flex gap-6">
-                      <div className="flex-1">
-                        {customFeature.description[2] && (
-                          <p className="text-sm text-gray-700 leading-relaxed">
-                            {customFeature.description[2]}
-                          </p>
-                        )}
-                        {customFeature.description[3] && (
+                        {course.customCourseFeature.description[1] && (
                           <p className="text-sm text-gray-700 leading-relaxed mt-4">
-                            {customFeature.description[3]}
+                            {course.customCourseFeature.description[1]}
                           </p>
                         )}
                       </div>
+
+                      {/* 图片1 */}
+                      {course.customCourseFeature.images[0] && (
+                        <div className="col-span-1 row-span-1 relative rounded-xl overflow-hidden shadow-lg">
+                          <Image
+                            src={course.customCourseFeature.images[0]}
+                            alt="Step 1"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
+                        </div>
+                      )}
+
+                      {/* 图片2（跨两行） */}
+                      {course.customCourseFeature.images[1] && (
+                        <div className="col-span-1 row-span-2 relative rounded-xl overflow-hidden shadow-lg">
+                          <Image
+                            src={course.customCourseFeature.images[1]}
+                            alt="Process Overview"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
+                        </div>
+                      )}
+
+                      {/* 描述段落3+4（合并单元格） */}
+                      <div className="col-span-2 row-span-1 p-6 flex gap-6">
+                        <div className="flex-1">
+                          {course.customCourseFeature.description[2] && (
+                            <p className="text-sm text-gray-700 leading-relaxed">
+                              {course.customCourseFeature.description[2]}
+                            </p>
+                          )}
+                          {course.customCourseFeature.description[3] && (
+                            <p className="text-sm text-gray-700 leading-relaxed mt-4">
+                              {course.customCourseFeature.description[3]}
+                            </p>
+                          )}
+                        </div>
+                      </div>
                     </div>
-                  </div>
-                )}
+                  )}
 
                 {/* Custom Course Feature - 步骤流程 */}
-                {hasContent(customFeature.steps) && (
+                {hasContent(course.customCourseFeature.steps) && (
                   <div className="max-w-4xl mx-auto">
                     <div className="relative space-y-12">
                       {/* 时间线竖线 */}
@@ -930,7 +1162,7 @@ export default function CoursePageClient({ localizedData }) {
                         aria-hidden="true"
                       ></div>
 
-                      {customFeature.steps.map((step) => (
+                      {course.customCourseFeature.steps.map((step) => (
                         <div
                           key={step.step}
                           className="group relative flex gap-6 transition-transform duration-300 hover:scale-[1.02]"
@@ -962,141 +1194,18 @@ export default function CoursePageClient({ localizedData }) {
                     </div>
                   </div>
                 )}
-                
+
                 {/* 额外描述段落 */}
-                {customFeature.extraDescription && (
+                {course.customCourseFeature.extraDescription && (
                   <div className="mt-12 text-left">
                     <p className="text-lg text-gray-700 mb-4">
-                      {customFeature.extraDescription}
+                      {course.customCourseFeature.extraDescription}
                     </p>
                   </div>
                 )}
               </div>
             </section>
-          )
-        ))
-      ) : (
-        // 如果不是数组，按原来的方式渲染
-        hasContent(course.customCourseFeature) && (
-          <section className="my-16">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
-                {course.customCourseFeature.title}
-              </h2>
-              
-              {hasContent(course.customCourseFeature.description) && hasContent(course.customCourseFeature.images) && (
-                <div className="grid grid-cols-3 grid-rows-2 gap-6 mb-16 min-h-[600px]">
-                  {/* 描述段落1+2 */}
-                  <div className="col-span-1 row-span-1 p-6">
-                    <p className="text-sm text-gray-700 leading-relaxed">
-                      {course.customCourseFeature.description[0]}
-                    </p>
-                    {course.customCourseFeature.description[1] && (
-                      <p className="text-sm text-gray-700 leading-relaxed mt-4">
-                        {course.customCourseFeature.description[1]}
-                      </p>
-                    )}
-                  </div>
-
-                  {/* 图片1 */}
-                  {course.customCourseFeature.images[0] && (
-                    <div className="col-span-1 row-span-1 relative rounded-xl overflow-hidden shadow-lg">
-                      <Image
-                        src={course.customCourseFeature.images[0]}
-                        alt="Step 1"
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                    </div>
-                  )}
-
-                  {/* 图片2（跨两行） */}
-                  {course.customCourseFeature.images[1] && (
-                    <div className="col-span-1 row-span-2 relative rounded-xl overflow-hidden shadow-lg">
-                      <Image
-                        src={course.customCourseFeature.images[1]}
-                        alt="Process Overview"
-                        fill
-                        className="object-cover"
-                        sizes="(max-width: 768px) 100vw, 33vw"
-                      />
-                    </div>
-                  )}
-
-                  {/* 描述段落3+4（合并单元格） */}
-                  <div className="col-span-2 row-span-1 p-6 flex gap-6">
-                    <div className="flex-1">
-                      {course.customCourseFeature.description[2] && (
-                        <p className="text-sm text-gray-700 leading-relaxed">
-                          {course.customCourseFeature.description[2]}
-                        </p>
-                      )}
-                      {course.customCourseFeature.description[3] && (
-                        <p className="text-sm text-gray-700 leading-relaxed mt-4">
-                          {course.customCourseFeature.description[3]}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Custom Course Feature - 步骤流程 */}
-              {hasContent(course.customCourseFeature.steps) && (
-                <div className="max-w-4xl mx-auto">
-                  <div className="relative space-y-12">
-                    {/* 时间线竖线 */}
-                    <div
-                      className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"
-                      aria-hidden="true"
-                    ></div>
-
-                    {course.customCourseFeature.steps.map((step) => (
-                      <div
-                        key={step.step}
-                        className="group relative flex gap-6 transition-transform duration-300 hover:scale-[1.02]"
-                      >
-                        {/* 步骤指示器 */}
-                        <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-lg font-bold text-white shadow-lg transition-all duration-300 group-hover:scale-110">
-                          {step.step}
-                          {/* 微光效果 */}
-                          <div className="absolute inset-0 rounded-full bg-white/10 mix-blend-overlay"></div>
-                        </div>
-
-                        {/* 内容卡片 */}
-                        <div className="flex-1 rounded-xl border border-gray-100 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg">
-                          <div className="flex items-start gap-4">
-                            <div className="flex-1">
-                              <h3 className="text-xl font-semibold text-gray-900">
-                                {step.title}
-                              </h3>
-                              <p className="mt-2 text-gray-600 leading-relaxed">
-                                {step.content}
-                              </p>
-                            </div>
-                            {/* 动态箭头 */}
-                            <ArrowRight className="h-6 w-6 text-gray-400 transition-transform duration-300 group-hover:translate-x-1" />
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-              
-              {/* 额外描述段落 */}
-              {course.customCourseFeature.extraDescription && (
-                <div className="mt-12 text-left">
-                  <p className="text-lg text-gray-700 mb-4">
-                    {course.customCourseFeature.extraDescription}
-                  </p>
-                </div>
-              )}
-            </div>
-          </section>
-        )
-      )}
+          )}
 
       {/* Resources Section */}
       {hasContent(course.resources?.packages) && (
@@ -1122,9 +1231,7 @@ export default function CoursePageClient({ localizedData }) {
 
                   {/* 文字内容 */}
                   <div className="flex-1">
-                    <h3 className="font-semibold text-gray-900">
-                      {pkg.title}
-                    </h3>
+                    <h3 className="font-semibold text-gray-900">{pkg.title}</h3>
                     {pkg.desc && (
                       <p className="mt-1 text-sm text-gray-500 font-medium">
                         {pkg.desc}
