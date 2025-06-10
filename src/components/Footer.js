@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { LangContext } from "@/app/layout";
+import Link from "next/link";
 
 const content = {
   en: {
@@ -157,7 +158,12 @@ export default function Footer() {
           {locale.copyright}
         </div>
         <div className="mt-8 text-center text-sm text-gray-200">
-          {locale.terms}
+          <Link 
+            href="/terms" 
+            className="text-gray-200 hover:text-white hover:underline transition-colors duration-200"
+          >
+            {locale.terms}
+          </Link>
         </div>
       </div>
     </footer>

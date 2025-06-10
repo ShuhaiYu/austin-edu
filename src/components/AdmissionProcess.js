@@ -6,6 +6,8 @@ import { LangContext } from "@/app/layout";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { homeContent } from "@/app/content";
+import { Button } from "./ui/button";
+import { SquareArrowOutUpRight } from "lucide-react";
 
 export default function AdmissionProcess() {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -31,6 +33,14 @@ export default function AdmissionProcess() {
       { dot: "bg-[#dfb67e]", border: "border-[#dfb67e]" },
     ];
     return colors[partIndex % 3];
+  };
+
+  // 处理按钮点击事件
+  const handleButtonClick = (buttonLink) => {
+    // 这里可以添加按钮点击逻辑，比如跳转到对应页面
+    if (buttonLink) {
+      window.location.href = buttonLink;
+    }
   };
 
   return (
@@ -85,14 +95,28 @@ export default function AdmissionProcess() {
                     transition={{ duration: 0.2 }}
                     className="w-1/2 sticky top-1/4 self-start"
                   >
-                    <div className="bg-white shadow-2xl mr-8 p-2 sm:p-4 md:p-8 ">
-                      <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base">
+                    <div className="bg-white shadow-2xl mr-8 p-2 sm:p-4 md:p-8">
+                      {/* 小标题 - 移到左上方 */}
+                      <h3 className="text-gray-700 font-semibold text-sm md:text-lg mb-4">
+                        {currentStep.title}
+                      </h3>
+
+                      {/* 描述内容 */}
+                      <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base mb-8">
                         {currentStep.desc}
                       </p>
-                      <div className="flex items-center justify-end mt-8">
-                        <span className="text-gray-500 text-xs sm:text-sm md:text-base">
-                          {currentStep.title}
-                        </span>
+
+                      {/* 底部按钮 - 原小标题位置 */}
+                      <div className="flex items-center justify-end">
+                        <Button
+                          onClick={() =>
+                            handleButtonClick(currentStep.buttonLink || "#")
+                          }
+                          className={`inline-flex items-center px-4 py-2 text-xs sm:text-sm text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
+                        >
+                          {currentStep.buttonText || "Learn More"}
+                          <SquareArrowOutUpRight className="h-4 w-4" />
+                        </Button>
                       </div>
                     </div>
                   </motion.div>

@@ -25,11 +25,23 @@ import {
   Clock,
   Award,
   Calendar,
+  ChevronRight,
 } from "lucide-react";
 
 export const CourseContent = () => {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = coursesContent[lang].content;
+
+  // 箭头连接组件 - 支持 flex-grow
+  const ArrowConnection = () => (
+    <div className="flex items-center justify-center flex-grow px-8 relative z-30">
+      <div className="flex items-center justify-center w-full max-w-[200px]">
+        <div className="flex-grow h-[2px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
+        <ChevronRight className="w-5 h-5 text-blue-600 mx-2 drop-shadow-sm flex-shrink-0" />
+        <div className="flex-grow h-[2px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
+      </div>
+    </div>
+  );
 
   return (
     <section className="mb-16">
@@ -75,13 +87,13 @@ export const CourseContent = () => {
               <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200 relative">
                 {/* 序号标识 */}
                 <div className="absolute -top-2 -left-2 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg transform rotate-12">
-                  {String(index + 1).padStart(2, '0')}
+                  {String(index + 1).padStart(2, "0")}
                 </div>
-                
+
                 {/* 背景装饰圆圈 */}
                 <div className="absolute top-4 right-4 w-20 h-20 bg-primary/5 rounded-full" />
                 <div className="absolute top-8 right-8 w-12 h-12 bg-primary/10 rounded-full" />
-                
+
                 {/* 内容 */}
                 <div className="relative z-10 pt-4">
                   <h4 className="text-xl font-bold mb-2">{title}</h4>
@@ -95,35 +107,36 @@ export const CourseContent = () => {
 
       {/* 年级Tabs */}
       <Tabs defaultValue="y1-y6" className="mb-16">
-        {/* Tab导航带横线 */}
+        {/* Tab导航带箭头 */}
         <div className="relative mb-16">
-          {/* 蓝色横线 */}
-          <div className="absolute top-1/2 left-0 right-0 h-px bg-blue-500 transform -translate-y-1/2 z-0" />
-
-          <TabsList className="flex w-full bg-transparent p-0 h-auto justify-between">
+          <TabsList className="flex w-full bg-transparent p-0 h-auto justify-between items-center">
             {t.gradeTabs.map((tab, index) => (
-              <div
-                key={tab.value}
-                className="relative z-10 bg-background px-4" // 添加背景色覆盖横线
-              >
-                <TabsTrigger
-                  value={tab.value}
-                  className="relative data-[state=active]:text-primary data-[state=active]:border-none data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
-               text-lg 
-              min-w-[180px] mx-auto flex justify-center
-              /* 激活时启用伪元素 */
-    data-[state=active]:after:content-['']
-    data-[state=active]:after:absolute
-    data-[state=active]:after:left-0
-    data-[state=active]:after:right-0
-    data-[state=active]:after:-bottom-5
-    data-[state=active]:after:h-2
-    data-[state=active]:after:bg-primary
-                "
-                >
-                  {tab.label}
-                </TabsTrigger>
-              </div>
+              <>
+                <div key={tab.value} className="flex items-center flex-grow">
+                  {/* Tab 按钮 */}
+                  <div className="relative z-10 flex-shrink-0">
+                    <TabsTrigger
+                      value={tab.value}
+                      className="relative data-[state=active]:text-primary data-[state=active]:border-none data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
+                 text-lg 
+                min-w-[180px] mx-auto flex justify-center bg-background px-6
+                /* 激活时启用伪元素 */
+      data-[state=active]:after:content-['']
+      data-[state=active]:after:absolute
+      data-[state=active]:after:left-0
+      data-[state=active]:after:right-0
+      data-[state=active]:after:-bottom-5
+      data-[state=active]:after:h-2
+      data-[state=active]:after:bg-primary
+                  "
+                    >
+                      {tab.label}
+                    </TabsTrigger>
+                  </div>
+                </div>
+                {/* 箭头连接 - 不在最后一个tab后显示 */}
+                {index < t.gradeTabs.length - 1 && <ArrowConnection />}
+              </>
             ))}
           </TabsList>
         </div>
@@ -202,35 +215,36 @@ export const CourseContent = () => {
             ))}
           </TabsContent>
         ))}
-        {/* Tab导航带横线 */}
-        <div className="relative mb-16">
-          {/* 蓝色横线 */}
-          <div className="absolute top-1/2 left-0 right-0 h-px bg-blue-500 transform -translate-y-1/2 z-0" />
 
-          <TabsList className="flex w-full bg-transparent p-0 h-auto justify-between">
+        {/* 底部Tab导航带箭头 */}
+        <div className="relative mb-16">
+          <TabsList className="flex w-full bg-transparent p-0 h-auto justify-between items-center">
             {t.gradeTabs.map((tab, index) => (
-              <div
-                key={tab.value}
-                className="relative z-10 bg-background px-4" // 添加背景色覆盖横线
-              >
-                <TabsTrigger
-                  value={tab.value}
-                  className="relative data-[state=active]:text-primary data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
-               text-lg 
-              min-w-[180px] mx-auto flex justify-center
-              /* 激活时启用伪元素 */
-    data-[state=active]:after:content-['']
-    data-[state=active]:after:absolute
-    data-[state=active]:after:left-0
-    data-[state=active]:after:right-0
-    data-[state=active]:after:-top-5
-    data-[state=active]:after:h-2
-    data-[state=active]:after:bg-primary
-                "
-                >
-                  {tab.label}
-                </TabsTrigger>
-              </div>
+              <>
+                <div key={tab.value} className="flex items-center">
+                  {/* Tab 按钮 */}
+                  <div className="relative z-10 flex-shrink-0">
+                    <TabsTrigger
+                      value={tab.value}
+                      className="relative data-[state=active]:text-primary data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
+                 text-lg 
+                min-w-[180px] mx-auto flex justify-center bg-background px-6
+                /* 激活时启用伪元素 */
+      data-[state=active]:after:content-['']
+      data-[state=active]:after:absolute
+      data-[state=active]:after:left-0
+      data-[state=active]:after:right-0
+      data-[state=active]:after:-top-5
+      data-[state=active]:after:h-2
+      data-[state=active]:after:bg-primary
+                  "
+                    >
+                      {tab.label}
+                    </TabsTrigger>
+                  </div>
+                </div>
+                {index < t.gradeTabs.length - 1 && <ArrowConnection />}
+              </>
             ))}
           </TabsList>
         </div>
@@ -251,13 +265,13 @@ export const CourseContent = () => {
               <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200 relative">
                 {/* 序号标识 */}
                 <div className="absolute -top-2 -left-2 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg transform rotate-12">
-                  {String(index + 5).padStart(2, '0')}
+                  {String(index + 5).padStart(2, "0")}
                 </div>
-                
+
                 {/* 背景装饰圆圈 */}
                 <div className="absolute top-4 right-4 w-20 h-20 bg-primary/5 rounded-full" />
                 <div className="absolute top-8 right-8 w-12 h-12 bg-primary/10 rounded-full" />
-                
+
                 {/* 内容 */}
                 <div className="relative z-10 pt-4">
                   <h4 className="text-xl font-bold mb-2">{title}</h4>
