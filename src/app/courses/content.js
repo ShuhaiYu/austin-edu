@@ -1163,7 +1163,7 @@ export const coursesContent = {
               description:
                 "Regular progress reports and parent-teacher meetings provide insights into students’ learning progress, ensuring a supportive partnership in their education journey.",
               icon: "communication",
-              // image: "/courses/content/y1-6-5.png",
+              image: "/courses/content/y1-6-5.png",
             },
           ],
         },
@@ -1214,7 +1214,7 @@ export const coursesContent = {
               description:
                 "Regular academic reviews and discussions help families make informed decisions about subject selection and study strategies as students prepare for VCE.",
               icon: "communication",
-              // image: "/courses/content/y7-9-6.png",
+              image: "/courses/content/y7-9-6.png",
             },
           ],
         },
@@ -1229,7 +1229,7 @@ export const coursesContent = {
               description:
                 "Experienced teachers provide insights into subject choices based on students’ interests, strengths, and university aspirations, helping them build a clear academic pathway.",
               icon: "compass",
-              // image: "/courses/content/y10-12-1.png",
+              image: "/courses/content/y10-12-1.png",
             },
             {
               title: "Specialist Curriculum and Study Plans",
@@ -1250,7 +1250,7 @@ export const coursesContent = {
               description:
                 "Specialist teachers deliver in-depth lessons aligned with exam requirements, focusing on key topics to support learning progression.",
               icon: "users",
-              // image: "/courses/content/y10-12-4.png",
+              image: "/courses/content/y10-12-4.png",
             },
             {
               title: "Comprehensive Practice and Homework System",
@@ -1264,13 +1264,13 @@ export const coursesContent = {
               description:
                 "End-of-term ranking assessments, informed by data insights, help students evaluate their progress and refine their study strategies.",
               icon: "bar-chart-2",
-              // image: "/courses/content/y10-12-6.png",
+              image: "/courses/content/y10-12-6.png",
             },
             {
               title: "Structured SAC Preparation",
               description:
                 "Focused revision and targeted practice for school-based assessments help students build confidence and maintain strong results.",
-              // image: "/courses/content/y10-12-7.png",
+              image: "/courses/content/y10-12-7.png",
             },
             {
               title: "Mock Exams and Intensive Review",
@@ -1309,11 +1309,23 @@ export const coursesContent = {
             icon: "/courses/icons/team icon 3.svg",
           },
         ],
-        button: {
-          text: "Learn More About Our Teachers",
-          link: "/about-us",
-          fromColor: "from-blue-500",
-          toColor: "to-blue-700",
+        carousel: {
+          images: [
+            "/courses/carousel-teachers/1.png",
+            "/courses/carousel-teachers/2.png",
+            "/courses/carousel-teachers/3.png",
+            "/courses/carousel-teachers/4.png",
+            "/courses/carousel-teachers/5.png",
+            "/courses/carousel-teachers/6.png",
+            "/courses/carousel-teachers/7.png",
+            "/courses/carousel-teachers/8.png",
+            "/courses/carousel-teachers/9.png",
+            "/courses/carousel-teachers/10.png",
+            "/courses/carousel-teachers/11.png",
+            "/courses/carousel-teachers/12.png",
+            "/courses/carousel-teachers/13.png",
+            "/courses/carousel-teachers/14.png",
+          ],
         },
       },
       {
@@ -1375,13 +1387,16 @@ export const coursesContent = {
         ],
         carousel: {
           images: [
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
-            "https://placehold.co/600x400",
+            "/courses/carousel-1/1.png",
+            "/courses/carousel-1/2.png",
+            "/courses/carousel-1/3.png",
+            "/courses/carousel-1/4.png",
+            "/courses/carousel-1/5.png",
+            "/courses/carousel-1/6.png",
+            "/courses/carousel-1/7.png",
+            "/courses/carousel-1/8.png",
+            "/courses/carousel-1/9.png",
+            "/courses/carousel-1/10.png",
           ],
         },
       },
@@ -2583,7 +2598,7 @@ export const coursesContent = {
               description:
                 "成绩报告与家长会定期举行，帮助家长全面了解孩子的学习状态，紧密配合，优化学习规划。",
               icon: "communication",
-              // image: "/courses/content/y1-6-5.png",
+              image: "/courses/content/y1-6-5.png",
             },
           ],
         },
@@ -2633,7 +2648,7 @@ export const coursesContent = {
               description:
                 "通过成绩报告和家长会，密切跟进学生的学习状态，为即将到来的VCE阶段提前做好学科选择和学习规划。",
               icon: "communication",
-              // image: "/courses/content/y7-9-6.png",
+              image: "/courses/content/y7-9-6.png",
             },
           ],
         },
@@ -2648,7 +2663,7 @@ export const coursesContent = {
               description:
                 "专业教师根据学生的个人兴趣、学科优势和大学申请目标，制定最优的选课方案，为高分铺平道路。",
               icon: "compass",
-              // image: "/courses/content/y10-12-1.png",
+              image: "/courses/content/y10-12-1.png",
             },
             {
               title: "独家教纲与教学计划",
@@ -2669,7 +2684,7 @@ export const coursesContent = {
               description:
                 "VCE领域的顶级教育专家亲自授课，确保课堂内容更深入、更贴近考纲，同时高效覆盖考试必考点，显著提升学习效果。",
               icon: "users",
-              // image: "/courses/content/y10-12-4.png",
+              image: "/courses/content/y10-12-4.png",
             },
             {
               title: "深度刷题与作业系统",
@@ -2683,14 +2698,14 @@ export const coursesContent = {
               description:
                 "结合澳升十年大数据，帮助学生了解在全维州的大致排名，并及时调整学习策略，为高分目标做足准备。",
               icon: "bar-chart-2",
-              // image: "/courses/content/y10-12-6.png",
+              image: "/courses/content/y10-12-6.png",
             },
             {
               title: "SAC专项复习",
               description:
                 "针对VCE中每一个得分点，提供系统性复习与专项训练，确保学生在学校的考试中表现出色，稳步提升总分。",
               icon: "target",
-              // image: "/courses/content/y10-12-7.png",
+              image: "/courses/content/y10-12-7.png",
             },
             {
               title: "全真模考与冲刺课程",
@@ -2730,11 +2745,23 @@ export const coursesContent = {
             icon: "/courses/icons/team icon 3.svg",
           },
         ],
-        button: {
-          text: "了解我们的教师团队",
-          link: "/about-us",
-          fromColor: "from-blue-500",
-          toColor: "to-blue-700",
+        carousel: {
+          images: [
+            "/courses/carousel-teachers/1.png",
+            "/courses/carousel-teachers/2.png",
+            "/courses/carousel-teachers/3.png",
+            "/courses/carousel-teachers/4.png",
+            "/courses/carousel-teachers/5.png",
+            "/courses/carousel-teachers/6.png",
+            "/courses/carousel-teachers/7.png",
+            "/courses/carousel-teachers/8.png",
+            "/courses/carousel-teachers/9.png",
+            "/courses/carousel-teachers/10.png",
+            "/courses/carousel-teachers/11.png",
+            "/courses/carousel-teachers/12.png",
+            "/courses/carousel-teachers/13.png",
+            "/courses/carousel-teachers/14.png",
+          ],
         },
       },
       {
