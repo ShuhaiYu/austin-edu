@@ -40,6 +40,44 @@ const FormSchema = z.object({
   }),
 });
 
+// 格式化答案内容的函数
+const formatAnswer = (answer) => {
+  // 处理加粗文本 **text** -> <strong>text</strong>
+  let formatted = answer.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  
+  // 处理列表项 • item -> <li>item</li>
+  const lines = formatted.split('\n');
+  let inList = false;
+  let result = [];
+  
+  for (let line of lines) {
+    const trimmedLine = line.trim();
+    
+    if (trimmedLine.startsWith('•')) {
+      if (!inList) {
+        result.push('<ul class="list-disc list-inside space-y-2 mt-3">');
+        inList = true;
+      }
+      const listItem = trimmedLine.substring(1).trim();
+      result.push(`<li class="text-gray-700">${listItem}</li>`);
+    } else {
+      if (inList) {
+        result.push('</ul>');
+        inList = false;
+      }
+      if (trimmedLine) {
+        result.push(`<p class="text-gray-700 leading-relaxed">${trimmedLine}</p>`);
+      }
+    }
+  }
+  
+  if (inList) {
+    result.push('</ul>');
+  }
+  
+  return result.join('');
+};
+
 // 默认的通用内容
 const defaultContent = {
   en: {
@@ -126,7 +164,7 @@ export default function FAQ({
   // 使用传入的自定义内容或默认内容
   const title = customTitle || content.title;
   const description = customDescription || content.description;
-  const faqItems = customFaqItems[lang] || content.faqItems;
+  const faqItems = customFaqItems?.[lang] || content.faqItems;
 
   const form = useForm({
     resolver: zodResolver(FormSchema),
@@ -164,7 +202,7 @@ export default function FAQ({
           fill
           className="object-contain"
         />
-     </div>
+      </div>
       <div className="container flex flex-col gap-8 relative z-10">
         {/* 标题部分 */}
         <div className="text-center space-y-8">
@@ -184,7 +222,12 @@ export default function FAQ({
                     <span className="text-left font-semibold">{item.question}</span>
                   </AccordionTrigger>
                   <AccordionContent className="mt-2 px-6 py-4 bg-gray-50 rounded-lg">
-                    <p className="text-gray-700 leading-relaxed">{item.answer}</p>
+                    <div 
+                      className="space-y-3" 
+                      dangerouslySetInnerHTML={{ 
+                        __html: formatAnswer(item.answer) 
+                      }} 
+                    />
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -279,7 +322,7 @@ export default function FAQ({
                 </Form>
               </div>
             </div>
-            )}
+          )}
         </div>
       </div>
     </section>
