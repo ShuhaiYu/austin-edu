@@ -2,7 +2,7 @@
 "use client";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState, useRef } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -20,7 +20,7 @@ import {
 import { LangContext } from "@/app/layout";
 import { coursesContent } from "../content";
 
-export const CourseDetail = () => {
+export const CourseDetail = ({ searchFilter }) => {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const router = useRouter();
   const detail = coursesContent[lang].detail;
@@ -35,6 +35,62 @@ export const CourseDetail = () => {
   };
 
   const [selectedCourse, setSelectedCourse] = useState(getDefaultCourse());
+  const [openAccordions, setOpenAccordions] = useState([]);
+  const courseRefs = useRef({});
+
+  // 根据课程slug找到所属的分类
+  const findCourseCategory = (courseSlug) => {
+    for (const category of categories) {
+      for (const subcategory of category.subcategories) {
+        if (subcategory.courses.includes(courseSlug)) {
+          return {
+            category: category.title,
+            subcategory: subcategory.title,
+            course: courses[courseSlug]
+          };
+        }
+      }
+    }
+    return null;
+  };
+
+  // 处理搜索过滤器参数
+  useEffect(() => {
+    if (searchFilter && searchFilter.subject) {
+      const courseInfo = findCourseCategory(searchFilter.subject);
+      
+      if (courseInfo) {
+        // 设置选中的课程
+        setSelectedCourse(courseInfo.course);
+        
+        // 自动展开对应的Accordion
+        setOpenAccordions(prev => {
+          const newOpenAccordions = [...prev];
+          if (!newOpenAccordions.includes(courseInfo.category)) {
+            newOpenAccordions.push(courseInfo.category);
+          }
+          return newOpenAccordions;
+        });
+
+        // 延迟滚动，确保Accordion已经展开
+        setTimeout(() => {
+          const courseElement = courseRefs.current[searchFilter.subject];
+          if (courseElement) {
+            courseElement.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'center' 
+            });
+          }
+        }, 300);
+
+        // 显示搜索结果提示
+        const params = new URLSearchParams();
+        params.set('searchResult', 'true');
+        params.set('courseName', courseInfo.course.title);
+        window.history.replaceState({}, '', `/courses?${params.toString()}`);
+      }
+    }
+  }, [searchFilter]);
 
   // 提取跳转逻辑为独立函数
   const getNavigationPath = (course) => {
@@ -52,6 +108,11 @@ export const CourseDetail = () => {
     router.push(path);
   };
 
+  // 处理Accordion展开/收起
+  const handleAccordionChange = (value) => {
+    setOpenAccordions(value);
+  };
+
   // Tooltip 文案
   const tooltipText = lang === "en" 
     ? "Single click to preview, double click to enter course" 
@@ -63,10 +124,31 @@ export const CourseDetail = () => {
 
   return (
     <TooltipProvider>
+      {/* 搜索结果提示 */}
+      {searchFilter && searchFilter.subject && (
+        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <div className="flex items-center gap-2">
+            <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="text-blue-800 font-medium">
+              {lang === "en" 
+                ? `Search Result: Found course "${selectedCourse.title}" for ${searchFilter.state}, ${searchFilter.grade}` 
+                : `搜索结果：为${searchFilter.state}，${searchFilter.grade}找到课程"${selectedCourse.title}"`
+              }
+            </span>
+          </div>
+        </div>
+      )}
+
       <div className="flex gap-8 mb-16 items-start">
         {/* 左侧 Accordion */}
         <div className="w-1/2">
-          <Accordion type="multiple">
+          <Accordion 
+            type="multiple"
+            value={openAccordions}
+            onValueChange={handleAccordionChange}
+          >
             {categories.map((category, idx) => {
               const bgShades = [
                 "bg-gradient-to-r from-[#D8E9F8] to-[#BCD6ED]",
@@ -108,21 +190,30 @@ export const CourseDetail = () => {
                               // 检查是否为选中的课程
                               const isSelected = selectedCourse.slug === course.slug;
                               
+                              // 检查是否为搜索结果
+                              const isSearchResult = searchFilter && searchFilter.subject === courseSlug;
+                              
                               return (
                                 <Tooltip key={courseSlug}>
                                   <TooltipTrigger asChild>
                                     <li
+                                      ref={(el) => courseRefs.current[courseSlug] = el}
                                       onClick={() => setSelectedCourse(course)}
                                       onDoubleClick={() => handleDoubleClick(course)}
                                       className={`text-left w-full p-3 rounded-lg cursor-pointer transition-all duration-300 select-none
                                         ${isSelected 
                                           ? "bg-primary/10 text-primary border-primary/30 shadow-md font-bold ring-2 ring-primary/20" 
                                           : "hover:text-primary hover:bg-primary/5 hover:shadow-sm border-transparent hover:border-primary/20"
-                                        } border`}
+                                        } border
+                                        ${isSearchResult ? "animate-pulse bg-yellow-50 border-yellow-300" : ""}
+                                      `}
                                     >
                                       <span className={`text-sm ${isSelected ? "font-bold" : "font-medium"}`}>
                                         {course.title}
                                       </span>
+                                      {isSearchResult && (
+                                        <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping"></div>
+                                      )}
                                     </li>
                                   </TooltipTrigger>
                                   <TooltipContent>

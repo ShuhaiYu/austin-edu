@@ -1,7 +1,7 @@
 "use client";
 import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { useContext } from "react";
+import { useContext, Fragment } from "react";
 import { LangContext } from "@/app/layout";
 import { coursesContent } from "../content";
 import Image from "next/image";
@@ -78,7 +78,7 @@ export const CourseContent = () => {
           const [title, desc] = feature.split("; ");
           return (
             <div
-              key={title}
+              key={`feature-top-${index}`}
               className={`
                 ${index !== 2 ? "col-span-2" : "col-span-2 col-start-2"}
                 transition-all hover:scale-105
@@ -111,8 +111,8 @@ export const CourseContent = () => {
         <div className="relative mb-16">
           <TabsList className="flex w-full bg-transparent p-0 h-auto justify-between items-center">
             {t.gradeTabs.map((tab, index) => (
-              <>
-                <div key={tab.value} className="flex items-center flex-grow">
+              <Fragment key={`top-tab-${tab.value}`}>
+                <div className="flex items-center flex-grow">
                   {/* Tab 按钮 */}
                   <div className="relative z-10 flex-shrink-0">
                     <TabsTrigger
@@ -136,7 +136,7 @@ export const CourseContent = () => {
                 </div>
                 {/* 箭头连接 - 不在最后一个tab后显示 */}
                 {index < t.gradeTabs.length - 1 && <ArrowConnection />}
-              </>
+              </Fragment>
             ))}
           </TabsList>
         </div>
@@ -154,7 +154,7 @@ export const CourseContent = () => {
             </div>
             {grade.contents.map((content, index) => (
               <div
-                key={content.title}
+                key={`${grade.value}-content-${index}`}
                 className={`flex flex-col gap-16 items-center ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
@@ -203,7 +203,7 @@ export const CourseContent = () => {
                 </div>
 
                 {/* 图片 */}
-                <div className="w-1/2 relative aspect-[3/2] rounded-[2rem] overflow-hidden shadow-lg">
+                <div className="w-1/2 relative aspect-[3/2] rounded-[2rem] overflow-hidden shadow-2xl">
                   <Image
                     src={content.image || "https://placehold.co/600x400"}
                     alt={content.title}
@@ -220,8 +220,8 @@ export const CourseContent = () => {
         <div className="relative mb-16">
           <TabsList className="flex w-full bg-transparent p-0 h-auto justify-between items-center">
             {t.gradeTabs.map((tab, index) => (
-              <>
-                <div key={tab.value} className="flex items-center">
+              <Fragment key={`bottom-tab-${tab.value}`}>
+                <div className="flex items-center">
                   {/* Tab 按钮 */}
                   <div className="relative z-10 flex-shrink-0">
                     <TabsTrigger
@@ -244,7 +244,7 @@ export const CourseContent = () => {
                   </div>
                 </div>
                 {index < t.gradeTabs.length - 1 && <ArrowConnection />}
-              </>
+              </Fragment>
             ))}
           </TabsList>
         </div>
@@ -256,7 +256,7 @@ export const CourseContent = () => {
           const [title, desc] = feature.split("; ");
           return (
             <div
-              key={title}
+              key={`feature-bottom-${index}`}
               className={`
                 ${index !== 2 ? "col-span-2" : "col-span-2 col-start-2"}
                 transition-all hover:scale-105

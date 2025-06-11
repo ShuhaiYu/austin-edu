@@ -3,6 +3,7 @@ import CoursePageClient from "./CoursePageClient";
 
 // 静态课程列表
 const COURSES = {
+  // 1-6年级课程
   "template": () =>
     import("@/data/courses/template"),
   "y1-6-english-enrichment": () =>
@@ -15,18 +16,9 @@ const COURSES = {
     import("@/data/courses/y3-6-writing"),
   "y5-6-amc": () =>
     import("@/data/courses/y5-6-amc"),
-  // "y3-y5-naplan": () =>
-  //   import("@/data/courses/y3-y5-naplan"),
-  // "aeas": () =>
-  //   import("@/data/courses/aeas"),
-  // "3-to-5-scholarship-victoria": () =>
-  //   import("@/data/courses/3-to-5-scholarship-victoria"),
-  // "3-to-5-scholarship-south-australia": () =>
-  //   import("@/data/courses/3-to-5-scholarship-south-australia"),
   "5-to-7-scholarship-victoria": () =>
     import("@/data/courses/5-to-7-scholarship-victoria"),
-  // "5-to-7-scholarship-south-australia": () =>
-  //   import("@/data/courses/5-to-7-scholarship-south-australia"),
+
   
   // 7-9年级课程
   "y7-9-english": () => import("@/data/courses/y7-9-english"),
@@ -34,12 +26,9 @@ const COURSES = {
   "y7-9-writing": () => import("@/data/courses/y7-9-writing"),
   "y8-9-science": () => import("@/data/courses/y8-9-science"),
   "y7-8-amc" : () => import("@/data/courses/y7-8-amc"),
-  // "7-to-9-scholarship-victoria": () => 
-  //   import("@/data/courses/7-to-9-scholarship-victoria"),
   "y8-9-selective": () => 
     import("@/data/courses/y8-9-selective"),
-  // "y7-y9-naplan": () =>
-  //   import("@/data/courses/y7-y9-naplan"),
+
 
   // 10-12年级课程
   "y10-english": () => import("@/data/courses/y10-english"),
