@@ -203,7 +203,7 @@ export const CourseContent = () => {
                 </div>
 
                 {/* 图片 */}
-                <div className="w-1/2 relative h-96 rounded-[2rem] overflow-hidden shadow-lg">
+                <div className="w-1/2 relative aspect-[3/2] rounded-[2rem] overflow-hidden shadow-lg">
                   <Image
                     src={content.image || "https://placehold.co/600x400"}
                     alt={content.title}

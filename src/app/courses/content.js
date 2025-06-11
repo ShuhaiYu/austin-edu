@@ -1135,35 +1135,35 @@ export const coursesContent = {
               description:
                 "Lessons incorporate diverse content and interactive teaching methods to broaden students’ knowledge and enhance their focus and independent learning skills. Course materials extend beyond school curricula, offering students additional challenges to build a strong academic foundation.",
               icon: "book",
-              image: "/courses/content/y1-6-1.png",
+              image: "/courses/content/y1-6-1.jpeg",
             },
             {
               title: "Consistent Practice and Reinforcement",
               description:
                 "A combination of in-class exercises, paper-based homework, and an online assignment system helps students consolidate their learning, strengthen problem-solving skills, and develop logical thinking.",
               icon: "repeat",
-              image: "/courses/content/y1-6-2.png",
+              image: "/courses/content/y1-6-2.jpeg",
             },
             {
               title: "Regular Progress Checks",
               description:
                 "End-of-term assessments and structured test practice help familiarise students with exam conditions, developing resilience and preparing them for future academic challenges.",
               icon: "check",
-              image: "/courses/content/y1-6-3.png",
+              image: "/courses/content/y1-6-3.jpeg",
             },
             {
               title: "Exam Preparation and Mock Testing",
               description:
                 "Structured support is available for key assessments such as NAPLAN, scholarship tests, AEAS, and AMC, helping students refine their exam techniques and build confidence.",
               icon: "test",
-              image: "/courses/content/y1-6-4.png",
+              image: "/courses/content/y1-6-4.jpeg",
             },
             {
               title: "Parent–School Communication",
               description:
                 "Regular progress reports and parent-teacher meetings provide insights into students’ learning progress, ensuring a supportive partnership in their education journey.",
               icon: "communication",
-              image: "/courses/content/y1-6-5.png",
+              image: "/courses/content/y1-6-5.jpeg",
             },
           ],
         },
@@ -1179,42 +1179,42 @@ export const coursesContent = {
               description:
                 "Our curriculum extends beyond school standards, bridging key content between lower and upper secondary levels to ensure a smooth academic progression.",
               icon: "book",
-              image: "/courses/content/y7-9-1.png",
+              image: "/courses/content/y7-9-1.jpeg",
             },
             {
               title: "Experienced Teaching Team",
               description:
                 "Teachers focus on fostering subject interest while strengthening core concepts, helping students build the skills required for more advanced study.",
               icon: "chalkboard",
-              image: "/courses/content/y7-9-2.png",
+              image: "/courses/content/y7-9-2.jpeg",
             },
             {
               title: "Comprehensive Assignment System",
               description:
                 "Carefully designed exercises reinforce classroom learning, enhance problem-solving ability, and encourage independent study habits.",
               icon: "clipboard-list",
-              image: "/courses/content/y7-9-3.png",
+              image: "/courses/content/y7-9-3.jpeg",
             },
             {
               title: "Exam Readiness and Performance Training",
               description:
                 "End-of-term tests and mock exams develop students’ exam techniques, time management, and ability to perform under pressure.",
               icon: "clock",
-              image: "/courses/content/y7-9-4.png",
+              image: "/courses/content/y7-9-4.jpeg",
             },
             {
               title: "Targeted Preparation for Key Assessments",
               description:
                 "Support is available for selective entry exams, scholarship tests, NAPLAN, AEAS, AMC, and other academic challenges, helping students work towards their individual goals.",
               icon: "award",
-              image: "/courses/content/y7-9-5.png",
+              image: "/courses/content/y7-9-5.jpeg",
             },
             {
               title: "Early Study Planning and Parent Communication",
               description:
                 "Regular academic reviews and discussions help families make informed decisions about subject selection and study strategies as students prepare for VCE.",
               icon: "communication",
-              image: "/courses/content/y7-9-6.png",
+              image: "/courses/content/y7-9-6.jpeg",
             },
           ],
         },
@@ -1229,55 +1229,55 @@ export const coursesContent = {
               description:
                 "Experienced teachers provide insights into subject choices based on students’ interests, strengths, and university aspirations, helping them build a clear academic pathway.",
               icon: "compass",
-              image: "/courses/content/y10-12-1.png",
+              image: "/courses/content/y10-12-1.jpeg",
             },
             {
               title: "Specialist Curriculum and Study Plans",
               description:
                 " A structured learning approach, developed from years of experience, covering key content, revision cycles, and exam-focused strategies.",
               icon: "file-text",
-              image: "/courses/content/y10-12-2.png",
+              image: "/courses/content/y10-12-2.jpeg",
             },
             {
               title: "Personalised Learning Options",
               description:
                 "Courses are available in different formats, including group classes, small groups, and one-on-one tutoring, allowing students to find a study approach that best suits their needs.",
               icon: "sliders-horizontal",
-              image: "/courses/content/y10-12-3.png",
+              image: "/courses/content/y10-12-3.jpeg",
             },
             {
               title: "Experienced VCE Educators",
               description:
                 "Specialist teachers deliver in-depth lessons aligned with exam requirements, focusing on key topics to support learning progression.",
               icon: "users",
-              image: "/courses/content/y10-12-4.png",
+              image: "/courses/content/y10-12-4.jpeg",
             },
             {
               title: "Comprehensive Practice and Homework System",
               description:
                 "A blend of written exercises and online tools strengthens students’ problem-solving skills and familiarises them with a variety of question types.",
               icon: "clipboard-list",
-              image: "/courses/content/y10-12-5.png",
+              image: "/courses/content/y10-12-5.jpeg",
             },
             {
               title: "Benchmark Testing and Performance Analysis",
               description:
                 "End-of-term ranking assessments, informed by data insights, help students evaluate their progress and refine their study strategies.",
               icon: "bar-chart-2",
-              image: "/courses/content/y10-12-6.png",
+              image: "/courses/content/y10-12-6.jpeg",
             },
             {
               title: "Structured SAC Preparation",
               description:
                 "Focused revision and targeted practice for school-based assessments help students build confidence and maintain strong results.",
-              image: "/courses/content/y10-12-7.png",
+              image: "/courses/content/y10-12-7.jpeg",
             },
             {
               title: "Mock Exams and Intensive Review",
               description:
                 "Realistic test simulations assess students’ VCE readiness, followed by structured revision and targeted review sessions to consolidate learning and enhance performance.",
               icon: "list-checks",
-              image: "/courses/content/y10-12-8.png",
+              image: "/courses/content/y10-12-8.jpeg",
             },
           ],
         },
@@ -2570,35 +2570,35 @@ export const coursesContent = {
               description:
                 "通过丰富的教学内容和互动式课堂，拓宽学生的知识面，激发学习兴趣，培养他们专注和主动学习的能力。课程设计超于日校、高于日校、深于日校，帮助学生站稳起跑线。",
               icon: "book",
-              image: "/courses/content/y1-6-1.png",
+              image: "/courses/content/y1-6-1.jpeg",
             },
             {
               title: "课后巩固",
               description:
                 "随堂纸质作业和线上作业系统结合，帮助学生牢牢掌握课堂知识，逐步学会举一反三，提高综合运用能力。",
               icon: "repeat",
-              image: "/courses/content/y1-6-2.png",
+              image: "/courses/content/y1-6-2.jpeg",
             },
             {
               title: "阶段性成果检测",
               description:
                 "期末测试和考试训练，从小锻炼学生的抗压能力和考试心态，为未来的学习做好心理准备。",
               icon: "check",
-              image: "/courses/content/y1-6-3.png",
+              image: "/courses/content/y1-6-3.jpeg",
             },
             {
               title: "考试冲刺+全真模考",
               description:
                 "针对NAPLAN、奖学金考试、AEAS、AMC等重要考试，帮助学生掌握应试技巧和时间分配，为考试成绩负责，建立学习信心。",
               icon: "test",
-              image: "/courses/content/y1-6-4.png",
+              image: "/courses/content/y1-6-4.jpeg",
             },
             {
               title: "家校互动",
               description:
                 "成绩报告与家长会定期举行，帮助家长全面了解孩子的学习状态，紧密配合，优化学习规划。",
               icon: "communication",
-              image: "/courses/content/y1-6-5.png",
+              image: "/courses/content/y1-6-5.jpeg",
             },
           ],
         },
@@ -2613,42 +2613,42 @@ export const coursesContent = {
               description:
                 "我们的内部教材不仅高于日校水平，还针对初高中衔接的核心内容进行专项设计，确保学生在知识点上无缝过渡。",
               icon: "book",
-              image: "/courses/content/y7-9-1.png",
+              image: "/courses/content/y7-9-1.jpeg",
             },
             {
               title: "资深教师指导",
               description:
                 "教师团队注重培养学生的学科兴趣，同时强化学科知识点的掌握，为高中复杂学科的学习做好准备。",
               icon: "chalkboard",
-              image: "/courses/content/y7-9-2.png",
+              image: "/courses/content/y7-9-2.jpeg",
             },
             {
               title: "系统化作业设计",
               description:
                 "课后作业帮助学生深度巩固课堂内容，锻炼解题能力，逐步形成自主学习的习惯。",
               icon: "clipboard-list",
-              image: "/courses/content/y7-9-3.png",
+              image: "/courses/content/y7-9-3.jpeg",
             },
             {
               title: "综合能力训练",
               description:
                 "通过学期末测试和模拟考试，提升学生的考试技巧、时间分配能力及抗压能力，帮助他们在实际考试中从容发挥。",
               icon: "clock",
-              image: "/courses/content/y7-9-4.png",
+              image: "/courses/content/y7-9-4.jpeg",
             },
             {
               title: "重点考试冲刺",
               description:
                 "精英公校考试、奖学金考试、NAPLAN、AEAS、AMC等冲刺课程，帮助学生稳步提升成绩，为未来更高目标铺平道路。",
               icon: "award",
-              image: "/courses/content/y7-9-5.png",
+              image: "/courses/content/y7-9-5.jpeg",
             },
             {
               title: "早期规划与家校沟通",
               description:
                 "通过成绩报告和家长会，密切跟进学生的学习状态，为即将到来的VCE阶段提前做好学科选择和学习规划。",
               icon: "communication",
-              image: "/courses/content/y7-9-6.png",
+              image: "/courses/content/y7-9-6.jpeg",
             },
           ],
         },
@@ -2663,56 +2663,56 @@ export const coursesContent = {
               description:
                 "专业教师根据学生的个人兴趣、学科优势和大学申请目标，制定最优的选课方案，为高分铺平道路。",
               icon: "compass",
-              image: "/courses/content/y10-12-1.png",
+              image: "/courses/content/y10-12-1.jpeg",
             },
             {
               title: "独家教纲与教学计划",
               description:
                 "结合十年的教学经验，我们精心设计了高效且高分导向的教学进度规划，涵盖核心知识点梳理、多轮复习周期及刷题提分策略。",
               icon: "file-text",
-              image: "/courses/content/y10-12-2.png",
+              image: "/courses/content/y10-12-2.jpeg",
             },
             {
               title: "定制化教学方案",
               description:
                 "根据学生的学习水平和需求，将课程分为不同难度和进度的班型，提供大班课、小班课、一对一教学等多种选择，帮助学生找到最适合的学习方法和节奏。",
               icon: "sliders-horizontal",
-              image: "/courses/content/y10-12-3.png",
+              image: "/courses/content/y10-12-3.jpeg",
             },
             {
               title: "权威教师团队",
               description:
                 "VCE领域的顶级教育专家亲自授课，确保课堂内容更深入、更贴近考纲，同时高效覆盖考试必考点，显著提升学习效果。",
               icon: "users",
-              image: "/courses/content/y10-12-4.png",
+              image: "/courses/content/y10-12-4.jpeg",
             },
             {
               title: "深度刷题与作业系统",
               description:
                 "通过纸质作业与线上系统结合，帮助学生练就快速解题能力，并熟悉所有题型，全面掌握考试技巧。",
               icon: "clipboard-list",
-              image: "/courses/content/y10-12-5.png",
+              image: "/courses/content/y10-12-5.jpeg",
             },
             {
               title: "学期末排名测试",
               description:
                 "结合澳升十年大数据，帮助学生了解在全维州的大致排名，并及时调整学习策略，为高分目标做足准备。",
               icon: "bar-chart-2",
-              image: "/courses/content/y10-12-6.png",
+              image: "/courses/content/y10-12-6.jpeg",
             },
             {
               title: "SAC专项复习",
               description:
                 "针对VCE中每一个得分点，提供系统性复习与专项训练，确保学生在学校的考试中表现出色，稳步提升总分。",
               icon: "target",
-              image: "/courses/content/y10-12-7.png",
+              image: "/courses/content/y10-12-7.jpeg",
             },
             {
               title: "全真模考与冲刺课程",
               description:
                 "全面检测学生对VCE考点的掌握情况，并通过最后阶段的查漏补缺和冲刺班，帮助学生锁定高分。",
               icon: "list-checks",
-              image: "/courses/content/y10-12-8.png",
+              image: "/courses/content/y10-12-8.jpeg",
             },
           ],
         },
