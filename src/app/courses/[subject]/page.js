@@ -17,7 +17,7 @@ const COURSES = {
   "y5-6-amc": () =>
     import("@/data/courses/y5-6-amc"),
   "5-to-7-scholarship-victoria": () =>
-    import("@/data/courses/5-to-7-scholarship-victoria"),
+    import("@/data/courses/y5-to-7-scholarship-victoria"),
 
   
   // 7-9年级课程

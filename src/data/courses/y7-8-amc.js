@@ -23,7 +23,7 @@ const courseData = {
         {
           title: "Exclusive AMC Problem-Solving Strategies",
           list: [
-            "Five winning techniques to tackle even the most challenging questions：",
+            "Five winning techniques to tackle even the most challenging questions⬇",
             "Formula Blitz: Build equations quickly to reduce calculation time and boost speed.",
             "Reverse Logic: Go beyond conventional methods to develop the creative thinking AMC rewards.",
             "Number-Shape Fusion: Use geometric intuition to solve complex algebraic problems.",
@@ -86,78 +86,78 @@ const courseData = {
           },
         ],
       },
-    },
-    resources: {
-      packages: [
-        { icon: "school", title: "28 lessons, each 2 hours long", desc: "" },
-        { icon: "user-pen", title: "1 hours of weekly homework", desc: "" },
-        { icon: "book-copy", title: "20 complete practice papers", desc: "" },
+      resources: {
+        packages: [
+          { icon: "school", title: "28 lessons, each 2 hours long", desc: "" },
+          { icon: "user-pen", title: "1 hours of weekly homework", desc: "" },
+          { icon: "book-copy", title: "20 complete practice papers", desc: "" },
+          {
+            icon: "layers",
+            title: "1000+ practice questions in the question bank",
+            desc: "",
+          },
+          { icon: "File-clock", title: "4 full-length mock exams", desc: "" },
+          { icon: "Square-check-big", title: "4 topic tests", desc: "" },
+          {
+            icon: "scroll-text",
+            title: "2 original practice papers",
+            desc: "",
+          },
+          {
+            icon: "speech",
+            title: "2 one-on-one post-exam paper analysis sessions",
+            desc: "",
+          },
+        ],
+      },
+      courseStructure: {
+        title: "Course Structure",
+        sections: [
+          {
+            modules: [
+              {
+                title: "28 lessons",
+                subtitle: "",
+                lessons: [
+                  "lintroducing the Graphic Novel (Nimon ",
+                  "Reading a Graphic Novel (Nimona ",
+                  "Introduction to Genre (Nimona) ",
+                  "Reading Fables (Nimona) ",
+                  "A odern Fable (The Hobbit) ",
+                  "The Moral of Animal Farm (The Hobbit ",
+                  "Reading Fantasy (The Hobbit ",
+                  "The Hobbit (The Hobbit) ",
+                  "Topic Test and Miarking & Feedback",
+                ],
+              },
+            ],
+          },
+        ],
+      },
+      relatedCourses: [
         {
-          icon: "layers",
-          title: "1000+ practice questions in the question bank",
-          desc: "",
+          title: "Year 7-9",
+          subtitle: "English Enrichment（ENG/EAL）",
+          slug: "y7-9-english",
         },
-        { icon: "File-clock", title: "4 full-length mock exams", desc: "" },
-        { icon: "Square-check-big", title: "4 topic tests", desc: "" },
         {
-          icon: "scroll-text",
-          title: "2 original practice papers",
-          desc: "",
+          title: "Year 7-9",
+          subtitle: "Writing",
+          slug: "y7-9-writing",
         },
         {
-          icon: "speech",
-          title: "2 one-on-one post-exam paper analysis sessions",
-          desc: "",
+          title: "Year 7-9",
+          subtitle: "Maths Enrichment",
+          slug: "y7-9-maths",
         },
       ],
     },
-    courseStructure: {
-      title: "Course Structure",
-      sections: [
-        {
-          modules: [
-            {
-              title: "28 lessons",
-              subtitle: "",
-              lessons: [
-                "lintroducing the Graphic Novel (Nimon ",
-                "Reading a Graphic Novel (Nimona ",
-                "Introduction to Genre (Nimona) ",
-                "Reading Fables (Nimona) ",
-                "A odern Fable (The Hobbit) ",
-                "The Moral of Animal Farm (The Hobbit ",
-                "Reading Fantasy (The Hobbit ",
-                "The Hobbit (The Hobbit) ",
-                "Topic Test and Miarking & Feedback",
-              ],
-            },
-          ],
-        },
-      ],
-    },
-    relatedCourses: [
-      {
-        title: "Year 7-9",
-        subtitle: "Year 7-9 English Enrichment",
-        slug: "y7-9-english",
-      },
-      {
-        title: "Year 7-9",
-        subtitle: "Year 7-9 Writing",
-        slug: "y7-9-writing",
-      },
-      {
-        title: "Year 7-9",
-        subtitle: "Year 7-9 Maths Enrichment",
-        slug: "y7-9-maths",
-      },
-    ],
   },
   zh: {
     slug: "y7-8-amc",
-    title: "AMC竞赛班 7-8年级",
+    title: "7-8年级 AMC竞赛班",
     courseDescription: {
-      title: " AMC 官方考点",
+      title: " 澳大利亚数学竞赛（AMC）官方考点",
       subtitle: "澳升成为 AMC 官方考点",
       paragraph:
         "澳升现已正式成为 澳大利亚数学竞赛（AMC）官方考点，为热爱数学、渴望挑战的学生提供直通全国顶级数学竞赛的机会。",
@@ -177,7 +177,7 @@ const courseData = {
         {
           title: "独家 AMC 解题方法，秒杀难题",
           list: [
-            "五大制胜策略：",
+            "五大制胜策略⬇",
             "公式速解法：快速建立方程，减少计算量，提高解题速度。",
             "逆向思维法：跳出常规解法，培养 AMC 必备创新思维。",
             "数形结合法：利用几何直观分析复杂代数问题，提高理解力。",
@@ -239,7 +239,7 @@ const courseData = {
     },
     resources: {
       packages: [
-        { icon: "school", title: "28节2h课程", desc: "" },
+        { icon: "school", title: "28节2小时课程", desc: "" },
         { icon: "user-pen", title: "每周1小时课后作业", desc: "" },
         { icon: "book-copy", title: "20套完整的练习试卷", desc: "" },
         { icon: "layers", title: "1000题海量练习题库", desc: "" },
@@ -275,19 +275,19 @@ const courseData = {
     },
     relatedCourses: [
       {
-        title: "Year 7-9",
-        subtitle: "7-9年级写作课程",
+        title: "7-9年级",
+        subtitle: "英文培优班（ENG/EAL）",
+        slug: "y7-9-english",
+      },
+      {
+        title: "7-9年级",
+        subtitle: "Year 7-9 写作班",
         slug: "y7-9-writing",
       },
       {
-        title: "Year 7-9",
-        subtitle: "7-9年级数学培优课程",
+        title: "7-9年级",
+        subtitle: "Year 7-9 数学培优班",
         slug: "y7-9-maths",
-      },
-      {
-        title: "Year 8-9",
-        subtitle: "8-9年级科学课程",
-        slug: "y8-9-science",
       },
     ],
   },

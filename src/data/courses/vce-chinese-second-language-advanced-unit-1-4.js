@@ -5,8 +5,7 @@ const courseData = {
     coreFeatures: {
       sections: [
         {
-          title:
-            "Syllabus-Oriented & Well-Structured",
+          title: "Syllabus-Oriented & Well-Structured",
           list: [
             "Closely aligned with the VCAA exam structure, covering all six assessment components: Listening, Speaking, Reading, and Writing.",
             "Course schedule matches the annual exam timeline: Semester 1 focuses on Writing Task 1 & Oral Task 1; Semester 2 covers Writing Task 2 & Oral Task 2.",
@@ -35,8 +34,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "Precise SAC Alignment — Practical, Exam-Focused Approach",
+          title: "Precise SAC Alignment — Practical, Exam-Focused Approach",
           list: [
             "All teaching content precisely aligned with CFL SAC standards and structure",
             "SAC preparation is customised according to each student’s school format and progress, greatly increasing SAC accuracy.",
@@ -44,8 +42,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "Free Online Reinforcement — Ongoing Practice Beyond Class",
+          title: "Free Online Reinforcement — Ongoing Practice Beyond Class",
           list: [
             "Weekly free listening and reading practice packs tailored to class content.",
             "Specialised tasks in Reading Rewriting and Listening Rewriting (45–75 minute timed drills).",
@@ -62,8 +59,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "Outstanding Teaching Team & Results",
+          title: "Outstanding Teaching Team & Results",
           list: [
             "All instructors have years of experience teaching VCE Chinese and deep understanding of VCAA marking standards.",
             "Consistently produces multiple students scoring Raw 45+ annually, with top score density among Victorian providers.",
@@ -72,30 +68,91 @@ const courseData = {
           ],
         },
       ],
-      extraDescription:
-        "这是在课程特色的下方的额外描述，可能是一些课程的亮点或其他相关信息。",
     },
     resources: {
       packages: [
         { icon: "school", title: "2 hours of weekly class sessions", desc: "" },
-        { icon: "book-copy", title: "8 exclusive Austin Education textbooks", desc: "" },
-        { icon: "book-open-text️", title: "5 exclusive Austin Education exercise books", desc: "" },
+        {
+          icon: "book-copy",
+          title: "8 exclusive Austin Education textbooks",
+          desc: "",
+        },
+        {
+          icon: "book-open-text️",
+          title: "5 exclusive Austin Education exercise books",
+          desc: "",
+        },
         { icon: "user-pen", title: "1–2 hours of homework per week", desc: "" },
-        { icon: "book-headphones", title: "50 sets of listening and reading comprehension exercises", desc: "" },
-        { icon: "headphones️", title: "1 free online listening practice session per week", desc: "" },
-        { icon: "notebook-pen", title: "5–6 essays per term with detailed corrections and feedback", desc: "" },
-        { icon: "calendar", title: "4 semester exams (Units 1 & 2)", desc: "" },
-        { icon: "file-clock", title: "6 full-length Austin mock exams (Units 3 & 4)", desc: "" },
-        { icon: "mic", title: "10+ one-on-one oral exam mock interviews (Units 3 & 4)", desc: "" },
-        { icon: "send-horizontal", title: "4 one-on-one targeted oral script review sessions (1 hour each)", desc: "" },
-        { icon: "trophy", title: "20 high-quality sample essays and model responses", desc: "" },
-        { icon: "chart-column", title: "1 detailed report after each major exam", desc: " " },
+        {
+          icon: "book-headphones",
+          title: "50 sets of listening and reading comprehension exercises",
+          desc: "",
+        },
+        {
+          icon: "headphones️",
+          title: "1 free online listening practice session per week",
+          desc: "",
+        },
+        {
+          icon: "notebook-pen",
+          title: "5–6 essays per term with detailed corrections and feedback",
+          desc: "",
+        },
+        {
+          icon: "calendar",
+          title: "4 semester exams (Units 1 & 2)",
+          desc: "",
+        },
+        {
+          icon: "file-clock",
+          title: "6 full-length Austin mock exams (Units 3 & 4)",
+          desc: "",
+        },
+        {
+          icon: "mic",
+          title: "10+ one-on-one oral exam mock interviews (Units 3 & 4)",
+          desc: "",
+        },
+        {
+          icon: "send-horizontal",
+          title:
+            "4 one-on-one targeted oral script review sessions (1 hour each)",
+          desc: "",
+        },
+        {
+          icon: "trophy",
+          title: "20 high-quality sample essays and model responses",
+          desc: "",
+        },
+        {
+          icon: "chart-column",
+          title: "1 detailed report after each major exam",
+          desc: " ",
+        },
         { icon: "speech", title: "Austin parent-teacher meeting", desc: "" },
-        { icon: "goal", title: "SAC-focused revision and strategy sessions", desc: "" },
-        { icon: "monitor-play", title: "Full access to class video recordings", desc: "" },
-        { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: "" },
-        { icon: "message-square-dot", title: "Dedicated learning consultant for personalised 1-on-1 academic management", desc: "" },
-        { icon: "users", title: "Free academic consultation for ongoing planning and progress tracking", desc: "" },
+        {
+          icon: "goal",
+          title: "SAC-focused revision and strategy sessions",
+          desc: "",
+        },
+        { icon: "monitor-play", title: "Class video recordings", desc: "" },
+        {
+          icon: "circle-help",
+          title: "Unlimited Q&A and academic support",
+          desc: "",
+        },
+        {
+          icon: "message-square-dot",
+          title:
+            "Dedicated learning consultant for personalised 1-on-1 academic management",
+          desc: "",
+        },
+        {
+          icon: "users",
+          title:
+            "Free academic consultation for ongoing planning and progress tracking",
+          desc: "",
+        },
       ],
     },
     courseStructure: {
@@ -237,17 +294,17 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit1-4",
+        slug: "vce-english-eal-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "Mathematical Methods Unit 1-4",
-        slug: "vce-maths-methods-unit1-4",
+        slug: "vce-maths-methods-unit-1-4",
       },
       {
         title: "VCE",
-        subtitle: "Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit1-4",
+        subtitle: "Specialist Mathematical Unit 1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
     ],
   },
@@ -263,8 +320,7 @@ const courseData = {
             "全年课程按阶段匹配考试节奏：上半年作文一/口语一、下半年作文二/口语二。",
             "明确教学目标，帮助学生有计划地攻克各个考试项目。",
           ],
-          paragraph:
-            "",
+          paragraph: "",
         },
         {
           title: "写作系统训练 · 六大文体全面覆盖",
@@ -276,8 +332,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "多轮口语模考 · 专业脱敏训练体系",
+          title: "多轮口语模考 · 专业脱敏训练体系",
           list: [
             "实施5+5多轮模拟系统：常规模拟+正式考官模拟双轨结合。",
             "每轮模考均由不同老师主考，模拟真实考试中遇见“陌生考官”的紧张感。",
@@ -287,8 +342,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "SAC内容精准对接 · 实战为主",
+          title: "SAC内容精准对接 · 实战为主",
           list: [
             "所有教学内容精准匹配CFL SAC评估标准与结构要求。",
             "SAC辅导配合原校题型与进度定制安排，大幅提升考评命中率。",
@@ -296,8 +350,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "免费线上强化 · 课后反复巩固",
+          title: "免费线上强化 · 课后反复巩固",
           list: [
             "每周提供免费线上听力+阅读训练包，紧贴教学内容定向练习。",
             "分阶段提供 阅读转写/听力转写专项训练（45–75分钟限时任务）。",
@@ -305,16 +358,15 @@ const courseData = {
           ],
         },
         {
-          title:
-            "模考体系全面 · 真题实战贯穿全年",
+          title: "模考体系全面 · 真题实战贯穿全年",
           list: [
             "每学期配备阶段性测评 + SAC模拟 + 全卷高考模拟训练。",
             "第四学期进入高强度冲刺节奏：口语强化 + 全科模考全覆盖。",
             "所有模考试题均由内部高考教师团队设计，难度匹配/结构相符/评分精准。",
           ],
-        },{
-          title:
-            "师资强大 · 成绩卓越",
+        },
+        {
+          title: "师资强大 · 成绩卓越",
           list: [
             "教师均有多年中文高考授课经验，熟悉VCAA评分标准。",
             "每年培养出多名Raw 45+，高分密度领先维州同类机构。",
@@ -328,22 +380,38 @@ const courseData = {
       packages: [
         { icon: "school", title: "每周2小时班课", desc: "" },
         { icon: "book-copy", title: "8本澳升独家教材", desc: "" },
-        { icon: "book-open-text️", title:  "5本澳升独家习题册", desc: "" },
+        { icon: "book-open-text️", title: "5本澳升独家习题册", desc: "" },
         { icon: "user-pen", title: "每周1-2小时课后作业", desc: "" },
         { icon: "book-headphones", title: "50套听力阅读练习", desc: "" },
         { icon: "headphones️", title: "每周1次免费线上听力练习", desc: "" },
         { icon: "notebook-pen", title: "每学期5-6篇作文精改", desc: "" },
         { icon: "calendar", title: "4次学期检测考试 unit 1&2", desc: "" },
-        { icon: "file-clock", title: "6次澳升独家全真模拟笔试考试 unit 3&4", desc: "" },
-        { icon: "mic", title: "10+澳升一对一口语模考模拟练习 unit 3&4", desc: "" },
-        { icon: "send-horizontal", title: "4次澳升口语稿一对一单项针对性修改（每次一小时）", desc: "" },
+        {
+          icon: "file-clock",
+          title: "6次澳升独家全真模拟笔试考试 unit 3&4",
+          desc: "",
+        },
+        {
+          icon: "mic",
+          title: "10+澳升一对一口语模考模拟练习 unit 3&4",
+          desc: "",
+        },
+        {
+          icon: "send-horizontal",
+          title: "4次澳升口语稿一对一单项针对性修改（每次一小时）",
+          desc: "",
+        },
         { icon: "trophy", title: "20篇高质量范文", desc: "" },
         { icon: "chart-column", title: "考试成绩汇报单", desc: " " },
         { icon: "speech", title: "澳升家长会", desc: "" },
         { icon: "goal", title: "SAC 专项复习", desc: "" },
         { icon: "monitor-play", title: "课程录像", desc: "" },
         { icon: "circle-help", title: "无限的沟通答疑", desc: "" },
-        { icon: "message-square-dot", title: "私人学管一对一解决问题", desc: "" },
+        {
+          icon: "message-square-dot",
+          title: "私人学管一对一解决问题",
+          desc: "",
+        },
         { icon: "users", title: "免费学业咨询", desc: "" },
       ],
     },
@@ -486,17 +554,17 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit1-4",
+        slug: "vce-english-eal-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "中数 Mathematical Methods Unit 1-4",
-        slug: "vce-maths-methods-unit1-4",
+        slug: "vce-maths-methods-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "高数 Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
     ],
   },

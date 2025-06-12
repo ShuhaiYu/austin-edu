@@ -11,7 +11,7 @@ const courseData = {
           year: "2024",
           items: [
             {
-              number: "76%",
+              number: "80%",
               label: "success rate",
               subtitle: "for a Selective School",
             },
@@ -67,7 +67,7 @@ const courseData = {
           },
         ],
       },
-        partA: {
+      partA: {
         title: "Why Choose Austin’s Selective Entry English Program?",
         image1: "https://placehold.co/400x600?text=Image+1",
         image2: "https://placehold.co/400x1000?text=Image+2",
@@ -103,16 +103,49 @@ const courseData = {
     resources: {
       packages: [
         { icon: "school", title: "4 hours of weekly class sessions", desc: "" },
-        { icon: "book-copy", title: "6 exclusive Austin Education textbooks", desc: "" },
-        { icon: "user-pen", title: "3-4 hour of structured weekly homework", desc: "" },
-        { icon: "chart-no-axes-combined", title: "100 additional/optional/advanced questions per week (in questions/hours)", desc: "" },
-        { icon: "square-check-big", title: "6 semester assessment exams", desc: "" },
+        {
+          icon: "book-copy",
+          title: "6 exclusive Austin Education textbooks",
+          desc: "",
+        },
+        {
+          icon: "user-pen",
+          title: "3-4 hour of structured weekly homework",
+          desc: "",
+        },
+        {
+          icon: "chart-no-axes-combined",
+          title: "100 additional/optional/advanced questions per week",
+          desc: "",
+        },
+        {
+          icon: "square-check-big",
+          title: "6 semester assessment exams",
+          desc: "",
+        },
         { icon: "chart-column", title: "4 exam reports", desc: "" },
         { icon: "speech", title: "4 parent-teacher meetings", desc: "" },
-        { icon: "File-clock", title: "50 exclusive Austin Education full-length mock exams", desc: "" },
-        { icon: "monitor-play", title: "Full access to class video recordings for revision", desc: "" },
-        { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: "" },
-        { icon: "message-square-dot", title: "Dedicated learning consultant for one-on-one issue resolution", desc: "" },
+        {
+          icon: "File-clock",
+          title: "50 exclusive Austin Education full-length mock exams",
+          desc: "",
+        },
+        {
+          icon: "monitor-play",
+          title: "Class video recordings for revision",
+          desc: "",
+        },
+        {
+          icon: "circle-help",
+          title: "Unlimited Q&A and academic support",
+          desc: "",
+        },
+        {
+          icon: "message-square-dot",
+          title:
+            "Dedicated learning consultant for one-on-one issue resolution",
+          desc: "",
+        },
         { icon: "users", title: "Free academic consultation", desc: "" },
       ],
     },
@@ -186,14 +219,14 @@ const courseData = {
       ],
     },
     relatedCourses: [
-       {
+      {
         title: "Year 7-9",
-        subtitle: "Year 7-9 English Enrichment",
+        subtitle: "English Enrichment",
         slug: "y7-9-english",
       },
       {
         title: "Year 7-9",
-        subtitle: "Year 7-9 Writing",
+        subtitle: "Writing",
         slug: "y7-9-writing",
       },
       {
@@ -210,31 +243,29 @@ const courseData = {
       achievements: {
         title: "历史成就",
         currentYear: {
-          subtitle:
-            "2024年，澳升教育的精英公校课程取得了优异成绩",
+          subtitle: "2024年，澳升教育的精英公校课程取得了优异成绩",
           year: "2024",
           items: [
             {
-              number: "76%",
+              number: "80%",
               label: "成功率",
               subtitle: "申请到精英公校就读",
             },
           ],
         },
+        schoolLogos: [
+          "Nossal High School",
+          "Suzanne Cory High School",
+          "The Mac.Robertson Girls' High School",
+          "Melbourne High School",
+        ],
+        extraDescription: "这是在学校logo的下方的额外描述",
       },
-      schoolLogos: [
-        "Nossal High School",
-        "Suzanne Cory High School",
-        "The Mac.Robertson Girls' High School",
-        "Melbourne High School",
-      ],
-      extraDescription: "这是在学校logo的下方的额外描述",
     },
 
     courseDescription: {
       title: "Course Description",
-      subtitle:
-        "掌握VCE思维，突破精英考试，开启学术新通道",
+      subtitle: "掌握VCE思维，突破精英考试，开启学术新通道",
       paragraph:
         "专为有志冲刺维州顶尖精英公校的8年级学生设计，澳升精英公校数学与英文课程通过系统强化基础知识，深入讲解应试策略，帮助学生全面提升学术实力。结合高阶内容、精英教学与高强度实战训练，让学生在考试中自信应对，脱颖而出。",
     },
@@ -246,13 +277,11 @@ const courseData = {
         content: [
           {
             title: "1. 高效覆盖VCE核心知识",
-            paragraph:
-              "帮助学生提前适应VCE考试的数学思维模式",
+            paragraph: "帮助学生提前适应VCE考试的数学思维模式",
           },
           {
             title: "2.	应试技巧强化",
-            paragraph:
-              "教授时间管理策略，优化解题路径，提高答题效率",
+            paragraph: "教授时间管理策略，优化解题路径，提高答题效率",
           },
           {
             title: "3.	全真模拟训练",
@@ -271,30 +300,26 @@ const courseData = {
           },
         ],
       },
-        partA: {
+      partA: {
         title: "为什么选择澳升的精英公校英文项目?",
         image1: "https://placehold.co/400x600?text=Image+1",
         image2: "https://placehold.co/400x1000?text=Image+2",
         content: [
           {
             title: "1.	高阶学术词汇训练",
-            paragraph:
-              "涵盖VCE文学、历史、科技等领域的高难度词汇",
+            paragraph: "涵盖VCE文学、历史、科技等领域的高难度词汇",
           },
           {
             title: "2.	写作深度培养",
-            paragraph:
-              "针对精英公校考试，训练复杂文章写作，提高逻辑表达能力",
+            paragraph: "针对精英公校考试，训练复杂文章写作，提高逻辑表达能力",
           },
           {
             title: "3.	阅读理解突破",
-            paragraph:
-              "分析高难度文本，培养批判性思维和文本推理能力",
+            paragraph: "分析高难度文本，培养批判性思维和文本推理能力",
           },
           {
             title: "4.	全真模拟练习",
-            paragraph:
-              "真实考试环境训练，帮助学生适应考试节奏和压力",
+            paragraph: "真实考试环境训练，帮助学生适应考试节奏和压力",
           },
           {
             title: "5.	资深教师团队",
@@ -309,14 +334,22 @@ const courseData = {
         { icon: "school", title: "每周 4 小时班课", desc: "" },
         { icon: "book-copy", title: "6 本澳升独家教材", desc: "" },
         { icon: "user-pen", title: "每周 3-4 小时课后作业", desc: "" },
-        { icon: "chart-no-axes-combined", title: "每周 100 题/小时额外/选做/高阶题", desc: "" },
+        {
+          icon: "chart-no-axes-combined",
+          title: "每周 100 题/小时额外/选做/高阶题",
+          desc: "",
+        },
         { icon: "square-check-big", title: "6 次学期检测考试", desc: "" },
         { icon: "chart-column", title: "4 次考试报告", desc: "" },
         { icon: "speech", title: "4 次家长会", desc: "" },
         { icon: "File-clock", title: "50 次澳升独家全真模拟考试", desc: "" },
         { icon: "monitor-play", title: "提供课程录像", desc: "" },
         { icon: "circle-help", title: "提供无限的沟通答疑", desc: "" },
-        { icon: "message-square-dot", title: "提供私人学管一对一解决问题", desc: "" },
+        {
+          icon: "message-square-dot",
+          title: "提供私人学管一对一解决问题",
+          desc: "",
+        },
         { icon: "users", title: "提供免费学业咨询", desc: "" },
       ],
     },
@@ -391,13 +424,13 @@ const courseData = {
     },
     relatedCourses: [
       {
-        title: "Year 7-9",
-        subtitle: "7-9年级英文培优课程",
+        title: "7-9年级",
+        subtitle: "英文培优课程",
         slug: "y7-9-english",
       },
       {
-        title: "Year 7-9",
-        subtitle: "7-9年级写作课程",
+        title: "7-9年级",
+        subtitle: "写作课程",
         slug: "y7-9-writing",
       },
       {

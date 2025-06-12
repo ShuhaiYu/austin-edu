@@ -1,7 +1,7 @@
 const courseData = {
   en: {
     slug: "vce-chemistry-unit-1-4",
-    title: "VCE Chemstry Unit 1-4",
+    title: "VCE Chemistry Unit 1-4",
     courseDescription: {
       title: "",
       subtitle:
@@ -10,8 +10,7 @@ const courseData = {
         "Chemistry is a prerequisite subject for medical-related university courses, and unlike Biology, which is more modular, Chemistry builds on a linear progression. That’s why Units 1–2 are essential—skipping them makes it extremely difficult to score highly in Units 3–4.",
       courseOverview: {
         title: "Key Advantages of Austin’s Chemistry Class",
-        descriptionBeforeFeature: [
-        ],
+        descriptionBeforeFeature: [],
         featureTitle: "Key Advantages of Austin’s Chemistry Class",
         features: [
           "High Efficiency:Start in Year 11 with structured classes and homework—no extra workload, yet easily score 30+. Perfect for medicine-bound students aiming to boost their ATAR.",
@@ -24,19 +23,16 @@ const courseData = {
     coreFeatures: {
       sections: [
         {
-          title:
-            "Year 11 Chemistry Highlights",
+          title: "Year 11 Chemistry Highlights",
           list: [
             "Targeted Content：Covers only VCE-relevant material—cuts 30–40% of unnecessary content for more efficient learning.",
             "Strategic Pacing：Follows or slightly leads school progress to reinforce understanding and boost retention in less time.",
             "VCE-Level Practice：Carefully selected questions at the right difficulty to help students smoothly transition into Year 12 exam standards.",
           ],
-          paragraph:
-            "",
+          paragraph: "",
         },
         {
-          title:
-            "Year 12 Chemistry Highlights",
+          title: "Year 12 Chemistry Highlights",
           list: [
             "Comprehensive Coverage：Thorough explanations that fill the gaps left by day schools — ideal for students from non-specialist backgrounds.",
             "Exam-Level Training from Day One：Start with VCE-standard questions to build confidence and exam familiarity early.",
@@ -49,15 +45,44 @@ const courseData = {
     resources: {
       packages: [
         { icon: "school", title: "2-hour weekly group class", desc: " " },
-        { icon: "book-copy", title: "4 exclusive Austin Education textbooks", desc: " " },
-        { icon: "user-pen", title: "1 hours of structured weekly homework", desc: " " },
+        {
+          icon: "book-copy",
+          title: "4 exclusive Austin Education textbooks",
+          desc: " ",
+        },
+        {
+          icon: "user-pen",
+          title: "1 hours of structured weekly homework",
+          desc: " ",
+        },
         { icon: "calendar", title: "2 semester assessment exams", desc: " " },
-        { icon: "file-clock", title: "1 exclusive Austin Education full-length mock exams", desc: " " },
+        {
+          icon: "file-clock",
+          title: "1 exclusive Austin Education full-length mock exams",
+          desc: " ",
+        },
         { icon: "goal", title: "Targeted SAC revision sessions", desc: " " },
-        { icon: "monitor-play", title: "Class video recordings for review", desc: " " },
-        { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: " " },
-        { icon: "message-square-dot", title: "Dedicated 1-on-1 learning manager for personalised issue resolution", desc: " " },
-        { icon: "users", title: "Free academic consultation included", desc: " " },
+        {
+          icon: "monitor-play",
+          title: "Class video recordings for review",
+          desc: " ",
+        },
+        {
+          icon: "circle-help",
+          title: "Unlimited Q&A and academic support",
+          desc: " ",
+        },
+        {
+          icon: "message-square-dot",
+          title:
+            "Dedicated 1-on-1 learning manager for personalised issue resolution",
+          desc: " ",
+        },
+        {
+          icon: "users",
+          title: "Free academic consultation included",
+          desc: " ",
+        },
       ],
     },
     courseStructure: {
@@ -218,16 +243,12 @@ const courseData = {
     title: "VCE 化学 Unit 1-4",
     courseDescription: {
       title: "",
-      subtitle:
-        "医学必考科目，系统学习是关键！",
+      subtitle: "医学必考科目，系统学习是关键！",
       paragraph:
         "化学是医学专业的必修先修课，但它是线性成长的知识体系，不像生物那样是区块化的。因此，U1-2 必学！不然就很难在 U3-4 拿高分！",
       courseOverview: {
         title: "澳升化学课核心优势",
-        descriptionBeforeFeature: [
-          "",
-          "",
-        ],
+        descriptionBeforeFeature: ["", ""],
         featureTitle: "澳升化学课核心优势",
         features: [
           "补习性价比极高：从 Y11 开始上课+写作业，不额外花时间也能轻松 30+，让学医的学生有更多精力冲击总分。",
@@ -240,19 +261,16 @@ const courseData = {
     coreFeatures: {
       sections: [
         {
-          title:
-            "11年级 化学课程亮点",
+          title: "11年级 化学课程亮点",
           list: [
             "精准考点讲解：只讲 VCE 相关内容，删去 30-40% 无关内容，节省时间，高效学习。",
             "进度合理：跟学校同步或略快，短时间内强化记忆，巩固理解。",
             "练习题难度适中：提前适应 VCE 级别的考题，避免 Y12 突然遇难题不适应。",
           ],
-          paragraph:
-            "",
+          paragraph: "",
         },
         {
-          title:
-            "12年级 化学课程亮点",
+          title: "12年级 化学课程亮点",
           list: [
             "考点讲解详细：弥补日校讲解不足，特别是非化学强校的学生能得到更全面的知识支持。",
             "VCE 难度练习：第一天就直接接触 VCE 难度，让学生快速适应考试要求。",
@@ -272,7 +290,11 @@ const courseData = {
         { icon: "goal", title: "SAC 专项复习", desc: " " },
         { icon: "monitor-play", title: "课程录像", desc: " " },
         { icon: "circle-help", title: "无限的沟通答疑", desc: " " },
-        { icon: "message-square-dot", title: "私人学管一对一解决问题", desc: " " },
+        {
+          icon: "message-square-dot",
+          title: "私人学管一对一解决问题",
+          desc: " ",
+        },
         { icon: "users", title: "免费学业咨询", desc: " " },
       ],
     },

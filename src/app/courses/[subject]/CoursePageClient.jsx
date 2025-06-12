@@ -28,6 +28,7 @@ import {
   Award,
   Calendar,
 } from "lucide-react";
+import Link from "next/link";
 
 const SCHOOL_IMAGES = [
   { name: "Balwyn High", image: "Balwyn high.png" },
@@ -226,6 +227,14 @@ export default function CoursePageClient({ localizedData }) {
                     )
                   )}
                 </div>
+                <div className="mt-8">
+                  <p className="text-sm text-white">
+                    {
+                      course.heroSection.achievements.historical
+                        .extraDescription
+                    }
+                  </p>
+                </div>
               </div>
             </div>
           )}
@@ -248,6 +257,15 @@ export default function CoursePageClient({ localizedData }) {
                 };
               })}
             />
+          </div>
+        )}
+
+        {/* Hero Section Extra Description */}
+        {hasContent(course.heroSection?.extraDescription) && (
+          <div className="mt-12">
+            <p className="text-lg text-gray-700">
+              {course.heroSection?.extraDescription}
+            </p>
           </div>
         )}
       </section>
@@ -1268,9 +1286,10 @@ export default function CoursePageClient({ localizedData }) {
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {course.relatedCourses.map((relatedCourse, i) => (
-                <div
+                <Link
                   key={i}
-                  className="flex items-center justify-center bg-white p-6 rounded-xl shadow-lg"
+                  href={`/courses/${relatedCourse.slug}`}
+                  className="flex items-center justify-center bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
                 >
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-4">
@@ -1279,7 +1298,7 @@ export default function CoursePageClient({ localizedData }) {
                     <p className="text-gray-700">{relatedCourse.subtitle}</p>
                   </div>
                   <ArrowRight className="w-8 h-8 p-2 rounded-full bg-primary/10 ml-auto text-primary" />
-                </div>
+                </Link>
               ))}
             </div>
           </div>

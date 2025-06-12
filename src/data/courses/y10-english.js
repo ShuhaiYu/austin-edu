@@ -12,17 +12,17 @@ const courseData = {
           items: [
             {
               number: 20,
-              label: "students achieved",
+              label: "Austin's students achieved",
               subtitle: "a raw score of 45+",
             },
             {
               number: "40%",
-              label: "of students achieved",
+              label: "of Austin's students achieved",
               subtitle: "a raw score of 40+",
             },
             {
               number: "96%",
-              label: "of students achieved",
+              label: "of Austin's students achieved",
               subtitle: "a raw score of 30+",
             },
           ],
@@ -32,6 +32,7 @@ const courseData = {
           items: [
             {
               number: 5,
+              title: "",
               label: "top scorers in English & EAL",
               subtitle:
                 "8 students with raw score 49 nearly 20 students with raw score 48.",
@@ -196,43 +197,44 @@ const courseData = {
         {
           step: 1,
           title: "Detailed Evaluation of the Essay",
-          content: `When our teachers receive a student’s essay, the first step is to analyse its overall quality.Are the arguments convincing? Is the writing clear and concise? Does it address the topic effectively?
-          These are the key aspects we carefully evaluate.
-          This thorough initial assessment lays the foundation for more detailed revision feedback.`,
+          content: `When our teachers receive a student’s essay, the first step is to analyse its overall quality.Are the arguments convincing? Is the writing clear and concise? Does it address the topic effectively?",
+          "These are the key aspects we carefully evaluate.",
+          "This thorough initial assessment lays the foundation for more detailed revision feedback.`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 2,
           title: "Sentence Polishing",
-          content: `After evaluating the overall quality of the essay, Austin teachers proceed with a second round of adjustments focused on refining language expression.
-          We elevate simple phrases to more sophisticated and appropriate alternatives, correct grammar mistakes, streamline lengthy expressions, and add content where necessary to strengthen key points.
-          These changes ensure that any obvious issues in the article are addressed, making the writing more impactful and logical.`,
+          content: `After evaluating the overall quality of the essay, Austin teachers proceed with a second round of adjustments focused on refining language expression.",
+          "We elevate simple phrases to more sophisticated and appropriate alternatives, correct grammar mistakes, streamline lengthy expressions, and add content where necessary to strengthen key points.",
+          "These changes ensure that any obvious issues in the article are addressed, making the writing more impactful and logical.`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 3,
           title: "Refining Arguments",
-          content: `Once the surface-level issues are addressed, Austin teachers dive deeper into the core of the essay.
-          In this step, teachers engage in in-depth discussions with students, guiding them to critically examine their arguments. This process helps students refine their viewpoints, making them more distinct and profound, while also strengthening the persuasiveness of their points.
-          Through this first exchange of ideas between teacher and student, the essay’s evidence becomes more compelling, and the overall structure becomes more logical.`,
+          content: `Once the surface-level issues are addressed, Austin teachers dive deeper into the core of the essay.",
+          "In this step, teachers engage in in-depth discussions with students, guiding them to critically examine their arguments. This process helps students refine their viewpoints, making them more distinct and profound, while also strengthening the persuasiveness of their points.",
+          "Through this first exchange of ideas between teacher and student, the essay’s evidence becomes more compelling, and the overall structure becomes more logical.`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 4,
           title: "Structure Adjustment",
-          content: `After refining the arguments and enhancing the depth of viewpoints, Austin teachers help students adjust the structure of their essays.
-          A well-written essay requires a clear and logical structure that highlights its depth and persuasiveness. Austin teachers work with students to reorganise paragraph order, ensuring that each section is well-connected and flows smoothly.`,
+          content: `After refining the arguments and enhancing the depth of viewpoints, Austin teachers help students adjust the structure of their essays.",
+          "A well-written essay requires a clear and logical structure that highlights its depth and persuasiveness. Austin teachers work with students to reorganise paragraph order, ensuring that each section is well-connected and flows smoothly.`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 5,
           title: "Exemplary Paragraphs",
-          content: `To help students better understand the improvements, Austin teachers write a few optimised sample paragraphs. By comparing them, students can clearly see the differences between their work and high-scoring essays, while also identifying areas for improvement in their original paragraphs.
-          As always, Austin focuses not just on making quick fixes, but on enhancing students’ critical thinking and writing techniques at the root level.`,
+          content: `To help students better understand the improvements, Austin teachers write a few optimised sample paragraphs. By comparing them, students can clearly see the differences between their work and high-scoring essays, while also identifying areas for improvement in their original paragraphs.",
+          "As always, Austin focuses not just on making quick fixes, but on enhancing students’ critical thinking and writing techniques at the root level.`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
       ],
-      extraDescription: `Every improvement in an Austin student’s English comes from more than just effort. It’s the result of our teachers’ high-standard essay revisions, which lay the groundwork for their progress.`,
+      extraDescription:
+        "Every improvement in an Austin student’s English comes from more than just effort. It’s the result of our teachers’ high-standard essay revisions, which lay the groundwork for their progress.",
     },
     resources: {
       packages: [
@@ -386,7 +388,7 @@ const courseData = {
   },
   zh: {
     slug: "y10-english",
-    title: "10年级英文",
+    title: "10年级英文(ENG/EAL)",
     heroSection: {
       achievements: {
         title: "过去的学术成绩",
@@ -395,9 +397,9 @@ const courseData = {
             "在2024年VCE考试中，Austin的英语课程（English + English as an Additional Language（EAL））取得了卓越成绩",
           year: "2024",
           items: [
-            { number: 20, label: "学生达到", subtitle: "裸分45以上" },
-            { number: "40%", label: "学生达到", subtitle: "裸分40以上" },
-            { number: "96%", label: "学生达到", subtitle: "裸分30以上" },
+            { number: 20, label: "澳升学生达到", subtitle: "裸分45以上" },
+            { number: "40%", label: "澳升学生达到", subtitle: "裸分40以上" },
+            { number: "96%", label: "澳升学生达到", subtitle: "裸分30以上" },
           ],
         },
         historical: {
@@ -405,6 +407,7 @@ const courseData = {
           items: [
             {
               number: 5,
+              title: "",
               label: "English & EAL最高分者",
               subtitle: "8名学生裸分49，近20名学生裸分48",
             },

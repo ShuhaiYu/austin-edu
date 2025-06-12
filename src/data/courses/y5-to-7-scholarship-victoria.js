@@ -1,13 +1,12 @@
 const courseData = {
   en: {
     slug: "y5-7-scholarship-maths-english",
-    title: "Year 5-7 Scholarship Maths & English",
+    title: "Year 5-7 Scholarship Maths & English (Victoria)",
     heroSection: {
       achievements: {
         title: "Past Academic Achievements",
         currentYear: {
-          subtitle:
-            "In the 2024, Austin’s Scholarship courses achieved outstanding results",
+          subtitle: "Partial List of 2024 Scholarship Offers",
           year: "2024",
           items: [
             {
@@ -69,15 +68,14 @@ const courseData = {
         "Haileybury College",
         "Caulfield Grammar",
         "Huntingtower",
-        "Lauriston Girls' School",
+        "Lauriston Grils School",
       ],
       extraDescription: "这是在学校logo的下方的额外描述",
     },
 
     courseDescription: {
       title: "Course Description",
-      subtitle:
-        "Build Confidence. Solve Faster. Score Higher.",
+      subtitle: "Build Confidence. Solve Faster. Score Higher.",
       paragraph:
         "A high-efficiency scholarship program specifically designed for Year 4 and 5 students, focusing on advanced training in Mathematics and English. Through targeted exam strategies, accelerated content delivery, and expert instruction, students are fully prepared to tackle the highly competitive Year 5 to Year 7 scholarship exams.",
     },
@@ -114,7 +112,7 @@ const courseData = {
           },
         ],
       },
-        partA: {
+      partA: {
         title: "Why Choose Austin’s English Scholarship Program?",
         image1: "https://placehold.co/400x600?text=Image+1",
         image2: "https://placehold.co/400x1000?text=Image+2",
@@ -150,18 +148,60 @@ const courseData = {
     resources: {
       packages: [
         { icon: "school", title: "3 hours of weekly class sessions", desc: "" },
-        { icon: "book-copy", title: "8 exclusive Austin Education textbooks", desc: "" },
-        { icon: "user-pen", title: "3 hour of structured weekly homework", desc: "" },
-        { icon: "notebook-pen", title: "English includes 3-5 fully reviewed essays per term", desc: "" },
-        { icon: "chart-no-axes-combined", title: "100 additional/optional/advanced questions per week (in questions/hours)", desc: "" },
-        { icon: "book-open-text", title: "20 stage/topic assessments", desc: "" },
-        { icon: "square-check-big", title: "8 semester assessment exams", desc: "" },
+        {
+          icon: "book-copy",
+          title: "8 exclusive Austin Education textbooks",
+          desc: "",
+        },
+        {
+          icon: "user-pen",
+          title: "3 hour of structured weekly homework",
+          desc: "",
+        },
+        {
+          icon: "notebook-pen",
+          title: "English includes 3-5 fully reviewed essays per term",
+          desc: "",
+        },
+        {
+          icon: "chart-no-axes-combined",
+          title:
+            "100 additional/optional/advanced questions per week (in questions/hours)",
+          desc: "",
+        },
+        {
+          icon: "book-open-text",
+          title: "20 stage/topic assessments",
+          desc: "",
+        },
+        {
+          icon: "square-check-big",
+          title: "8 semester assessment exams",
+          desc: "",
+        },
         { icon: "chart-column", title: "4 exam reports", desc: "" },
         { icon: "speech", title: "4 parent-teacher meetings", desc: "" },
-        { icon: "File-clock", title: "20 exclusive Austin Education full-length mock exams", desc: "" },
-        { icon: "monitor-play", title: "Full access to class video recordings for revision", desc: "" },
-        { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: "" },
-        { icon: "message-square-dot", title: "Dedicated learning consultant for one-on-one issue resolution", desc: "" },
+        {
+          icon: "File-clock",
+          title: "20 exclusive Austin Education full-length mock exams",
+          desc: "",
+        },
+        {
+          icon: "monitor-play",
+          title: "Class video recordings for revision",
+          desc: "",
+        },
+        {
+          icon: "circle-help",
+          title: "Unlimited Q&A and academic support",
+          desc: "",
+        },
+        {
+          icon: "message-square-dot",
+          title:
+            "Dedicated learning consultant for one-on-one issue resolution",
+          desc: "",
+        },
         { icon: "users", title: "Free academic consultation", desc: "" },
       ],
     },
@@ -236,31 +276,30 @@ const courseData = {
     },
     relatedCourses: [
       {
-        title: "AMC",
+        title: "Year 5-6",
         subtitle: "AMC YEAR 5-6",
         slug: "y5-6-amc",
       },
       {
         title: "Year 3-6",
-        subtitle: "Year 3-6 Writing",
+        subtitle: "Writing",
         slug: "y3-6-writing",
       },
       {
         title: "Year 1-6",
-        subtitle: "Year 1-6 Maths",
+        subtitle: "Maths Enrichment",
         slug: "y1-6-maths",
       },
     ],
   },
   zh: {
     slug: "y5-7-scholarship-maths-english",
-    title: "5考7奖学金数学&英语课程优势",
+    title: "5考7奖学金数学&英语课程 (维洲)",
     heroSection: {
       achievements: {
         title: "历史成就",
         currentYear: {
-          subtitle:
-            "2024年，澳升教育的奖学金课程取得了优异成绩",
+          subtitle: "2024年，澳升教育的奖学金课程取得了优异成绩",
           year: "2024",
           items: [
             {
@@ -271,7 +310,7 @@ const courseData = {
           ],
         },
         historical: {
-          range: "2024年奖学金录取",
+          range: "2024年部分奖学金录取",
           items: [
             {
               number: "60%",
@@ -331,8 +370,7 @@ const courseData = {
 
     courseDescription: {
       title: "Course Description",
-      subtitle:
-        "建立自信 · 高效解题 · 稳抓高分",
+      subtitle: "建立自信 · 高效解题 · 稳抓高分",
       paragraph:
         "专为4-5年级学生设计的高效奖学金课堂，集中于数学与英语强化课程，助力他们通过进阶内容学习、精准应试策略和权威教师指导，全面备战竞争激烈的5考7奖学金考试。",
     },
@@ -344,8 +382,7 @@ const courseData = {
         content: [
           {
             title: "1. 系统性知识覆盖",
-            paragraph:
-              "在短时间内完成7年级数学知识点教学，为学生打下坚实基础",
+            paragraph: "在短时间内完成7年级数学知识点教学，为学生打下坚实基础",
           },
           {
             title: "2. 强化解题技巧",
@@ -354,22 +391,19 @@ const courseData = {
           },
           {
             title: "3. 针对性训练",
-            paragraph:
-              "内部独家题库，模拟真实考试难度，确保学生练习的精准度",
+            paragraph: "内部独家题库，模拟真实考试难度，确保学生练习的精准度",
           },
           {
             title: "4. 全真模考演练",
-            paragraph:
-              "限时训练，帮助学生适应高压环境，提升临场应变能力",
+            paragraph: "限时训练，帮助学生适应高压环境，提升临场应变能力",
           },
           {
             title: "5. 顶尖教师指导",
-            paragraph:
-              "教师团队熟悉奖学金考试题型，针对性提升学生的得分能力",
+            paragraph: "教师团队熟悉奖学金考试题型，针对性提升学生的得分能力",
           },
         ],
       },
-        partA: {
+      partA: {
         title: "为什么选择澳升的奖学金英文项目?",
         image1: "https://placehold.co/400x600?text=Image+1",
         image2: "https://placehold.co/400x1000?text=Image+2",
@@ -386,13 +420,11 @@ const courseData = {
           },
           {
             title: "3. 阅读理解突破",
-            paragraph:
-              "强化长篇文章分析能力，提高信息整合和推理能力",
+            paragraph: "强化长篇文章分析能力，提高信息整合和推理能力",
           },
           {
             title: "4. 应试策略讲解",
-            paragraph:
-              "针对verbal reasoning部分，教授解题技巧，提升答题准确率",
+            paragraph: "针对verbal reasoning部分，教授解题技巧，提升答题准确率",
           },
           {
             title: "5. 强大教师团队",
@@ -407,8 +439,16 @@ const courseData = {
         { icon: "school", title: "每周 3 小时班课", desc: "" },
         { icon: "book-copy", title: "8 本澳升独家教材", desc: "" },
         { icon: "user-pen", title: "每周 3 小时课后作业", desc: "" },
-        { icon: "notebook-pen", title: "英文包含 一个学期 3-5 篇作文精改", desc: "" },
-        { icon: "chart-no-axes-combined", title: "每周 100 题/小时额外/选做/高阶题", desc: "" },
+        {
+          icon: "notebook-pen",
+          title: "英文包含 一个学期 3-5 篇作文精改",
+          desc: "",
+        },
+        {
+          icon: "chart-no-axes-combined",
+          title: "每周 100 题/小时额外/选做/高阶题",
+          desc: "",
+        },
         { icon: "book-open-text", title: "20 次阶段/主题测试", desc: "" },
         { icon: "square-check-big", title: "8 次学期检测考试", desc: "" },
         { icon: "chart-column", title: "4 次考试报告", desc: "" },
@@ -416,7 +456,11 @@ const courseData = {
         { icon: "File-clock", title: "20 次澳升独家全真模拟考试", desc: "" },
         { icon: "monitor-play", title: "提供课程录像", desc: "" },
         { icon: "circle-help", title: "提供无限的沟通答疑", desc: "" },
-        { icon: "message-square-dot", title: "提供私人学管一对一解决问题", desc: "" },
+        {
+          icon: "message-square-dot",
+          title: "提供私人学管一对一解决问题",
+          desc: "",
+        },
         { icon: "users", title: "提供免费学业咨询", desc: "" },
       ],
     },
@@ -496,13 +540,13 @@ const courseData = {
         slug: "y5-6-amc",
       },
       {
-        title: "Year 3-6",
-        subtitle: "3-6年级写作课程",
+        title: "3-6年级",
+        subtitle: "写作课程",
         slug: "y3-6-writing",
       },
       {
-        title: "Year 1-6",
-        subtitle: "1-6年级数学课程",
+        title: "1-6年级",
+        subtitle: "数学培优班",
         slug: "y1-6-maths",
       },
     ],

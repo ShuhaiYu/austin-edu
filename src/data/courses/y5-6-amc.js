@@ -23,7 +23,7 @@ const courseData = {
         {
           title: "Exclusive AMC Problem-Solving Strategies",
           list: [
-            "Five winning techniques to tackle even the most challenging questions：",
+            "Five winning techniques to tackle even the most challenging questions⬇",
             "Formula Blitz: Build equations quickly to reduce calculation time and boost speed.",
             "Reverse Logic: Go beyond conventional methods to develop the creative thinking AMC rewards.",
             "Number-Shape Fusion: Use geometric intuition to solve complex algebraic problems.",
@@ -64,8 +64,7 @@ const courseData = {
     },
     whyChooseUs: {
       partA: {
-        title:
-          " Final Word: Austin’s AMC Program—Your Launchpad to Maths Excellence!",
+        title: "Austin’s AMC Program—Your Launchpad to Maths Excellence!",
         image1: "https://placehold.co/400x600?text=Image+1",
         image2: "https://placehold.co/400x1000?text=Image+2",
         content: [
@@ -99,11 +98,7 @@ const courseData = {
         },
         { icon: "File-clock", title: "4 full-length mock exams", desc: "" },
         { icon: "Square-check-big", title: "4 topic tests", desc: "" },
-        {
-          icon: "scroll-text",
-          title: "2 original practice papers",
-          desc: "",
-        },
+        { icon: "scroll-text", title: "2 original practice papers", desc: "" },
         {
           icon: "speech",
           title: "2 one-on-one post-exam paper analysis sessions",
@@ -138,25 +133,24 @@ const courseData = {
     relatedCourses: [
       {
         title: "Year 1-6",
-        subtitle: "Year 1-6 Chinese",
+        subtitle: "Chinese Enrichment",
         slug: "y1-6-chinese",
       },
       {
         title: "Year 1-6",
-        subtitle: "Year 1-6 English",
+        subtitle: "English Enrichment",
         slug: "y1-6-english",
       },
       {
         title: "Year 1-6",
-        subtitle: "Year 1-6 Maths",
+        subtitle: "Maths Enrichment",
         slug: "y1-6-maths",
       },
     ],
   },
-
   zh: {
     slug: "y5-6-amc",
-    title: "AMC竞赛班 5-6年级",
+    title: "5-6年级 AMC竞赛班",
     courseDescription: {
       title: " AMC 官方考点",
       subtitle: "澳升成为 AMC 官方考点",
@@ -178,7 +172,7 @@ const courseData = {
         {
           title: "独家 AMC 解题方法，秒杀难题",
           list: [
-            "五大制胜策略：",
+            "五大制胜策略⬇ ",
             "公式速解法：快速建立方程，减少计算量，提高解题速度。",
             "逆向思维法：跳出常规解法，培养 AMC 必备创新思维。",
             "数形结合法：利用几何直观分析复杂代数问题，提高理解力。",
@@ -213,9 +207,9 @@ const courseData = {
           ],
         },
       ],
+      extraDescription:
+        "澳升 AMC 竞赛班 | 课程独家亮点 \n 澳升 AMC（Australian Mathematics Competition）竞赛班，专为 挑战数学极限、突破竞赛瓶颈 的学生打造。课程涵盖 AMC 5-8年级内容（Upper Primary & Junior），针对不同年级和能力层次，提供 系统化训练 + 高强度实战演练，帮助学生掌握 AMC 必考技巧，冲击高分荣誉！",
     },
-    extraDescription:
-      "澳升 AMC 竞赛班 | 课程独家亮点 \n 澳升 AMC（Australian Mathematics Competition）竞赛班，专为 挑战数学极限、突破竞赛瓶颈 的学生打造。课程涵盖 AMC 5-8年级内容（Upper Primary & Junior），针对不同年级和能力层次，提供 系统化训练 + 高强度实战演练，帮助学生掌握 AMC 必考技巧，冲击高分荣誉！",
 
     whyChooseUs: {
       partA: {
@@ -240,7 +234,7 @@ const courseData = {
     },
     resources: {
       packages: [
-        { icon: "school", title: "28节2h课程", desc: "" },
+        { icon: "school", title: "28节2小时课程", desc: "" },
         { icon: "user-pen", title: "每周1小时课后作业", desc: "" },
         { icon: "book-copy", title: "20套完整的练习试卷", desc: "" },
         { icon: "layers", title: "1000题海量练习题库", desc: "" },
@@ -276,18 +270,18 @@ const courseData = {
     },
     relatedCourses: [
       {
-        title: "Year 1-6",
-        subtitle: "1-6年级中文课程",
+        title: "1-6年级",
+        subtitle: "中文培优班",
         slug: "y1-6-chinese",
       },
       {
-        title: "Year 1-6",
-        subtitle: "1-6年级英文课程",
+        title: "1-6年级",
+        subtitle: "英文培优班",
         slug: "y1-6-english",
       },
       {
-        title: "Year 1-6",
-        subtitle: "1-6年级数学课程",
+        title: "1-6年级",
+        subtitle: "数学培优班",
         slug: "y1-6-maths",
       },
     ],

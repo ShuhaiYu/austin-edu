@@ -634,10 +634,7 @@ const courseData = {
         "At most day schools, essay corrections often only provide simple feedback. However, at Austin, we insist on in-depth revisions and one-on-one communication, helping students truly understand and improve their writing skills. We do not encourage rote memorisation, but instead, through a systematic revision process, we cultivate students’ independent thinking and high-quality writing abilities.",
         "Our high-standard essay refinement process includes five core steps, ensuring that every student can achieve their best performance in SACs and exams.",
       ],
-      images: [
-        "https://placehold.co/975x650",
-        "https://placehold.co/975x650",
-      ],
+      images: ["https://placehold.co/975x650", "https://placehold.co/975x650"],
       steps: [
         {
           step: 1,

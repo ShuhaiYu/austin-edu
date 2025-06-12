@@ -1,6 +1,6 @@
 const courseData = {
   en: {
-    slug: "vce-physics-unit1-4",
+    slug: "vce-physics-unit-1-4",
     title: "VCE Physics Unit1-4",
     whyChooseUs: {
       partA: {
@@ -14,7 +14,8 @@ const courseData = {
               "Our course progresses at the pace of top-performing schools such as John Monash, Haileybury, and Mac.Rob – and often faster. \nStudents master all key content before SACs begin, ensuring they’re never held back by slow school progress. \nEach year, our curriculum is dynamically adjusted to reflect the latest VCE changes, including off-textbook topics like investigation-based tasks.",
           },
           {
-            title: "2.  Exam-Focused Instruction – Real Strategies for Real Scores",
+            title:
+              "2.  Exam-Focused Instruction – Real Strategies for Real Scores",
             paragraph:
               "We train students under time constraints, assigning exam-style time limits for each question in class to replicate real pressure. \nOur Bound Reference guides are custom-built and updated annually to highlight the most critical exam points for quick and effective referencing. \nHigh-yield SAC-specific revision sessions ensure students are prepared for both theory and experimental questions with precision.",
           },
@@ -39,16 +40,53 @@ const courseData = {
     resources: {
       packages: [
         { icon: "school", title: "2-hour weekly group class", desc: " " },
-        { icon: "book-copy", title: "4 exclusive Austin Education textbooks", desc: " " },
-        { icon: "book-open-text️", title:"8 exclusive Austin Education workbooks", desc: "  " },
-        { icon: "user-pen", title: "2 hours of structured weekly homework", desc: " " },
-        { icon: "calendar", title: "2 term-level assessment exams", desc: " " },
-        { icon: "file-clock", title: "Austin-designed full-length mock exams", desc: " " },
+        {
+          icon: "book-copy",
+          title: "4 exclusive Austin Education textbooks",
+          desc: " ",
+        },
+        {
+          icon: "book-open-text️",
+          title: "8 exclusive Austin Education workbooks",
+          desc: "  ",
+        },
+        {
+          icon: "user-pen",
+          title: "2 hours of structured weekly homework",
+          desc: " ",
+        },
+        {
+          icon: "calendar",
+          title: "2 term-level assessment exams",
+          desc: " ",
+        },
+        {
+          icon: "file-clock",
+          title: "Austin-designed full-length mock exams",
+          desc: " ",
+        },
         { icon: "goal", title: "Targeted SAC revision sessions", desc: " " },
-        { icon: "monitor-play", title: "Class video recordings for review", desc: " " },
-        { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: " " },
-        { icon: "message-square-dot", title: "Dedicated 1-on-1 learning manager for personalised issue resolution", desc: " " },
-        { icon: "users", title: "Free academic consultation included", desc: " " },
+        {
+          icon: "monitor-play",
+          title: "Class video recordings for review",
+          desc: " ",
+        },
+        {
+          icon: "circle-help",
+          title: "Unlimited Q&A and academic support",
+          desc: " ",
+        },
+        {
+          icon: "message-square-dot",
+          title:
+            "Dedicated 1-on-1 learning manager for personalised issue resolution",
+          desc: " ",
+        },
+        {
+          icon: "users",
+          title: "Free academic consultation included",
+          desc: " ",
+        },
       ],
     },
     courseStructure: {
@@ -190,17 +228,17 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit1-4",
+        slug: "vce-english-eal-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "Mathematical Methods Unit 1-4",
-        slug: "vce-maths-methods-unit1-4",
+        slug: "vce-maths-methods-unit-1-4",
       },
       {
         title: "VCE",
-        subtitle: "Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit1-4",
+        subtitle: "Specialist Mathematical Unit 1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
     ],
   },
@@ -245,14 +283,18 @@ const courseData = {
       packages: [
         { icon: "school", title: "每周2小时班课", desc: " " },
         { icon: "book-copy", title: "4本澳升独家教材", desc: " " },
-        { icon: "book-open-text️", title:"8本澳升独家习题册", desc: "  " },
+        { icon: "book-open-text️", title: "8本澳升独家习题册", desc: "  " },
         { icon: "user-pen", title: "每周2小时课后作业", desc: " " },
         { icon: "calendar", title: "2次学期检测考试", desc: " " },
         { icon: "file-clock", title: "澳升独家全真模拟考试", desc: " " },
         { icon: "goal", title: "SAC 专项复习", desc: " " },
         { icon: "monitor-play", title: "课程录像", desc: " " },
         { icon: "circle-help", title: "无限的沟通答疑", desc: " " },
-        { icon: "message-square-dot", title: "私人学管一对一解决问题", desc: " " },
+        {
+          icon: "message-square-dot",
+          title: "私人学管一对一解决问题",
+          desc: " ",
+        },
         { icon: "users", title: "免费学业咨询", desc: " " },
       ],
     },
@@ -395,17 +437,17 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit1-4",
+        slug: "vce-english-eal-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "中数 Mathematical Methods Unit 1-4",
-        slug: "vce-maths-methods-unit1-4",
+        slug: "vce-maths-methods-unit-1-4",
       },
       {
         title: "VCE",
         subtitle: "高数 Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
     ],
   },

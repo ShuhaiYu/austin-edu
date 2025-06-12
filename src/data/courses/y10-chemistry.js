@@ -4,18 +4,15 @@ const courseData = {
     title: "Year 10 Pre-VCE Chemistry",
     courseDescription: {
       title: "Course Description",
-      subtitle:
-        `Bridge to VCE · Solidify Foundations · Gain a Head Start
+      subtitle: `Bridge to VCE · Solidify Foundations · Gain a Head Start
         Start building a decisive advantage for VCE Chemistry from Year 10!`,
-      paragraph:
-        `Austin’s Year 10 Chemistry is a transitional course carefully designed for students planning to pursue VCE Chemistry. It helps students consolidate core concepts, build a structured understanding of chemistry, and become familiar with the VCE exam format in advance.
+      paragraph: `Austin’s Year 10 Chemistry is a transitional course carefully designed for students planning to pursue VCE Chemistry. It helps students consolidate core concepts, build a structured understanding of chemistry, and become familiar with the VCE exam format in advance.
         Unlike school programs that focus heavily on observational experiments, Austin’s curriculum combines theoretical understanding, exam-oriented training, and scientific thinking strategies. The course bridges school knowledge gaps while equipping students with the VCE mindset and problem-solving skills before entering Year 11.`,
     },
     coreFeatures: {
       sections: [
         {
-          title:
-            "Comprehensive Conceptual Foundation Aligned with VCE",
+          title: "Comprehensive Conceptual Foundation Aligned with VCE",
           list: [
             "Covers essential Year 10 Chemistry modules: atomic structure, periodic table, chemical bonding, reaction types, solutions, and concentration.",
             "Each topic is linked to VCE Unit 1–2 content, gradually introducing high-level concepts.",
@@ -23,8 +20,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "Develop Linear Thinking to Prevent Knowledge Gaps",
+          title: "Develop Linear Thinking to Prevent Knowledge Gaps",
           list: [
             "Chemistry follows a highly linear progression—early structured learning builds long-term advantage.",
             "From Year 10, students are trained in the core logic of “structure → properties → reactions → applications.”",
@@ -32,16 +28,14 @@ const courseData = {
           ],
         },
         {
-          title:
-            "VCE-Style Question Training from Day One",
+          title: "VCE-Style Question Training from Day One",
           list: [
             "Students practice typical VCE question types: explanation, comparison, calculation, and experimental design.",
             "Focused training on reasoning, terminology, and structured responses to build strong answering skills.",
           ],
         },
         {
-          title:
-            "Quizzes & Progress Assessments to Track Mastery",
+          title: "Quizzes & Progress Assessments to Track Mastery",
           list: [
             "Regular quizzes with detailed reviews at the end of each chapter.",
             "Two major assessments per term to monitor progress and identify areas for improvement.",
@@ -88,15 +82,44 @@ const courseData = {
     resources: {
       packages: [
         { icon: "school", title: "2-hour weekly group class", desc: " " },
-        { icon: "book-copy", title: "4 exclusive Austin Education textbooks", desc: " " },
-        { icon: "user-pen", title: "1 hours of structured weekly homework", desc: " " },
+        {
+          icon: "book-copy",
+          title: "4 exclusive Austin Education textbooks",
+          desc: " ",
+        },
+        {
+          icon: "user-pen",
+          title: "1 hours of structured weekly homework",
+          desc: " ",
+        },
         { icon: "calendar", title: "2 semester assessment exams", desc: " " },
-        { icon: "file-clock", title: "1 exclusive Austin Education full-length mock exams", desc: " " },
+        {
+          icon: "file-clock",
+          title: "1 exclusive Austin Education full-length mock exams",
+          desc: " ",
+        },
         { icon: "goal", title: "Targeted SAC revision sessions", desc: " " },
-        { icon: "monitor-play", title: "Full access to class video recordings for review", desc: " " },
-        { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: " " },
-        { icon: "message-square-dot", title: "Dedicated 1-on-1 learning manager for personalised issue resolution", desc: " " },
-        { icon: "users", title: "Free academic consultation included", desc: " " },
+        {
+          icon: "monitor-play",
+          title: "Class video recordings for review",
+          desc: " ",
+        },
+        {
+          icon: "circle-help",
+          title: "Unlimited Q&A and academic support",
+          desc: " ",
+        },
+        {
+          icon: "message-square-dot",
+          title:
+            "Dedicated 1-on-1 learning manager for personalised issue resolution",
+          desc: " ",
+        },
+        {
+          icon: "users",
+          title: "Free academic consultation included",
+          desc: " ",
+        },
       ],
     },
     courseStructure: {
@@ -176,7 +199,7 @@ const courseData = {
     relatedCourses: [
       {
         title: "Year 10",
-        subtitle: "English/EAL ",
+        subtitle: "Pre VCE English/EAL ",
         slug: "y10-english",
       },
       {
@@ -204,8 +227,7 @@ const courseData = {
     coreFeatures: {
       sections: [
         {
-          title:
-            " 知识体系全面铺垫，提前衔接 VCE",
+          title: " 知识体系全面铺垫，提前衔接 VCE",
           list: [
             "精选 Y10 化学核心知识模块，包括：物质结构、元素周期表、化学键、反应类型、溶液与浓度等",
             "每个模块都结合 VCE Unit 1–2 要求，逐步导入高年级考点",
@@ -213,24 +235,21 @@ const courseData = {
           ],
         },
         {
-          title:
-            "建立线性思维，解决“前面没学懂、后面学不动”的难题",
+          title: "建立线性思维，解决“前面没学懂、后面学不动”的难题",
           list: [
             "化学知识结构具有强烈的“线性递进性”，越早进入系统学习越占优势",
             "从10年级开始训练“结构-性质-反应-应用”的核心逻辑，避免 VCE 阶段知识断层",
           ],
         },
         {
-          title:
-            "VCE风格题型训练，提前掌握答题模式",
+          title: "VCE风格题型训练，提前掌握答题模式",
           list: [
             "从课堂开始就接触 VCE 化学常见题型：解释题、对比题、计算题、实验设计题",
             "强化关键答题逻辑、术语使用与得分结构，培养标准作答能力",
           ],
         },
         {
-          title:
-            "小测验+阶段测试，稳步追踪学习成效",
+          title: "小测验+阶段测试，稳步追踪学习成效",
           list: [
             "每章节结束有随堂小测+讲评",
             "每学期安排两次阶段性检测，帮助学生自我评估并查漏补缺",
@@ -254,22 +273,10 @@ const courseData = {
         table: {
           headers: ["模块", "目标成果"],
           rows: [
-            [
-              "知识掌握",
-              "掌握10年级化学核心化学概念，为 VCE 奠定结构认知",
-            ],
-            [
-              "科学思维",
-              "建立“因果+结构+推理”逻辑，适应理科学术写作要求",
-            ],
-            [
-              "应试技巧",
-              "提前训练 VCE 化学语言和答题结构",
-            ],
-            [
-              "学习节奏",
-              "适应高中快节奏理科课堂，为11年级学习节奏做准备",
-            ],
+            ["知识掌握", "掌握10年级化学核心化学概念，为 VCE 奠定结构认知"],
+            ["科学思维", "建立“因果+结构+推理”逻辑，适应理科学术写作要求"],
+            ["应试技巧", "提前训练 VCE 化学语言和答题结构"],
+            ["学习节奏", "适应高中快节奏理科课堂，为11年级学习节奏做准备"],
           ],
         },
       },
@@ -284,7 +291,11 @@ const courseData = {
         { icon: "goal", title: "SAC 专项复习", desc: " " },
         { icon: "monitor-play", title: "课程录像", desc: " " },
         { icon: "circle-help", title: "无限的沟通答疑", desc: " " },
-        { icon: "message-square-dot", title: "私人学管一对一解决问题", desc: " " },
+        {
+          icon: "message-square-dot",
+          title: "私人学管一对一解决问题",
+          desc: " ",
+        },
         { icon: "users", title: "免费学业咨询", desc: " " },
       ],
     },

@@ -1,7 +1,7 @@
 const courseData = {
   en: {
     slug: "y1-6-maths",
-    title: "Year 1-6 Maths",
+    title: "Year 1-6 Maths Enrichment",
     coreFeatures: {
       sections: [
         {
@@ -22,8 +22,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "Dual Focus on Maths & English – Broaden Cognitive Skills",
+          title: "Dual Focus on Maths & English – Broaden Cognitive Skills",
           list: [
             "The maths curriculum integrates both numerical skills and mathematical English, helping students understand concepts more clearly in a bilingual learning environment.",
             "The English component includes advanced training across listening, speaking, reading, and writing, supporting improvement in school essays, reading comprehension, and expression.",
@@ -39,8 +38,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "Exam Skills Often Overlooked by Day Schools",
+          title: "Exam Skills Often Overlooked by Day Schools",
           list: [
             "In school, correct formatting is often not strictly enforced. However, in VCE maths exams, incorrect format can lead to significant mark deductions.",
             "Austin trains students according to VCE standards from an early age, helping them build proper habits and avoid losing marks due to presentation errors.",
@@ -58,41 +56,80 @@ const courseData = {
     },
     whyChooseUs: {
       partA: {
-        title: "Why Choose Austin’s Primary Maths Program?",
+        title: "Why Choose Austin’s Primary Maths Enrichment?",
         image1: "https://placehold.co/400x600?text=Image+1",
         image2: "https://placehold.co/400x1000?text=Image+2",
         content: [
           {
-            title: "Mainstream Australian schools follow a consolidation-based teaching model — slow-paced with relatively simple assessments. However, VCE and scholarship competitions are highly competitive, and waiting until high school to realise you’re behind is too late.",
+            title:
+              "Mainstream Australian schools follow a consolidation-based teaching model — slow-paced with relatively simple assessments. However, VCE and scholarship competitions are highly competitive, and waiting until high school to realise you’re behind is too late.",
           },
           {
-            title: "Austin’s program strengthens foundational knowledge while expanding students’ upper potential, helping them develop genuine mathematical thinking—not just “how to solve questions.”",
+            title:
+              "Austin’s program strengthens foundational knowledge while expanding students’ upper potential, helping them develop genuine mathematical thinking—not just “how to solve questions.”",
           },
           {
-            title: "Seamlessly aligned with the Victorian Curriculum and moderately accelerated (up to 10%), our courses ensure students stay ahead of their peers.",
+            title:
+              "Seamlessly aligned with the Victorian Curriculum and moderately accelerated (up to 10%), our courses ensure students stay ahead of their peers.",
           },
           {
-            title: "Dual development in Maths and English: not only do students become more confident in maths, but their ability to understand and communicate mathematical ideas in English also improves.",
+            title:
+              "Dual development in Maths and English: not only do students become more confident in maths, but their ability to understand and communicate mathematical ideas in English also improves.",
           },
           {
-            title: "Strict training in solution structure and presentation helps students build high-scoring exam habits from an early age—laying the groundwork for future VCE success.",
+            title:
+              "Strict training in solution structure and presentation helps students build high-scoring exam habits from an early age—laying the groundwork for future VCE success.",
           },
         ],
       },
     },
     resources: {
       packages: [
-        { icon: "school", title: "1.5 hours of weekly small group class sessions", desc: "" },
-        { icon: "book-copy", title: "4 exclusive Austin Education textbooks", desc: "" },
-        { icon: "book-open-text", title: "1 exclusive Austin Education workbooks", desc: "" },
-        { icon: "user-pen", title: "0.5 - 1 hours of weekly homework", desc: "" },
-        { icon: "chart-no-axes-combined", title: "20-40 additional/optional/advanced online questions per week (in questions/hours)", desc: "" },
+        {
+          icon: "school",
+          title: "1.5 hours of weekly class sessions",
+          desc: "",
+        },
+        {
+          icon: "book-copy",
+          title: "4 exclusive Austin Education textbooks",
+          desc: "",
+        },
+        {
+          icon: "book-open-text",
+          title: "1 exclusive Austin Education workbooks",
+          desc: "",
+        },
+        {
+          icon: "user-pen",
+          title: "0.5 - 1 hours of weekly homework",
+          desc: "",
+        },
+        {
+          icon: "chart-no-axes-combined",
+          title:
+            "20-40 additional/optional/advanced online questions per week (in questions/hours)",
+          desc: "",
+        },
         { icon: "File-clock", title: "4 semester assessment exams", desc: "" },
         { icon: "chart-column", title: "4 exam reports", desc: "" },
-        { icon: "speech", title: "1 parent-teacher meetings per year", desc: "" },
-        { icon: "monitor-play", title: "Full access to class video recordings", desc: "" },
-        { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: "" },
-        { icon: "message-square-dot", title: "Dedicated learning consultant for one-on-one issue resolution", desc: "" },
+        {
+          icon: "speech",
+          title: "1 parent-teacher meetings per year",
+          desc: "",
+        },
+        { icon: "monitor-play", title: "Class video recordings", desc: "" },
+        {
+          icon: "circle-help",
+          title: "Unlimited Q&A and academic support",
+          desc: "",
+        },
+        {
+          icon: "message-square-dot",
+          title:
+            "Dedicated learning consultant for one-on-one issue resolution",
+          desc: "",
+        },
         { icon: "users", title: "Free academic consultation", desc: "" },
       ],
     },
@@ -100,10 +137,11 @@ const courseData = {
       title: "Course Structure",
       sections: [
         {
+          title: "year 1",
           modules: [
             {
-              title: "Term 1",
-              subtitle: "",
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -117,8 +155,8 @@ const courseData = {
               ],
             },
             {
-              title: "Term 2",
-              subtitle: "",
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -132,8 +170,8 @@ const courseData = {
               ],
             },
             {
-              title: "Term 3",
-              subtitle: "",
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -147,8 +185,333 @@ const courseData = {
               ],
             },
             {
-              title: "Term 4",
-              subtitle: "",
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+        {
+          title: "year 2",
+          modules: [
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+        {
+          title: "year 3",
+          modules: [
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+        {
+          title: "year 4",
+          modules: [
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+        {
+          title: "year 5",
+          modules: [
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+        {
+          title: "year 6",
+          modules: [
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -168,37 +531,35 @@ const courseData = {
     relatedCourses: [
       {
         title: "Year 1-6",
-        subtitle: "Year 1-6 English",
+        subtitle: "English Enrichment (ENG/EAL)",
         slug: "y1-6-english",
       },
       {
         title: "Year 1-6",
-        subtitle: "Year 3-6 Chinese",
-        slug: "y3-6-chinese",
+        subtitle: "Chinese Enrichment",
+        slug: "y1-6-chinese",
       },
       {
         title: "Year 3-6",
-        subtitle: "Year 3-6 Writing",
+        subtitle: "Writing",
         slug: "y3-6-writing",
       },
     ],
   },
   zh: {
     slug: "y1-6-maths",
-    title: "1-6年级数学课程",
+    title: "1-6年级数学培优班",
     coreFeatures: {
       sections: [
         {
-          title:
-            "严格对标维州课程，比日校教学更深入",
+          title: "严格对标维州课程，比日校教学更深入",
           list: [
             "课程完全遵循维州课程标准，但覆盖范围更广，确保学生不仅理解基础知识，还能灵活运用",
             "适度超前（不超过10%），让学生在巩固日校知识的同时，提前建立数学思维",
           ],
         },
         {
-          title:
-            "系统化教学，夯实基础 & 提前培养解题能力",
+          title: "系统化教学，夯实基础 & 提前培养解题能力",
           list: [
             "教学流程：知识点讲解 ➡️ 例题分析 ➡️ 题型训练 ➡️ 强化练习，逐步提升理解和应用能力",
             "题型多样化：不仅练基础计算，还引入应用题、数列规律、奥数题型，确保学生学得透彻",
@@ -206,16 +567,14 @@ const courseData = {
           ],
         },
         {
-          title:
-            "数学 & 英语双向提升，拓宽认知能力",
+          title: "数学 & 英语双向提升，拓宽认知能力",
           list: [
             "数学部分不仅教计算，还结合英文数学表达，让学生在双语环境中更轻松理解数学概念",
             "英语部分涵盖听说读写拔高训练，帮助学生提高日校作文、阅读理解和表达能力",
           ],
         },
         {
-          title:
-            "高效解题技巧，避免冗余计算",
+          title: "高效解题技巧，避免冗余计算",
           list: [
             "日校老师的计算方式通常繁琐，而澳升老师教授的是最高效的解题方法，减少无谓步骤，提高运算速度",
             "训练数学等式思维，让学生逐步养成化繁为简的解题习惯，不仅能做对，还能做快",
@@ -223,16 +582,14 @@ const courseData = {
           ],
         },
         {
-          title:
-            "日校忽略的考试能力培养",
+          title: "日校忽略的考试能力培养",
           list: [
             "日校对数学解题格式要求宽松，但未来VCE考试中格式错误会严重扣分",
             "澳升严格按照VCE标准训练格式，让学生从小养成正确的解题习惯，避免因格式不规范丢分",
           ],
         },
         {
-          title:
-            "小班精细化教学，确保个性化辅导",
+          title: "小班精细化教学，确保个性化辅导",
           list: [
             "避免大班制的“流水线教学”，保证每个学生都能得到老师的关注",
             "师资强大，老师不仅是教学者，更是学生的学习引路人，帮助孩子建立正确的学习方法和思维方式",
@@ -242,15 +599,17 @@ const courseData = {
     },
     whyChooseUs: {
       partA: {
-        title: "为什么选择澳升小学数学课程",
+        title: "为什么选择澳升小学数学培优班",
         image1: "https://placehold.co/400x600?text=Image+1",
         image2: "https://placehold.co/400x1000?text=Image+2",
         content: [
           {
-            title: "澳洲日校教育是“巩固式”教学，进度慢，考试简单，但未来VCE & 奖学金竞争激烈，不能等到高中才发现自己落后",
+            title:
+              "澳洲日校教育是“巩固式”教学，进度慢，考试简单，但未来VCE & 奖学金竞争激烈，不能等到高中才发现自己落后",
           },
           {
-            title: "澳升课程既能补足基础，又能提升上限，帮助学生真正建立数学思维，而不仅仅是“做题”",
+            title:
+              "澳升课程既能补足基础，又能提升上限，帮助学生真正建立数学思维，而不仅仅是“做题”",
           },
           {
             title: "课程与日校无缝衔接，同时超前10%，让孩子在同龄人中保持领先",
@@ -259,7 +618,8 @@ const courseData = {
             title: "英语 & 数学双向提升，不仅数学更强，英文表达能力也同步增长",
           },
           {
-            title: "严格训练解题格式，从小养成高分答题习惯，为VCE做好最充分准备",
+            title:
+              "严格训练解题格式，从小养成高分答题习惯，为VCE做好最充分准备",
           },
         ],
       },
@@ -270,13 +630,21 @@ const courseData = {
         { icon: "book-copy", title: "每年 4 本澳升独家教材", desc: "" },
         { icon: "book-open-text", title: "1 本澳升独家教材", desc: "" },
         { icon: "user-pen", title: "每周 0.5 - 1 小时课后作业", desc: "" },
-        { icon: "chart-no-axes-combined", title: "每周 20-40 题额外复习高阶题", desc: "" },
+        {
+          icon: "chart-no-axes-combined",
+          title: "每周 20-40 题额外复习高阶题",
+          desc: "",
+        },
         { icon: "File-clock", title: "4 次学期检测考试", desc: "" },
         { icon: "chart-column", title: "2 次考试report", desc: "" },
         { icon: "speech", title: "1 次家长会", desc: "" },
         { icon: "monitor-play", title: "提供课程录像", desc: "" },
         { icon: "circle-help", title: "提供无限的沟通答疑", desc: "" },
-        { icon: "message-square-dot", title: "提供私人学管一对一解决问题", desc: "" },
+        {
+          icon: "message-square-dot",
+          title: "提供私人学管一对一解决问题",
+          desc: "",
+        },
         { icon: "users", title: "提供免费学业咨询", desc: "" },
       ],
     },
@@ -284,10 +652,11 @@ const courseData = {
       title: "Course Structure",
       sections: [
         {
+          title: "year 1",
           modules: [
             {
-              title: "Term 1",
-              subtitle: "",
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -301,8 +670,8 @@ const courseData = {
               ],
             },
             {
-              title: "Term 2",
-              subtitle: "",
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -316,8 +685,8 @@ const courseData = {
               ],
             },
             {
-              title: "Term 3",
-              subtitle: "",
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -331,8 +700,333 @@ const courseData = {
               ],
             },
             {
-              title: "Term 4",
-              subtitle: "",
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+        {
+          title: "year 2",
+          modules: [
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+        {
+          title: "year 3",
+          modules: [
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+        {
+          title: "year 4",
+          modules: [
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+        {
+          title: "year 5",
+          modules: [
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+        {
+          title: "year 6",
+          modules: [
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 1",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 2",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 3",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Introduction to Genres",
+              subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -350,19 +1044,19 @@ const courseData = {
       ],
     },
     relatedCourses: [
-        {
-        title: "Year 1-6",
-        subtitle: "1-6年级英文课程",
+      {
+        title: "1-6年级",
+        subtitle: "英文培优班",
         slug: "y1-6-english",
       },
       {
-        title: "Year 1-6",
-        subtitle: "1-6年级中文课程",
+        title: "1-6年级",
+        subtitle: "中文培优班",
         slug: "y1-6-chinese",
       },
       {
-        title: "Year 3-6",
-        subtitle: "3-6年级写作课程",
+        title: "3-6年级",
+        subtitle: "写作课程",
         slug: "y3-6-writing",
       },
     ],

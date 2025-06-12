@@ -99,7 +99,7 @@ const courseData = {
           desc: "",
         },
         {
-          icon: "calendar-1",
+          icon: "calendar",
           title: "4 semester exams (Units 1 & 2)",
           desc: "",
         },
@@ -385,7 +385,7 @@ const courseData = {
         { icon: "book-headphones", title: "50套听力阅读练习", desc: "" },
         { icon: "headphones️", title: "每周1次免费线上听力练习", desc: "" },
         { icon: "notebook-pen", title: "每学期5-6篇作文精改", desc: "" },
-        { icon: "calendar-1", title: "4次学期检测考试 unit 1&2", desc: "" },
+        { icon: "calendar", title: "4次学期检测考试 unit 1&2", desc: "" },
         {
           icon: "file-clock",
           title: "6次澳升独家全真模拟笔试考试 unit 3&4",

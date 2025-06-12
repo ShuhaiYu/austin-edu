@@ -77,36 +77,39 @@ const courseData = {
         {
           step: 1,
           title: "Detailed Evaluation of the Essay",
-          content:
-            "When our teachers receive a student’s essay, the first step is to analyse its overall quality.Are the arguments convincing? Is the writing clear and concise? Does it address the topic effectively? \nThese are the key aspects we carefully evaluate. \nThis thorough initial assessment lays the foundation for more detailed revision feedback.",
+          content: `When our teachers receive a student’s essay, the first step is to analyse its overall quality.Are the arguments convincing? Is the writing clear and concise? Does it address the topic effectively?
+          These are the key aspects we carefully evaluate.
+          This thorough initial assessment lays the foundation for more detailed revision feedback.`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 2,
           title: "Sentence Polishing",
-          content:
-            "After evaluating the overall quality of the essay, Austin teachers proceed with a second round of adjustments focused on refining language expression. \nWe elevate simple phrases to more sophisticated and appropriate alternatives, correct grammar mistakes, streamline lengthy expressions, and add content where necessary to strengthen key points. \nThese changes ensure that any obvious issues in the article are addressed, making the writing more impactful and logical.",
+          content: `After evaluating the overall quality of the essay, Austin teachers proceed with a second round of adjustments focused on refining language expression.
+          We elevate simple phrases to more sophisticated and appropriate alternatives, correct grammar mistakes, streamline lengthy expressions, and add content where necessary to strengthen key points.
+          These changes ensure that any obvious issues in the article are addressed, making the writing more impactful and logical.`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 3,
           title: "Refining Arguments",
-          content:
-            "Once the surface-level issues are addressed, Austin teachers dive deeper into the core of the essay. \nIn this step, teachers engage in in-depth discussions with students, guiding them to critically examine their arguments. This process helps students refine their viewpoints, making them more distinct and profound, while also strengthening the persuasiveness of their points. \nThrough this first exchange of ideas between teacher and student, the essay’s evidence becomes more compelling, and the overall structure becomes more logical.",
+          content: `Once the surface-level issues are addressed, Austin teachers dive deeper into the core of the essay.
+          In this step, teachers engage in in-depth discussions with students, guiding them to critically examine their arguments. This process helps students refine their viewpoints, making them more distinct and profound, while also strengthening the persuasiveness of their points.
+          Through this first exchange of ideas between teacher and student, the essay’s evidence becomes more compelling, and the overall structure becomes more logical.`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 4,
           title: "Structure Adjustment",
-          content:
-            "After refining the arguments and enhancing the depth of viewpoints, Austin teachers help students adjust the structure of their essays. \nA well-written essay requires a clear and logical structure that highlights its depth and persuasiveness. Austin teachers work with students to reorganise paragraph order, ensuring that each section is well-connected and flows smoothly.",
+          content: `After refining the arguments and enhancing the depth of viewpoints, Austin teachers help students adjust the structure of their essays.
+          A well-written essay requires a clear and logical structure that highlights its depth and persuasiveness. Austin teachers work with students to reorganise paragraph order, ensuring that each section is well-connected and flows smoothly.`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 5,
           title: "Exemplary Paragraphs",
-          content:
-            "To help students better understand the improvements, Austin teachers write a few optimised sample paragraphs. By comparing them, students can clearly see the differences between their work and high-scoring essays, while also identifying areas for improvement in their original paragraphs. \nAs always, Austin focuses not just on making quick fixes, but on enhancing students’ critical thinking and writing techniques at the root level.",
+          content: `To help students better understand the improvements, Austin teachers write a few optimised sample paragraphs. By comparing them, students can clearly see the differences between their work and high-scoring essays, while also identifying areas for improvement in their original paragraphs.
+          As always, Austin focuses not just on making quick fixes, but on enhancing students’ critical thinking and writing techniques at the root level.`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
       ],
@@ -115,20 +118,57 @@ const courseData = {
     },
     resources: {
       packages: [
-        { icon: "school", title: "1.5 hours of weekly class sessions", desc: " " },
-        { icon: "book-copy", title: "2 exclusive Austin Education textbooks", desc: " " },
-        { icon: "book-open-text", title: "2 exclusive Austin Education workbooks", desc: " " },
+        {
+          icon: "school",
+          title: "1.5 hours of weekly class sessions",
+          desc: " ",
+        },
+        {
+          icon: "book-copy",
+          title: "2 exclusive Austin Education textbooks",
+          desc: " ",
+        },
+        {
+          icon: "book-open-text",
+          title: "2 exclusive Austin Education workbooks",
+          desc: " ",
+        },
         { icon: "user-pen", title: "2 hours of weekly homework", desc: " " },
-        { icon: "notebook-pen", title: "5 fully reviewed essays per term", desc:  "" },
-        { icon: "square-check-big️", title: "5 stage/topic assessments", desc: " " },
+        {
+          icon: "notebook-pen",
+          title: "5 fully reviewed essays per term",
+          desc: "",
+        },
+        {
+          icon: "square-check-big️",
+          title: "5 stage/topic assessments",
+          desc: " ",
+        },
         { icon: "calendar", title: "2 semester assessment exams", desc: " " },
-        { icon: "newspaper", title: "300-word in-class test feedback", desc: " " },
+        {
+          icon: "newspaper",
+          title: "300-word in-class test feedback",
+          desc: " ",
+        },
         { icon: "chart-column", title: "2 exam reports", desc: " " },
-        { icon: "file-clock", title: "exclusive Austin Education full-length mock exams", desc: " " },
+        {
+          icon: "file-clock",
+          title: "exclusive Austin Education full-length mock exams",
+          desc: " ",
+        },
         { icon: "goal", title: "SAC-focused revision", desc: " " },
         { icon: "monitor-play", title: "Recorded lessons", desc: " " },
-        { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: " " },
-        { icon: "message-square-dot", title: "Dedicated learning consultant for one-on-one issue resolution", desc: " " },
+        {
+          icon: "circle-help",
+          title: "Unlimited Q&A and academic support",
+          desc: " ",
+        },
+        {
+          icon: "message-square-dot",
+          title:
+            "Dedicated learning consultant for one-on-one issue resolution",
+          desc: " ",
+        },
         { icon: "users", title: "Free academic consultation", desc: " " },
       ],
     },
@@ -139,8 +179,8 @@ const courseData = {
           title: "Unit 1-2",
           modules: [
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 1",
+              title: "Term 1",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -154,8 +194,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 2",
+              title: "Term 2",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -169,8 +209,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 3",
+              title: "Term 3",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -184,8 +224,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 4",
+              title: "Term 4",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -204,8 +244,8 @@ const courseData = {
           title: "Unit 3-4",
           modules: [
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 1",
+              title: "Term 1",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -219,8 +259,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 2",
+              title: "Term 2",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -234,8 +274,23 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 3",
+              title: "Term 3",
+              subtitle: " ",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Term 4",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -255,18 +310,18 @@ const courseData = {
     relatedCourses: [
       {
         title: "VCE",
-        subtitle: "Maths Methods Unit 1-4",
-        slug: "vce-english-language-unit1-4",
+        subtitle: "Mathematics Methods Unit 1-4",
+        slug: "vce-maths-methods-unit-1-4",
       },
       {
         title: "VCE",
-        subtitle: "Specialist Maths Unit 1-4",
-        slug: "vce-english-language-unit1-4",
+        subtitle: "Specialist Mathematics Unit 1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
       {
         title: "VCE",
-        subtitle: "Science Unit 1-4",
-        slug: "vce-english-language-unit1-4",
+        subtitle: "Physics Unit1-4",
+        slug: "vce-physics-unit-1-4",
       },
     ],
   },
@@ -344,36 +399,41 @@ const courseData = {
         {
           step: 1,
           title: "对作文的详细评价",
-          content:
-            "澳升的老师们，在拿到学生作文后的第一步，就是分析文章的整体表现 \n论点是否有力？表达是否清晰？写作是否切题？\n这些都是我们老师需要考察的地方。 \n有了这第一步，才会有接下来深入的修改建议",
+          content: `澳升的老师们，在拿到学生作文后的第一步，就是分析文章的整体表现
+          论点是否有力？表达是否清晰？写作是否切题？
+          这些都是我们老师需要考察的地方
+          有了这第一步，才会有接下来深入的修改建议`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 2,
           title: "字句优化",
-          content:
-            "分析了文章的整体表现后，澳升老师会对语言表达进行二次调整 \n让普通表达变得高级且贴切、修改语法错误、修改冗长表达、在关键点增加内容，让文章更有感染力和逻辑 \n做完这些，文章表面上显而易见的问题会得到改正",
+          content: `分析了文章的整体表现后，澳升老师会对语言表达进行二次调整
+          让普通表达变得高级且贴切、修改语法错误、修改冗长表达、在关键点增加内容，让文章更有感染力和逻辑
+          做完这些，文章表面上显而易见的问题会得到改正`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 3,
           title: "观点优化",
-          content:
-            "解决了文章的“表面问题”，澳升老师将深入文章内部进行调整 \n在这一步，老师将会和学生深入交流，在交流的过程中，会引导学生主动思考，如何让观点变得更鲜明，更深刻、论点说服力是否够强，应该如何完善 \n通过老师与学生的第一次思想碰撞，文章的论据会更加丰富，整体也更加有逻辑",
+          content: `解决了文章的“表面问题”，澳升老师将深入文章内部进行调整
+          在这一步，老师将会和学生深入交流，在交流的过程中，会引导学生主动思考，如何让观点变得更鲜明，更深刻、论点说服力是否够强，应该如何完善
+          通过老师与学生的第一次思想碰撞，文章的论据会更加丰富，整体也更加有逻辑`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 4,
           title: "结构调整",
-          content:
-            "讨论出更具说服力的论点以及更有深度的观点后，澳升老师会帮助同学进行结构调整\n一篇好的文章，需要逻辑严谨、层次分明的结构，去凸显这些深度和说服力\n澳升老师们会帮助同学重新组织段落顺序，确保每一部分环环相扣且衔接流畅",
+          content: `讨论出更具说服力的论点以及更有深度的观点后，澳升老师会帮助同学进行结构调整
+          一篇好的文章，需要逻辑严谨、层次分明的结构，去凸显这些深度和说服力
+          澳升老师们会帮助同学重新组织段落顺序，确保每一部分环环相扣且衔接流畅`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 5,
           title: "示范性段落",
-          content:
-            "为了便于学生更加直观的理解，澳升老师会亲自写几段经过优化的段落，通过对比，学生能更加清楚地观察到，自己的文章与高分文章之间的差别，同时也能发现原段落的可改进方向\n还是那句话，澳升从不是大包大揽，而是从根源上，提升学生的思想深度和写作方式",
+          content: `为了便于学生更加直观的理解，澳升老师会亲自写几段经过优化的段落，通过对比，学生能更加清楚地观察到，自己的文章与高分文章之间的差别，同时也能发现原段落的可改进方向
+          还是那句话，澳升从不是大包大揽，而是从根源上，提升学生的思想深度和写作方式`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
       ],
@@ -386,7 +446,7 @@ const courseData = {
         { icon: "book-copy", title: "2本澳升独家教材", desc: " " },
         { icon: "book-open-text", title: "2本澳升独家习题册", desc: " " },
         { icon: "user-pen", title: "每周2小时课后作业", desc: " " },
-        { icon: "notebook-pen", title: "一个学期5篇作文精改", desc:  "" },
+        { icon: "notebook-pen", title: "一个学期5篇作文精改", desc: "" },
         { icon: "square-check-big️", title: "5次阶段/主题测试", desc: " " },
         { icon: "calendar", title: "2次学期检测考试", desc: " " },
         { icon: "newspaper", title: "300字课堂测试点评", desc: " " },
@@ -395,7 +455,11 @@ const courseData = {
         { icon: "goal", title: "SAC 专项复习", desc: " " },
         { icon: "monitor-play", title: "课程录像", desc: " " },
         { icon: "circle-help", title: "无限的沟通答疑", desc: " " },
-        { icon: "message-square-dot", title: "私人学管一对一解决问题", desc: " " },
+        {
+          icon: "message-square-dot",
+          title: "私人学管一对一解决问题",
+          desc: " ",
+        },
         { icon: "users", title: "免费学业咨询", desc: " " },
       ],
     },
@@ -406,8 +470,8 @@ const courseData = {
           title: "Unit 1-2",
           modules: [
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 1",
+              title: "Term 1",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -421,8 +485,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 2",
+              title: "Term 2",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -436,8 +500,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 3",
+              title: "Term 3",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -451,8 +515,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 4",
+              title: "Term 4",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -471,8 +535,8 @@ const courseData = {
           title: "Unit 3-4",
           modules: [
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 1",
+              title: "Term 1",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -486,8 +550,8 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 2",
+              title: "Term 2",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -501,8 +565,23 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
-              subtitle: "Module 3",
+              title: "Term 3",
+              subtitle: " ",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Term 4",
+              subtitle: " ",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
                 "Reading a Graphic Novel (Nimona ",
@@ -522,18 +601,18 @@ const courseData = {
     relatedCourses: [
       {
         title: "VCE",
-        subtitle: "Maths Methods Unit 1-4",
-        slug: "vce-english-language-unit1-4",
+        subtitle: "中数 Maths Methods Unit 1-4",
+        slug: "vce-maths-methods-unit-1-4",
       },
       {
         title: "VCE",
-        subtitle: "Specialist Maths Unit1-4 Unit 1-4",
-        slug: "vce-english-language-unit1-4",
+        subtitle: "高数 Specialist Maths Unit 1-4",
+        slug: "vce-specialist-maths-unit-1-4",
       },
       {
         title: "VCE",
-        subtitle: "Science Unit 1-4",
-        slug: "vce-english-language-unit1-4",
+        subtitle: "物理 Physics Unit1-4",
+        slug: "vce-physics-unit-1-4",
       },
     ],
   },

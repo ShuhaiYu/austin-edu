@@ -1,7 +1,72 @@
+import { list } from "postcss";
+
 const courseData = {
   en: {
     slug: "y10-maths-standard",
     title: "Y10 Pre-VCE Maths Standard",
+    heroSection: {
+      achievements: {
+        title: "VCE Mathematics Track Record",
+        currentYear: {
+          subtitle: "VCE Maths Methods",
+        },
+        historical: {
+          range: "From 2017 to 2024",
+          items: [
+            {
+              number: 25,
+              label: "top scorers in Maths Methods",
+            },
+            {
+              number: "450+",
+              label: "students with raw score 40+ (Top 9% of State cohort)",
+            },
+            {
+              number: "180+",
+              label: "students with raw score 45+ (Top 2% of State cohort)",
+            },
+            {
+              number: "28%",
+              label: "achieved raw score 45+",
+            },
+            {
+              number: "62%",
+              label: "achieved raw score 40+",
+            },
+          ],
+          extraDescription:
+            "On average, our students achieve a raw score of 42, with a scaled score of 48—far above the state average.",
+        },
+        subtitle: "VCE Specialist Maths",
+      },
+      historical: {
+        range: "From 2017 to 2024",
+        items: [
+          {
+            number: 11,
+            label: "top scorers in Specialist Maths",
+          },
+          {
+            number: "240+",
+            label: "students with raw score 40+ (Top 9% of State cohort)",
+          },
+          {
+            number: "120+",
+            label: "students with raw score 45+ (Top 2% of State cohort)",
+          },
+          {
+            number: "24%",
+            label: "achieved raw score 45+",
+          },
+          {
+            number: "37%",
+            label: "achieved raw score 40+",
+          },
+        ],
+        extraDescription:
+          "The average raw score is 38, and the average scaled score is 50.2—a testament to our teaching excellence.",
+      },
+    },
     courseDescription: {
       title: "Course Description",
       subtitle:
@@ -215,6 +280,67 @@ const courseData = {
   zh: {
     slug: "y10-maths-standard",
     title: "10年级数学进阶班 · VCE衔接",
+    heroSection: {
+      achievements: {
+        title: "VCE数学历史成就",
+        currentYear: {
+          subtitle: "VCE 中数",
+          historical: {
+            range: "2017年至2024年",
+            items: [
+              {
+                number: 25,
+                label: "中数状元",
+              },
+              {
+                number: "450+",
+                label: "学生裸分40以上（位列全州前9%）",
+              },
+              {
+                number: "180+",
+                label: "学生裸分45以上（位列全州前2%）",
+              },
+              {
+                number: "28%",
+                label: "学生裸分45以上",
+              },
+              {
+                number: "62%",
+                label: "学生裸分40以上",
+              },
+              // extraDescription:"平均下来，每年中数裸分均分42（加分后48）。"
+            ],
+          },
+          subtitle: "VCE 高数",
+          historical: {
+            range: "2017年至2024年",
+            items: [
+              {
+                number: 11,
+                label: "中数状元",
+              },
+              {
+                number: "240+",
+                label: "学生裸分40以上（位列全州前9%）",
+              },
+              {
+                number: "120+",
+                label: "学生裸分45以上（位列全州前2%）",
+              },
+              {
+                number: "24%",
+                label: "学生裸分45以上",
+              },
+              {
+                number: "37%",
+                label: "学生裸分40以上",
+              },
+            ],
+          },
+          extraDescription: "平均下来，每年高数裸分均分38（加分后50.2）。",
+        },
+      },
+    },
     courseDescription: {
       title: "课程描述",
       subtitle: "同步加速日校进度，扎实基础，迎接VCE挑战！",

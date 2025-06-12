@@ -1,5 +1,3 @@
-import { list } from "postcss";
-
 const courseData = {
   en: {
     slug: "y10-maths-advance",
@@ -19,12 +17,10 @@ const courseData = {
             },
             {
               number: "450+",
-              title: "Over",
               label: "students with raw score 40+ (Top 9% of State cohort)",
             },
             {
               number: "180+",
-              title: "Over",
               label: "students with raw score 45+ (Top 2% of State cohort)",
             },
             {
@@ -35,8 +31,9 @@ const courseData = {
               number: "62%",
               label: "achieved raw score 40+",
             },
-            // extraDescription:"On average, our students achieve a raw score of 42, with a scaled score of 48—far above the state average.",
           ],
+          extraDescription:
+            "On average, our students achieve a raw score of 42, with a scaled score of 48—far above the state average.",
         },
         subtitle: "VCE Specialist Maths",
       },
@@ -49,12 +46,10 @@ const courseData = {
           },
           {
             number: "240+",
-            title: "Over",
             label: "students with raw score 40+ (Top 9% of State cohort)",
           },
           {
             number: "120+",
-            title: "Over",
             label: "students with raw score 45+ (Top 2% of State cohort)",
           },
           {
@@ -65,8 +60,9 @@ const courseData = {
             number: "37%",
             label: "achieved raw score 40+",
           },
-          // extraDescription:"The average raw score is 38, and the average scaled score is 50.2—a testament to our teaching excellence.",
         ],
+        extraDescription:
+          "The average raw score is 38, and the average scaled score is 50.2—a testament to our teaching excellence.",
       },
     },
 
@@ -317,12 +313,10 @@ const courseData = {
               },
               {
                 number: "450+",
-                title: "超过",
                 label: "学生裸分40以上（位列全州前9%）",
               },
               {
                 number: "180+",
-                title: "超过",
                 label: "学生裸分45以上（位列全州前2%）",
               },
               {
@@ -333,8 +327,8 @@ const courseData = {
                 number: "62%",
                 label: "学生裸分40以上",
               },
-              // extraDescription:"平均下来，每年中数裸分均分42（加分后48）。"
             ],
+            extraDescription: "平均下来，每年中数裸分均分42（加分后48）。",
           },
           subtitle: "VCE 高数",
           historical: {
@@ -346,12 +340,10 @@ const courseData = {
               },
               {
                 number: "240+",
-                title: "超过",
                 label: "学生裸分40以上（位列全州前9%）",
               },
               {
                 number: "120+",
-                title: "超过",
                 label: "学生裸分45以上（位列全州前2%）",
               },
               {
@@ -362,8 +354,8 @@ const courseData = {
                 number: "37%",
                 label: "学生裸分40以上",
               },
-              // extraDescription:"平均下来，每年高数裸分均分38（加分后50.2）。"
             ],
+            extraDescription: "平均下来，每年高数裸分均分38（加分后50.2）。",
           },
         },
       },
@@ -371,8 +363,8 @@ const courseData = {
     courseDescription: {
       title: "Course Description",
       subtitle: "VCE中高数预科 · 打基础 · 拉开差距 · 冲进高分快班！",
-      paragraph: `10年级数学精英班是澳升独家开设的中高数预备课程，专为未来计划学习 VCE 中数+ 高数的学生而设。课程内容深入覆盖10年级关键复杂知识点 + 11年级中高数关键基础，为冲刺VCE高分做好“提前布局”。",
-        "本课程也是进入澳升11年级中高数Top班的前置课程之一，成绩将作为重要录取依据。`,
+      paragraph: `10年级数学精英班是澳升独家开设的中高数预备课程，专为未来计划学习 VCE 中数+ 高数的学生而设。课程内容深入覆盖10年级关键复杂知识点 + 11年级中高数关键基础，为冲刺VCE高分做好“提前布局”。
+        本课程也是进入澳升11年级中高数Top班的前置课程之一，成绩将作为重要录取依据。`,
     },
     coreFeatures: {
       sections: [
