@@ -38,11 +38,13 @@ export default function Features() {
               <div className="relative">
                 {/* 图片容器 */}
                 <Image
-                  src={`/home/section bg${i + 1}.svg`}
+                  src={`/home/section bg${i + 1}.png`}
                   alt="Background"
-                  width={247}
-                  height={326}
+                  width={494} // 原来的2倍
+                  height={652} // 原来的2倍
                   className="object-contain drop-shadow-lg rounded-4xl"
+                  quality={95} // 设置更高的质量
+                  priority={true} // 如果是重要图片，可以设置优先加载
                 />
                 {/* 文字内容 */}
                 {/* <div className="absolute inset-0 flex flex-col items-center justify-center p-4 xl:p-2">
