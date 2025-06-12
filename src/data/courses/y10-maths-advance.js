@@ -110,20 +110,19 @@ const courseData = {
             title:
               "Year 11 Methods and Specialist Maths involve a major jump in difficulty from Year 9–10",
             icon: "book",
-            //   image: "/images/y1-y6-1.jpg",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y10-maths-advance/1.png",
           },
           {
             title:
               "Starting Advance in Year 10 builds early understanding of VCE concepts and exam pacing",
             icon: "repeat",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y10-maths-advance/2.png",
           },
           {
             title:
               "Helps students avoid the pressure and steep learning curve of Year 11",
             icon: "check",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y10-maths-advance/3.png",
           },
         ],
       },
@@ -146,7 +145,7 @@ const courseData = {
           desc: " ",
         },
         {
-          icon: "book-open-text️",
+          icon: "BookOpen️",
           title: "3 exclusive Austin Education workbooks",
           desc: "  ",
         },
@@ -304,59 +303,60 @@ const courseData = {
         title: "VCE数学历史成就",
         currentYear: {
           subtitle: "VCE 中数",
-          historical: {
-            range: "2017年至2024年",
-            items: [
-              {
-                number: 25,
-                label: "中数状元",
-              },
-              {
-                number: "450+",
-                label: "学生裸分40以上（位列全州前9%）",
-              },
-              {
-                number: "180+",
-                label: "学生裸分45以上（位列全州前2%）",
-              },
-              {
-                number: "28%",
-                label: "学生裸分45以上",
-              },
-              {
-                number: "62%",
-                label: "学生裸分40以上",
-              },
-            ],
-            extraDescription: "平均下来，每年中数裸分均分42（加分后48）。",
-          },
-          subtitle: "VCE 高数",
-          historical: {
-            range: "2017年至2024年",
-            items: [
-              {
-                number: 11,
-                label: "中数状元",
-              },
-              {
-                number: "240+",
-                label: "学生裸分40以上（位列全州前9%）",
-              },
-              {
-                number: "120+",
-                label: "学生裸分45以上（位列全州前2%）",
-              },
-              {
-                number: "24%",
-                label: "学生裸分45以上",
-              },
-              {
-                number: "37%",
-                label: "学生裸分40以上",
-              },
-            ],
-            extraDescription: "平均下来，每年高数裸分均分38（加分后50.2）。",
-          },
+        },
+        // ???
+        historical: {
+          range: "2017年至2024年",
+          items: [
+            {
+              number: 25,
+              label: "中数状元",
+            },
+            {
+              number: "450+",
+              label: "学生裸分40以上（位列全州前9%）",
+            },
+            {
+              number: "180+",
+              label: "学生裸分45以上（位列全州前2%）",
+            },
+            {
+              number: "28%",
+              label: "学生裸分45以上",
+            },
+            {
+              number: "62%",
+              label: "学生裸分40以上",
+            },
+          ],
+          extraDescription: "平均下来，每年中数裸分均分42（加分后48）。",
+        },
+        subtitle: "VCE 高数",
+        historical: {
+          range: "2017年至2024年",
+          items: [
+            {
+              number: 11,
+              label: "中数状元",
+            },
+            {
+              number: "240+",
+              label: "学生裸分40以上（位列全州前9%）",
+            },
+            {
+              number: "120+",
+              label: "学生裸分45以上（位列全州前2%）",
+            },
+            {
+              number: "24%",
+              label: "学生裸分45以上",
+            },
+            {
+              number: "37%",
+              label: "学生裸分40以上",
+            },
+          ],
+          extraDescription: "平均下来，每年高数裸分均分38（加分后50.2）。",
         },
       },
     },
@@ -402,18 +402,17 @@ const courseData = {
           {
             title: "11年级中高数难度大，内容跨度远超9-10年级",
             icon: "book",
-            //   image: "/images/y1-y6-1.jpg",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y10-maths-advance/1.png",
           },
           {
             title: "提前一年进入VCE逻辑，建立深度理解与考试节奏",
             icon: "repeat",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y10-maths-advance/2.png",
           },
           {
             title: "避免11年级“被炸”的高压状况，让学习更从容",
             icon: "check",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y10-maths-advance/3.png",
           },
         ],
       },
@@ -431,7 +430,7 @@ const courseData = {
       packages: [
         { icon: "school", title: "每周2小时班课", desc: " " },
         { icon: "book-copy", title: "3本澳升独家教材", desc: " " },
-        { icon: "book-open-text️", title: "3本澳升独家习题册", desc: "  " },
+        { icon: "BookOpen", title: "3本澳升独家习题册", desc: "  " },
         { icon: "user-pen", title: "每周2小时课后作业", desc: " " },
         { icon: "chart-no-axes-combined", title: "每周20+题高阶题", desc: " " },
         { icon: "list-todo", title: "不定期充足额外练习", desc: " " },

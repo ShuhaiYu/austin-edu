@@ -49,8 +49,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "Why Choose Austin’s Maths Program?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y7-9-maths/1.png",
+        image2: "/courses/single/y7-9-maths/2.png",
         content: [
           {
             title: "1. Bridging the Gap Left by Day School",
@@ -89,7 +89,7 @@ const courseData = {
           desc: "",
         },
         {
-          icon: "book-open-text",
+          icon: "BookOpen",
           title: "9 exclusive Austin Education workbooks",
           desc: "",
         },
@@ -406,8 +406,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "为什么选择澳升数学课程？",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y7-9-maths/1.png",
+        image2: "/courses/single/y7-9-maths/2.png",
         content: [
           {
             title: "1. 弥补日校教学的空缺",
@@ -441,7 +441,7 @@ const courseData = {
       packages: [
         { icon: "school", title: "每周 2 小时班课", desc: "" },
         { icon: "book-copy", title: "4 本澳升独家教材", desc: "" },
-        { icon: "book-open-text", title: "9 本澳升独家习题册", desc: "" },
+        { icon: "BookOpen", title: "9 本澳升独家习题册", desc: "" },
         { icon: "user-pen", title: "每周 1 小时课后作业", desc: "" },
         {
           icon: "chart-no-axes-combined",

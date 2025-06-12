@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Carousel } from "@/components/ui/carousel";
 import Image from "next/image";
-import { CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import { CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
 export const CourseFeature = () => {
@@ -96,7 +96,7 @@ export const CourseFeature = () => {
                       delay: 5000,
                     }),
                   ]}
-                  className="overflow-visible"
+                  className="relative overflow-visible"
                 >
                   <CarouselContent className="pr-[calc(16.6667%+16px)]">
                     {feature.carousel.images.map((src, idx) => (
@@ -112,12 +112,17 @@ export const CourseFeature = () => {
                             src={src}
                             alt={`${feature.title} slide ${idx + 1}`}
                             fill
+                            sizes="(max-width: 768px) 66.67vw, 33.33vw"
                             className="object-contain"
                           />
                         </div>
                       </CarouselItem>
                     ))}
                   </CarouselContent>
+                  
+                  {/* 左右导航按钮 */}
+                  <CarouselPrevious className={`absolute -left-10 top-1/2 -translate-y-1/2 z-10 ${feature.color} border-none text-white hover:bg-accent-foreground hover:text-primary`} />
+                  <CarouselNext className={`absolute -right-10 top-1/2 -translate-y-1/2 z-10 ${feature.color} border-none text-white hover:bg-accent-foreground hover:text-primary`} />
                 </Carousel>
               </div>
             )}

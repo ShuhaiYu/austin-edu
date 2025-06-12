@@ -146,7 +146,7 @@ const courseData = {
           desc: " ",
         },
         {
-          icon: "book-open-text️",
+          icon: "BookOpen️",
           title: "3 exclusive Austin Education workbooks",
           desc: "  ",
         },
@@ -503,7 +503,7 @@ const courseData = {
       packages: [
         { icon: "school", title: "每周2小时班课", desc: " " },
         { icon: "book-copy", title: "3本澳升独家教材", desc: " " },
-        { icon: "book-open-text️", title: "3本澳升独家习题册", desc: "  " },
+        { icon: "BookOpen️", title: "3本澳升独家习题册", desc: "  " },
         { icon: "user-pen", title: "每周2小时课后作业", desc: " " },
         { icon: "chart-no-axes-combined", title: "每周20+题高阶题", desc: " " },
         { icon: "list-todo", title: "不定期充足额外练习", desc: " " },

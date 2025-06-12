@@ -37,8 +37,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "Why Choose Austin’s  Selective Entry Maths Program?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y8-9-selective/1.png",
+        image2: "/courses/single/y8-9-selective/2.png",
         content: [
           {
             title: "1. Accelerated VCE Content Coverage",
@@ -69,8 +69,8 @@ const courseData = {
       },
       partA: {
         title: "Why Choose Austin’s Selective Entry English Program?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y8-9-selective/1.png",
+        image2: "/courses/single/y8-9-selective/2.png",
         content: [
           {
             title: "1. Advanced Academic Vocabulary",
@@ -272,8 +272,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "为什么选择澳升的精英公校数学项目?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y8-9-selective/1.png",
+        image2: "/courses/single/y8-9-selective/2.png",
         content: [
           {
             title: "1. 高效覆盖VCE核心知识",
@@ -302,8 +302,8 @@ const courseData = {
       },
       partA: {
         title: "为什么选择澳升的精英公校英文项目?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y8-9-selective/1.png",
+        image2: "/courses/single/y8-9-selective/2.png",
         content: [
           {
             title: "1.	高阶学术词汇训练",

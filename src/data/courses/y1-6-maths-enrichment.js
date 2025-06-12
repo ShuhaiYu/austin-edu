@@ -57,8 +57,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "Why Choose Austin’s Primary Maths Enrichment?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y1-6-maths-enrichment/1.png",
+        image2: "/courses/single/y1-6-maths-enrichment/2.png",
         content: [
           {
             title:
@@ -96,7 +96,7 @@ const courseData = {
           desc: "",
         },
         {
-          icon: "book-open-text",
+          icon: "BookOpen",
           title: "1 exclusive Austin Education workbooks",
           desc: "",
         },
@@ -600,8 +600,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "为什么选择澳升小学数学培优班",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y1-6-maths-enrichment/1.png",
+        image2: "/courses/single/y1-6-maths-enrichment/2.png",
         content: [
           {
             title:
@@ -628,7 +628,7 @@ const courseData = {
       packages: [
         { icon: "school", title: "每周1.5小时班课", desc: "" },
         { icon: "book-copy", title: "每年 4 本澳升独家教材", desc: "" },
-        { icon: "book-open-text", title: "1 本澳升独家教材", desc: "" },
+        { icon: "BookOpen", title: "1 本澳升独家教材", desc: "" },
         { icon: "user-pen", title: "每周 0.5 - 1 小时课后作业", desc: "" },
         {
           icon: "chart-no-axes-combined",

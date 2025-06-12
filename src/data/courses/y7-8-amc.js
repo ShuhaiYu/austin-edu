@@ -66,8 +66,8 @@ const courseData = {
       partA: {
         title:
           " Final Word: Austin’s AMC Program—Your Launchpad to Maths Excellence!",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y7-8-amc/1.png",
+        image2: "/courses/single/y7-8-amc/2.png",
         content: [
           {
             title:
@@ -219,8 +219,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: " 澳升 AMC 竞赛班，助你冲刺数学巅峰！",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y7-8-amc/1.png",
+        image2: "/courses/single/y7-8-amc/2.png",
         content: [
           {
             title: "1. 竞赛技巧 + 竞赛思维双提升，挑战 AMC 最高奖项！",

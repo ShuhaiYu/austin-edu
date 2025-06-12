@@ -49,8 +49,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "Why Choose Austin’s Year 9-10 Pre-VCE Science Standard?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y9-10-science/1.png",
+        image2: "/courses/single/y9-10-science/2.png",
         content: [
           {
             title:
@@ -295,8 +295,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "为什么选择澳升的9-10年级科学进阶班？",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y9-10-science/1.png",
+        image2: "/courses/single/y9-10-science/2.png",
         content: [
           {
             title: "1. 各科由VCE教师团队授课，全部具有Unit 3&4授课经验",

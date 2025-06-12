@@ -81,38 +81,84 @@ export default function CoursePageClient({ localizedData }) {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const course = localizedData?.[lang] || {};
 
-  const IconRenderer = ({ name, className }) => {
-    // 1. 先判断是不是 emoji
-    const isEmoji = /\p{Emoji}/u.test(name);
-    if (isEmoji) {
-      return <span className={className}>{name}</span>;
+const IconRenderer = ({ name, className }) => {
+  console.log('IconRenderer called with name:', name); // 调试日志
+
+  // 1. 先判断是不是 emoji
+  const isEmoji = /\p{Emoji}/u.test(name);
+  if (isEmoji) {
+    console.log(`${name} detected as emoji`);
+    return <span className={className}>{name}</span>;
+  }
+
+  // 2. 清理图标名称并转换为 PascalCase
+  const pascalName = useMemo(() => {
+    // 去除前后空格和特殊字符
+    let cleanName = name.trim().replace(/[️⭐]/g, ''); // 移除 emoji 修饰符
+    console.log('Cleaned name:', cleanName);
+    
+    // 如果已经是 PascalCase，直接返回
+    if (/^[A-Z][a-zA-Z0-9]*$/.test(cleanName)) {
+      console.log(`${cleanName} is already PascalCase`);
+      return cleanName;
     }
+    
+    // 处理 kebab-case, snake_case, 或空格分隔的情况
+    const result = cleanName
+      .split(/[-_\s]+/) // 按横杠、下划线或空格分割
+      .filter(Boolean) // 过滤空字符串
+      .map((s) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase())
+      .join("");
+      
+    console.log(`Converted ${cleanName} to ${result}`);
+    return result;
+  }, [name]);
 
-    // 2. 把 kebab-case 或 snake_case 转成 PascalCase
-    const pascalName = useMemo(() => {
-      return name
-        .split(/[-_]/) // 按横杠或下划线分割
-        .map((s) => s.charAt(0).toUpperCase() + s.slice(1)) // 每段首字母大写
-        .join("");
-    }, [name]);
-
-    // 3. 动态 import 对应的 Lucide 图标
-    const LucideIcon = useMemo(() => {
-      return lazy(() =>
-        import("lucide-react").then((mod) => ({
-          default:
-            mod[pascalName] ||
-            (() => <span className={className}>{name}</span>),
-        }))
-      );
-    }, [pascalName, className, name]);
-
-    return (
-      <Suspense fallback={<span className={className}>...</span>}>
-        <LucideIcon className={className} />
-      </Suspense>
+  // 3. 动态 import 对应的 Lucide 图标
+  const LucideIcon = useMemo(() => {
+    return lazy(() =>
+      import("lucide-react")
+        .then((mod) => {
+          console.log(`Trying to import ${pascalName} from lucide-react`);
+          const IconComponent = mod[pascalName];
+          if (IconComponent) {
+            console.log(`✅ Successfully found ${pascalName}`);
+            return { default: IconComponent };
+          } else {
+            console.error(`❌ ${pascalName} not found in lucide-react`);
+            // 如果图标不存在，返回一个通用的图标
+            return { 
+              default: mod.HelpCircle || (() => (
+                <div className={className} title={`Icon "${name}" -> "${pascalName}" not found`}>
+                  <span style={{fontSize: '12px'}}>?</span>
+                </div>
+              ))
+            };
+          }
+        })
+        .catch((error) => {
+          console.error(`Failed to import lucide-react:`, error);
+          return {
+            default: () => (
+              <div className={className} title={`Failed to load icon "${name}"`}>
+                <span style={{fontSize: '12px'}}>!</span>
+              </div>
+            )
+          };
+        })
     );
-  };
+  }, [pascalName, className, name]);
+
+  return (
+    <Suspense fallback={
+      <div className={className}>
+        <span style={{fontSize: '12px'}}>⏳</span>
+      </div>
+    }>
+      <LucideIcon className={className} />
+    </Suspense>
+  );
+};
 
   // 检查是否有内容的辅助函数
   const hasContent = (data) => {

@@ -1,5 +1,3 @@
-import { list } from "postcss";
-
 const courseData = {
   en: {
     slug: "y10-maths-standard",
@@ -78,8 +76,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "Why Choose Austin’s Y10 Pre-VCE Maths Standard ?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y10-maths-standard/1.png",
+        image2: "/courses/single/y10-maths-standard/2.png",
         content: [
           {
             title: "1. Victoria’s Leading Teaching & Curriculum Team",
@@ -142,7 +140,7 @@ const courseData = {
           desc: " ",
         },
         {
-          icon: "book-open-text️",
+          icon: "BookOpen️",
           title: "1 exclusive Austin Education workbooks",
           desc: "  ",
         },
@@ -285,58 +283,58 @@ const courseData = {
         title: "VCE数学历史成就",
         currentYear: {
           subtitle: "VCE 中数",
-          historical: {
-            range: "2017年至2024年",
-            items: [
-              {
-                number: 25,
-                label: "中数状元",
-              },
-              {
-                number: "450+",
-                label: "学生裸分40以上（位列全州前9%）",
-              },
-              {
-                number: "180+",
-                label: "学生裸分45以上（位列全州前2%）",
-              },
-              {
-                number: "28%",
-                label: "学生裸分45以上",
-              },
-              {
-                number: "62%",
-                label: "学生裸分40以上",
-              },
-              // extraDescription:"平均下来，每年中数裸分均分42（加分后48）。"
-            ],
-          },
-          subtitle: "VCE 高数",
-          historical: {
-            range: "2017年至2024年",
-            items: [
-              {
-                number: 11,
-                label: "中数状元",
-              },
-              {
-                number: "240+",
-                label: "学生裸分40以上（位列全州前9%）",
-              },
-              {
-                number: "120+",
-                label: "学生裸分45以上（位列全州前2%）",
-              },
-              {
-                number: "24%",
-                label: "学生裸分45以上",
-              },
-              {
-                number: "37%",
-                label: "学生裸分40以上",
-              },
-            ],
-          },
+        },
+        historical: {
+          range: "2017年至2024年",
+          items: [
+            {
+              number: 25,
+              label: "中数状元",
+            },
+            {
+              number: "450+",
+              label: "学生裸分40以上（位列全州前9%）",
+            },
+            {
+              number: "180+",
+              label: "学生裸分45以上（位列全州前2%）",
+            },
+            {
+              number: "28%",
+              label: "学生裸分45以上",
+            },
+            {
+              number: "62%",
+              label: "学生裸分40以上",
+            },
+          ],
+          extraDescription: "平均下来，每年中数裸分均分42（加分后48）。",
+        },
+        subtitle: "VCE 高数",
+        historical: {
+          range: "2017年至2024年",
+          items: [
+            {
+              number: 11,
+              label: "中数状元",
+            },
+            {
+              number: "240+",
+              label: "学生裸分40以上（位列全州前9%）",
+            },
+            {
+              number: "120+",
+              label: "学生裸分45以上（位列全州前2%）",
+            },
+            {
+              number: "24%",
+              label: "学生裸分45以上",
+            },
+            {
+              number: "37%",
+              label: "学生裸分40以上",
+            },
+          ],
           extraDescription: "平均下来，每年高数裸分均分38（加分后50.2）。",
         },
       },
@@ -350,8 +348,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "为什么选择澳升的10年级数学进阶班？",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y10-maths-standard/1.png",
+        image2: "/courses/single/y10-maths-standard/2.png",
         content: [
           {
             title: "1. 全维州最强教研团队",
@@ -397,7 +395,7 @@ const courseData = {
       packages: [
         { icon: "school", title: "每周2小时班课", desc: " " },
         { icon: "book-copy", title: "1本澳升独家教材", desc: " " },
-        { icon: "book-open-text️", title: "1本澳升独家习题册", desc: "  " },
+        { icon: "BookOpen️", title: "1本澳升独家习题册", desc: "  " },
         { icon: "user-pen", title: "每周1小时课后作业", desc: " " },
         { icon: "square-check-big", title: "3次阶段/主题测试", desc: " " },
         { icon: "calendar", title: "2次学期检测考试", desc: " " },

@@ -78,7 +78,7 @@ const courseData = {
           desc: "",
         },
         {
-          icon: "book-open-text️",
+          icon: "BookOpen️",
           title: "5 exclusive Austin Education exercise books",
           desc: "",
         },
@@ -380,7 +380,7 @@ const courseData = {
       packages: [
         { icon: "school", title: "每周2小时班课", desc: "" },
         { icon: "book-copy", title: "8本澳升独家教材", desc: "" },
-        { icon: "book-open-text️", title: "5本澳升独家习题册", desc: "" },
+        { icon: "BookOpen️", title: "5本澳升独家习题册", desc: "" },
         { icon: "user-pen", title: "每周1-2小时课后作业", desc: "" },
         { icon: "book-headphones", title: "50套听力阅读练习", desc: "" },
         { icon: "headphones️", title: "每周1次免费线上听力练习", desc: "" },

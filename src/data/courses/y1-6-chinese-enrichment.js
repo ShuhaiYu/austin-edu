@@ -12,8 +12,8 @@ const courseData = {
       partA: {
         title:
           "Exclusive Highlights | Why Choose Austin’s Y1–6 Chinese Enrichment?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y1-6-chinese-enrichment/1.png",
+        image2: "/courses/single/y1-6-chinese-enrichment/2.png",
         content: [
           {
             title: "1. Tiered, Progressive Curriculum for Steady Improvement",
@@ -43,29 +43,28 @@ const courseData = {
             description:
               "“Character Bomb”: Say the correct character before the countdown ends—or the “bomb” explodes! A fun way to build quick recall. \n“Frozen Vegetables”: A time-based memory challenge to recall as many characters as possible—boosts urgency and retention.\n“Rhythm Master”: Chant tones to music rhythmically—an enjoyable way to internalize the four tones of Mandarin.",
             icon: "book",
-            //   image: "/images/y1-y6-1.jpg",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y1-6-chinese-enrichment/3.png",
           },
           {
             title: "Experiential Learning",
             description:
               "“Simulated Restaurant”: Students take on roles as restaurant staff and customers to practice real-life communication in Chinese. \n“Festival Activities”: Experience Chinese cultural festivals in class, with immersive language and cultural learning.",
             icon: "repeat",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y1-6-chinese-enrichment/4.png",
           },
           {
             title: "Group Learning & Team Collaboration",
             description:
               "“One Stroke at a Time”: Teams take turns writing characters—great for handwriting practice and building collaboration. \n“Character Relay” / “Character Builder” / “Word Train”: Team-based word-building games that grow vocabulary through fun competition.",
             icon: "check",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y1-6-chinese-enrichment/5.png",
           },
           {
             title: "Kinesthetic Learning",
             description:
               "“My Body Can Write”: Use your head, hands, or feet to “write” characters in the air—strengthens visual memory. \n“Fly Swatter”: Students listen to words and slap the matching image on the screen—enhances listening and word recognition. \n“Character Whack-a-Mole”: Identify and pronounce pinyin as characters pop up—trains reaction speed and phonetic recognition.",
             icon: "test",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y1-6-chinese-enrichment/6.png",
           },
           {
             title:
@@ -73,7 +72,7 @@ const courseData = {
             description:
               "“Draw & Guess”: Use imagination to draw characters based on descriptions—builds both creativity and expression. \n“Werewolf Game – Chinese Edition” & “Who’s the Spy – Chinese Version”: Strategic gameplay requiring vocabulary use and verbal reasoning—enhances expressive language and social interaction. \n“Visit the Three Parks” & “I Have, You Don’t”: Festival-themed activity sets based on students’ real-life experiences—deepens cultural understanding through personalized engagement.",
             icon: "communication",
-            image: "https://placehold.co/600x400",
+            image: "/courses/single/y1-6-chinese-enrichment/7.png",
           },
         ],
       },
@@ -88,8 +87,8 @@ const courseData = {
         " Systematic Revision + Smart Error Tracking: Ensures knowledge is truly mastered and prevents “learn-and-forget” issue",
       ],
       images: [
-        "https://placehold.co/400x600?text=Image+1",
-        "https://placehold.co/400x1000?text=Image+2",
+        "/courses/single/y1-6-chinese-enrichment/8.png",
+        "/courses/single/y1-6-chinese-enrichment/9.png",
       ],
     },
     customCourseFeature: {
@@ -101,8 +100,8 @@ const courseData = {
         " A perfect blend of fun and practicality – helping your child fall in love with learning Chinese!",
       ],
       images: [
-        "https://placehold.co/400x600?text=Image+1",
-        "https://placehold.co/400x1000?text=Image+2",
+        "/courses/single/y1-6-chinese-enrichment/8.png",
+        "/courses/single/y1-6-chinese-enrichment/9.png",
       ],
       extraDescription:
         " For more effective, systematic, and engaging Chinese learning, choose Austin!",
@@ -900,72 +899,71 @@ const courseData = {
       title: "澳升 Y1-6 中文培优班 | 独家亮点",
       paragraph:
         "澳升 Y1-6 中文培优班以 系统化学习+趣味互动课堂 为核心，让孩子 在玩中学、在学中玩，实现听、说、读、写、文化知识全面提升。通过 游戏化学习（Game-Based Learning）+ 互动化学习（Interactive Learning）+ 动觉学习（Kinesthetic Learning），让每一节中文课都充满活力，感受传统文化魅力，激发孩子的学习兴趣！",
-      whyChooseUs: {
-        partA: {
-          title: "独家亮点 | 为什么选择澳升 Y1-6 中文培优班？",
-          image1: "https://placehold.co/400x600?text=Image+1",
-          image2: "https://placehold.co/400x1000?text=Image+2",
-          content: [
-            {
-              title: "1. 分级进阶课程，确保稳步提升",
-              paragraph:
-                "基础 → 提升 → 高阶，精准匹配不同阶段，逐步培养听说读写能力 \n采用 “螺旋递进” 教学法，知识点不断复现，确保真正掌握 \n结合 VCE 中文、IB 中文、HSK 等考试要求，提前为高年级中文学习打好基础",
-            },
-            {
-              title: "2. ““高频输入 + 高效输出” 语言习得法",
-              paragraph:
-                "听说读写四大能力全覆盖，让中文真正成为可用的第二语言 \n丰富阅读材料，涵盖绘本、故事、科普、时事文章，积累词汇、培养阅读理解能力 \n系统性写作训练，从 看图写话 → 句子组合 → 文章表达，循序渐进提升写作能力。",
-            },
-            {
-              title: "3. 独家学习资源，助力高效成长",
-              paragraph:
-                "专属教材 + 海量练习题库，课后巩固更轻松 \n 智能错题本，精准记录易错点，针对性提高 \n阶段性测试 + 反馈报告，清晰掌握学习进度，查漏补缺。",
-            },
-          ],
-        },
-        partB: {
-          title: "趣味互动课堂 | 让中文学习真正“活”起来！",
-          description:
-            "游戏化学习（Game-Based Learning）+ 互动式学习（Interactive Learning）+ 动觉学习（Kinesthetic Learning），让孩子在课堂上 真正动起来、学进去！",
-          contents: [
-            {
-              title: "挑战式学习（Challenge-Based Learning）",
-              description:
-                "“汉字炸弹”：倒计时内说出对应汉字，否则“炸弹”爆炸，训练快速反应 \n“冻住的蔬菜”：限时挑战，记住最多汉字的获胜，培养紧迫感，提高记忆力 \n“ 节奏大师”：跟着节奏唱歌谣，快乐的活动中轻松掌握四个音调。",
-              icon: "book",
-              //   image: "/images/y1-y6-1.jpg",
-              image: "https://placehold.co/600x400",
-            },
-            {
-              title: "体验式学习（Experiential Learning",
-              description:
-                "“模拟餐厅”：孩子们扮演店长和顾客，用中文进行点餐、结账，锻炼实际交流能力 \n“节日活动”：课堂中体验中国传统节日活动，沉浸式获取文化知识",
-              icon: "repeat",
-              image: "https://placehold.co/600x400",
-            },
-            {
-              title: "团队合作学习（Group Learning & Group Cooperation）",
-              description:
-                "“一人一笔”：小组成员轮流接力写汉字，训练书写规范和团队协作能力 \n“汉字接力/拼汉字/开火车”：队员依次接龙组成汉字，增强词汇量",
-              icon: "check",
-              image: "https://placehold.co/600x400",
-            },
-            {
-              title: "动觉学习（Kinesthetic Learning）",
-              description:
-                "“我的身体会写字”：用头、手、脚在空气中写字，加深对汉字的形象记忆 \n“拍苍蝇”：老师说词语，学生抢拍屏幕上的对应图片，提升听觉反应和词汇量 \n“汉字打地鼠”：看到汉字迅速说出拼音，训练反应速度和拼音识别能力",
-              icon: "test",
-              image: "https://placehold.co/600x400",
-            },
-            {
-              title: "高年级特别活动（社交推理+创造力）",
-              description:
-                "“你画我猜”：根据描述绘制汉字，提高想象力和表达能力 \n“狼人杀-中文版” & “谁是卧底-汉字版”：推理+词汇运用结合，提高中文表达和社交沟通能力 \n“ 逛三园” & “你有我没有” ：传统节日+庆祝活动匹配结合，允许孩子结合生活经验，感受中国文化",
-              icon: "communication",
-              image: "https://placehold.co/600x400",
-            },
-          ],
-        },
+    },
+    whyChooseUs: {
+      partA: {
+        title: "独家亮点 | 为什么选择澳升 Y1-6 中文培优班？",
+        image1: "/courses/single/y1-6-chinese-enrichment/1.png",
+        image2: "/courses/single/y1-6-chinese-enrichment/2.png",
+        content: [
+          {
+            title: "1. 分级进阶课程，确保稳步提升",
+            paragraph:
+              "基础 → 提升 → 高阶，精准匹配不同阶段，逐步培养听说读写能力 \n采用 “螺旋递进” 教学法，知识点不断复现，确保真正掌握 \n结合 VCE 中文、IB 中文、HSK 等考试要求，提前为高年级中文学习打好基础",
+          },
+          {
+            title: "2. ““高频输入 + 高效输出” 语言习得法",
+            paragraph:
+              "听说读写四大能力全覆盖，让中文真正成为可用的第二语言 \n丰富阅读材料，涵盖绘本、故事、科普、时事文章，积累词汇、培养阅读理解能力 \n系统性写作训练，从 看图写话 → 句子组合 → 文章表达，循序渐进提升写作能力。",
+          },
+          {
+            title: "3. 独家学习资源，助力高效成长",
+            paragraph:
+              "专属教材 + 海量练习题库，课后巩固更轻松 \n 智能错题本，精准记录易错点，针对性提高 \n阶段性测试 + 反馈报告，清晰掌握学习进度，查漏补缺。",
+          },
+        ],
+      },
+      partB: {
+        title: "趣味互动课堂 | 让中文学习真正“活”起来！",
+        description:
+          "游戏化学习（Game-Based Learning）+ 互动式学习（Interactive Learning）+ 动觉学习（Kinesthetic Learning），让孩子在课堂上 真正动起来、学进去！",
+        contents: [
+          {
+            title: "挑战式学习（Challenge-Based Learning）",
+            description:
+              "“汉字炸弹”：倒计时内说出对应汉字，否则“炸弹”爆炸，训练快速反应 \n“冻住的蔬菜”：限时挑战，记住最多汉字的获胜，培养紧迫感，提高记忆力 \n“ 节奏大师”：跟着节奏唱歌谣，快乐的活动中轻松掌握四个音调。",
+            icon: "book",
+            image: "/courses/single/y1-6-chinese-enrichment/3.png",
+          },
+          {
+            title: "体验式学习（Experiential Learning",
+            description:
+              "“模拟餐厅”：孩子们扮演店长和顾客，用中文进行点餐、结账，锻炼实际交流能力 \n“节日活动”：课堂中体验中国传统节日活动，沉浸式获取文化知识",
+            icon: "repeat",
+            image: "/courses/single/y1-6-chinese-enrichment/4.png",
+          },
+          {
+            title: "团队合作学习（Group Learning & Group Cooperation）",
+            description:
+              "“一人一笔”：小组成员轮流接力写汉字，训练书写规范和团队协作能力 \n“汉字接力/拼汉字/开火车”：队员依次接龙组成汉字，增强词汇量",
+            icon: "check",
+            image: "/courses/single/y1-6-chinese-enrichment/5.png",
+          },
+          {
+            title: "动觉学习（Kinesthetic Learning）",
+            description:
+              "“我的身体会写字”：用头、手、脚在空气中写字，加深对汉字的形象记忆 \n“拍苍蝇”：老师说词语，学生抢拍屏幕上的对应图片，提升听觉反应和词汇量 \n“汉字打地鼠”：看到汉字迅速说出拼音，训练反应速度和拼音识别能力",
+            icon: "test",
+            image: "/courses/single/y1-6-chinese-enrichment/6.png",
+          },
+          {
+            title: "高年级特别活动（社交推理+创造力）",
+            description:
+              "“你画我猜”：根据描述绘制汉字，提高想象力和表达能力 \n“狼人杀-中文版” & “谁是卧底-汉字版”：推理+词汇运用结合，提高中文表达和社交沟通能力 \n“ 逛三园” & “你有我没有” ：传统节日+庆祝活动匹配结合，允许孩子结合生活经验，感受中国文化",
+            icon: "communication",
+            image: "/courses/single/y1-6-chinese-enrichment/7.png",
+          },
+        ],
       },
     },
     customCourseFeature: {
@@ -977,8 +975,8 @@ const courseData = {
         "系统性复习+智能错题整理，确保所学知识真正掌握，避免“学了就忘”",
       ],
       images: [
-        "https://placehold.co/400x600?text=Image+1",
-        "https://placehold.co/400x1000?text=Image+2",
+        "/courses/single/y1-6-chinese-enrichment/8.png",
+        "/courses/single/y1-6-chinese-enrichment/9.png",
       ],
     },
     customCourseFeature: {
@@ -989,8 +987,8 @@ const courseData = {
         " 趣味性+实用性结合，让孩子真正爱上中文！",
       ],
       images: [
-        "https://placehold.co/400x600?text=Image+1",
-        "https://placehold.co/400x1000?text=Image+2",
+        "/courses/single/y1-6-chinese-enrichment/8.png",
+        "/courses/single/y1-6-chinese-enrichment/9.png",
       ],
       extraDescription: "让中文学习更高效、更系统、更有趣，就来澳升！",
     },

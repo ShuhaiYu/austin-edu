@@ -82,8 +82,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "Why Choose Austin’s Maths Scholarship Program?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y5-to-7-scholarship-victoria/1.png",
+        image2: "/courses/single/y5-to-7-scholarship-victoria/2.png",
         content: [
           {
             title: "1. Comprehensive Curriculum Coverage",
@@ -114,8 +114,8 @@ const courseData = {
       },
       partA: {
         title: "Why Choose Austin’s English Scholarship Program?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y5-to-7-scholarship-victoria/1.png",
+        image2: "/courses/single/y5-to-7-scholarship-victoria/2.png",
         content: [
           {
             title: "1. Deep Vocabulary Enrichment",
@@ -170,7 +170,7 @@ const courseData = {
           desc: "",
         },
         {
-          icon: "book-open-text",
+          icon: "BookOpen",
           title: "20 stage/topic assessments",
           desc: "",
         },
@@ -377,8 +377,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "为什么选择澳升的奖学金数学项目?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y5-to-7-scholarship-victoria/1.png",
+        image2: "/courses/single/y5-to-7-scholarship-victoria/2.png",
         content: [
           {
             title: "1. 系统性知识覆盖",
@@ -405,8 +405,8 @@ const courseData = {
       },
       partA: {
         title: "为什么选择澳升的奖学金英文项目?",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        image1: "/courses/single/y5-to-7-scholarship-victoria/1.png",
+        image2: "/courses/single/y5-to-7-scholarship-victoria/2.png",
         content: [
           {
             title: "1. 词汇深度拓展",
@@ -449,7 +449,7 @@ const courseData = {
           title: "每周 100 题/小时额外/选做/高阶题",
           desc: "",
         },
-        { icon: "book-open-text", title: "20 次阶段/主题测试", desc: "" },
+        { icon: "BookOpen", title: "20 次阶段/主题测试", desc: "" },
         { icon: "square-check-big", title: "8 次学期检测考试", desc: "" },
         { icon: "chart-column", title: "4 次考试报告", desc: "" },
         { icon: "speech", title: "4 次家长会", desc: "" },

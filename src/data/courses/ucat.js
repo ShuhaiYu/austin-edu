@@ -88,7 +88,7 @@ const courseData = {
     resources: {
       packages: [
         { icon: "school", title: "2 hours weekly group class", desc: "" },
-        { icon: "book-open-text", title: "30 Austin Education Exclusive workbooks", desc: "" },
+        { icon: "BookOpen", title: "30 Austin Education Exclusive workbooks", desc: "" },
         { icon: "user-pen", title: "2+ hours weekly homework（ depending on stage in course）", desc: "" },
         { icon: "chart-column", title: "5 exam reports", desc: "" },
         { icon: "File-clock", title: "5 Austin Education full-length mock exams", desc: "" },
@@ -279,7 +279,7 @@ const courseData = {
     resources: {
       packages: [
         { icon: "school", title: "每周 2小时 正课授课", desc: "" },
-        { icon: "book-open-text", title: "30本 澳升教育独家练习册", desc: "" },
+        { icon: "BookOpen", title: "30本 澳升教育独家练习册", desc: "" },
         { icon: "user-pen", title: "每周 2小时以上 课后作业（根据课程进度阶段调整）", desc: "" },
         { icon: "chart-column", title: "5次考试成绩报告分析", desc: "" },
         { icon: "File-clock", title: "5次澳升独家全真模考", desc: "" },

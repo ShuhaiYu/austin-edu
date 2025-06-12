@@ -333,7 +333,7 @@ const courseData = {
     resources: {
       packages: [
         {
-          icon: "BookOpenText",
+          icon: "BookOpen",
           title: "Exclusive Textbooks",
           desc: "4 volumes",
         },
@@ -666,7 +666,7 @@ const courseData = {
     resources: {
       packages: [
         {
-          icon: "BookOpenText",
+          icon: "BookOpen",
           title: "Exclusive Textbooks",
           desc: "4 volumes",
         },
