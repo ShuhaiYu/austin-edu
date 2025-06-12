@@ -47,48 +47,48 @@ const COURSE_DATABASE = [
   },
 
   // Primary School 1-6 Years - Scholarship / Selective Courses
-  { 
-    slug: "3-to-5-scholarship-victoria", 
-    title: "Year 3-to-5 Scholarship Victoria",
-    grades: [3, 4, 5],
-    states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
-  },
-  { 
-    slug: "3-to-5-scholarship-interview-victoria", 
-    title: "Year 3-to-5 Scholarship Interview Victoria",
-    grades: [3, 4, 5],
-    states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
-  },
-  { 
-    slug: "3-to-5-scholarship-mock-exam-victoria", 
-    title: "Year 3-to-5 Scholarship Mock Exam Victoria",
-    grades: [3, 4, 5],
-    states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
-  },
-  { 
-    slug: "5-to-7-scholarship-victoria", 
-    title: "Year 5-to-7 Scholarship Victoria",
-    grades: [5, 6, 7],
-    states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
-  },
-  { 
-    slug: "5-to-7-scholarship-interview-victoria", 
-    title: "Year 5-to-7 Scholarship Interview Victoria",
-    grades: [5, 6, 7],
-    states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
-  },
-  { 
-    slug: "5-to-7-scholarship-mock-exam-victoria", 
-    title: "Year 5-to-7 Scholarship Mock Exam Victoria",
-    grades: [5, 6, 7],
-    states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
-  },
+  // { 
+  //   slug: "3-to-5-scholarship-victoria", 
+  //   title: "Year 3-to-5 Scholarship Victoria",
+  //   grades: [3, 4, 5],
+  //   states: ["Victoria"],
+  //   category: "Scholarship / Selective Courses"
+  // },
+  // { 
+  //   slug: "3-to-5-scholarship-interview-victoria", 
+  //   title: "Year 3-to-5 Scholarship Interview Victoria",
+  //   grades: [3, 4, 5],
+  //   states: ["Victoria"],
+  //   category: "Scholarship / Selective Courses"
+  // },
+  // { 
+  //   slug: "3-to-5-scholarship-mock-exam-victoria", 
+  //   title: "Year 3-to-5 Scholarship Mock Exam Victoria",
+  //   grades: [3, 4, 5],
+  //   states: ["Victoria"],
+  //   category: "Scholarship / Selective Courses"
+  // },
+  // { 
+  //   slug: "5-to-7-scholarship-victoria", 
+  //   title: "Year 5-to-7 Scholarship Victoria",
+  //   grades: [5, 6, 7],
+  //   states: ["Victoria"],
+  //   category: "Scholarship / Selective Courses"
+  // },
+  // { 
+  //   slug: "5-to-7-scholarship-interview-victoria", 
+  //   title: "Year 5-to-7 Scholarship Interview Victoria",
+  //   grades: [5, 6, 7],
+  //   states: ["Victoria"],
+  //   category: "Scholarship / Selective Courses"
+  // },
+  // { 
+  //   slug: "5-to-7-scholarship-mock-exam-victoria", 
+  //   title: "Year 5-to-7 Scholarship Mock Exam Victoria",
+  //   grades: [5, 6, 7],
+  //   states: ["Victoria"],
+  //   category: "Scholarship / Selective Courses"
+  // },
   { 
     slug: "3-to-5-scholarship-south-australia", 
     title: "Year 3-to-5 Scholarship South Australia",
@@ -206,34 +206,34 @@ const COURSE_DATABASE = [
   },
 
   // Junior High School 7-9 Years - Scholarship / Selective Courses
-  { 
-    slug: "7-to-9-scholarship-victoria", 
-    title: "Year 7-to-9 Scholarship Victoria",
-    grades: [7, 8, 9],
-    states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
-  },
-  { 
-    slug: "7-to-9-scholarship-interview-victoria", 
-    title: "Year 7-to-9 Scholarship Interview Victoria",
-    grades: [7, 8, 9],
-    states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
-  },
-  { 
-    slug: "7-to-9-scholarship-mock-exam-victoria", 
-    title: "Year 7-to-9 Scholarship Mock Exam Victoria",
-    grades: [7, 8, 9],
-    states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
-  },
-  { 
-    slug: "y8-9-selective", 
-    title: "Year 8-to-9 Selective School Program",
-    grades: [8, 9],
-    states: ["Victoria", "South Australia"],
-    category: "Scholarship / Selective Courses"
-  },
+  // { 
+  //   slug: "7-to-9-scholarship-victoria", 
+  //   title: "Year 7-to-9 Scholarship Victoria",
+  //   grades: [7, 8, 9],
+  //   states: ["Victoria"],
+  //   category: "Scholarship / Selective Courses"
+  // },
+  // { 
+  //   slug: "7-to-9-scholarship-interview-victoria", 
+  //   title: "Year 7-to-9 Scholarship Interview Victoria",
+  //   grades: [7, 8, 9],
+  //   states: ["Victoria"],
+  //   category: "Scholarship / Selective Courses"
+  // },
+  // { 
+  //   slug: "7-to-9-scholarship-mock-exam-victoria", 
+  //   title: "Year 7-to-9 Scholarship Mock Exam Victoria",
+  //   grades: [7, 8, 9],
+  //   states: ["Victoria"],
+  //   category: "Scholarship / Selective Courses"
+  // },
+  // { 
+  //   slug: "y8-9-selective", 
+  //   title: "Year 8-to-9 Selective School Program",
+  //   grades: [8, 9],
+  //   states: ["Victoria", "South Australia"],
+  //   category: "Scholarship / Selective Courses"
+  // },
 
   // Junior High School 7-9 Years - Competition Courses
   { 
