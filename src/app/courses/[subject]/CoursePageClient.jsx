@@ -81,84 +81,94 @@ export default function CoursePageClient({ localizedData }) {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const course = localizedData?.[lang] || {};
 
-const IconRenderer = ({ name, className }) => {
-  console.log('IconRenderer called with name:', name); // 调试日志
+  const IconRenderer = ({ name, className }) => {
+    console.log("IconRenderer called with name:", name); // 调试日志
 
-  // 1. 先判断是不是 emoji
-  const isEmoji = /\p{Emoji}/u.test(name);
-  if (isEmoji) {
-    console.log(`${name} detected as emoji`);
-    return <span className={className}>{name}</span>;
-  }
-
-  // 2. 清理图标名称并转换为 PascalCase
-  const pascalName = useMemo(() => {
-    // 去除前后空格和特殊字符
-    let cleanName = name.trim().replace(/[️⭐]/g, ''); // 移除 emoji 修饰符
-    console.log('Cleaned name:', cleanName);
-    
-    // 如果已经是 PascalCase，直接返回
-    if (/^[A-Z][a-zA-Z0-9]*$/.test(cleanName)) {
-      console.log(`${cleanName} is already PascalCase`);
-      return cleanName;
+    // 1. 先判断是不是 emoji
+    const isEmoji = /\p{Emoji}/u.test(name);
+    if (isEmoji) {
+      console.log(`${name} detected as emoji`);
+      return <span className={className}>{name}</span>;
     }
-    
-    // 处理 kebab-case, snake_case, 或空格分隔的情况
-    const result = cleanName
-      .split(/[-_\s]+/) // 按横杠、下划线或空格分割
-      .filter(Boolean) // 过滤空字符串
-      .map((s) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase())
-      .join("");
-      
-    console.log(`Converted ${cleanName} to ${result}`);
-    return result;
-  }, [name]);
 
-  // 3. 动态 import 对应的 Lucide 图标
-  const LucideIcon = useMemo(() => {
-    return lazy(() =>
-      import("lucide-react")
-        .then((mod) => {
-          console.log(`Trying to import ${pascalName} from lucide-react`);
-          const IconComponent = mod[pascalName];
-          if (IconComponent) {
-            console.log(`✅ Successfully found ${pascalName}`);
-            return { default: IconComponent };
-          } else {
-            console.error(`❌ ${pascalName} not found in lucide-react`);
-            // 如果图标不存在，返回一个通用的图标
-            return { 
-              default: mod.HelpCircle || (() => (
-                <div className={className} title={`Icon "${name}" -> "${pascalName}" not found`}>
-                  <span style={{fontSize: '12px'}}>?</span>
+    // 2. 清理图标名称并转换为 PascalCase
+    const pascalName = useMemo(() => {
+      // 去除前后空格和特殊字符
+      let cleanName = name.trim().replace(/[️⭐]/g, ""); // 移除 emoji 修饰符
+      console.log("Cleaned name:", cleanName);
+
+      // 如果已经是 PascalCase，直接返回
+      if (/^[A-Z][a-zA-Z0-9]*$/.test(cleanName)) {
+        console.log(`${cleanName} is already PascalCase`);
+        return cleanName;
+      }
+
+      // 处理 kebab-case, snake_case, 或空格分隔的情况
+      const result = cleanName
+        .split(/[-_\s]+/) // 按横杠、下划线或空格分割
+        .filter(Boolean) // 过滤空字符串
+        .map((s) => s.charAt(0).toUpperCase() + s.slice(1).toLowerCase())
+        .join("");
+
+      console.log(`Converted ${cleanName} to ${result}`);
+      return result;
+    }, [name]);
+
+    // 3. 动态 import 对应的 Lucide 图标
+    const LucideIcon = useMemo(() => {
+      return lazy(() =>
+        import("lucide-react")
+          .then((mod) => {
+            console.log(`Trying to import ${pascalName} from lucide-react`);
+            const IconComponent = mod[pascalName];
+            if (IconComponent) {
+              console.log(`✅ Successfully found ${pascalName}`);
+              return { default: IconComponent };
+            } else {
+              console.error(`❌ ${pascalName} not found in lucide-react`);
+              // 如果图标不存在，返回一个通用的图标
+              return {
+                default:
+                  mod.HelpCircle ||
+                  (() => (
+                    <div
+                      className={className}
+                      title={`Icon "${name}" -> "${pascalName}" not found`}
+                    >
+                      <span style={{ fontSize: "12px" }}>?</span>
+                    </div>
+                  )),
+              };
+            }
+          })
+          .catch((error) => {
+            console.error(`Failed to import lucide-react:`, error);
+            return {
+              default: () => (
+                <div
+                  className={className}
+                  title={`Failed to load icon "${name}"`}
+                >
+                  <span style={{ fontSize: "12px" }}>!</span>
                 </div>
-              ))
+              ),
             };
-          }
-        })
-        .catch((error) => {
-          console.error(`Failed to import lucide-react:`, error);
-          return {
-            default: () => (
-              <div className={className} title={`Failed to load icon "${name}"`}>
-                <span style={{fontSize: '12px'}}>!</span>
-              </div>
-            )
-          };
-        })
-    );
-  }, [pascalName, className, name]);
+          })
+      );
+    }, [pascalName, className, name]);
 
-  return (
-    <Suspense fallback={
-      <div className={className}>
-        <span style={{fontSize: '12px'}}>⏳</span>
-      </div>
-    }>
-      <LucideIcon className={className} />
-    </Suspense>
-  );
-};
+    return (
+      <Suspense
+        fallback={
+          <div className={className}>
+            <span style={{ fontSize: "12px" }}>⏳</span>
+          </div>
+        }
+      >
+        <LucideIcon className={className} />
+      </Suspense>
+    );
+  };
 
   // 检查是否有内容的辅助函数
   const hasContent = (data) => {
@@ -176,12 +186,12 @@ const IconRenderer = ({ name, className }) => {
   };
 
   return (
-    <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="flex flex-col max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 gap-20">
       {/* Hero Section */}
-      <section className="relative pt-20 my-20">
+      <section className="relative pt-8 my-20">
         <div className="max-w-7xl mx-auto px-4">
           {/* 主标题 */}
-          <h1 className="text-6xl font-bold text-center mb-16">
+          <h1 className="text-6xl font-bold text-center mb-36">
             <span
               className="bg-clip-text text-transparent"
               style={{
@@ -191,7 +201,7 @@ const IconRenderer = ({ name, className }) => {
               {course.title}
             </span>
             <div
-              className="mt-4 h-1.5 w-32 mx-auto rounded-full"
+              className="mt-8 h-1 w-32 mx-auto rounded-full"
               style={{ background: "linear-gradient(90deg, #285ea9, #1e4a87)" }}
             />
           </h1>
@@ -207,14 +217,12 @@ const IconRenderer = ({ name, className }) => {
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-white to-gray-50/50 opacity-0 group-hover:opacity-100 transition-opacity" />
                     <div className="relative">
-                      <div className="text-5xl font-bold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-3">
+                      <div className="text-4xl font-semibold bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent mb-3">
                         {item.number}
                       </div>
-                      <p className="text-xl font-semibold text-gray-900 mb-2">
-                        {item.label}
-                      </p>
+                      <p className="text-sm text-gray-900 mb-2">{item.label}</p>
                       {item.subtitle && (
-                        <p className="text-sm text-gray-600 font-medium">
+                        <p className="text-xl text-gray-600 font-medium">
                           {item.subtitle}
                         </p>
                       )}
@@ -232,7 +240,7 @@ const IconRenderer = ({ name, className }) => {
           {/* 历史成就 */}
           {hasContent(course.heroSection?.achievements?.historical?.items) && (
             <div
-              className="bg-primary rounded-3xl p-10 shadow-2xl overflow-hidden relative"
+              className="bg-gradient-to-r from-[#85aedc] to-[#6490c7] rounded-3xl p-10 shadow-2xl overflow-hidden relative"
               data-aos="fade-up"
             >
               {/* 背景装饰 */}
@@ -258,7 +266,7 @@ const IconRenderer = ({ name, className }) => {
                             {item.title}
                           </p>
                         )}
-                        <div className="text-3xl font-bold text-primary mb-1">
+                        <div className="text-3xl font-semibold text-primary mb-1">
                           {item.number}
                         </div>
                         <p className="text-base text-gray-800 font-medium">
@@ -288,7 +296,7 @@ const IconRenderer = ({ name, className }) => {
 
         {/* Partner Schools */}
         {hasContent(course.heroSection?.schoolLogos) && (
-          <div className="mt-16">
+          <div className="mt-32">
             <SchoolsCarousel
               schools={course.heroSection.schoolLogos.map((schoolName) => {
                 const school = SCHOOL_IMAGES.find(
@@ -318,16 +326,16 @@ const IconRenderer = ({ name, className }) => {
 
       {/* Course Description Section */}
       {hasContent(course.courseDescription) && (
-        <section className="my-16 pt-6 bg-gradient-to-b from-white to-gray-50/30">
+        <section className="my-16 pt-6 ">
           <div className="max-w-7xl mx-auto px-4">
             {/* 标题部分 */}
             <div className="mb-16 text-center" data-aos="fade-up">
-              <h2 className="text-5xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl font-bold text-gray-900 mb-4">
                 <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                   {course.courseDescription.title}
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-2xl text-gray-600 mt-4 max-w-3xl mx-auto leading-relaxed">
                 {course.courseDescription.subtitle}
               </p>
               <div className="mt-8 h-1.5 w-24 bg-gradient-to-r from-primary to-primary/80 mx-auto rounded-full" />
@@ -364,7 +372,7 @@ const IconRenderer = ({ name, className }) => {
                   <div className="relative">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-primary/10 blur-3xl opacity-30" />
                     <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-gray-100/50">
-                      <h3 className="text-3xl font-bold text-gray-900 mb-8">
+                      <h3 className="text-4xl font-bold text-gray-900 mb-8">
                         <span className="bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                           {course.courseDescription.courseOverview.featureTitle}
                         </span>
@@ -393,7 +401,7 @@ const IconRenderer = ({ name, className }) => {
                                   </svg>
                                 </div>
                               </div>
-                              <span className="text-lg text-gray-800 font-medium leading-relaxed">
+                              <span className="text-gray-800 font-medium leading-[2rem]">
                                 {feature}
                               </span>
                             </div>
@@ -419,7 +427,7 @@ const IconRenderer = ({ name, className }) => {
                           <div className="absolute left-0 top-0 text-6xl font-bold text-primary/20 -translate-x-12 -translate-y-4">
                             "
                           </div>
-                          <p className="text-lg text-gray-700 leading-relaxed">
+                          <p className=" text-gray-700 leading-[2rem]">
                             {paragraph}
                           </p>
                         </div>
@@ -515,7 +523,7 @@ const IconRenderer = ({ name, className }) => {
 
                             {section.paragraph && (
                               <div className="mt-6 lg:mt-0">
-                                <p className="text-gray-600 text-lg leading-relaxed">
+                                <p className="text-gray-600 text-lg leading-[2rem]">
                                   {section.paragraph}
                                 </p>
                               </div>
@@ -541,7 +549,7 @@ const IconRenderer = ({ name, className }) => {
           hasContent(course.coreFeatures?.sections) && (
             <section className="my-16 border-b border-gray-200">
               <div className="max-w-7xl mx-auto">
-                <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
+                <h2 className="text-4xl font-bold text-gray-900 mb-10 text-center">
                   Core Highlights
                 </h2>
                 <p className="text-2xl text-gray-700 mb-12 text-center">
@@ -556,7 +564,7 @@ const IconRenderer = ({ name, className }) => {
                         section.paragraph ? "lg:col-span-2" : "lg:col-span-1"
                       }`}
                     >
-                      <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                      <h3 className="text-xl font-bold text-gray-900 mb-10">
                         {section.title}
                       </h3>
                       <div
@@ -583,7 +591,7 @@ const IconRenderer = ({ name, className }) => {
                                       clipRule="evenodd"
                                     />
                                   </svg>
-                                  <span className="text-lg">{item}</span>
+                                  <span className="leading-[2rem]">{item}</span>
                                 </li>
                               ))}
                             </ul>
@@ -592,7 +600,7 @@ const IconRenderer = ({ name, className }) => {
 
                         {section.paragraph && (
                           <div className="mt-6 lg:mt-0">
-                            <p className="text-gray-600 text-lg leading-relaxed">
+                            <p className="text-gray-600 leading-[2rem]">
                               {section.paragraph}
                             </p>
                           </div>
@@ -616,29 +624,33 @@ const IconRenderer = ({ name, className }) => {
 
       {/* Course Structure Overview Section */}
       {hasContent(course.courseStructureOverview?.overview) && (
-        <section className="my-16 border-b border-gray-200">
+        <section className="mb-16 border-b border-gray-200">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-4xl font-bold text-gray-900 mb-16 text-center">
               {course.courseStructureOverview.title}
             </h2>
             <div className="space-y-16">
               {course.courseStructureOverview.overview.map((section, index) => (
-                <div key={index} className="grid md:grid-cols-2 gap-8">
-                  <div className="bg-primary/5 p-8 rounded-2xl">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+                <div
+                  key={index}
+                  className="grid grid-cols-1 md:grid-cols-3 gap-8"
+                >
+                  {/* left = 1/3 */}
+                  <div className="flex items-center justify-center p-8 rounded-2xl bg-primary/10 shadow-lg md:col-span-1">
+                    <h3 className="text-2xl text-center font-bold text-gray-900 mb-4">
                       {section.leftTitle}
                     </h3>
                   </div>
-                  <div className="bg-white p-8 rounded-2xl shadow-lg">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">
+
+                  {/* right = 2/3 */}
+                  <div className="bg-white p-8 rounded-2xl shadow-lg md:col-span-2">
+                    <h3 className="text-xl font-bold text-gray-900 mb-4">
                       {section.rightTitle}
                     </h3>
                     {hasContent(section.rightContent) && (
                       <ul className="list-disc pl-6 space-y-3">
                         {section.rightContent.map((item, i) => (
-                          <li key={i} className="text-gray-700 text-lg">
-                            {item}
-                          </li>
+                          <li key={i}>{item}</li>
                         ))}
                       </ul>
                     )}
@@ -707,15 +719,15 @@ const IconRenderer = ({ name, className }) => {
 
                       {/* 标题和内容 */}
                       <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100/50">
-                        <h3 className="text-3xl font-bold text-gray-900 mb-6 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                        <h3 className="text-xl font-semibold text-gray-900 mb-6 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                           {item.title}
                         </h3>
-                        <p className="text-lg text-gray-700 leading-relaxed">
+                        <p className="text-gray-700 leading-[2rem]">
                           {item.paragraph}
                         </p>
 
                         {/* 装饰性引号 */}
-                        <div className="mt-6 flex justify-end">
+                        {/* <div className="mt-6 flex justify-end">
                           <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                             <svg
                               className="w-4 h-4 text-primary"
@@ -725,13 +737,13 @@ const IconRenderer = ({ name, className }) => {
                               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h4v10h-10z" />
                             </svg>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
 
                     {/* 视觉装饰区域 */}
                     <div className="flex-shrink-0 relative">
-                      <div className="w-64 h-64 relative">
+                      <div className="w-40 h-40 relative">
                         {/* 背景圆圈 */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full"></div>
                         <div className="absolute inset-4 bg-gradient-to-br from-primary/15 to-primary/5 rounded-full"></div>
@@ -739,7 +751,7 @@ const IconRenderer = ({ name, className }) => {
 
                         {/* 中心图标 */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-24 h-24 bg-gradient-to-br from-primary to-primary/80 rounded-2xl flex items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                          <div className="w-24 h-24 bg-primary/60 rounded-full flex items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
                             {i === 0 && (
                               <svg
                                 className="w-12 h-12"
@@ -794,10 +806,10 @@ const IconRenderer = ({ name, className }) => {
                           className="absolute bottom-12 left-8 w-2 h-2 bg-primary/60 rounded-full animate-pulse"
                           style={{ animationDelay: "0.5s" }}
                         ></div>
-                        <div
+                        {/* <div
                           className="absolute top-16 left-16 w-4 h-4 bg-primary/40 rounded-full animate-pulse"
                           style={{ animationDelay: "1s" }}
-                        ></div>
+                        ></div> */}
                       </div>
                     </div>
                   </div>
@@ -824,10 +836,10 @@ const IconRenderer = ({ name, className }) => {
                   {/* 图片容器 */}
                   <div className="relative group">
                     {/* 多层背景效果 */}
-                    <div className="absolute -inset-8 bg-gradient-to-r from-transparent via-primary/10 to-transparent rounded-3xl blur-2xl"></div>
-                    <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl"></div>
+                    {/* <div className="absolute -inset-8 bg-gradient-to-r from-transparent via-primary/10 to-transparent rounded-3xl blur-2xl"></div>
+                    <div className="absolute -inset-4 bg-gradient-to-br from-primary/5 to-transparent rounded-3xl"></div> */}
 
-                    <div className="relative flex justify-center transform group-hover:scale-105 transition-transform duration-500">
+                    <div className="relative flex justify-center transform group-hover:scale-105 transition-transform duration-500 max-w-2xl mx-auto">
                       <div className="rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                         <Image
                           src={course.whyChooseUs.partA.image2}
@@ -840,8 +852,8 @@ const IconRenderer = ({ name, className }) => {
                     </div>
 
                     {/* 角落装饰 */}
-                    <div className="absolute -top-6 -left-6 w-12 h-12 bg-primary/20 rounded-full blur-md"></div>
-                    <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-primary/15 rounded-full blur-lg"></div>
+                    {/* <div className="absolute -top-6 -left-6 w-12 h-12 bg-primary/20 rounded-full blur-md"></div>
+                    <div className="absolute -bottom-6 -right-6 w-16 h-16 bg-primary/15 rounded-full blur-lg"></div> */}
                   </div>
                 </div>
               )}
@@ -852,7 +864,7 @@ const IconRenderer = ({ name, className }) => {
           {hasContent(course.whyChooseUs.partB?.contents) && (
             <div className="max-w-7xl mx-auto mb-20">
               <div className="grid grid-cols-2 gap-16 items-center my-8">
-                <h2 className="text-5xl font-bold">
+                <h2 className="text-4xl font-bold leading-relaxed">
                   {course.whyChooseUs.partB.title}
                 </h2>
                 <p className="text-muted-foreground">
@@ -870,7 +882,7 @@ const IconRenderer = ({ name, className }) => {
                   {/* 文字描述 */}
                   <div className="w-1/2 space-y-4">
                     <div className="flex items-center gap-3 mb-4">
-                      <div className="p-3 rounded-full bg-blue-100 text-blue-600">
+                      <div className="p-3 rounded-full bg-primary/10 text-primary/70">
                         {content.icon === "book" && <BookOpen size={24} />}
                         {content.icon === "repeat" && <Repeat size={24} />}
                         {content.icon === "check" && <Check size={24} />}
@@ -930,22 +942,22 @@ const IconRenderer = ({ name, className }) => {
           {/* Part C */}
           {hasContent(course.whyChooseUs.partC?.list) && (
             <div className="max-w-7xl mx-auto mb-20 px-4">
-              <div className="bg-gradient-to-r from-primary to-primary/80 rounded-3xl p-8 shadow-2xl">
-                <h2 className="text-4xl font-bold text-white mb-12 text-center">
+              <div className="bg-gradient-to-r from-[#85aedc] to-[#6490c7] rounded-3xl p-8 shadow-2xl">
+                <h2 className="text-3xl font-bold text-white mb-12 text-center">
                   {course.whyChooseUs.partC.title}
                   <div className="mt-4 h-1.5 bg-white/30 w-24 mx-auto rounded-full" />
                 </h2>
 
-                <ul className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                <ul className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
                   {course.whyChooseUs.partC.list.map((item, i) => (
                     <li
                       key={i}
-                      className="flex items-start bg-white/10 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
+                      className="flex items-start bg-white/20 backdrop-blur-sm p-6 rounded-xl hover:bg-white/20 transition-all duration-300"
                     >
                       <div className="flex-shrink-0">
-                        <div className="w-8 h-8 bg-white rounded-full flex items-center justify-center mr-4">
+                        <div className="w-8 h-8 rounded-full flex items-center justify-center mr-4">
                           <svg
-                            className="w-5 h-5 text-primary"
+                            className="w-8 h-8 text-white"
                             fill="currentColor"
                             viewBox="0 0 20 20"
                           >
@@ -957,7 +969,7 @@ const IconRenderer = ({ name, className }) => {
                           </svg>
                         </div>
                       </div>
-                      <span className="text-white text-lg font-medium leading-relaxed">
+                      <span className="text-white leading-relaxed tracking-wide">
                         {item}
                       </span>
                     </li>
@@ -1001,10 +1013,10 @@ const IconRenderer = ({ name, className }) => {
                           {row.map((cell, j) => (
                             <td
                               key={j}
-                              className="px-8 py-5 text-gray-800 text-lg font-medium"
+                              className="px-8 py-8 text-gray-800 font-medium"
                             >
                               {j === 0 ? (
-                                <span className="text-primary font-semibold">
+                                <span className="text-primary font-semibold leading-[2rem]">
                                   {cell}
                                 </span>
                               ) : (
@@ -1038,21 +1050,9 @@ const IconRenderer = ({ name, className }) => {
                     {hasContent(customFeature.description) &&
                       hasContent(customFeature.images) && (
                         <div className="grid grid-cols-3 grid-rows-2 gap-6 mb-16 min-h-[600px]">
-                          {/* 描述段落1+2 */}
-                          <div className="col-span-1 row-span-1 p-6">
-                            <p className="text-sm text-gray-700 leading-relaxed">
-                              {customFeature.description[0]}
-                            </p>
-                            {customFeature.description[1] && (
-                              <p className="text-sm text-gray-700 leading-relaxed mt-4">
-                                {customFeature.description[1]}
-                              </p>
-                            )}
-                          </div>
-
                           {/* 图片1 */}
                           {customFeature.images[0] && (
-                            <div className="col-span-1 row-span-1 relative rounded-xl overflow-hidden shadow-lg">
+                            <div className="col-span-1 row-span-2 relative rounded-xl overflow-hidden shadow-lg">
                               <Image
                                 src={customFeature.images[0]}
                                 alt="Step 1"
@@ -1078,6 +1078,17 @@ const IconRenderer = ({ name, className }) => {
 
                           {/* 描述段落3+4（合并单元格） */}
                           <div className="col-span-2 row-span-1 p-6 flex gap-6">
+                            {/* 描述段落1+2 */}
+                            <div className="col-span-1 row-span-1 p-6">
+                              <p className="text-sm text-gray-700 leading-relaxed">
+                                {customFeature.description[0]}
+                              </p>
+                              {customFeature.description[1] && (
+                                <p className="text-sm text-gray-700 leading-relaxed mt-4">
+                                  {customFeature.description[1]}
+                                </p>
+                              )}
+                            </div>
                             <div className="flex-1">
                               {customFeature.description[2] && (
                                 <p className="text-sm text-gray-700 leading-relaxed">
@@ -1161,7 +1172,7 @@ const IconRenderer = ({ name, className }) => {
                   hasContent(course.customCourseFeature.images) && (
                     <div className="grid grid-cols-3 grid-rows-2 gap-6 mb-16 min-h-[600px]">
                       {/* 描述段落1+2 */}
-                      <div className="col-span-1 row-span-1 p-6">
+                      <div className="col-span-2 row-span-1 p-6">
                         <p className="text-sm text-gray-700 leading-relaxed">
                           {course.customCourseFeature.description[0]}
                         </p>
@@ -1170,10 +1181,20 @@ const IconRenderer = ({ name, className }) => {
                             {course.customCourseFeature.description[1]}
                           </p>
                         )}
+                        {course.customCourseFeature.description[2] && (
+                          <p className="text-sm text-gray-700 leading-relaxed">
+                            {course.customCourseFeature.description[2]}
+                          </p>
+                        )}
+                        {course.customCourseFeature.description[3] && (
+                          <p className="text-sm text-gray-700 leading-relaxed mt-4">
+                            {course.customCourseFeature.description[3]}
+                          </p>
+                        )}
                       </div>
 
                       {/* 图片1 */}
-                      {course.customCourseFeature.images[0] && (
+                      {/* {course.customCourseFeature.images[0] && (
                         <div className="col-span-1 row-span-1 relative rounded-xl overflow-hidden shadow-lg">
                           <Image
                             src={course.customCourseFeature.images[0]}
@@ -1183,7 +1204,7 @@ const IconRenderer = ({ name, className }) => {
                             sizes="(max-width: 768px) 100vw, 33vw"
                           />
                         </div>
-                      )}
+                      )} */}
 
                       {/* 图片2（跨两行） */}
                       {course.customCourseFeature.images[1] && (
@@ -1199,20 +1220,29 @@ const IconRenderer = ({ name, className }) => {
                       )}
 
                       {/* 描述段落3+4（合并单元格） */}
-                      <div className="col-span-2 row-span-1 p-6 flex gap-6">
+                      {/* <div className="col-span-2 row-span-1 p-6 flex gap-6">
                         <div className="flex-1">
-                          {course.customCourseFeature.description[2] && (
-                            <p className="text-sm text-gray-700 leading-relaxed">
-                              {course.customCourseFeature.description[2]}
-                            </p>
-                          )}
-                          {course.customCourseFeature.description[3] && (
-                            <p className="text-sm text-gray-700 leading-relaxed mt-4">
-                              {course.customCourseFeature.description[3]}
-                            </p>
-                          )}
+                          <Image
+                            src="https://placehold.co/300x200"
+                            alt="Step 1"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
                         </div>
-                      </div>
+                      </div> */}
+                      {/* 图片2（跨两行） */}
+                      {course.customCourseFeature.images[1] && (
+                        <div className="col-span-2 row-span-1 relative rounded-xl overflow-hidden shadow-lg border-t border-8 border-primary">
+                          <Image
+                            src="https://placehold.co/600x400"
+                            alt="Process Overview"
+                            fill
+                            className="object-cover"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
+                        </div>
+                      )}
                     </div>
                   )}
 
@@ -1273,17 +1303,17 @@ const IconRenderer = ({ name, className }) => {
 
       {/* Resources Section */}
       {hasContent(course.resources?.packages) && (
-        <section className="my-16">
+        <section className="mb-16 mt-8">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+            <h2 className="text-4xl font-bold text-gray-900 mb-20 text-center">
               Comprehensive Resources
             </h2>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-6 px-4">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-10 px-4">
               {course.resources.packages.map((pkg, i) => (
                 <div
                   key={i}
-                  className="relative flex items-center gap-4 p-6 bg-white rounded-xl border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 group"
+                  className="relative flex items-center gap-4 p-6 bg-white rounded-full border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300 group"
                 >
                   {/* 图标容器 */}
                   <div className="flex-shrink-0 relative bg-primary rounded-full p-4 transition-colors">
@@ -1304,7 +1334,7 @@ const IconRenderer = ({ name, className }) => {
                   </div>
 
                   {/* 悬浮装饰点 */}
-                  <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary/20"></div>
+                  {/* <div className="absolute top-2 right-2 w-2 h-2 rounded-full bg-primary/20"></div> */}
                 </div>
               ))}
             </div>
@@ -1325,7 +1355,7 @@ const IconRenderer = ({ name, className }) => {
 
       {/* Related Courses */}
       {hasContent(course.relatedCourses) && (
-        <section className="my-16 border-t border-gray-200">
+        <section className="my-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
               Related Courses

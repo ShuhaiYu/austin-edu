@@ -109,7 +109,7 @@ export default function Features() {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase">
           {t.whyTitle}
         </h2>
-        <p className="text-sm md:text-base max-w-4xl mx-auto">{t.whyDesc} </p>
+        <p className="text-sm md:text-base max-w-5xl mx-auto leading-[2rem]">{t.whyDesc} </p>
       </div>
 
       {/* 功能卡片 */}
@@ -163,7 +163,7 @@ export default function Features() {
 
             {/* 卡片内容 */}
             <div className="p-6">
-              <h3 className="text-xl font-bold mb-4 text-center mx-auto line-clamp-2 whitespace-pre-wrap">
+              <h3 className="text-xl font-bold mb-8 text-center mx-auto line-clamp-2 whitespace-pre-wrap">
                 {feat.title}
               </h3>
               <p className="text-gray-600 mb-12 text-center ">{feat.desc}</p>

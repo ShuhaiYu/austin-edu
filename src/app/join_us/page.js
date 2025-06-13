@@ -114,10 +114,10 @@ export default function JoinUsPage() {
         </div>
         {/* 右侧文字 */}
         <div className="w-full md:w-1/2 space-y-4 px-2 md:px-0 relative">
-          <h2 className="text-2xl md:text-3xl font-bold">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12">
             {t.section1.heading}
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-justify whitespace-pre-line text-gray-600">
+          <p className="text-sm md:text-base leading-relaxed whitespace-pre-line text-gray-600 mb-12">
             {t.section1.desc}
           </p>
           <div className="flex flex-col md:flex-row gap-3">
@@ -150,10 +150,10 @@ export default function JoinUsPage() {
       <section className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0">
         {/* 左侧文字 */}
         <div className="w-full md:w-1/2 space-y-4 px-2 md:px-0 order-2 md:order-1 relative">
-          <h2 className="text-2xl md:text-3xl font-bold">
+          <h2 className="text-2xl md:text-3xl font-bold mb-12">
             {t.section2.heading}
           </h2>
-          <p className="text-sm md:text-base leading-relaxed text-justify whitespace-pre-line text-gray-600">
+          <p className="text-sm md:text-base leading-relaxed whitespace-pre-line text-gray-600">
             {t.section2.desc}
           </p>
           {/* decoration 3 */}
@@ -184,18 +184,18 @@ export default function JoinUsPage() {
         </div>
       </section>
       {/* 3. 左右布局：职位列表 + 申请表 */}
-      <section className="flex flex-col md:flex-row items-start gap-8 mt-32">
+      <section className="flex flex-col md:flex-row items-start gap-12 mt-32">
         {/* 左侧：职位列表（Accordion 格式） */}
         <div className="w-full md:w-1/2 pb-12">
           <h2 className="text-3xl font-bold mb-6">{t.positions.title}</h2>
-          <Accordion type="multiple" className="space-y-4">
+          <Accordion type="multiple" className="space-y-6">
             {t.positions.list.map((position, index) => (
               <AccordionItem
                 key={index}
                 value={`item-${index}`}
                 className="px-3 border-b-0"
               >
-                <AccordionTrigger className="py-3 px-2 text-left bg-white border border-gray-200">
+                <AccordionTrigger className="py-3 px-4 text-left bg-white border border-gray-200">
                   <span className="text-base md:text-lg font-medium">
                     {position.title}
                   </span>
@@ -231,8 +231,8 @@ export default function JoinUsPage() {
 
         {/* 右侧：在线申请表 */}
         <div className="w-full md:w-1/2 sticky top-4">
-          <h2 className="text-5xl font-bold mb-6">{t.form.title}</h2>
-          <form className="space-y-4 bg-card p-4 md:p-8 rounded-lg shadow-lg bg-primary text-primary-foreground">
+          <h2 className="text-3xl font-bold mb-6">{t.form.title}</h2>
+          <form className="space-y-4 p-4 md:p-8 rounded-lg shadow-lg bg-primary text-primary-foreground">
             {t.form.sections.map((section) => (
               <div key={section.id} className="space-y-4">
                 <h3 className="text-xl font-semibold border-b pb-2">

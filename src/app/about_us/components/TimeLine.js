@@ -73,7 +73,7 @@ const TimelineSection = ({ content }) => {
   return (
     <section className="py-16" ref={sectionRef}>
       <div className="flex flex-col items-center justify-center mb-16 space-y-4">
-        <h2 className="text-3xl text-center mb-2">{content.title}</h2>
+        <h2 className="text-3xl text-center mb-8">{content.title}</h2>
         <p className="text-5xl font-light  whitespace-pre-line">
           Where{" "}
           <span className="text-primary uppercase font-bold">

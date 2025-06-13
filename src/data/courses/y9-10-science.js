@@ -6,8 +6,15 @@ const courseData = {
       title: "Course Description",
       subtitle:
         "Develop In-depth Knowledge and Skills Across Chemistry, Physics, and Biology to Seamlessly Transition into VCE.",
-      paragraph:
-        "Austin’s Year 9-10 Pre-VCE Science Standard programme is specifically designed for students planning to pursue VCE Chemistry, Biology, and Physics. With a focus on examination requirements, core skills development, and scientific expression, the course introduces key knowledge and thinking frameworks across all three disciplines. It provides a seamless transition from General Science in secondary school to the demands of VCE Science studies.",
+      // paragraph:
+      //   "Austin’s Year 9-10 Pre-VCE Science Standard programme is specifically designed for students planning to pursue VCE Chemistry, Biology, and Physics. With a focus on examination requirements, core skills development, and scientific expression, the course introduces key knowledge and thinking frameworks across all three disciplines. It provides a seamless transition from General Science in secondary school to the demands of VCE Science studies.",
+        courseOverview: {
+       
+        descriptionAfterFeature: [
+          "Austin’s Year 9-10 Pre-VCE Science Standard programme is specifically designed for students planning to pursue VCE Chemistry, Biology, and Physics. With a focus on examination requirements, core skills development, and scientific expression, the course introduces key knowledge and thinking frameworks across all three disciplines.",
+          "It provides a seamless transition from General Science in secondary school to the demands of VCE Science studies.",
+        ],
+      },
     },
     coreFeatures: {
       sections: [

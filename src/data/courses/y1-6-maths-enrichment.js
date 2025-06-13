@@ -108,7 +108,7 @@ const courseData = {
         {
           icon: "chart-no-axes-combined",
           title:
-            "20-40 additional/optional/advanced online questions per week (in questions/hours)",
+            "20-40 additional/optional/ advanced online questions per week",
           desc: "",
         },
         { icon: "File-clock", title: "4 semester assessment exams", desc: "" },

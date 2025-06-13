@@ -141,7 +141,7 @@ export const CourseDetail = ({ searchFilter }) => {
         </div>
       )}
 
-      <div className="flex gap-8 mb-16 items-start">
+      <div className="flex gap-8 mb-8 items-start">
         {/* 左侧 Accordion */}
         <div className="w-1/2">
           <Accordion 
@@ -202,7 +202,7 @@ export const CourseDetail = ({ searchFilter }) => {
                                       onDoubleClick={() => handleDoubleClick(course)}
                                       className={`text-left w-full p-3 rounded-lg cursor-pointer transition-all duration-300 select-none
                                         ${isSelected 
-                                          ? "bg-primary/10 text-primary border-primary/30 shadow-md font-bold ring-2 ring-primary/20" 
+                                          ? "bg-primary/10 text-primary border-none shadow-sm font-bold " 
                                           : "hover:text-primary hover:bg-primary/5 hover:shadow-sm border-transparent hover:border-primary/20"
                                         } border
                                         ${isSearchResult ? "animate-pulse bg-yellow-50 border-yellow-300" : ""}
@@ -287,7 +287,7 @@ export const CourseDetail = ({ searchFilter }) => {
                       </div>
                     ) : (
                       /* 正常显示课程内容 */
-                      <ul className="list-disc pl-6 space-y-2">
+                      <ul className="list-disc pl-6 space-y-1">
                         {selectedCourse.content.map((item, i) => (
                           <li key={i} className="text-muted-foreground">
                             {item}

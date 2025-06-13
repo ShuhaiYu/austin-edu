@@ -34,7 +34,7 @@ const courseData = {
         ],
       },
       partB: {
-        title: "Fun & Interactive Classrooms | Bring Chinese Learning to Life!",
+        title: "Fun & Interactive Classrooms Bring Chinese Learning to Life!",
         description:
           "A dynamic blend of Game-Based, Interactive, and Kinesthetic Learning gets students truly moving and engaged—making Chinese fun, active, and memorable!",
         contents: [

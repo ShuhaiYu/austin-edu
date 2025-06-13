@@ -20,8 +20,8 @@ function CoursesPageContent() {
   };
 
   return (
-    <div className="container mx-auto p-8 space-y-16">
-      <div className="mb-28">
+    <div className="container mx-auto p-8 space-y-8">
+      <div className="mb-12">
         <h1 className="text-5xl font-bold mb-8">Courses</h1>
         <CourseDetail searchFilter={searchFilter} />
       </div>

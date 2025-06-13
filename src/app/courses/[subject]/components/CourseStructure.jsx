@@ -22,9 +22,9 @@ export function CourseStructure({ data }) {
     isLockGlobally && !(selectedYear === 0 && selectedModule === 0);
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-gray-900 mb-8 text-center">
+        <h2 className="text-4xl font-bold text-gray-900 mb-16 text-center">
           {data.title}
         </h2>
 
@@ -37,20 +37,20 @@ export function CourseStructure({ data }) {
               setSelectedYear(idx);
               setSelectedModule(0);
             }}
-            className="mb-8"
+            className="mb-12"
           >
-            <TabsList className="justify-center space-x-4">
+            <TabsList className="justify-center space-x-6">
               {years.map((year, idx) => {
                 const lockedTab = isLockGlobally && idx !== 0;
                 return (
                   <TabsTrigger
                     key={year.title}
                     value={idx.toString()}
-                    className="relative px-4 py-2 rounded-lg data-[state=active]:bg-blue-500 data-[state=active]:text-white capitalize"
+                    className="relative px-4 py-2 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white capitalize"
                   >
                     {year.title}
                     {lockedTab && (
-                      <Lock className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-yellow-300 text-yellow-600 p-1" />
+                      <Lock className="absolute -top-1 -right-1 w-6 h-6 rounded-full bg-[#dfb67e] text-white p-1" />
                     )}
                   </TabsTrigger>
                 );
@@ -71,13 +71,13 @@ export function CourseStructure({ data }) {
                   onClick={() => setSelectedModule(idx)}
                   className={`relative w-full p-6 text-left rounded-xl transition-all ${
                     selectedModule === idx
-                      ? "bg-blue-50 border-2 border-blue-500 shadow-lg"
-                      : "bg-gray-50 hover:bg-gray-100 border-2 border-transparent"
+                      ? "bg-primary/10 border-0 border-none shadow-lg"
+                      : "bg-white hover:bg-gray-100 border-2 border-transparent"
                   }`}
                 >
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className="text-sm font-semibold text-blue-600">
+                      <p className="text-sm font-semibold text-primary">
                         {mod.subtitle}
                       </p>
                       <h3 className="text-lg font-bold text-gray-900 mt-2">
@@ -87,13 +87,13 @@ export function CourseStructure({ data }) {
                     <ChevronRight
                       className={`w-6 h-6 ${
                         selectedModule === idx
-                          ? "text-blue-500"
+                          ? "text-primary"
                           : "text-gray-400"
                       }`}
                     />
                   </div>
                   {lockedModule && (
-                    <Lock className="absolute top-2 right-2 rounded-full bg-yellow-300 p-2 w-8 h-8 text-yellow-600" />
+                    <Lock className="absolute top-2 right-2 rounded-full bg-[#dfb67e] p-2 w-8 h-8 text-white" />
                   )}
                 </button>
               );
@@ -121,7 +121,7 @@ export function CourseStructure({ data }) {
                     key={i}
                     className="flex items-start p-4 rounded-lg hover:bg-gray-50 transition-colors"
                   >
-                    <div className="w-8 h-8 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                    <div className="w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-4 flex-shrink-0">
                       {i + 1}
                     </div>
                     <span className="text-gray-700 leading-relaxed">
@@ -141,7 +141,7 @@ export function CourseStructure({ data }) {
                 </p>
                 <button
                   onClick={() => router.push("/contact_us")}
-                  className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+                  className="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/80"
                 >
                   Contact Us
                 </button>

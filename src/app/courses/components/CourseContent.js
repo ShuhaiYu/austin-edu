@@ -149,7 +149,7 @@ export const CourseContent = () => {
             className="space-y-16 mb-16"
           >
             <div className="grid grid-cols-2 gap-16 items-center">
-              <h2 className="text-5xl font-bold">{grade.title}</h2>
+              <h2 className="text-5xl font-bold leading-[4rem]">{grade.title}</h2>
               <p className="text-muted-foreground">{grade.description}</p>
             </div>
             {grade.contents.map((content, index) => (
@@ -160,9 +160,9 @@ export const CourseContent = () => {
                 }`}
               >
                 {/* 文字描述 */}
-                <div className="w-1/2 space-y-4">
+                <div className="w-1/2 space-y-4 pr-12">
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 rounded-full bg-blue-100 text-blue-600">
+                    <div className="p-3 rounded-full bg-primary/10 text-primary">
                       {content.icon === "book" && <BookOpen size={24} />}
                       {content.icon === "repeat" && <Repeat size={24} />}
                       {content.icon === "check" && <Check size={24} />}
@@ -197,9 +197,9 @@ export const CourseContent = () => {
                       {content.icon === "award" && <Award size={24} />}
                       {content.icon === "calendar" && <Calendar size={24} />}
                     </div>
-                    <h3 className="text-2xl font-bold">{content.title}</h3>
+                    <h3 className="text-2xl font-bold ">{content.title}</h3>
                   </div>
-                  <p className="text-muted-foreground">{content.description}</p>
+                  <p className="mt-8 text-muted-foreground leading-[2rem]">{content.description}</p>
                 </div>
 
                 {/* 图片 */}

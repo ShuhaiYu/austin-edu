@@ -1,9 +1,10 @@
-// app/resource-hub/components/BlogTab.tsx
+// app/resource-hub/components/BlogTab.js
 "use client";
 import { Button } from "@/components/ui/button";
 import { useContext, useState } from "react";
 import { LangContext } from "@/app/layout";
 import Image from "next/image";
+import Link from "next/link";
 import { Play } from "lucide-react";
 import {
   Carousel,
@@ -12,19 +13,18 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { date } from "zod";
+import { getFeaturedBlogPosts } from "@/data/blogs";
 
 const content = {
   en: {
-    // title: "Blog & Resources",
     interviews: "TOP Student Interviews",
     blogs: "Latest Blogs",
     readMore: "Read More →",
+    checkMore: "Check More",
     students: [
       {
         name: "Jennifer",
         major: "Science",
-        // image: "/images/student1.jpg"
         image: "https://placehold.co/600x400",
       },
       {
@@ -37,34 +37,13 @@ const content = {
         major: "Science",
         image: "https://placehold.co/600x400",
       },
-    ],
-    posts: [
-      {
-        title: "VCE Study Strategies That Actually Work",
-        desc: "Discover proven methods to boost your VCE scores",
-        image: "https://placehold.co/600x400",
-        date: "March 15, 2024",
-      },
-      {
-        title: "Choosing Between Public and Private Schools",
-        desc: "A comprehensive comparison guide for parents",
-        image: "https://placehold.co/600x400",
-        date: "September 20, 2024",
-      },
-      {
-        title: "Mastering Time Management in Year 12",
-        desc: "Essential tips for balancing study and life",
-        image: "https://placehold.co/600x400",
-        date: "October 5, 2024",
-      },
-    ],
-    checkMore: "Check More",
+    ]
   },
   zh: {
-    // title: "博客与资源中心",
     interviews: "优秀学生访谈",
     blogs: "最新博客文章",
     readMore: "阅读全文 →",
+    checkMore: "查看更多",
     students: [
       {
         name: "Jennifer",
@@ -81,36 +60,17 @@ const content = {
         major: "科学系",
         image: "https://placehold.co/600x400",
       },
-    ],
-    posts: [
-      {
-        title: "真正有效的VCE学习策略",
-        desc: "探索提高VCE成绩的有效方法",
-        image: "https://placehold.co/600x400",
-        date: "三月 15, 2023",
-      },
-      {
-        title: "公立与私立学校的选择",
-        desc: "家长必备的全面对比指南",
-        image: "https://placehold.co/600x400",
-        date: "十月 20, 2023",
-      },
-      {
-        title: "掌握12年级时间管理",
-        desc: "平衡学习与生活的重要技巧",
-        image: "https://placehold.co/600x400",
-        date: "十月 5, 2023",
-      },
-    ],
-    checkMore: "查看更多",
+    ]
   },
 };
 
 export const BlogTab = () => {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = content[lang];
-  const [mainIndex, setMainIndex] = useState(0);
   const [activeStudent, setActiveStudent] = useState(0);
+  
+  // 获取特色博客文章
+  const featuredPosts = getFeaturedBlogPosts().slice(0, 3);
 
   return (
     <div className="bg-white rounded-xl p-16 shadow-lg">
@@ -186,33 +146,40 @@ export const BlogTab = () => {
           className="w-full"
         >
           <CarouselContent>
-            {t.posts.map((post, index) => (
+            {featuredPosts.map((post, index) => (
               <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                <article className="group relative transition-all h-full">
-                  <div className="relative h-64">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      fill
-                      className="object-cover"
-                    />
-                    {/* 日期显示 */}
-                    <div className="absolute left-0 top-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="bg-muted text-primary px-3 py-1.5 text-sm">
-                        {post.date}
+                <Link href={`/blog/${post.slug}`}>
+                  <article className="group relative transition-all h-full cursor-pointer">
+                    <div className="relative h-64">
+                      <Image
+                        src={post.image}
+                        alt={post.content[lang].title}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute left-0 top-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="bg-muted text-primary px-3 py-1.5 text-sm">
+                          {new Date(post.publishDate).toLocaleDateString(
+                            lang === 'zh' ? 'zh-CN' : 'en-US'
+                          )}
+                        </div>
+                      </div>
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center">
+                        <Button className="opacity-0 group-hover:opacity-100 transition-opacity">
+                          {t.readMore}
+                        </Button>
                       </div>
                     </div>
-                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all flex items-center justify-center">
-                      <Button className="opacity-0 group-hover:opacity-100 transition-opacity ">
-                        {t.readMore}
-                      </Button>
+                    <div className="p-6 bg-background h-[200px]">
+                      <h3 className="text-xl font-bold mb-2 line-clamp-2">
+                        {post.content[lang].title}
+                      </h3>
+                      <p className="text-muted-foreground line-clamp-3">
+                        {post.content[lang].description}
+                      </p>
                     </div>
-                  </div>
-                  <div className="p-6 bg-background h-[200px]">
-                    <h3 className="text-xl font-bold mb-2">{post.title}</h3>
-                    <p className="text-muted-foreground">{post.desc}</p>
-                  </div>
-                </article>
+                  </article>
+                </Link>
               </CarouselItem>
             ))}
           </CarouselContent>
@@ -222,9 +189,11 @@ export const BlogTab = () => {
 
         {/* Check More Button */}
         <div className="flex justify-center my-12">
-          <Button size="lg" className="px-12">
-            {t.checkMore}
-          </Button>
+          <Link href="/blog">
+            <Button size="lg" className="px-12">
+              {t.checkMore}
+            </Button>
+          </Link>
         </div>
       </section>
     </div>

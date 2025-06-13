@@ -112,7 +112,7 @@ export default function AdmissionProcess() {
                           onClick={() =>
                             handleButtonClick(currentStep.buttonLink || "#")
                           }
-                          className={`inline-flex items-center px-4 py-2 text-xs sm:text-sm text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
+                          className={`${dotColor} inline-flex items-center px-4 py-2 text-xs sm:text-sm text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
                         >
                           {currentStep.buttonText || "Learn More"}
                           <SquareArrowOutUpRight className="h-4 w-4" />

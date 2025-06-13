@@ -19,7 +19,7 @@ export default function AboutPage() {
       <section className="flex flex-col md:flex-row gap-12 items-center py-16">
         <div className="flex-1 space-y-6">
           <h2 className="text-4xl font-bold">{content.aboutSection.title}</h2>
-          <p className="text-lg text-muted-foreground text-justify">
+          <p className="text-lg text-muted-foreground ">
             {content.aboutSection.content}
           </p>
         </div>

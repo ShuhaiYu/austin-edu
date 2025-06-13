@@ -9,7 +9,7 @@ export const aboutUsContent = {
       image: "/about_us/heading.png",
     },
     historySection: {
-      title: "Brand's History — Where Dedication Meets Distinction",
+      title: "Brand's History",
       timeline: [
         {
           year: "2013",

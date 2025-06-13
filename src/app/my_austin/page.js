@@ -111,8 +111,8 @@ const FeatureSection = ({ feature, index }) => {
         className="py-16"
       >
         <div className="text-center mb-8">
-          <p className="text-sm text-gray-500 mb-2">{subtitle}</p>
-          <h3 className="text-3xl font-bold mb-6">{title}</h3>
+          {/* <p className="text-sm text-gray-500 mb-2">{subtitle}</p> */}
+          <h3 className="text-3xl font-bold mb-12">{title}</h3>
         </div>
         <div className="max-w-4xl mx-auto mb-8">
           <div className="relative rounded-lg overflow-hidden">
@@ -126,7 +126,7 @@ const FeatureSection = ({ feature, index }) => {
             />
           </div>
         </div>
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center">
           <p className="text-gray-600 leading-relaxed whitespace-pre-line">
             {desc}
           </p>
@@ -184,8 +184,8 @@ const FeatureSection = ({ feature, index }) => {
       {/* 文字部分 */}
       <div className="lg:w-1/2 space-y-6">
         <div>
-          <p className="text-sm text-gray-500 mb-2">{subtitle}</p>
-          <h3 className="text-3xl font-bold mb-4">{title}</h3>
+          {/* <p className="text-sm text-gray-500 mb-2">{subtitle}</p> */}
+          <h3 className="text-3xl font-bold mb-12">{title}</h3>
           <p className="text-gray-600 leading-relaxed whitespace-pre-line">
             {desc}
           </p>
@@ -218,11 +218,11 @@ export default function MyAustinPage() {
         className="py-20 text-center"
       >
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">
+          <h1 className="text-4xl md:text-5xl font-bold mb-12">
             {content.hero.title}
           </h1>
-          <p className="text-xl text-gray-600 mb-4">{content.hero.desc}</p>
-          <h2 className="text-2xl font-semibold mb-8">
+          <p className="text-xl text-gray-600 mb-8">{content.hero.desc}</p>
+          <h2 className="text-2xl font-semibold mb-12">
             {content.hero.subtitle}
           </h2>
           <Button size="lg" asChild>
@@ -243,7 +243,7 @@ export default function MyAustinPage() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="py-16 text-center"
+        className="mt-8 mb-4 text-center"
       >
         <div className="max-w-4xl mx-auto">
           <p className="text-lg text-gray-600 leading-relaxed">
@@ -258,15 +258,10 @@ export default function MyAustinPage() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="py-16"
+        className="pb-16 pt-8"
       >
         <ImageSlider images={content.sliderImages} />
       </motion.section>
-
-      {/* 分隔线 */}
-      <div className="flex justify-center py-8">
-        <Separator className="w-24" />
-      </div>
 
       {/* 功能展示部分 */}
       <div className="space-y-20">
