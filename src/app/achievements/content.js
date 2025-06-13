@@ -136,7 +136,7 @@ export const achievementContent = {
           title: "Keys to Austin Education’s High English Scores:",
           points: [
             {
-              title: "Pre-Exam Forecasting:",
+              title: "Pre-Exam Forecasting",
               description:
                 "Over the past two years of VCE English exams, Austin Education has successfully predicted several exam questions, with the highest similarity rate reaching 95%.",
             },
@@ -146,7 +146,7 @@ export const achievementContent = {
                 "We are the only institution in Victoria that offers dedicated, thorough essay revisions. Our teachers help refine each student's essay—from structure and logic to grammar and vocabulary—with some revised essays even being selected as model examples by the VCAA in 2023.",
             },
             {
-              title: "Focus on SACs in English:",
+              title: "Focus on SACs in English",
               description:
                 "Since the overall English score is composed of both SAC and exam results, having SACs as a safety net ensures that students consistently achieve their best possible scores.",
             },
@@ -158,13 +158,13 @@ export const achievementContent = {
         compactStats: (
           <span>
             From 2017 to 2024,{" "}
-            <strong className="font-bold text-xl text-[#c12731]">36</strong>{" "}
+            <strong className="font-bold text-xl text-primary">36</strong>{" "}
             students scored a{" "}
             <strong className="font-bold text-xl">perfect score of 50</strong>{" "}
             in both MM and SM.
             <br />
             The MM class had an average raw score of{" "}
-            <strong className="font-bold text-xl text-[#c12731]">42</strong>,
+            <strong className="font-bold text-xl text-primary">42</strong>,
             while that figure of the SM class was{" "}
             <strong className="font-bold text-xl">38</strong>.<br />
             Numerous top-ranked math achievers in various day schools have

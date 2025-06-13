@@ -68,16 +68,19 @@ const courseData = {
         "Haileybury College",
         "Caulfield Grammar",
         "Huntingtower",
-        "Lauriston Grils School",
+        "Lauriston Girls' School",
       ],
-      extraDescription: "这是在学校logo的下方的额外描述",
     },
 
     courseDescription: {
       title: "Course Description",
       subtitle: "Build Confidence. Solve Faster. Score Higher.",
-      paragraph:
-        "A high-efficiency scholarship program specifically designed for Year 4 and 5 students, focusing on advanced training in Mathematics and English. Through targeted exam strategies, accelerated content delivery, and expert instruction, students are fully prepared to tackle the highly competitive Year 5 to Year 7 scholarship exams.",
+      courseOverview: {
+        descriptionAfterFeature: [
+          "A high-efficiency scholarship program specifically designed for Year 4 and 5 students, focusing on advanced training in Mathematics and English.",
+          "Through targeted exam strategies, accelerated content delivery, and expert instruction, students are fully prepared to tackle the highly competitive Year 5 to Year 7 scholarship exams.",
+        ],
+      },
     },
     whyChooseUs: {
       partA: {
@@ -356,23 +359,23 @@ const courseData = {
         },
       },
       schoolLogos: [
-        "Scotch College",
-        "Presbyterian Ladies’ College",
+        "Camberwell Grammar",
         "Melbourne Grammar",
-        "Trinity Grammar",
+        "Haileybury College",
         "Caulfield Grammar",
-        "Yarra Valley Grammar",
-        "Wesley College",
-        "Korowa Anglican Girls’ School",
+        "Huntingtower",
+        "Lauriston Girls' School",
       ],
-      extraDescription: "这是在学校logo的下方的额外描述",
     },
 
     courseDescription: {
       title: "Course Description",
       subtitle: "建立自信 · 高效解题 · 稳抓高分",
-      paragraph:
-        "专为4-5年级学生设计的高效奖学金课堂，集中于数学与英语强化课程，助力他们通过进阶内容学习、精准应试策略和权威教师指导，全面备战竞争激烈的5考7奖学金考试。",
+      courseOverview: {
+        descriptionAfterFeature: [
+          "专为4-5年级学生设计的高效奖学金课堂，集中于数学与英语强化课程，助力他们通过进阶内容学习、精准应试策略和权威教师指导，全面备战竞争激烈的5考7奖学金考试。",
+        ],
+      },
     },
     whyChooseUs: {
       partA: {

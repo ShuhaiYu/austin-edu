@@ -2,13 +2,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Separator } from "@/components/ui/separator"
 
 export const BaseSubject = ({ 
   title,
   compactContent,
   expandedContent,
-  color
 }) => {
   return (
     <motion.div

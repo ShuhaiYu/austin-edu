@@ -107,8 +107,12 @@ const courseData = {
       title: "Course Description",
       subtitle:
         "A Head Start for Excellence — Build a High-Scoring Foundation for VCE English",
-      paragraph:
-        "Austin Education’s Year 10 English program is carefully aligned with VCE examination standards, focusing on building students’ skills in Text Response, Argument Analysis, and Crafting A Text. With a structured approach that mirrors VCAA requirements, the course lays a strong foundation for academic success and prepares students with confidence for Year 12.",
+        courseOverview: {
+          descriptionAfterFeature: [
+            "Austin Education’s Year 10 English program is carefully aligned with VCE examination standards, focusing on building students’ skills in Text Response, Argument Analysis, and Crafting A Text.",
+            "With a structured approach that mirrors VCAA requirements, the course lays a strong foundation for academic success and prepares students with confidence for Year 12.",
+          ],
+        },
     },
     coreFeatures: {
       sections: [
@@ -478,8 +482,12 @@ const courseData = {
     courseDescription: {
       title: "Course Description",
       subtitle: "领先起点，超前学习，构建VCE英语高分基础",
-      paragraph:
-        "澳升教育的10年级英文课程严格对标 VCE 高考要求，精准培养学生在 Text Response、Argument Analysis 和 Crafting a Text 三大核心写作类型中的能力。我们的课程体系设计紧密贴合 VCAA 考试标准，确保学生在12年级之前打好坚实基础，领先同龄人。",
+      courseOverview: {
+        descriptionAfterFeature: [
+          "澳升教育的10年级英文课程严格对标 VCE 高考要求，精准培养学生在 Text Response、Argument Analysis 和 Crafting a Text 三大核心写作类型中的能力。",
+          "我们的课程体系设计紧密贴合 VCAA 考试标准，确保学生在12年级之前打好坚实基础，领先同龄人。",
+        ],
+      },
     },
     coreFeatures: {
       sections: [

@@ -384,20 +384,18 @@ export default function Achievements() {
 
             {/* 标语部分 */}
             <div className="flex flex-col items-center justify-center my-16 space-y-4">
-              {content.slogans.map((slogan, index) => {
-                const [first, last] = slogan.split(" ");
-                return (
-                  <p
-                    key={index}
-                    className="text-5xl font-light text-muted-foreground whitespace-pre-line"
-                  >
-                    {first}{" "}
-                    <span className="text-primary uppercase font-bold">
-                      {last}
-                    </span>
-                  </p>
-                );
-              })}
+              <p className="text-5xl font-light text-muted-foreground whitespace-pre-line">
+                {lang === "en" ? "Every Student" : "每个学生都"}{" "}
+                <span className="text-primary uppercase font-bold">
+                  {lang === "en" ? "MATTERS" : "重要"}
+                </span>
+              </p>
+              <p className="text-5xl font-light text-muted-foreground whitespace-pre-line">
+                {lang === "en" ? "Every Success" : "每个成功都"}{" "}
+                <span className="text-primary uppercase font-bold">
+                  {lang === "en" ? "COUNTS" : "算数"}
+                </span>
+              </p>
             </div>
 
             {/* 高中科目部分 */}

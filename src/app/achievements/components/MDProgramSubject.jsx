@@ -16,10 +16,6 @@ export const MDProgramSubject = ({ data }) => (
           <motion.div 
             key={index}
             className="flex flex-col items-center p-4"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1 }}
-            whileHover={{ scale: 1.05 }}
           >
             <PercentageCircle 
               value={stat.value} 
@@ -53,11 +49,10 @@ export const MDProgramSubject = ({ data }) => (
           {data.fullStats.map((stat, index) => (
             <motion.div 
               key={index}
-              className="p-8 bg-white rounded-xl shadow-sm border border-primary/20 hover:shadow-lg transition-all duration-300"
+              className="p-8 bg-white rounded-xl shadow-sm border border-primary/20 transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 + index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
             >
               <div className="flex justify-center mb-6">
                 <PercentageCircle 
@@ -106,7 +101,6 @@ export const MDProgramSubject = ({ data }) => (
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.6 + index * 0.1 }}
-                  whileHover={{ x: 5 }}
                 >
                   <ArrowRight className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
                   <span className="text-gray-700 text-base leading-relaxed">{info}</span>

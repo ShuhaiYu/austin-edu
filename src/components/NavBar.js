@@ -31,16 +31,16 @@ const menuItems = [
     href: "/resource_hub",
   },
   {
-    key: "join_us",
-    label_en: "Join Us",
-    label_zh: "加入我们",
-    href: "/join_us",
-  },
-  {
     key: "contact_us",
     label_en: "Contact Us",
     label_zh: "联系我们",
     href: "/contact_us",
+  },
+  {
+    key: "join_us",
+    label_en: "Join Us",
+    label_zh: "加入我们",
+    href: "/join_us",
   },
   {
     key: "about_us",

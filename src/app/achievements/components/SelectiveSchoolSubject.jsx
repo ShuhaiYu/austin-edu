@@ -14,7 +14,6 @@ export const SelectiveSchoolSubject = ({ data }) => (
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 300 }}
-          whileHover={{ scale: 1.05 }}
         >
           <PercentageCircle
             value={data.compactStat.value}
@@ -55,10 +54,9 @@ export const SelectiveSchoolSubject = ({ data }) => (
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + index * 0.05 }}
-              whileHover={{ y: -5, scale: 1.02 }}
             >
-              <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 text-center transition-all duration-300 group-hover:shadow-lg group-hover:border-blue-200">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl"></div>
+              <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 text-center transition-all duration-300">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 transition-opacity duration-300 rounded-xl"></div>
                 <div className="relative z-10">
                   <h5 className="text-base font-bold text-blue-900 mb-3 leading-tight">
                     {school.name}

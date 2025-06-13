@@ -18,7 +18,6 @@ export const VCEScienceSubject = ({ data }) => (
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: index * 0.1 }}
-            whileHover={{ scale: 1.05 }}
           >
             <PercentageCircle
               value={subject.value}
@@ -40,11 +39,10 @@ export const VCEScienceSubject = ({ data }) => (
           {data.details.map((subject, index) => (
             <motion.div
               key={index}
-              className="p-6 rounded-xl shadow-sm border border-[#dfb67e]/20 bg-gradient-to-br from-orange-50/50 to-amber-50/30 hover:shadow-lg transition-all duration-300"
+              className="p-6 rounded-xl shadow-sm border border-[#dfb67e]/20 bg-gradient-to-br from-orange-50/50 to-amber-50/30 transition-all duration-300"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + index * 0.1 }}
-              whileHover={{ y: -5, scale: 1.02 }}
             >
               <h4 className="text-xl font-bold mb-4 text-[#9c7146] text-center">
                 {subject.title}
@@ -92,11 +90,10 @@ export const VCEScienceSubject = ({ data }) => (
             {data.advantages.points.map((point, index) => (
               <motion.div
                 key={index}
-                className="p-8 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 shadow-md border border-[#dfb67e]/20 hover:shadow-xl transition-all duration-300"
+                className="p-8 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 shadow-md border border-[#dfb67e]/20 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 + index * 0.1 }}
-                whileHover={{ scale: 1.03, y: -5 }}
               >
                 <div className="flex items-start mb-4">
                   <div className="w-10 h-10 bg-[#dfb67e] text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0 mr-4 mt-1">

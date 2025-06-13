@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LangContext } from "@/app/layout";
 import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
@@ -13,6 +13,40 @@ import { aboutUsFAQContent } from "@/data/faq_content";
 export default function AboutPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const content = aboutUsContent[lang];
+
+  // 处理锚点跳转到 Campuses Section
+  useEffect(() => {
+    const handleHashNavigation = () => {
+      const hash = window.location.hash.slice(1); // 移除 # 符号
+      // 只要有任何校区相关的 hash，都跳转到 campuses section
+      const campusHashes = ["box-hill", "mount-waverley", "cbd", "point-cook", "adelaide"];
+      
+      if (hash && campusHashes.includes(hash)) {
+        // 延迟执行确保页面完全加载
+        setTimeout(() => {
+          const campusesSection = document.getElementById('campuses-section');
+          if (campusesSection) {
+            campusesSection.scrollIntoView({ 
+              behavior: 'smooth', 
+              block: 'start',
+              inline: 'nearest'
+            });
+          }
+        }, 100);
+      }
+    };
+
+    // 页面加载时处理
+    handleHashNavigation();
+    
+    // 监听 hash 变化
+    window.addEventListener('hashchange', handleHashNavigation);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleHashNavigation);
+    };
+  }, []);
+
   return (
     <div className="container mx-auto px-4 py-16">
       {/* About Section */}
@@ -145,7 +179,7 @@ export default function AboutPage() {
       </section>
 
       {/* Campuses Section */}
-      <section className="py-16">
+      <section id="campuses-section" className="py-16">
         {content.campusesSection.map((section, index) => (
           <div key={index} className="mb-12">
             <h2 className="text-4xl font-bold mb-6">{section.title}</h2>

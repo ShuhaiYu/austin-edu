@@ -6,8 +6,12 @@ const courseData = {
       title: "Course Description",
       subtitle: `Bridge to VCE · Solidify Foundations · Gain a Head Start
         Start building a decisive advantage for VCE Chemistry from Year 10!`,
-      paragraph: `Austin’s Year 10 Chemistry is a transitional course carefully designed for students planning to pursue VCE Chemistry. It helps students consolidate core concepts, build a structured understanding of chemistry, and become familiar with the VCE exam format in advance.
-        Unlike school programs that focus heavily on observational experiments, Austin’s curriculum combines theoretical understanding, exam-oriented training, and scientific thinking strategies. The course bridges school knowledge gaps while equipping students with the VCE mindset and problem-solving skills before entering Year 11.`,
+        courseOverview: {
+          descriptionAfterFeature: [
+            "Austin’s Year 10 Chemistry is a transitional course carefully designed for students planning to pursue VCE Chemistry. It helps students consolidate core concepts, build a structured understanding of chemistry, and become familiar with the VCE exam format in advance.",
+            "Unlike school programs that focus heavily on observational experiments, Austin’s curriculum combines theoretical understanding, exam-oriented training, and scientific thinking strategies. The course bridges school knowledge gaps while equipping students with the VCE mindset and problem-solving skills before entering Year 11.",
+          ],
+        },
     },
     coreFeatures: {
       sections: [
@@ -221,8 +225,12 @@ const courseData = {
       title: "课程定位",
       subtitle:
         "衔接 VCE、夯实基础、提前突破。从10年级开始为 VCE化学 打下决定性优势！",
-      paragraph:
-        "澳升的10年级化学是为计划未来学习 VCE 化学的学生精心打造的过渡课程，帮助学生夯实核心概念、建立化学体系、提前接触 VCE 考试模式。\n不同于日校以实验观察为主的教学方式，澳升的 课程将理论理解、答题训练、思维方法三者结合，既能帮助学生补足学校知识盲区，也能在进入11年级前掌握 VCE 思维与解题方式。",
+        courseOverview: {
+          descriptionAfterFeature: [
+            "澳升的10年级化学是为计划未来学习 VCE 化学的学生精心打造的过渡课程，帮助学生夯实核心概念、建立化学体系、提前接触 VCE 考试模式。",
+            "不同于日校以实验观察为主的教学方式，澳升的 课程将理论理解、答题训练、思维方法三者结合，既能帮助学生补足学校知识盲区，也能在进入11年级前掌握 VCE 思维与解题方式。",
+          ],
+        },
     },
     coreFeatures: {
       sections: [

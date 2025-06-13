@@ -109,7 +109,7 @@ const courseFaqItems = {
       question: "What are your strongest courses?",
       answer: `Our most outstanding programs include:
         • VCE English, Maths Methods, Specialist Maths, Chemistry, Physics, Biology, and UCAT
-        • VCE Humanities (Chinese, Psychology, Legal Studies, Business)
+        • VCE Chinese, Psychology, Legal Studies, Business Management, etc.
         • Y1–Y9 Selective School & Scholarship programs`,
     },
     {
@@ -134,15 +134,21 @@ const courseFaqItems = {
     },
     {
       question: "What happens if I miss a class?",
-      answer: `We offer flexible make-up options:
-        • Join another class with the same content
-        • 1-on-1 or small group online catch-up
-        • Recorded class replay access`,
+      answer: `To ensure every student stays on track, we offer a comprehensive make-up support system:
+        • In-class make-up: Students may attend another class in the same week and teaching progress level, subject to availability.
+        • Online catch-up sessions: Our course coordinator can arrange one-on-one or small-group online sessions.
+        • Class recordings: If attending a make-up session is not possible, students can request access to recorded lessons for self-paced review.
+`,
     },
     {
       question: "What if the class isn't suitable?",
       answer:
-        "We prioritize fit. If a course isn't suitable, our team will reassess and recommend another class level, 1-on-1 tutoring, or teacher change. We believe every student can succeed with the right approach.",
+        `At Austin, we prioritise one thing above all: the right fit.
+        If a student finds the pace or learning outcomes unsatisfactory, our academic coordinators will step in promptly for one-on-one communication and a personalised learning assessment.
+        Based on the student’s needs, we can adjust class levels, switch to one-on-one tutoring, address knowledge gaps, or even change instructors, ensuring that the pace and content truly align with the student’s learning goals.
+        We believe there is no such thing as a student who can’t learn—only teaching methods that don’t fit.
+        Austin’s highly flexible course system embraces personalised education, helping every student find the learning style and pace that works best for them.
+        `,
     },
     {
       question: "Can I get a refund?",

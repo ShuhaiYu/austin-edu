@@ -51,7 +51,7 @@ export const ScholarshipSubject = ({ data }) => (
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 + Math.min(index * 0.02, 0.8) }}
               >
-                <div className="flex items-start gap-3 py-3 hover:bg-blue-50/50 rounded-lg px-3 transition-colors duration-200">
+                <div className="flex items-start gap-3 py-3 rounded-lg px-3 transition-colors duration-200">
                   <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-3">

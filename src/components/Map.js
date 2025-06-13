@@ -45,7 +45,7 @@ const Map = ({ address }) => {
     <GoogleMap
       mapContainerStyle={{
         width: '100%',
-        height: '12rem'
+        height: '16rem'
       }}
       center={coordinates}
       zoom={15}

@@ -93,7 +93,7 @@ export const AdvancedProgram35 = ({ data }) => (
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                className="bg-white p-4 rounded-lg shadow-sm border border-[#c12731]/30 hover:shadow-md transition-shadow"
+                className="bg-white p-4 rounded-lg shadow-sm border border-[#c12731]/30 transition-shadow"
               >
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0">

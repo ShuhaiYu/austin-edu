@@ -3,10 +3,14 @@ const courseData = {
     slug: "y1-6-chinese",
     title: "Year 1-6 Chinese Enrichment",
     courseDescription: {
-      title: "Austin Y1–6 Chinese Enrichment | Unique Highlights",
-      paragraph: `Austin’s Y1–6 Chinese Enrichment combines systematic learning with engaging, interactive classrooms, helping children learn through play and play through learning.
-        The curriculum develops skills in listening, speaking, reading, writing, and cultural understanding through a dynamic blend of Game-Based Learning, Interactive Learning, and Kinesthetic Learning.
-        Every class is lively and immersive, allowing students to explore the charm of traditional Chinese culture while building genuine interest and confidence in the language!`,
+      title: "Unique Highlights",
+      courseOverview: {
+        descriptionAfterFeature: [
+          "Austin’s Y1–6 Chinese Enrichment combines systematic learning with engaging, interactive classrooms, helping children learn through play and play through learning.",
+          "The curriculum develops skills in listening, speaking, reading, writing, and cultural understanding through a dynamic blend of Game-Based Learning, Interactive Learning, and Kinesthetic Learning.",
+          "Every class is lively and immersive, allowing students to explore the charm of traditional Chinese culture while building genuine interest and confidence in the language!",
+        ],
+      },
     },
     whyChooseUs: {
       partA: {
@@ -158,6 +162,7 @@ const courseData = {
     },
     courseStructure: {
       title: "Course Structure",
+      islock: false,
       sections: [
         {
           title: "Level 1",
@@ -897,8 +902,12 @@ const courseData = {
     title: "1-6年级中文培优班",
     courseDescription: {
       title: "澳升 Y1-6 中文培优班 | 独家亮点",
-      paragraph:
-        "澳升 Y1-6 中文培优班以 系统化学习+趣味互动课堂 为核心，让孩子 在玩中学、在学中玩，实现听、说、读、写、文化知识全面提升。通过 游戏化学习（Game-Based Learning）+ 互动化学习（Interactive Learning）+ 动觉学习（Kinesthetic Learning），让每一节中文课都充满活力，感受传统文化魅力，激发孩子的学习兴趣！",
+      courseOverview: {
+        descriptionAfterFeature: [
+          "澳升 Y1-6 中文培优班以 系统化学习+趣味互动课堂 为核心，让孩子 在玩中学、在学中玩，实现听、说、读、写、文化知识全面提升。",
+          "通过 游戏化学习（Game-Based Learning）+ 互动化学习（Interactive Learning）+ 动觉学习（Kinesthetic Learning），让每一节中文课都充满活力，感受传统文化魅力，激发孩子的学习兴趣！"
+        ],
+      },
     },
     whyChooseUs: {
       partA: {
@@ -1022,6 +1031,7 @@ const courseData = {
     },
     courseStructure: {
       title: "Course Structure",
+      islock: false,
       sections: [
         {
           title: "Level 1",

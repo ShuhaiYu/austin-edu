@@ -42,6 +42,9 @@ export default function Hero() {
         <div className="grid lg:grid-cols-2 gap-8 items-center">
           {/* 左侧文字区域 */}
           <div className="space-y-6">
+            <p className="text-primary text-lg font-semibold my-0">
+              Year 1 - Year 12
+            </p>
             <h1
               className="font-bold leading-tight text-left
                       text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-6xl

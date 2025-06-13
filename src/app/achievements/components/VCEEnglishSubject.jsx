@@ -15,8 +15,8 @@ export const VCEEnglishSubject = ({ data }) => (
             <PercentageCircle
               value={stat.value}
               size="w-24 h-24"
-              color="text-primary"
-              borderColor="border-primary/60"
+              color="text-austin-red"
+              borderColor="border-austin-red/60"
             />
             <p className="text-sm mt-3 text-center font-medium">{stat.label}</p>
           </div>
@@ -30,12 +30,12 @@ export const VCEEnglishSubject = ({ data }) => (
             {data.classes.austin.map((part, i) => (
               <motion.div 
                 key={i} 
-                className="space-y-4 p-4 bg-blue-50/50 rounded-lg border border-blue-100"
+                className="space-y-4 p-4 bg-red-50 rounded-lg border border-red-100"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
               >
-                <h4 className="text-lg font-semibold text-primary">{part.title}</h4>
+                <h4 className="text-lg font-semibold text-austin-red">{part.title}</h4>
                 <ul className="list-disc pl-5 space-y-2">
                   {part.stats.map((stat, i) => (
                     <li key={i} className="text-gray-700">{stat}</li>
@@ -70,14 +70,13 @@ export const VCEEnglishSubject = ({ data }) => (
             {data.keyPoints.points.map((point, i) => (
               <motion.div
                 key={i}
-                className="p-6 rounded-xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 hover:shadow-lg transition-all duration-300"
+                className="p-6 rounded-xl bg-gradient-to-br from-red-50 to-austin-red/5 border border-red-100 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 + i * 0.1 }}
-                whileHover={{ y: -5, scale: 1.02 }}
               >
                 <div className="flex items-start mb-4 gap-4">
-                  <span className="text-white text-center p-3 font-bold bg-primary rounded-full w-12 h-12 flex items-center justify-center text-lg flex-shrink-0">
+                  <span className="text-white text-center p-3 font-bold bg-austin-red rounded-full w-12 h-12 flex items-center justify-center text-lg flex-shrink-0">
                     {i + 1}
                   </span>
                   <h5 className="font-bold text-lg text-gray-800 leading-tight">{point.title}</h5>
@@ -87,7 +86,7 @@ export const VCEEnglishSubject = ({ data }) => (
             ))}
           </div>
           <div className="text-center mt-8">
-            <Button className="mx-auto px-8 py-3 text-lg">Learn More</Button>
+            <Button className="mx-auto px-8 py-3 text-lg bg-austin-red hover:bg-austin-red/80">Learn More</Button>
           </div>
         </div>
       </div>

@@ -8,8 +8,7 @@ const courseData = {
         "Develop In-depth Knowledge and Skills Across Chemistry, Physics, and Biology to Seamlessly Transition into VCE.",
       // paragraph:
       //   "Austin’s Year 9-10 Pre-VCE Science Standard programme is specifically designed for students planning to pursue VCE Chemistry, Biology, and Physics. With a focus on examination requirements, core skills development, and scientific expression, the course introduces key knowledge and thinking frameworks across all three disciplines. It provides a seamless transition from General Science in secondary school to the demands of VCE Science studies.",
-        courseOverview: {
-       
+      courseOverview: {
         descriptionAfterFeature: [
           "Austin’s Year 9-10 Pre-VCE Science Standard programme is specifically designed for students planning to pursue VCE Chemistry, Biology, and Physics. With a focus on examination requirements, core skills development, and scientific expression, the course introduces key knowledge and thinking frameworks across all three disciplines.",
           "It provides a seamless transition from General Science in secondary school to the demands of VCE Science studies.",
@@ -163,12 +162,13 @@ const courseData = {
     },
     courseStructure: {
       title: "Course Structure",
+      islock: false,
       sections: [
         {
-          title: "year 10",
+          title: "Year 10",
           modules: [
             {
-              title: "term 1",
+              title: "Term 1",
               subtitle: "",
               lessons: [
                 "Atoms, electron configuration, period table",
@@ -364,12 +364,13 @@ const courseData = {
     },
     courseStructure: {
       title: "Course Structure",
+      islock: false,
       sections: [
         {
-          title: "year 10",
+          title: "Year 10",
           modules: [
             {
-              title: "term 1",
+              title: "Term 1",
               subtitle: "",
               lessons: [
                 "Atoms, electron configuration, period table",

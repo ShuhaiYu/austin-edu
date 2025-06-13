@@ -3,7 +3,7 @@ export const coursesContent = {
     detail: {
       categories: [
         {
-          title: "Primary School 1-6 Years",
+          title: "Primary school 1-6 Years",
           subcategories: [
             {
               title: "Enrichment Courses",
@@ -43,7 +43,7 @@ export const coursesContent = {
           ],
         },
         {
-          title: "Junior High School 7-9 Years",
+          title: "Secondary school 7-9 Years",
           subcategories: [
             {
               title: "Enrichment Courses",
@@ -82,7 +82,7 @@ export const coursesContent = {
           ],
         },
         {
-          title: "Senior High School 10-12 Years",
+          title: "Senior secondary school - 10-12 Years",
           subcategories: [
             {
               title: "Year 10 Pre-VCE Courses",
@@ -2563,7 +2563,7 @@ export const coursesContent = {
           value: "y1-y6",
           title: "打牢基础，培养学习兴趣与优秀习惯",
           description:
-            "小学阶段是学习的起点，澳升教育注重在这一阶段激发学生的学习兴趣，并培养良好的学习习惯:",
+            "小学阶段是学习的起点，澳升教育注重在这一阶段激发学生的学习兴趣，并培养良好的学习习惯",
           contents: [
             {
               title: "多元趣味课堂",

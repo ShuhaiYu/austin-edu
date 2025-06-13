@@ -117,6 +117,7 @@ const courseData = {
     },
     courseStructure: {
       title: "Course Structure",
+      islock: false,
       sections: [
         {
           title: "Unit 3-4",
@@ -327,6 +328,7 @@ const courseData = {
       sections: [
         {
           title: "Unit 3-4",
+          islock: false,
           modules: [
             {
               title: "Term 1",

@@ -6,11 +6,12 @@ const courseData = {
       title: "",
       subtitle:
         "Chemistry is a core requirement for medical entry, and because of its linear knowledge structure, a systematic approach is key to success.",
-      paragraph:
-        "Chemistry is a prerequisite subject for medical-related university courses, and unlike Biology, which is more modular, Chemistry builds on a linear progression. That’s why Units 1–2 are essential—skipping them makes it extremely difficult to score highly in Units 3–4.",
       courseOverview: {
+        descriptionAfterFeature: [
+          "Chemistry is a prerequisite subject for medical-related university courses, and unlike Biology, which is more modular, Chemistry builds on a linear progression.",
+          "That’s why Units 1–2 are essential—skipping them makes it extremely difficult to score highly in Units 3–4.",
+        ],
         title: "Key Advantages of Austin’s Chemistry Class",
-        descriptionBeforeFeature: [],
         featureTitle: "Key Advantages of Austin’s Chemistry Class",
         features: [
           "High Efficiency:Start in Year 11 with structured classes and homework—no extra workload, yet easily score 30+. Perfect for medicine-bound students aiming to boost their ATAR.",
@@ -29,7 +30,6 @@ const courseData = {
             "Strategic Pacing：Follows or slightly leads school progress to reinforce understanding and boost retention in less time.",
             "VCE-Level Practice：Carefully selected questions at the right difficulty to help students smoothly transition into Year 12 exam standards.",
           ],
-          paragraph: "",
         },
         {
           title: "Year 12 Chemistry Highlights",
@@ -244,17 +244,17 @@ const courseData = {
     courseDescription: {
       title: "",
       subtitle: "医学必考科目，系统学习是关键！",
-      paragraph:
-        "化学是医学专业的必修先修课，但它是线性成长的知识体系，不像生物那样是区块化的。因此，U1-2 必学！不然就很难在 U3-4 拿高分！",
       courseOverview: {
         title: "澳升化学课核心优势",
-        descriptionBeforeFeature: ["", ""],
         featureTitle: "澳升化学课核心优势",
         features: [
           "补习性价比极高：从 Y11 开始上课+写作业，不额外花时间也能轻松 30+，让学医的学生有更多精力冲击总分。",
           "名师团队：医学/化学相关专业的在职人员授课，提供额外职业规划指导。",
           "课堂氛围佳：老师授课生动有趣，学生多为学医方向，能结交高质量学习伙伴。",
           "顶尖高分战绩：每年必出99.95+ATAR 和 裸分 50 学生，助力冲击高分！",
+        ],
+        descriptionAfterFeature: [
+          "化学是医学相关专业的必修课，但它是线性成长的知识体系，不像生物那样是区块化的。因此，U1-2 必学！不然就很难在 U3-4 拿高分！",
         ],
       },
     },

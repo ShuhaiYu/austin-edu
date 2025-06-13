@@ -86,7 +86,7 @@ export const myAustinContent = {
     hero: {
       title: "探索澳升作业系统的力量",
       subtitle: "科学规划，高效学习，实现卓越成就",
-      desc: "这不仅仅是一个家庭作业平台，它还是你在在澳升的个性化学习引擎。",
+      desc: "这不仅仅是一个家庭作业平台，它还是你在澳升的个性化学习引擎。",
       button: "进入我的澳升",
     },
     intro: {

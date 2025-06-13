@@ -6,8 +6,13 @@ const courseData = {
       title: "Course Description",
       subtitle:
         "Chemistry × Physics × Biology — A balanced, three-discipline science program that lays a strong foundation for future high school science success!",
-      paragraph:
-        "The Y8–9 Science course is specifically designed for lower secondary students, covering key areas in chemistry, physics, and biology. It aims to build solid subject knowledge, nurture curiosity and logical thinking, and prepare students for Y10 Science and future VCE science subjects. The course blends interactive learning with conceptual training, making it the ideal launchpad for middle school science study.",
+      courseOverview: {
+        descriptionAfterFeature: [
+          "The Y8–9 Science course is specifically designed for lower secondary students, covering key areas in chemistry, physics, and biology.",
+          "It aims to build solid subject knowledge, nurture curiosity and logical thinking, and prepare students for Y10 Science and future VCE science subjects.",
+          "The course blends interactive learning with conceptual training, making it the ideal launchpad for middle school science study.",
+        ],
+      },
     },
     coreFeatures: {
       sections: [
@@ -221,8 +226,11 @@ const courseData = {
       title: "课程定位",
       subtitle:
         "化学 × 物理 × 生物 三科均衡发展，打下科学学习的基本功，为高中科学学习提前热身！",
-      paragraph:
-        "8-9年级科学班是专为初中阶段学生设计的综合科学课程，覆盖化学、物理、生物三大学科内容，帮助学生夯实基础、培养科学兴趣与逻辑思维，为未来进入10年级科学课 和 VCE 科学课程打下坚实基础。课程注重互动学习与思维训练，兼顾知识性与趣味性，是中学科学学习的理想起点。",
+        courseOverview: {
+          descriptionAfterFeature: [
+            "8-9年级科学班是专为初中阶段学生设计的综合科学课程，覆盖化学、物理、生物三大学科内容，帮助学生夯实基础、培养科学兴趣与逻辑思维，为未来进入10年级科学课 和 VCE 科学课程打下坚实基础。课程注重互动学习与思维训练，兼顾知识性与趣味性，是中学科学学习的理想起点。",
+          ],
+        },
     },
     coreFeatures: {
       sections: [

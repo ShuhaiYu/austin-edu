@@ -69,9 +69,13 @@ const courseData = {
       title: "Course Description",
       subtitle:
         "Stay in Sync with School Progress, Build a Solid Foundation, and Get Ready for the VCE Challenge!",
-      paragraph: `Y10 Pre-VCE Maths Standard is designed for students currently studying Year 10 Mathematics at school who wish to accelerate their progress, build a stronger foundation, and aim for top performance in school assessments.
-        The course progresses approximately two terms ahead of public schools and one term ahead of most private schools, aligning with accelerated classes in top-tier private schools. What makes Austin different is our strong exam-oriented approach, supported by more intensive practice and deeper concept delivery—helping students truly strengthen their understanding and analytical ability.
-        To ensure a smooth transition into VCE, Term 4 includes early exposure to key General Maths Unit 1 content, laying the groundwork for high VCE performance from Year 10.`,
+      courseOverview: {
+        descriptionAfterFeature: [
+          "Y10 Pre-VCE Maths Standard is designed for students currently studying Year 10 Mathematics at school who wish to accelerate their progress, build a stronger foundation, and aim for top performance in school assessments.",
+          "The course progresses approximately two terms ahead of public schools and one term ahead of most private schools, aligning with accelerated classes in top-tier private schools. What makes Austin different is our strong exam-oriented approach, supported by more intensive practice and deeper concept delivery—helping students truly strengthen their understanding and analytical ability.",
+          "To ensure a smooth transition into VCE, Term 4 includes early exposure to key General Maths Unit 1 content, laying the groundwork for high VCE performance from Year 10.",
+        ],
+      },
     },
     whyChooseUs: {
       partA: {
@@ -342,8 +346,12 @@ const courseData = {
     courseDescription: {
       title: "课程描述",
       subtitle: "同步加速日校进度，扎实基础，迎接VCE挑战！",
-      paragraph: `10年级数学进阶班适合正在学习日校10年级 数学，希望加快进度、打牢基础、冲刺优异校内成绩的学生。课程进度比一般公校快约 2 个学期，比多数私校快 1 个学期，与顶尖私校的加速班同步。但不同的是，澳升 更注重考试导向，课程配套的练习量更充足、知识讲解更深入，真正帮助学生提升理解力与解题能力。
-        此外，为帮助学生提前衔接 VCE，在第四学期将率先讲授部分 低数Unit 1 内容，在10年级阶段就打下 VCE 的基础，实现无缝过渡，为后续冲刺高分提前布局。`,
+      courseOverview: {
+        descriptionAfterFeature: [
+          "10年级数学进阶班适合正在学习日校10年级 数学，希望加快进度、打牢基础、冲刺优异校内成绩的学生。课程进度比一般公校快约 2 个学期，比多数私校快 1 个学期，与顶尖私校的加速班同步。但不同的是，澳升 更注重考试导向，课程配套的练习量更充足、知识讲解更深入，真正帮助学生提升理解力与解题能力。",
+          "此外，为帮助学生提前衔接 VCE，在第四学期将率先讲授部分 低数Unit 1 内容，在10年级阶段就打下 VCE 的基础，实现无缝过渡，为后续冲刺高分提前布局。",
+        ],
+      },
     },
     whyChooseUs: {
       partA: {

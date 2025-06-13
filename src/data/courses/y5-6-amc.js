@@ -5,8 +5,12 @@ const courseData = {
     courseDescription: {
       title: "Official AMC Test Venue",
       subtitle: "Austin Education has become an official AMC test centre",
-      paragraph:
-        "As an official test venue for the Australian Mathematics Competition (AMC), Austin offers students direct access to one of the most prestigious maths competitions in the country. Our AMC Program is designed for students ready to push boundaries and rise to the challenge.",
+      courseOverview: {
+        descriptionAfterFeature: [
+          "As an official test venue for the Australian Mathematics Competition (AMC), Austin offers students direct access to one of the most prestigious maths competitions in the country.",
+          "Our AMC Program is designed for students ready to push boundaries and rise to the challenge.",
+        ],
+      },
     },
     coreFeatures: {
       sections: [
@@ -154,8 +158,11 @@ const courseData = {
     courseDescription: {
       title: " AMC 官方考点",
       subtitle: "澳升成为 AMC 官方考点",
-      paragraph:
-        "澳升现已正式成为 澳大利亚数学竞赛（AMC）官方考点，为热爱数学、渴望挑战的学生提供直通全国顶级数学竞赛的机会。",
+      courseOverview: {
+        descriptionAfterFeature: [
+          "澳升现已正式成为 澳大利亚数学竞赛（AMC）官方考点，为热爱数学、渴望挑战的学生提供直通全国顶级数学竞赛的机会。",
+        ],
+      },
     },
     coreFeatures: {
       sections: [

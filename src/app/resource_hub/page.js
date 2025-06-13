@@ -1,4 +1,7 @@
-// app/resource-hub/page.tsx
+"use client";
+
+import { useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TrialLessonTab } from "./components/TrialLessonTab";
 import { WebinarTab } from "./components/WebinarTab";
@@ -8,10 +11,31 @@ import { ConsultationTab } from "./components/ConsultationTab";
 import { ATARCalculatorTab } from "./components/ATARCalculatorTab";
 
 export default function ResourceHub() {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [activeTab, setActiveTab] = useState("consultation");
+
+  // 从 URL 参数获取标签
+  useEffect(() => {
+    const tabParam = searchParams.get('tab');
+    if (tabParam && ['consultation', 'trial', 'webinar', 'atar', 'blogs'].includes(tabParam)) {
+      setActiveTab(tabParam);
+    }
+  }, [searchParams]);
+
+  // 处理标签切换
+  const handleTabChange = (value) => {
+    setActiveTab(value);
+    
+    // 更新 URL 但不重新加载页面
+    const newUrl = `/resource-hub?tab=${value}`;
+    window.history.pushState(null, '', newUrl);
+  };
+
   return (
     <div className="min-h-screen flex flex-col items-center p-8 bg-background">
       <div className="w-full">
-        <Tabs defaultValue="consultation" className="w-full gap-0">
+        <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full gap-0">
           {/* Tab导航 */}
           <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full h-auto rounded-b-none gap-2 bg-background items-end">
             <TabsTrigger
@@ -47,7 +71,7 @@ export default function ResourceHub() {
           </TabsList>
 
           {/* 各Tab内容 */}
-          {/* 免费咨询 */}
+          {/* 免费咨询 修改为整体FAQ */}
           <TabsContent value="consultation">
             <ConsultationTab />
           </TabsContent>

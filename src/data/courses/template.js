@@ -1,5 +1,3 @@
-import { list } from "postcss";
-
 const courseData = {
   en: {
     slug: "y1-6-english-enrichment",

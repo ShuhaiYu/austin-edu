@@ -70,8 +70,13 @@ const courseData = {
       title: "Course Description",
       subtitle:
         "A strong head start for VCE Methods and Specialist Maths — build a solid foundation, get ahead, and secure a place in top-performing classes.",
-      paragraph: `Y10 Pre-VCE Maths Advance is Austin Education’s exclusive preparatory course designed for students planning to take both VCE Mathematical Methods and Specialist Mathematics. The program thoroughly covers key and challenging Year 10 content while introducing key Year 11 concepts, laying a strong foundation for future success in VCE mathematics.
-        This course also serves as a key entry pathway to Austin’s Year 11 Top Maths classes. Student performance will be an important consideration for placement.`,
+      courseOverview: {
+        descriptionAfterFeature: [
+          "Y10 Pre-VCE Maths Advance is Austin Education’s exclusive preparatory course designed for students planning to take both VCE Mathematical Methods and Specialist Mathematics.",
+          "The program thoroughly covers key and challenging Year 10 content while introducing key Year 11 concepts, laying a strong foundation for future success in VCE mathematics.",
+          "This course also serves as a key entry pathway to Austin’s Year 11 Top Maths classes. Student performance will be an important consideration for placement.",
+        ],
+      },
     },
     coreFeatures: {
       sections: [
@@ -363,8 +368,13 @@ const courseData = {
     courseDescription: {
       title: "Course Description",
       subtitle: "VCE中高数预科 · 打基础 · 拉开差距 · 冲进高分快班！",
-      paragraph: `10年级数学精英班是澳升独家开设的中高数预备课程，专为未来计划学习 VCE 中数+ 高数的学生而设。课程内容深入覆盖10年级关键复杂知识点 + 11年级中高数关键基础，为冲刺VCE高分做好“提前布局”。
-        本课程也是进入澳升11年级中高数Top班的前置课程之一，成绩将作为重要录取依据。`,
+      courseOverview: {
+        descriptionAfterFeature: [
+          "10年级数学精英班是澳升独家开设的中高数预备课程，专为未来计划学习 VCE 中数+ 高数的学生而设。",
+          "课程内容深入覆盖10年级关键复杂知识点 + 11年级中高数关键基础，为冲刺VCE高分做好“提前布局”。",
+          "本课程也是进入澳升11年级中高数Top班的前置课程之一，成绩将作为重要录取依据。",
+        ],
+      },
     },
     coreFeatures: {
       sections: [

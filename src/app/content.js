@@ -95,7 +95,7 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
       parts: [
         {
           part: 1,
-          title: "Enrollment Steps",
+          title: "Enrolment Steps",
           steps: [
             {
               step: 0,
@@ -242,12 +242,11 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
         },
       ],
     },
-
     testimonials: [
       {
-        name: "Aaron Leng",
-        achievement: "ATAR 99.90",
-        videoUrl: "https://vimeo.com/1086685145/36e595361c",
+        name: "Xinyi Wu",
+        achievement: "ATAR 99.95",
+        videoUrl: "https://vimeo.com/1086683560/78f12a4d86",
       },
       {
         name: "Jason Song",
@@ -260,9 +259,9 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
         videoUrl: "https://vimeo.com/1086682470/803a5eb431",
       },
       {
-        name: "Xinyi Wu",
-        achievement: "ATAR 99.95",
-        videoUrl: "https://vimeo.com/1086683560/78f12a4d86",
+        name: "Aaron Leng",
+        achievement: "ATAR 99.90",
+        videoUrl: "https://vimeo.com/1086685145/36e595361c",
       },
       {
         name: "Gloria Chen",
@@ -495,9 +494,9 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
     },
     testimonials: [
       {
-        name: "Aaron Leng",
-        achievement: "ATAR 99.90",
-        videoUrl: "https://vimeo.com/1086685145/36e595361c",
+        name: "Xinyi Wu",
+        achievement: "ATAR 99.95",
+        videoUrl: "https://vimeo.com/1086683560/78f12a4d86",
       },
       {
         name: "Jason Song",
@@ -510,9 +509,9 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
         videoUrl: "https://vimeo.com/1086682470/803a5eb431",
       },
       {
-        name: "Xinyi Wu",
-        achievement: "ATAR 99.95",
-        videoUrl: "https://vimeo.com/1086683560/78f12a4d86",
+        name: "Aaron Leng",
+        achievement: "ATAR 99.90",
+        videoUrl: "https://vimeo.com/1086685145/36e595361c",
       },
       {
         name: "Gloria Chen",
