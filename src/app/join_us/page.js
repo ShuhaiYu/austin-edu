@@ -3,6 +3,7 @@
 import { useContext } from "react";
 import { LangContext } from "@/app/layout";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Accordion,
   AccordionItem,
@@ -121,11 +122,15 @@ export default function JoinUsPage() {
             {t.section1.desc}
           </p>
           <div className="flex flex-col md:flex-row gap-3">
-            <Button className="text-sm md:text-base">
-              {t.section1.button1}
+            <Button asChild className="text-sm md:text-base">
+              <a href="mailto:hr@austinedu.com.au">
+                {t.section1.button1}
+              </a>
             </Button>
-            <Button variant="outline" className="text-sm md:text-base">
-              {t.section1.button2}
+            <Button variant="outline" className="text-sm md:text-base" asChild>
+              <Link href="/contact_us">
+                {t.section1.button2}
+              </Link>
             </Button>
           </div>
           {/* decoration 2 */}

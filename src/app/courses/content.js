@@ -1270,6 +1270,7 @@ export const coursesContent = {
               title: "Structured SAC Preparation",
               description:
                 "Focused revision and targeted practice for school-based assessments help students build confidence and maintain strong results.",
+              icon: "target",
               image: "/courses/content/y10-12-7.jpeg",
             },
             {

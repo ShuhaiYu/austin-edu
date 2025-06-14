@@ -25,20 +25,22 @@ import {
   Clock,
   Award,
   Calendar,
-  ChevronRight,
 } from "lucide-react";
 
 export const CourseContent = () => {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = coursesContent[lang].content;
 
-  // 箭头连接组件 - 支持 flex-grow
+  // 箭头连接组件 - 使用arrow.png图片
   const ArrowConnection = () => (
-    <div className="flex items-center justify-center flex-grow px-8 relative z-30">
-      <div className="flex items-center justify-center w-full max-w-[200px]">
-        <div className="flex-grow h-[2px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
-        <ChevronRight className="w-5 h-5 text-blue-600 mx-2 drop-shadow-sm flex-shrink-0" />
-        <div className="flex-grow h-[2px] bg-gradient-to-r from-blue-400 to-blue-600"></div>
+    <div className="flex items-center justify-center flex-grow px-4 relative z-30">
+      <div className="w-full h-6 relative">
+        <Image
+          src="/courses/content/arrow.png"
+          alt="Arrow Connection"
+          fill
+          className="object-contain"
+        />
       </div>
     </div>
   );
@@ -73,26 +75,29 @@ export const CourseContent = () => {
       </div>
 
       {/* 功能卡片 */}
-      <div className="grid grid-cols-5 gap-8 mb-24">
+      <div className="grid grid-cols-5 gap-8 mb-24 ">
         {t.features.slice(0, 4).map((feature, index) => {
           const [title, desc] = feature.split("; ");
           return (
             <div
               key={`feature-top-${index}`}
               className={`
-                ${index !== 2 ? "col-span-2" : "col-span-2 col-start-2"}
-                transition-all hover:scale-105
-              `}
+          ${index !== 2 ? "col-span-2" : "col-span-2 col-start-2"}
+          transition-all 
+        `}
             >
-              <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200 relative">
-                {/* 序号标识 */}
-                <div className="absolute -top-2 -left-2 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg transform rotate-12">
-                  {String(index + 1).padStart(2, "0")}
-                </div>
+              <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200 relative min-h-[300px]">
 
-                {/* 背景装饰圆圈 */}
-                <div className="absolute top-4 right-4 w-20 h-20 bg-primary/5 rounded-full" />
-                <div className="absolute top-8 right-8 w-12 h-12 bg-primary/10 rounded-full" />
+                {/* 背景装饰图片 */}
+                <div className="absolute -top-[60%] -right-2/3 h-[250%] w-auto aspect-square">
+                  <Image
+                    src={`/courses/content/Course-${index + 1}.svg`}
+                    alt="Course Feature Background"
+                    width={200}
+                    height={200}
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
 
                 {/* 内容 */}
                 <div className="relative z-10 pt-4">
@@ -111,13 +116,13 @@ export const CourseContent = () => {
         <div className="relative mb-16">
           <TabsList className="flex w-full bg-transparent p-0 h-auto justify-between items-center">
             {t.gradeTabs.map((tab, index) => (
-              <Fragment key={`top-tab-${tab.value}`}>
-                <div className="flex items-center flex-grow">
+              <Fragment key={`bottom-tab-${tab.value}`}>
+                <div className="flex items-center">
                   {/* Tab 按钮 */}
                   <div className="relative z-10 flex-shrink-0">
                     <TabsTrigger
                       value={tab.value}
-                      className="relative data-[state=active]:text-primary data-[state=active]:border-none data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
+                      className="relative data-[state=active]:text-primary data-[state=active]:shadow-none data-[state=active]:text-xl hover:cursor-pointer
                  text-lg 
                 min-w-[180px] mx-auto flex justify-center bg-background px-6
                 /* 激活时启用伪元素 */
@@ -149,7 +154,9 @@ export const CourseContent = () => {
             className="space-y-16 mb-16"
           >
             <div className="grid grid-cols-2 gap-16 items-center">
-              <h2 className="text-5xl font-bold leading-[4rem]">{grade.title}</h2>
+              <h2 className="text-5xl font-bold leading-[4rem]">
+                {grade.title}
+              </h2>
               <p className="text-muted-foreground">{grade.description}</p>
             </div>
             {grade.contents.map((content, index) => (
@@ -199,7 +206,9 @@ export const CourseContent = () => {
                     </div>
                     <h3 className="text-2xl font-bold ">{content.title}</h3>
                   </div>
-                  <p className="mt-8 text-muted-foreground leading-[2rem]">{content.description}</p>
+                  <p className="mt-8 text-muted-foreground leading-[2rem]">
+                    {content.description}
+                  </p>
                 </div>
 
                 {/* 图片 */}
@@ -251,26 +260,29 @@ export const CourseContent = () => {
       </Tabs>
 
       {/* 功能卡片 */}
-      <div className="grid grid-cols-5 gap-8 mb-24">
+      <div className="grid grid-cols-5 gap-8 mb-24 ">
         {t.features.slice(4, 6).map((feature, index) => {
           const [title, desc] = feature.split("; ");
           return (
             <div
-              key={`feature-bottom-${index}`}
+              key={`feature-top-${index}`}
               className={`
-                ${index !== 2 ? "col-span-2" : "col-span-2 col-start-2"}
-                transition-all hover:scale-105
-              `}
+          ${index !== 2 ? "col-span-2" : "col-span-2 col-start-2"}
+          transition-all 
+        `}
             >
-              <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200 relative">
-                {/* 序号标识 */}
-                <div className="absolute -top-2 -left-2 w-12 h-12 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center text-white font-bold text-lg shadow-lg transform rotate-12">
-                  {String(index + 5).padStart(2, "0")}
-                </div>
+              <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200 relative min-h-[300px]">
 
-                {/* 背景装饰圆圈 */}
-                <div className="absolute top-4 right-4 w-20 h-20 bg-primary/5 rounded-full" />
-                <div className="absolute top-8 right-8 w-12 h-12 bg-primary/10 rounded-full" />
+                {/* 背景装饰图片 */}
+                <div className="absolute -top-[60%] -right-2/3 h-[250%] w-auto aspect-square">
+                  <Image
+                    src={`/courses/content/Course-${index + 5}.svg`}
+                    alt="Course Feature Background"
+                    width={200}
+                    height={200}
+                    className="h-full w-auto object-contain"
+                  />
+                </div>
 
                 {/* 内容 */}
                 <div className="relative z-10 pt-4">

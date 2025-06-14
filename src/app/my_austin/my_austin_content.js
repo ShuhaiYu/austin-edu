@@ -12,7 +12,7 @@ export const myAustinContent = {
     sliderImages: [
       "/my_austin/new/1-Dashboard.png",
       "/my_austin/new/2-homework.png", 
-      "/my_austin/new/3-homework-2.png",
+      "/my_austin/new/3-homework-2.jpg",
       "/my_austin/new/4-Achievement.png",
       "/my_austin/new/5-Reports.png",
       "/my_austin/new/6-learn.png",
@@ -37,7 +37,7 @@ export const myAustinContent = {
         subtitle: "2&3- Homework",
         desc: "One size doesn't fit all — that's why Austin's homework system offers a rich variety of task types including multiple choice, fill-in-the-blanks, short answers, and extended writing.\nTailored to match each student's subject level and learning stage, every assignment is designed to challenge, consolidate, and expand understanding.",
         subDesc: "Subject-Specific Task Design\n\nIn Mathematics, students work through a mix of multiple choice and short-answer problems, building logic, accuracy, and calculation speed.\n\nIn English, tasks include fill-in-the-blank vocabulary, reading comprehension, and extended writing to strengthen both language accuracy and expressive skills.",
-        images: ["/my_austin/new/2-homework.png", "/my_austin/new/3-homework-2.png"],
+        images: ["/my_austin/new/2-homework.png", "/my_austin/new/3-homework-2.jpg"],
         layout: "left"
       },
       {
@@ -95,7 +95,7 @@ export const myAustinContent = {
     sliderImages: [
       "/my_austin/new/1-Dashboard.png",
       "/my_austin/new/2-homework.png", 
-      "/my_austin/new/3-homework-2.png",
+      "/my_austin/new/3-homework-2.jpg",
       "/my_austin/new/4-Achievement.png",
       "/my_austin/new/5-Reports.png",
       "/my_austin/new/6-learn.png",
@@ -120,7 +120,7 @@ export const myAustinContent = {
         subtitle: "2&3- Homework",
         desc: "我们深知，学习没有标准模板。\n澳升的作业系统提供选择题、填空题、简答题、写作题等多样题型，并根据学生所处的年级与能力水平动态调整难度与内容，全面提升思维深度与答题技巧，真正做到因材施教。",
         subDesc: "针对学科的系统训练\n在数学中，系统融合选择题与简答题，训练学生的逻辑推理、解题策略与运算能力。\n在英语中，题型包括词汇填空、阅读理解与写作题，全面提升语言应用能力与表达深度。",
-        images: ["/my_austin/new/2-homework.png", "/my_austin/new/3-homework-2.png"],
+        images: ["/my_austin/new/2-homework.png", "/my_austin/new/3-homework-2.jpg"],
         layout: "left"
       },
       {

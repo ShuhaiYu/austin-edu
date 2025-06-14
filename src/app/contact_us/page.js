@@ -1,276 +1,78 @@
 "use client";
 
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { LangContext } from "@/app/layout";
-import MultiSelect from "@/components/multiselect";
 import { contactUsContent } from "./contact_us_content";
 import Image from "next/image";
-
 import { MapPin, Mail, Phone } from "lucide-react";
 import FAQ from "@/components/FAQ";
 import { contactUsFaqItems } from "@/data/faq_content";
+import { ConsultationTab } from "../resource_hub/components/ConsultationTab";
 
 export default function ContactPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = contactUsContent[lang];
 
-  const [schoolYear, setSchoolYear] = useState([]);
-  const [selectedSubjects, setSelectedSubjects] = useState([]);
-
   return (
-    <div className=" rounded-b-xl p-8 ">
-      <div className="flex gap-8">
-        {/* Left Text Section */}
-        <div className="w-1/3 pr-8">
-          <h2 className="text-5xl font-bold mb-6">{t.title}</h2>
-          <p className="text-muted-foreground text-justify whitespace-pre-line">
-            {t.description}
-          </p>
-          <Button className="my-8 px-8">Book Now</Button>
-          <h3 className="text-2xl font-semibold mb-6">{t.secondTitle}</h3>
-          <p className="text-muted-foreground text-justify whitespace-pre-line">
-            {t.secondDescription}
-          </p>
-        </div>
+    <div className="rounded-xl p-8 ">
+      <ConsultationTab />
 
-        {/* Right Form Section */}
-        <div className="w-2/3 pl-8 bg-white rounded-xl shadow-lg p-8">
-          <form className="space-y-8">
-            {/* Campus Selection */}
-            <div className="">
-              <h3 className="font-semibold mb-6">{t.campusTitle}</h3>
-              <div className="grid grid-cols-3 gap-4 divide-x divide-gray-200 rounded-[2rem] border border-gray-200 p-6">
-                {[
-                  "Box Hill",
-                  "Mt Waverley",
-                  "Melbourne city",
-                  "Point Cook",
-                  "Adelaide",
-                ].map((campus) => (
-                  <label
-                    key={campus}
-                    className="flex items-center gap-3 p-2 relative"
-                  >
-                    <Input
-                      type="radio"
-                      name="campus"
-                      className="w-4 h-4 shrink-0"
-                    />
-                    <span className="text-sm">{campus}</span>
-                  </label>
-                ))}
-              </div>
-            </div>
+      {/* 校区信息卡片部分 */}
+      <section className="mt-16 space-y-12">
+        <h2 className="text-4xl font-bold lg:text-5xl md:text-4xl sm:text-3xl">
+          {t.contactUsTitle}
+        </h2>
 
-            {/* Booking Information */}
-            <div className="space-y-6">
-              <h3 className="font-semibold">{t.bookingTitle}</h3>
-
-              {/* Parent Information */}
-              <div className="space-y-4 pb-6 ">
-                <h4 className="font-medium">{t.parentInfo}</h4>
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.fullName}</label>
-                    <Input
-                      placeholder="Tony Nguyen"
-                      className="rounded-[2rem] border border-gray-200 p-6"
-                    />
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.email}</label>
-                    <Input
-                      type="email"
-                      placeholder="tony@example.com"
-                      className="rounded-[2rem] border border-gray-200 p-6"
-                    />
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.phone}</label>
-                    <Input
-                      type="tel"
-                      placeholder="(342) 3934 3445"
-                      className="rounded-[2rem] border border-gray-200 p-6"
-                    />
-                  </div>
-                </div>
-              </div>
-
-              {/* Student Information */}
-              <div className="space-y-4">
-                <h4 className="font-medium">{t.studentInfo}</h4>
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.fullName}</label>
-                    <Input
-                      placeholder="Tony Nguyen"
-                      className="rounded-[2rem] border border-gray-200 p-6"
-                    />
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.email}</label>
-                    <Input
-                      type="email"
-                      placeholder="tony@example.com"
-                      className="rounded-[2rem] border border-gray-200 p-6"
-                    />
-                  </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.phone}</label>
-                    <Input
-                      type="tel"
-                      placeholder="(342) 3934 3445"
-                      className="rounded-[2rem] border border-gray-200 p-6"
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Trial Lesson Details */}
-            <div className="">
-              <h3 className="font-semibold mb-6">{t.trialDetails}</h3>
-              <div className="space-y-6">
-                {/* School Year */}
-                <div className="flex items-center gap-4">
-                  <label className="w-1/2 text-sm">{t.schoolYear}</label>
-                  <div className="w-1/2">
-                    <MultiSelect
-                      placeholder={
-                        schoolYear.length > 0
-                          ? schoolYear.join(", ")
-                          : t.selectGrade
-                      }
-                      options={t.grades.map((grade) => ({
-                        label: grade,
-                        value: grade,
-                      }))}
-                      selectedOptions={schoolYear}
-                      setSelectedOptions={setSchoolYear}
-                      className="rounded-[2rem] border border-gray-200 p-6 bg-white"
-                    />
-                  </div>
+        <div className="grid grid-cols-1 gap-8">
+          {contactUsContent[lang].contactUs.map((campus, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-visible relative"
+            >
+              <div className="flex flex-col md:flex-row gap-8">
+                {/* QR Code - 响应式定位 */}
+                <div className="md:w-[200px] lg:w-[240px] relative md:-left-16 lg:-left-20 -top-8 md:-top-0 mx-auto md:mx-0">
+                  <Image
+                    src={campus.QRCode}
+                    width={600}
+                    height={600}
+                    alt={`QR Code - ${campus.title}`}
+                    className="rounded-lg shadow-xl w-[140px] md:w-full"
+                  />
                 </div>
 
-                {/* Subject Selection */}
-                <div className="flex items-center gap-4">
-                  <label className="w-1/2 text-sm">{t.subject}</label>
-                  <div className="w-1/2">
-                    <MultiSelect
-                      placeholder={
-                        selectedSubjects.length > 0
-                          ? selectedSubjects.join(", ")
-                          : t.selectSubjects
-                      }
-                      options={t.subjects.map((subject) => ({
-                        label: subject,
-                        value: subject,
-                      }))}
-                      selectedOptions={selectedSubjects}
-                      setSelectedOptions={setSelectedSubjects}
-                      className="rounded-[2rem] border border-gray-200 p-6 bg-white"
-                    />
+                {/* 内容区域 */}
+                <div className="flex-1 flex flex-col lg:flex-row gap-6 md:gap-8">
+                  {/* 左侧校区信息 - 响应式宽度 */}
+                  <div className="lg:w-1/4 xl:w-1/3 space-y-4">
+                    <h3 className="text-xl lg:text-2xl font-bold">
+                      {campus.title}
+                      <span className="block mt-2 text-sm lg:text-base text-muted-foreground">
+                        {campus.subtitle}
+                      </span>
+                    </h3>
+
+                    <div className="space-y-3 text-sm lg:text-base">
+                      <div className="flex items-start gap-2">
+                        <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+                        <span className="break-words">{campus.location}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Mail className="w-4 h-4 flex-shrink-0" />
+                        <span className="break-all">{campus.email}</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-between gap-4 mt-6">
-                <label className="w-1/2 text-sm">{t.AddTrailText}</label>
-                <Button className="">{t.addStudent}</Button>
-              </div>
-            </div>
 
-            {/* Questions */}
-            <div className="">
-              <h3 className="font-semibold mb-4">{t.questionsTitle}</h3>
-              <textarea
-                className="w-full text-sm rounded-[2rem] border border-gray-200 p-6 bg-white"
-                rows={3}
-                placeholder={
-                  lang === "en"
-                    ? "Enter your questions..."
-                    : "请输入您的问题..."
-                }
-              />
-            </div>
-
-            {/* Contact Method */}
-            <div className="">
-              <h3 className="font-semibold mb-4">{t.contactTitle}</h3>
-              <div className="grid grid-cols-3 divide-x divide-gray-200 gap-6 rounded-[2rem] border border-gray-200 p-6 bg-white">
-                {t.contactMethods.map((method) => (
-                  <label
-                    key={method}
-                    className="flex items-center gap-2 text-sm"
-                  >
-                    <Input type="radio" name="contact" className="w-4 h-4" />
-                    {method}
-                  </label>
-                ))}
-              </div>
-            </div>
-
-            <Button className="bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold !mt-10 py-6 text-lg uppercase">
-              {t.sendButton}
-            </Button>
-          </form>
-        </div>
-      </div>
-
-{/* 校区信息卡片部分 */}
-<section className="mt-16 space-y-12">
-  <h2 className="text-4xl font-bold lg:text-5xl md:text-4xl sm:text-3xl">{t.contactUsTitle}</h2>
-
-  <div className="grid grid-cols-1 gap-8">
-    {contactUsContent[lang].contactUs.map((campus, index) => (
-      <div key={index} className="bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-visible relative">
-        <div className="flex flex-col md:flex-row gap-8">
-          {/* QR Code - 响应式定位 */}
-          <div className="md:w-[200px] lg:w-[240px] relative md:-left-16 lg:-left-20 -top-8 md:-top-0 mx-auto md:mx-0">
-            <Image
-              src={campus.QRCode}
-              width={600}
-              height={600}
-              alt={`QR Code - ${campus.title}`}
-              className="rounded-lg shadow-xl w-[140px] md:w-full"
-            />
-          </div>
-
-          {/* 内容区域 */}
-          <div className="flex-1 flex flex-col lg:flex-row gap-6 md:gap-8">
-            {/* 左侧校区信息 - 响应式宽度 */}
-            <div className="lg:w-1/4 xl:w-1/3 space-y-4">
-              <h3 className="text-xl lg:text-2xl font-bold">
-                {campus.title}
-                <span className="block mt-2 text-sm lg:text-base text-muted-foreground">
-                  {campus.subtitle}
-                </span>
-              </h3>
-              
-              <div className="space-y-3 text-sm lg:text-base">
-                <div className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                  <span className="break-words">{campus.location}</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <Mail className="w-4 h-4 flex-shrink-0" />
-                  <span className="break-all">{campus.email}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* 右侧联系方式 - 响应式网格 */}
-            <div className="lg:w-3/4 xl:w-2/3 overflow-x-auto pb-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 min-w-[300px] gap-6 md:gap-8">
-                {campus.about.map((grade, gradeIndex) => (
-                  <div 
-                    key={gradeIndex} 
-                  >
-                    <h4 className="text-base lg:text-lg font-semibold mb-3">
-                      {grade.title}
-                    </h4>
-                    <div className="space-y-2 text-sm lg:text-base">
+                  {/* 右侧联系方式 - 响应式网格 */}
+                  <div className="lg:w-3/4 xl:w-2/3 overflow-x-auto pb-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 min-w-[300px] gap-6 md:gap-8">
+                      {campus.about.map((grade, gradeIndex) => (
+                        <div key={gradeIndex}>
+                          <h4 className="text-base lg:text-lg font-semibold mb-3">
+                            {grade.title}
+                          </h4>
+                          <div className="space-y-2 text-sm lg:text-base">
                             {grade.phone.map((num, i) => (
                               <div key={i} className="flex items-center gap-2">
                                 <Phone className="w-4 h-4" />
@@ -278,31 +80,43 @@ export default function ContactPage() {
                               </div>
                             ))}
                             <div className="flex items-center gap-2">
-                              <Image
-                                src="/contact_us/wechat.svg"
-                                alt="WeChat"
-                                width={16}
-                                height={16}
-                              />
-                              <span>{grade.we_chat}</span>
+                              {grade.we_chat && (
+                                <>
+                                  <Image
+                                    src="/contact_us/wechat.svg"
+                                    alt="WeChat"
+                                    width={16}
+                                    height={16}
+                                  />
+                                  <span>{grade.we_chat}</span>
+                                </>
+                              )}
                             </div>
                             <div className="flex items-center gap-2">
-                              <Image
-                                src="/contact_us/whatsapp.svg"
-                                alt="WhatsApp"
-                                width={16}
-                                height={16}
-                              />
-                              <span>{grade.whatsapp}</span>
+                              {grade.whatsapp && (
+                                <>
+                                  <Image
+                                    src="/contact_us/whatsapp.svg"
+                                    alt="WhatsApp"
+                                    width={16}
+                                    height={16}
+                                  />
+                                  <span>{grade.whatsapp}</span>
+                                </>
+                              )}
                             </div>
                             <div className="flex items-center gap-2">
-                              <Image
-                                src="/contact_us/discord.svg"
-                                alt="Discord"
-                                width={16}
-                                height={16}
-                              />
-                              <span>{grade.discord}</span>
+                              {grade.discord && (
+                                <>
+                                  <Image
+                                    src="/contact_us/discord.svg"
+                                    alt="Discord"
+                                    width={16}
+                                    height={16}
+                                  />
+                                  <span>{grade.discord}</span>
+                                </>
+                              )}
                             </div>
                           </div>
                         </div>

@@ -101,6 +101,22 @@ const ImageSlider = ({ images }) => {
 const FeatureSection = ({ feature, index }) => {
   const { layout, title, subtitle, desc, subDesc, image, images } = feature;
 
+  // 处理subDesc，将第一行作为标题，其余作为内容
+  const processSubDesc = (subDesc) => {
+    if (!subDesc) return null;
+    
+    const lines = subDesc.split('\n');
+    const subTitle = lines[0].trim();
+    const subContent = lines.slice(1).join('\n').trim();
+    
+    return {
+      subTitle,
+      subContent
+    };
+  };
+
+  const subDescData = processSubDesc(subDesc);
+
   if (layout === "center") {
     return (
       <motion.section
@@ -191,11 +207,14 @@ const FeatureSection = ({ feature, index }) => {
           </p>
         </div>
 
-        {subDesc && (
+        {subDescData && (
           <div className="pt-6">
             <Separator className="mb-6" />
+            <h4 className="text-xl font-semibold mb-4 text-gray-800">
+              {subDescData.subTitle}
+            </h4>
             <p className="text-gray-600 leading-relaxed whitespace-pre-line">
-              {subDesc}
+              {subDescData.subContent}
             </p>
           </div>
         )}

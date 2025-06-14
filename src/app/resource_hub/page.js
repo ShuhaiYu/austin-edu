@@ -28,7 +28,7 @@ export default function ResourceHub() {
     setActiveTab(value);
     
     // 更新 URL 但不重新加载页面
-    const newUrl = `/resource-hub?tab=${value}`;
+    const newUrl = `/resource_hub?tab=${value}`;
     window.history.pushState(null, '', newUrl);
   };
 
