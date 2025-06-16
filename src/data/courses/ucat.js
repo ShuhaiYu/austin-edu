@@ -10,8 +10,16 @@ const courseData = {
             "In the 2024 UCAT exam, Austin’s UCAT program achieved outstanding results.",
           year: "2024",
           items: [
-            { number: "100%" , label: "Austin’s students met", subtitle: "the medical interview threshold" },
-            { number: "80%", label: " students scored 3050+", subtitle: "secured medical school interview offers" },
+            {
+              number: "100%",
+              label: "Austin’s students met",
+              subtitle: "the medical interview threshold",
+            },
+            {
+              number: "80%",
+              label: " students scored 3050+",
+              subtitle: "secured medical school interview offers",
+            },
             { number: "3260", label: "Highest score achieved", subtitle: "" },
           ],
         },
@@ -36,8 +44,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "Insider Insights & Trend Forecasting",
+          title: "Insider Insights & Trend Forecasting",
           list: [
             "Our instructors sit the UCAT every year to stay on top of evolving question trends. With up-to-date intelligence and pre-exam focus predictions, our students are always one step ahead.",
           ],
@@ -49,23 +56,20 @@ const courseData = {
           ],
         },
         {
-          title:
-            "Real Exam Simulation – Thrive Under Pressure",
+          title: "Real Exam Simulation – Thrive Under Pressure",
           list: [
             "With at least 5 full-scale mock exams, students train under actual UCAT conditions to build stamina, manage nerves, and deliver their best performance on test day.",
           ],
         },
         {
-          title:
-            "Elite Medical Mentors – Guiding You to Top UCAT Scores",
+          title: "Elite Medical Mentors – Guiding You to Top UCAT Scores",
           list: [
             "Joshua – Practicing doctor and UCAT expert. With 6 consecutive years mentoring ATAR 99.95 students, he has helped over 100 students gain entry into top medical schools.",
             "Tiffany – ATAR 99.90, UCAT 3200+, current MD student, and AMSA leadership team member. Her insider insights and hands-on coaching provide students with a strategic edge.",
           ],
         },
         {
-          title:
-            "Proven Success – Outstanding Results Backed by Data",
+          title: "Proven Success – Outstanding Results Backed by Data",
           list: [
             "In 2024, 100% of Austin’s UCAT students met interview cut-offs, with a top score of 3260!",
             "80% scored 3050+, securing first-round interviews, and 20% scored 2950+, advancing to second-round interviews with strong ATAR support.",
@@ -83,30 +87,73 @@ const courseData = {
           ],
         },
       ],
-      extraDescription: "Taught by Austin’s dedicated Medical Project team — experienced educators with medical expertise who understand exactly how to prepare Victorian students for success.",
+      extraDescription:
+        "Taught by Austin’s dedicated Medical Project team — experienced educators with medical expertise who understand exactly how to prepare Victorian students for success.",
     },
     resources: {
       packages: [
         { icon: "school", title: "2 hours weekly group class", desc: "" },
-        { icon: "BookOpen", title: "30 Austin Education Exclusive workbooks", desc: "" },
-        { icon: "user-pen", title: "2+ hours weekly homework（ depending on stage in course）", desc: "" },
+        {
+          icon: "BookOpen",
+          title: "30 Austin Education Exclusive workbooks",
+          desc: "",
+        },
+        {
+          icon: "user-pen",
+          title: "2+ hours weekly homework（ depending on stage in course）",
+          desc: "",
+        },
         { icon: "chart-column", title: "5 exam reports", desc: "" },
-        { icon: "File-clock", title: "5 Austin Education full-length mock exams", desc: "" },
-        { icon: "monitor-play", title: "Class video recordings for review", desc: "" },
+        {
+          icon: "File-clock",
+          title: "5 Austin Education full-length mock exams",
+          desc: "",
+        },
+        {
+          icon: "monitor-play",
+          title: "Class video recordings for review",
+          desc: "",
+        },
         { icon: "info", title: "Unlimited Q&A and academic support", desc: "" },
-        { icon: "speech", title: "Ongoing one-on-one subtest specific performance analysis", desc: "" },
-        { icon: "shield-user", title: "Personalised guidance on strengths and weaknesses", desc: "" },
-        { icon: "smile-plus", title: "Pre-exam debriefing and mindset cultivation", desc: "" },
-        { icon: "circle-check-big", title: "Personalised advice on curating a competitive applicant profile", desc: "" },
-        { icon: "circle-help", title: "Dedicated learning consultant for one-on-one issue resolution", desc: "" },
-        { icon: "message-square-dot", title: "Free academic consultation", desc: "" },
+        {
+          icon: "speech",
+          title: "Ongoing one-on-one subtest specific performance analysis",
+          desc: "",
+        },
+        {
+          icon: "shield-user",
+          title: "Personalised guidance on strengths and weaknesses",
+          desc: "",
+        },
+        {
+          icon: "smile-plus",
+          title: "Pre-exam debriefing and mindset cultivation",
+          desc: "",
+        },
+        {
+          icon: "circle-check-big",
+          title:
+            "Personalised advice on curating a competitive applicant profile",
+          desc: "",
+        },
+        {
+          icon: "circle-help",
+          title:
+            "Dedicated learning consultant for one-on-one issue resolution",
+          desc: "",
+        },
+        {
+          icon: "message-square-dot",
+          title: "Free academic consultation",
+          desc: "",
+        },
       ],
     },
     courseStructure: {
       title: "Course Structure",
       sections: [
         {
-          title: "UCAT Course",
+          // title: "UCAT Course",
           modules: [
             {
               title: "Stage 1",
@@ -195,12 +242,15 @@ const courseData = {
       achievements: {
         title: "澳升UCAT课程历年战绩",
         currentYear: {
-          subtitle:
-            "在2024年UCAT考试中，澳升UCAT班取得卓越的成就",
+          subtitle: "在2024年UCAT考试中，澳升UCAT班取得卓越的成就",
           year: "2024",
           items: [
-            { number: "100%" , label: "澳升学生达到", subtitle: "面试标准" },
-            { number: "80%", label: "学生分数突破3050+", subtitle: "稳进医学院面试" },
+            { number: "100%", label: "澳升学生达到", subtitle: "面试标准" },
+            {
+              number: "80%",
+              label: "学生分数突破3050+",
+              subtitle: "稳进医学院面试",
+            },
             { number: "3260", label: "澳升UCAT最高分", subtitle: "" },
           ],
         },
@@ -225,8 +275,7 @@ const courseData = {
           ],
         },
         {
-          title:
-            "考试趋势预测，独家内幕情报",
+          title: "考试趋势预测，独家内幕情报",
           list: [
             "授课老师 每年亲自参加 UCAT 考试，掌握最新题型趋势，考前精准预测考试重点，让学生领先一步！",
           ],
@@ -238,23 +287,20 @@ const courseData = {
           ],
         },
         {
-          title:
-            "全真模拟，提前适应高压考场",
+          title: "全真模拟，提前适应高压考场",
           list: [
             "至少 5 次全真模拟考，严格按照 UCAT 官方考试模式，帮助学生熟悉高压环境，确保考试日正常甚至超常发挥",
           ],
         },
         {
-          title:
-            "医学精英导师，手把手带你冲击高分",
+          title: "医学精英导师，手把手带你冲击高分",
           list: [
             "Joshua 老师：在职医生，6 年连续 99.95 状元导师，助百余名学生进入医学院",
             "Tiffany 老师：ATAR 99.90，UCAT 3200+，MD 在读，AMSA 管理团队成员",
           ],
         },
         {
-          title:
-            "超强历史成绩，数据验证实力",
+          title: "超强历史成绩，数据验证实力",
           list: [
             "2024 年澳升 UCAT 考生，100% 全员达面试标准，最高分 3260！",
             "80% UCAT 3050+，第一轮面试资格；20% 2950+，搭配 ATAR 进入第二轮面试",
@@ -272,23 +318,35 @@ const courseData = {
           ],
         },
       ],
-      extraDescription: "由澳升医学Project团队亲授，结合医学背景与教育经验，制定最适合维州考生的UCAT备考方案。",
+      extraDescription:
+        "由澳升医学Project团队亲授，结合医学背景与教育经验，制定最适合维州考生的UCAT备考方案。",
     },
-    customCourseFeature: {
-    },
+    customCourseFeature: {},
     resources: {
       packages: [
         { icon: "school", title: "每周 2小时 正课授课", desc: "" },
         { icon: "BookOpen", title: "30本 澳升教育独家练习册", desc: "" },
-        { icon: "user-pen", title: "每周 2小时以上 课后作业（根据课程进度阶段调整）", desc: "" },
+        {
+          icon: "user-pen",
+          title: "每周 2小时以上 课后作业（根据课程进度阶段调整）",
+          desc: "",
+        },
         { icon: "chart-column", title: "5次考试成绩报告分析", desc: "" },
         { icon: "File-clock", title: "5次澳升独家全真模考", desc: "" },
         { icon: "monitor-play", title: "提供课程录像", desc: "" },
         { icon: "info", title: "无限次提问与学术支", desc: "" },
         { icon: "speech", title: "持续进行一对一子项目专项表现分析", desc: "" },
-        { icon: "shield-user", title: "针对学生强项与弱项提供个性化学习指导", desc: "" },
+        {
+          icon: "shield-user",
+          title: "针对学生强项与弱项提供个性化学习指导",
+          desc: "",
+        },
         { icon: "smile-plus", title: "考前心理辅导与心态建设", desc: "" },
-        { icon: "circle-check-big", title: "提供打造高竞争力申请人背景的个性化建议", desc: "" },
+        {
+          icon: "circle-check-big",
+          title: "提供打造高竞争力申请人背景的个性化建议",
+          desc: "",
+        },
         { icon: "circle-help", title: "专属学管老师一对一解决问题", desc: "" },
         { icon: "message-square-dot", title: "免费学业咨询服务", desc: "" },
       ],
@@ -297,69 +355,74 @@ const courseData = {
       title: "Course Structure",
       sections: [
         {
-          title: "Stage 1",
-          subtitle: "",
-          lessons: [
-            "lintroducing the Graphic Novel (Nimon ",
-            "Reading a Graphic Novel (Nimona ",
-            "Introduction to Genre (Nimona) ",
-            "Reading Fables (Nimona) ",
-            "A odern Fable (The Hobbit) ",
-            "The Moral of Animal Farm (The Hobbit ",
-            "Reading Fantasy (The Hobbit ",
-            "The Hobbit (The Hobbit) ",
-            "Topic Test and Miarking & Feedback",
-          ],
-        },
-        {
-          title: "Stage 2",
-          subtitle: "",
-          lessons: [
-            "lintroducing the Graphic Novel (Nimon ",
-            "Reading a Graphic Novel (Nimona ",
-            "Introduction to Genre (Nimona) ",
-            "Reading Fables (Nimona) ",
-            "A odern Fable (The Hobbit) ",
-            "The Moral of Animal Farm (The Hobbit ",
-            "Reading Fantasy (The Hobbit ",
-            "The Hobbit (The Hobbit) ",
-            "Topic Test and Miarking & Feedback",
-          ],
-        },
-        {
-          title: "Stage 3",
-          subtitle: "",
-          lessons: [
-            "lintroducing the Graphic Novel (Nimon ",
-            "Reading a Graphic Novel (Nimona ",
-            "Introduction to Genre (Nimona) ",
-            "Reading Fables (Nimona) ",
-            "A odern Fable (The Hobbit) ",
-            "The Moral of Animal Farm (The Hobbit ",
-            "Reading Fantasy (The Hobbit ",
-            "The Hobbit (The Hobbit) ",
-            "Topic Test and Miarking & Feedback",
-          ],
-        },
-        {
-          title: "Stage 4",
-          subtitle: "",
-          lessons: [
-            "lintroducing the Graphic Novel (Nimon ",
-            "Reading a Graphic Novel (Nimona ",
-            "Introduction to Genre (Nimona) ",
-            "Reading Fables (Nimona) ",
-            "A odern Fable (The Hobbit) ",
-            "The Moral of Animal Farm (The Hobbit ",
-            "Reading Fantasy (The Hobbit ",
-            "The Hobbit (The Hobbit) ",
-            "Topic Test and Miarking & Feedback",
+          // title: "UCAT课程",
+          modules: [
+            {
+              title: "Stage 1",
+              subtitle: "",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Stage 2",
+              subtitle: "",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Stage 3",
+              subtitle: "",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+            {
+              title: "Stage 4",
+              subtitle: "",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
           ],
         },
       ],
     },
     relatedCourses: [
-     {
+      {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
         slug: "vce-english-eal-unit-1-4",

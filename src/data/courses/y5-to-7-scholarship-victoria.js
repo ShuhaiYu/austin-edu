@@ -169,7 +169,7 @@ const courseData = {
         {
           icon: "chart-no-axes-combined",
           title:
-            "100 additional/optional/advanced questions per week (in questions/hours)",
+            "100 additional / optional / advanced questions per week",
           desc: "",
         },
         {

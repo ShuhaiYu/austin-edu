@@ -89,27 +89,27 @@ const COURSE_DATABASE = [
   //   states: ["Victoria"],
   //   category: "Scholarship / Selective Courses"
   // },
-  { 
-    slug: "3-to-5-scholarship-south-australia", 
-    title: "Year 3-to-5 Scholarship South Australia",
-    grades: [3, 4, 5],
-    states: ["South Australia"],
-    category: "Scholarship / Selective Courses"
-  },
-  { 
-    slug: "5-to-7-scholarship-south-australia", 
-    title: "Year 5-to-7 Scholarship South Australia",
-    grades: [5, 6, 7],
-    states: ["South Australia"],
-    category: "Scholarship / Selective Courses"
-  },
-  { 
-    slug: "5-to-7-selective-school-south-australia", 
-    title: "Year 5-to-7 Selective School South Australia",
-    grades: [5, 6, 7],
-    states: ["South Australia"],
-    category: "Scholarship / Selective Courses"
-  },
+  // { 
+  //   slug: "3-to-5-scholarship-south-australia", 
+  //   title: "Year 3-to-5 Scholarship South Australia",
+  //   grades: [3, 4, 5],
+  //   states: ["South Australia"],
+  //   category: "Scholarship / Selective Courses"
+  // },
+  // { 
+  //   slug: "5-to-7-scholarship-south-australia", 
+  //   title: "Year 5-to-7 Scholarship South Australia",
+  //   grades: [5, 6, 7],
+  //   states: ["South Australia"],
+  //   category: "Scholarship / Selective Courses"
+  // },
+  // { 
+  //   slug: "5-to-7-selective-school-south-australia", 
+  //   title: "Year 5-to-7 Selective School South Australia",
+  //   grades: [5, 6, 7],
+  //   states: ["South Australia"],
+  //   category: "Scholarship / Selective Courses"
+  // },
 
   // Primary School 1-6 Years - Competition Courses
   { 

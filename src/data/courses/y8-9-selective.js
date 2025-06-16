@@ -24,7 +24,6 @@ const courseData = {
         "The Mac.Robertson Girls' High School",
         "Melbourne High School",
       ],
-      extraDescription: "这是在学校logo的下方的额外描述",
     },
 
     courseDescription: {
@@ -253,14 +252,13 @@ const courseData = {
             },
           ],
         },
-        schoolLogos: [
-          "Nossal High School",
-          "Suzanne Cory High School",
-          "The Mac.Robertson Girls' High School",
-          "Melbourne High School",
-        ],
-        extraDescription: "这是在学校logo的下方的额外描述",
       },
+      schoolLogos: [
+        "Nossal High School",
+        "Suzanne Cory High School",
+        "The Mac.Robertson Girls' High School",
+        "Melbourne High School",
+      ],
     },
 
     courseDescription: {

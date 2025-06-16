@@ -5,8 +5,6 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: " Five Reasons to Choose Austin’s VCE Physics Program",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
         content: [
           {
             title: "1. Accelerated Curriculum – Stay Ahead of School Timelines",
@@ -247,9 +245,7 @@ const courseData = {
     title: "VCE 物理 Unit 1-4",
     whyChooseUs: {
       partA: {
-        title: " 选择澳升 VCE 物理课程的五大亮点",
-        image1: "https://placehold.co/400x600?text=Image+1",
-        image2: "https://placehold.co/400x1000?text=Image+2",
+        title: "选择澳升 VCE 物理课程的五大亮点",
         content: [
           {
             title: "1. 超前课程进度，领先日校节奏",

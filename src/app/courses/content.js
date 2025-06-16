@@ -3,7 +3,7 @@ export const coursesContent = {
     detail: {
       categories: [
         {
-          title: "Primary school 1-6 Years",
+          title: "Primary School - Years 1-6",
           subcategories: [
             {
               title: "Enrichment Courses",
@@ -43,7 +43,7 @@ export const coursesContent = {
           ],
         },
         {
-          title: "Secondary school 7-9 Years",
+          title: "Secondary School - Years 7-9",
           subcategories: [
             {
               title: "Enrichment Courses",
@@ -82,7 +82,7 @@ export const coursesContent = {
           ],
         },
         {
-          title: "Senior secondary school - 10-12 Years",
+          title: "Senior Secondary School - Years 10-12",
           subcategories: [
             {
               title: "Year 10 Pre-VCE Courses",
@@ -2717,7 +2717,6 @@ export const coursesContent = {
             },
           ],
         },
-        // 其他年级...
       ],
     },
     feature: [
@@ -2844,19 +2843,19 @@ export const coursesContent = {
             title: "优质内部教材",
             description:
               "我们开发了独家高质量教材，涵盖所有考试重点，并提供丰富的补充学习资料。",
-            icon: "/courses/icons/com icon 1.svg",
+            icon: "/courses/icons/support icon 1.svg",
           },
           {
             title: "作业与练习",
             description:
               "课程配备足量且高质量的课后练习，从巩固知识到提升解题能力，全方位支持学生的学习。",
-            icon: "/courses/icons/com icon 2.svg",
+            icon: "/courses/icons/support icon 2.svg",
           },
           {
             title: "阶段性测试",
             description:
               "定期举行阶段性测评与全真模考，帮助学生及时检测学习成果，调整学习策略，直至稳步提升。",
-            icon: "/courses/icons/com icon 3.svg",
+            icon: "/courses/icons/support icon 3.svg",
           },
         ],
         carousel: {
@@ -2918,19 +2917,19 @@ export const coursesContent = {
             title: "服务无死角",
             description:
               "从课程规划、学术答疑到心理辅导，我们提供全方位支持，解决学生学习中的所有问题。",
-            icon: "/courses/icons/support icon 1.svg",
+            icon: "/courses/icons/com icon 1.svg",
           },
           {
             title: "灵活且贴心",
             description:
               "根据学生的时间安排和学习目标，我们随时调整课程规划，确保学习效果与效率最大化。",
-            icon: "/courses/icons/support icon 2.svg",
+            icon: "/courses/icons/com icon 2.svg",
           },
           {
             title: "责任保障",
             description:
               "提供合理的退款或补偿政策，用我们的实际行动表达对课程效果的信心和对学生未来的责任感。",
-            icon: "/courses/icons/support icon 3.svg",
+            icon: "/courses/icons/com icon 3.svg",
           },
         ],
         button: {

@@ -163,8 +163,10 @@ const courseData = {
         "Our high-standard essay refinement process includes five core steps, ensuring that every student can achieve their best performance in SACs and exams.",
       ],
       images: [
-        "https://placehold.co/400x600?text=Image+1",
-        "https://placehold.co/400x1000?text=Image+2",
+        "/courses/single/writing/800x300.jpg",
+        "/courses/single/writing/竖图.jpg",
+        "/courses/single/writing/精改展示/EAL作文精改-全英1.png",
+        "/courses/single/writing/精改展示/EAL作文精改-全英2.png",
       ],
       steps: [
         {
@@ -173,7 +175,6 @@ const courseData = {
           content: `When our teachers receive a student’s essay, the first step is to analyse its overall quality.Are the arguments convincing? Is the writing clear and concise? Does it address the topic effectively?
           These are the key aspects we carefully evaluate.
           This thorough initial assessment lays the foundation for more detailed revision feedback.`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 2,
@@ -181,7 +182,6 @@ const courseData = {
           content: `After evaluating the overall quality of the essay, Austin teachers proceed with a second round of adjustments focused on refining language expression.
           We elevate simple phrases to more sophisticated and appropriate alternatives, correct grammar mistakes, streamline lengthy expressions, and add content where necessary to strengthen key points.
           These changes ensure that any obvious issues in the article are addressed, making the writing more impactful and logical.`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 3,
@@ -189,109 +189,79 @@ const courseData = {
           content: `Once the surface-level issues are addressed, Austin teachers dive deeper into the core of the essay.
           In this step, teachers engage in in-depth discussions with students, guiding them to critically examine their arguments. This process helps students refine their viewpoints, making them more distinct and profound, while also strengthening the persuasiveness of their points.
           Through this first exchange of ideas between teacher and student, the essay’s evidence becomes more compelling, and the overall structure becomes more logical.`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 4,
           title: "Structure Adjustment",
           content: `After refining the arguments and enhancing the depth of viewpoints, Austin teachers help students adjust the structure of their essays.
           A well-written essay requires a clear and logical structure that highlights its depth and persuasiveness. Austin teachers work with students to reorganise paragraph order, ensuring that each section is well-connected and flows smoothly.`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 5,
           title: "Exemplary Paragraphs",
           content: `To help students better understand the improvements, Austin teachers write a few optimised sample paragraphs. By comparing them, students can clearly see the differences between their work and high-scoring essays, while also identifying areas for improvement in their original paragraphs.
           As always, Austin focuses not just on making quick fixes, but on enhancing students’ critical thinking and writing techniques at the root level.`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
+      ],
+      carousel: [
+        "/courses/single/writing/轮播/1.jpg",
+        "/courses/single/writing/轮播/2.jpg",
+        "/courses/single/writing/轮播/3.jpg",
+        "/courses/single/writing/轮播/4.jpg",
+        "/courses/single/writing/轮播/5.jpg",
+        "/courses/single/writing/轮播/6.png",
+        "/courses/single/writing/轮播/7.png",
+        "/courses/single/writing/轮播/8.png",
+        "/courses/single/writing/轮播/9.png",
       ],
       extraDescription:
         "Every improvement in an Austin student’s English comes from more than just effort. It’s the result of our teachers’ high-standard essay revisions, which lay the groundwork for their progress.",
     },
     resources: {
-      packages: [
-        { icon: "school", title: "1.5-hour weekly group class", desc: " " },
-        {
-          icon: "book-copy",
-          title: "4 exclusive Austin Education course textbooks",
-          desc: " ",
-        },
-        {
-          icon: "BookOpen",
-          title: "4 exclusive Austin Education workbooks",
-          desc: " ",
-        },
-        {
-          icon: "user-pen",
-          title: "1+ hour of structured weekly homework",
-          desc: " ",
-        },
-        {
-          icon: "notebook-pen",
-          title: "2 fully marked and personalised essay corrections per term",
-          desc: " ",
-        },
-        {
-          icon: "square-check-big️",
-          title: "5+ full-length Year 12 VCE exam practice sessions",
-          desc: "",
-        },
-        { icon: "goal", title: "6+ SAC-focused revision sessions", desc: " " },
-        {
-          icon: "university",
-          title:
-            "Tailored SAC-preparation materials aligned with individual school preferences and themes",
-          desc: " ",
-        },
-        {
-          icon: "trophy",
-          title:
-            "Collection of high-scoring VCE sample essays (45+ ATAR level)",
-          desc: " ",
-        },
-        {
-          icon: "volume-2",
-          title: "Exclusive EAL listening practice workbook",
-          desc: " ",
-        },
-        {
-          icon: "file-clock",
-          title: "Austin-designed full-scale mock exams",
-          desc: " ",
-        },
-        {
-          icon: "library-big",
-          title: "Complete workbook set for Creating and Presenting Texts",
-          desc: " ",
-        },
-        {
-          icon: "a-large-small",
-          title: "Year 12 subject-specific vocabulary lists",
-          desc: " ",
-        },
-        {
-          icon: "monitor-play",
-          title: "Class video recordings for review",
-          desc: " ",
-        },
-        {
-          icon: "circle-help",
-          title: "Unlimited Q&A and academic support",
-          desc: " ",
-        },
-        {
-          icon: "message-square-dot",
-          title:
-            "Dedicated 1-on-1 academic advisor for personalised learning support",
-          desc: " ",
-        },
-        {
-          icon: "users",
-          title: "Free academic consultation included",
-          desc: " ",
-        },
-      ],
+      // 使用 resourceSections 数组来支持多个资源包
+    resourceSections: [
+      {
+        title: "Unit 1-2",
+        subtitle: "Foundation Learning Resources",
+        packages: [
+          { icon: "school", title: "2-hour weekly group class", desc: "" },
+          { icon: "book-copy", title: "4 exclusive Austin Education textbooks", desc: "" },
+          { icon: "BookOpen", title: "4 exclusive Austin Education workbooks", desc: "" },
+          { icon: "user-pen", title: "1 hour of structured weekly homework", desc: "" },
+          { icon: "notebook-pen", title: "1 fully marked and personalised essay correction per term", desc: "" },
+          { icon: "square-check-big", title: "6 in-class assessment tests per term", desc: "" },
+          { icon: "file-text", title: "2 detailed academic performance reports per term", desc: "" },
+          { icon: "a-large-small", title: "Year 11 subject-specific vocabulary list", desc: "" },
+          { icon: "monitor-play", title: "Recorded lessons", desc: "" },
+          { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: "" },
+          { icon: "message-square-dot", title: "Dedicated 1-on-1 learning manager for personalised issue resolution", desc: "" },
+          { icon: "users", title: "Free academic consultation included", desc: "" },
+        ]
+      },
+      {
+        title: "Unit 3-4",
+        subtitle: "Advanced VCE Preparation",
+        packages: [
+          { icon: "school", title: "1.5-hour weekly group class", desc: "" },
+          { icon: "book-copy", title: "4 exclusive Austin Education textbooks", desc: "" },
+          { icon: "BookOpen", title: "4 exclusive Austin Education workbooks", desc: "" },
+          { icon: "user-pen", title: "1+ hour of structured weekly homework", desc: "" },
+          { icon: "notebook-pen", title: "2 fully marked and personalised essay corrections per term", desc: "" },
+          { icon: "square-check-big", title: "5+ full-length Year 12 VCE exam practice sessions", desc: "" },
+          { icon: "goal", title: "6+ SAC-focused revision sessions", desc: "" },
+          { icon: "university", title: "Tailored SAC-preparation materials aligned with individual school preferences and themes", desc: "" },
+          { icon: "trophy", title: "Collection of high-scoring VCE sample essays (45+ ATAR level)", desc: "" },
+          { icon: "Volume2", title: "Exclusive EAL listening practice workbook", desc: "" },
+          { icon: "file-clock", title: "Austin-designed full-scale mock exams", desc: "" },
+          { icon: "library-big", title: "Complete workbook set for Creating and Presenting Texts", desc: "" },
+          { icon: "a-large-small", title: "Year 12 subject-specific vocabulary list", desc: "" },
+          { icon: "monitor-play", title: "Recorded lessons", desc: "" },
+          { icon: "circle-help", title: "Unlimited Q&A and academic support", desc: "" },
+          { icon: "message-square-dot", title: "Dedicated 1-on-1 learning manager for personalised issue resolution", desc: "" },
+          { icon: "users", title: "Free academic consultation included", desc: "" },
+        ]
+      }
+    ]
     },
     courseStructure: {
       title: "Course Structure",
@@ -533,9 +503,11 @@ const courseData = {
         "Waverley Christian College",
       ],
       extraDescription:
-        "历年许多在Austin学习的学生在就读的日校中名列前茅，拿到年级第1、第2、第3，或进入年级前5%，这些日校包括：",
+        "历年许多在Austin学习的学生在就读的日校中名列前茅，拿到年级第1、第2、第3，或进入年级前5%",
     },
     coreFeatures: {
+      title: "课程特色",
+      subtitle: "澳升教育的VCE English & EAL课程特色",
       sections: [
         {
           title: "课程体系紧密贴合VCE考试，循序渐进培养高分能力",
@@ -591,8 +563,10 @@ const courseData = {
         "我们的高标准作文精改流程包括五大核心步骤，确保每位学生都能在SAC和考试中达到最佳表现。符合澳升高标准的作文精改，背后一共有5个步骤",
       ],
       images: [
-        "https://placehold.co/400x600?text=Image+1",
-        "https://placehold.co/400x1000?text=Image+2",
+        "/courses/single/writing/800x300.jpg",
+        "/courses/single/writing/竖图.jpg",
+        "/courses/single/writing/精改展示/EAL作文精改-中文1.png",
+        "/courses/single/writing/精改展示/EAL作文精改-中文2.png",
       ],
       steps: [
         {
@@ -602,7 +576,6 @@ const courseData = {
           论点是否有力？表达是否清晰？写作是否切题？
           这些都是我们老师需要考察的地方
           有了这第一步，才会有接下来深入的修改建议`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 2,
@@ -610,7 +583,6 @@ const courseData = {
           content: `分析了文章的整体表现后，澳升老师会对语言表达进行二次调整
           让普通表达变得高级且贴切、修改语法错误、修改冗长表达、在关键点增加内容，让文章更有感染力和逻辑
           做完这些，文章表面上显而易见的问题会得到改正`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 3,
@@ -618,7 +590,6 @@ const courseData = {
           content: `解决了文章的“表面问题”，澳升老师将深入文章内部进行调整
           在这一步，老师将会和学生深入交流，在交流的过程中，会引导学生主动思考，如何让观点变得更鲜明，更深刻、论点说服力是否够强，应该如何完善
           通过老师与学生的第一次思想碰撞，文章的论据会更加丰富，整体也更加有逻辑`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 4,
@@ -626,15 +597,24 @@ const courseData = {
           content: `讨论出更具说服力的论点以及更有深度的观点后，澳升老师会帮助同学进行结构调整
           一篇好的文章，需要逻辑严谨、层次分明的结构，去凸显这些深度和说服力
           澳升老师们会帮助同学重新组织段落顺序，确保每一部分环环相扣且衔接流畅`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 5,
           title: "示范性段落",
           content: `为了便于学生更加直观的理解，澳升老师会亲自写几段经过优化的段落，通过对比，学生能更加清楚地观察到，自己的文章与高分文章之间的差别，同时也能发现原段落的可改进方向
           澳升从不是大包大揽，而是从根源上，提升学生的思想深度和写作方式`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
+      ],
+      carousel: [
+        "/courses/single/writing/轮播/1.jpg",
+        "/courses/single/writing/轮播/2.jpg",
+        "/courses/single/writing/轮播/3.jpg",
+        "/courses/single/writing/轮播/4.jpg",
+        "/courses/single/writing/轮播/5.jpg",
+        "/courses/single/writing/轮播/6.png",
+        "/courses/single/writing/轮播/7.png",
+        "/courses/single/writing/轮播/8.png",
+        "/courses/single/writing/轮播/9.png",
       ],
       extraDescription:
         "每一位澳升同学的英文进步，都不是凭空出现的。正是有了老师们高标准的作文精改，才有了每一位同学进步的基础。",

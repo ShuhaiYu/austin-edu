@@ -58,7 +58,7 @@ const COURSES = {
     import("@/data/courses/vce-physics-unit-1-4"),
   "vce-psychology-unit-1-4": () =>
     import("@/data/courses/vce-psychology-unit-1-4"),
-  "vce-chinese-first-language-unit1-4": () =>
+  "vce-chinese-first-language-unit-1-4": () =>
     import("@/data/courses/vce-chinese-first-language-unit-1-4"),
   "vce-chinese-second-language-unit-1-4": () =>
     import("@/data/courses/vce-chinese-second-language-unit-1-4"),

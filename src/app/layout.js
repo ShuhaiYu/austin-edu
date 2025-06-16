@@ -23,7 +23,7 @@ export default function RootLayout({ children }) {
           <NavBar />
           {/* 使用固定的容器宽度避免居中计算受影响 */}
           <main className="flex-1 mt-24 md:mt-32 " >
-            <div className="w-[95%] max-w-screen-2xl mx-auto px-4">{children}</div>
+            <div className="w-[90%] max-w-screen-2xl mx-auto px-4">{children}</div>
           </main>
           <Toaster />
           <Footer />

@@ -6,8 +6,6 @@ const courseData = {
       title: "Course Description",
       subtitle:
         "Develop In-depth Knowledge and Skills Across Chemistry, Physics, and Biology to Seamlessly Transition into VCE.",
-      // paragraph:
-      //   "Austin’s Year 9-10 Pre-VCE Science Standard programme is specifically designed for students planning to pursue VCE Chemistry, Biology, and Physics. With a focus on examination requirements, core skills development, and scientific expression, the course introduces key knowledge and thinking frameworks across all three disciplines. It provides a seamless transition from General Science in secondary school to the demands of VCE Science studies.",
       courseOverview: {
         descriptionAfterFeature: [
           "Austin’s Year 9-10 Pre-VCE Science Standard programme is specifically designed for students planning to pursue VCE Chemistry, Biology, and Physics. With a focus on examination requirements, core skills development, and scientific expression, the course introduces key knowledge and thinking frameworks across all three disciplines.",
@@ -165,7 +163,6 @@ const courseData = {
       islock: false,
       sections: [
         {
-          title: "Year 10",
           modules: [
             {
               title: "Term 1",
@@ -259,8 +256,12 @@ const courseData = {
     courseDescription: {
       title: "课程定位",
       subtitle: "化学 × 物理 × 生物 三重发力，为VCE科学课程打下坚实基础！",
-      paragraph:
-        "澳升的9-10年级科学进阶班，专为计划未来进入VCE化学、生物、物理课程的学生设计。我们以考点为导向、能力为核心、表达为补充，提前教授三大学科的核心知识与思维方法，帮助学生顺利完成从日校的科学课到VCE科学课程的过渡。",
+      courseOverview: {
+        descriptionAfterFeature: [
+          "澳升的9-10年级科学进阶班，专为计划未来进入VCE化学、生物、物理课程的学生设计。",
+          "我们以考点为导向、能力为核心、表达为补充，提前教授三大学科的核心知识与思维方法，帮助学生顺利完成从日校的科学课到VCE科学课程的过渡。",
+        ],
+      },
     },
     coreFeatures: {
       sections: [
@@ -367,7 +368,6 @@ const courseData = {
       islock: false,
       sections: [
         {
-          title: "Year 10",
           modules: [
             {
               title: "Term 1",

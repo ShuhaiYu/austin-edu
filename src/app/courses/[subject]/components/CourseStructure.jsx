@@ -17,9 +17,8 @@ export function CourseStructure({ data }) {
   const modules = years[selectedYear]?.modules || [];
 
   const isLockGlobally = data.islock ?? true;
-  // Only Year0→Module0 is truly “unlocked”
-  const isContentLocked =
-    isLockGlobally && !(selectedYear === 0 && selectedModule === 0);
+  // 如果全局锁定，所有内容都被锁定（包括第一个）
+  const isContentLocked = isLockGlobally;
 
   return (
     <section className="py-16">
@@ -41,7 +40,8 @@ export function CourseStructure({ data }) {
           >
             <TabsList className="justify-center space-x-6">
               {years.map((year, idx) => {
-                const lockedTab = isLockGlobally && idx !== 0;
+                // 如果全局锁定，所有标签页都显示锁定图标
+                const lockedTab = isLockGlobally;
                 return (
                   <TabsTrigger
                     key={year.title}
@@ -63,8 +63,8 @@ export function CourseStructure({ data }) {
           {/* Module List */}
           <div className="w-full md:w-1/3 space-y-4">
             {modules.map((mod, idx) => {
-              const lockedModule =
-                isLockGlobally && !(selectedYear === 0 && idx === 0);
+              // 如果全局锁定，所有模块都显示锁定图标
+              const lockedModule = isLockGlobally;
               return (
                 <button
                   key={idx}
