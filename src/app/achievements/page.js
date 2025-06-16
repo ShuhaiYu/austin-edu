@@ -10,7 +10,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { ChevronDown, ChevronRight, Menu, X } from "lucide-react";
+import { ChevronDown, ChevronRight, Menu, X, GraduationCap, BookOpen, Users } from "lucide-react";
 
 import { VCEEnglishSubject } from "./components/VCEEnglishSubject";
 import { VCEMathSubject } from "./components/VCEMathSubject";
@@ -61,158 +61,248 @@ export default function Achievements() {
   };
 
   const sidebarContent = (
-    <div className="space-y-2">
-      <h3 className="font-semibold text-lg mb-4">
-        {lang === "en" ? "Quick Navigation" : "快速导航"}
-      </h3>
+    <div className="space-y-1">
+      {/* 标题区域 */}
+      <div className="px-3 py-4 border-b border-gray-200">
+        <h3 className="font-bold text-lg text-gray-900 flex items-center gap-2">
+          <BookOpen className="h-5 w-5 text-primary" />
+          {lang === "en" ? "Quick Navigation" : "快速导航"}
+        </h3>
+        <p className="text-sm text-gray-500 mt-1">
+          {lang === "en" ? "Jump to any section" : "快速跳转到任意部分"}
+        </p>
+      </div>
 
       {/* 概览部分 */}
-      <div className="space-y-1">
+      <div className="px-2 py-2">
         <Button
           variant="ghost"
-          className="w-full justify-start text-left"
+          className="w-full justify-start text-left h-10 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
           onClick={() => scrollToSection("overview")}
         >
-          {lang === "en" ? "Overview" : "概览"}
+          <div className="flex items-center gap-3">
+            <div className="w-2 h-2 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+            <span className="font-medium">{lang === "en" ? "Overview" : "概览"}</span>
+          </div>
         </Button>
       </div>
 
       {/* 高中部分 */}
-      <Collapsible
-        open={openSections.highSchool}
-        onOpenChange={() => toggleSection("highSchool")}
-      >
-        <CollapsibleTrigger asChild>
-          <Button variant="ghost" className="w-full justify-between">
-            {lang === "en" ? "Senior High School" : "高中"}
-            {openSections.highSchool ? (
-              <ChevronDown className="h-4 w-4" />
-            ) : (
-              <ChevronRight className="h-4 w-4" />
-            )}
-          </Button>
-        </CollapsibleTrigger>
-        <CollapsibleContent className="space-y-1 ml-4">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-left"
-            onClick={() => scrollToSection("vce-english")}
-          >
-            {lang === "en" ? "VCE English & EAL" : "VCE 英语"}
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-left"
-            onClick={() => scrollToSection("vce-math")}
-          >
-            {lang === "en" ? "VCE Mathematics" : "VCE 数学"}
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-left"
-            onClick={() => scrollToSection("vce-science")}
-          >
-            {lang === "en" ? "VCE Science" : "VCE 科学"}
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-left"
-            onClick={() => scrollToSection("md-program")}
-          >
-            {lang === "en" ? "Austin MD Program" : "澳升医学院项目"}
-          </Button>
-        </CollapsibleContent>
-      </Collapsible>
+      <div className="px-2">
+        <Collapsible
+          open={openSections.highSchool}
+          onOpenChange={() => toggleSection("highSchool")}
+        >
+          <CollapsibleTrigger asChild>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-between h-11 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+            >
+              <div className="flex items-center gap-3">
+                <GraduationCap className="h-4 w-4 text-primary/70 group-hover:text-primary" />
+                <span className="font-semibold text-gray-700 group-hover:text-primary">
+                  {lang === "en" ? "Senior Secondary" : "高中"}
+                </span>
+              </div>
+              {openSections.highSchool ? (
+                <ChevronDown className="h-4 w-4 text-gray-500 group-hover:text-primary" />
+              ) : (
+                <ChevronRight className="h-4 w-4 text-gray-500 group-hover:text-primary" />
+              )}
+            </Button>
+          </CollapsibleTrigger>
+          <CollapsibleContent className="space-y-1 ml-4 mt-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-left h-9 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+              onClick={() => scrollToSection("vce-english")}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+                <span className="text-sm text-gray-600 group-hover:text-primary">
+                  {lang === "en" ? "VCE English & EAL" : "VCE 英语"}
+                </span>
+              </div>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-left h-9 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+              onClick={() => scrollToSection("vce-math")}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+                <span className="text-sm text-gray-600 group-hover:text-primary">
+                  {lang === "en" ? "VCE Mathematics" : "VCE 数学"}
+                </span>
+              </div>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-left h-9 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+              onClick={() => scrollToSection("vce-science")}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+                <span className="text-sm text-gray-600 group-hover:text-primary">
+                  {lang === "en" ? "VCE Science" : "VCE 科学"}
+                </span>
+              </div>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-left h-9 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+              onClick={() => scrollToSection("md-program")}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+                <span className="text-sm text-gray-600 group-hover:text-primary">
+                  {lang === "en" ? "Austin MD Program" : "澳升医学院项目"}
+                </span>
+              </div>
+            </Button>
+          </CollapsibleContent>
+        </Collapsible>
+      </div>
 
       {/* 初中部分 */}
-      <Collapsible
-        open={openSections.juniorHigh}
-        onOpenChange={() => toggleSection("juniorHigh")}
-      >
-        <CollapsibleTrigger asChild>
-          <Button variant="ghost" className="w-full justify-between">
-            {lang === "en" ? "Junior High School" : "初中"}
-            {openSections.juniorHigh ? (
-              <ChevronDown className="h-4 w-4" />
-            ) : (
-              <ChevronRight className="h-4 w-4" />
-            )}
-          </Button>
-        </CollapsibleTrigger>
-        <CollapsibleContent className="space-y-1 ml-4">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-left"
-            onClick={() => scrollToSection("selective-school")}
-          >
-            {lang === "en" ? "Selective School Program" : "精英公校项目"}
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-left"
-            onClick={() => scrollToSection("amc")}
-          >
-            {lang === "en" ? "AMC Competition" : "AMC 竞赛"}
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-left"
-            onClick={() => scrollToSection("scholarship-junior")}
-          >
-            {lang === "en" ? "Scholarship Program" : "奖学金项目"}
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-left"
-            onClick={() => scrollToSection("advanced-79")}
-          >
-            {lang === "en" ? "Advanced Program (7-9)" : "Y7-9 培优班"}
-          </Button>
-        </CollapsibleContent>
-      </Collapsible>
+      <div className="px-2">
+        <Collapsible
+          open={openSections.juniorHigh}
+          onOpenChange={() => toggleSection("juniorHigh")}
+        >
+          <CollapsibleTrigger asChild>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-between h-11 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+            >
+              <div className="flex items-center gap-3">
+                <Users className="h-4 w-4 text-primary/70 group-hover:text-primary" />
+                <span className="font-semibold text-gray-700 group-hover:text-primary">
+                  {lang === "en" ? "Secondary School" : "初中"}
+                </span>
+              </div>
+              {openSections.juniorHigh ? (
+                <ChevronDown className="h-4 w-4 text-gray-500 group-hover:text-primary" />
+              ) : (
+                <ChevronRight className="h-4 w-4 text-gray-500 group-hover:text-primary" />
+              )}
+            </Button>
+          </CollapsibleTrigger>
+          <CollapsibleContent className="space-y-1 ml-4 mt-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-left h-9 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+              onClick={() => scrollToSection("selective-school")}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+                <span className="text-sm text-gray-600 group-hover:text-primary">
+                  {lang === "en" ? "Selective School Program" : "精英公校项目"}
+                </span>
+              </div>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-left h-9 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+              onClick={() => scrollToSection("amc")}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+                <span className="text-sm text-gray-600 group-hover:text-primary">
+                  {lang === "en" ? "AMC Competition" : "AMC 竞赛"}
+                </span>
+              </div>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-left h-9 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+              onClick={() => scrollToSection("scholarship-junior")}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+                <span className="text-sm text-gray-600 group-hover:text-primary">
+                  {lang === "en" ? "Scholarship Program" : "奖学金项目"}
+                </span>
+              </div>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-left h-9 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+              onClick={() => scrollToSection("advanced-79")}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+                <span className="text-sm text-gray-600 group-hover:text-primary">
+                  {lang === "en" ? "Advanced Program (7-9)" : "Y7-9 培优班"}
+                </span>
+              </div>
+            </Button>
+          </CollapsibleContent>
+        </Collapsible>
+      </div>
 
       {/* 小学部分 */}
-      <Collapsible
-        open={openSections.primarySchool}
-        onOpenChange={() => toggleSection("primarySchool")}
-      >
-        <CollapsibleTrigger asChild>
-          <Button variant="ghost" className="w-full justify-between">
-            {lang === "en" ? "Primary School" : "小学"}
-            {openSections.primarySchool ? (
-              <ChevronDown className="h-4 w-4" />
-            ) : (
-              <ChevronRight className="h-4 w-4" />
-            )}
-          </Button>
-        </CollapsibleTrigger>
-        <CollapsibleContent className="space-y-1 ml-4">
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-left"
-            onClick={() => scrollToSection("scholarship-primary")}
-          >
-            {lang === "en" ? "Scholarship Program" : "奖学金项目"}
-          </Button>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="w-full justify-start text-left"
-            onClick={() => scrollToSection("advanced-35")}
-          >
-            {lang === "en" ? "Advanced Program (3-5)" : "Y3-5 培优班"}
-          </Button>
-        </CollapsibleContent>
-      </Collapsible>
+      <div className="px-2">
+        <Collapsible
+          open={openSections.primarySchool}
+          onOpenChange={() => toggleSection("primarySchool")}
+        >
+          <CollapsibleTrigger asChild>
+            <Button 
+              variant="ghost" 
+              className="w-full justify-between h-11 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+            >
+              <div className="flex items-center gap-3">
+                <BookOpen className="h-4 w-4 text-primary/70 group-hover:text-primary" />
+                <span className="font-semibold text-gray-700 group-hover:text-primary">
+                  {lang === "en" ? "Primary School" : "小学"}
+                </span>
+              </div>
+              {openSections.primarySchool ? (
+                <ChevronDown className="h-4 w-4 text-gray-500 group-hover:text-primary" />
+              ) : (
+                <ChevronRight className="h-4 w-4 text-gray-500 group-hover:text-primary" />
+              )}
+            </Button>
+          </CollapsibleTrigger>
+          <CollapsibleContent className="space-y-1 ml-4 mt-1">
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-left h-9 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+              onClick={() => scrollToSection("scholarship-primary")}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+                <span className="text-sm text-gray-600 group-hover:text-primary">
+                  {lang === "en" ? "Scholarship Program" : "奖学金项目"}
+                </span>
+              </div>
+            </Button>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="w-full justify-start text-left h-9 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
+              onClick={() => scrollToSection("advanced-35")}
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
+                <span className="text-sm text-gray-600 group-hover:text-primary">
+                  {lang === "en" ? "Advanced Program (3-5)" : "Y3-5 培优班"}
+                </span>
+              </div>
+            </Button>
+          </CollapsibleContent>
+        </Collapsible>
+      </div>
     </div>
   );
 
@@ -223,7 +313,7 @@ export default function Achievements() {
         <Button
           variant="outline"
           size="sm"
-          className="fixed top-20 left-4 z-30 lg:hidden"
+          className="fixed top-20 left-4 z-30 lg:hidden shadow-lg bg-white/90 backdrop-blur-sm border-gray-300"
           onClick={() => setSidebarOpen(!sidebarOpen)}
         >
           {sidebarOpen ? (
@@ -236,12 +326,12 @@ export default function Achievements() {
         {/* 侧边栏 */}
         <div
           className={`
-        fixed lg:sticky top-16 lg:top-40 left-0 h-[calc(100vh-4rem)] lg:h-[calc(100vh-8rem)] w-64 bg-background border-r border-gray-300 z-20
+        fixed lg:sticky top-16 lg:top-40 left-0 h-[calc(100vh-4rem)] lg:h-[calc(100vh-8rem)] w-64 bg-white/95 backdrop-blur-sm border-r border-gray-200 z-20 shadow-lg lg:shadow-none
         transform transition-transform duration-300 ease-in-out
         ${sidebarOpen ? "translate-x-0" : "-translate-x-full lg:translate-x-0"}
       `}
         >
-          <ScrollArea className="h-full p-4 pt-16 lg:pt-4">
+          <ScrollArea className="h-full py-2 lg:pt-4">
             {sidebarContent}
           </ScrollArea>
         </div>

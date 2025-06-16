@@ -306,7 +306,7 @@ export default function MyAustinPage() {
           <p className="text-lg text-gray-600 mb-8">
             {lang === "en"
               ? "Join thousands of students who are already using Austin's powerful homework system to achieve better results."
-              : "加入数千名已经在使用澳升强大作业系统取得更好成绩的学生队伍。"}
+              : "已有数千名学生正在使用澳升高效的作业系统，提升学习成绩 —— 欢迎你也加入我们的行列！"}
           </p>
           <Button size="lg" asChild>
             <a

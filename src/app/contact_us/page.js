@@ -1,6 +1,6 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { LangContext } from "@/app/layout";
 import { contactUsContent } from "./contact_us_content";
 import Image from "next/image";
@@ -13,120 +13,203 @@ export default function ContactPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = contactUsContent[lang];
 
+  useEffect(() => {
+    // 处理URL中的锚点，让目标元素在屏幕中间显示
+    const handleAnchorScroll = () => {
+      const hash = window.location.hash;
+      if (hash) {
+        // 延迟执行，确保页面渲染完成
+        setTimeout(() => {
+          const targetElement = document.querySelector(hash);
+          if (targetElement) {
+            // 计算让元素在屏幕中间的位置
+            const elementTop = targetElement.offsetTop;
+            const elementHeight = targetElement.offsetHeight;
+            const windowHeight = window.innerHeight;
+            
+            // 计算滚动位置：元素顶部 - (窗口高度 - 元素高度) / 2
+            const scrollPosition = elementTop - (windowHeight - elementHeight) / 2;
+            
+            // 平滑滚动到计算的位置
+            window.scrollTo({
+              top: Math.max(0, scrollPosition), // 确保不会滚动到负数位置
+              behavior: 'smooth'
+            });
+          }
+        }, 100); // 延迟100ms执行
+      }
+    };
+
+    // 页面加载时检查锚点
+    handleAnchorScroll();
+    
+    // 监听hashchange事件（当用户点击锚点链接时）
+    window.addEventListener('hashchange', handleAnchorScroll);
+    
+    // 监听页面内锚点点击事件
+    const handleAnchorClick = (e) => {
+      const target = e.target.closest('a');
+      if (target && target.getAttribute('href')?.startsWith('#')) {
+        e.preventDefault();
+        const hash = target.getAttribute('href');
+        
+        // 更新URL但不触发默认滚动
+        window.history.pushState(null, null, hash);
+        
+        // 使用我们的自定义滚动逻辑
+        setTimeout(() => {
+          const targetElement = document.querySelector(hash);
+          if (targetElement) {
+            const elementTop = targetElement.offsetTop;
+            const elementHeight = targetElement.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollPosition = elementTop - (windowHeight - elementHeight) / 2;
+            
+            window.scrollTo({
+              top: Math.max(0, scrollPosition),
+              behavior: 'smooth'
+            });
+          }
+        }, 50);
+      }
+    };
+    
+    // 监听整个文档的点击事件
+    document.addEventListener('click', handleAnchorClick);
+    
+    return () => {
+      window.removeEventListener('hashchange', handleAnchorScroll);
+      document.removeEventListener('click', handleAnchorClick);
+    };
+  }, []);
+
   return (
     <div className="rounded-xl p-8 ">
       <ConsultationTab />
 
-      {/* 校区信息卡片部分 */}
-      <section className="mt-16 space-y-12">
+      {/* 校区信息卡片部分 - 添加锚点 */}
+      <section id="campuses" className="mt-16 space-y-12">
         <h2 className="text-4xl font-bold lg:text-5xl md:text-4xl sm:text-3xl">
           {t.contactUsTitle}
         </h2>
 
         <div className="grid grid-cols-1 gap-8">
-          {contactUsContent[lang].contactUs.map((campus, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-visible relative"
-            >
-              <div className="flex flex-col md:flex-row gap-8">
-                {/* QR Code - 响应式定位 */}
-                <div className="md:w-[200px] lg:w-[240px] relative md:-left-16 lg:-left-20 -top-8 md:-top-0 mx-auto md:mx-0">
-                  <Image
-                    src={campus.QRCode}
-                    width={600}
-                    height={600}
-                    alt={`QR Code - ${campus.title}`}
-                    className="rounded-lg shadow-xl w-[140px] md:w-full"
-                  />
-                </div>
+          {contactUsContent[lang].contactUs.map((campus, index) => {
+            // 根据校区名称生成对应的锚点ID
+            const getAnchorId = (campusTitle) => {
+              if (campusTitle.includes("Box Hill")) return "box-hill";
+              if (campusTitle.includes("Mount Waverley")) return "mount-waverley";
+              if (campusTitle.includes("CBD")) return "cbd";
+              if (campusTitle.includes("Point Cook")) return "point-cook";
+              if (campusTitle.includes("Adelaide")) return "adelaide";
+              return `campus-${index}`;
+            };
 
-                {/* 内容区域 */}
-                <div className="flex-1 flex flex-col lg:flex-row gap-6 md:gap-8">
-                  {/* 左侧校区信息 - 响应式宽度 */}
-                  <div className="lg:w-1/4 xl:w-1/3 space-y-4">
-                    <h3 className="text-xl lg:text-2xl font-bold">
-                      {campus.title}
-                      <span className="block mt-2 text-sm lg:text-base text-muted-foreground">
-                        {campus.subtitle}
-                      </span>
-                    </h3>
-
-                    <div className="space-y-3 text-sm lg:text-base">
-                      <div className="flex items-start gap-2">
-                        <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                        <span className="break-words">{campus.location}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Mail className="w-4 h-4 flex-shrink-0" />
-                        <span className="break-all">{campus.email}</span>
-                      </div>
-                    </div>
+            return (
+              <div
+                key={index}
+                id={getAnchorId(campus.title)} // 为每个校区添加锚点
+                className="bg-white rounded-xl shadow-lg p-6 md:p-8 overflow-visible relative transition-all duration-300 hover:shadow-xl"
+              >
+                <div className="flex flex-col md:flex-row gap-8">
+                  {/* QR Code - 响应式定位 */}
+                  <div className="md:w-[200px] lg:w-[240px] relative md:-left-16 lg:-left-20 -top-8 md:-top-0 mx-auto md:mx-0">
+                    <Image
+                      src={campus.QRCode}
+                      width={600}
+                      height={600}
+                      alt={`QR Code - ${campus.title}`}
+                      className="rounded-lg shadow-xl w-[140px] md:w-full"
+                    />
                   </div>
 
-                  {/* 右侧联系方式 - 响应式网格 */}
-                  <div className="lg:w-3/4 xl:w-2/3 overflow-x-auto pb-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 min-w-[300px] gap-6 md:gap-8">
-                      {campus.about.map((grade, gradeIndex) => (
-                        <div key={gradeIndex}>
-                          <h4 className="text-base lg:text-lg font-semibold mb-3">
-                            {grade.title}
-                          </h4>
-                          <div className="space-y-2 text-sm lg:text-base">
-                            {grade.phone.map((num, i) => (
-                              <div key={i} className="flex items-center gap-2">
-                                <Phone className="w-4 h-4" />
-                                <span>{num}</span>
+                  {/* 内容区域 */}
+                  <div className="flex-1 flex flex-col lg:flex-row gap-6 md:gap-8">
+                    {/* 左侧校区信息 - 响应式宽度 */}
+                    <div className="lg:w-1/4 xl:w-1/3 space-y-4">
+                      <h3 className="text-xl lg:text-2xl font-bold">
+                        {campus.title}
+                        <span className="block mt-2 text-sm lg:text-base text-muted-foreground">
+                          {campus.subtitle}
+                        </span>
+                      </h3>
+
+                      <div className="space-y-3 text-sm lg:text-base">
+                        <div className="flex items-start gap-2">
+                          <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
+                          <span className="break-words">{campus.location}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Mail className="w-4 h-4 flex-shrink-0" />
+                          <span className="break-all">{campus.email}</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* 右侧联系方式 - 响应式网格 */}
+                    <div className="lg:w-3/4 xl:w-2/3 overflow-x-auto pb-4">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 min-w-[300px] gap-6 md:gap-8">
+                        {campus.about.map((grade, gradeIndex) => (
+                          <div key={gradeIndex}>
+                            <h4 className="text-base lg:text-lg font-semibold mb-3">
+                              {grade.title}
+                            </h4>
+                            <div className="space-y-2 text-sm lg:text-base">
+                              {grade.phone.map((num, i) => (
+                                <div key={i} className="flex items-center gap-2">
+                                  <Phone className="w-4 h-4" />
+                                  <span>{num}</span>
+                                </div>
+                              ))}
+                              <div className="flex items-center gap-2">
+                                {grade.we_chat && (
+                                  <>
+                                    <Image
+                                      src="/contact_us/wechat.svg"
+                                      alt="WeChat"
+                                      width={16}
+                                      height={16}
+                                    />
+                                    <span>{grade.we_chat}</span>
+                                  </>
+                                )}
                               </div>
-                            ))}
-                            <div className="flex items-center gap-2">
-                              {grade.we_chat && (
-                                <>
-                                  <Image
-                                    src="/contact_us/wechat.svg"
-                                    alt="WeChat"
-                                    width={16}
-                                    height={16}
-                                  />
-                                  <span>{grade.we_chat}</span>
-                                </>
-                              )}
-                            </div>
-                            <div className="flex items-center gap-2">
-                              {grade.whatsapp && (
-                                <>
-                                  <Image
-                                    src="/contact_us/whatsapp.svg"
-                                    alt="WhatsApp"
-                                    width={16}
-                                    height={16}
-                                  />
-                                  <span>{grade.whatsapp}</span>
-                                </>
-                              )}
-                            </div>
-                            <div className="flex items-center gap-2">
-                              {grade.discord && (
-                                <>
-                                  <Image
-                                    src="/contact_us/discord.svg"
-                                    alt="Discord"
-                                    width={16}
-                                    height={16}
-                                  />
-                                  <span>{grade.discord}</span>
-                                </>
-                              )}
+                              <div className="flex items-center gap-2">
+                                {grade.whatsapp && (
+                                  <>
+                                    <Image
+                                      src="/contact_us/whatsapp.svg"
+                                      alt="WhatsApp"
+                                      width={16}
+                                      height={16}
+                                    />
+                                    <span>{grade.whatsapp}</span>
+                                  </>
+                                )}
+                              </div>
+                              <div className="flex items-center gap-2">
+                                {grade.discord && (
+                                  <>
+                                    <Image
+                                      src="/contact_us/discord.svg"
+                                      alt="Discord"
+                                      width={16}
+                                      height={16}
+                                    />
+                                    <span>{grade.discord}</span>
+                                  </>
+                                )}
+                              </div>
                             </div>
                           </div>
-                        </div>
-                      ))}
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
         <div className="flex justify-center my-32 space-x-4">
           <h2 className="text-4xl font-bold">{t.OtherMethods}</h2>

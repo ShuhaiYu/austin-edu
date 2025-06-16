@@ -80,7 +80,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* 校区 */}
+        {/* 校区 - 跳转到联系我们页面的对应校区锚点 */}
         <div>
           <h4 className="text-xl font-semibold mb-3">
             {locale.campuses.heading}
@@ -89,7 +89,7 @@ export default function Footer() {
             {locale.campuses.items.map((campus, index) => (
               <li key={index}>
                 <Link 
-                  href={`/about_us#${campus.anchor}`} 
+                  href={`/contact_us#${campus.anchor}`} 
                   className="hover:underline transition-colors duration-200"
                 >
                   {campus.name}

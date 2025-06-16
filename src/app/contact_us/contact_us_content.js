@@ -276,7 +276,7 @@ export const contactUsContent = {
         ],
       },
       {
-        title: "南澳 阿德莱德 校区",
+        title: "南澳 Adelaide 校区",
         location: "17 O'Brien st, Adelaide 5000, SA",
         email: "saadmin@austinedu.com.au",
         QRCode: "https://placehold.co/400x400",
