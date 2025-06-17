@@ -348,10 +348,10 @@ export default function MyAustinPage() {
               ? "Ready to Transform Your Learning?"
               : "准备好改变你的学习方式了吗？"}
           </h3>
-          <p className="text-lg text-gray-600 mb-8">
+          <p className="text-lg text-gray-600 mb-8 whitespace-pre-line">
             {lang === "en"
               ? "Join thousands of students who are already using Austin's powerful homework system to achieve better results."
-              : "已有数千名学生正在使用澳升高效的作业系统，提升学习成绩 —— 欢迎你也加入我们的行列！"}
+              : "已有数千名学生正在使用澳升高效的作业系统，提升学习成绩 \n—— 欢迎你也加入我们的行列！"}
           </p>
           <Button size="lg" asChild>
             <a

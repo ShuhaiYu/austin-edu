@@ -22,7 +22,7 @@ const content = {
       items: [
         { name: "Courses", href: "/courses" },
         { name: "Trial Lesson", href: "/resource_hub?tab=trial" },
-        { name: "FAQ", href: "/resource_hub?tab=consultation" },
+        { name: "FAQ", href: "/resource_hub?tab=faq" },
       ],
     },
     contact: {
