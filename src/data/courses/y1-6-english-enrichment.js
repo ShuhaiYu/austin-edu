@@ -137,7 +137,7 @@ const courseData = {
           title: "year 1",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -152,7 +152,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -167,7 +167,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -182,7 +182,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -202,7 +202,7 @@ const courseData = {
           title: "year 2",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -217,7 +217,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -232,7 +232,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -247,7 +247,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -267,7 +267,7 @@ const courseData = {
           title: "year 3",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -282,7 +282,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -297,7 +297,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -312,7 +312,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -332,7 +332,7 @@ const courseData = {
           title: "year 4",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -347,7 +347,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -362,7 +362,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -377,7 +377,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -397,7 +397,7 @@ const courseData = {
           title: "year 5",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -412,7 +412,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -427,7 +427,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -442,7 +442,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -462,7 +462,7 @@ const courseData = {
           title: "year 6",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -477,7 +477,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -492,7 +492,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -507,7 +507,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -649,7 +649,7 @@ const courseData = {
           title: "year 1",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -664,7 +664,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -679,7 +679,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -694,7 +694,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -714,7 +714,7 @@ const courseData = {
           title: "year 2",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -729,7 +729,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -744,7 +744,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -759,7 +759,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -779,7 +779,7 @@ const courseData = {
           title: "year 3",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -794,7 +794,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -809,7 +809,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -824,7 +824,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -844,7 +844,7 @@ const courseData = {
           title: "year 4",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -859,7 +859,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -874,7 +874,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -889,7 +889,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -909,7 +909,7 @@ const courseData = {
           title: "year 5",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -924,7 +924,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -939,7 +939,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -954,7 +954,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -974,7 +974,7 @@ const courseData = {
           title: "year 6",
           modules: [
             {
-              title: "Introduction to Genres",
+              title: "Term 1",
               subtitle: "Module 1",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -989,7 +989,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 2",
               subtitle: "Module 2",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -1004,7 +1004,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 3",
               subtitle: "Module 3",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
@@ -1019,7 +1019,7 @@ const courseData = {
               ],
             },
             {
-              title: "Introduction to Genres",
+              title: "Term 4",
               subtitle: "Module 4",
               lessons: [
                 "lintroducing the Graphic Novel (Nimon ",
