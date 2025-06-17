@@ -70,10 +70,8 @@ const courseData = {
         "Trinity Grammar",
         "Caulfield Grammar",
         "Yarra Valley Grammar",
-        "Wesley College",
         "Korowa Anglican Girls' School",
         "Methodist Ladies' College",
-        "Kingswood College",
         "Lauriston Girls' School",
         "Ruyton Girls' School",
         "Melbourne High School",
@@ -94,7 +92,7 @@ const courseData = {
         "Vermont Secondary College",
       ],
       extraDescription:
-        "In the past years, numerous top-ranking students who selected Austin Education for their learning have achieved Rank 1, 2, 3, or Top 5% in their prestigious and high-performing day schools, including:",
+        "In the past years, numerous top-ranking students who selected Austin Education for their learning have achieved Rank 1, 2, 3, or Top 5% in their prestigious and high-performing day schools.",
     },
     coreFeatures: {
       sections: [
@@ -433,10 +431,8 @@ const courseData = {
         "Trinity Grammar",
         "Caulfield Grammar",
         "Yarra Valley Grammar",
-        "Wesley College",
         "Korowa Anglican Girls' School",
         "Methodist Ladies' College",
-        "Kingswood College",
         "Lauriston Girls' School",
         "Ruyton Girls' School",
         "Melbourne High School",
@@ -457,7 +453,7 @@ const courseData = {
         "Vermont Secondary College",
       ],
       extraDescription:
-        "历年许多在Austin学习的学生在就读的日校中名列前茅，拿到年级第1、第2、第3，或进入年级前5%，这些日校包括：",
+        "历年许多在Austin学习的学生在就读的日校中名列前茅，拿到年级第1、第2、第3，或进入年级前5%",
     },
     coreFeatures: {
       sections: [

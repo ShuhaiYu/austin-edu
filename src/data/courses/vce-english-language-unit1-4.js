@@ -70,8 +70,10 @@ const courseData = {
         "Our high-standard essay refinement process includes five core steps, ensuring that every student can achieve their best performance in SACs and exams.",
       ],
       images: [
-        "https://placehold.co/400x600?text=Image+1",
-        "https://placehold.co/400x1000?text=Image+2",
+        "/courses/single/writing/800x300.jpg",
+        "/courses/single/writing/竖图.jpg",
+        "/courses/single/writing/精改展示/EAL作文精改-全英1.png",
+        "/courses/single/writing/精改展示/EAL作文精改-全英2.png",
       ],
       steps: [
         {
@@ -80,7 +82,6 @@ const courseData = {
           content: `When our teachers receive a student’s essay, the first step is to analyse its overall quality.Are the arguments convincing? Is the writing clear and concise? Does it address the topic effectively?
           These are the key aspects we carefully evaluate.
           This thorough initial assessment lays the foundation for more detailed revision feedback.`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 2,
@@ -88,7 +89,6 @@ const courseData = {
           content: `After evaluating the overall quality of the essay, Austin teachers proceed with a second round of adjustments focused on refining language expression.
           We elevate simple phrases to more sophisticated and appropriate alternatives, correct grammar mistakes, streamline lengthy expressions, and add content where necessary to strengthen key points.
           These changes ensure that any obvious issues in the article are addressed, making the writing more impactful and logical.`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 3,
@@ -96,22 +96,30 @@ const courseData = {
           content: `Once the surface-level issues are addressed, Austin teachers dive deeper into the core of the essay.
           In this step, teachers engage in in-depth discussions with students, guiding them to critically examine their arguments. This process helps students refine their viewpoints, making them more distinct and profound, while also strengthening the persuasiveness of their points.
           Through this first exchange of ideas between teacher and student, the essay’s evidence becomes more compelling, and the overall structure becomes more logical.`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 4,
           title: "Structure Adjustment",
           content: `After refining the arguments and enhancing the depth of viewpoints, Austin teachers help students adjust the structure of their essays.
           A well-written essay requires a clear and logical structure that highlights its depth and persuasiveness. Austin teachers work with students to reorganise paragraph order, ensuring that each section is well-connected and flows smoothly.`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
         {
           step: 5,
           title: "Exemplary Paragraphs",
           content: `To help students better understand the improvements, Austin teachers write a few optimised sample paragraphs. By comparing them, students can clearly see the differences between their work and high-scoring essays, while also identifying areas for improvement in their original paragraphs.
           As always, Austin focuses not just on making quick fixes, but on enhancing students’ critical thinking and writing techniques at the root level.`,
-          images: ["https://placehold.co/400x600?text=Image+1"],
         },
+      ],
+       carousel: [
+        "/courses/single/writing/轮播/1.jpg",
+        "/courses/single/writing/轮播/2.jpg",
+        "/courses/single/writing/轮播/3.jpg",
+        "/courses/single/writing/轮播/4.jpg",
+        "/courses/single/writing/轮播/5.jpg",
+        "/courses/single/writing/轮播/6.png",
+        "/courses/single/writing/轮播/7.png",
+        "/courses/single/writing/轮播/8.png",
+        "/courses/single/writing/轮播/9.png",
       ],
       extraDescription:
         "Every improvement in an Austin student’s English comes from more than just effort. It’s the result of our teachers’ high-standard essay revisions, which lay the groundwork for their progress.",
@@ -171,6 +179,7 @@ const courseData = {
         },
         { icon: "users", title: "Free academic consultation", desc: " " },
       ],
+     
     },
     courseStructure: {
       title: "Course Structure",
@@ -391,9 +400,11 @@ const courseData = {
         "在多数日校，作文批改往往仅提供简单反馈，而澳升坚持深度修改与一对一交流，帮助学生真正理解并提升写作能力。我们不鼓励死记硬背，而是通过系统性的精改流程，培养学生的独立思考与高质量写作能力。",
         "我们的高标准作文精改流程包括五大核心步骤，确保每位学生都能在SAC和考试中达到最佳表现。符合澳升高标准的作文精改，背后一共有5个步骤",
       ],
-      images: [
-        "https://placehold.co/400x600?text=Image+1",
-        "https://placehold.co/400x1000?text=Image+2",
+       images: [
+        "/courses/single/writing/800x300.jpg",
+        "/courses/single/writing/竖图.jpg",
+        "/courses/single/writing/精改展示/EAL作文精改-中文1.png",
+        "/courses/single/writing/精改展示/EAL作文精改-中文2.png",
       ],
       steps: [
         {
@@ -436,6 +447,17 @@ const courseData = {
           还是那句话，澳升从不是大包大揽，而是从根源上，提升学生的思想深度和写作方式`,
           images: ["https://placehold.co/400x600?text=Image+1"],
         },
+      ],
+      carousel: [
+        "/courses/single/writing/轮播/1.jpg",
+        "/courses/single/writing/轮播/2.jpg",
+        "/courses/single/writing/轮播/3.jpg",
+        "/courses/single/writing/轮播/4.jpg",
+        "/courses/single/writing/轮播/5.jpg",
+        "/courses/single/writing/轮播/6.png",
+        "/courses/single/writing/轮播/7.png",
+        "/courses/single/writing/轮播/8.png",
+        "/courses/single/writing/轮播/9.png",
       ],
       extraDescription:
         "每一位澳升同学的英文进步，都不是凭空出现的。正是有了老师们高标准的作文精改，才有了每一位同学进步的基础。",

@@ -638,7 +638,7 @@ export const achievementContent = {
           ],
         },
         block3: {
-          title: "多个日校的中高数Rank 1均是来自澳升，这些日校包括：",
+          title: "多个日校的中高数Rank 1均是来自澳升",
           schools: [
             "Balwyn High",
             "Melbourne Grammar School",

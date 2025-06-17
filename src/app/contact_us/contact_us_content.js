@@ -40,7 +40,7 @@ export const contactUsContent = {
         title: "Box Hill Campus - Melbourne",
         location: "899 Whitehorse Road, Box Hill, VIC 3128",
         email: "info@autinedu.com.au",
-        QRCode: "/contact_us/QRcode-box-hill.png",
+        QRCode: "/contact_us/QR-BH.png",
         about: [
           {
             title: "Y1-6",
@@ -69,7 +69,7 @@ export const contactUsContent = {
         title: "Mount Waverley VCE Campus - Melbourne",
         location: "8 The Highway,Mount Waverley,VIC 3149",
         email: "mt.admin@austinedu.com.au",
-        QRCode: "https://placehold.co/400x400",
+        QRCode: "/contact_us/QR-MWVCE.png",
         about: [
           {
             title: "Y10-12",
@@ -84,7 +84,7 @@ export const contactUsContent = {
         title: "Mount Waverley Ausyouth Campus - Melbourne",
         location: "Level 1, 304 Stephensons Road, Mount Waverley",
         email: "mt.admin@austinedu.com.au",
-        QRCode: "https://placehold.co/400x400",
+        QRCode: "/contact_us/QR-MWAusYouth.png",
         about: [
           {
             title: "Y1-9",
@@ -99,7 +99,7 @@ export const contactUsContent = {
         title: "CBD Campus - Melbourne",
         location: "Level 6, 51 Queen Street, Melbourne, VIC 3000",
         email: "city.admin@austinedu.com.au",
-        QRCode: "https://placehold.co/400x400",
+        QRCode: "/contact_us/QR-City.png",
         about: [
           {
             title: "Y1-12",
@@ -114,7 +114,7 @@ export const contactUsContent = {
         title: "Point Cook Campus - Melbourne",
         location: "29C/428 Old Geelong Road, Hoppers Crossing, VIC 3029",
         email: "pointcook@austinedu.com.au",
-        QRCode: "https://placehold.co/400x400",
+        QRCode: "/contact_us/QR-PC.png",
         about: [
           {
             title: "Y1-12",
@@ -127,7 +127,7 @@ export const contactUsContent = {
         title: "South Australia Campus - Adelaide",
         location: "17 O'Brien st, Adelaide 5000, SA",
         email: "saadmin@austinedu.com.au",
-        QRCode: "https://placehold.co/400x400",
+        QRCode: "/contact_us/QR-ADL.png",
         about: [
           {
             title: "Y1-12",
@@ -142,7 +142,7 @@ export const contactUsContent = {
         title: "Ausyouth Music - Melbourne",
         location: "899 Whitehorse Road, Box Hill, VIC 3128",
         email: "ninadu@ausyouthmusic.com",
-        QRCode: "https://placehold.co/400x400",
+        QRCode: "/contact_us/QR-Music.png",
         about: [
           {
             phone: ["0438 799 516"],
@@ -192,7 +192,7 @@ export const contactUsContent = {
         title: "墨尔本 Box Hill 校区",
         location: "899 Whitehorse Road, Box Hill, VIC 3128",
         email: "info@autinedu.com.au",
-        QRCode: "/contact_us/QRcode-BH.jpg",
+        QRCode: "/contact_us/QR-BH.png",
         about: [
           {
             title: "1-6年级",
@@ -221,7 +221,7 @@ export const contactUsContent = {
         title: "墨尔本 Mount Waverley VCE 校区",
         location: "8 The Highway,Mount Waverley,VIC 3149",
         email: "mt.admin@austinedu.com.au",
-        QRCode: "/contact_us/QRcode-MW-VCE.jpg",
+        QRCode: "/contact_us/QR-MWVCE.png",
         about: [
           {
             title: "10-12年级",
@@ -236,7 +236,7 @@ export const contactUsContent = {
         title: "墨尔本 AusYouth 青少部校区",
         location: "Level 1, 304 Stephensons Road, Mount Waverley",
         email: "mt.admin@austinedu.com.au",
-        QRCode: "/contact_us/QRcode-MW-Ausyouth.jpg",
+        QRCode: "/contact_us/QR-MWAusYouth.png",
         about: [
           {
             title: "1-9年级",
@@ -251,7 +251,7 @@ export const contactUsContent = {
         title: "墨尔本 CBD 校区",
         location: "Level 6, 51 Queen Street, Melbourne, VIC 3000",
         email: "city.admin@austinedu.com.au",
-        QRCode: "/contact_us/QRcode-City.jpg",
+        QRCode: "/contact_us/QR-City.png",
         about: [
           {
             title: "1-12年级",
@@ -266,7 +266,7 @@ export const contactUsContent = {
         title: "墨尔本 Point Cook 校区",
         location: "29C/428 Old Geelong Road, Hoppers Crossing, VIC 3029",
         email: "pointcook@austinedu.com.au",
-        QRCode: "/contact_us/QRcode-PC.jpeg",
+        QRCode: "/contact_us/QR-PC.png",
         about: [
           {
             title: "1-12年级",
@@ -279,7 +279,7 @@ export const contactUsContent = {
         title: "南澳 Adelaide 校区",
         location: "17 O'Brien st, Adelaide 5000, SA",
         email: "saadmin@austinedu.com.au",
-        QRCode: "https://placehold.co/400x400",
+        QRCode: "/contact_us/QR-ADL.png",
         about: [
           {
             title: "1-12年级",
@@ -294,7 +294,7 @@ export const contactUsContent = {
         title: "澳升音乐 - Melbourne",
         location: "899 Whitehorse Road, Box Hill, VIC 3128",
         email: "ninadu@ausyouthmusic.com",
-        QRCode: "/contact_us/QRcode-music.jpeg",
+        QRCode: "/contact_us/QR-Music.png",
         about: [
           {
             phone: ["0438 799 516"],

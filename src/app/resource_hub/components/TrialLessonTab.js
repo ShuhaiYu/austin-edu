@@ -644,11 +644,8 @@ const content = {
     sendButton: "SEND REQUEST",
     selectGrade: "Select Grade",
     selectSubjects: "Select Subject",
-    grades: [
-      "Primary School - Years 1-6",
-      "Secondary School - Years 7-9",
-      "Senior Secondary School - Years 10-12",
-    ],
+        grades: Array.from({ length: 12 }, (_, i) => `Year ${i + 1}`),
+
     contactMethods: ["Phone call", "Message", "Email"],
     // Placeholders
     placeholders: {
@@ -695,7 +692,7 @@ const content = {
     sendButton: "发送请求",
     selectGrade: "选择年级",
     selectSubjects: "选择科目",
-    grades: ["小学 1-6年级", "初中 7-9年级", "高中 10-12年级"],
+    grades: Array.from({ length: 12 }, (_, i) => `Year ${i + 1}`),
     contactMethods: ["电话", "短信", "电子邮件"],
     // Placeholders
     placeholders: {
@@ -780,25 +777,11 @@ export const TrialLessonTab = () => {
   // 根据选择的Grade获取可用的科目
   const availableSubjects = useMemo(() => {
     if (schoolYear.length === 0) return [];
-
-    let gradeRanges = [];
-
-    schoolYear.forEach((grade) => {
-      if (grade.includes("1-6") || grade.includes("Primary")) {
-        gradeRanges.push(...[1, 2, 3, 4, 5, 6]);
-      } else if (grade.includes("7-9") || grade.includes("Secondary")) {
-        gradeRanges.push(...[7, 8, 9]);
-      } else if (grade.includes("10-12") || grade.includes("Senior")) {
-        gradeRanges.push(...[10, 11, 12]);
-      }
-    });
-
-    // 去重
-    gradeRanges = [...new Set(gradeRanges)];
-
-    return COURSE_DATABASE.filter((course) => {
-      return course.grades.some((grade) => gradeRanges.includes(grade));
-    });
+    // map selected Year strings back to numeric grades:
+    const selectedGrades = schoolYear.map((g) => parseInt(g.replace(/[^0-9]/g, '')));
+    return COURSE_DATABASE.filter((course) =>
+      course.grades.some((grade) => selectedGrades.includes(grade))
+    );
   }, [schoolYear]);
 
   // 表单验证

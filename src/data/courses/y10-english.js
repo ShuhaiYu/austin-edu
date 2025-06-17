@@ -101,7 +101,7 @@ const courseData = {
         "Waverley Christian College",
       ],
       extraDescription:
-        "Several top-ranking students from Austin Education have achieved Rank 1, 2, 3, or Top 5% in multiple prestigious day schools, including:",
+        "Several top-ranking students from Austin Education have achieved Rank 1, 2, 3, or Top 5% in multiple prestigious day schools.",
     },
     courseDescription: {
       title: "Course Description",
@@ -484,7 +484,7 @@ const courseData = {
         "Waverley Christian College",
       ],
       extraDescription:
-        "历年许多在Austin学习的学生在就读的日校中名列前茅，拿到年级第1、第2、第3，或进入年级前5%，这些日校包括：",
+        "历年许多在Austin学习的学生在就读的日校中名列前茅，拿到年级第1、第2、第3，或进入年级前5%",
     },
     courseDescription: {
       title: "Course Description",

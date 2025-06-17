@@ -32,6 +32,7 @@ import { AdvancedProgram35 } from "./components/AdvancedProgram35";
 import { AdvancedProgram79 } from "./components/AdvancedProgram79";
 import FAQ from "@/components/FAQ";
 import { achievementFaqItems } from "@/data/faq_content";
+import Slogan from "@/components/Slogan";
 
 export default function Achievements() {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -483,18 +484,12 @@ export default function Achievements() {
             </div>
 
             {/* 标语部分 */}
-            <div className="flex flex-col items-center justify-center my-16 space-y-4">
-              <p className="text-5xl font-light text-muted-foreground whitespace-pre-line">
-                Every Student{" "}
-                <span className="text-primary uppercase font-bold">
-                  MATTERS
-                </span>
-              </p>
-              <p className="text-5xl font-light text-muted-foreground whitespace-pre-line">
-                Every Success{" "}
-                <span className="text-primary uppercase font-bold">COUNTS</span>
-              </p>
-            </div>
+            <Slogan
+              slogans={[
+                { prefix: "Every Student", highlight: "MATTERS" },
+                { prefix: "Every Success", highlight: "COUNTS" },
+              ]}
+            />
 
             {/* 高中科目部分 */}
             <div className="space-y-6">

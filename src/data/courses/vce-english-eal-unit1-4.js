@@ -101,7 +101,7 @@ const courseData = {
         "Waverley Christian College",
       ],
       extraDescription:
-        "Several top-ranking students from Austin Education have achieved Rank 1, 2, 3, or Top 5% in multiple prestigious day schools, including:",
+        "Several top-ranking students from Austin Education have achieved Rank 1, 2, 3, or Top 5% in multiple prestigious day schools.",
     },
     coreFeatures: {
       sections: [

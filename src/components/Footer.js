@@ -52,7 +52,7 @@ const content = {
       items: [
         { name: "课程", href: "/courses" },
         { name: "试课", href: "/resource_hub?tab=trial" },
-        { name: "常见问题", href: "/resource_hub?tab=consultation" },
+        { name: "常见问题", href: "/resource_hub?tab=faq" },
       ],
     },
     contact: {

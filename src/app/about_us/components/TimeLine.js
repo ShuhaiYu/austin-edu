@@ -1,5 +1,6 @@
 "use client";
 
+import Slogan from "@/components/Slogan";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
@@ -81,21 +82,12 @@ const TimelineSection = ({ content }) => {
 
   return (
     <section className="py-16" ref={sectionRef}>
-      <div className="flex flex-col items-center justify-center mb-16 space-y-4">
-        <h2 className="text-2xl md:text-3xl text-center mb-8">{content.title}</h2>
-        <p className="text-3xl md:text-4xl lg:text-5xl font-light text-center whitespace-pre-line">
-          Where{" "}
-          <span className="text-primary uppercase font-bold">
-            DEDICATION
-          </span>
-        </p>
-        <p className="text-3xl md:text-4xl lg:text-5xl font-light text-center whitespace-pre-line">
-          Meets{" "}
-          <span className="text-primary uppercase font-bold">
-            DISTINCTION
-          </span>
-        </p>
-      </div>
+      <Slogan
+        slogans={[
+          { prefix: "Where", highlight: "DEDICATION" },
+          { prefix: "Meets", highlight: "DISTINCTION" }
+        ]}
+      />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative">

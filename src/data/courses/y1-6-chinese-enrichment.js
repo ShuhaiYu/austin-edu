@@ -6,7 +6,7 @@ const courseData = {
       title: "Unique Highlights",
       courseOverview: {
         descriptionAfterFeature: [
-          "Austin’s Y1–6 Chinese Enrichment combines systematic learning with engaging, interactive classrooms, helping children learn through play and play through learning.",
+          "Austin's Y1-6 Chinese Enrichment combines systematic learning with engaging, interactive classrooms, helping children learn through play and play through learning.",
           "The curriculum develops skills in listening, speaking, reading, writing, and cultural understanding through a dynamic blend of Game-Based Learning, Interactive Learning, and Kinesthetic Learning.",
           "Every class is lively and immersive, allowing students to explore the charm of traditional Chinese culture while building genuine interest and confidence in the language!",
         ],
@@ -15,7 +15,7 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title:
-          "Exclusive Highlights | Why Choose Austin’s Y1–6 Chinese Enrichment?",
+          "Why Choose Austin's Y1-6 Chinese Enrichment?",
         image1: "/courses/single/y1-6-chinese-enrichment/1.png",
         image2: "/courses/single/y1-6-chinese-enrichment/2.png",
         content: [
@@ -81,35 +81,7 @@ const courseData = {
         ],
       },
     },
-    customCourseFeature: {
-      title:
-        "Winning Strategies | How to Make Chinese Learning More Effective for Your Child",
-      description: [
-        "Levelled Reading Method: 10–15 minutes of reading daily to develop language intuition and comprehension skills.",
-        "Efficient Writing Practice: From picture-based writing to short passages, helping children build logical thinking and expressive abilities.",
-        "Fun Speaking Activities: Games, debates, and speeches build confidence in speaking Chinese.",
-        " Systematic Revision + Smart Error Tracking: Ensures knowledge is truly mastered and prevents “learn-and-forget” issue",
-      ],
-      images: [
-        "/courses/single/y1-6-chinese-enrichment/8.png",
-        "/courses/single/y1-6-chinese-enrichment/9.png",
-      ],
-    },
-    customCourseFeature: {
-      title:
-        "With Austin Chinese, Your Child’s Language Skills Truly Come Alive!",
-      description: [
-        "Balanced development in listening, speaking, reading, and writing – confidently handle both exams and daily communication.",
-        "A well-structured teaching system that ensures steady progress, building a strong foundation in Chinese from primary school to support future success.",
-        " A perfect blend of fun and practicality – helping your child fall in love with learning Chinese!",
-      ],
-      images: [
-        "/courses/single/y1-6-chinese-enrichment/8.png",
-        "/courses/single/y1-6-chinese-enrichment/9.png",
-      ],
-      extraDescription:
-        " For more effective, systematic, and engaging Chinese learning, choose Austin!",
-    },
+
     resources: {
       packages: [
         {
@@ -901,17 +873,17 @@ const courseData = {
     slug: "y1-6-chinese",
     title: "1-6年级中文培优班",
     courseDescription: {
-      title: "澳升 Y1-6 中文培优班 | 独家亮点",
+      title: "独家亮点",
       courseOverview: {
         descriptionAfterFeature: [
           "澳升 Y1-6 中文培优班以 系统化学习+趣味互动课堂 为核心，让孩子 在玩中学、在学中玩，实现听、说、读、写、文化知识全面提升。",
-          "通过 游戏化学习（Game-Based Learning）+ 互动化学习（Interactive Learning）+ 动觉学习（Kinesthetic Learning），让每一节中文课都充满活力，感受传统文化魅力，激发孩子的学习兴趣！"
+          "通过 游戏化学习（Game-Based Learning）+ 互动化学习（Interactive Learning）+ 动觉学习（Kinesthetic Learning），让每一节中文课都充满活力，感受传统文化魅力，激发孩子的学习兴趣！",
         ],
       },
     },
     whyChooseUs: {
       partA: {
-        title: "独家亮点 | 为什么选择澳升 Y1-6 中文培优班？",
+        title: "为什么选择澳升 Y1-6 中文培优班？",
         image1: "/courses/single/y1-6-chinese-enrichment/1.png",
         image2: "/courses/single/y1-6-chinese-enrichment/2.png",
         content: [
@@ -975,32 +947,7 @@ const courseData = {
         ],
       },
     },
-    customCourseFeature: {
-      title: "制胜技巧 | 如何让孩子的中文学习更高效？",
-      description: [
-        "分级阅读法：每日10-15分钟阅读，培养语感和理解能力",
-        "高效写作训练：从看图写话到小短文，训练思维逻辑和表达",
-        "趣味口语训练：通过游戏、辩论、演讲等方式，让孩子自信说中文",
-        "系统性复习+智能错题整理，确保所学知识真正掌握，避免“学了就忘”",
-      ],
-      images: [
-        "/courses/single/y1-6-chinese-enrichment/8.png",
-        "/courses/single/y1-6-chinese-enrichment/9.png",
-      ],
-    },
-    customCourseFeature: {
-      title: "澳升中文，让孩子的语言能力真正“活”起来！",
-      description: [
-        "听说读写全面发展，轻松应对考试 & 生活交流",
-        "科学教学体系，稳步提升，从小学打好中文基础，为未来腾飞助力！",
-        " 趣味性+实用性结合，让孩子真正爱上中文！",
-      ],
-      images: [
-        "/courses/single/y1-6-chinese-enrichment/8.png",
-        "/courses/single/y1-6-chinese-enrichment/9.png",
-      ],
-      extraDescription: "让中文学习更高效、更系统、更有趣，就来澳升！",
-    },
+
     resources: {
       packages: [
         { icon: "school", title: "每周1.5小时班课", desc: "" },

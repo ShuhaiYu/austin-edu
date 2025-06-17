@@ -43,6 +43,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import BirdDecoration from "@/components/BirdDecoration";
+import { motion } from "framer-motion";
 
 const SCHOOL_IMAGES = [
   { name: "Balwyn High", image: "Balwyn high.png" },
@@ -218,9 +219,29 @@ export default function CoursePageClient({ localizedData }) {
               {course.title}
             </span>
             <div
-              className="mt-8 h-1 w-32 mx-auto rounded-full"
-              style={{ background: "linear-gradient(90deg, #285ea9, #1e4a87)" }}
-            />
+              className="mt-8 h-1 w-48 mx-auto rounded-full relative opacity-70"
+              style={{
+                background: "linear-gradient(90deg, #285ea9, #1e4a87, #285ea9)",
+              }}
+            >
+
+              {/* 星光装饰 */}
+              <span
+                className="absolute top-1/2 -left-6 transform -translate-y-1/2 text-primary text-2xl"
+                style={{ animation: "sparkle 2s ease-in-out infinite" }}
+              >
+                ✦
+              </span>
+              <span
+                className="absolute top-1/2 -right-6 transform -translate-y-1/2 text-primary text-2xl"
+                style={{
+                  animation: "sparkle 2s ease-in-out infinite",
+                  animationDelay: "1s",
+                }}
+              >
+                ✦
+              </span>
+            </div>
           </h1>
 
           {/* 当前年度成就 */}
@@ -561,10 +582,7 @@ export default function CoursePageClient({ localizedData }) {
           course.coreFeatures.map(
             (coreFeature, sectionIndex) =>
               hasContent(coreFeature?.sections) && (
-                <section
-                  key={sectionIndex}
-                  className="my-16 border-b border-gray-200 relative"
-                >
+                <section key={sectionIndex} className="my-16 relative">
                   {/* 只在第一个coreFeature添加装饰 */}
                   {sectionIndex === 0 && (
                     <BirdDecoration
@@ -664,7 +682,7 @@ export default function CoursePageClient({ localizedData }) {
           )
         : // 如果不是数组，按原来的方式渲染
           hasContent(course.coreFeatures?.sections) && (
-            <section className="my-16 border-b border-gray-200 relative">
+            <section className="my-16 relative">
               <BirdDecoration
                 bird="4"
                 position="top-8 left-8 md:-top-12 md:-left-8"
@@ -757,7 +775,7 @@ export default function CoursePageClient({ localizedData }) {
 
       {/* Course Structure Overview Section */}
       {hasContent(course.courseStructureOverview?.overview) && (
-        <section className="mb-16 border-b border-gray-200">
+        <section className="mb-16">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl font-bold text-gray-900 mb-16 text-center">
               {course.courseStructureOverview.title}
@@ -797,7 +815,7 @@ export default function CoursePageClient({ localizedData }) {
 
       {/* Why Choose Us Section - 修改为横向图片布局 */}
       {hasContent(course.whyChooseUs) && (
-        <section className="my-16 border-b border-gray-200">
+        <section className="my-16">
           {/* Part B */}
           {hasContent(course.whyChooseUs.partB?.contents) && (
             <div className="max-w-7xl mx-auto mb-20">
@@ -936,7 +954,7 @@ export default function CoursePageClient({ localizedData }) {
 
                       {/* 标题和内容 */}
                       <div className="bg-white p-8 rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100/50">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-6 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                        <h3 className="text-xl font-semibold mb-6 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
                           {item.title}
                         </h3>
                         <p className="text-gray-700 leading-[2rem]">
