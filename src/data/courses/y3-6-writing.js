@@ -38,8 +38,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "Why Choose Austin’s Unit-Based Writing Program?",
-        image1: "/courses/single/y3-6-writing/1.png",
-        image2: "/courses/single/y3-6-writing/2.png",
+        image1: "/courses/single/y3-6-writing/5.png",
+        image2: "/courses/single/y3-6-writing/6.png",
         content: [
           {
             title:
@@ -76,28 +76,28 @@ const courseData = {
             description:
               "Students are exposed to classic or high-quality writing samples to intuitively grasp the target writing style. \nFor example, when studying modern poetry, students read poems with various stylistic approaches; when learning persuasive writing, they analyse high-scoring essays to understand how arguments are constructed.",
             icon: "book",
-            image: "/courses/single/y3-6-writing/3.png",
+            image: "/courses/single/y3-6-writing/1.png",
           },
           {
             title: "Brainstorming & Discussion",
             description:
               "Through group discussions, students engage in divergent thinking around key issues from the reading material. \nTeachers guide students to express their viewpoints from multiple angles, encouraging independent thinking rather than enforcing a single “correct” answer. \nWhen inappropriate or extreme views arise, teachers provide constructive redirection to help students develop sound values.",
             icon: "repeat",
-            image: "/courses/single/y3-6-writing/4.png",
+            image: "/courses/single/y3-6-writing/2.png",
           },
           {
             title: "Imitative & Creative Writing",
             description:
               "Students create original work based on what they’ve learned, with room for individual expression regardless of ability level. \nBy sharing their writing aloud, they gain insight from others and learn to evaluate and refine their own work.",
             icon: "check",
-            image: "/courses/single/y3-6-writing/5.png",
+            image: "/courses/single/y3-6-writing/3.png",
           },
           {
             title: "Targeted Writing Training",
             description: `Students practise under time constraints aligned with exam standards at each year level, including: \nNAPLAN: 250–300 words in 40 minutes \nSelective School Exams: Two high-difficulty essays in 40 minutes \nScholarship Tests: One high-level essay in 15 minutes \nVCE: Three 800–1000 word essays in 3 hours
               The training focuses not just on writing speed but also on logical structure, paragraph organisation, and refined grammar to improve performance under pressure.`,
             icon: "test",
-            image: "/courses/single/y3-6-writing/6.png",
+            image: "/courses/single/y3-6-writing/4.png",
           },
         ],
       },
@@ -477,8 +477,8 @@ const courseData = {
     whyChooseUs: {
       partA: {
         title: "为什么选择澳升的单元性学习？",
-        image1: "/courses/single/y3-6-writing/1.png",
-        image2: "/courses/single/y3-6-writing/2.png",
+        image1: "/courses/single/y3-6-writing/5.png",
+        image2: "/courses/single/y3-6-writing/6.png",
         content: [
           {
             title: "1. 让孩子真正学会写作，而不仅仅是学技巧",
@@ -512,28 +512,28 @@ const courseData = {
             description:
               "通过经典或高质量的写作示例，让学生直观感受目标写作风格 \n例如，在学习现代诗时，学生会阅读不同风格的诗作；在学习议论文时，会分析高分范文的观点构建方式",
             icon: "book",
-            image: "/courses/single/y3-6-writing/3.png",
+            image: "/courses/single/y3-6-writing/1.png",
           },
           {
             title: "头脑风暴与讨论",
             description:
               "以小组讨论形式，围绕阅读材料中的核心问题进行发散性思考 \n老师引导学生从不同角度表达观点，培养独立思考能力，而非强行灌输标准答案 \n对于不适宜的想法（如负面或偏激观点），老师会进行适当引导，帮助学生建立正确的价值观",
             icon: "repeat",
-            image: "/courses/single/y3-6-writing/4.png",
+            image: "/courses/single/y3-6-writing/2.png",
           },
           {
             title: "仿写与创造",
             description:
               "学生基于所学内容进行自由创作，允许不同能力层次的学生发挥个性化表达 \n通过全班朗读分享作品，从他人写作中获得启发，形成自我审视和改进的能力",
             icon: "check",
-            image: "/courses/single/y3-6-writing/5.png",
+            image: "/courses/single/y3-6-writing/3.png",
           },
           {
             title: "针对性写作训练",
             description: `结合各年级考试要求进行限时训练，如：\nNaplan：40分钟完成一篇250-300字文章 \n精英公校：40分钟内完成两篇高难度文章 \n奖学金考试：15分钟内完成一篇高要求文章 \nVCE：3小时完成3篇800-1000字文章
               ◦	训练重点不仅限于写作速度，还包括逻辑构建、段落结构、语法精修等，提高学生在高压环境下的写作表现`,
             icon: "test",
-            image: "/courses/single/y3-6-writing/6.png",
+            image: "/courses/single/y3-6-writing/4.png",
           },
         ],
       },
