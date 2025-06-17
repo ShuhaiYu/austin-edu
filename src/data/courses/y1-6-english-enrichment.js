@@ -13,7 +13,7 @@ const courseData = {
       {
         title: "Years 1-3 Core Highlights",
         subtitle:
-          "Key Features of Austin Education's Year 1-3 English Enrichment(ENG/EAL):",
+          "Build a Strong Foundation and Accelerate Progress",
         sections: [
           {
             title:
@@ -46,13 +46,12 @@ const courseData = {
             ],
           },
         ],
-        extraDescription:
-          "Years 1-3: Build a Strong Foundation and Accelerate Progress",
+        
       },
       {
         title: "Years 4-6 Core Highlights",
         subtitle:
-          "Key Features of Austin Education's Year 4-6 English Enrichment(ENG/EAL):",
+          "Bridging to Secondary, Building Academic Reading and Expression",
 
         sections: [
           {
@@ -85,8 +84,6 @@ const courseData = {
             ],
           },
         ],
-        extraDescription:
-          "Years 4-6: Bridging to Secondary, Building Academic Reading and Expression",
       },
     ],
     resources: {

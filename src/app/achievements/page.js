@@ -65,7 +65,7 @@ export default function Achievements() {
       {/* 标题区域 */}
       <div className="px-3 py-4 border-b border-gray-200">
         <h3 className="font-bold text-lg text-gray-900 flex items-center gap-2">
-          <BookOpen className="h-5 w-5 text-primary" />
+          <Menu className="h-5 w-5 text-primary" />
           {lang === "en" ? "Quick Navigation" : "快速导航"}
         </h3>
         <p className="text-sm text-gray-500 mt-1">

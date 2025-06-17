@@ -274,7 +274,7 @@ export const CourseContent = () => {
                 {/* 背景装饰图片 */}
                 <div className="absolute -top-[60%] -right-2/3 h-[250%] w-auto aspect-square">
                   <Image
-                    src={`/courses/content/Course-${index + 5}.svg`}
+                    src={`/courses/content/Course-${index + 5}.png`}
                     alt="Course Feature Background"
                     width={200}
                     height={200}
