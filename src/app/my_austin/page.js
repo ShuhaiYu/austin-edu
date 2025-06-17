@@ -17,6 +17,7 @@ import Autoplay from "embla-carousel-autoplay";
 import { myAustinContent } from "./my_austin_content";
 import FAQ from "@/components/FAQ";
 import { homeworkSystemFaqItems } from "@/data/faq_content";
+import BirdDecoration from "@/components/BirdDecoration";
 
 // 轮播图组件
 const ImageSlider = ({ images }) => {
@@ -124,13 +125,18 @@ const FeatureSection = ({ feature, index }) => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="py-16"
+        className="py-16 relative"
       >
-        <div className="text-center mb-8">
-          {/* <p className="text-sm text-gray-500 mb-2">{subtitle}</p> */}
+        {/* 为center布局添加装饰鸟类 */}
+        <BirdDecoration 
+          bird="2" 
+          position="top-0 right-0 md:top-4 md:right-12" 
+        />
+        
+        <div className="text-center mb-8 relative z-10">
           <h3 className="text-3xl font-bold mb-12">{title}</h3>
         </div>
-        <div className="max-w-4xl mx-auto mb-8">
+        <div className="max-w-4xl mx-auto mb-8 relative z-10">
           <div className="relative rounded-lg overflow-hidden">
             <Image
               src={image}
@@ -142,7 +148,7 @@ const FeatureSection = ({ feature, index }) => {
             />
           </div>
         </div>
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-4xl mx-auto text-center relative z-10">
           <p className="text-gray-600 leading-relaxed whitespace-pre-line">
             {desc}
           </p>
@@ -161,10 +167,30 @@ const FeatureSection = ({ feature, index }) => {
       viewport={{ once: true }}
       className={`py-16 flex flex-col ${
         isLeft ? "lg:flex-row" : "lg:flex-row-reverse"
-      } gap-12 items-center`}
+      } gap-12 items-center relative`}
     >
+      {/* 为每个feature section添加不同的装饰鸟类 */}
+      {index === 0 && (
+        <BirdDecoration 
+          bird="4" 
+          position="top-4 left-4 md:top-8 md:left-8" 
+        />
+      )}
+      {index === 1 && (
+        <BirdDecoration 
+          bird="5" 
+          position="top-4 right-4 md:top-8 md:right-8" 
+        />
+      )}
+      {index === 2 && (
+        <BirdDecoration 
+          bird="6" 
+          position="bottom-4 left-4 md:bottom-8 md:left-8" 
+        />
+      )}
+
       {/* 图片部分 */}
-      <div className="lg:w-1/2">
+      <div className="lg:w-1/2 relative z-10">
         {images ? (
           // 多张图片的情况 - 纵向展示
           <div className="space-y-4">
@@ -198,9 +224,8 @@ const FeatureSection = ({ feature, index }) => {
       </div>
 
       {/* 文字部分 */}
-      <div className="lg:w-1/2 space-y-6">
+      <div className="lg:w-1/2 space-y-6 relative z-10">
         <div>
-          {/* <p className="text-sm text-gray-500 mb-2">{subtitle}</p> */}
           <h3 className="text-3xl font-bold mb-12">{title}</h3>
           <p className="text-gray-600 leading-relaxed whitespace-pre-line">
             {desc}
@@ -228,15 +253,25 @@ export default function MyAustinPage() {
   const content = myAustinContent[lang];
 
   return (
-    <main className="container mx-auto px-4">
+    <main className="container mx-auto px-4 relative overflow-hidden">
       {/* Hero Section */}
       <motion.section
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="py-20 text-center"
+        className="py-20 text-center relative"
       >
-        <div className="max-w-4xl mx-auto">
+        {/* Hero区域装饰鸟类 */}
+        <BirdDecoration 
+          bird="1" 
+          position="top-8 right-8 md:top-16 md:right-16" 
+        />
+        <BirdDecoration 
+          bird="3" 
+          position="top-16 left-8 md:top-20 md:left-16" 
+        />
+        
+        <div className="max-w-4xl mx-auto relative z-10">
           <h1 className="text-4xl md:text-5xl font-bold mb-12">
             {content.hero.title}
           </h1>
@@ -262,9 +297,9 @@ export default function MyAustinPage() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="mt-8 mb-4 text-center"
+        className="mt-8 mb-4 text-center relative"
       >
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-4xl mx-auto relative z-10">
           <p className="text-lg text-gray-600 leading-relaxed">
             {content.intro.desc}
           </p>
@@ -295,9 +330,19 @@ export default function MyAustinPage() {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="py-20 text-center"
+        className="py-20 text-center relative"
       >
-        <div className="max-w-2xl mx-auto">
+        {/* 底部区域装饰鸟类 */}
+        <BirdDecoration 
+          bird="2" 
+          position="top-4 right-8 md:top-8 md:right-16" 
+        />
+        <BirdDecoration 
+          bird="4" 
+          position="bottom-4 left-8 md:bottom-8 md:left-16" 
+        />
+        
+        <div className="max-w-2xl mx-auto relative z-10">
           <h3 className="text-3xl font-bold mb-6">
             {lang === "en"
               ? "Ready to Transform Your Learning?"
@@ -320,6 +365,7 @@ export default function MyAustinPage() {
         </div>
       </motion.section>
 
+      {/* FAQ部分 */}
       <FAQ customFaqItems={homeworkSystemFaqItems}/>
     </main>
   );

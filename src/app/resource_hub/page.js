@@ -6,19 +6,19 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { TrialLessonTab } from "./components/TrialLessonTab";
 import { WebinarTab } from "./components/WebinarTab";
 import { BlogTab } from "./components/BlogTab";
-import { ConsultationTab } from "./components/ConsultationTab";
+import { FAQTab } from "./components/FAQTab";
 import { ATARCalculatorTab } from "./components/ATARCalculatorTab";
 
 // 将使用 useSearchParams 的逻辑分离到单独的组件中
 function ResourceHubContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const [activeTab, setActiveTab] = useState("consultation");
+  const [activeTab, setActiveTab] = useState("trial");
 
   // 从 URL 参数获取标签
   useEffect(() => {
     const tabParam = searchParams.get('tab');
-    if (tabParam && ['consultation', 'trial', 'webinar', 'atar', 'blogs'].includes(tabParam)) {
+    if (tabParam && ['trial', 'webinar', 'faq', 'atar', 'blogs'].includes(tabParam)) {
       setActiveTab(tabParam);
     }
   }, [searchParams]);
@@ -39,12 +39,6 @@ function ResourceHubContent() {
           {/* Tab导航 */}
           <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full h-auto rounded-b-none gap-2 bg-background items-end">
             <TabsTrigger
-              value="consultation"
-              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
-            >
-              Free Consultation
-            </TabsTrigger>
-            <TabsTrigger
               value="trial"
               className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
             >
@@ -55,6 +49,12 @@ function ResourceHubContent() {
               className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
             >
               Free Webinar
+            </TabsTrigger>
+            <TabsTrigger
+              value="faq"
+              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+            >
+              FAQ
             </TabsTrigger>
             <TabsTrigger
               value="atar"
@@ -71,11 +71,6 @@ function ResourceHubContent() {
           </TabsList>
 
           {/* 各Tab内容 */}
-          {/* 免费咨询 修改为整体FAQ */}
-          <TabsContent value="consultation">
-            <ConsultationTab />
-          </TabsContent>
-
           {/* 试听课预约 */}
           <TabsContent value="trial">
             <TrialLessonTab />
@@ -84,6 +79,11 @@ function ResourceHubContent() {
           {/* 在线研讨会 */}
           <TabsContent value="webinar">
             <WebinarTab />
+          </TabsContent>
+
+          {/* FAQ */}
+          <TabsContent value="faq">
+            <FAQTab />
           </TabsContent>
 
           {/* ATAR计算器 */}

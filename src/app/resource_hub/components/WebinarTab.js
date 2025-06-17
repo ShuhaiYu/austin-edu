@@ -1,3 +1,4 @@
+// app/resource-hub/components/WebinarTab.js
 "use client";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -9,7 +10,7 @@ const content = {
   en: {
     title: "Please leave your details to receive the latest updates on our free Webinar",
     description:
-      "Before you officially start the trial class, we will provide you with a free consultation based on the information you provide, helping you find the most suitable class for your trial.",
+      "Join our expert-led webinars for valuable insights on academic planning and school selection. Register now to secure your spot!",
     subscriptionTitle:
       "1. Subscription Information (Please fill in either one of these two fields)",
     parentInfo: "Parent / Guardian Information",
@@ -19,7 +20,11 @@ const content = {
     phone: "Phone",
     schoolYear: "2. Current School Year / Grade*",
     selectGrade: "Select Grade",
-    grades: ["Preschool", "Elementary School", "Middle School", "High School"],
+    grades: [
+      "Primary School - Years 1-6",
+      "Secondary School - Years 7-9", 
+      "Senior Secondary School - Years 10-12"
+    ],
     webinarTitle: "3. Which Webinar Are You Interested in?*",
     webinars: {
       "Year 1-9": [
@@ -41,7 +46,7 @@ const content = {
   zh: {
     title: "免费在线研讨会注册",
     description:
-      "参加我们专家主持的在线研讨会，获取学业规划和学校选择的宝贵建议。",
+      "参加我们专家主持的在线研讨会，获取学业规划和学校选择的宝贵建议。现在注册，确保您的位置！",
     subscriptionTitle: "1. 注册信息（请填写以下任意一项）",
     parentInfo: "家长/监护人信息",
     studentInfo: "学生信息",
@@ -49,7 +54,11 @@ const content = {
     email: "电子邮箱",
     phone: "联系电话",
     schoolYear: "2. 当前年级*",
-    grades: ["学前班", "小学", "初中", "高中"],
+    grades: [
+      "小学 1-6年级",
+      "初中 7-9年级", 
+      "高中 10-12年级"
+    ],
     selectGrade: "请选择年级",
     webinarTitle: "3. 您感兴趣的研讨会*",
     webinars: {
@@ -74,6 +83,32 @@ export const WebinarTab = () => {
   const [selectedWebinars, setSelectedWebinars] = useState([]);
   const [selectedLanguage, setSelectedLanguage] = useState("");
 
+  // 处理表单提交
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // 收集表单数据
+    const formData = new FormData(e.target);
+    const data = {
+      parentName: formData.get('parentName'),
+      parentEmail: formData.get('parentEmail'),
+      parentPhone: formData.get('parentPhone'),
+      studentName: formData.get('studentName'),
+      studentEmail: formData.get('studentEmail'),
+      studentPhone: formData.get('studentPhone'),
+      schoolYear: schoolYear.join(', '),
+      webinars: selectedWebinars.join(', '),
+      language: selectedLanguage,
+      timestamp: new Date().toISOString()
+    };
+
+    // 这里应该发送到 rachelle@austinedu.com.au
+    console.log('Webinar registration sent to rachelle@austinedu.com.au:', data);
+    
+    // 显示成功消息
+    alert('Registration successful! We will send you webinar details soon.');
+  };
+
   return (
     <div className="bg-white rounded-xl p-8 shadow-lg">
       <div className="flex gap-8">
@@ -85,7 +120,7 @@ export const WebinarTab = () => {
 
         {/* Right Form Section */}
         <div className="w-2/3 pl-8">
-          <form className="space-y-8">
+          <form className="space-y-8" onSubmit={handleSubmit}>
             {/* Subscription Information */}
             <div className="space-y-6">
               <h3 className="font-semibold">{t.subscriptionTitle}</h3>
@@ -97,6 +132,7 @@ export const WebinarTab = () => {
                   <div className="flex items-center gap-4">
                     <label className="w-28 text-sm">{t.fullName}</label>
                     <Input
+                      name="parentName"
                       placeholder="Tony Nguyen"
                       className="rounded-[2rem] border border-gray-200 p-6"
                     />
@@ -104,6 +140,7 @@ export const WebinarTab = () => {
                   <div className="flex items-center gap-4">
                     <label className="w-28 text-sm">{t.email}</label>
                     <Input
+                      name="parentEmail"
                       type="email"
                       placeholder="tony@example.com"
                       className="rounded-[2rem] border border-gray-200 p-6"
@@ -112,6 +149,7 @@ export const WebinarTab = () => {
                   <div className="flex items-center gap-4">
                     <label className="w-28 text-sm">{t.phone}</label>
                     <Input
+                      name="parentPhone"
                       type="tel"
                       placeholder="(342) 3934 3445"
                       className="rounded-[2rem] border border-gray-200 p-6"
@@ -127,6 +165,7 @@ export const WebinarTab = () => {
                   <div className="flex items-center gap-4">
                     <label className="w-28 text-sm">{t.fullName}</label>
                     <Input
+                      name="studentName"
                       placeholder="Tony Nguyen"
                       className="rounded-[2rem] border border-gray-200 p-6"
                     />
@@ -134,6 +173,7 @@ export const WebinarTab = () => {
                   <div className="flex items-center gap-4">
                     <label className="w-28 text-sm">{t.email}</label>
                     <Input
+                      name="studentEmail"
                       type="email"
                       placeholder="tony@example.com"
                       className="rounded-[2rem] border border-gray-200 p-6"
@@ -142,6 +182,7 @@ export const WebinarTab = () => {
                   <div className="flex items-center gap-4">
                     <label className="w-28 text-sm">{t.phone}</label>
                     <Input
+                      name="studentPhone"
                       type="tel"
                       placeholder="(342) 3934 3445"
                       className="rounded-[2rem] border border-gray-200 p-6"
@@ -188,6 +229,7 @@ export const WebinarTab = () => {
                           <Input
                             type="radio"
                             name="webinar"
+                            value={webinar}
                             className="w-4 h-4 shrink-0"
                             onChange={() => setSelectedWebinars([webinar])}
                           />
@@ -212,6 +254,7 @@ export const WebinarTab = () => {
                     <Input
                       type="radio"
                       name="language"
+                      value={language}
                       className="w-4 h-4 shrink-0"
                       checked={selectedLanguage === language}
                       onChange={() => setSelectedLanguage(language)}
@@ -222,7 +265,10 @@ export const WebinarTab = () => {
               </div>
             </div>
 
-            <Button className="bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold !mt-10 py-6 text-lg uppercase">
+            <Button 
+              type="submit"
+              className="bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold !mt-10 py-6 text-lg uppercase"
+            >
               {t.sendButton}
             </Button>
           </form>

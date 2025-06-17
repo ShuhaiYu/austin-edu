@@ -272,12 +272,12 @@ export const CourseContent = () => {
             >
               <Card className="p-6 h-full bg-white shadow-lg rounded-[2rem] border border-gray-200 relative min-h-[300px]">
                 {/* 背景装饰图片 */}
-                <div className="absolute -top-[60%] -right-2/3 h-[250%] w-auto aspect-square">
+                <div className="absolute bottom-0 right-0 h-2/3 w-auto aspect-square">
                   <Image
                     src={`/courses/content/Course-${index + 5}.png`}
                     alt="Course Feature Background"
-                    width={200}
-                    height={200}
+                    width={240}
+                    height={240}
                     className="h-full w-auto object-contain"
                   />
                 </div>

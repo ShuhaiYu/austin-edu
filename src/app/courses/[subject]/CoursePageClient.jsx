@@ -42,6 +42,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import BirdDecoration from "@/components/BirdDecoration";
 
 const SCHOOL_IMAGES = [
   { name: "Balwyn High", image: "Balwyn high.png" },
@@ -195,7 +196,17 @@ export default function CoursePageClient({ localizedData }) {
     <div className="flex flex-col max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 gap-20">
       {/* Hero Section */}
       <section className="relative pt-8 mt-20">
-        <div className="max-w-7xl mx-auto px-4">
+        {/* 添加装饰 */}
+        <BirdDecoration
+          bird="1"
+          position="top-8 right-8 md:top-16 md:right-16"
+        />
+        <BirdDecoration
+          bird="3"
+          position="top-16 left-8 md:-top-8 md:left-16"
+        />
+
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
           {/* 主标题 */}
           <h1 className="text-6xl font-bold text-center">
             <span
@@ -404,8 +415,12 @@ export default function CoursePageClient({ localizedData }) {
 
       {/* Course Description Section */}
       {hasContent(course.courseDescription) && (
-        <section className="my-16">
-          <div className="max-w-7xl mx-auto px-4">
+        <section className="my-16 relative">
+          <BirdDecoration
+            bird="2"
+            position="top-4 right-4 md:top-8 md:right-12"
+          />
+          <div className="max-w-7xl mx-auto px-4 relative z-10">
             {/* 标题部分 */}
             <div className="text-center" data-aos="fade-up">
               {course.courseDescription.title && (
@@ -548,9 +563,17 @@ export default function CoursePageClient({ localizedData }) {
               hasContent(coreFeature?.sections) && (
                 <section
                   key={sectionIndex}
-                  className="my-16 border-b border-gray-200"
+                  className="my-16 border-b border-gray-200 relative"
                 >
-                  <div className="max-w-7xl mx-auto">
+                  {/* 只在第一个coreFeature添加装饰 */}
+                  {sectionIndex === 0 && (
+                    <BirdDecoration
+                      bird="4"
+                      position="top-8 left-8 md:top-12 md:left-16"
+                    />
+                  )}
+
+                  <div className="max-w-7xl mx-auto relative z-10">
                     <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
                       {coreFeature.title || "Core Highlights"}
                     </h2>
@@ -641,8 +664,13 @@ export default function CoursePageClient({ localizedData }) {
           )
         : // 如果不是数组，按原来的方式渲染
           hasContent(course.coreFeatures?.sections) && (
-            <section className="my-16 border-b border-gray-200">
-              <div className="max-w-7xl mx-auto">
+            <section className="my-16 border-b border-gray-200 relative">
+              <BirdDecoration
+                bird="4"
+                position="top-8 left-8 md:-top-12 md:-left-8"
+              />
+
+              <div className="max-w-7xl mx-auto relative z-10">
                 <h2 className="text-4xl font-bold text-gray-900 mb-4 text-center">
                   {course.coreFeatures?.title || "Core Highlights"}
                 </h2>
@@ -851,8 +879,13 @@ export default function CoursePageClient({ localizedData }) {
 
           {/* Part A - 重新设计为更有趣的布局 */}
           {hasContent(course.whyChooseUs.partA?.content) && (
-            <div className="max-w-7xl mx-auto mb-20">
-              <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
+            <div className="max-w-7xl mx-auto mb-20 relative">
+              <BirdDecoration
+                bird="5"
+                position="top-4 right-8 md:top-8 md:right-16"
+              />
+
+              <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center relative z-10">
                 {course.whyChooseUs.partA.title}
               </h2>
 
@@ -1034,8 +1067,13 @@ export default function CoursePageClient({ localizedData }) {
 
           {/* Part C */}
           {hasContent(course.whyChooseUs.partC?.list) && (
-            <div className="max-w-7xl mx-auto mb-20 px-4">
-              <div className="bg-gradient-to-r from-[#85aedc] to-[#6490c7] rounded-3xl p-8 shadow-2xl">
+            <div className="max-w-7xl mx-auto mb-20 px-4 relative">
+              <BirdDecoration
+                bird="6"
+                position="bottom-8 left-8 md:bottom-12 md:left-16"
+              />
+
+              <div className="bg-gradient-to-r from-[#85aedc] to-[#6490c7] rounded-3xl p-8 shadow-2xl relative z-10">
                 <h2 className="text-3xl font-bold text-white mb-12 text-center">
                   {course.whyChooseUs.partC.title}
                   <div className="mt-4 h-1.5 bg-white/30 w-24 mx-auto rounded-full" />
@@ -1134,8 +1172,16 @@ export default function CoursePageClient({ localizedData }) {
           course.customCourseFeature.map(
             (customFeature, sectionIndex) =>
               hasContent(customFeature) && (
-                <section key={sectionIndex} className="my-16">
-                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <section key={sectionIndex} className="my-16 relative">
+                  {/* 只在第一个customFeature添加装饰 */}
+                  {sectionIndex === 0 && (
+                    <BirdDecoration
+                      bird="1"
+                      position="top-4 right-4 md:-top-8 md:right-12"
+                    />
+                  )}
+
+                  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
                       {customFeature.title}
                     </h2>
@@ -1334,8 +1380,13 @@ export default function CoursePageClient({ localizedData }) {
           )
         : // 如果不是数组，按原来的方式渲染（但使用新的布局）
           hasContent(course.customCourseFeature) && (
-            <section className="my-16">
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section className="my-16 relative">
+              <BirdDecoration
+                bird="1"
+                position="top-4 right-4 md:-top-8 md:right-12"
+              />
+
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
                   {course.customCourseFeature.title}
                 </h2>
@@ -1515,8 +1566,13 @@ export default function CoursePageClient({ localizedData }) {
       {/* Resources Section */}
       {(hasContent(course.resources?.packages) ||
         hasContent(course.resources?.resourceSections)) && (
-        <section className="mb-16 mt-8">
-          <div className="max-w-7xl mx-auto relative">
+        <section className="mb-16 mt-8 relative">
+          <BirdDecoration
+            bird="3"
+            position="top-0 left-4 md:-top-20 md:left-0"
+          />
+
+          <div className="max-w-7xl mx-auto relative z-10">
             <h2 className="text-4xl font-bold text-gray-900 mb-20 text-center">
               Comprehensive Resources
             </h2>
@@ -1616,8 +1672,13 @@ export default function CoursePageClient({ localizedData }) {
 
       {/* Related Courses */}
       {hasContent(course.relatedCourses) && (
-        <section className="my-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="my-16 relative">
+          <BirdDecoration
+            bird="2"
+            position="bottom-4 right-8 md:-top-20 md:-right-8"
+          />
+
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center">
               Related Courses
             </h2>
