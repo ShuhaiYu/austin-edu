@@ -90,72 +90,72 @@ const courseData = {
           },
         ],
       },
-      resources: {
-        packages: [
-          { icon: "school", title: "28 lessons, each 2 hours long", desc: "" },
-          { icon: "user-pen", title: "1 hours of weekly homework", desc: "" },
-          { icon: "book-copy", title: "20 complete practice papers", desc: "" },
-          {
-            icon: "layers",
-            title: "1000+ practice questions in the question bank",
-            desc: "",
-          },
-          { icon: "File-clock", title: "4 full-length mock exams", desc: "" },
-          { icon: "Square-check-big", title: "4 topic tests", desc: "" },
-          {
-            icon: "scroll-text",
-            title: "2 original practice papers",
-            desc: "",
-          },
-          {
-            icon: "speech",
-            title: "2 one-on-one post-exam paper analysis sessions",
-            desc: "",
-          },
-        ],
-      },
-      courseStructure: {
-        title: "Course Structure",
-        sections: [
-          {
-            modules: [
-              {
-                title: "28 lessons",
-                subtitle: "",
-                lessons: [
-                  "lintroducing the Graphic Novel (Nimon ",
-                  "Reading a Graphic Novel (Nimona ",
-                  "Introduction to Genre (Nimona) ",
-                  "Reading Fables (Nimona) ",
-                  "A odern Fable (The Hobbit) ",
-                  "The Moral of Animal Farm (The Hobbit ",
-                  "Reading Fantasy (The Hobbit ",
-                  "The Hobbit (The Hobbit) ",
-                  "Topic Test and Miarking & Feedback",
-                ],
-              },
-            ],
-          },
-        ],
-      },
-      relatedCourses: [
+    },
+    resources: {
+      packages: [
+        { icon: "school", title: "28 lessons, each 2 hours long", desc: "" },
+        { icon: "user-pen", title: "1 hours of weekly homework", desc: "" },
+        { icon: "book-copy", title: "20 complete practice papers", desc: "" },
         {
-          title: "Year 7-9",
-          subtitle: "English Enrichment（ENG/EAL）",
-          slug: "y7-9-english",
+          icon: "layers",
+          title: "1000+ practice questions in the question bank",
+          desc: "",
+        },
+        { icon: "File-clock", title: "4 full-length mock exams", desc: "" },
+        { icon: "Square-check-big", title: "4 topic tests", desc: "" },
+        {
+          icon: "scroll-text",
+          title: "2 original practice papers",
+          desc: "",
         },
         {
-          title: "Year 7-9",
-          subtitle: "Writing",
-          slug: "y7-9-writing",
-        },
-        {
-          title: "Year 7-9",
-          subtitle: "Maths Enrichment",
-          slug: "y7-9-maths",
+          icon: "speech",
+          title: "2 one-on-one post-exam paper analysis sessions",
+          desc: "",
         },
       ],
     },
+    courseStructure: {
+      title: "Course Structure",
+      sections: [
+        {
+          modules: [
+            {
+              title: "28 lessons",
+              subtitle: "",
+              lessons: [
+                "lintroducing the Graphic Novel (Nimon ",
+                "Reading a Graphic Novel (Nimona ",
+                "Introduction to Genre (Nimona) ",
+                "Reading Fables (Nimona) ",
+                "A odern Fable (The Hobbit) ",
+                "The Moral of Animal Farm (The Hobbit ",
+                "Reading Fantasy (The Hobbit ",
+                "The Hobbit (The Hobbit) ",
+                "Topic Test and Miarking & Feedback",
+              ],
+            },
+          ],
+        },
+      ],
+    },
+    relatedCourses: [
+      {
+        title: "Year 7-9",
+        subtitle: "English Enrichment（ENG/EAL）",
+        slug: "y7-9-english",
+      },
+      {
+        title: "Year 7-9",
+        subtitle: "Writing",
+        slug: "y7-9-writing",
+      },
+      {
+        title: "Year 7-9",
+        subtitle: "Maths Enrichment",
+        slug: "y7-9-maths",
+      },
+    ],
   },
   zh: {
     slug: "y7-8-amc",

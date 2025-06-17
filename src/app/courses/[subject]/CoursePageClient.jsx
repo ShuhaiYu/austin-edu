@@ -569,7 +569,7 @@ export default function CoursePageClient({ localizedData }) {
                   {sectionIndex === 0 && (
                     <BirdDecoration
                       bird="4"
-                      position="top-8 left-8 md:top-12 md:left-16"
+                      position="top-8 left-8 md:-top-12 md:-left-8"
                     />
                   )}
 
@@ -1579,10 +1579,10 @@ export default function CoursePageClient({ localizedData }) {
 
             {/* 处理新的多资源包结构 */}
             {course.resources?.resourceSections ? (
-              <div className="space-y-20">
+              <div className="space-y-40">
                 {course.resources.resourceSections.map(
                   (section, sectionIndex) => (
-                    <div key={sectionIndex} className="mb-16">
+                    <div key={sectionIndex} className="mb-40">
                       {/* 资源包标题 */}
                       {section.title && (
                         <div className="text-center mb-12">

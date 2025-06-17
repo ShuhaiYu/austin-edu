@@ -554,7 +554,7 @@ const courseData = {
     coreFeatures: [
       {
         title: "1-3年级核心亮点",
-        subtitle: "澳升1-3年级英文培优班（ENG/EAL）核心亮点：",
+        subtitle: "夯实基础，超前提升",
         sections: [
           {
             title: "严格对标维州课程，领先日校进度",
@@ -584,12 +584,11 @@ const courseData = {
             ],
           },
         ],
-        extraDescription: "1-3年级：夯实基础，超前提升",
       },
 
       {
         title: "4-6年级核心亮点",
-        subtitle: "澳升4-6年级英文培优班（ENG/EAL）核心亮点：",
+        subtitle: "向初高中衔接，培养学术阅读与表达能力",
         sections: [
           {
             title: "从阅读入手，全面提升分析与表达能力",
@@ -620,7 +619,6 @@ const courseData = {
             ],
           },
         ],
-        extraDescription: "4-6年级：向初高中衔接，培养学术阅读与表达能力",
       },
     ],
     resources: {

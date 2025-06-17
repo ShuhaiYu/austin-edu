@@ -10,7 +10,15 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "@/components/ui/collapsible";
-import { ChevronDown, ChevronRight, Menu, X, GraduationCap, BookOpen, Users } from "lucide-react";
+import {
+  ChevronDown,
+  ChevronRight,
+  Menu,
+  X,
+  GraduationCap,
+  BookOpen,
+  Users,
+} from "lucide-react";
 
 import { VCEEnglishSubject } from "./components/VCEEnglishSubject";
 import { VCEMathSubject } from "./components/VCEMathSubject";
@@ -82,7 +90,9 @@ export default function Achievements() {
         >
           <div className="flex items-center gap-3">
             <div className="w-2 h-2 rounded-full bg-primary/60 group-hover:bg-primary transition-colors" />
-            <span className="font-medium">{lang === "en" ? "Overview" : "概览"}</span>
+            <span className="font-medium">
+              {lang === "en" ? "Overview" : "概览"}
+            </span>
           </div>
         </Button>
       </div>
@@ -94,8 +104,8 @@ export default function Achievements() {
           onOpenChange={() => toggleSection("highSchool")}
         >
           <CollapsibleTrigger asChild>
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               className="w-full justify-between h-11 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
             >
               <div className="flex items-center gap-3">
@@ -175,8 +185,8 @@ export default function Achievements() {
           onOpenChange={() => toggleSection("juniorHigh")}
         >
           <CollapsibleTrigger asChild>
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               className="w-full justify-between h-11 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
             >
               <div className="flex items-center gap-3">
@@ -256,8 +266,8 @@ export default function Achievements() {
           onOpenChange={() => toggleSection("primarySchool")}
         >
           <CollapsibleTrigger asChild>
-            <Button 
-              variant="ghost" 
+            <Button
+              variant="ghost"
               className="w-full justify-between h-11 px-3 hover:bg-primary/10 hover:text-primary transition-all duration-200 group"
             >
               <div className="flex items-center gap-3">
@@ -475,16 +485,14 @@ export default function Achievements() {
             {/* 标语部分 */}
             <div className="flex flex-col items-center justify-center my-16 space-y-4">
               <p className="text-5xl font-light text-muted-foreground whitespace-pre-line">
-                {lang === "en" ? "Every Student" : "每个学生都"}{" "}
+                Every Student{" "}
                 <span className="text-primary uppercase font-bold">
-                  {lang === "en" ? "MATTERS" : "重要"}
+                  MATTERS
                 </span>
               </p>
               <p className="text-5xl font-light text-muted-foreground whitespace-pre-line">
-                {lang === "en" ? "Every Success" : "每个成功都"}{" "}
-                <span className="text-primary uppercase font-bold">
-                  {lang === "en" ? "COUNTS" : "算数"}
-                </span>
+                Every Success{" "}
+                <span className="text-primary uppercase font-bold">COUNTS</span>
               </p>
             </div>
 

@@ -222,7 +222,6 @@ const courseData = {
     resourceSections: [
       {
         title: "Unit 1-2",
-        subtitle: "Foundation Learning Resources",
         packages: [
           { icon: "school", title: "2-hour weekly group class", desc: "" },
           { icon: "book-copy", title: "4 exclusive Austin Education textbooks", desc: "" },
@@ -240,7 +239,6 @@ const courseData = {
       },
       {
         title: "Unit 3-4",
-        subtitle: "Advanced VCE Preparation",
         packages: [
           { icon: "school", title: "1.5-hour weekly group class", desc: "" },
           { icon: "book-copy", title: "4 exclusive Austin Education textbooks", desc: "" },
