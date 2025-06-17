@@ -5,14 +5,16 @@ import { Button } from "@/components/ui/button";
 import { useContext, useState } from "react";
 import { LangContext } from "@/app/layout";
 import MultiSelect from "@/components/multiselect";
+import { toast } from "sonner";
 
 const content = {
   en: {
-    title: "Please leave your details to receive the latest updates on our free Webinar",
+    title:
+      "Please leave your details to receive the latest updates on our free Webinar",
     description:
       "Join our expert-led webinars for valuable insights on academic planning and school selection. Register now to secure your spot!",
     subscriptionTitle:
-      "1. Subscription Information (Please fill in either one of these two fields)",
+      "1. Subscription Information (Please fill in either one of these two fields)*",
     parentInfo: "Parent / Guardian Information",
     studentInfo: "Student Information",
     fullName: "Full name",
@@ -22,8 +24,8 @@ const content = {
     selectGrade: "Select Grade",
     grades: [
       "Primary School - Years 1-6",
-      "Secondary School - Years 7-9", 
-      "Senior Secondary School - Years 10-12"
+      "Secondary School - Years 7-9",
+      "Senior Secondary School - Years 10-12",
     ],
     webinarTitle: "3. Which Webinar Are You Interested in?*",
     webinars: {
@@ -39,26 +41,42 @@ const content = {
         "Humanities Stream Seminar",
       ],
     },
-    languageTitle: "4. Tick your Preferred Language",
+    languageTitle: "4. Tick your Preferred Language*",
     languages: ["Mandarin", "English"],
     sendButton: "REGISTER NOW",
+    // Placeholders
+    placeholders: {
+      fullName: "Please enter full name",
+      email: "Please enter email address",
+      phone: "Please enter phone number",
+    },
+    // Validation messages
+    validation: {
+      contactRequired:
+        "Please provide contact information: fill in either Parent OR Student email/phone",
+      emailInvalid: "Please enter a valid email address",
+      phoneInvalid: "Please enter a valid phone number (Australian format)",
+      gradeRequired: "Please select at least one grade level",
+      webinarRequired: "Please select a webinar you're interested in",
+      languageRequired: "Please select your preferred language",
+    },
+    // Success/Error messages
+    sending: "Registering...",
+    success: "Registration successful! We will send you webinar details soon.",
+    error: "Registration failed. Please try again.",
   },
   zh: {
     title: "免费在线研讨会注册",
     description:
       "参加我们专家主持的在线研讨会，获取学业规划和学校选择的宝贵建议。现在注册，确保您的位置！",
-    subscriptionTitle: "1. 注册信息（请填写以下任意一项）",
+    subscriptionTitle: "1. 注册信息（请填写以下任意一项）*",
     parentInfo: "家长/监护人信息",
     studentInfo: "学生信息",
     fullName: "姓名",
     email: "电子邮箱",
     phone: "联系电话",
     schoolYear: "2. 当前年级*",
-    grades: [
-      "小学 1-6年级",
-      "初中 7-9年级", 
-      "高中 10-12年级"
-    ],
+    grades: ["小学 1-6年级", "初中 7-9年级", "高中 10-12年级"],
     selectGrade: "请选择年级",
     webinarTitle: "3. 您感兴趣的研讨会*",
     webinars: {
@@ -70,9 +88,28 @@ const content = {
         "文科方向专题讲座",
       ],
     },
-    languageTitle: "4. 选择首选语言",
+    languageTitle: "4. 选择首选语言*",
     languages: ["中文", "英文"],
     sendButton: "立即注册",
+    // Placeholders
+    placeholders: {
+      fullName: "请输入姓名",
+      email: "请输入电子邮箱",
+      phone: "请输入联系电话",
+    },
+    // Validation messages
+    validation: {
+      contactRequired: "请提供联系信息：填写家长或学生的邮箱/电话",
+      emailInvalid: "请输入有效的电子邮箱地址",
+      phoneInvalid: "请输入有效的电话号码（澳洲格式）",
+      gradeRequired: "请至少选择一个年级",
+      webinarRequired: "请选择您感兴趣的研讨会",
+      languageRequired: "请选择您的首选语言",
+    },
+    // Success/Error messages
+    sending: "注册中...",
+    success: "注册成功！我们将尽快发送研讨会详情给您。",
+    error: "注册失败，请重试。",
   },
 };
 
@@ -82,31 +119,147 @@ export const WebinarTab = () => {
   const [schoolYear, setSchoolYear] = useState([]);
   const [selectedWebinars, setSelectedWebinars] = useState([]);
   const [selectedLanguage, setSelectedLanguage] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // 验证邮箱格式
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // 验证手机号格式 (澳洲手机号)
+  const isValidPhone = (phone) => {
+    const phoneRegex = /^(\+61|0)[2-9]\d{8}$/;
+    const cleanPhone = phone.replace(/[\s\-\(\)]/g, "");
+    return phoneRegex.test(cleanPhone) || /^[0-9]{10}$/.test(cleanPhone);
+  };
+
+  // 表单验证
+  const validateForm = (formData) => {
+    const errors = [];
+
+    // 检查联系信息（家长或学生至少填写一方的邮箱或电话）
+    const parentEmail = formData.get("parentEmail");
+    const parentPhone = formData.get("parentPhone");
+    const studentEmail = formData.get("studentEmail");
+    const studentPhone = formData.get("studentPhone");
+
+    const hasParentContact = parentEmail || parentPhone;
+    const hasStudentContact = studentEmail || studentPhone;
+
+    if (!hasParentContact && !hasStudentContact) {
+      errors.push(t.validation.contactRequired);
+    }
+
+    // 验证邮箱格式
+    if (parentEmail && !isValidEmail(parentEmail)) {
+      errors.push(t.validation.emailInvalid);
+    }
+    if (studentEmail && !isValidEmail(studentEmail)) {
+      errors.push(t.validation.emailInvalid);
+    }
+
+    // 验证手机号格式
+    if (parentPhone && !isValidPhone(parentPhone)) {
+      errors.push(t.validation.phoneInvalid);
+    }
+    if (studentPhone && !isValidPhone(studentPhone)) {
+      errors.push(t.validation.phoneInvalid);
+    }
+
+    // 检查年级选择
+    if (schoolYear.length === 0) {
+      errors.push(t.validation.gradeRequired);
+    }
+
+    // 检查研讨会选择
+    if (selectedWebinars.length === 0) {
+      errors.push(t.validation.webinarRequired);
+    }
+
+    // 检查语言选择
+    if (!selectedLanguage) {
+      errors.push(t.validation.languageRequired);
+    }
+
+    return errors;
+  };
+
+  // 处理研讨会选择
+  const handleWebinarChange = (webinar) => {
+    setSelectedWebinars([webinar]);
+  };
 
   // 处理表单提交
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // 收集表单数据
-    const formData = new FormData(e.target);
-    const data = {
-      parentName: formData.get('parentName'),
-      parentEmail: formData.get('parentEmail'),
-      parentPhone: formData.get('parentPhone'),
-      studentName: formData.get('studentName'),
-      studentEmail: formData.get('studentEmail'),
-      studentPhone: formData.get('studentPhone'),
-      schoolYear: schoolYear.join(', '),
-      webinars: selectedWebinars.join(', '),
-      language: selectedLanguage,
-      timestamp: new Date().toISOString()
-    };
+    e.stopPropagation();
 
-    // 这里应该发送到 rachelle@austinedu.com.au
-    console.log('Webinar registration sent to rachelle@austinedu.com.au:', data);
-    
-    // 显示成功消息
-    alert('Registration successful! We will send you webinar details soon.');
+    const formData = new FormData(e.target);
+
+    // 验证表单
+    const errors = validateForm(formData);
+    if (errors.length > 0) {
+      // 显示第一个错误，让用户知道具体需要填写什么
+      toast.error(errors[0], {
+        duration: 4000,
+        position: "top-center",
+      });
+
+      return false;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // 收集表单数据
+      const data = {
+        parentName: formData.get("parentName"),
+        parentEmail: formData.get("parentEmail"),
+        parentPhone: formData.get("parentPhone"),
+        studentName: formData.get("studentName"),
+        studentEmail: formData.get("studentEmail"),
+        studentPhone: formData.get("studentPhone"),
+        schoolYear: schoolYear.join(", "),
+        webinars: selectedWebinars.join(", "),
+        language: selectedLanguage,
+        timestamp: new Date().toISOString(),
+      };
+
+      // 发送到API endpoint
+      const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          type: "webinar",
+          data: data,
+        }),
+      });
+
+      if (response.ok) {
+        toast.success(t.success, {
+          duration: 5000,
+          position: "top-center",
+        });
+        // 重置表单
+        e.target.reset();
+        setSchoolYear([]);
+        setSelectedWebinars([]);
+        setSelectedLanguage("");
+      } else {
+        throw new Error("Failed to send registration");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      toast.error(t.error, {
+        duration: 4000,
+        position: "top-center",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -123,7 +276,10 @@ export const WebinarTab = () => {
           <form className="space-y-8" onSubmit={handleSubmit}>
             {/* Subscription Information */}
             <div className="space-y-6">
-              <h3 className="font-semibold">{t.subscriptionTitle}</h3>
+              <h3 className="font-semibold">
+                {t.subscriptionTitle.replace("*", "")}
+                <span className="text-red-500 ml-1">*</span>
+              </h3>
 
               {/* Parent Information */}
               <div className="space-y-4 pb-6 ">
@@ -133,27 +289,36 @@ export const WebinarTab = () => {
                     <label className="w-28 text-sm">{t.fullName}</label>
                     <Input
                       name="parentName"
-                      placeholder="Tony Nguyen"
+                      placeholder={t.placeholders.fullName}
                       className="rounded-[2rem] border border-gray-200 p-6"
                     />
                   </div>
                   <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.email}</label>
+                    <label className="w-28 text-sm">
+                      {t.email}
+                      <span className="text-red-500 ml-1">*</span>
+                    </label>
                     <Input
                       name="parentEmail"
-                      type="email"
-                      placeholder="tony@example.com"
+                      placeholder={t.placeholders.email}
                       className="rounded-[2rem] border border-gray-200 p-6"
                     />
                   </div>
                   <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.phone}</label>
+                    <label className="w-28 text-sm">
+                      {t.phone}
+                      <span className="text-red-500 ml-1">*</span>
+                    </label>
                     <Input
                       name="parentPhone"
-                      type="tel"
-                      placeholder="(342) 3934 3445"
+                      placeholder={t.placeholders.phone}
                       className="rounded-[2rem] border border-gray-200 p-6"
                     />
+                  </div>
+                  <div className="text-xs text-gray-500 mt-2">
+                    {lang === "en"
+                      ? "Either email or phone is required"
+                      : "邮箱或电话至少填写一项"}
                   </div>
                 </div>
               </div>
@@ -166,27 +331,36 @@ export const WebinarTab = () => {
                     <label className="w-28 text-sm">{t.fullName}</label>
                     <Input
                       name="studentName"
-                      placeholder="Tony Nguyen"
+                      placeholder={t.placeholders.fullName}
                       className="rounded-[2rem] border border-gray-200 p-6"
                     />
                   </div>
                   <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.email}</label>
+                    <label className="w-28 text-sm">
+                      {t.email}
+                      <span className="text-red-500 ml-1">*</span>
+                    </label>
                     <Input
                       name="studentEmail"
-                      type="email"
-                      placeholder="tony@example.com"
+                      placeholder={t.placeholders.email}
                       className="rounded-[2rem] border border-gray-200 p-6"
                     />
                   </div>
                   <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.phone}</label>
+                    <label className="w-28 text-sm">
+                      {t.phone}
+                      <span className="text-red-500 ml-1">*</span>
+                    </label>
                     <Input
                       name="studentPhone"
-                      type="tel"
-                      placeholder="(342) 3934 3445"
+                      placeholder={t.placeholders.phone}
                       className="rounded-[2rem] border border-gray-200 p-6"
                     />
+                  </div>
+                  <div className="text-xs text-gray-500 mt-2">
+                    {lang === "en"
+                      ? "Either email or phone is required"
+                      : "邮箱或电话至少填写一项"}
                   </div>
                 </div>
               </div>
@@ -194,7 +368,10 @@ export const WebinarTab = () => {
 
             {/* School Year */}
             <div className="flex items-center gap-4">
-              <label className="w-1/2 font-semibold mb-6">{t.schoolYear}</label>
+              <label className="w-1/2 font-semibold mb-6">
+                {t.schoolYear.replace("*", "")}
+                <span className="text-red-500 ml-1">*</span>
+              </label>
               <div className="w-1/2">
                 <MultiSelect
                   placeholder={
@@ -215,12 +392,15 @@ export const WebinarTab = () => {
 
             {/* Webinar Selection */}
             <div className="">
-              <h3 className="font-semibold mb-6">{t.webinarTitle}</h3>
+              <h3 className="font-semibold mb-6">
+                {t.webinarTitle.replace("*", "")}
+                <span className="text-red-500 ml-1">*</span>
+              </h3>
               <div className="space-y-6">
                 {Object.entries(t.webinars).map(([gradeGroup, webinars]) => (
                   <div key={gradeGroup} className="border-b pb-6 last:border-0">
                     <h4 className="font-medium mb-4">{gradeGroup}</h4>
-                    <div className="grid grid-cols-3 gap-4 divide-x divide-gray-200 rounded-[2rem] border border-gray-200 p-6">
+                    <div className="grid grid-cols-1 gap-4 rounded-[2rem] border border-gray-200 p-6">
                       {webinars.map((webinar) => (
                         <label
                           key={webinar}
@@ -231,7 +411,8 @@ export const WebinarTab = () => {
                             name="webinar"
                             value={webinar}
                             className="w-4 h-4 shrink-0"
-                            onChange={() => setSelectedWebinars([webinar])}
+                            checked={selectedWebinars.includes(webinar)}
+                            onChange={() => handleWebinarChange(webinar)}
                           />
                           <span className="text-sm">{webinar}</span>
                         </label>
@@ -244,7 +425,10 @@ export const WebinarTab = () => {
 
             {/* Language Preference */}
             <div className="">
-              <h3 className="font-semibold mb-4">{t.languageTitle}</h3>
+              <h3 className="font-semibold mb-4">
+                {t.languageTitle.replace("*", "")}
+                <span className="text-red-500 ml-1">*</span>
+              </h3>
               <div className="grid grid-cols-2 gap-4 divide-x divide-gray-200 rounded-[2rem] border border-gray-200 p-6">
                 {t.languages.map((language) => (
                   <label
@@ -265,11 +449,12 @@ export const WebinarTab = () => {
               </div>
             </div>
 
-            <Button 
+            <Button
               type="submit"
-              className="bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold !mt-10 py-6 text-lg uppercase"
+              disabled={isSubmitting}
+              className="bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold !mt-10 py-6 text-lg uppercase disabled:opacity-50"
             >
-              {t.sendButton}
+              {isSubmitting ? t.sending : t.sendButton}
             </Button>
           </form>
         </div>
