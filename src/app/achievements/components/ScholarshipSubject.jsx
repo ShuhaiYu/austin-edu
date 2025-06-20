@@ -16,14 +16,14 @@ export const ScholarshipSubject = ({ data }) => (
             color="text-primary"
             borderColor="border-primary/60"
           />
-          <p className="text-xl font-bold mt-4 text-primary">
+          <p className="text-xl font-semibold mt-4 text-primary leading-tight">
             {data.compactStat.label}
           </p>
         </div>
 
         {data.compactStat.description && (
           <motion.p
-            className="text-sm text-gray-600 text-center max-w-md leading-relaxed"
+            className="text-base text-gray-600 text-center max-w-md leading-8"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -36,7 +36,7 @@ export const ScholarshipSubject = ({ data }) => (
     expandedContent={
       <div className="space-y-8">
         {data.expandedContent?.title && (
-          <h4 className="text-xl font-semibold text-gray-800 text-center mb-6">
+          <h4 className="text-xl font-semibold text-gray-800 text-center mb-6 leading-tight">
             {data.expandedContent.title}
           </h4>
         )}
@@ -55,12 +55,12 @@ export const ScholarshipSubject = ({ data }) => (
                   <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2 flex-shrink-0"></div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center justify-between gap-3">
-                      <span className="font-medium text-gray-800 text-sm leading-relaxed">
+                      <span className="font-medium text-gray-800 text-sm leading-6">
                         {school.name}
                       </span>
                       {school.rate && (
                         <span
-                          className={`text-xs font-semibold px-2.5 py-1 rounded-full flex-shrink-0 ${
+                          className={`text-xs font-semibold px-2.5 py-1 rounded-full flex-shrink-0 leading-4 ${
                             school.rate.includes("confidential") ||
                             school.rate.includes("保密")
                               ? "bg-gray-100 text-gray-600"
@@ -80,7 +80,7 @@ export const ScholarshipSubject = ({ data }) => (
 
         <div className="text-center">
           <motion.p
-            className="text-sm text-gray-500 italic"
+            className="text-sm text-gray-500 italic leading-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}

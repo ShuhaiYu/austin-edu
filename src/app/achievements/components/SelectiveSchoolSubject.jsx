@@ -21,14 +21,14 @@ export const SelectiveSchoolSubject = ({ data }) => (
             color="text-primary"
             borderColor="border-primary/60"
           />
-          <p className="text-xl font-bold mt-4 text-blue-800">
+          <p className="text-xl font-semibold mt-4 text-primary leading-tight">
             {data.compactStat.label}
           </p>
         </motion.div>
 
         {data.compactStat.description && (
           <motion.p
-            className="text-sm text-gray-600 text-center max-w-md leading-relaxed"
+            className="text-base text-gray-600 text-center max-w-md leading-8"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -41,7 +41,7 @@ export const SelectiveSchoolSubject = ({ data }) => (
     expandedContent={
       <div className="space-y-8">
         {data.expandedContent?.title && (
-          <h4 className="text-xl font-semibold text-gray-800 text-center mb-6">
+          <h4 className="text-xl font-semibold text-gray-800 text-center mb-6 leading-tight">
             {data.expandedContent.title}
           </h4>
         )}
@@ -55,14 +55,14 @@ export const SelectiveSchoolSubject = ({ data }) => (
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 + index * 0.05 }}
             >
-              <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl border border-blue-100 text-center transition-all duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-indigo-500/5 transition-opacity duration-300 rounded-xl"></div>
+              <div className="p-6 text-center">
+                <div className="absolute inset-0 bg-blue-50/50 transition-opacity duration-300 rounded-xl border border-blue-100"></div>
                 <div className="relative z-10">
-                  <h5 className="text-base font-bold text-blue-900 mb-3 leading-tight">
+                  <h5 className="text-base font-semibold text-primary mb-3 leading-tight">
                     {school.name}
                   </h5>
                   <div className="inline-flex items-center px-3 py-1.5 bg-blue-100 rounded-full">
-                    <span className="text-sm font-semibold text-blue-700">
+                    <span className="text-sm font-semibold text-primary leading-5">
                       {school.admissions}
                     </span>
                   </div>

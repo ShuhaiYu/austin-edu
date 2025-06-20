@@ -23,7 +23,7 @@ export const MDProgramSubject = ({ data }) => (
               color="text-primary"
               borderColor="border-primary/30"
             />
-            <p className="text-sm mt-3 text-center font-medium max-w-[120px]">
+            <p className="text-base mt-3 text-center font-medium max-w-[120px] leading-6 text-gray-600">
               {stat.label}
             </p>
           </motion.div>
@@ -39,7 +39,7 @@ export const MDProgramSubject = ({ data }) => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <h3 className="text-2xl font-bold text-primary mb-6">
+          <h3 className="text-2xl font-semibold text-primary mb-6 leading-tight">
             {data.introText}
           </h3>
         </motion.div>
@@ -65,15 +65,15 @@ export const MDProgramSubject = ({ data }) => (
               </div>
               
               <div className="text-center">
-                <h4 className="text-xl font-bold text-gray-800 mb-3">
+                <h4 className="text-xl font-semibold text-gray-800 mb-3 leading-tight">
                   {stat.label}
                 </h4>
                 {stat.subLabel && (
-                  <p className="text-sm text-primary font-medium mb-4">
+                  <p className="text-sm text-primary font-medium mb-4 leading-6">
                     {stat.subLabel}
                   </p>
                 )}
-                <p className="text-sm text-gray-600 leading-relaxed">
+                <p className="text-base text-gray-600 leading-8">
                   {stat.description}
                 </p>
               </div>
@@ -88,7 +88,7 @@ export const MDProgramSubject = ({ data }) => (
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
         >
-          <h4 className="text-xl font-bold text-center text-gray-700">
+          <h4 className="text-xl font-semibold text-center text-gray-700 leading-tight">
             Program Highlights
           </h4>
           
@@ -103,14 +103,14 @@ export const MDProgramSubject = ({ data }) => (
                   transition={{ delay: 0.6 + index * 0.1 }}
                 >
                   <ArrowRight className="h-5 w-5 text-primary mr-3 mt-1 flex-shrink-0" />
-                  <span className="text-gray-700 text-base leading-relaxed">{info}</span>
+                  <span className="text-base text-gray-600 leading-8">{info}</span>
                 </motion.li>
               ))}
             </ul>
           </div>
           
           <div className="text-center">
-            <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg">
+            <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg leading-6">
               Learn More About Our MD Program
             </Button>
           </div>

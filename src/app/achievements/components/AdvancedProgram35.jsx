@@ -4,8 +4,7 @@ import { motion } from "framer-motion";
 import { PercentageCircle } from "@/components/PercentageCircle";
 import { BaseSubject } from "./BaseSubject";
 
-// Function to render text with bold formatting
-const renderTextWithBold = (text) => {
+const renderTextWithBold35 = (text) => {
   if (!text) return text;
 
   const parts = text.split("**");
@@ -28,7 +27,7 @@ export const AdvancedProgram35 = ({ data }) => (
         <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-8 max-w-4xl w-full">
           <div className="flex flex-col items-center">
             {data.headerText && (
-              <p className="text-base font-medium text-gray-700 text-center max-w-64 mb-4">
+              <p className="text-base font-medium text-gray-600 text-center max-w-64 mb-4 leading-8">
                 {data.headerText}
               </p>
             )}
@@ -38,7 +37,7 @@ export const AdvancedProgram35 = ({ data }) => (
               color="text-[#c12731]"
               borderColor="border-[#c12731]/60"
             />
-            <p className="text-sm text-gray-600 text-center mt-3 max-w-48">
+            <p className="text-base text-gray-600 text-center mt-3 max-w-48 leading-8">
               {data.compactStat.description}
             </p>
           </div>
@@ -46,8 +45,8 @@ export const AdvancedProgram35 = ({ data }) => (
           {data.additionalText && (
             <div className="flex-1 max-w-md">
               <div className="p-6 bg-red-50/50 rounded-xl border-l-4 border-[#c12731]/30">
-                <p className="text-lg leading-relaxed text-gray-700">
-                  {renderTextWithBold(data.additionalText)}
+                <p className="text-lg leading-8 text-gray-600">
+                  {renderTextWithBold35(data.additionalText)}
                 </p>
               </div>
             </div>
@@ -64,10 +63,10 @@ export const AdvancedProgram35 = ({ data }) => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1 }}
         >
-          <h3 className="text-xl font-bold text-[#c12731] mb-4 border-b border-[#c12731]/30 pb-2">
+          <h3 className="text-xl font-semibold text-[#c12731] mb-4 border-b border-[#c12731]/30 pb-2 leading-tight">
             {data.block1.title}
           </h3>
-          <p className="text-gray-700 leading-relaxed text-base">
+          <p className="text-base text-gray-600 leading-8">
             {data.block1.content}
           </p>
         </motion.div>
@@ -79,10 +78,10 @@ export const AdvancedProgram35 = ({ data }) => (
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          <h3 className="text-xl font-bold text-[#c12731] mb-2">
+          <h3 className="text-xl font-semibold text-[#c12731] mb-2 leading-tight">
             {data.block2.title}
           </h3>
-          <p className="text-[#c12731] mb-6 font-medium">
+          <p className="text-[#c12731] mb-6 font-medium leading-7">
             {data.block2.subtitle}
           </p>
           
@@ -106,7 +105,7 @@ export const AdvancedProgram35 = ({ data }) => (
                     />
                   </div>
                   <div className="flex-1 my-auto">
-                    <p className="text-gray-700 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-sm leading-7">
                       {stat.label}
                     </p>
                   </div>

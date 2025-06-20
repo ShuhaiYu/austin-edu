@@ -10,22 +10,23 @@ export const VCEScienceSubject = ({ data }) => (
   <BaseSubject
     title={data.title}
     compactContent={
-      <div className="grid grid-cols-3 gap-8 w-full max-w-md">
+      <div className="grid grid-cols-3 gap-12 w-full max-w-lg">
         {data.compactStats.map((subject, index) => (
           <motion.div
             key={index}
             className="flex flex-col items-center"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: index * 0.1 }}
+            transition={{ delay: index * 0.2 }}
           >
             <PercentageCircle
               value={subject.value}
-              size="w-20 h-20"
+              size="w-24 h-24"
               color="text-[#dfb67e]"
               borderColor="border-[#dfb67e]/30"
+              delay={index * 0.3}
             />
-            <p className="text-sm mt-3 text-center font-medium text-[#9c7146]">
+            <p className="text-base mt-4 text-center font-medium text-[#9c7146] leading-8">
               {subject.label}
             </p>
           </motion.div>
@@ -33,41 +34,44 @@ export const VCEScienceSubject = ({ data }) => (
       </div>
     }
     expandedContent={
-      <div className="space-y-8">
+      <div className="space-y-12">
         {/* 科目详情卡片 */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {data.details.map((subject, index) => (
             <motion.div
               key={index}
-              className="p-6 rounded-xl shadow-sm border border-[#dfb67e]/20 bg-gradient-to-br from-orange-50/50 to-amber-50/30 transition-all duration-300"
-              initial={{ opacity: 0, y: 20 }}
+              className="p-8 rounded-xl shadow-sm border border-[#dfb67e]/20 bg-gradient-to-br from-orange-50/50 to-amber-50/30 transition-all duration-300 hover:shadow-md"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1 + index * 0.1 }}
+              transition={{ delay: 0.1 + index * 0.2 }}
             >
-              <h4 className="text-xl font-bold mb-4 text-[#9c7146] text-center">
+              <h4 className="text-2xl font-semibold mb-6 text-[#9c7146] text-center leading-tight">
                 {subject.title}
               </h4>
-              
-              <div className="space-y-3 mb-6">
+
+              <div className="space-y-4 mb-8">
                 {subject.stats.map((stat, i) => (
                   <div key={i} className="flex items-start">
-                    <span className="text-[#9c7146] mr-2 font-bold">•</span>
-                    <p className="text-sm text-gray-700">{stat}</p>
+                    <span className="text-[#9c7146] mr-3 font-bold text-lg">
+                      •
+                    </span>
+                    <p className="text-base text-gray-600 leading-8">{stat}</p>
                   </div>
                 ))}
               </div>
 
-              <Separator className="my-4 bg-[#9c7146]/20" />
+              <Separator className="my-6 bg-[#9c7146]/20" />
 
               <div className="flex flex-col items-center justify-center">
                 <PercentageCircle
                   value={subject.percentage}
-                  size="w-20 h-20"
-                  textSize="text-lg"
+                  size="w-24 h-24"
+                  textSize="text-xl"
                   color="text-[#dfb67e]"
                   borderColor="border-[#dfb67e]/30"
+                  delay={0.5 + index * 0.2}
                 />
-                <p className="text-sm mt-3 text-center font-medium text-[#b8926b]">
+                <p className="text-base mt-4 text-center font-medium text-[#b8926b] leading-6">
                   {subject.percentageLabel}
                 </p>
               </div>
@@ -77,48 +81,46 @@ export const VCEScienceSubject = ({ data }) => (
 
         {/* 课程优势部分 */}
         <motion.div
-          className="space-y-8"
+          className="space-y-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.4 }}
+          transition={{ delay: 0.6 }}
         >
-          <h4 className="text-2xl font-bold text-[#9c7146] text-center border-b-2 border-[#dfb67e]/20 pb-4">
+          <h4 className="text-3xl font-bold text-[#9c7146] text-center border-b-2 border-[#dfb67e]/20 pb-6 leading-tight">
             {data.advantages.title}
           </h4>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {data.advantages.points.map((point, index) => (
+          <div className="grid gap-10 md:grid-cols-3">
+            {data.advantages.points.map((point, i) => (
               <motion.div
-                key={index}
-                className="p-8 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 shadow-md border border-[#dfb67e]/20 transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
+                key={i}
+                className="p-8 rounded-xl bg-gradient-to-br from-amber-50 to-orange-50 border border-red-200 transition-all duration-300 shadow-sm hover:shadow-md"
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.5 + index * 0.1 }}
+                transition={{ delay: 0.5 + i * 0.2 }}
               >
-                <div className="flex items-start mb-4">
-                  <div className="w-10 h-10 bg-[#dfb67e] text-white rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0 mr-4 mt-1">
-                    {String.fromCharCode(65 + index)}
-                  </div>
-                  <div className="flex-1">
-                    <h5 className="text-xl font-bold mb-3 text-[#9c7146]">{point.title}</h5>
-                    <p className="text-gray-700 leading-relaxed">
-                      {point.description}
-                    </p>
-                  </div>
+                <div className="flex items-start mb-6 gap-6">
+                  <span className="text-white text-center p-4 font-bold bg-[#dfb67e] rounded-full w-14 h-14 flex items-center justify-center text-xl flex-shrink-0">
+                    {String.fromCharCode(65 + i)}
+                  </span>
+                  <h5 className="font-semibold text-xl text-[#9c7146] leading-7">
+                    {point.title}
+                  </h5>
                 </div>
+                <p className="text-base text-gray-600 leading-8">
+                  {point.description}
+                </p>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-        {/* 底部装饰性元素 */}
-        <motion.div 
-          className="flex justify-center pt-6"
+        <motion.div
+          className="flex justify-center pt-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
+          transition={{ delay: 1.2 }}
         >
-          <div className="w-24 h-1 bg-gradient-to-r from-transparent via-[#dfb67e]/50 to-transparent rounded-full"></div>
+          <div className="w-32 h-1 bg-gradient-to-r from-transparent via-[#dfb67e]/50 to-transparent rounded-full"></div>
         </motion.div>
       </div>
     }

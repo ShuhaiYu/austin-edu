@@ -15,9 +15,9 @@ export const achievementContent = {
       ],
       atarValues: ["99.95", "99+", "97+", "Row 50"],
       percentages: [
-        { value: "18%", label: "ATAR of 99+" },
-        { value: "36%", label: "ATAR of 97+" },
-        { value: "85%", label: "ATAR of 90+" },
+        { value: "18%", label: "ATAR 99+" },
+        { value: "36%", label: "ATAR 97+" },
+        { value: "85%", label: "ATAR 90+" },
       ],
     },
     juniorHigh: {
@@ -40,7 +40,7 @@ export const achievementContent = {
           ],
         },
         advanced: {
-          title: "Year 7-9 Advanced Program",
+          title: "Year 7-9 Enrichment Program",
           content:
             "On average, each year, 70% of students achieve top scores in NAPLAN exams",
         },
@@ -198,7 +198,7 @@ export const achievementContent = {
         },
         block3: {
           title:
-            "Numerous top-ranked math achievers in both MM and SM from various schools come from Austin Education. These schools include:",
+            "Top MM and SM achievers from Austin Education come from these schools:",
           schools: [
             "Balwyn High",
             "Melbourne Grammar School",
@@ -413,8 +413,8 @@ export const achievementContent = {
         },
       },
       advanced79: {
-        title: "Year 7-9 Advanced Program",
-        headerText: "From 2017 to 2024, in the Year 7-9 Advanced Program:",
+        title: "Year 7-9 Enrichment Program",
+        headerText: "From 2017 to 2024, in the Year 7-9 Enrichment Program:",
         compactStat: {
           value: "71%",
           description:
@@ -424,8 +424,8 @@ export const achievementContent = {
           "Every year, at least **4** students achieved top score (dot in the triangle) in **all the subjects of NAPLAN.**",
       },
       advanced35: {
-        title: "Year 3-5 Advanced Program",
-        headerText: "From 2017 to 2024, in the Year 3-5 Advanced Program:",
+        title: "Year 3-5 Enrichment Program",
+        headerText: "From 2017 to 2024, in the Year 3-5 Enrichment Program:",
         compactStat: {
           value: "84.7%",
           description:

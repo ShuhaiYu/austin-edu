@@ -12,8 +12,8 @@
   --breakpoint-3xl: 120rem;
   --color-primary: #285ea9; 
   --color-primary-foreground: #f1f5f9;
-  --color-austin-yellow: #f1c40f;
-  --color-austin-red: #e74c3c; 
+  --color-austin-yellow: #dfb67e;
+  --color-austin-red: #c12731; 
   --color-secondary: #00cee8; 
   --color-secondary-foreground: #797979;
   --color-accent: #285ea9; 
@@ -306,5 +306,41 @@
   50% { 
     transform: translateY(-50%) scale(1.3); 
     opacity: 0.7; 
+  }
+}
+
+
+/* 添加到globals.css中，用于处理动态navbar高度 */
+
+/* 为侧边栏添加平滑过渡 */
+.sidebar-transition {
+  transition: top 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+/* 确保滚动偏移量的平滑过渡 */
+html {
+  scroll-padding-top: 96px; /* 默认navbar高度 */
+}
+
+/* 当滚动时调整scroll-padding-top */
+.scrolled {
+  scroll-padding-top: 32px; /* 滚动后的navbar高度 */
+}
+
+/* 移动端按钮位置过渡 */
+.mobile-menu-btn {
+  transition: top 0.3s ease-in-out;
+}
+
+/* 确保侧边栏在不同屏幕下的正确显示 */
+@media (max-width: 1024px) {
+  .sidebar-mobile {
+    top: 96px !important;
+    height: calc(100vh - 96px) !important;
+  }
+  
+  .sidebar-mobile.scrolled {
+    top: 32px !important;
+    height: calc(100vh - 32px) !important;
   }
 }
