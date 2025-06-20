@@ -134,7 +134,7 @@ export const blogPosts = {
             <p>Whether you're aiming to strengthen SAC results, improve essay writing, or prepare for your final exam with high-level mock questions, Austin Education offers a proven, systematised pathway toward success.</p>
             
             <p style="font-size: 1.25rem; margin-top: 2rem;">
-              👉 <click-link href="/contact">Book a free consultation today</click-link> to discover which course is best aligned with your goals.
+              👉 <click-link href="/contact_us">Book a free consultation today</click-link> to discover which course is best aligned with your goals.
             </p>
           </div>
         `,
@@ -267,7 +267,7 @@ export const blogPosts = {
             <p>无论你的目标是提升SAC、打磨写作，还是精准冲刺考试，澳升教育都为你提供系统化的提分路径。</p>
             
             <p style="font-size: 1.25rem; margin-top: 2rem;">
-              👉 <click-link href="/contact">立即预约免费课程规划</click-link>，找到最适合你的班型和学习节奏。
+              👉 <click-link href="/contact_us">立即预约免费课程规划</click-link>，找到最适合你的班型和学习节奏。
             </p>
           </div>
         `,
@@ -397,7 +397,7 @@ export const blogPosts = {
             <p>Whether you're aiming for ATAR 99+, looking to excel in English, Maths, or preparing for UCAT, Austin Education has the proven track record to help you achieve your goals.</p>
             
             <p style="font-size: 1.25rem; margin-top: 2rem;">
-              👉 <click-link href="/contact">Get in touch with us today</click-link> – let's start working towards your goals, together.
+              👉 <click-link href="/contact_us">Get in touch with us today</click-link> – let's start working towards your goals, together.
             </p>
           </div>
         `,
@@ -518,7 +518,7 @@ export const blogPosts = {
             <p>无论你的目标是ATAR 99+、英语优异、数学突破，还是UCAT备考，澳升教育都有成熟的成功经验帮你实现目标。</p>
             
             <p style="font-size: 1.25rem; margin-top: 2rem;">
-              👉 <click-link href="/contact">欢迎联系澳升</click-link>，开启属于你的高分之路！
+              👉 <click-link href="/contact_us">欢迎联系澳升</click-link>，开启属于你的高分之路！
             </p>
           </div>
         `,
@@ -649,7 +649,7 @@ export const blogPosts = {
             <p>Different VCE subjects have different scaling effects, and choosing the wrong ones may negatively impact your final ATAR, potentially costing you a spot at your dream university. To achieve a higher ATAR, it's not just about studying hard — strategic subject selection and early planning are just as important.</p>
             <p>Austin Education offers one-on-one professional subject selection consultations.</p>
             <p>Our experienced advisors will help you choose high-scaling subjects that align with your interests, strengths, and future goals — maximising your ATAR potential.</p>
-            <p><click-link href="/contact">Contact us today</click-link> to customise your personalised VCE study pathway!</p>
+            <p><click-link href="/contact_us">Contact us today</click-link> to customise your personalised VCE study pathway!</p>
           </div>
 
           <h2>The Relationship Between VCE Scores and ATAR</h2>
@@ -689,14 +689,14 @@ export const blogPosts = {
           <h3>Why Are Some Subjects Dated 2023 on the ATAR Statement?</h3>
           <p>VCE course arrangements vary between schools. Some students choose to complete certain VCE subjects earlier—often in Year 11—based on their academic readiness and study plan. This allows them to build a stronger foundation and reduce pressure in Year 12.</p>
           
-          <p>If you'd like to get ahead with early planning, strategic subject selection, and stress-free preparation, <click-link href="/contact">contact us</click-link> for a personalised one-on-one consultation. We'll help tailor your VCE study path based on your progress and goals—maximising your ATAR potential.</p>
+          <p>If you'd like to get ahead with early planning, strategic subject selection, and stress-free preparation, <click-link href="/contact_us">contact us</click-link> for a personalised one-on-one consultation. We'll help tailor your VCE study path based on your progress and goals—maximising your ATAR potential.</p>
 
           <div class="cta-section">
             <h2>Ready to Maximise Your ATAR Potential?</h2>
             <p>Whether you need strategic subject selection guidance, VCE preparation, or personalised study planning, Austin Education has the expertise to help you achieve your goals.</p>
             
             <p style="font-size: 1.25rem; margin-top: 2rem;">
-              👉 <click-link href="/contact">Book your free consultation today</click-link> to get started on your VCE journey!
+              👉 <click-link href="/contact_us">Book your free consultation today</click-link> to get started on your VCE journey!
             </p>
           </div>
 
@@ -809,7 +809,7 @@ export const blogPosts = {
             <p><strong>也就是说，选对课程至关重要。</strong></p>
             <p>不同科目的加减分幅度不同，选错课可能会影响你最终的ATAR成绩，与理想的学校擦肩而过。想要拿到更高的排名，除了努力学习，更要科学选课、提前规划。</p>
             <p>澳升提供一对一的专业选课咨询服务，帮你结合兴趣、强项和未来目标，选择最适合自己的加分高科目，最大化你的ATAR潜力。</p>
-            <p><click-link href="/contact">欢迎联系我们</click-link>，让专业老师帮你定制专属的VCE学习路径！</p>
+            <p><click-link href="/contact_us">欢迎联系我们</click-link>，让专业老师帮你定制专属的VCE学习路径！</p>
           </div>
 
           <h2>VCE分数与ATAR的关系</h2>
@@ -851,14 +851,14 @@ export const blogPosts = {
           <h3>为什么成绩单上有些科目是在2023年？</h3>
           <p>维州每个学校的VCE课程安排和考试制度略有不同。对于不同水平和能力的学生来说，可以根据自身的学习计划，提前修读或考试某些VCE科目，从而为12年级减轻压力、打好基础。</p>
           
-          <p>如果你也想更早做好准备、合理规划VCE考试，<click-link href="/contact">联系我们一对一咨询</click-link>。我们会根据你的学习进度和目标，量身定制选课与复习方案，帮助你科学备考，提前减压。</p>
+          <p>如果你也想更早做好准备、合理规划VCE考试，<click-link href="/contact_us">联系我们一对一咨询</click-link>。我们会根据你的学习进度和目标，量身定制选课与复习方案，帮助你科学备考，提前减压。</p>
 
           <div class="cta-section">
             <h2>准备最大化你的ATAR潜力？</h2>
             <p>无论你需要战略性选课指导、VCE备考，还是个性化学习规划，澳升教育都有专业经验帮助你实现目标。</p>
             
             <p style="font-size: 1.25rem; margin-top: 2rem;">
-              👉 <click-link href="/contact">立即预约免费咨询</click-link>，开始你的VCE之旅！
+              👉 <click-link href="/contact_us">立即预约免费咨询</click-link>，开始你的VCE之旅！
             </p>
           </div>
 

@@ -1,9 +1,10 @@
 "use client";
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LangContext } from "@/app/layout";
 import Image from "next/image";
 import Link from "next/link";
+import { toast } from "sonner";
 import {
   Accordion,
   AccordionItem,
@@ -28,6 +29,68 @@ import { joinUsFaqItems } from "@/data/faq_content.js";
 export default function JoinUsPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = joinUsContent[lang];
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  // 处理表单提交
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      const formData = new FormData(e.target);
+      const data = {};
+      
+      // 收集所有表单数据
+      for (let [key, value] of formData.entries()) {
+        if (data[key]) {
+          // 处理多选值
+          if (Array.isArray(data[key])) {
+            data[key].push(value);
+          } else {
+            data[key] = [data[key], value];
+          }
+        } else {
+          data[key] = value;
+        }
+      }
+
+      // 添加时间戳
+      data.timestamp = new Date().toISOString();
+
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'job-application',
+          data: data,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit application');
+      }
+
+      toast.success(
+        lang === "en" 
+          ? "Application submitted successfully! We'll contact you soon."
+          : "申请提交成功！我们会尽快与您联系。"
+      );
+      
+      // 重置表单
+      e.target.reset();
+    } catch (error) {
+      console.error('Error submitting application:', error);
+      toast.error(
+        lang === "en"
+          ? "Failed to submit application. Please try again."
+          : "申请提交失败，请重试。"
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   /**
    * 根据字段类型渲染不同的表单控件
@@ -128,7 +191,7 @@ export default function JoinUsPage() {
               </a>
             </Button>
             <Button variant="outline" className="text-sm md:text-base" asChild>
-              <Link href="/contact_us">
+              <Link href="/about_us">
                 {t.section1.button2}
               </Link>
             </Button>
@@ -237,7 +300,10 @@ export default function JoinUsPage() {
         {/* 右侧：在线申请表 */}
         <div className="w-full md:w-1/2 sticky top-4">
           <h2 className="text-3xl font-bold mb-6">{t.form.title}</h2>
-          <form className="space-y-4 p-4 md:p-8 rounded-lg shadow-lg bg-primary text-primary-foreground">
+          <form 
+            onSubmit={handleSubmit}
+            className="space-y-4 p-4 md:p-8 rounded-lg shadow-lg bg-primary text-primary-foreground"
+          >
             {t.form.sections.map((section) => (
               <div key={section.id} className="space-y-4">
                 <h3 className="text-xl font-semibold border-b pb-2">
@@ -330,9 +396,13 @@ export default function JoinUsPage() {
             <div className="flex justify-start mt-6">
               <Button
                 type="submit"
-                className="w-full md:w-auto bg-red-700 text-white hover:bg-red-900"
+                disabled={isSubmitting}
+                className="w-full md:w-auto bg-red-700 text-white hover:bg-red-900 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {t.form.submitButtonLabel}
+                {isSubmitting 
+                  ? (lang === "en" ? "Submitting..." : "提交中...")
+                  : t.form.submitButtonLabel
+                }
               </Button>
             </div>
           </form>

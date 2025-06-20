@@ -3,6 +3,7 @@
 import { useContext, useEffect } from "react";
 import { LangContext } from "@/app/layout";
 import Image from "next/image";
+import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { aboutUsContent } from "./about_us_content";
 import FAQ from "@/components/FAQ";
@@ -19,17 +20,23 @@ export default function AboutPage() {
     const handleHashNavigation = () => {
       const hash = window.location.hash.slice(1); // 移除 # 符号
       // 只要有任何校区相关的 hash，都跳转到 campuses section
-      const campusHashes = ["box-hill", "mount-waverley", "cbd", "point-cook", "adelaide"];
-      
+      const campusHashes = [
+        "box-hill",
+        "mount-waverley",
+        "cbd",
+        "point-cook",
+        "adelaide",
+      ];
+
       if (hash && campusHashes.includes(hash)) {
         // 延迟执行确保页面完全加载
         setTimeout(() => {
-          const campusesSection = document.getElementById('campuses-section');
+          const campusesSection = document.getElementById("campuses-section");
           if (campusesSection) {
-            campusesSection.scrollIntoView({ 
-              behavior: 'smooth', 
-              block: 'start',
-              inline: 'nearest'
+            campusesSection.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+              inline: "nearest",
             });
           }
         }, 100);
@@ -38,14 +45,19 @@ export default function AboutPage() {
 
     // 页面加载时处理
     handleHashNavigation();
-    
+
     // 监听 hash 变化
-    window.addEventListener('hashchange', handleHashNavigation);
-    
+    window.addEventListener("hashchange", handleHashNavigation);
+
     return () => {
-      window.removeEventListener('hashchange', handleHashNavigation);
+      window.removeEventListener("hashchange", handleHashNavigation);
     };
   }, []);
+
+  // 生成Google Maps链接的函数
+  const generateGoogleMapsUrl = (address) => {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  };
 
   return (
     <div className="container mx-auto px-4 py-16">
@@ -191,17 +203,34 @@ export default function AboutPage() {
                   <div className="space-y-4">
                     <div className="flex items-center gap-2">
                       <MapPin className="w-5 h-5 text-primary" />
-                      <span>{campus.address}</span>
+                      <Link
+                        href={generateGoogleMapsUrl(campus.address)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className=" hover:text-blue-800 hover:underline transition-colors duration-200"
+                      >
+                        {campus.address}
+                      </Link>
                     </div>
 
                     <div className="flex items-center gap-2">
                       <Phone className="w-5 h-5 text-primary" />
-                      <span>{campus.phone}</span>
+                      <Link
+                        href={`tel:${campus.phone}`}
+                        className=" hover:text-blue-800 hover:underline transition-colors duration-200"
+                      >
+                        {campus.phone}
+                      </Link>
                     </div>
 
                     <div className="flex items-center gap-2">
                       <Mail className="w-5 h-5 text-primary" />
-                      <span>{campus.email}</span>
+                      <Link
+                        href={`mailto:${campus.email}`}
+                        className=" hover:text-blue-800 hover:underline transition-colors duration-200"
+                      >
+                        {campus.email}
+                      </Link>
                     </div>
                   </div>
 
@@ -215,7 +244,7 @@ export default function AboutPage() {
           </div>
         ))}
       </section>
-      <FAQ customFaqItems={aboutUsFAQContent}/>
+      <FAQ customFaqItems={aboutUsFAQContent} />
     </div>
   );
 }

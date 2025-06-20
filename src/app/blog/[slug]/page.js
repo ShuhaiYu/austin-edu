@@ -36,7 +36,7 @@ export default function BlogPostPage() {
         {/* Back Button */}
         <div className="mb-8">
           <Link href="/resource_hub?tab=blogs">
-            <Button variant="ghost" className="gap-2 text-gray-600 hover:text-gray-900">
+            <Button variant="ghost" className="gap-2 text-gray-600 hover:text-white">
               <ChevronLeft className="w-4 h-4" />
               {lang === 'en' ? 'Back to Blog' : '返回博客'}
             </Button>

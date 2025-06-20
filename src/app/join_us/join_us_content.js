@@ -5,7 +5,7 @@ export const joinUsContent = {
       heading: "Education with Heart, Results with Excellence",
       desc: "Austin Education is a leading educational institution specialising in comprehensive tutoring services for students from Year 1 to Year 12. Since our establishment in late 2013, we have been dedicated to fostering academic excellence and personal growth in our students. Our team consists of 40 full-time staff and over 300 part-time and casual professionals, including subject teachers, teaching assistants, and academic advisors. With campuses in Box Hill, Mt Waverley, Melbourne CBD, Point Cook (Victoria), and Adelaide (South Australia), we provide accessible, high-quality learning environments for both staff and students.",
       button1: "Join Us",
-      button2: "Contact",
+      button2: "About Us",
     },
     section2: {
       heading: "Why Work With Us",
@@ -378,7 +378,7 @@ export const joinUsContent = {
       heading: "用心教育，成就卓越",
       desc: "澳升教育是一家行业领先的教育机构，专注于为小学到高中的学生提供优质辅导。澳升自 2013 年年底成立以来，我们致力于帮助学生提升学业成绩，实现个人成长。目前，我们有 40 多名全职员工，以及 300 多名兼职员工，包括各科老师、助教和学术顾问。我们的校区遍布 Box Hill、Mt Waverley、墨尔本 CBD、Point Cook（维州）和阿德莱德（南澳），旨在为员工和学生提供良好的工作及教学环境。",
       button1: "加入我们",
-      button2: "联系我们",
+      button2: "关于我们",
     },
     section2: {
       heading: "员工福利",

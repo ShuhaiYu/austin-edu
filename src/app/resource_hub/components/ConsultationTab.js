@@ -7,6 +7,7 @@ import { LangContext } from "@/app/layout";
 import MultiSelect from "@/components/multiselect";
 import { toast } from "sonner";
 import { X } from "lucide-react";
+import Link from "next/link";
 
 const content = {
   en: {
@@ -321,7 +322,9 @@ export const ConsultationTab = () => {
           <p className="text-muted-foreground text-justify whitespace-pre-line">
             {t.description_1}
           </p>
-          <Button className="my-4 px-8">Book Now</Button>
+          <Link href={"https://calendly.com/rachelle-austinedu/30min"} rel="noopener noreferrer" target="_blank">
+            <Button className="my-4 px-8">Book Now</Button>
+          </Link>
           <p className="text-muted-foreground text-justify">
             {t.description_2}
           </p>
@@ -548,7 +551,11 @@ export const ConsultationTab = () => {
                         }))}
                         selectedOptions={student.schoolYear}
                         setSelectedOptions={(value) =>
-                          updateStudentMultiSelect(student.id, "schoolYear", value)
+                          updateStudentMultiSelect(
+                            student.id,
+                            "schoolYear",
+                            value
+                          )
                         }
                         className="rounded-[2rem] border border-gray-200 p-6 bg-white"
                       />

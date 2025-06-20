@@ -86,6 +86,17 @@ export default function ContactPage() {
     };
   }, []);
 
+  // 生成Google Maps链接的函数
+  const generateGoogleMapsUrl = (address) => {
+    return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(address)}`;
+  };
+
+  // 提取电话号码中的纯数字部分（去掉括号内容）
+  const extractPhoneNumber = (phoneText) => {
+    // 移除括号及其内容，然后只保留数字、空格、加号和连字符
+    return phoneText.replace(/\([^)]*\)/g, '').trim();
+  };
+
   return (
     <div className="rounded-xl p-8 ">
       <ConsultationTab />
@@ -141,11 +152,23 @@ export default function ContactPage() {
                       <div className="space-y-3 text-sm lg:text-base">
                         <div className="flex items-start gap-2">
                           <MapPin className="w-4 h-4 mt-1 flex-shrink-0" />
-                          <span className="break-words">{campus.location}</span>
+                          <Link
+                            href={generateGoogleMapsUrl(campus.location)}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="break-words hover:text-blue-800 hover:underline transition-colors duration-200"
+                          >
+                            {campus.location}
+                          </Link>
                         </div>
                         <div className="flex items-center gap-2">
                           <Mail className="w-4 h-4 flex-shrink-0" />
-                          <span className="break-all">{campus.email}</span>
+                          <Link
+                            href={`mailto:${campus.email}`}
+                            className="break-all  hover:text-blue-800 hover:underline transition-colors duration-200"
+                          >
+                            {campus.email}
+                          </Link>
                         </div>
                       </div>
                     </div>
@@ -165,7 +188,12 @@ export default function ContactPage() {
                                   className="flex items-center gap-2"
                                 >
                                   <Phone className="w-4 h-4" />
-                                  <span>{num}</span>
+                                  <Link
+                                    href={`tel:${extractPhoneNumber(num)}`}
+                                    className=" hover:text-blue-800 hover:underline transition-colors duration-200"
+                                  >
+                                    {num}
+                                  </Link>
                                 </div>
                               ))}
                               <div className="flex items-center gap-2">
