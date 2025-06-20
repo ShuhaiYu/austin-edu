@@ -818,7 +818,7 @@ export const coursesContent = {
           ],
         },
         "vce-lantin-unit-1-4": {
-          title: "VCE Lantin Unit 1-4",
+          title: "VCE Latin Unit 1-4",
           slug: "vce-lantin-unit-1-4",
           content: [
             "For details about our term-based courses, please contact us for more information.",

@@ -152,7 +152,7 @@ export const contactUsContent = {
         ],
       },
     ],
-    OtherMethods: "You can also find us in",
+    OtherMethods: "You can also find us on",
   },
   zh: {
     title: "填写表格立即预约咨询",

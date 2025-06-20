@@ -396,7 +396,7 @@ const COURSE_DATABASE = [
   // Senior High School 10-12 Years - VCE Languages Courses
   {
     slug: "vce-lantin-unit-1-4",
-    title: "VCE Lantin Unit 1-4",
+    title: "VCE Latin Unit 1-4",
     grades: [11, 12],
     states: ["Victoria"],
     category: "VCE Languages Courses"

@@ -224,7 +224,6 @@ export default function CoursePageClient({ localizedData }) {
                 background: "linear-gradient(90deg, #285ea9, #1e4a87, #285ea9)",
               }}
             >
-
               {/* 星光装饰 */}
               <span
                 className="absolute top-1/2 -left-6 transform -translate-y-1/2 text-primary text-2xl"
@@ -308,11 +307,9 @@ export default function CoursePageClient({ localizedData }) {
                                 key={j}
                                 className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl hover:bg-white transition-all shadow-lg hover:shadow-xl"
                               >
-                                {item.title && (
-                                  <p className="text-sm text-primary font-medium mb-2">
-                                    {item.title}
-                                  </p>
-                                )}
+                                <p className="text-sm text-primary font-medium mb-2">
+                                  {item.title || "\u00A0"}
+                                </p>
                                 <div className="text-3xl font-semibold text-primary mb-1">
                                   {item.number}
                                 </div>
@@ -365,11 +362,9 @@ export default function CoursePageClient({ localizedData }) {
                                 key={j}
                                 className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl hover:bg-white transition-all shadow-lg hover:shadow-xl"
                               >
-                                {item.title && (
-                                  <p className="text-sm text-primary font-medium mb-2">
-                                    {item.title}
-                                  </p>
-                                )}
+                                <p className="text-sm text-primary font-medium mb-2 ">
+                                  {item.title || "\u00A0"}
+                                </p>
                                 <div className="text-3xl font-semibold text-primary mb-1">
                                   {item.number}
                                 </div>
