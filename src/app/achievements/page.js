@@ -453,9 +453,6 @@ export default function Achievements() {
                         delay={index * 0.3}
                         size="w-24 h-24"
                       />
-                      <p className="text-sm mt-3 text-gray-600 leading-relaxed">
-                        {value} {lang === "en" ? "of students" : "的学生"}
-                      </p>
                       <h2 className="text-2xl font-bold mt-2 text-primary leading-relaxed">
                         {label}
                       </h2>

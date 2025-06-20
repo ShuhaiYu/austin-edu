@@ -9,7 +9,7 @@ export const VCEEnglishSubject = ({ data }) => (
   <BaseSubject
     title={data.title}
     compactContent={
-      <div className="grid grid-cols-2 gap-12 w-full max-w-lg">
+      <div className="grid grid-cols-2 gap-12 w-full">
         {data.compactStats.map((stat, index) => (
           <div key={index} className="flex flex-col items-center">
             <PercentageCircle

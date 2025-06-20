@@ -10,7 +10,7 @@ export const VCEScienceSubject = ({ data }) => (
   <BaseSubject
     title={data.title}
     compactContent={
-      <div className="grid grid-cols-3 gap-12 w-full max-w-lg">
+      <div className="grid grid-cols-3 gap-12 w-full">
         {data.compactStats.map((subject, index) => (
           <motion.div
             key={index}
@@ -65,7 +65,7 @@ export const VCEScienceSubject = ({ data }) => (
               <div className="flex flex-col items-center justify-center">
                 <PercentageCircle
                   value={subject.percentage}
-                  size="w-24 h-24"
+                  size="w-18 h-18"
                   textSize="text-xl"
                   color="text-[#dfb67e]"
                   borderColor="border-[#dfb67e]/30"

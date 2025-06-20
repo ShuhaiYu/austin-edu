@@ -93,10 +93,10 @@ export const achievementContent = {
       english: {
         title: "VCE English & EAL",
         compactStats: [
-          { value: "96%", label: "of students passed with a raw score of 30" },
+          { value: "96%", label: "students passed with a raw score of 30" },
           {
             value: "40%",
-            label: "of students achieved a raw score of 40 or above",
+            label: "students achieved a raw score of 40 or above",
           },
         ],
         classes: {
@@ -230,9 +230,9 @@ export const achievementContent = {
       science: {
         title: "VCE Science",
         compactStats: [
-          { value: "33%", label: "of BIO students achieved raw 40+" },
-          { value: "37%", label: "of CHEM students achieved raw 40+" },
-          { value: "41%", label: "of PHY students achieved raw 40+" },
+          { value: "33%", label: "BIO students achieved raw 40+" },
+          { value: "37%", label: "CHEM students achieved raw 40+" },
+          { value: "41%", label: "PHY students achieved raw 40+" },
         ],
         details: [
           {
@@ -609,11 +609,11 @@ export const achievementContent = {
         compactStats: (
           <span>
             17-24年，澳升中数+高数共诞生
-            <strong className="font-bold text-lg text-[#c12731]">36</strong>位Raw Score
-            50<strong className="font-bold text-lg ">单科状元</strong>，
+            <strong className="font-bold text-primary">36</strong>位Raw Score
+            50<strong className="font-bold ">单科状元</strong>，
             <br />
-            中数班裸分均分<strong className="font-bold text-lg text-[#c12731]">42</strong>
-            ，高数班裸分均分<strong className="font-bold text-lg text-[#c12731]">38</strong>
+            中数班裸分均分<strong className="font-bold text-primary">42</strong>
+            ，高数班裸分均分<strong className="font-bold text-primary">38</strong>
             <br />
             多个日校的中高数Rank 1均是来自澳升
           </span>
@@ -777,18 +777,16 @@ export const achievementContent = {
         title: "AMC Competition",
         compactStats: (
           <span>
-            From 2017 to 2024,{" "}
-            <strong className="font-bold text-xl text-[#c12731]">36</strong>{" "}
-            students scored a{" "}
-            <strong className="font-bold text-xl">perfect score of 50</strong>{" "}
-            in both MM and SM.
+            23-24年间， <br />
+            <strong className="font-bold text-xl text-[#c12731]">4</strong>{" "}
+            名学生获得了{" "}
+            <strong className="font-bold text-xl">High Distinction</strong>{" "}
             <br />
-            The MM class had an average raw score of{" "}
-            <strong className="font-bold text-xl text-[#c12731]">42</strong>,
-            while that figure of the SM class was{" "}
-            <strong className="font-bold text-xl">38</strong>.<br />
-            Numerous top-ranked math achievers in various day schools have
-            received tutoring from Austin Education.
+            <strong className="font-bold text-xl text-[#c12731]">
+              11
+            </strong>{" "}
+            名学生获得了{" "}
+            <strong className="font-bold text-xl">Distinction</strong>{" "}
           </span>
         ),
       },

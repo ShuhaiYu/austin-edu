@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import { PercentageCircle } from "@/components/PercentageCircle";
 import { BaseSubject } from "./BaseSubject";
 
@@ -37,7 +36,7 @@ export const AdvancedProgram79 = ({ data }) => (
               color="text-[#c12731]"
               borderColor="border-[#c12731]/60"
             />
-            <p className="text-base text-gray-600 text-center mt-3 max-w-48 leading-8">
+            <p className="text-base text-gray-600 text-center mt-3 max-w-2/3 leading-8">
               {data.compactStat.description}
             </p>
           </div>
