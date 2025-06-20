@@ -1,3 +1,4 @@
+// components/subjects/AdvancedProgram79.jsx
 "use client";
 
 import { PercentageCircle } from "@/components/PercentageCircle";
@@ -18,7 +19,7 @@ const renderTextWithBold = (text) => {
   );
 };
 
-export const AdvancedProgram79 = ({ data }) => (
+export const AdvancedProgram79 = ({ data, onLearnMore }) => (
   <BaseSubject
     title={data.title}
     compactContent={
@@ -54,5 +55,6 @@ export const AdvancedProgram79 = ({ data }) => (
       </div>
     }
     expandedContent={null}
+    onLearnMore={onLearnMore}
   />
 );

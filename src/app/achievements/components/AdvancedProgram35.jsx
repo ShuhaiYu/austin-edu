@@ -1,8 +1,11 @@
+// components/subjects/AdvancedProgram35.jsx
 "use client";
 
 import { motion } from "framer-motion";
 import { PercentageCircle } from "@/components/PercentageCircle";
 import { BaseSubject } from "./BaseSubject";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 const renderTextWithBold35 = (text) => {
   if (!text) return text;
@@ -19,7 +22,7 @@ const renderTextWithBold35 = (text) => {
   );
 };
 
-export const AdvancedProgram35 = ({ data }) => (
+export const AdvancedProgram35 = ({ data, onLearnMore }) => (
   <BaseSubject
     title={data.title}
     compactContent={
@@ -114,7 +117,19 @@ export const AdvancedProgram35 = ({ data }) => (
             ))}
           </div>
         </motion.div>
+        
+        {/* Learn More Button */}
+        <div className="text-center mt-12">
+          <Button 
+            className="px-8 py-3 text-lg bg-[#c12731] hover:bg-[#c12731]/90 text-white leading-6"
+            onClick={onLearnMore}
+          >
+            <span className="mr-2">Learn More</span>
+            <ArrowRight className="h-5 w-5" />
+          </Button>
+        </div>
       </div>
     }
+    onLearnMore={onLearnMore}
   />
 );

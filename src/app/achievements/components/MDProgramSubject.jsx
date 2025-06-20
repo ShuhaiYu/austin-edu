@@ -7,7 +7,7 @@ import { BaseSubject } from "./BaseSubject";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
-export const MDProgramSubject = ({ data }) => (
+export const MDProgramSubject = ({ data, onLearnMore }) => (
   <BaseSubject
     title={data.title}
     compactContent={
@@ -110,12 +110,17 @@ export const MDProgramSubject = ({ data }) => (
           </div>
           
           <div className="text-center">
-            <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg leading-6">
-              Learn More About Our MD Program
+            <Button 
+              className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg leading-6"
+              onClick={onLearnMore}
+            >
+              <span className="mr-2">Learn More About Our MD Program</span>
+              <ArrowRight className="h-5 w-5" />
             </Button>
           </div>
         </motion.div>
       </div>
     }
+    onLearnMore={onLearnMore}
   />
 );

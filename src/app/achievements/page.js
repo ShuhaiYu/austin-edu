@@ -1,6 +1,7 @@
 "use client";
 
 import { useContext, useState, useEffect } from "react";
+import { useRouter } from "next/navigation";
 import { LangContext } from "@/app/layout";
 import { achievementContent } from "./content";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,7 @@ import {
   GraduationCap,
   BookOpen,
   Users,
+  ArrowRight,
 } from "lucide-react";
 
 import { VCEEnglishSubject } from "./components/VCEEnglishSubject";
@@ -37,6 +39,7 @@ import Slogan from "@/components/Slogan";
 export default function Achievements() {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const content = achievementContent[lang];
+  const router = useRouter();
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [openSections, setOpenSections] = useState({
@@ -47,6 +50,27 @@ export default function Achievements() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [scrollDirection, setScrollDirection] = useState(null);
+
+  // Navigation handlers
+  const navigateToCoursesWithGrade = (grade) => {
+    // 统一年级标识符，避免语言切换问题
+    const gradeIdentifiers = {
+      "VCE": "Senior Secondary School - Years 10-12",
+      "JuniorHigh": "Secondary School - Years 7-9", 
+      "PrimarySchool": "Primary School - Years 1-6",
+      "高中": "高中 10-12 年级",
+      "初中": "初中 7-9 年级",
+      "小学": "小学 1-6 年级"
+    };
+
+    // 如果传入的是标识符，使用标识符；否则直接使用传入的grade
+    const gradeParam = gradeIdentifiers[grade] || grade;
+    router.push(`/courses?grade=${encodeURIComponent(gradeParam)}`);
+  };
+
+  const navigateToCoursesWithSubject = (subject) => {
+    router.push(`/courses?subject=${encodeURIComponent(subject)}`);
+  };
 
   // 完全同步navbar的滚动逻辑
   useEffect(() => {
@@ -459,6 +483,19 @@ export default function Achievements() {
                     </div>
                   ))}
                 </div>
+                
+                {/* Learn More Button for VCE */}
+                <div className="mt-12">
+                  <Button 
+                    className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg leading-6"
+                    onClick={() => navigateToCoursesWithGrade("Senior Secondary School - Years 10-12")}
+                  >
+                    <span className="mr-2">
+                      {lang === "en" ? "Learn More" : "了解更多"}
+                    </span>
+                    <ArrowRight className="h-5 w-5" />
+                  </Button>
+                </div>
               </div>
 
               {/* 初中 Card - 白底黄字 */}
@@ -508,6 +545,19 @@ export default function Achievements() {
                       {content.juniorHigh.programs.advanced.content}
                     </p>
                   </div>
+                </div>
+                
+                {/* Learn More Button for Junior High */}
+                <div className="mt-12">
+                  <Button 
+                    className="bg-austin-yellow hover:bg-austin-yellow/90 text-white px-8 py-3 text-lg leading-6"
+                    onClick={() => navigateToCoursesWithGrade("Secondary School - Years 7-9")}
+                  >
+                    <span className="mr-2">
+                      {lang === "en" ? "Learn More" : "了解更多"}
+                    </span>
+                    <ArrowRight className="h-5 w-5" />
+                  </Button>
                 </div>
               </div>
 
@@ -561,6 +611,19 @@ export default function Achievements() {
                     )}
                   </div>
                 </div>
+                
+                {/* Learn More Button for Primary School */}
+                <div className="mt-12 text-center">
+                  <Button 
+                    className="bg-austin-red hover:bg-austin-red/90 text-white px-8 py-3 text-lg leading-6"
+                    onClick={() => navigateToCoursesWithGrade("Primary School - Years 1-6")}
+                  >
+                    <span className="mr-2">
+                      {lang === "en" ? "Learn More" : "了解更多"}
+                    </span>
+                    <ArrowRight className="h-5 w-5" />
+                  </Button>
+                </div>
               </div>
             </div>
 
@@ -598,16 +661,33 @@ export default function Achievements() {
                 </div>
               </div>
               <div id="vce-english" className="scroll-mt-24 mb-20">
-                <VCEEnglishSubject data={content.subjects.english} />
+                <VCEEnglishSubject 
+                  data={content.subjects.english} 
+                  onLearnMore={() => navigateToCoursesWithSubject("vce-english-eal-unit1-4")}
+                />
               </div>
               <div id="vce-math" className="scroll-mt-24 mb-20">
-                <VCEMathSubject data={content.subjects.math} />
+                <VCEMathSubject 
+                  data={content.subjects.math} 
+                  onLearnMore={() => navigateToCoursesWithSubject("vce-maths-methods-unit1-4")}
+                />
               </div>
               <div id="vce-science" className="scroll-mt-24 mb-20">
-                <VCEScienceSubject data={content.subjects.science} />
+                <VCEScienceSubject 
+                  data={content.subjects.science} 
+                  onLearnMore={(targetCourse) => {
+                    // If a specific target course is provided (from individual cards), use it
+                    // Otherwise use the default chemistry course
+                    const courseSlug = targetCourse || "vce-chemistry-unit-1-4";
+                    navigateToCoursesWithSubject(courseSlug);
+                  }}
+                />
               </div>
               <div id="md-program" className="scroll-mt-24 mb-20">
-                <MDProgramSubject data={content.subjects.md} />
+                <MDProgramSubject 
+                  data={content.subjects.md} 
+                  onLearnMore={() => navigateToCoursesWithSubject("ucat")}
+                />
               </div>
             </div>
 
@@ -635,16 +715,28 @@ export default function Achievements() {
                 </div>
               </div>
               <div id="selective-school" className="scroll-mt-24 mb-20">
-                <SelectiveSchoolSubject data={content.subjects.selective} />
+                <SelectiveSchoolSubject 
+                  data={content.subjects.selective} 
+                  onLearnMore={() => navigateToCoursesWithSubject("y8-9-selective")}
+                />
               </div>
               <div id="amc" className="scroll-mt-24 mb-20">
-                <AMCSubject data={content.subjects.amc} />
+                <AMCSubject 
+                  data={content.subjects.amc} 
+                  onLearnMore={() => navigateToCoursesWithSubject("y7-8-amc")}
+                />
               </div>
               <div id="scholarship-junior" className="scroll-mt-24 mb-20">
-                <ScholarshipSubject data={content.subjects.scholarship} />
+                <ScholarshipSubject 
+                  data={content.subjects.scholarship} 
+                  onLearnMore={() => navigateToCoursesWithSubject("7-to-9-scholarship-victoria")}
+                />
               </div>
               <div id="advanced-79" className="scroll-mt-24 mb-20">
-                <AdvancedProgram79 data={content.subjects.advanced79} />
+                <AdvancedProgram79 
+                  data={content.subjects.advanced79} 
+                  onLearnMore={() => navigateToCoursesWithSubject("y7-9-english")}
+                />
               </div>
             </div>
 
@@ -670,10 +762,16 @@ export default function Achievements() {
                 </div>
               </div>
               <div id="scholarship-primary" className="scroll-mt-24 mb-20">
-                <ScholarshipSubject data={content.subjects.scholarship} />
+                <ScholarshipSubject 
+                  data={content.subjects.scholarship} 
+                  onLearnMore={() => navigateToCoursesWithSubject("5-to-7-scholarship-victoria")}
+                />
               </div>
               <div id="advanced-35" className="scroll-mt-24 mb-20">
-                <AdvancedProgram35 data={content.subjects.advanced35} />
+                <AdvancedProgram35 
+                  data={content.subjects.advanced35} 
+                  onLearnMore={() => navigateToCoursesWithSubject("y1-6-english-enrichment")}
+                />
               </div>
             </div>
           </div>

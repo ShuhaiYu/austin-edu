@@ -243,6 +243,7 @@ export const achievementContent = {
             ],
             percentage: "33%",
             percentageLabel: "students achieved raw 40+",
+            target: "vce-biology-unit-1-4",
           },
           {
             title: "Chemistry Class",
@@ -252,6 +253,7 @@ export const achievementContent = {
             ],
             percentage: "37%",
             percentageLabel: "students achieved raw 40+",
+            target: "vce-chemistry-unit-1-4",
           },
           {
             title: "Physics Class",
@@ -261,6 +263,7 @@ export const achievementContent = {
             ],
             percentage: "41%",
             percentageLabel: "students achieved raw 40+",
+            target: "vce-physics-unit-1-4",
           },
         ],
         advantages: {
@@ -680,18 +683,21 @@ export const achievementContent = {
             stats: ["平均每年诞生12位裸分40+", "班课平均裸分39"],
             percentage: "33%",
             percentageLabel: "学生获得裸分40+",
+            target: "vce-biology-unit-1-4",
           },
           {
             title: "澳升化学",
             stats: ["平均每年诞生13位裸分45+", "班级中位数裸分37"],
             percentage: "37%",
             percentageLabel: "学生获得裸分40+",
+            target: "vce-chemistry-unit-1-4",
           },
           {
             title: "澳升物理",
             stats: ["平均每年诞生8位裸分40+", "班级中位数裸分36"],
             percentage: "41%",
             percentageLabel: "学生获得裸分40+",
+            target: "vce-physics-unit-1-4",
           },
         ],
         advantages: {

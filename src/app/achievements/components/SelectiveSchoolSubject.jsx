@@ -1,10 +1,13 @@
+// components/subjects/SelectiveSchoolSubject.jsx
 "use client";
 
 import { motion } from "framer-motion";
 import { PercentageCircle } from "@/components/PercentageCircle";
 import { BaseSubject } from "./BaseSubject";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
-export const SelectiveSchoolSubject = ({ data }) => (
+export const SelectiveSchoolSubject = ({ data, onLearnMore }) => (
   <BaseSubject
     title={data.title}
     compactContent={
@@ -71,7 +74,19 @@ export const SelectiveSchoolSubject = ({ data }) => (
             </motion.div>
           ))}
         </div>
+        
+        {/* Learn More Button */}
+        <div className="text-center mt-12">
+          <Button 
+            className="px-8 py-3 text-lg bg-primary hover:bg-primary/90 leading-6"
+            onClick={onLearnMore}
+          >
+            <span className="mr-2">Learn More</span>
+            <ArrowRight className="h-5 w-5" />
+          </Button>
+        </div>
       </div>
     }
+    onLearnMore={onLearnMore}
   />
 );

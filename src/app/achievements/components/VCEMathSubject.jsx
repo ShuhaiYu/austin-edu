@@ -2,6 +2,8 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { BaseSubject } from "./BaseSubject";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 // Helper function to render text with bold formatting
 const renderTextWithBold = (text) => {
@@ -21,7 +23,7 @@ const renderTextWithBold = (text) => {
   });
 };
 
-export const VCEMathSubject = ({ data }) => (
+export const VCEMathSubject = ({ data, onLearnMore }) => (
   <BaseSubject
     title={data.title}
     compactContent={
@@ -148,6 +150,17 @@ export const VCEMathSubject = ({ data }) => (
                 </div>
               </motion.div>
             ))}
+          </div>
+          
+          {/* Learn More Button */}
+          <div className="text-center mt-12">
+            <Button 
+              className="px-10 py-4 text-lg bg-primary hover:bg-primary/90 leading-6"
+              onClick={onLearnMore}
+            >
+              <span className="mr-2">Learn More</span>
+              <ArrowRight className="h-5 w-5" />
+            </Button>
           </div>
         </motion.div>
       </div>

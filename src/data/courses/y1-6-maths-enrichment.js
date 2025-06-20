@@ -532,12 +532,12 @@ const courseData = {
       {
         title: "Year 1-6",
         subtitle: "English Enrichment (ENG/EAL)",
-        slug: "y1-6-english",
+        slug: "y1-6-english-enrichment",
       },
       {
         title: "Year 1-6",
         subtitle: "Chinese Enrichment",
-        slug: "y1-6-chinese",
+        slug: "y1-6-chinese-enrichment",
       },
       {
         title: "Year 3-6",
@@ -1047,12 +1047,12 @@ const courseData = {
       {
         title: "1-6年级",
         subtitle: "英文培优班",
-        slug: "y1-6-english",
+        slug: "y1-6-english-enrichment",
       },
       {
         title: "1-6年级",
         subtitle: "中文培优班",
-        slug: "y1-6-chinese",
+        slug: "y1-6-chinese-enrichment",
       },
       {
         title: "3-6年级",

@@ -1502,7 +1502,7 @@ export const coursesContent = {
         ],
         button: {
           text: "Learn More About Our Support",
-          link: "/support",
+          link: "/resource_hub",
           fromColor: "from-red-500",
           toColor: "to-red-700",
         },
@@ -1528,7 +1528,7 @@ export const coursesContent = {
         ],
         button: {
           text: "Learn More",
-          link: "/value",
+          link: "/contact_us",
           fromColor: "from-blue-500",
           toColor: "to-blue-700",
         },
@@ -2937,7 +2937,7 @@ export const coursesContent = {
         ],
         button: {
           text: "了解我们的支持",
-          link: "/support",
+          link: "/resource_hub",
           fromColor: "from-red-500",
           toColor: "to-red-700",
         },
@@ -2963,7 +2963,7 @@ export const coursesContent = {
         ],
         button: {
           text: "了解更多",
-          link: "/value",
+          link: "/contact_us",
           fromColor: "from-blue-500",
           toColor: "to-blue-700",
         },

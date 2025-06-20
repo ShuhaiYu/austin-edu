@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 import { PercentageCircle } from "@/components/PercentageCircle";
 import { BaseSubject } from "./BaseSubject";
 import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
-export const VCEScienceSubject = ({ data }) => (
+export const VCEScienceSubject = ({ data, onLearnMore }) => (
   <BaseSubject
     title={data.title}
     compactContent={
@@ -62,7 +64,7 @@ export const VCEScienceSubject = ({ data }) => (
 
               <Separator className="my-6 bg-[#9c7146]/20" />
 
-              <div className="flex flex-col items-center justify-center">
+              <div className="flex flex-col items-center justify-center space-y-4">
                 <PercentageCircle
                   value={subject.percentage}
                   size="w-18 h-18"
@@ -71,9 +73,20 @@ export const VCEScienceSubject = ({ data }) => (
                   borderColor="border-[#dfb67e]/30"
                   delay={0.5 + index * 0.2}
                 />
-                <p className="text-base mt-4 text-center font-medium text-[#b8926b] leading-6">
+                <p className="text-base text-center font-medium text-[#b8926b] leading-6">
                   {subject.percentageLabel}
                 </p>
+                
+                {/* View Course Button for each subject */}
+                {subject.target && (
+                  <Button 
+                    className="mt-4 px-6 py-2 text-sm bg-[#9c7146] hover:bg-[#9c7146]/90 text-white leading-5"
+                    onClick={() => onLearnMore && onLearnMore(subject.target)}
+                  >
+                    <span className="mr-2">View Course</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                )}
               </div>
             </motion.div>
           ))}

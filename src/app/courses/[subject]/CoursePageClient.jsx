@@ -286,7 +286,7 @@ export default function CoursePageClient({ localizedData }) {
                     (historicalData, index) => (
                       <div
                         key={index}
-                        className="bg-gradient-to-r from-[#85aedc] to-[#6490c7] rounded-3xl p-10 shadow-2xl overflow-hidden relative"
+                        className="bg-gradient-to-r from-[#85aedc] to-[#6490c7] rounded-3xl p-10 shadow-2xl overflow-hidden relative mt-10"
                         data-aos="fade-up"
                         data-aos-delay={index * 200}
                       >
@@ -341,7 +341,7 @@ export default function CoursePageClient({ localizedData }) {
                     course.heroSection.achievements.historical.items
                   ) && (
                     <div
-                      className="bg-gradient-to-r from-[#85aedc] to-[#6490c7] rounded-3xl p-10 shadow-2xl overflow-hidden relative"
+                      className="bg-gradient-to-r from-[#85aedc] to-[#6490c7] rounded-3xl p-10 shadow-2xl overflow-hidden relative mt-10"
                       data-aos="fade-up"
                     >
                       {/* 背景装饰 */}

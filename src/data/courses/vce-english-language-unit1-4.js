@@ -320,12 +320,12 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "Mathematics Methods Unit 1-4",
-        slug: "vce-maths-methods-unit-1-4",
+        slug: "vce-maths-methods-unit1-4",
       },
       {
         title: "VCE",
         subtitle: "Specialist Mathematics Unit 1-4",
-        slug: "vce-specialist-maths-unit-1-4",
+        slug: "vce-specialist-maths-unit1-4",
       },
       {
         title: "VCE",
@@ -624,12 +624,12 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "中数 Maths Methods Unit 1-4",
-        slug: "vce-maths-methods-unit-1-4",
+        slug: "vce-maths-methods-unit1-4",
       },
       {
         title: "VCE",
         subtitle: "高数 Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit-1-4",
+        slug: "vce-specialist-maths-unit1-4",
       },
       {
         title: "VCE",

@@ -1,6 +1,6 @@
 const courseData = {
   en: {
-    slug: "vce-specialist-maths-unit-1-4",
+    slug: "vce-specialist-maths-unit1-4",
     title: "VCE Specialist Mathematics Unit 1-4",
     heroSection: {
       achievements: {
@@ -351,12 +351,12 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit-1-4",
+        slug: "vce-english-eal-unit1-4",
       },
       {
         title: "VCE",
         subtitle: "Mathematical Methods Unit 1-4",
-        slug: "vce-maths-methods-unit-1-4",
+        slug: "vce-maths-methods-unit1-4",
       },
       {
         title: "VCE",
@@ -366,7 +366,7 @@ const courseData = {
     ],
   },
   zh: {
-    slug: "vce-specialist-maths-unit-1-4",
+    slug: "vce-specialist-maths-unit1-4",
     title: "VCE 高数 Specialist Maths Unit 1-4",
     heroSection: {
       achievements: {
@@ -666,12 +666,12 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit-1-4",
+        slug: "vce-english-eal-unit1-4",
       },
       {
         title: "VCE",
         subtitle: "中数 Maths Methods Unit 1-4",
-        slug: "vce-maths-methods-unit-1-4",
+        slug: "vce-maths-methods-unit1-4",
       },
       {
         title: "VCE",

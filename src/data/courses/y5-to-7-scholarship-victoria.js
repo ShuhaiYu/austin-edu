@@ -291,7 +291,7 @@ const courseData = {
       {
         title: "Year 1-6",
         subtitle: "Maths Enrichment",
-        slug: "y1-6-maths",
+        slug: "y1-6-maths-enrichment",
       },
     ],
   },
@@ -550,7 +550,7 @@ const courseData = {
       {
         title: "1-6年级",
         subtitle: "数学培优班",
-        slug: "y1-6-maths",
+        slug: "y1-6-maths-enrichment",
       },
     ],
   },

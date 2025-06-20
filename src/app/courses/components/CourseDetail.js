@@ -26,6 +26,19 @@ export const CourseDetail = ({ searchFilter }) => {
   const detail = coursesContent[lang].detail;
   const { categories, courses } = detail;
 
+  // 更简单的滚动函数 - 使用原生API滚动到中间
+  const scrollToElement = (element, behavior = "smooth") => {
+    if (!element) return;
+
+    console.log('Scrolling element to center:', element);
+
+    element.scrollIntoView({
+      behavior: behavior,
+      block: "center", // 将元素置于视窗中间
+      inline: "nearest"
+    });
+  };
+
   // 获取第一个分类的第一个子分类的第一门课作为默认课程
   const getDefaultCourse = () => {
     const firstCategory = categories[0];
@@ -54,8 +67,58 @@ export const CourseDetail = ({ searchFilter }) => {
     return null;
   };
 
+  // 根据年级名称找到对应的分类
+  const findCategoryByGrade = (gradeName) => {
+    // 创建双向映射：英文<->中文，以及统一的grade level映射
+    const gradeMapping = {
+      // 英文原名映射
+      "Primary School - Years 1-6": {
+        en: "Primary School - Years 1-6",
+        zh: "小学 1-6 年级",
+        level: "primary"
+      },
+      "Secondary School - Years 7-9": {
+        en: "Secondary School - Years 7-9",
+        zh: "初中 7-9 年级",
+        level: "secondary"
+      },
+      "Senior Secondary School - Years 10-12": {
+        en: "Senior Secondary School - Years 10-12", 
+        zh: "高中 10-12 年级",
+        level: "senior"
+      },
+      // 中文原名映射
+      "小学 1-6 年级": {
+        en: "Primary School - Years 1-6",
+        zh: "小学 1-6 年级", 
+        level: "primary"
+      },
+      "初中 7-9 年级": {
+        en: "Secondary School - Years 7-9",
+        zh: "初中 7-9 年级",
+        level: "secondary"
+      },
+      "高中 10-12 年级": {
+        en: "Senior Secondary School - Years 10-12",
+        zh: "高中 10-12 年级",
+        level: "senior"
+      }
+    };
+
+    // 首先尝试直接匹配
+    let targetTitle = gradeName;
+    
+    // 如果在映射中找到，根据当前语言获取正确的标题
+    if (gradeMapping[gradeName]) {
+      targetTitle = gradeMapping[gradeName][lang];
+    }
+
+    return categories.find(category => category.title === targetTitle);
+  };
+
   // 处理搜索过滤器参数
   useEffect(() => {
+    // 处理具体课程搜索
     if (searchFilter && searchFilter.subject) {
       const courseInfo = findCourseCategory(searchFilter.subject);
 
@@ -76,17 +139,61 @@ export const CourseDetail = ({ searchFilter }) => {
         setTimeout(() => {
           const courseElement = courseRefs.current[searchFilter.subject];
           if (courseElement) {
-            courseElement.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            });
+            console.log('Found course element for subject navigation:', searchFilter.subject);
+            scrollToElement(courseElement);
+          } else {
+            console.warn('Course element not found:', searchFilter.subject);
           }
-        }, 300);
+        }, 500); // 也增加到500ms
 
         // 显示搜索结果提示
         const params = new URLSearchParams();
         params.set("searchResult", "true");
         params.set("courseName", courseInfo.course.title);
+        window.history.replaceState({}, "", `/courses?${params.toString()}`);
+      }
+    }
+    // 处理年级搜索
+    else if (searchFilter && searchFilter.grade) {
+      const category = findCategoryByGrade(searchFilter.grade);
+      
+      if (category) {
+        // 自动展开对应的年级分类
+        setOpenAccordions((prev) => {
+          const newOpenAccordions = [...prev];
+          if (!newOpenAccordions.includes(category.title)) {
+            newOpenAccordions.push(category.title);
+          }
+          return newOpenAccordions;
+        });
+
+        // 选择该分类下的第一门课程作为默认显示
+        if (category.subcategories && category.subcategories.length > 0) {
+          const firstSubcategory = category.subcategories[0];
+          if (firstSubcategory.courses && firstSubcategory.courses.length > 0) {
+            const firstCourseSlug = firstSubcategory.courses[0];
+            const firstCourse = courses[firstCourseSlug];
+            if (firstCourse) {
+              setSelectedCourse(firstCourse);
+            }
+          }
+        }
+
+        // 延迟滚动到分类顶部，并增加延迟时间确保DOM完全渲染
+        setTimeout(() => {
+          const categoryElement = document.querySelector(`[data-category="${category.title}"]`);
+          if (categoryElement) {
+            console.log('Found category element for grade navigation:', category.title);
+            scrollToElement(categoryElement);
+          } else {
+            console.warn('Category element not found:', category.title);
+          }
+        }, 500); // 增加到500ms确保DOM完全渲染
+
+        // 显示年级搜索结果提示
+        const params = new URLSearchParams();
+        params.set("gradeResult", "true");
+        params.set("gradeName", category.title);
         window.history.replaceState({}, "", `/courses?${params.toString()}`);
       }
     }
@@ -169,16 +276,34 @@ export const CourseDetail = ({ searchFilter }) => {
               ];
               const bgColor = bgShades[idx % bgShades.length];
 
+              // 检查是否为年级搜索结果
+              const isGradeResult = searchFilter && 
+                searchFilter.grade && 
+                !searchFilter.subject && 
+                category.title === searchFilter.grade;
+
               return (
                 <AccordionItem
                   key={category.title}
                   value={category.title}
-                  className="gap-4 rounded-[2rem] border border-gray-200 p-2 mb-4 bg-white"
+                  data-category={category.title}
+                  className={`gap-4 rounded-[2rem] border p-2 mb-4 bg-white ${
+                    isGradeResult 
+                      ? "border-green-300 shadow-lg ring-2 ring-green-100" 
+                      : "border-gray-200"
+                  }`}
                 >
                   <AccordionTrigger
-                    className={`rounded-[2rem] border border-gray-200 p-6 ${bgColor} font-semibold hover:from-primary hover:to-primary hover:text-white [&>svg]:hover:stroke-white transition-colors duration-300`}
+                    className={`rounded-[2rem] border border-gray-200 p-6 ${bgColor} font-semibold hover:from-primary hover:to-primary hover:text-white [&>svg]:hover:stroke-white transition-colors duration-300 ${
+                      isGradeResult ? "ring-2 ring-green-200" : ""
+                    }`}
                   >
-                    {category.title}
+                    <div className="flex items-center gap-2">
+                      {isGradeResult && (
+                        <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
+                      )}
+                      {category.title}
+                    </div>
                   </AccordionTrigger>
                   <AccordionContent>
                     <div className="mt-4 pl-4 space-y-6">

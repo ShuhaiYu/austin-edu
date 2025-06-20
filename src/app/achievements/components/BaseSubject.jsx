@@ -3,11 +3,14 @@
 
 import { motion } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
 export const BaseSubject = ({ 
   title,
   compactContent,
   expandedContent,
+  onLearnMore
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
@@ -80,6 +83,24 @@ export const BaseSubject = ({
       >
         {compactContent}
       </motion.div>
+
+      {/* Learn More Button for components without expandedContent */}
+      {!expandedContent && onLearnMore && (
+        <motion.div
+          className="text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ delay: 0.4, duration: 0.4 }}
+        >
+          <Button 
+            className="px-8 py-3 text-lg bg-primary hover:bg-primary/90 leading-6"
+            onClick={onLearnMore}
+          >
+            <span className="mr-2">Learn More</span>
+            <ArrowRight className="h-5 w-5" />
+          </Button>
+        </motion.div>
+      )}
 
       {/* 展开内容 */}
       {expandedContent && (

@@ -1,8 +1,9 @@
+// components/subjects/AMCSubject.jsx
 "use client";
 
 import { BaseSubject } from "./BaseSubject";
 
-export const AMCSubject = ({ data }) => (
+export const AMCSubject = ({ data, onLearnMore }) => (
   <BaseSubject
     title={data.title}
     compactContent={
@@ -13,5 +14,6 @@ export const AMCSubject = ({ data }) => (
       </div>
     }
     expandedContent={null}
+    onLearnMore={onLearnMore}
   />
 );

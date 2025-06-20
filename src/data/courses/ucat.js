@@ -221,7 +221,7 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit-1-4",
+        slug: "vce-english-eal-unit1-4",
       },
       {
         title: "VCE",
@@ -231,7 +231,7 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit-1-4",
+        slug: "vce-specialist-maths-unit1-4",
       },
     ],
   },
@@ -425,7 +425,7 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "English & EAL Unit 1-4",
-        slug: "vce-english-eal-unit-1-4",
+        slug: "vce-english-eal-unit1-4",
       },
       {
         title: "VCE",
@@ -435,7 +435,7 @@ const courseData = {
       {
         title: "VCE",
         subtitle: "高数 Specialist Maths Unit 1-4",
-        slug: "vce-specialist-maths-unit-1-4",
+        slug: "vce-specialist-maths-unit1-4",
       },
     ],
   },

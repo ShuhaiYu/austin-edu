@@ -1,10 +1,13 @@
+// components/subjects/ScholarshipSubject.jsx
 "use client";
 
 import { motion } from "framer-motion";
 import { PercentageCircle } from "@/components/PercentageCircle";
 import { BaseSubject } from "./BaseSubject";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 
-export const ScholarshipSubject = ({ data }) => (
+export const ScholarshipSubject = ({ data, onLearnMore }) => (
   <BaseSubject
     title={data.title}
     compactContent={
@@ -80,15 +83,25 @@ export const ScholarshipSubject = ({ data }) => (
 
         <div className="text-center">
           <motion.p
-            className="text-sm text-gray-500 italic leading-6"
+            className="text-sm text-gray-500 italic leading-6 mb-6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
           >
             * Some admission rates may vary by year and application strength
           </motion.p>
+          
+          {/* Learn More Button */}
+          <Button 
+            className="px-8 py-3 text-lg bg-primary hover:bg-primary/90 leading-6"
+            onClick={onLearnMore}
+          >
+            <span className="mr-2">Learn More</span>
+            <ArrowRight className="h-5 w-5" />
+          </Button>
         </div>
       </div>
     }
+    onLearnMore={onLearnMore}
   />
 );
