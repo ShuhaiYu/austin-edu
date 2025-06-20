@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useContext } from "react";
 import { LangContext } from "@/app/layout";
 import { homeContent } from "@/app/content";
+import Link from "next/link";
 
 export default function Features() {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -109,7 +110,9 @@ export default function Features() {
         <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 uppercase">
           {t.whyTitle}
         </h2>
-        <p className="text-sm md:text-base max-w-5xl mx-auto leading-[2rem]">{t.whyDesc} </p>
+        <p className="text-sm md:text-base max-w-5xl mx-auto leading-[2rem]">
+          {t.whyDesc}{" "}
+        </p>
       </div>
 
       {/* 功能卡片 */}
@@ -167,22 +170,18 @@ export default function Features() {
                 {feat.title}
               </h3>
               <p className="text-gray-600 mb-12 text-center ">{feat.desc}</p>
-
-              {/* <div className="flex justify-center">
-                <Button>{lang === "zh" ? "了解更多" : "Learn More"}</Button>
-              </div> */}
             </div>
 
             <div
               className="absolute 
                 bottom-16 
-                left-1/2 
-                transform 
-                -translate-x-1/2 "
+                left-1/2
+                transform
+                -translate-x-1/2"
             >
-              <Button size="lg">
-                {lang === "zh" ? "了解更多" : "Learn More"}
-              </Button>
+              <Link href={feat.buttonLink}>
+                <Button size="lg">{feat.buttonText}</Button>
+              </Link>
             </div>
           </div>
         ))}

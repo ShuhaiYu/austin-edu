@@ -3,21 +3,22 @@ import Image from "next/image";
 import { LangContext } from "@/app/layout";
 import { Button } from "./ui/button";
 import { homeContent } from "@/app/content";
+import Link from "next/link";
 
 export default function Hero() {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const content = homeContent[lang].hero;
 
   // 生成左右侧独立图片数组
-  const leftImageNumbers = [1, 3, 6, 8]; 
-  const rightImageNumbers = [2, 4, 5, 7, 9]; 
+  const leftImageNumbers = [1, 3, 6, 8];
+  const rightImageNumbers = [2, 4, 5, 7, 9];
 
-  const leftImages = leftImageNumbers.map(n => 
-    `/home/hero_carousel/${n}.png`
+  const leftImages = leftImageNumbers.map(
+    (n) => `/home/hero_carousel/${n}.png`
   );
 
-  const rightImages = rightImageNumbers.map(n => 
-    `/home/hero_carousel/${n}.png`
+  const rightImages = rightImageNumbers.map(
+    (n) => `/home/hero_carousel/${n}.png`
   );
 
   // 为了真正无缝循环，我们需要足够多的重复图片
@@ -26,14 +27,14 @@ export default function Hero() {
     ...leftImages,
     ...leftImages,
     ...leftImages,
-    ...leftImages // 4倍重复确保无缝
+    ...leftImages, // 4倍重复确保无缝
   ];
 
   const extendedRightImages = [
     ...rightImages,
     ...rightImages,
     ...rightImages,
-    ...rightImages // 4倍重复确保无缝
+    ...rightImages, // 4倍重复确保无缝
   ];
 
   return (
@@ -58,12 +59,16 @@ export default function Hero() {
             </p>
 
             <div className="flex gap-4 items-center justify-start">
-              <Button size="lg" className="px-8">
-                {content.getStarted}
-              </Button>
-              <Button size="lg" variant="outline" className="px-8">
-                {content.contact}
-              </Button>
+              <Link href="/resource_hub">
+                <Button size="lg" className="px-8">
+                  {content.getStarted}
+                </Button>
+              </Link>
+              <Link href="/contact_us">
+                <Button size="lg" variant="outline" className="px-8">
+                  {content.contact}
+                </Button>
+              </Link>
             </div>
           </div>
 

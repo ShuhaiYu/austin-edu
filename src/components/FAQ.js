@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 
 import React from "react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {
   Accordion,
   AccordionItem,
@@ -25,6 +25,7 @@ import {
 } from "@/components/ui/form";
 import { toast } from "sonner";
 import Image from "next/image";
+import { Loader2 } from "lucide-react";
 
 import { LangContext } from "@/app/layout";
 
@@ -89,11 +90,16 @@ const defaultContent = {
     emailLabel: "Email",
     questionLabel: "Write Something",
     submitButton: "SEND REQUEST",
+    submittingButton: "SENDING...",
     placeholders: {
       name: "Enter your name",
       email: "Enter your email",
       question: "Write your questions here...",
     },
+    successMessage: "Question submitted successfully!",
+    successDescription: "We'll respond to you within 24 hours.",
+    errorMessage: "Failed to submit question",
+    errorDescription: "Please try again later.",
     faqItems: [
       {
         question: "Which schools can you apply to?",
@@ -120,11 +126,16 @@ const defaultContent = {
     emailLabel: "邮箱",
     questionLabel: "输入内容",
     submitButton: "发送请求",
+    submittingButton: "发送中...",
     placeholders: {
       name: "请输入您的姓名",
       email: "请输入您的邮箱",
       question: "请在此输入您的问题...",
     },
+    successMessage: "问题提交成功！",
+    successDescription: "我们将在24小时内回复您。",
+    errorMessage: "提交失败",
+    errorDescription: "请稍后重试。",
     faqItems: [
       {
         question: "你们可以申请哪些学校？",
@@ -149,6 +160,7 @@ export default function FAQ({
   showContactForm = true 
 }) {
   const { lang } = useContext(LangContext) || { lang: "en" };
+  const [isSubmitting, setIsSubmitting] = useState(false);
   
   // 使用自定义内容或默认内容
   const content = defaultContent[lang];
@@ -158,7 +170,12 @@ export default function FAQ({
     emailLabel,
     questionLabel,
     submitButton,
+    submittingButton,
     placeholders,
+    successMessage,
+    successDescription,
+    errorMessage,
+    errorDescription,
   } = content;
   
   // 使用传入的自定义内容或默认内容
@@ -175,15 +192,47 @@ export default function FAQ({
     },
   });
 
-  function onSubmit() {
-    toast.success("Question submitted successfully!", {
-      description: "We'll respond to you within 24 hours.",
-    });
-    form.reset({
-      name: "",
-      email: "",
-      question: "",
-    });
+  async function onSubmit(values) {
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          type: 'faq-question',
+          data: {
+            name: values.name,
+            email: values.email,
+            question: values.question,
+            timestamp: new Date().toISOString(),
+            language: lang,
+          }
+        }),
+      });
+
+      if (response.ok) {
+        toast.success(successMessage, {
+          description: successDescription,
+        });
+        form.reset({
+          name: "",
+          email: "",
+          question: "",
+        });
+      } else {
+        throw new Error('Failed to send email');
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      toast.error(errorMessage, {
+        description: errorDescription,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -260,6 +309,7 @@ export default function FAQ({
                             <Input
                               placeholder={placeholders.name}
                               className="bg-primary-foreground border-none focus-visible:ring-1 focus-visible:ring-primary"
+                              disabled={isSubmitting}
                               {...field}
                             />
                           </FormControl>
@@ -282,6 +332,7 @@ export default function FAQ({
                               type="email"
                               placeholder={placeholders.email}
                               className="bg-primary-foreground border-none focus-visible:ring-1 focus-visible:ring-primary"
+                              disabled={isSubmitting}
                               {...field}
                             />
                           </FormControl>
@@ -304,6 +355,7 @@ export default function FAQ({
                               rows={4}
                               placeholder={placeholders.question}
                               className="bg-primary-foreground border-none focus-visible:ring-1 focus-visible:ring-primary resize-none"
+                              disabled={isSubmitting}
                               {...field}
                             />
                           </FormControl>
@@ -314,9 +366,17 @@ export default function FAQ({
 
                     <Button
                       type="submit"
-                      className="w-full bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold"
+                      disabled={isSubmitting}
+                      className="w-full bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold disabled:opacity-50"
                     >
-                      {submitButton}
+                      {isSubmitting ? (
+                        <>
+                          <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                          {submittingButton}
+                        </>
+                      ) : (
+                        submitButton
+                      )}
                     </Button>
                   </form>
                 </Form>

@@ -28,9 +28,9 @@ export default function AdmissionProcess() {
   // 根据 partIndex 获取颜色配置
   const getColorConfig = (partIndex) => {
     const colors = [
-      { dot: "bg-[#4664aa]", border: "border-[#4664aa]" },
-      { dot: "bg-[#c12731]", border: "border-[#c12731]" }, // red
-      { dot: "bg-[#dfb67e]", border: "border-[#dfb67e]" },
+      { dot: "bg-[#4664aa]", border: "border-[#4664aa]", button: "hover:text-[#4664aa] hover:bg-primary/30" }, // blue
+      { dot: "bg-[#c12731]", border: "border-[#c12731]", button: "hover:text-[#c12731] hover:bg-austin-red/30" }, // red
+      { dot: "bg-[#dfb67e]", border: "border-[#dfb67e]", button: "hover:text-[#dfb67e] hover:bg-austin-yellow/30" } // yellow
     ];
     return colors[partIndex % 3];
   };
@@ -53,7 +53,7 @@ export default function AdmissionProcess() {
         const currentStepIndex = activeSteps[i];
         const currentStep =
           currentStepIndex !== -1 ? part.steps[currentStepIndex] : null;
-        const { dot: dotColor, border: borderColor } = getColorConfig(i);
+        const { dot: dotColor, border: borderColor, button } = getColorConfig(i);
 
         return (
           <div key={i} className="mb-16">
@@ -106,18 +106,21 @@ export default function AdmissionProcess() {
                         {currentStep.desc}
                       </p>
 
-                      {/* 底部按钮 - 原小标题位置 */}
-                      <div className="flex items-center justify-end">
+                      {/* 底部按钮 - 原小标题位置 - 有buttonText+buttonLink才显示 */}
+                      {currentStep.buttonText && currentStep.buttonLink && (
+                        <div className="flex items-center justify-end">
                         <Button
+                          className={`${dotColor} ${button} inline-flex items-center px-4 py-2 text-xs sm:text-sm text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
                           onClick={() =>
-                            handleButtonClick(currentStep.buttonLink || "#")
+                            handleButtonClick(currentStep.buttonLink)
                           }
-                          className={`${dotColor} inline-flex items-center px-4 py-2 text-xs sm:text-sm text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
                         >
-                          {currentStep.buttonText || "Learn More"}
-                          <SquareArrowOutUpRight className="h-4 w-4" />
+                          {currentStep.buttonText}
+                          <SquareArrowOutUpRight className="w-4 h-4" />
                         </Button>
-                      </div>
+                        </div>
+                      )}
+                      
                     </div>
                   </motion.div>
                 ) : (

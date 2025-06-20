@@ -7,8 +7,8 @@ export const homeContent = {
 Since 2013, we have specialised in comprehensive tutoring for students from Year 1 to Year 12, covering all major academic pathways including VCE, IB, UCAT, and more—always upholding the highest teaching standards.
 What we offer is a fully structured learning system: Curriculum precisely aligned with exam standards； A handpicked team of outstanding teachers； High-quality in-house textbooks； Efficient and targeted practice tasks, supported by a full suite of academic resources.
 Our mission is to: Help every student achieve real, visible progress; Provide Australia’s highest-quality teaching team; Build the most complete academic support system.`,
-      getStarted: "Get Started",
-      contact: "Contact",
+      getStarted: "Trial Lesson",
+      contact: "Contact Us",
     },
     findCourse: {
       label: "Find a Course:",
@@ -73,21 +73,26 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
       features: [
         {
           icon: "/home/team icon.png",
-          title: "Top-tier\n teaching team",
-          desc: "Dive into our diverse range of online courses tailored to suit various interests.",
+          title: "Expert-Led Institution",
+          desc: "A well-managed institution with expert teachers and dedicated support.",
+          buttonText: "About us",
+          buttonLink: "/about_us",
         },
         {
           icon: "/home/course icon.png",
-          title: "Comprehensive and\n high-quality courses",
-          desc: "Our curated collection covers a wide range of subjects and topics.",
+          title: "Full Year-Level Coverage",
+          desc: "Structured programs from Year 1 to Year 12.",
+          buttonText: "Explore Courses",
+          buttonLink: "/courses",
         },
         {
           icon: "/home/study icon.png",
-          title: "Well-equipped\n learning space",
-          desc: "Join live lectures, interactive discussions, and group activities led by experienced.",
+          title: "Extensive Resources",
+          desc: "Comprehensive resources for smarter learning.",
+          buttonText: "Learn More",
+          buttonLink: "/my_austin",
         },
       ],
-      learnMoreButton: "Learn More",
     },
     admissionProcess: {
       title: "Admission Service Process",
@@ -102,6 +107,8 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               title: "Step 0: Free Consultation",
               desc: `• Conducted by experienced Australian education professionals and expert advisors with extensive knowledge of the field, the consultation provides a comprehensive analysis of the student’s situation. This ensures personalised study recommendations, course selection guidance, and career planning. The goal is to eliminate any information gaps parents might face in the Australian education system, helping students access the best academic advice and planning.
     • Recommendations may include (but are not limited to): school transfer advice, VCE subject selection, guidance on study destinations, participation in extracurricular activities, competition planning, scholarship exam preparation, and elite school entry exam strategies.`,
+              buttonText: "Book Now",
+              buttonLink: "/contact_us",
             },
             {
               step: 1,
@@ -109,11 +116,15 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               desc: `• Austin Education provides an authoritative, multi-subject internal admission test developed by Victoria’s top academic team. Based on the results, teachers identify students’ weaknesses and offer tailored learning plans.
     • Academic managers and subject teachers recommend the most suitable teaching formats, such as group classes, small classes, one-on-one sessions, or a combination. They also advise on placement in advanced classes or accelerated grade levels, ensuring optimal academic progress.
     • Austin’s academic team includes VCE exam assessors, textbook authors, senior teachers with 20+ years of experience, private school high-score teachers, VCE top scorers, and Victoria’s best-performing educators.`,
+              buttonText: "Book a Trial Lesson",
+              buttonLink: "/resource_hub",
             },
             {
               step: 2,
               title: "Step 2: Confirming Courses",
               desc: `• Austin Education brings together Victoria’s top educators, matching students with teachers suited to their learning styles. If students find the class or teacher unsuitable after starting, they are supported in switching to ensure the best experience, fostering learning interest and efficient progress.`,
+              buttonText: "Explore Courses",
+              buttonLink: "/courses",
             },
             {
               step: 3,
@@ -143,6 +154,8 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               desc: `• Staff assist students in setting up their homework system account and learning how to use it.
     • Austin provides a systematic homework management model, combining in-class paper assignments with an online system. Students have assigned homework after every class. Additional practice materials and mock exams are available online or on-site.
     • The system includes an error collection function to help students identify and correct mistakes. Teachers can monitor homework progress and provide timely feedback to students and parents.`,
+              buttonText: "Learn More",
+              buttonLink: "/my_austin",
             },
             {
               step: 6,
@@ -189,6 +202,8 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               step: 11,
               title: "Step 11: Follow-Up Consultation & Free Planning",
               desc: `• Students can schedule follow-up consultations with their academic manager or teachers for updated learning plans based on their progress.`,
+              buttonText: "Book Now",
+              buttonLink: "/contact_us",
             },
           ],
         },
@@ -237,6 +252,8 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
                      • Study Abroad in the U.S. Seminar
                      • Medical Studies Seminar
                      • High-Performing Student Experience Sharing Seminars`,
+              buttonText: "Register Now",
+              buttonLink: "/resource_hub?tab=webinar",
             },
           ],
         },
@@ -277,7 +294,7 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
 自 2013 年起，我们专注于提供 Y1–12全科补习，涵盖 VCE、IB 、UCAT等所有核心学科，始终坚持最高教学标准。
 澳升提供的是一整套系统化教学方案：严格贴合考纲的课程设计、精挑细选的教师团队、高质量的内部教材、以及高效有针对性的课后练习与辅助资源。
 我们的使命是：让每位学生都实现真正可见的进步; 提供全澳最高质量的教学团队; 打造最全面的学术支持体系。`,
-      getStarted: "立即开始",
+      getStarted: "预约试听",
       contact: "联系我们",
     },
     findCourse: {
@@ -331,21 +348,26 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
       features: [
         {
           icon: "/home/team icon.png",
-          title: "顶尖的教师团队",
-          desc: "深入了解我们多样化的在线课程，满足不同兴趣需求。",
+          title: "专业团队保障",
+          desc: "管理严谨，师资强大，教学与服务一体化。",
+          buttonText: "了解我们",
+          buttonLink: "/about_us",
         },
         {
           icon: "/home/course icon.png",
-          title: "全面优质的课程",
-          desc: "我们精心策划的课程涵盖了多个学科和主题。",
+          title: "全年级课程覆盖",
+          desc: "从Y1到Y12，系统课程全面支持成长。",
+          buttonText: "探索课程",
+          buttonLink: "/courses",
         },
         {
           icon: "/home/study icon.png",
-          title: "设施完善的学习环境",
-          desc: "参加由经验丰富的老师主持的直播讲座、互动讨论和小组活动。",
+          title: "丰富教育资源 ",
+          desc: "海量学习资源，助力高效备考与提升。",
+          buttonText: "了解更多",
+          buttonLink: "/my_austin",
         },
       ],
-      learnMoreButton: "了解更多",
     },
     admissionProcess: {
       title: "澳升教育入学服务流程",
