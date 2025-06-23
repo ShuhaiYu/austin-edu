@@ -124,7 +124,7 @@ export const AdvancedProgram35 = ({ data, onLearnMore }) => (
             className="px-8 py-3 text-lg bg-[#c12731] hover:bg-[#c12731]/90 text-white leading-6"
             onClick={onLearnMore}
           >
-            <span className="mr-2">Learn More</span>
+              <span className="mr-2">{data.buttonText}</span>
             <ArrowRight className="h-5 w-5" />
           </Button>
         </div>

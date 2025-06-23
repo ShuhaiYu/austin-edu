@@ -83,7 +83,7 @@ export const VCEScienceSubject = ({ data, onLearnMore }) => (
                     className="mt-4 px-6 py-2 text-sm bg-[#9c7146] hover:bg-[#9c7146]/90 text-white leading-5"
                     onClick={() => onLearnMore && onLearnMore(subject.target)}
                   >
-                    <span className="mr-2">View Course</span>
+                    <span className="mr-2">{subject.buttonText}</span>
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 )}

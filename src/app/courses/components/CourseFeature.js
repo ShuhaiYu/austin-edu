@@ -9,6 +9,7 @@ import { Carousel } from "@/components/ui/carousel";
 import Image from "next/image";
 import { CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import Link from "next/link";
 
 export const CourseFeature = () => {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -76,9 +77,9 @@ export const CourseFeature = () => {
                   className={`font-medium bg-gradient-to-r ${feature.button.fromColor} ${feature.button.toColor} hover:brightness-110 transition`}
                   asChild
                 >
-                  <a href={feature.button.link}>
+                  <Link href={feature.button.link}>
                     {feature.button.text}
-                  </a>
+                  </Link>
                 </Button>
               </div>
             )}

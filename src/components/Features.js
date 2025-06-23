@@ -96,7 +96,9 @@ export default function Features() {
           </ul>
 
           <div className="flex justify-center xl:justify-start">
-            <Button size="lg">{t.achievementsButton}</Button>
+            <Link href="/achievements">
+              <Button size="lg">{t.achievementsButton}</Button>
+            </Link>
           </div>
         </div>
       </div>

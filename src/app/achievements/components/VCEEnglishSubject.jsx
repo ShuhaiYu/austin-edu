@@ -92,7 +92,7 @@ export const VCEEnglishSubject = ({ data, onLearnMore }) => (
               className="mx-auto px-10 py-4 text-lg bg-austin-red hover:bg-austin-red/80 leading-6"
               onClick={onLearnMore}
             >
-              <span className="mr-2">Learn More</span>
+              <span className="mr-2">{data.buttonText}</span>
               <ArrowRight className="h-5 w-5" />
             </Button>
           </div>

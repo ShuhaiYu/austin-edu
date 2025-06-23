@@ -97,7 +97,7 @@ const defaultContent = {
       question: "Write your questions here...",
     },
     successMessage: "Question submitted successfully!",
-    successDescription: "We'll respond to you within 24 hours.",
+    successDescription: "We'll get back to you as soon as possible.",
     errorMessage: "Failed to submit question",
     errorDescription: "Please try again later.",
     faqItems: [
@@ -133,7 +133,7 @@ const defaultContent = {
       question: "请在此输入您的问题...",
     },
     successMessage: "问题提交成功！",
-    successDescription: "我们将在24小时内回复您。",
+    successDescription: "我们将尽快回复您。",
     errorMessage: "提交失败",
     errorDescription: "请稍后重试。",
     faqItems: [

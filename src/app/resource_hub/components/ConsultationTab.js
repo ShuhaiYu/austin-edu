@@ -158,8 +158,6 @@ export const ConsultationTab = () => {
         name: "",
         email: "",
         phone: "",
-        schoolYear: [],
-        topics: [],
       },
     ]);
   };
@@ -173,15 +171,6 @@ export const ConsultationTab = () => {
 
   // 更新学生信息
   const updateStudent = (id, field, value) => {
-    setAdditionalStudents(
-      additionalStudents.map((student) =>
-        student.id === id ? { ...student, [field]: value } : student
-      )
-    );
-  };
-
-  // 更新学生的多选字段
-  const updateStudentMultiSelect = (id, field, value) => {
     setAdditionalStudents(
       additionalStudents.map((student) =>
         student.id === id ? { ...student, [field]: value } : student
@@ -322,7 +311,11 @@ export const ConsultationTab = () => {
           <p className="text-muted-foreground text-justify whitespace-pre-line">
             {t.description_1}
           </p>
-          <Link href={"https://calendly.com/rachelle-austinedu/30min"} rel="noopener noreferrer" target="_blank">
+          <Link
+            href={"https://calendly.com/rachelle-austinedu/30min"}
+            rel="noopener noreferrer"
+            target="_blank"
+          >
             <Button className="my-4 px-8">Book Now</Button>
           </Link>
           <p className="text-muted-foreground text-justify">
@@ -541,22 +534,16 @@ export const ConsultationTab = () => {
                     <div className="w-1/2">
                       <MultiSelect
                         placeholder={
-                          student.schoolYear.length > 0
-                            ? student.schoolYear.join(", ")
+                          schoolYear.length > 0
+                            ? schoolYear.join(", ")
                             : t.selectGrade
                         }
                         options={t.grades.map((grade) => ({
                           label: grade,
                           value: grade,
                         }))}
-                        selectedOptions={student.schoolYear}
-                        setSelectedOptions={(value) =>
-                          updateStudentMultiSelect(
-                            student.id,
-                            "schoolYear",
-                            value
-                          )
-                        }
+                        selectedOptions={schoolYear}
+                        setSelectedOptions={setSchoolYear}
                         className="rounded-[2rem] border border-gray-200 p-6 bg-white"
                       />
                     </div>
@@ -566,18 +553,16 @@ export const ConsultationTab = () => {
                     <div className="w-1/2">
                       <MultiSelect
                         placeholder={
-                          student.topics.length > 0
-                            ? student.topics.join(", ")
+                          selectedTopics.length > 0
+                            ? selectedTopics.join(", ")
                             : t.topicsPlaceholder
                         }
                         options={t.topics.map((topic) => ({
                           label: topic,
                           value: topic,
                         }))}
-                        selectedOptions={student.topics}
-                        setSelectedOptions={(value) =>
-                          updateStudentMultiSelect(student.id, "topics", value)
-                        }
+                        selectedOptions={selectedTopics}
+                        setSelectedOptions={setSelectedTopics}
                         className="rounded-[2rem] border border-gray-200 p-6 bg-white"
                       />
                     </div>

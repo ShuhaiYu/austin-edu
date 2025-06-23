@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import { LangContext } from "@/app/layout";
 import Image from "next/image";
 import Link from "next/link";
-import { Play } from "lucide-react";
+import { Play, ExternalLink } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -17,124 +17,215 @@ import { getFeaturedBlogPosts } from "@/data/blogs";
 
 const content = {
   en: {
-    interviews: "TOP Student Interviews",
+    title: "Austin Daily Highlights",
     blogs: "Latest Blogs",
     readMore: "Read More →",
     checkMore: "Check More",
-    students: [
+    watchOnYoutube: "Watch on YouTube",
+    videos: [
       {
-        name: "Jennifer",
-        major: "Science",
-        image: "https://placehold.co/600x400",
+        id: "QsWfHDFssJU",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/QsWfHDFssJU/maxresdefault.jpg",
       },
       {
-        name: "John",
-        major: "Math",
-        image: "https://placehold.co/600x400",
+        id: "qZkU478lIKE",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/qZkU478lIKE/maxresdefault.jpg",
       },
       {
-        name: "Sammy",
-        major: "Science",
-        image: "https://placehold.co/600x400",
+        id: "q3ex06ovlRM",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/q3ex06ovlRM/maxresdefault.jpg",
       },
-    ]
+      {
+        id: "Ei7tg5GzX3Q",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/Ei7tg5GzX3Q/maxresdefault.jpg",
+      },
+      {
+        id: "dsSMAplfzh0",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/dsSMAplfzh0/maxresdefault.jpg",
+      },
+      {
+        id: "asIxJPtygmY",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/asIxJPtygmY/maxresdefault.jpg",
+      },
+      {
+        id: "mSUYytgiBao",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/mSUYytgiBao/maxresdefault.jpg",
+      },
+      {
+        id: "1qp3zpIFKOk",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/1qp3zpIFKOk/maxresdefault.jpg",
+      },
+      {
+        id: "xqqSLd7oPMc",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/xqqSLd7oPMc/maxresdefault.jpg",
+      },
+    ],
   },
   zh: {
-    interviews: "优秀学生访谈",
+    title: "Austin每日精彩",
     blogs: "最新博客文章",
     readMore: "阅读全文 →",
     checkMore: "查看更多",
-    students: [
+    watchOnYoutube: "在YouTube观看",
+    videos: [
       {
-        name: "Jennifer",
-        major: "科学系",
-        image: "https://placehold.co/600x400",
+        id: "QsWfHDFssJU",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/QsWfHDFssJU/maxresdefault.jpg",
       },
       {
-        name: "John",
-        major: "数学系",
-        image: "https://placehold.co/600x400",
+        id: "qZkU478lIKE",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/qZkU478lIKE/maxresdefault.jpg",
       },
       {
-        name: "Sammy",
-        major: "科学系",
-        image: "https://placehold.co/600x400",
+        id: "q3ex06ovlRM",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/q3ex06ovlRM/maxresdefault.jpg",
       },
-    ]
+      {
+        id: "Ei7tg5GzX3Q",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/Ei7tg5GzX3Q/maxresdefault.jpg",
+      },
+      {
+        id: "dsSMAplfzh0",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/dsSMAplfzh0/maxresdefault.jpg",
+      },
+      {
+        id: "asIxJPtygmY",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/asIxJPtygmY/maxresdefault.jpg",
+      },
+      {
+        id: "mSUYytgiBao",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/mSUYytgiBao/maxresdefault.jpg",
+      },
+      {
+        id: "1qp3zpIFKOk",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/1qp3zpIFKOk/maxresdefault.jpg",
+      },
+      {
+        id: "xqqSLd7oPMc",
+        title: "Austin Daily",
+        thumbnail: "https://img.youtube.com/vi/xqqSLd7oPMc/maxresdefault.jpg",
+      },
+    ],
   },
 };
 
 export const BlogTab = () => {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = content[lang];
-  const [activeStudent, setActiveStudent] = useState(0);
-  
+  const [activeVideo, setActiveVideo] = useState(0);
+  const [isVideoInteracted, setIsVideoInteracted] = useState(false);
+
   // 获取特色博客文章
   const featuredPosts = getFeaturedBlogPosts().slice(0, 3);
 
+  const currentVideo = t.videos[activeVideo];
+
+  const handleVideoClick = () => {
+    console.log(`Video ${currentVideo.id} clicked`);
+
+    setIsVideoInteracted(true);
+  };
+
+  const handleVideoChange = (index) => {
+    setActiveVideo(index);
+    setIsVideoInteracted(false); // Reset interaction state for new video
+  };
+
   return (
     <div className="bg-white rounded-xl p-16 shadow-lg">
-      {/* Student Interviews Section */}
-      <section className="mb-16">
-        <h2 className="text-2xl font-bold mb-8 text-center">{t.interviews}</h2>
+      {/* Austin Daily Highlights Video Section */}
+      <section className="mb-32">
+        <h2 className="text-3xl font-bold mb-12 text-center text-primary">
+          {t.title}
+        </h2>
 
-        {/* Main Featured Student */}
-        <div className="relative h-[500px] w-full mb-8 rounded-[2rem] overflow-hidden">
-          <Image
-            src={t.students[activeStudent].image}
-            alt={t.students[activeStudent].name}
-            fill
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent">
-            <div className="absolute bottom-8 left-8 right-8 flex items-end justify-between">
-              <div className="flex items-center gap-6">
-                <Button
-                  size="lg"
-                  className="rounded-full w-16 h-16 p-0 bg-white/20 hover:bg-white/30"
-                >
-                  <Play className="w-8 h-8 fill-current" />
-                </Button>
-                <div className="text-white">
-                  <h3 className="text-2xl font-bold uppercase">
-                    {t.students[activeStudent].name}
-                  </h3>
-                  <p className="text-lg opacity-90 capitalize">
-                    {t.students[activeStudent].major}
-                  </p>
-                </div>
+        <div className="flex gap-10 h-[700px]">
+          {/* Main Video Player - Left Side */}
+          <div className="flex-1 flex justify-center">
+            <div className="relative w-[420px] h-full">
+              {/* Video Container with 9:16 aspect ratio */}
+              <div
+                className="relative w-full h-full bg-gray-100 rounded-2xl overflow-hidden shadow-xl cursor-pointer"
+                onClick={handleVideoClick}
+              >
+                <iframe
+                  src={`https://www.youtube.com/embed/${currentVideo.id}?rel=0&modestbranding=1`}
+                  title={currentVideo.title}
+                  className="absolute inset-0 w-full h-full"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                />
               </div>
             </div>
           </div>
-        </div>
 
-        {/* Student Carousel */}
-        <div className="grid grid-cols-3 gap-6">
-          {t.students.map((student, index) => (
-            <div
-              key={index}
-              onClick={() => setActiveStudent(index)}
-              className={`relative h-48 rounded-[2rem] overflow-hidden cursor-pointer transition-all ${
-                index === activeStudent ? "ring-4 ring-primary" : ""
-              }`}
-            >
-              <Image
-                src={student.image}
-                alt={student.name}
-                fill
-                className="object-cover"
-              />
-              <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-                <p className="text-white text-lg font-medium text-center uppercase">
-                  {student.name}
-                </p>
-              </div>
+          {/* Video Selection Grid - Right Side */}
+          <div className="w-96">
+            <h3 className="text-xl font-semibold text-primary mb-6">
+              More Stories
+            </h3>
+            <div className="grid grid-cols-2 gap-4 h-[650px] overflow-y-auto pr-2">
+              {t.videos.map((video, index) => (
+                <div
+                  key={video.id}
+                  onClick={() => handleVideoChange(index)}
+                  className={`group relative cursor-pointer transition-all duration-300 ${
+                    index === activeVideo
+                      ? "ring-2 ring-primary shadow-lg"
+                      : "hover:ring-2 hover:ring-primary/50 hover:shadow-md"
+                  }`}
+                >
+                  {/* Thumbnail Container */}
+                  <div className="relative w-full h-28 bg-gray-100 rounded-lg overflow-hidden">
+                    <Image
+                      src={video.thumbnail}
+                      alt={video.title}
+                      fill
+                      className="object-cover transition-transform group-hover:scale-105"
+                    />
+
+                    {/* Play Overlay */}
+                    <div className="absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                      <Play className="w-8 h-8 text-white fill-current" />
+                    </div>
+
+                    {/* Active Indicator */}
+                    {index === activeVideo && (
+                      <div className="absolute top-2 right-2 w-3 h-3 bg-primary rounded-full border-2 border-white" />
+                    )}
+                  </div>
+
+                  {/* Video Info */}
+                  <div className="p-3">
+                    <h4 className="text-sm font-medium text-gray-900 line-clamp-2 leading-tight">
+                      {video.title}
+                    </h4>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </section>
 
-      {/* Latest Blogs Section */}
+      {/* Latest Blogs Section - Unchanged */}
       <section>
         <h2 className="text-2xl font-bold mb-8">{t.blogs}</h2>
 
@@ -160,7 +251,7 @@ export const BlogTab = () => {
                       <div className="absolute left-0 top-0 z-10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                         <div className="bg-muted text-primary px-3 py-1.5 text-sm">
                           {new Date(post.publishDate).toLocaleDateString(
-                            lang === 'zh' ? 'zh-CN' : 'en-US'
+                            lang === "zh" ? "zh-CN" : "en-US"
                           )}
                         </div>
                       </div>

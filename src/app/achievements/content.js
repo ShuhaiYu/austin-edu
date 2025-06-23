@@ -152,6 +152,7 @@ export const achievementContent = {
             },
           ],
         },
+        buttonText: "Learn More",
       },
       math: {
         title: "VCE Mathematics",
@@ -174,12 +175,12 @@ export const achievementContent = {
         block1: {
           title: "We don't boast ourselves, let the Numbers Speak.",
           points: [
-              "In the 2023 VCE Math Exam:",
-              "**4** Chinese background students achieved **perfect score 50 in SM**, with **2 coming from Austin Education**.",
-              "**17** Chinese background students achieved **perfect score 50 in MM**, with **5 from Austin Education.**",
-              "In the 2024 VCE Math Exam:",
-              "**14** Chinese background students achieved **perfect score 50 in MM**, with **7 coming from Austin Education!**"
-            ]
+            "In the 2023 VCE Math Exam:",
+            "**4** Chinese background students achieved **perfect score 50 in SM**, with **2 coming from Austin Education**.",
+            "**17** Chinese background students achieved **perfect score 50 in MM**, with **5 from Austin Education.**",
+            "In the 2024 VCE Math Exam:",
+            "**14** Chinese background students achieved **perfect score 50 in MM**, with **7 coming from Austin Education!**",
+          ],
         },
         block2: {
           title: "In total:",
@@ -226,6 +227,7 @@ export const achievementContent = {
             },
           ],
         },
+        buttonText: "Learn More",
       },
       science: {
         title: "VCE Science",
@@ -244,6 +246,7 @@ export const achievementContent = {
             percentage: "33%",
             percentageLabel: "students achieved raw 40+",
             target: "vce-biology-unit-1-4",
+            buttonText: "View Course",
           },
           {
             title: "Chemistry Class",
@@ -254,6 +257,7 @@ export const achievementContent = {
             percentage: "37%",
             percentageLabel: "students achieved raw 40+",
             target: "vce-chemistry-unit-1-4",
+            buttonText: "View Course",
           },
           {
             title: "Physics Class",
@@ -264,6 +268,7 @@ export const achievementContent = {
             percentage: "41%",
             percentageLabel: "students achieved raw 40+",
             target: "vce-physics-unit-1-4",
+            buttonText: "View Course",
           },
         ],
         advantages: {
@@ -287,6 +292,7 @@ export const achievementContent = {
             },
           ],
         },
+        buttonText: "Learn More",
       },
       md: {
         title: "Austin MD Program",
@@ -326,6 +332,7 @@ export const achievementContent = {
           "Expert guidance on medical school applications and interviews",
           "ATAR optimization strategies tailored for medical aspirants",
         ],
+        buttonText: "Learn More About Our MD Program",
       },
       selective: {
         title: "Selective School Program",
@@ -348,6 +355,7 @@ export const achievementContent = {
             { name: "John Monash Science School", admissions: "14 admissions" },
           ],
         },
+        buttonText: "Learn More",
       },
       amc: {
         title: "AMC Competition",
@@ -365,6 +373,7 @@ export const achievementContent = {
             <strong className="font-bold text-xl">Distinction</strong>{" "}
           </span>
         ),
+        buttonText: "Learn More",
       },
       scholarship: {
         title: "Scholarship Program",
@@ -414,6 +423,7 @@ export const achievementContent = {
             { name: "...and others", rate: "" },
           ],
         },
+        buttonText: "Learn More",
       },
       advanced79: {
         title: "Year 7-9 Enrichment Program",
@@ -425,6 +435,7 @@ export const achievementContent = {
         },
         additionalText:
           "Every year, at least **4** students achieved top score (dot in the triangle) in **all the subjects of NAPLAN.**",
+        buttonText: "Learn More",
       },
       advanced35: {
         title: "Year 3-5 Enrichment Program",
@@ -468,6 +479,7 @@ export const achievementContent = {
             },
           ],
         },
+        buttonText: "Learn More",
       },
     },
   },
@@ -606,17 +618,19 @@ export const achievementContent = {
             },
           ],
         },
+        buttonText: "了解更多",
       },
       math: {
         title: "VCE 数学",
         compactStats: (
           <span>
             17-24年，澳升中数+高数共诞生
-            <strong className="font-bold text-primary">36</strong>位Raw Score
-            50<strong className="font-bold ">单科状元</strong>，
+            <strong className="font-bold text-primary">36</strong>位Raw Score 50
+            <strong className="font-bold ">单科状元</strong>，
             <br />
             中数班裸分均分<strong className="font-bold text-primary">42</strong>
-            ，高数班裸分均分<strong className="font-bold text-primary">38</strong>
+            ，高数班裸分均分
+            <strong className="font-bold text-primary">38</strong>
             <br />
             多个日校的中高数Rank 1均是来自澳升
           </span>
@@ -624,12 +638,12 @@ export const achievementContent = {
         block1: {
           title: "澳升数学只拿数据说话：",
           points: [
-              "在23年的VCE数学考试中，",
-              "有**4**位华人高数状元，其中**2位来自澳升**",
-              "有**17**位华人中数状元，其中**5位来自澳升**",
-              "在24年的VCE数学考试中，",
-              "有**14**位华人中数状元，其中**7位来自澳升**"
-            ]
+            "在23年的VCE数学考试中，",
+            "有**4**位华人高数状元，其中**2位来自澳升**",
+            "有**17**位华人中数状元，其中**5位来自澳升**",
+            "在24年的VCE数学考试中，",
+            "有**14**位华人中数状元，其中**7位来自澳升**",
+          ],
         },
         block2: {
           title: "澳升总共培养出了：",
@@ -669,6 +683,7 @@ export const achievementContent = {
             },
           ],
         },
+        buttonText: "了解更多",
       },
       science: {
         title: "VCE 科学",
@@ -684,6 +699,7 @@ export const achievementContent = {
             percentage: "33%",
             percentageLabel: "学生获得裸分40+",
             target: "vce-biology-unit-1-4",
+            buttonText: "查看课程",
           },
           {
             title: "澳升化学",
@@ -691,6 +707,7 @@ export const achievementContent = {
             percentage: "37%",
             percentageLabel: "学生获得裸分40+",
             target: "vce-chemistry-unit-1-4",
+            buttonText: "查看课程",
           },
           {
             title: "澳升物理",
@@ -698,6 +715,7 @@ export const achievementContent = {
             percentage: "41%",
             percentageLabel: "学生获得裸分40+",
             target: "vce-physics-unit-1-4",
+            buttonText: "查看课程",
           },
         ],
         advantages: {
@@ -720,6 +738,7 @@ export const achievementContent = {
             },
           ],
         },
+        buttonText: "了解更多",
       },
       md: {
         title: "澳升医学院项目",
@@ -757,6 +776,7 @@ export const achievementContent = {
           "医学院申请和面试的专业指导",
           "为医学生量身定制的ATAR优化策略",
         ],
+        buttonText: "查看更多医学院项目",
       },
       selective: {
         title: "精英公校项目",
@@ -778,6 +798,7 @@ export const achievementContent = {
             { name: "John Monash Science School", admissions: "14人被录取" },
           ],
         },
+        buttonText: "了解更多",
       },
       amc: {
         title: "AMC Competition",
@@ -795,6 +816,7 @@ export const achievementContent = {
             <strong className="font-bold text-xl">Distinction</strong>{" "}
           </span>
         ),
+        buttonText: "了解更多",
       },
       scholarship: {
         title: "奖学金项目",
@@ -841,6 +863,7 @@ export const achievementContent = {
             { name: "…等", rate: "" },
           ],
         },
+        buttonText: "了解更多",
       },
       advanced79: {
         title: "Y7-9 培优班",
@@ -850,6 +873,7 @@ export const achievementContent = {
           description: "同学成功收获'小尖尖'",
         },
         additionalText: "每年至少有4位同学拿到了**全科'小尖尖'**",
+        buttonText: "了解更多",
       },
 
       advanced35: {
@@ -875,6 +899,7 @@ export const achievementContent = {
             { value: "95%", label: "在日校成绩上展现巨大的进步" },
           ],
         },
+        buttonText: "了解更多",
       },
     },
   },

@@ -382,6 +382,8 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               title: "Step 0 免费咨询",
               desc: `• 由澳洲专业教育从业者、深耕教育领域的专业指导老师，根据学生的情况，进行全面剖析，以提供个性化的学习建议、选课建议和生涯规划。服务旨在消除家长对澳洲教育领域可能存在的信息差，以帮助孩子获得最专业的学业建议和规划。
               • 建议包括但不限于：转校建议、VCE选课建议、留学国家建议、是否参与社会活动、各类竞赛规划、奖学金考试规划、精英中学考试规划等。`,
+              buttonText: "联系我们",
+              buttonLink: "/contact_us",
             },
             {
               step: 1,
@@ -389,11 +391,15 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               desc: `• 澳升拥有由维州最强教研团队共同打磨出的极具权威的内部全科入学测试。老师根据测试结果找出学生的薄弱项后，会给学生提供量身定制的教学计划。
               • 学习管理老师和专业老师会根据学生的测试结果，推荐授课模式：大班课、小班课、一对一、或班课结合一对一的同步授课模式，以及有关是否需要进入快班或升年级超前跟班等方面的建议。
               • 澳升教研团队包括：维州高考考官、维州教材编写者、日校20年教龄资深老师、私校高考班高分老师、维州VCE状元、维州出分最高的明星老师等。`,
+              buttonText: "立刻预约",
+              buttonLink: "/resource_hub",
             },
             {
               step: 2,
               title: "Step 2 确认课程",
               desc: `• 澳升汇聚了全维州领先的师资力量，可以为学生匹配最适合自己学习风格的老师。课程开始之后，学生如果对老师或班级不适应，澳升也支持学生换班，目标是让学生获得最完美的课程体验，激发其学习兴趣，获得高效的学习进步。`,
+              buttonText: "了解课程",
+              buttonLink: "/courses",
             },
             {
               step: 3,
@@ -422,6 +428,8 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
              • 澳升拥有系统化的课后作业管理模式随堂纸质作业 & 线上作业系统。学生在每节课后都有定量的作业需要完成。
              • 此外，学生如需更多练习机会，还可以在澳升的作业系统、或线下，获取海量题库和模拟考试。
              • 澳升作业系统包含错题集功能，学生所有错题会被自动收集，方便查漏补缺。作业系统便于老师后台跟踪作业情况和学习状态，能够及时与学生和家长沟通学习上出现的问题和改进建议。`,
+              buttonText: "查看更多",
+              buttonLink: "/my_austin",
             },
             {
               step: 6,
@@ -467,6 +475,8 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               step: 11,
               title: "Step 11 根据考试情况二次咨询 & 免费规划",
               desc: `• 学生在澳升完成一段时间的学习后，可以根据自身的学习情况再次预约学管和任课老师进行一对一咨询，并重新规划学习路线。`,
+              buttonText: "立刻预约",
+              buttonLink: "/contact_us",
             },
           ],
         },
@@ -509,6 +519,8 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
                • 留学美国讲座
                • 医学讲座
                • 优秀学员分享讲座`,
+              buttonText: "立刻注册",
+              buttonLink: "/resource_hub?tab=webinar",
             },
           ],
         },

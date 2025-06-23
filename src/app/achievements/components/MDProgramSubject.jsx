@@ -114,7 +114,7 @@ export const MDProgramSubject = ({ data, onLearnMore }) => (
               className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg leading-6"
               onClick={onLearnMore}
             >
-              <span className="mr-2">Learn More About Our MD Program</span>
+              <span className="mr-2">{data.buttonText}</span>
               <ArrowRight className="h-5 w-5" />
             </Button>
           </div>
