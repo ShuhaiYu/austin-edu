@@ -70,9 +70,9 @@ const content = {
     error: "Failed to send request. Please try again.",
   },
   zh: {
-    title: "填写表格预约试听课",
-    description_1: "在正式开课前，我们将为您提供免费咨询",
-    description_2: "或者留下您的信息",
+    title: "立即预约咨询",
+    description_1: "欢迎预约我们的咨询会议，了解更多课程详情。",
+    description_2: "或者留下您的信息，我们将尽快与您联系。",
     bookingTitle: "1. 预约信息（请填写以下任意一项）",
     parentInfo: "家长/监护人信息",
     studentInfo: "学生信息",

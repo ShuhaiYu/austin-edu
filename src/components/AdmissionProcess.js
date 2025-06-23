@@ -8,6 +8,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { homeContent } from "@/app/content";
 import { Button } from "./ui/button";
 import { SquareArrowOutUpRight } from "lucide-react";
+import Link from "next/link";
 
 export default function AdmissionProcess() {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -33,14 +34,6 @@ export default function AdmissionProcess() {
       { dot: "bg-[#dfb67e]", border: "border-[#dfb67e]", button: "hover:text-[#dfb67e] hover:bg-austin-yellow/30" } // yellow
     ];
     return colors[partIndex % 3];
-  };
-
-  // 处理按钮点击事件
-  const handleButtonClick = (buttonLink) => {
-    // 这里可以添加按钮点击逻辑，比如跳转到对应页面
-    if (buttonLink) {
-      window.location.href = buttonLink;
-    }
   };
 
   return (
@@ -109,15 +102,14 @@ export default function AdmissionProcess() {
                       {/* 底部按钮 - 原小标题位置 - 有buttonText+buttonLink才显示 */}
                       {currentStep.buttonText && currentStep.buttonLink && (
                         <div className="flex items-center justify-end">
-                        <Button
-                          className={`${dotColor} ${button} inline-flex items-center px-4 py-2 text-xs sm:text-sm text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
-                          onClick={() =>
-                            handleButtonClick(currentStep.buttonLink)
-                          }
-                        >
-                          {currentStep.buttonText}
-                          <SquareArrowOutUpRight className="w-4 h-4" />
-                        </Button>
+                          <Link href={currentStep.buttonLink} passHref>
+                            <Button
+                              className={`${dotColor} ${button} inline-flex items-center px-4 py-2 text-xs sm:text-sm text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
+                            >
+                              {currentStep.buttonText}
+                              <SquareArrowOutUpRight className="w-4 h-4" />
+                            </Button>
+                          </Link>
                         </div>
                       )}
                       

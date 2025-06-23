@@ -2,7 +2,7 @@
 export const homeContent = {
   en: {
     hero: {
-      title: "Melbourne's Leading All-In-One Tutorial Service",
+      title: "Melbourne‘s Leading All-In-One Tutoring Service",
       description: `At Austin Education, we believe that real academic progress comes from expert guidance and consistent support—not luck. That’s why we are committed to providing every student with the highest-quality resources and the most genuine care.
 Since 2013, we have specialised in comprehensive tutoring for students from Year 1 to Year 12, covering all major academic pathways including VCE, IB, UCAT, and more—always upholding the highest teaching standards.
 What we offer is a fully structured learning system: Curriculum precisely aligned with exam standards； A handpicked team of outstanding teachers； High-quality in-house textbooks； Efficient and targeted practice tasks, supported by a full suite of academic resources.
