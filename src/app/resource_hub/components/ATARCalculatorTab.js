@@ -99,13 +99,13 @@ const SubjectRow = ({ subject, onUpdate, onRemove, levels, lang }) => {
   };
 
   return (
-    <div className="flex gap-4 items-center mb-4">
+    <div className="flex flex-col sm:flex-row gap-2 sm:gap-4 items-start sm:items-center mb-4 p-3 sm:p-0 bg-gray-50 sm:bg-transparent rounded-lg sm:rounded-none">
       <Input
         type="number"
         placeholder={lang === "en" ? "Score" : "分数"}
         value={score}
         onChange={handleScoreChange}
-        className="w-32 rounded-[2rem] p-4"
+        className="w-full sm:w-32 rounded-xl lg:rounded-[2rem] p-3 lg:p-4"
         min="0"
         max="100"
       />
@@ -116,7 +116,7 @@ const SubjectRow = ({ subject, onUpdate, onRemove, levels, lang }) => {
           onUpdate({ ...subject, score, level: val });
         }}
       >
-        <SelectTrigger className="w-48 rounded-[2rem] p-4">
+        <SelectTrigger className="w-full sm:w-48 rounded-xl lg:rounded-[2rem] p-3 lg:p-4">
           {level}
         </SelectTrigger>
         <SelectContent>
@@ -129,7 +129,7 @@ const SubjectRow = ({ subject, onUpdate, onRemove, levels, lang }) => {
       </Select>
       <Button
         variant="ghost"
-        className="text-red-600 hover:text-red-800"
+        className="text-red-600 hover:text-red-800 w-full sm:w-auto justify-center sm:justify-start"
         onClick={onRemove}
       >
         ×
@@ -218,25 +218,25 @@ export const ATARCalculatorTab = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-8 shadow-lg">
-      <div className="flex gap-8">
-        {/* Left Section */}
-        <div className="w-1/3 pr-8 border-r border-gray-200">
-          <h2 className="text-2xl font-bold mb-6">{t.title}</h2>
-          <p className="text-muted-foreground text-justify">{t.description}</p>
-          <div className="mt-8 space-y-4">
-            <p className="text-sm text-muted-foreground">{t.disclaimer}</p>
+    <div className="bg-white rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+        {/* Left Section - 移动端在上方 */}
+        <div className="w-full lg:w-1/3 lg:pr-8 lg:border-r border-gray-200">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 lg:mb-6">{t.title}</h2>
+          <p className="text-muted-foreground text-justify text-sm sm:text-base">{t.description}</p>
+          <div className="mt-6 lg:mt-8 space-y-4">
+            <p className="text-xs sm:text-sm text-muted-foreground">{t.disclaimer}</p>
           </div>
         </div>
 
-        {/* Right Section */}
-        <div className="w-2/3 pl-8">
-          <div className="space-y-8">
+        {/* Right Section - 移动端在下方 */}
+        <div className="w-full lg:w-2/3 lg:pl-8">
+          <div className="space-y-6 lg:space-y-8">
             {/* State Selection */}
-            <div className="flex items-center gap-4">
-              <label className="w-1/3 font-semibold">{t.state}</label>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <label className="w-full sm:w-1/3 font-semibold text-sm sm:text-base">{t.state}</label>
               <Select value={selectedState} onValueChange={setSelectedState}>
-                <SelectTrigger className="rounded-[2rem] p-4">
+                <SelectTrigger className="rounded-xl lg:rounded-[2rem] p-3 lg:p-4">
                   <SelectValue placeholder={t.state} />
                 </SelectTrigger>
                 <SelectContent>
@@ -251,7 +251,7 @@ export const ATARCalculatorTab = () => {
 
             {/* Subjects Input */}
             <div>
-              <h3 className="font-semibold mb-6">{t.subjects}</h3>
+              <h3 className="font-semibold mb-4 lg:mb-6 text-sm sm:text-base">{t.subjects}</h3>
               {subjects.map((subject) => (
                 <SubjectRow
                   key={subject.id}
@@ -262,23 +262,27 @@ export const ATARCalculatorTab = () => {
                   lang={lang}
                 />
               ))}
-              <Button variant="outline" className="mt-4" onClick={addSubject}>
+              <Button 
+                variant="outline" 
+                className="mt-4 w-full sm:w-auto text-sm sm:text-base" 
+                onClick={addSubject}
+              >
                 {t.addSubject}
               </Button>
             </div>
 
             {/* Results Section */}
-            <div className="bg-muted rounded-lg p-6 space-y-4">
+            <div className="bg-muted rounded-lg p-4 lg:p-6 space-y-4">
               <div className="text-center">
-                <p className="text-sm text-muted-foreground">{t.prediction}</p>
-                <div className="text-4xl font-bold mt-2">
+                <p className="text-xs sm:text-sm text-muted-foreground">{t.prediction}</p>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mt-2">
                   <AnimatedNumber value={atarResult} />
                 </div>
               </div>
 
               {atarResult !== "-" && (
-                <div className="p-4 bg-white rounded-lg">
-                  <p className="text-sm">
+                <div className="p-3 lg:p-4 bg-white rounded-lg">
+                  <p className="text-xs sm:text-sm">
                     {atarResult > 90
                       ? t.advice.high
                       : atarResult > 70
@@ -291,7 +295,11 @@ export const ATARCalculatorTab = () => {
 
             {/* Action Buttons */}
             <div className="flex gap-4 justify-end">
-              <Button variant="outline" onClick={resetAll} className="px-8">
+              <Button 
+                variant="outline" 
+                onClick={resetAll} 
+                className="px-6 lg:px-8 text-sm sm:text-base"
+              >
                 {t.reset}
               </Button>
             </div>

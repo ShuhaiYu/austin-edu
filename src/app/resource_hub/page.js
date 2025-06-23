@@ -33,38 +33,41 @@ function ResourceHubContent() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-8 bg-background">
-      <div className="w-full">
+    <div className="min-h-screen flex flex-col items-center p-4 sm:p-6 lg:p-8 bg-background">
+      <div className="w-full mt-8 lg:mt-0">
         <Tabs value={activeTab} onValueChange={handleTabChange} className="w-full gap-0">
-          {/* Tab导航 */}
-          <TabsList className="grid grid-cols-2 md:grid-cols-5 w-full h-auto rounded-b-none gap-2 bg-background items-end">
+          {/* Tab导航 - 响应式调整 */}
+          <TabsList className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 w-full h-auto rounded-b-none gap-1 sm:gap-2 bg-background items-end">
             <TabsTrigger
               value="trial"
-              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+              className="py-3 lg:py-4 text-xs sm:text-sm lg:text-base rounded-t-xl lg:rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
             >
-              Trial Lesson
+              <span className="hidden sm:inline">Trial Lesson</span>
+              <span className="sm:hidden">Trial</span>
             </TabsTrigger>
             <TabsTrigger
               value="webinar"
-              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+              className="py-3 lg:py-4 text-xs sm:text-sm lg:text-base rounded-t-xl lg:rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
             >
-              Free Webinar
+              <span className="hidden sm:inline">Free Webinar</span>
+              <span className="sm:hidden">Webinar</span>
             </TabsTrigger>
             <TabsTrigger
               value="faq"
-              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+              className="py-3 lg:py-4 text-xs sm:text-sm lg:text-base rounded-t-xl lg:rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
             >
               FAQ
             </TabsTrigger>
             <TabsTrigger
               value="atar"
-              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+              className="py-3 lg:py-4 text-xs sm:text-sm lg:text-base rounded-t-xl lg:rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200 "
             >
-              ATAR Calculator
+              <span className="hidden sm:inline">ATAR Calculator</span>
+              <span className="sm:hidden">ATAR</span>
             </TabsTrigger>
             <TabsTrigger
               value="blogs"
-              className="py-4 rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200"
+              className="py-3 lg:py-4 text-xs sm:text-sm lg:text-base rounded-t-xl lg:rounded-t-2xl rounded-b-none bg-gray-300 text-foreground data-[state=active]:bg-primary data-[state=active]:text-white data-[state=active]:h-[calc(100%+4px)] transition-all duration-200 col-span-2 sm:col-span-2 lg:col-span-1"
             >
               Blogs
             </TabsTrigger>
@@ -101,24 +104,24 @@ function ResourceHubContent() {
   );
 }
 
-// Loading fallback 组件
+// Loading fallback 组件 - 响应式调整
 function ResourceHubLoading() {
   return (
-    <div className="min-h-screen flex flex-col items-center p-8 bg-background">
+    <div className="min-h-screen flex flex-col items-center p-4 sm:p-6 lg:p-8 bg-background">
       <div className="w-full">
-        <div className="grid grid-cols-2 md:grid-cols-5 w-full h-auto rounded-b-none gap-2 bg-background items-end mb-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 w-full h-auto rounded-b-none gap-1 sm:gap-2 bg-background items-end mb-4">
           {Array.from({ length: 5 }).map((_, index) => (
             <div 
               key={index}
-              className="py-4 rounded-t-2xl rounded-b-none bg-gray-200 animate-pulse h-12"
+              className="py-3 lg:py-4 rounded-t-xl lg:rounded-t-2xl rounded-b-none bg-gray-200 animate-pulse h-10 lg:h-12"
             />
           ))}
         </div>
-        <div className="bg-white rounded-b-xl p-8 shadow-lg">
+        <div className="bg-white rounded-b-xl p-4 sm:p-6 lg:p-8 shadow-lg">
           <div className="animate-pulse space-y-4">
-            <div className="h-6 bg-gray-200 rounded w-1/4"></div>
-            <div className="h-4 bg-gray-200 rounded w-1/2"></div>
-            <div className="h-4 bg-gray-200 rounded w-3/4"></div>
+            <div className="h-4 lg:h-6 bg-gray-200 rounded w-1/4"></div>
+            <div className="h-3 lg:h-4 bg-gray-200 rounded w-1/2"></div>
+            <div className="h-3 lg:h-4 bg-gray-200 rounded w-3/4"></div>
           </div>
         </div>
       </div>

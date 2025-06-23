@@ -25,6 +25,7 @@ import {
 import FAQ from "@/components/FAQ";
 import { joinUsContent } from "./join_us_content.js"; // 引入多语言内容
 import { joinUsFaqItems } from "@/data/faq_content.js";
+import BirdDecoration from "@/components/BirdDecoration";
 
 export default function JoinUsPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
@@ -39,7 +40,7 @@ export default function JoinUsPage() {
     try {
       const formData = new FormData(e.target);
       const data = {};
-      
+
       // 收集所有表单数据
       for (let [key, value] of formData.entries()) {
         if (data[key]) {
@@ -57,31 +58,31 @@ export default function JoinUsPage() {
       // 添加时间戳
       data.timestamp = new Date().toISOString();
 
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch("/api/send-email", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          type: 'job-application',
+          type: "job-application",
           data: data,
         }),
       });
 
       if (!response.ok) {
-        throw new Error('Failed to submit application');
+        throw new Error("Failed to submit application");
       }
 
       toast.success(
-        lang === "en" 
+        lang === "en"
           ? "Application submitted successfully! We'll contact you soon."
           : "申请提交成功！我们会尽快与您联系。"
       );
-      
+
       // 重置表单
       e.target.reset();
     } catch (error) {
-      console.error('Error submitting application:', error);
+      console.error("Error submitting application:", error);
       toast.error(
         lang === "en"
           ? "Failed to submit application. Please try again."
@@ -150,20 +151,10 @@ export default function JoinUsPage() {
       {/* 页面标题：相对定位 + 装饰 */}
       <div className="text-center relative">
         <h1 className="text-3xl md:text-4xl font-bold mb-4">{t.title}</h1>
-        <div
-          className="
-            absolute top-0 right-0 z-0 pointer-events-none
-
-          "
-        >
-          <Image
-            src="/decoration/1.svg"
-            alt=""
-            width={200}
-            height={200}
-            className="object-contain"
-          />
-        </div>
+        <BirdDecoration
+          bird="1"
+          position="top-8 right-8 md:top-16 md:right-16"
+        />
       </div>
       {/* 1. 左右布局：左边图片，右边文字 */}
       <section className="flex flex-col md:flex-row items-center md:space-x-8 space-y-8 md:space-y-0">
@@ -186,32 +177,17 @@ export default function JoinUsPage() {
           </p>
           <div className="flex flex-col md:flex-row gap-3">
             <Button asChild className="text-sm md:text-base">
-              <a href="mailto:hr@austinedu.com.au">
-                {t.section1.button1}
-              </a>
+              <a href="mailto:hr@austinedu.com.au">{t.section1.button1}</a>
             </Button>
             <Button variant="outline" className="text-sm md:text-base" asChild>
-              <Link href="/about_us">
-                {t.section1.button2}
-              </Link>
+              <Link href="/about_us">{t.section1.button2}</Link>
             </Button>
           </div>
           {/* decoration 2 */}
-          <div
-            className="
-              absolute bottom-0 right-0 z-0 pointer-events-none
-             
-              transform translate-y-1/2
-            "
-          >
-            <Image
-              src="/decoration/2.svg"
-              alt=""
-              width={200}
-              height={200}
-              className="object-contain "
-            />
-          </div>
+          <BirdDecoration
+            bird="2"
+            position="top-4 right-8 md:top-8 md:right-16"
+          />
         </div>
       </section>
       {/* 2. 文字+图片区块 */}
@@ -225,20 +201,10 @@ export default function JoinUsPage() {
             {t.section2.desc}
           </p>
           {/* decoration 3 */}
-          <div
-            className="
-              absolute bottom-0 left-0 z-0 pointer-events-none
-              transform translate-y-1/2 -translate-x-1/2
-            "
-          >
-            <Image
-              src="/decoration/3.svg"
-              alt=""
-              width={200}
-              height={200}
-              className="object-contain"
-            />
-          </div>
+          <BirdDecoration
+            bird="3"
+            position="-top-8 -left-4 md:-top-40 md:left-16"
+          />
         </div>
         {/* 右侧图片 */}
         <div className="w-full md:w-1/2 order-1 md:order-2">
@@ -300,7 +266,7 @@ export default function JoinUsPage() {
         {/* 右侧：在线申请表 */}
         <div className="w-full md:w-1/2 sticky top-4">
           <h2 className="text-3xl font-bold mb-6">{t.form.title}</h2>
-          <form 
+          <form
             onSubmit={handleSubmit}
             className="space-y-4 p-4 md:p-8 rounded-lg shadow-lg bg-primary text-primary-foreground"
           >
@@ -399,10 +365,11 @@ export default function JoinUsPage() {
                 disabled={isSubmitting}
                 className="w-full md:w-auto bg-red-700 text-white hover:bg-red-900 disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {isSubmitting 
-                  ? (lang === "en" ? "Submitting..." : "提交中...")
-                  : t.form.submitButtonLabel
-                }
+                {isSubmitting
+                  ? lang === "en"
+                    ? "Submitting..."
+                    : "提交中..."
+                  : t.form.submitButtonLabel}
               </Button>
             </div>
           </form>

@@ -303,12 +303,12 @@ export const ConsultationTab = () => {
   };
 
   return (
-    <div className="bg-white rounded-b-xl p-8 shadow-lg">
-      <div className="flex gap-8">
-        {/* Left Text Section */}
-        <div className="w-1/3 pr-8 border-r border-gray-200">
-          <h2 className="text-2xl font-bold mb-6">{t.title}</h2>
-          <p className="text-muted-foreground text-justify whitespace-pre-line">
+    <div className="bg-white rounded-b-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+        {/* Left Text Section - 移动端在上方 */}
+        <div className="w-full lg:w-1/3 lg:pr-8 lg:border-r border-gray-200">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 lg:mb-6">{t.title}</h2>
+          <p className="text-muted-foreground text-justify whitespace-pre-line text-sm sm:text-base">
             {t.description_1}
           </p>
           <Link
@@ -316,55 +316,55 @@ export const ConsultationTab = () => {
             rel="noopener noreferrer"
             target="_blank"
           >
-            <Button className="my-4 px-8">Book Now</Button>
+            <Button className="my-4 px-6 lg:px-8 w-full sm:w-auto">Book Now</Button>
           </Link>
-          <p className="text-muted-foreground text-justify">
+          <p className="text-muted-foreground text-justify text-sm sm:text-base">
             {t.description_2}
           </p>
         </div>
 
-        {/* Right Form Section */}
-        <div className="w-2/3 pl-8">
-          <form className="space-y-8" onSubmit={handleSubmit}>
+        {/* Right Form Section - 移动端在下方 */}
+        <div className="w-full lg:w-2/3 lg:pl-8">
+          <form className="space-y-6 lg:space-y-8" onSubmit={handleSubmit}>
             {/* Booking Information */}
-            <div className="space-y-6">
-              <h3 className="font-semibold">
+            <div className="space-y-4 lg:space-y-6">
+              <h3 className="font-semibold text-sm sm:text-base">
                 {t.bookingTitle.replace("*", "")}
                 <span className="text-red-500 ml-1">*</span>
               </h3>
 
               {/* Parent Information */}
-              <div className="space-y-4 pb-6 ">
-                <h4 className="font-medium">{t.parentInfo}</h4>
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.fullName}</label>
+              <div className="space-y-4 pb-4 lg:pb-6">
+                <h4 className="font-medium text-sm sm:text-base">{t.parentInfo}</h4>
+                <div className="flex flex-col gap-3 lg:gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">{t.fullName}</label>
                     <Input
                       name="parentName"
                       placeholder={t.placeholders.fullName}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">
                       {t.email}
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <Input
                       name="parentEmail"
                       placeholder={t.placeholders.email}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">
                       {t.phone}
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <Input
                       name="parentPhone"
                       placeholder={t.placeholders.phone}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
                   <div className="text-xs text-gray-500 mt-2">
@@ -377,36 +377,36 @@ export const ConsultationTab = () => {
 
               {/* Student Information */}
               <div className="space-y-4">
-                <h4 className="font-medium">{t.studentInfo}</h4>
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.fullName}</label>
+                <h4 className="font-medium text-sm sm:text-base">{t.studentInfo}</h4>
+                <div className="flex flex-col gap-3 lg:gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">{t.fullName}</label>
                     <Input
                       name="studentName"
                       placeholder={t.placeholders.fullName}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">
                       {t.email}
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <Input
                       name="studentEmail"
                       placeholder={t.placeholders.email}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">
                       {t.phone}
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <Input
                       name="studentPhone"
                       placeholder={t.placeholders.phone}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
                   <div className="text-xs text-gray-500 mt-2">
@@ -419,12 +419,12 @@ export const ConsultationTab = () => {
             </div>
 
             {/* School Year */}
-            <div className="flex items-center gap-4">
-              <label className="w-1/2 font-semibold mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <label className="w-full sm:w-1/2 font-semibold mb-4 sm:mb-6 text-sm sm:text-base">
                 {t.schoolYear.replace("*", "")}
                 <span className="text-red-500 ml-1">*</span>
               </label>
-              <div className="w-1/2">
+              <div className="w-full sm:w-1/2">
                 <MultiSelect
                   placeholder={
                     schoolYear.length > 0
@@ -437,18 +437,18 @@ export const ConsultationTab = () => {
                   }))}
                   selectedOptions={schoolYear}
                   setSelectedOptions={setSchoolYear}
-                  className="rounded-[2rem] border border-gray-200 p-6 bg-white"
+                  className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6 bg-white"
                 />
               </div>
             </div>
 
             {/* Topic Selection */}
-            <div className="flex items-center gap-4">
-              <label className="w-1/2 font-semibold mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <label className="w-full sm:w-1/2 font-semibold mb-4 sm:mb-6 text-sm sm:text-base">
                 {t.topicTitle.replace("*", "")}
                 <span className="text-red-500 ml-1">*</span>
               </label>
-              <div className="w-1/2">
+              <div className="w-full sm:w-1/2">
                 <MultiSelect
                   placeholder={
                     selectedTopics.length > 0
@@ -461,15 +461,15 @@ export const ConsultationTab = () => {
                   }))}
                   selectedOptions={selectedTopics}
                   setSelectedOptions={setSelectedTopics}
-                  className="rounded-[2rem] border border-gray-200 p-6 bg-white"
+                  className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6 bg-white"
                 />
               </div>
             </div>
 
             {/* Add Student Button */}
-            <div className="flex items-center justify-between gap-4 mt-6">
-              <label className="w-1/2 text-sm">{t.addStudentText}</label>
-              <Button type="button" onClick={addStudent}>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-6">
+              <label className="w-full sm:w-1/2 text-sm">{t.addStudentText}</label>
+              <Button type="button" onClick={addStudent} className="w-full sm:w-auto">
                 {t.addStudent}
               </Button>
             </div>
@@ -478,10 +478,10 @@ export const ConsultationTab = () => {
             {additionalStudents.map((student, index) => (
               <div
                 key={student.id}
-                className="mt-6 p-6 border border-gray-200 rounded-[2rem] bg-gray-50"
+                className="mt-6 p-4 lg:p-6 border border-gray-200 rounded-xl lg:rounded-[2rem] bg-gray-50"
               >
-                <div className="flex justify-between items-center mb-4">
-                  <h4 className="font-medium">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-4 gap-2">
+                  <h4 className="font-medium text-sm sm:text-base">
                     {t.studentInfo} {index + 2}
                   </h4>
                   <Button
@@ -489,49 +489,49 @@ export const ConsultationTab = () => {
                     onClick={() => removeStudent(student.id)}
                     variant="outline"
                     size="sm"
-                    className="text-red-600 hover:text-red-700 border-red-600 hover:border-red-700 hover:bg-red-50"
+                    className="text-red-600 hover:text-red-700 border-red-600 hover:border-red-700 hover:bg-red-50 w-full sm:w-auto"
                   >
                     <X className="w-4 h-4 mr-1" />
                     {t.removeStudent}
                   </Button>
                 </div>
                 <div className="space-y-4">
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.fullName}</label>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">{t.fullName}</label>
                     <Input
                       placeholder={t.placeholders.fullName}
                       value={student.name}
                       onChange={(e) =>
                         updateStudent(student.id, "name", e.target.value)
                       }
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.email}</label>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">{t.email}</label>
                     <Input
                       placeholder={t.placeholders.email}
                       value={student.email}
                       onChange={(e) =>
                         updateStudent(student.id, "email", e.target.value)
                       }
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.phone}</label>
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">{t.phone}</label>
                     <Input
                       placeholder={t.placeholders.phone}
                       value={student.phone}
                       onChange={(e) =>
                         updateStudent(student.id, "phone", e.target.value)
                       }
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-1/2 text-sm">{t.schoolYear}</label>
-                    <div className="w-1/2">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-1/2 text-sm">{t.schoolYear}</label>
+                    <div className="w-full sm:w-1/2">
                       <MultiSelect
                         placeholder={
                           schoolYear.length > 0
@@ -544,13 +544,13 @@ export const ConsultationTab = () => {
                         }))}
                         selectedOptions={schoolYear}
                         setSelectedOptions={setSchoolYear}
-                        className="rounded-[2rem] border border-gray-200 p-6 bg-white"
+                        className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6 bg-white"
                       />
                     </div>
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-1/2 text-sm">{t.topicTitle}</label>
-                    <div className="w-1/2">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-1/2 text-sm">{t.topicTitle}</label>
+                    <div className="w-full sm:w-1/2">
                       <MultiSelect
                         placeholder={
                           selectedTopics.length > 0
@@ -563,7 +563,7 @@ export const ConsultationTab = () => {
                         }))}
                         selectedOptions={selectedTopics}
                         setSelectedOptions={setSelectedTopics}
-                        className="rounded-[2rem] border border-gray-200 p-6 bg-white"
+                        className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6 bg-white"
                       />
                     </div>
                   </div>
@@ -573,10 +573,10 @@ export const ConsultationTab = () => {
 
             {/* Questions */}
             <div className="">
-              <h3 className="font-semibold mb-4">{t.questionsTitle}</h3>
+              <h3 className="font-semibold mb-4 text-sm sm:text-base">{t.questionsTitle}</h3>
               <textarea
                 name="questions"
-                className="w-full text-sm rounded-[2rem] border border-gray-200 p-6 bg-white"
+                className="w-full text-sm rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6 bg-white"
                 rows={3}
                 placeholder={t.placeholders.questions}
               />
@@ -584,15 +584,15 @@ export const ConsultationTab = () => {
 
             {/* Contact Method */}
             <div className="">
-              <h3 className="font-semibold mb-4">
+              <h3 className="font-semibold mb-4 text-sm sm:text-base">
                 {t.contactTitle.replace("*", "")}
                 <span className="text-red-500 ml-1">*</span>
               </h3>
-              <div className="grid grid-cols-3 divide-x divide-gray-200 gap-6 rounded-[2rem] border border-gray-200 p-6 bg-white">
+              <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 gap-4 sm:gap-6 rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6 bg-white">
                 {t.contactMethods.map((method) => (
                   <label
                     key={method}
-                    className="flex items-center gap-2 text-sm"
+                    className="flex items-center gap-2 text-sm py-2 sm:py-0"
                   >
                     <Input
                       type="radio"
@@ -609,7 +609,7 @@ export const ConsultationTab = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold !mt-10 py-6 text-lg uppercase disabled:opacity-50"
+              className="bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold !mt-8 lg:!mt-10 py-4 lg:py-6 text-base lg:text-lg uppercase disabled:opacity-50 w-full sm:w-auto"
             >
               {isSubmitting ? t.sending : t.sendButton}
             </Button>

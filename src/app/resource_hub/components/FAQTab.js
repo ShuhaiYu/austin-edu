@@ -80,19 +80,19 @@ export const FAQTab = () => {
         showContactForm={false}
       />
       
-      {/* Contact Section */}
-      <div className="p-8 border-t border-gray-200 bg-gray-50/50 rounded-b-xl">
-        <div className="text-center space-y-6">
-          <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
+      {/* Contact Section - 响应式调整 */}
+      <div className="p-4 sm:p-6 lg:p-8 border-t border-gray-200 bg-gray-50/50 rounded-b-xl">
+        <div className="text-center space-y-4 lg:space-y-6">
+          <p className="text-base sm:text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
             {t.contactText}
           </p>
           
           <Link href="/contact_us">
             <Button 
-              className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg leading-6 transition-all duration-300 hover:shadow-lg"
+              className="bg-primary hover:bg-primary/90 text-white px-6 lg:px-8 py-2 lg:py-3 text-base lg:text-lg leading-6 transition-all duration-300 hover:shadow-lg w-full sm:w-auto"
             >
               <span className="mr-2">{t.contactButton}</span>
-              <ArrowRight className="h-5 w-5" />
+              <ArrowRight className="h-4 w-4 lg:h-5 lg:w-5" />
             </Button>
           </Link>
         </div>

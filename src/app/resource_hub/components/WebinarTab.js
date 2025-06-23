@@ -263,56 +263,56 @@ export const WebinarTab = () => {
   };
 
   return (
-    <div className="bg-white rounded-xl p-8 shadow-lg">
-      <div className="flex gap-8">
-        {/* Left Text Section */}
-        <div className="w-1/3 pr-8 border-r border-gray-200">
-          <h2 className="text-2xl font-bold mb-6">{t.title}</h2>
-          <p className="text-muted-foreground text-justify">{t.description}</p>
+    <div className="bg-white rounded-xl p-4 sm:p-6 lg:p-8 shadow-lg">
+      <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
+        {/* Left Text Section - 移动端在上方 */}
+        <div className="w-full lg:w-1/3 lg:pr-8 lg:border-r border-gray-200">
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 lg:mb-6">{t.title}</h2>
+          <p className="text-muted-foreground text-justify text-sm sm:text-base">{t.description}</p>
         </div>
 
-        {/* Right Form Section */}
-        <div className="w-2/3 pl-8">
-          <form className="space-y-8" onSubmit={handleSubmit}>
+        {/* Right Form Section - 移动端在下方 */}
+        <div className="w-full lg:w-2/3 lg:pl-8">
+          <form className="space-y-6 lg:space-y-8" onSubmit={handleSubmit}>
             {/* Subscription Information */}
-            <div className="space-y-6">
-              <h3 className="font-semibold">
+            <div className="space-y-4 lg:space-y-6">
+              <h3 className="font-semibold text-sm sm:text-base">
                 {t.subscriptionTitle.replace("*", "")}
                 <span className="text-red-500 ml-1">*</span>
               </h3>
 
               {/* Parent Information */}
-              <div className="space-y-4 pb-6 ">
-                <h4 className="font-medium">{t.parentInfo}</h4>
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.fullName}</label>
+              <div className="space-y-4 pb-4 lg:pb-6">
+                <h4 className="font-medium text-sm sm:text-base">{t.parentInfo}</h4>
+                <div className="flex flex-col gap-3 lg:gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">{t.fullName}</label>
                     <Input
                       name="parentName"
                       placeholder={t.placeholders.fullName}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">
                       {t.email}
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <Input
                       name="parentEmail"
                       placeholder={t.placeholders.email}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">
                       {t.phone}
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <Input
                       name="parentPhone"
                       placeholder={t.placeholders.phone}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
                   <div className="text-xs text-gray-500 mt-2">
@@ -325,36 +325,36 @@ export const WebinarTab = () => {
 
               {/* Student Information */}
               <div className="space-y-4">
-                <h4 className="font-medium">{t.studentInfo}</h4>
-                <div className="flex flex-col gap-4">
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">{t.fullName}</label>
+                <h4 className="font-medium text-sm sm:text-base">{t.studentInfo}</h4>
+                <div className="flex flex-col gap-3 lg:gap-4">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">{t.fullName}</label>
                     <Input
                       name="studentName"
                       placeholder={t.placeholders.fullName}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">
                       {t.email}
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <Input
                       name="studentEmail"
                       placeholder={t.placeholders.email}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="flex items-center gap-4">
-                    <label className="w-28 text-sm">
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+                    <label className="w-full sm:w-28 text-sm">
                       {t.phone}
                       <span className="text-red-500 ml-1">*</span>
                     </label>
                     <Input
                       name="studentPhone"
                       placeholder={t.placeholders.phone}
-                      className="rounded-[2rem] border border-gray-200 p-6"
+                      className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
                   <div className="text-xs text-gray-500 mt-2">
@@ -367,12 +367,12 @@ export const WebinarTab = () => {
             </div>
 
             {/* School Year */}
-            <div className="flex items-center gap-4">
-              <label className="w-1/2 font-semibold mb-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+              <label className="w-full sm:w-1/2 font-semibold mb-4 sm:mb-6 text-sm sm:text-base">
                 {t.schoolYear.replace("*", "")}
                 <span className="text-red-500 ml-1">*</span>
               </label>
-              <div className="w-1/2">
+              <div className="w-full sm:w-1/2">
                 <MultiSelect
                   placeholder={
                     schoolYear.length > 0
@@ -385,36 +385,36 @@ export const WebinarTab = () => {
                   }))}
                   selectedOptions={schoolYear}
                   setSelectedOptions={setSchoolYear}
-                  className="rounded-[2rem] border border-gray-200 p-6 bg-white"
+                  className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6 bg-white"
                 />
               </div>
             </div>
 
             {/* Webinar Selection */}
             <div className="">
-              <h3 className="font-semibold mb-6">
+              <h3 className="font-semibold mb-4 lg:mb-6 text-sm sm:text-base">
                 {t.webinarTitle.replace("*", "")}
                 <span className="text-red-500 ml-1">*</span>
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-4 lg:space-y-6">
                 {Object.entries(t.webinars).map(([gradeGroup, webinars]) => (
-                  <div key={gradeGroup} className="border-b pb-6 last:border-0">
-                    <h4 className="font-medium mb-4">{gradeGroup}</h4>
-                    <div className="grid grid-cols-1 gap-4 rounded-[2rem] border border-gray-200 p-6">
+                  <div key={gradeGroup} className="border-b pb-4 lg:pb-6 last:border-0">
+                    <h4 className="font-medium mb-3 lg:mb-4 text-sm sm:text-base">{gradeGroup}</h4>
+                    <div className="grid grid-cols-1 gap-3 lg:gap-4 rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6">
                       {webinars.map((webinar) => (
                         <label
                           key={webinar}
-                          className="flex items-center gap-3 p-2 relative"
+                          className="flex items-start sm:items-center gap-3 p-2 relative"
                         >
                           <Input
                             type="radio"
                             name="webinar"
                             value={webinar}
-                            className="w-4 h-4 shrink-0"
+                            className="w-4 h-4 shrink-0 mt-0.5 sm:mt-0"
                             checked={selectedWebinars.includes(webinar)}
                             onChange={() => handleWebinarChange(webinar)}
                           />
-                          <span className="text-sm">{webinar}</span>
+                          <span className="text-sm leading-relaxed">{webinar}</span>
                         </label>
                       ))}
                     </div>
@@ -425,11 +425,11 @@ export const WebinarTab = () => {
 
             {/* Language Preference */}
             <div className="">
-              <h3 className="font-semibold mb-4">
+              <h3 className="font-semibold mb-4 text-sm sm:text-base">
                 {t.languageTitle.replace("*", "")}
                 <span className="text-red-500 ml-1">*</span>
               </h3>
-              <div className="grid grid-cols-2 gap-4 divide-x divide-gray-200 rounded-[2rem] border border-gray-200 p-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 lg:gap-4 divide-y sm:divide-y-0 sm:divide-x divide-gray-200 rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6">
                 {t.languages.map((language) => (
                   <label
                     key={language}
@@ -452,7 +452,7 @@ export const WebinarTab = () => {
             <Button
               type="submit"
               disabled={isSubmitting}
-              className="bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold !mt-10 py-6 text-lg uppercase disabled:opacity-50"
+              className="bg-red-700 hover:bg-red-900 text-primary-foreground font-semibold !mt-8 lg:!mt-10 py-4 lg:py-6 text-base lg:text-lg uppercase disabled:opacity-50 w-full sm:w-auto"
             >
               {isSubmitting ? t.sending : t.sendButton}
             </Button>

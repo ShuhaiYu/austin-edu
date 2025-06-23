@@ -24,7 +24,9 @@ const EventItem = ({ event, index }) => {
       <span className="absolute -left-[21px] top-2 w-3 h-3 bg-primary rounded-full" />
 
       {/* 事件文本 */}
-      <span>{event}</span>
+      <span className="text-sm sm:text-base lg:text-lg leading-relaxed block">
+        {event}
+      </span>
     </motion.li>
   );
 };
@@ -38,7 +40,6 @@ const YearGroup = ({ year, events }) => {
     <div ref={groupRef} className="relative mb-12">
       {/* 使用 Grid 布局来处理响应式 */}
       <div className="grid grid-cols-[minmax(80px,120px)_1fr] md:grid-cols-[minmax(100px,150px)_1fr] gap-4 md:gap-8 items-start">
-        
         {/* 年份部分 - 响应式宽度 */}
         <motion.div
           className="text-right pr-4 md:pr-6"
@@ -85,7 +86,7 @@ const TimelineSection = ({ content }) => {
       <Slogan
         slogans={[
           { prefix: "Where", highlight: "DEDICATION" },
-          { prefix: "Meets", highlight: "DISTINCTION" }
+          { prefix: "Meets", highlight: "DISTINCTION" },
         ]}
       />
 

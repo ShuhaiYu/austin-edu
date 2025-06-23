@@ -344,3 +344,243 @@ html {
     height: calc(100vh - 32px) !important;
   }
 }
+
+/* 侧边栏转换动画 */
+.sidebar-transition {
+  transition: transform 0.3s ease-in-out, top 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+/* 移动端菜单按钮定位 */
+.mobile-menu-btn {
+  transition: top 0.2s ease-in-out;
+  z-index: 30;
+}
+
+/* 侧边栏移动端定位 */
+.sidebar-mobile {
+  transition: top 0.2s ease-in-out, height 0.2s ease-in-out;
+}
+
+.sidebar-mobile.scrolled {
+  top: 32px !important;
+  height: calc(100vh - 32px) !important;
+}
+
+/* 百分比圆圈响应式调整 */
+@media (max-width: 640px) {
+  .percentage-circle {
+    width: 80px !important;
+    height: 80px !important;
+  }
+  
+  .percentage-circle .percentage-text {
+    font-size: 1rem !important;
+  }
+}
+
+/* 卡片内容响应式间距 */
+@media (max-width: 640px) {
+  .achievement-card {
+    padding: 1.5rem !important;
+  }
+  
+  .achievement-card h2 {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+  
+  .achievement-card h3 {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+  
+  .achievement-card p {
+    font-size: 0.875rem !important;
+    line-height: 1.5rem !important;
+  }
+}
+
+/* 按钮响应式调整 */
+@media (max-width: 640px) {
+  .responsive-button {
+    padding: 0.625rem 1.5rem !important;
+    font-size: 0.875rem !important;
+  }
+}
+
+@media (min-width: 641px) {
+  .responsive-button {
+    padding: 0.75rem 2rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* 侧边栏内容响应式 */
+@media (max-width: 1024px) {
+  .sidebar-content {
+    width: 288px !important; /* 18rem */
+  }
+  
+  .sidebar-content .nav-item {
+    height: 2.5rem !important; /* 10 */
+    font-size: 0.875rem !important;
+  }
+  
+  .sidebar-content .nav-icon {
+    width: 1rem !important;
+    height: 1rem !important;
+  }
+}
+
+/* 科目卡片网格响应式 */
+@media (max-width: 640px) {
+  .subject-grid-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .subject-grid-3 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .subject-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 2rem !important;
+  }
+}
+
+/* 统计数据展示响应式 */
+@media (max-width: 640px) {
+  .stats-container {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 1.5rem !important;
+  }
+  
+  .stat-item {
+    text-align: center !important;
+    max-width: 280px !important;
+  }
+}
+
+/* 学校列表响应式 */
+@media (max-width: 640px) {
+  .school-list {
+    columns: 1 !important;
+    gap: 1rem !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .school-list {
+    columns: 2 !important;
+    gap: 1.25rem !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .school-list {
+    columns: 3 !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* 主内容区域响应式边距 */
+@media (max-width: 640px) {
+  .main-content {
+    padding: 1rem !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .main-content {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (min-width: 1025px) {
+  .main-content {
+    padding: 2.5rem !important;
+  }
+}
+
+/* 标题响应式 */
+@media (max-width: 640px) {
+  .section-title {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+  
+  .subject-title {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .section-title {
+    font-size: 2rem !important;
+    line-height: 2.5rem !important;
+  }
+  
+  .subject-title {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+}
+
+/* VCE科学卡片特殊响应式 */
+@media (max-width: 1024px) {
+  .vce-science-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* MD项目卡片响应式 */
+@media (max-width: 1024px) {
+  .md-program-grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* 滚动行为优化 */
+html.scrolled {
+  scroll-behavior: smooth;
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .hover-effect:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+  
+  .touch-target {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+}
+
+/* 高DPI屏幕优化 */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .crisp-edges {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* 深色模式支持（如果需要） */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-card {
+    background-color: #1f2937 !important;
+    border-color: #374151 !important;
+    color: #f9fafb !important;
+  }
+}

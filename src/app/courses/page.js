@@ -68,15 +68,15 @@ function CoursesPageContent() {
   };
 
   return (
-    <div className="container mx-auto p-8 space-y-8">
-      <div className="mb-12">
-        <h1 className="text-5xl font-bold mb-8">Courses</h1>
+    <div className="container mx-auto p-4 sm:p-6 lg:p-8 space-y-6 lg:space-y-8">
+      <div className="mb-8 lg:mb-12">
+        <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6 lg:mb-8">Courses</h1>
         <CourseDetail searchFilter={searchFilter} />
       </div>
-      <div className="mb-28">
+      <div className="mb-20 lg:mb-28">
         <CourseContent />
       </div>
-      <div className="mb-28">
+      <div className="mb-20 lg:mb-28">
         <CourseFeature />
       </div>
 
@@ -87,7 +87,11 @@ function CoursesPageContent() {
 
 export default function CoursesPage() {
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={
+      <div className="flex items-center justify-center min-h-[50vh]">
+        <div className="text-lg">Loading...</div>
+      </div>
+    }>
       <CoursesPageContent />
     </Suspense>
   );

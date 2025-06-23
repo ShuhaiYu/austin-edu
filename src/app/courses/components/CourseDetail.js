@@ -238,7 +238,7 @@ export const CourseDetail = ({ searchFilter }) => {
         <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
           <div className="flex items-center gap-2">
             <svg
-              className="w-5 h-5 text-blue-600"
+              className="w-5 h-5 text-blue-600 flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -250,7 +250,7 @@ export const CourseDetail = ({ searchFilter }) => {
                 d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <span className="text-blue-800 font-medium">
+            <span className="text-blue-800 font-medium text-sm sm:text-base">
               {lang === "en"
                 ? `Search Result: Found course "${selectedCourse.title}" for ${searchFilter.state}, ${searchFilter.grade}`
                 : `搜索结果：为${searchFilter.state}，${searchFilter.grade}找到课程"${selectedCourse.title}"`}
@@ -259,9 +259,9 @@ export const CourseDetail = ({ searchFilter }) => {
         </div>
       )}
 
-      <div className="flex gap-8 mb-8 items-start">
+      <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 mb-8 items-start">
         {/* 左侧 Accordion */}
-        <div className="w-1/2">
+        <div className="w-full lg:w-1/2">
           <Accordion
             type="multiple"
             value={openAccordions}
@@ -287,18 +287,18 @@ export const CourseDetail = ({ searchFilter }) => {
                   key={category.title}
                   value={category.title}
                   data-category={category.title}
-                  className={`gap-4 rounded-[2rem] border p-2 mb-4 bg-white ${
+                  className={`gap-4 rounded-xl lg:rounded-[2rem] border p-2 mb-4 bg-white ${
                     isGradeResult 
                       ? "border-green-300 shadow-lg ring-2 ring-green-100" 
                       : "border-gray-200"
                   }`}
                 >
                   <AccordionTrigger
-                    className={`rounded-[2rem] border border-gray-200 p-6 ${bgColor} font-semibold hover:from-primary hover:to-primary hover:text-white [&>svg]:hover:stroke-white transition-colors duration-300 ${
+                    className={`rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6 ${bgColor} font-semibold hover:from-primary hover:to-primary hover:text-white [&>svg]:hover:stroke-white transition-colors duration-300 ${
                       isGradeResult ? "ring-2 ring-green-200" : ""
                     }`}
                   >
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2 text-sm sm:text-base">
                       {isGradeResult && (
                         <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>
                       )}
@@ -306,19 +306,19 @@ export const CourseDetail = ({ searchFilter }) => {
                     </div>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="mt-4 pl-4 space-y-6">
+                    <div className="mt-4 pl-2 lg:pl-4 space-y-6">
                       {category.subcategories?.map((subcategory, subIdx) => (
                         <div key={subcategory.title} className="space-y-3">
                           {/* 子分类标题 */}
                           <div className="flex items-center gap-3">
                             <div className="w-2 h-2 bg-primary rounded-full"></div>
-                            <h4 className="text-lg font-semibold text-gray-800">
+                            <h4 className="text-base lg:text-lg font-semibold text-gray-800">
                               {subcategory.title}
                             </h4>
                           </div>
 
                           {/* 课程列表 */}
-                          <ul className="grid grid-cols-2 gap-2 ml-4">
+                          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2 ml-2 lg:ml-4">
                             {subcategory.courses?.map((courseSlug) => {
                               const course = courses[courseSlug];
                               if (!course) return null;
@@ -343,7 +343,7 @@ export const CourseDetail = ({ searchFilter }) => {
                                       onDoubleClick={() =>
                                         handleDoubleClick(course)
                                       }
-                                      className={`text-left w-full p-3 rounded-lg cursor-pointer transition-all duration-300 select-none
+                                      className={`text-left w-full p-2 lg:p-3 rounded-lg cursor-pointer transition-all duration-300 select-none relative
                                         ${
                                           isSelected
                                             ? "bg-primary/10 text-primary border-none shadow-sm font-bold "
@@ -357,7 +357,7 @@ export const CourseDetail = ({ searchFilter }) => {
                                       `}
                                     >
                                       <span
-                                        className={`text-sm ${
+                                        className={`text-xs sm:text-sm ${
                                           isSelected
                                             ? "font-bold"
                                             : "font-medium"
@@ -395,9 +395,11 @@ export const CourseDetail = ({ searchFilter }) => {
         </div>
 
         {/* 右侧 详情面板 */}
-        <div className="w-1/2 sticky top-40 self-start">
-          <div className="space-y-8 border-6 border-blue-200 bg-white rounded-[2rem] p-8 shadow-lg">
-            <h2 className="text-3xl font-bold">{selectedCourse.title}</h2>
+        <div className="w-full lg:w-1/2 lg:sticky lg:top-40 lg:self-start">
+          <div className="space-y-6 lg:space-y-8 border-4 lg:border-6 border-blue-200 bg-white rounded-xl lg:rounded-[2rem] p-4 lg:p-8 shadow-lg">
+            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
+              {selectedCourse.title}
+            </h2>
 
             {/* 动态按钮和内容处理 */}
             {(() => {
@@ -412,7 +414,7 @@ export const CourseDetail = ({ searchFilter }) => {
                 <>
                   {/* 跳转按钮 */}
                   <Link href={getNavigationPath(selectedCourse)}>
-                    <Button>
+                    <Button className="w-full sm:w-auto text-sm sm:text-base">
                       {isContactCourse
                         ? lang === "en"
                           ? "Contact Us"
@@ -423,8 +425,8 @@ export const CourseDetail = ({ searchFilter }) => {
                     </Button>
                   </Link>
 
-                  <div className="space-y-4 mt-12">
-                    <h3 className="text-xl font-semibold">
+                  <div className="space-y-4 mt-8 lg:mt-12">
+                    <h3 className="text-lg sm:text-xl font-semibold">
                       {lang === "en"
                         ? "What Does the Program Involve?"
                         : "课程详情"}
@@ -432,10 +434,10 @@ export const CourseDetail = ({ searchFilter }) => {
 
                     {isContactCourse ? (
                       /* 特殊显示咨询信息 */
-                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 lg:p-6">
                         <div className="flex items-center gap-3 mb-3">
                           <svg
-                            className="w-5 h-5 text-blue-600"
+                            className="w-5 h-5 text-blue-600 flex-shrink-0"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -447,11 +449,11 @@ export const CourseDetail = ({ searchFilter }) => {
                               d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                             />
                           </svg>
-                          <span className="font-semibold text-primary">
+                          <span className="font-semibold text-primary text-sm sm:text-base">
                             {lang === "en" ? "Course Information" : "课程咨询"}
                           </span>
                         </div>
-                        <p className="text-primary leading-relaxed">
+                        <p className="text-primary leading-relaxed text-sm sm:text-base">
                           {selectedCourse.content[0]}
                         </p>
                       </div>
@@ -466,7 +468,7 @@ export const CourseDetail = ({ searchFilter }) => {
                             return (
                               <div
                                 key={i}
-                                className="font-bold text-lg text-primary mt-6 mb-3 first:mt-0"
+                                className="font-bold text-base sm:text-lg text-primary mt-4 lg:mt-6 mb-2 lg:mb-3 first:mt-0"
                               >
                                 {item}
                               </div>
@@ -475,10 +477,10 @@ export const CourseDetail = ({ searchFilter }) => {
 
                           return (
                             <div key={i} className="flex items-start gap-2">
-                              <span className="text-muted-foreground text-sm mt-1">
+                              <span className="text-muted-foreground text-sm mt-1 flex-shrink-0">
                                 •
                               </span>
-                              <span className="text-muted-foreground leading-relaxed">
+                              <span className="text-muted-foreground leading-relaxed text-sm sm:text-base">
                                 {item}
                               </span>
                             </div>
