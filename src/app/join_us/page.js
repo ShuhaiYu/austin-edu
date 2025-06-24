@@ -26,11 +26,57 @@ import FAQ from "@/components/FAQ";
 import { joinUsContent } from "./join_us_content.js"; // 引入多语言内容
 import { joinUsFaqItems } from "@/data/faq_content.js";
 import BirdDecoration from "@/components/BirdDecoration";
+import { Upload, X, FileText } from "lucide-react";
 
 export default function JoinUsPage() {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const t = joinUsContent[lang];
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedFile, setSelectedFile] = useState(null);
+
+  // 处理文件上传
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      // 检查文件类型
+      const allowedTypes = [
+        'application/pdf',
+        'application/msword',
+        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+      ];
+      
+      if (!allowedTypes.includes(file.type)) {
+        toast.error(
+          lang === "en"
+            ? "Please upload a PDF or Word document"
+            : "请上传PDF或Word文档"
+        );
+        return;
+      }
+
+      // 检查文件大小 (5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        toast.error(
+          lang === "en"
+            ? "File size must be less than 5MB"
+            : "文件大小必须小于5MB"
+        );
+        return;
+      }
+
+      setSelectedFile(file);
+    }
+  };
+
+  // 移除文件
+  const removeFile = () => {
+    setSelectedFile(null);
+    // 清空文件输入
+    const fileInput = document.querySelector('input[type="file"]');
+    if (fileInput) {
+      fileInput.value = '';
+    }
+  };
 
   // 处理表单提交
   const handleSubmit = async (e) => {
@@ -38,35 +84,29 @@ export default function JoinUsPage() {
     setIsSubmitting(true);
 
     try {
+      // 使用FormData来处理表单数据和文件上传
       const formData = new FormData(e.target);
-      const data = {};
+      
+      // 添加表单类型
+      formData.append('type', 'job-application');
+      
+      // 添加时间戳
+      formData.append('timestamp', new Date().toISOString());
 
-      // 收集所有表单数据
-      for (let [key, value] of formData.entries()) {
-        if (data[key]) {
-          // 处理多选值
-          if (Array.isArray(data[key])) {
-            data[key].push(value);
-          } else {
-            data[key] = [data[key], value];
-          }
-        } else {
-          data[key] = value;
-        }
+      // 如果有选择的文件，添加到FormData
+      if (selectedFile) {
+        formData.append('resume', selectedFile);
       }
 
-      // 添加时间戳
-      data.timestamp = new Date().toISOString();
+      // 调试：打印FormData内容
+      console.log('FormData contents:');
+      for (let [key, value] of formData.entries()) {
+        console.log(key, value);
+      }
 
       const response = await fetch("/api/send-email", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          type: "job-application",
-          data: data,
-        }),
+        body: formData, // 直接发送FormData，不需要设置Content-Type
       });
 
       if (!response.ok) {
@@ -79,8 +119,10 @@ export default function JoinUsPage() {
           : "申请提交成功！我们会尽快与您联系。"
       );
 
-      // 重置表单
+      // 重置表单和文件选择
       e.target.reset();
+      setSelectedFile(null);
+      
     } catch (error) {
       console.error("Error submitting application:", error);
       toast.error(
@@ -132,6 +174,66 @@ export default function JoinUsPage() {
         );
       }
 
+      case "file": {
+        return (
+          <div className="space-y-3">
+            {/* 隐藏的文件输入 */}
+            <input
+              type="file"
+              name={field.name}
+              id={field.name}
+              accept=".pdf,.doc,.docx"
+              onChange={handleFileChange}
+              className="hidden"
+              required={field.required}
+            />
+            
+            {/* 自定义文件上传区域 */}
+            <div className="space-y-3">
+              {!selectedFile ? (
+                <label
+                  htmlFor={field.name}
+                  className={`${commonClassNames} border-2 border-dashed border-gray-300 rounded-lg p-6 text-center cursor-pointer hover:border-primary transition-colors flex flex-col items-center space-y-2`}
+                >
+                  <Upload className="w-8 h-8 text-gray-400" />
+                  <div>
+                    <p className="text-sm font-medium">
+                      {lang === "en" ? "Click to upload resume" : "点击上传简历"}
+                    </p>
+                    <p className="text-xs text-gray-500">
+                      {lang === "en" 
+                        ? "PDF, DOC, DOCX (max 5MB)" 
+                        : "PDF、DOC、DOCX (最大5MB)"}
+                    </p>
+                  </div>
+                </label>
+              ) : (
+                <div className={`${commonClassNames} border border-gray-300 rounded-lg p-4 flex items-center justify-between`}>
+                  <div className="flex items-center space-x-3">
+                    <FileText className="w-5 h-5 text-primary" />
+                    <div>
+                      <p className="text-sm font-medium">{selectedFile.name}</p>
+                      <p className="text-xs text-gray-500">
+                        {Math.round(selectedFile.size / 1024)} KB
+                      </p>
+                    </div>
+                  </div>
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="sm"
+                    onClick={removeFile}
+                    className="text-red-500 hover:text-red-700 hover:bg-red-50"
+                  >
+                    <X className="w-4 h-4" />
+                  </Button>
+                </div>
+              )}
+            </div>
+          </div>
+        );
+      }
+
       default: {
         return (
           <Input
@@ -145,6 +247,27 @@ export default function JoinUsPage() {
       }
     }
   }
+
+  // 添加简历上传到表单字段中
+  const enhancedFormSections = t.form.sections.map(section => {
+    if (section.id === "personalInformation") {
+      // 在个人信息部分添加简历上传字段
+      return {
+        ...section,
+        fields: [
+          ...section.fields,
+          {
+            name: "resume",
+            label: lang === "en" ? "Resume/CV" : "简历",
+            type: "file",
+            required: true,
+            placeholder: lang === "en" ? "Upload your resume" : "上传您的简历"
+          }
+        ]
+      };
+    }
+    return section;
+  });
 
   return (
     <div className="container mx-auto px-4 py-8 md:py-12 space-y-12 md:space-y-16">
@@ -186,7 +309,7 @@ export default function JoinUsPage() {
           {/* decoration 2 */}
           <BirdDecoration
             bird="2"
-            position="top-4 right-8 md:top-8 md:right-16"
+            position="bottom-24 right-0 md:-bottom-8 md:right-16"
           />
         </div>
       </section>
@@ -200,11 +323,6 @@ export default function JoinUsPage() {
           <p className="text-sm md:text-base leading-relaxed whitespace-pre-line text-gray-600">
             {t.section2.desc}
           </p>
-          {/* decoration 3 */}
-          <BirdDecoration
-            bird="3"
-            position="-top-8 -left-4 md:-top-40 md:left-16"
-          />
         </div>
         {/* 右侧图片 */}
         <div className="w-full md:w-1/2 order-1 md:order-2">
@@ -270,7 +388,7 @@ export default function JoinUsPage() {
             onSubmit={handleSubmit}
             className="space-y-4 p-4 md:p-8 rounded-lg shadow-lg bg-primary text-primary-foreground"
           >
-            {t.form.sections.map((section) => (
+            {enhancedFormSections.map((section) => (
               <div key={section.id} className="space-y-4">
                 <h3 className="text-xl font-semibold border-b pb-2">
                   {section.heading}
@@ -293,11 +411,14 @@ export default function JoinUsPage() {
                             "yearOfGraduation",
                           ].includes(f.name)
                       )
+                      // 个人信息部分的简历字段全宽显示
                       .map((field) => (
                         <div
                           key={field.name}
                           className={
-                            field.type === "select-multiple" ? "col-span-2" : ""
+                            field.type === "select-multiple" || field.type === "file" 
+                              ? "col-span-1 md:col-span-2" 
+                              : ""
                           }
                         >
                           <div className="space-y-2">
