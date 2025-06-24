@@ -72,8 +72,8 @@ export async function POST(request) {
     } else if (type === "job-application") {
       subject = "New Job Application - Austin Education";
       emailContent = generateJobApplicationEmail(data);
-      // toEmail = ["hr@austinedu.com.au"]; // 求职申请发送到HR邮箱
-      toEmail = ["yushuhai1998@gmail.com"]; // 临时使用个人邮箱接收求职申请
+      toEmail = ["hr@austinedu.com.au"]; // 求职申请发送到HR邮箱
+      // toEmail = ["yushuhai1998@gmail.com"]; // 临时使用个人邮箱接收求职申请
     } else {
       return NextResponse.json(
         { error: "Invalid email type" },
