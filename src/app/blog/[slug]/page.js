@@ -110,7 +110,7 @@ export default function BlogPostPage() {
                   : '获得我们专业导师的个性化指导'
                 }
               </p>
-              <Link href="/contact">
+              <Link href="/contact_us">
                 <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                   {lang === 'en' ? 'Book Free Consultation' : '预约免费咨询'}
                 </Button>

@@ -56,9 +56,12 @@ We do not sell or share your personal data with any unauthorised third parties.`
       },
       {
         title: "Contact Information",
-        content: `📩 For any questions about these terms or your data, please contact us at rachelle@austinedu.com.au or call one of our campus numbers listed on the Contact page.`
+        content: `📩 For any questions about these terms or your data, please contact us at `,
+        hasLinks: true
       }
-    ]
+    ],
+    contactQuestion: "Questions about these terms?",
+    contactText: `If you have any questions about these Terms & Conditions or our Privacy Policy, please don't hesitate to contact us at `
   },
   zh: {
     title: "条款声明",
@@ -109,9 +112,12 @@ We do not sell or share your personal data with any unauthorised third parties.`
       },
       {
         title: "联系方式",
-        content: `📩 如您对条款有任何疑问，请联系 rachelle@austinedu.com.au 或拨打我们的客服电话。`
+        content: `📩 如您对条款有任何疑问，请联系 `,
+        hasLinks: true
       }
-    ]
+    ],
+    contactQuestion: "对条款有疑问？",
+    contactText: `如果您对本条款或隐私政策有任何疑问，请随时联系我们：`
   }
 };
 
@@ -121,8 +127,6 @@ export default function TermsPage() {
 
   return (
     <div className="min-h-screen">
-
-
       {/* 主要内容 */}
       <div className="container mx-auto px-4 py-12">
         <div className="max-w-4xl mx-auto">
@@ -144,9 +148,31 @@ export default function TermsPage() {
                   <h2 className="text-xl md:text-2xl font-bold text-primary">
                     {section.title}
                   </h2>
-                  <div className="text-gray-700 leading-relaxed whitespace-pre-line">
-                    {section.content}
-                  </div>
+                  
+                  {section.hasLinks ? (
+                    <div className="text-gray-700 leading-relaxed">
+                      {section.content}
+                      <a 
+                        href="mailto:rachelle@austinedu.com.au" 
+                        className="text-primary hover:text-primary/80 underline font-semibold"
+                      >
+                        rachelle@austinedu.com.au
+                      </a>
+                      {lang === "en" ? " or call one of our campus numbers listed on the " : " 或拨打我们在"}
+                      <Link 
+                        href="/contact_us" 
+                        className="text-primary hover:text-primary/80 underline font-semibold"
+                      >
+                        {lang === "en" ? "Contact page" : "联系我们页面"}
+                      </Link>
+                      {lang === "en" ? "." : "列出的客服电话。"}
+                    </div>
+                  ) : (
+                    <div className="text-gray-700 leading-relaxed whitespace-pre-line">
+                      {section.content}
+                    </div>
+                  )}
+                  
                   {/* 分隔线 - 除了最后一个section */}
                   {index < content.sections.length - 1 && (
                     <hr className="border-gray-200 my-8" />
@@ -165,14 +191,17 @@ export default function TermsPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-blue-900 mb-2">
-                    {lang === "en" ? "Questions about these terms?" : "对条款有疑问？"}
+                    {content.contactQuestion}
                   </h3>
-                  <p className="text-blue-800 text-sm">
-                    {lang === "en" 
-                      ? "If you have any questions about these Terms & Conditions or our Privacy Policy, please don't hesitate to contact us at rachelle@austinedu.com.au"
-                      : "如果您对本条款或隐私政策有任何疑问，请随时联系我们：rachelle@austinedu.com.au"
-                    }
-                  </p>
+                  <div className="text-blue-800 text-sm">
+                    {content.contactText}
+                    <a 
+                      href="mailto:rachelle@austinedu.com.au" 
+                      className="text-primary hover:text-primary/80 underline font-semibold"
+                    >
+                      rachelle@austinedu.com.au
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

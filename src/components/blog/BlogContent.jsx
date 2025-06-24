@@ -1,14 +1,16 @@
 // components/blog/BlogContent.js
-import Image from "next/image";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef } from "react";
 
 export function BlogContent({ content }) {
+  const router = useRouter();
+  const contentRef = useRef(null);
   // 处理可点击链接的函数
   const processContent = (htmlContent) => {
     // 替换 <click-link> 标签为实际的 Link 组件
     return htmlContent.replace(
       /<click-link href="([^"]*)">(.*?)<\/click-link>/g,
-      '<a href="$1" class="click-link">$2</a>'
+      '<a href="$1" class="click-link" data-internal-link="true">$2</a>'
     );
   };
 
@@ -21,11 +23,36 @@ export function BlogContent({ content }) {
     );
   };
 
+  // 处理内部链接点击事件
+  useEffect(() => {
+    const handleLinkClick = (e) => {
+      const target = e.target.closest('a[data-internal-link="true"]');
+      if (target) {
+        e.preventDefault();
+        const href = target.getAttribute('href');
+        if (href) {
+          router.push(href);
+        }
+      }
+    };
+
+    const contentElement = contentRef.current;
+    if (contentElement) {
+      contentElement.addEventListener('click', handleLinkClick);
+      
+      return () => {
+        contentElement.removeEventListener('click', handleLinkClick);
+      };
+    }
+  }, [router]);
+
+
   const processedContent = processImages(processContent(content));
 
   return (
     <>
       <div 
+      ref={contentRef}
         className="blog-content"
         dangerouslySetInnerHTML={{ __html: processedContent }}
       />
