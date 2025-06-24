@@ -337,7 +337,7 @@ const courseData = {
             items: [
               {
                 number: 11,
-                label: "中数状元",
+                label: "高数状元",
               },
               {
                 number: "240+",

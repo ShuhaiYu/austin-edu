@@ -917,7 +917,7 @@ const courseData = {
             image: "/courses/single/y1-6-chinese-enrichment/3.png",
           },
           {
-            title: "体验式学习（Experiential Learning",
+            title: "体验式学习（Experiential Learning）",
             description:
               "“模拟餐厅”：孩子们扮演店长和顾客，用中文进行点餐、结账，锻炼实际交流能力 \n“节日活动”：课堂中体验中国传统节日活动，沉浸式获取文化知识",
             icon: "repeat",
