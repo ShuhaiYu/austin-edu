@@ -26,16 +26,30 @@ export const CourseDetail = ({ searchFilter }) => {
   const detail = coursesContent[lang].detail;
   const { categories, courses } = detail;
 
+  // 检测是否为移动端
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkIsMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // lg断点
+    };
+
+    checkIsMobile();
+    window.addEventListener("resize", checkIsMobile);
+
+    return () => window.removeEventListener("resize", checkIsMobile);
+  }, []);
+
   // 更简单的滚动函数 - 使用原生API滚动到中间
   const scrollToElement = (element, behavior = "smooth") => {
     if (!element) return;
 
-    console.log('Scrolling element to center:', element);
+    console.log("Scrolling element to center:", element);
 
     element.scrollIntoView({
       behavior: behavior,
       block: "center", // 将元素置于视窗中间
-      inline: "nearest"
+      inline: "nearest",
     });
   };
 
@@ -75,45 +89,45 @@ export const CourseDetail = ({ searchFilter }) => {
       "Primary School - Years 1-6": {
         en: "Primary School - Years 1-6",
         zh: "小学 1-6 年级",
-        level: "primary"
+        level: "primary",
       },
       "Secondary School - Years 7-9": {
         en: "Secondary School - Years 7-9",
         zh: "初中 7-9 年级",
-        level: "secondary"
+        level: "secondary",
       },
       "Senior Secondary School - Years 10-12": {
-        en: "Senior Secondary School - Years 10-12", 
+        en: "Senior Secondary School - Years 10-12",
         zh: "高中 10-12 年级",
-        level: "senior"
+        level: "senior",
       },
       // 中文原名映射
       "小学 1-6 年级": {
         en: "Primary School - Years 1-6",
-        zh: "小学 1-6 年级", 
-        level: "primary"
+        zh: "小学 1-6 年级",
+        level: "primary",
       },
       "初中 7-9 年级": {
         en: "Secondary School - Years 7-9",
         zh: "初中 7-9 年级",
-        level: "secondary"
+        level: "secondary",
       },
       "高中 10-12 年级": {
         en: "Senior Secondary School - Years 10-12",
         zh: "高中 10-12 年级",
-        level: "senior"
-      }
+        level: "senior",
+      },
     };
 
     // 首先尝试直接匹配
     let targetTitle = gradeName;
-    
+
     // 如果在映射中找到，根据当前语言获取正确的标题
     if (gradeMapping[gradeName]) {
       targetTitle = gradeMapping[gradeName][lang];
     }
 
-    return categories.find(category => category.title === targetTitle);
+    return categories.find((category) => category.title === targetTitle);
   };
 
   // 处理搜索过滤器参数
@@ -123,7 +137,14 @@ export const CourseDetail = ({ searchFilter }) => {
       const courseInfo = findCourseCategory(searchFilter.subject);
 
       if (courseInfo) {
-        // 设置选中的课程
+        // 移动端直接跳转，桌面端设置选中课程
+        if (isMobile) {
+          const path = getNavigationPath(courseInfo.course);
+          router.push(path);
+          return;
+        }
+
+        // 桌面端保持原有逻辑
         setSelectedCourse(courseInfo.course);
 
         // 自动展开对应的Accordion
@@ -139,12 +160,15 @@ export const CourseDetail = ({ searchFilter }) => {
         setTimeout(() => {
           const courseElement = courseRefs.current[searchFilter.subject];
           if (courseElement) {
-            console.log('Found course element for subject navigation:', searchFilter.subject);
+            console.log(
+              "Found course element for subject navigation:",
+              searchFilter.subject
+            );
             scrollToElement(courseElement);
           } else {
-            console.warn('Course element not found:', searchFilter.subject);
+            console.warn("Course element not found:", searchFilter.subject);
           }
-        }, 500); // 也增加到500ms
+        }, 500);
 
         // 显示搜索结果提示
         const params = new URLSearchParams();
@@ -156,7 +180,7 @@ export const CourseDetail = ({ searchFilter }) => {
     // 处理年级搜索
     else if (searchFilter && searchFilter.grade) {
       const category = findCategoryByGrade(searchFilter.grade);
-      
+
       if (category) {
         // 自动展开对应的年级分类
         setOpenAccordions((prev) => {
@@ -167,8 +191,12 @@ export const CourseDetail = ({ searchFilter }) => {
           return newOpenAccordions;
         });
 
-        // 选择该分类下的第一门课程作为默认显示
-        if (category.subcategories && category.subcategories.length > 0) {
+        // 选择该分类下的第一门课程作为默认显示（仅桌面端）
+        if (
+          !isMobile &&
+          category.subcategories &&
+          category.subcategories.length > 0
+        ) {
           const firstSubcategory = category.subcategories[0];
           if (firstSubcategory.courses && firstSubcategory.courses.length > 0) {
             const firstCourseSlug = firstSubcategory.courses[0];
@@ -179,16 +207,21 @@ export const CourseDetail = ({ searchFilter }) => {
           }
         }
 
-        // 延迟滚动到分类顶部，并增加延迟时间确保DOM完全渲染
+        // 延迟滚动到分类顶部
         setTimeout(() => {
-          const categoryElement = document.querySelector(`[data-category="${category.title}"]`);
+          const categoryElement = document.querySelector(
+            `[data-category="${category.title}"]`
+          );
           if (categoryElement) {
-            console.log('Found category element for grade navigation:', category.title);
+            console.log(
+              "Found category element for grade navigation:",
+              category.title
+            );
             scrollToElement(categoryElement);
           } else {
-            console.warn('Category element not found:', category.title);
+            console.warn("Category element not found:", category.title);
           }
-        }, 500); // 增加到500ms确保DOM完全渲染
+        }, 500);
 
         // 显示年级搜索结果提示
         const params = new URLSearchParams();
@@ -197,7 +230,7 @@ export const CourseDetail = ({ searchFilter }) => {
         window.history.replaceState({}, "", `/courses?${params.toString()}`);
       }
     }
-  }, [searchFilter]);
+  }, [searchFilter, isMobile]);
 
   // 提取跳转逻辑为独立函数
   const getNavigationPath = (course) => {
@@ -210,10 +243,24 @@ export const CourseDetail = ({ searchFilter }) => {
     return isContactCourse ? "/contact_us" : `/courses/${course.slug}`;
   };
 
-  // 处理双击跳转
+  // 处理课程点击 - 移动端和桌面端不同行为
+  const handleCourseClick = (course) => {
+    if (isMobile) {
+      // 移动端直接跳转
+      const path = getNavigationPath(course);
+      router.push(path);
+    } else {
+      // 桌面端预览
+      setSelectedCourse(course);
+    }
+  };
+
+  // 处理双击跳转（仅桌面端）
   const handleDoubleClick = (course) => {
-    const path = getNavigationPath(course);
-    router.push(path);
+    if (!isMobile) {
+      const path = getNavigationPath(course);
+      router.push(path);
+    }
   };
 
   // 处理Accordion展开/收起
@@ -221,11 +268,16 @@ export const CourseDetail = ({ searchFilter }) => {
     setOpenAccordions(value);
   };
 
-  // Tooltip 文案
-  const tooltipText =
-    lang === "en"
-      ? "Single click to preview, double click to enter course"
-      : "单击预览，双击进入课程";
+  // Tooltip 文案 - 根据设备类型显示不同提示
+  const getTooltipText = () => {
+    if (isMobile) {
+      return lang === "en" ? "Tap to enter course" : "点击进入课程";
+    } else {
+      return lang === "en"
+        ? "Single click to preview, double click to enter course"
+        : "单击预览，双击进入课程";
+    }
+  };
 
   useEffect(() => {
     console.log("Selected Course:", selectedCourse);
@@ -234,7 +286,7 @@ export const CourseDetail = ({ searchFilter }) => {
   return (
     <TooltipProvider>
       {/* 搜索结果提示 */}
-      {searchFilter && searchFilter.subject && (
+      {searchFilter && searchFilter.subject && !isMobile && (
         <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
           <div className="flex items-center gap-2">
             <svg
@@ -260,7 +312,7 @@ export const CourseDetail = ({ searchFilter }) => {
       )}
 
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-8 mb-8 items-start">
-        {/* 左侧 Accordion */}
+        {/* 左侧 Accordion - 移动端占满宽度，桌面端占一半 */}
         <div className="w-full lg:w-1/2">
           <Accordion
             type="multiple"
@@ -277,9 +329,10 @@ export const CourseDetail = ({ searchFilter }) => {
               const bgColor = bgShades[idx % bgShades.length];
 
               // 检查是否为年级搜索结果
-              const isGradeResult = searchFilter && 
-                searchFilter.grade && 
-                !searchFilter.subject && 
+              const isGradeResult =
+                searchFilter &&
+                searchFilter.grade &&
+                !searchFilter.subject &&
                 category.title === searchFilter.grade;
 
               return (
@@ -288,8 +341,8 @@ export const CourseDetail = ({ searchFilter }) => {
                   value={category.title}
                   data-category={category.title}
                   className={`gap-4 rounded-xl lg:rounded-[2rem] border p-2 mb-4 bg-white ${
-                    isGradeResult 
-                      ? "border-green-300 shadow-lg ring-2 ring-green-100" 
+                    isGradeResult
+                      ? "border-green-300 shadow-lg ring-2 ring-green-100"
                       : "border-gray-200"
                   }`}
                 >
@@ -323,8 +376,9 @@ export const CourseDetail = ({ searchFilter }) => {
                               const course = courses[courseSlug];
                               if (!course) return null;
 
-                              // 检查是否为选中的课程
+                              // 检查是否为选中的课程（仅桌面端需要）
                               const isSelected =
+                                !isMobile &&
                                 selectedCourse.slug === course.slug;
 
                               // 检查是否为搜索结果
@@ -339,7 +393,7 @@ export const CourseDetail = ({ searchFilter }) => {
                                       ref={(el) =>
                                         (courseRefs.current[courseSlug] = el)
                                       }
-                                      onClick={() => setSelectedCourse(course)}
+                                      onClick={() => handleCourseClick(course)}
                                       onDoubleClick={() =>
                                         handleDoubleClick(course)
                                       }
@@ -352,6 +406,11 @@ export const CourseDetail = ({ searchFilter }) => {
                                         ${
                                           isSearchResult
                                             ? "animate-pulse bg-yellow-50 border-yellow-300"
+                                            : ""
+                                        }
+                                        ${
+                                          isMobile
+                                            ? "active:bg-primary/20 active:scale-98 transform"
                                             : ""
                                         }
                                       `}
@@ -368,10 +427,28 @@ export const CourseDetail = ({ searchFilter }) => {
                                       {isSearchResult && (
                                         <div className="absolute -top-1 -right-1 w-3 h-3 bg-yellow-400 rounded-full animate-ping"></div>
                                       )}
+                                      {/* 移动端显示箭头图标提示可点击 */}
+                                      {isMobile && (
+                                        <svg
+                                          className="absolute right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 text-gray-400"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          viewBox="0 0 24 24"
+                                        >
+                                          <path
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            d="M9 5l7 7-7 7"
+                                          />
+                                        </svg>
+                                      )}
                                     </li>
                                   </TooltipTrigger>
                                   <TooltipContent>
-                                    <p className="text-xs">{tooltipText}</p>
+                                    <p className="text-xs">
+                                      {getTooltipText()}
+                                    </p>
                                   </TooltipContent>
                                 </Tooltip>
                               );
@@ -394,8 +471,8 @@ export const CourseDetail = ({ searchFilter }) => {
           </Accordion>
         </div>
 
-        {/* 右侧 详情面板 */}
-        <div className="w-full lg:w-1/2 lg:sticky lg:top-40 lg:self-start">
+        {/* 右侧 详情面板 - 仅在桌面端显示 */}
+        <div className="hidden lg:block w-1/2 sticky top-40 self-start">
           <div className="space-y-6 lg:space-y-8 border-4 lg:border-6 border-blue-200 bg-white rounded-xl lg:rounded-[2rem] p-4 lg:p-8 shadow-lg">
             <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold leading-tight">
               {selectedCourse.title}
@@ -420,8 +497,8 @@ export const CourseDetail = ({ searchFilter }) => {
                           ? "Contact Us"
                           : "联系我们"
                         : lang === "en"
-                        ? "Find out more about this course"
-                        : "查看课程详情"}
+                          ? "Find out more about this course"
+                          : "查看课程详情"}
                     </Button>
                   </Link>
 

@@ -709,18 +709,78 @@ export default function FindCourse() {
   };
 
   return (
-    <div className="py-2">
-      <div className="grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
+    <div className="py-2 px-2 sm:px-4">
+      {/* 移动端：垂直布局 */}
+      <div className="block md:hidden space-y-4">
+        <span className="font-medium text-center block text-base sm:text-lg">
+          {t.label}
+        </span>
+
+        {/* State Selection */}
+        <Select value={state} onValueChange={handleStateChange}>
+          <SelectTrigger className="bg-white text-gray-800 w-full h-12">
+            <SelectValue placeholder={t.placeholders.state} />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="Victoria">Victoria</SelectItem>
+            <SelectItem value="South Australia">South Australia</SelectItem>
+          </SelectContent>
+        </Select>
+
+        {/* Grade Selection */}
+        <Select value={grade} onValueChange={handleGradeChange} disabled={!state}>
+          <SelectTrigger className="bg-white text-gray-800 w-full h-12">
+            <SelectValue placeholder={t.placeholders.grade} />
+          </SelectTrigger>
+          <SelectContent>
+            {availableGrades.map((gradeOption) => (
+              <SelectItem key={gradeOption} value={gradeOption}>
+                {gradeOption}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        {/* Subject Selection */}
+        <Select value={subject} onValueChange={setSubject} disabled={!grade}>
+          <SelectTrigger className="bg-white text-gray-800 w-full h-12">
+            <SelectValue placeholder={t.placeholders.subject} />
+          </SelectTrigger>
+          <SelectContent>
+            {availableSubjects.map((subjectOption) => (
+              <SelectItem key={subjectOption.slug} value={subjectOption.slug}>
+                {subjectOption.title}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+
+        {/* Search Button */}
+        <Button
+          onClick={handleSearch}
+          className="w-full h-12 text-white border border-white hover:bg-accent flex items-center justify-center gap-2"
+          disabled={!state || !grade || !subject}
+        >
+          <Image
+            src="/home/search icon.png"
+            alt="Search"
+            width={20}
+            height={20}
+            className="object-contain"
+          />
+          <span className="text-sm sm:text-base">Search Courses</span>
+        </Button>
+      </div>
+
+      {/* 桌面端：原有的水平布局 */}
+      <div className="hidden md:grid grid-cols-1 md:grid-cols-5 gap-4 items-center">
         {/* 1. Label */}
         <span className="font-medium md:text-right text-lg">
           {t.label}
         </span>
 
         {/* 2. State Selection */}
-        <Select
-          value={state}
-          onValueChange={handleStateChange}
-        >
+        <Select value={state} onValueChange={handleStateChange}>
           <SelectTrigger className="bg-white text-gray-800 w-full">
             <SelectValue placeholder={t.placeholders.state} />
           </SelectTrigger>
@@ -731,11 +791,7 @@ export default function FindCourse() {
         </Select>
 
         {/* 3. Grade Selection */}
-        <Select
-          value={grade}
-          onValueChange={handleGradeChange}
-          disabled={!state}
-        >
+        <Select value={grade} onValueChange={handleGradeChange} disabled={!state}>
           <SelectTrigger className="bg-white text-gray-800 w-full">
             <SelectValue placeholder={t.placeholders.grade} />
           </SelectTrigger>
@@ -749,11 +805,7 @@ export default function FindCourse() {
         </Select>
 
         {/* 4. Subject Selection */}
-        <Select
-          value={subject}
-          onValueChange={setSubject}
-          disabled={!grade}
-        >
+        <Select value={subject} onValueChange={setSubject} disabled={!grade}>
           <SelectTrigger className="bg-white text-gray-800 w-full">
             <SelectValue placeholder={t.placeholders.subject} />
           </SelectTrigger>

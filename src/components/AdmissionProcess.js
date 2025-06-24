@@ -14,11 +14,11 @@ export default function AdmissionProcess() {
   const { lang } = useContext(LangContext) || { lang: "en" };
   const { title, parts } = homeContent[lang].admissionProcess;
 
-  // 初始状态设为-1表示所有步骤默认关闭
+  // 初始状态设为0表示默认选择第一个步骤
   const [activeSteps, setActiveSteps] = useState(() => parts.map(() => 0));
 
-  // 处理hover事件
-  const handleStepHover = (partIndex, stepIndex) => {
+  // 处理点击/hover事件
+  const handleStepSelect = (partIndex, stepIndex) => {
     setActiveSteps((prev) => {
       const newActiveSteps = [...prev];
       newActiveSteps[partIndex] = stepIndex;
@@ -37,26 +37,25 @@ export default function AdmissionProcess() {
   };
 
   return (
-    <section className="py-4 xl:py-8">
-      <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-12 uppercase">
+    <section className="py-4 sm:py-6 md:py-8 xl:py-8 px-4 sm:px-6 md:px-8 xl:px-0">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-center mb-8 sm:mb-10 md:mb-12 uppercase">
         {title}
       </h2>
 
       {parts.map((part, i) => {
         const currentStepIndex = activeSteps[i];
-        const currentStep =
-          currentStepIndex !== -1 ? part.steps[currentStepIndex] : null;
+        const currentStep = part.steps[currentStepIndex];
         const { dot: dotColor, border: borderColor, button } = getColorConfig(i);
 
         return (
-          <div key={i} className="mb-16">
+          <div key={i} className="mb-12 sm:mb-14 md:mb-16">
             {/* Part 标题 */}
             <motion.div
               initial={{ scale: 0.5, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="relative w-[120px] h-[120px] md:w-[150px] md:h-[150px] xl:w-[180px] xl:h-[180px] mb-8 justify-center mx-auto"
+              className="relative w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[150px] md:h-[150px] xl:w-[180px] xl:h-[180px] mb-6 sm:mb-8 justify-center mx-auto"
             >
               <Image
                 src={`/home/title-bg${part.part}.png`}
@@ -65,65 +64,111 @@ export default function AdmissionProcess() {
                 height={240}
                 className="object-contain"
               />
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-2xl font-bold text-center">
-                <h1 className="font-bebas mt-4 md:mt-6 text-3xl md:text-4xl uppercase">
+              <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+                <h1 className="font-bebas mt-3 sm:mt-4 md:mt-6 text-2xl sm:text-3xl md:text-4xl uppercase">
                   Part {part.part}
                 </h1>
-                <span className="text-[11px] md:text-sm xl:text-base whitespace-pre-line text-gray-700 font-semibold">
+                <span className="text-[10px] sm:text-[11px] md:text-sm xl:text-base whitespace-pre-line text-gray-700 font-semibold px-2">
                   {part.title}
                 </span>
               </div>
             </motion.div>
 
-            {/* 分割布局 */}
-            <div className="flex w-full relative">
-              {/* 左侧 - 描述（只在有选择时显示） */}
-              <AnimatePresence mode="wait">
-                {currentStep ? (
+            {/* 移动端和桌面端不同布局 */}
+            <div className="lg:hidden">
+              {/* 移动端：垂直布局 */}
+              <div className="space-y-6">
+                {/* 步骤选择器 */}
+                <div className="flex flex-wrap gap-2 justify-center">
+                  {part.steps.map((stepData, j) => {
+                    const isActive = currentStepIndex === j;
+                    return (
+                      <button
+                        key={j}
+                        onClick={() => handleStepSelect(i, j)}
+                        className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
+                          isActive
+                            ? `${dotColor} text-white`
+                            : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                        }`}
+                      >
+                        {stepData.step.toString().padStart(2, "0")}
+                      </button>
+                    );
+                  })}
+                </div>
+
+                {/* 当前步骤内容 */}
+                <AnimatePresence mode="wait">
                   <motion.div
                     key={currentStep.step}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: 20 }}
-                    transition={{ duration: 0.2 }}
-                    className="w-1/2 sticky top-1/4 self-start"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.3 }}
+                    className="bg-white shadow-lg rounded-lg p-4 sm:p-6"
                   >
-                    <div className="bg-white shadow-2xl mr-8 p-2 sm:p-4 md:p-8">
-                      {/* 小标题 - 移到左上方 */}
-                      <h3 className="text-gray-700 font-semibold text-sm md:text-lg mb-4">
-                        {currentStep.title}
-                      </h3>
-
-                      {/* 描述内容 */}
-                      <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base mb-8">
-                        {currentStep.desc}
-                      </p>
-
-                      {/* 底部按钮 - 原小标题位置 - 有buttonText+buttonLink才显示 */}
-                      {currentStep.buttonText && currentStep.buttonLink && (
-                        <div className="flex items-center justify-end">
-                          <Link href={currentStep.buttonLink} passHref>
-                            <Button
-                              className={`${dotColor} ${button} inline-flex items-center px-4 py-2 text-xs sm:text-sm text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
-                            >
-                              {currentStep.buttonText}
-                              <SquareArrowOutUpRight className="w-4 h-4" />
-                            </Button>
-                          </Link>
-                        </div>
-                      )}
-                      
-                    </div>
+                    <h3 className="text-gray-700 font-semibold text-base sm:text-lg mb-3 sm:mb-4">
+                      {currentStep.title}
+                    </h3>
+                    <p className="text-gray-600 whitespace-pre-line text-sm sm:text-base mb-6 leading-relaxed">
+                      {currentStep.desc}
+                    </p>
+                    {currentStep.buttonText && currentStep.buttonLink && (
+                      <div className="flex justify-center sm:justify-end">
+                        <Link href={currentStep.buttonLink} passHref>
+                          <Button
+                            className={`${dotColor} ${button} inline-flex items-center gap-2 px-4 py-2 text-sm text-white font-medium rounded-lg transition-colors duration-200`}
+                          >
+                            {currentStep.buttonText}
+                            <SquareArrowOutUpRight className="w-4 h-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    )}
                   </motion.div>
-                ) : (
-                  <div className="w-1/2"></div>
-                )}
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* 桌面端：原有的左右分栏布局 */}
+            <div className="hidden lg:flex w-full relative">
+              {/* 左侧 - 描述 */}
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentStep.step}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 20 }}
+                  transition={{ duration: 0.2 }}
+                  className="w-1/2 sticky top-1/4 self-start"
+                >
+                  <div className="bg-white shadow-2xl mr-8 p-2 sm:p-4 md:p-8">
+                    <h3 className="text-gray-700 font-semibold text-sm md:text-lg mb-4">
+                      {currentStep.title}
+                    </h3>
+                    <p className="text-gray-600 whitespace-pre-line text-[12px] sm:text-sm md:text-base mb-8">
+                      {currentStep.desc}
+                    </p>
+                    {currentStep.buttonText && currentStep.buttonLink && (
+                      <div className="flex items-center justify-end">
+                        <Link href={currentStep.buttonLink} passHref>
+                          <Button
+                            className={`${dotColor} ${button} inline-flex items-center gap-2 px-4 py-2 text-xs sm:text-sm text-white font-medium rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
+                          >
+                            {currentStep.buttonText}
+                            <SquareArrowOutUpRight className="w-4 h-4" />
+                          </Button>
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                </motion.div>
               </AnimatePresence>
 
               {/* 右侧 - 步骤列表 */}
-              <div className={`pl-8 relative w-1/2`}>
+              <div className="pl-8 relative w-1/2">
                 <div className="absolute left-0 top-0 h-full w-px bg-gray-300">
-                  {/* 虚线分界线 */}
                   <div className="absolute inset-0 border-l-2 border-dotted border-gray-300" />
                 </div>
 
@@ -132,13 +177,10 @@ export default function AdmissionProcess() {
                     const isActive = currentStepIndex === j;
                     return (
                       <div key={j} className="relative group">
-                        {/* 连接线 */}
                         <div
                           className={`absolute left-[-24px] top-1/2 w-6 h-[1px] ${dotColor}`}
                           style={{ transform: "translateY(-50%)" }}
                         />
-
-                        {/* 圆形指示点 */}
                         <div
                           className={`absolute left-[-39px] top-1/2 w-4 h-4 rounded-full border-2 ${dotColor} 
                             ${
@@ -151,9 +193,9 @@ export default function AdmissionProcess() {
                             transition: "all 0.2s ease",
                           }}
                         />
-
                         <button
-                          onMouseEnter={() => handleStepHover(i, j)}
+                          onMouseEnter={() => handleStepSelect(i, j)}
+                          onClick={() => handleStepSelect(i, j)}
                           className={`block w-full text-left p-4 my-16 rounded-r-lg transition-all 
                             ${
                               isActive
@@ -162,14 +204,10 @@ export default function AdmissionProcess() {
                             }`}
                         >
                           <div className="flex items-center justify-start">
-                            <span
-                              className={`font-bebas font-bold text-3xl md:text-4xl xl:text-5xl mr-4 text-gray-500`}
-                            >
+                            <span className="font-bebas font-bold text-3xl md:text-4xl xl:text-5xl mr-4 text-gray-500">
                               {stepData.step.toString().padStart(2, "0")}
                             </span>
-                            <span
-                              className={`font-semibold text-sm md:text-lg text-gray-700`}
-                            >
+                            <span className="font-semibold text-sm md:text-lg text-gray-700">
                               {stepData.title}
                             </span>
                           </div>
