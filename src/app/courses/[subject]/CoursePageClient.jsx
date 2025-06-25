@@ -686,7 +686,9 @@ export default function CoursePageClient({ localizedData }) {
                       </h3>
                       <div
                         className={`${
-                          section.paragraph ? "grid lg:grid-cols-2 gap-6 sm:gap-8" : ""
+                          section.paragraph
+                            ? "grid lg:grid-cols-2 gap-6 sm:gap-8"
+                            : ""
                         }`}
                       >
                         <div>
@@ -792,161 +794,167 @@ export default function CoursePageClient({ localizedData }) {
         </section>
       )}
 
-      {/* Why Choose Us Section - 重新设计移动端布局 */}
+    {/* Why Choose Us Section - 响应式移动端优化 */}
       {hasContent(course.whyChooseUs) && (
-        <section className="my-12 sm:my-16">
-          {/* Part B - 重新排列移动端布局 */}
+        <section className="my-8 sm:my-12 lg:my-16">
+          {/* Part B */}
           {hasContent(course.whyChooseUs.partB?.contents) && (
-            <div className="max-w-7xl mx-auto mb-16 sm:mb-20">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-16 items-center my-6 sm:my-8">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-relaxed">
+            <div className="max-w-7xl mx-auto mb-12 sm:mb-16 lg:mb-20 px-4 sm:px-6 lg:px-8">
+              {/* 标题和描述区域 - 响应式网格 */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-16 items-center my-6 sm:my-8">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold leading-relaxed text-center lg:text-left">
                   {course.whyChooseUs.partB.title}
                 </h2>
-                <p className="text-sm sm:text-base text-muted-foreground">
+                <p className="text-sm sm:text-base lg:text-lg text-muted-foreground text-center lg:text-left">
                   {course.whyChooseUs.partB.description}
                 </p>
               </div>
 
-              {course.whyChooseUs.partB.contents.map((content, index) => (
-                <div
-                  key={content.title}
-                  className="flex flex-col gap-8 sm:gap-12 lg:gap-16 items-center mb-12 sm:mb-16 lg:mb-0"
-                >
-                  {/* 移动端：图片始终在上方 */}
-                  <div className="w-full lg:w-1/2 relative h-64 sm:h-80 lg:h-96 rounded-2xl sm:rounded-[2rem] overflow-hidden shadow-lg order-1">
-                    <Image
-                      src={content.image}
-                      alt={content.title}
-                      width={975}
-                      height={650}
-                      className="w-full h-full object-cover"
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                    />
-                  </div>
-
-                  {/* 桌面端：交替排列，移动端：始终在下方 */}
-                  <div className={`w-full lg:w-1/2 space-y-3 sm:space-y-4 order-2 ${
-                    index % 2 === 0 ? "" : "lg:order-1"
-                  }`}>
-                    <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-                      <div className="p-2 sm:p-3 rounded-full bg-primary/10 text-primary/70">
-                        {content.icon === "book" && <BookOpen size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "repeat" && <Repeat size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "check" && <Check size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "test" && <TestTube size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "communication" && (
-                          <MessageCircle size={20} className="sm:w-6 sm:h-6" />
-                        )}
-                        {content.icon === "graduation" && (
-                          <GraduationCap size={20} className="sm:w-6 sm:h-6" />
-                        )}
-                        {content.icon === "school" && <School size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "compass" && <Compass size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "file-text" && <FileText size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "sliders-horizontal" && (
-                          <SlidersHorizontal size={20} className="sm:w-6 sm:h-6" />
-                        )}
-                        {content.icon === "users" && <Users size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "clipboard-list" && (
-                          <ClipboardList size={20} className="sm:w-6 sm:h-6" />
-                        )}
-                        {content.icon === "bar-chart-2" && (
-                          <BarChart2 size={20} className="sm:w-6 sm:h-6" />
-                        )}
-                        {content.icon === "target" && <Target size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "list-checks" && (
-                          <ListChecks size={20} className="sm:w-6 sm:h-6" />
-                        )}
-                        {content.icon === "chalkboard" && (
-                          <Presentation size={20} className="sm:w-6 sm:h-6" />
-                        )}
-                        {content.icon === "clock" && <Clock size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "award" && <Award size={20} className="sm:w-6 sm:h-6" />}
-                        {content.icon === "calendar" && <Calendar size={20} className="sm:w-6 sm:h-6" />}
+              {/* 内容项目 - 响应式布局 */}
+              <div className="space-y-12 sm:space-y-16 lg:space-y-20">
+                {course.whyChooseUs.partB.contents.map((content, index) => (
+                  <div
+                    key={content.title}
+                    className={`flex flex-col gap-8 sm:gap-12 lg:gap-16 items-center ${
+                      index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                    }`}
+                  >
+                    {/* 文字描述 - 响应式宽度 */}
+                    <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6">
+                      <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 justify-center lg:justify-start">
+                        <div className="p-2 sm:p-3 rounded-full bg-primary/10 text-primary/70">
+                          {content.icon === "book" && <BookOpen size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "repeat" && <Repeat size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "check" && <Check size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "test" && <TestTube size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "communication" && (
+                            <MessageCircle size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "graduation" && (
+                            <GraduationCap size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "school" && <School size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "compass" && <Compass size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "file-text" && <FileText size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "sliders-horizontal" && (
+                            <SlidersHorizontal size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "users" && <Users size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "clipboard-list" && (
+                            <ClipboardList size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "bar-chart-2" && (
+                            <BarChart2 size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "target" && <Target size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "list-checks" && (
+                            <ListChecks size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "chalkboard" && (
+                            <Presentation size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "clock" && <Clock size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "award" && <Award size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "calendar" && <Calendar size={20} className="sm:w-6 sm:h-6" />}
+                        </div>
+                        <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-center lg:text-left">
+                          {content.title}
+                        </h3>
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-bold">{content.title}</h3>
+                      <p className="text-sm sm:text-base lg:text-lg text-muted-foreground text-center lg:text-left leading-relaxed">
+                        {content.description}
+                      </p>
                     </div>
-                    <p className="text-sm sm:text-base text-muted-foreground leading-relaxed">
-                      {content.description}
-                    </p>
+
+                    {/* 图片 - 响应式尺寸 */}
+                    <div className="w-full sm:w-4/5 lg:w-1/2 relative h-48 sm:h-64 lg:h-96 rounded-xl sm:rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-lg">
+                      <Image
+                        src={content.image}
+                        alt={content.title}
+                        width={975}
+                        height={650}
+                        className="w-full h-full object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 50vw"
+                      />
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           )}
 
-          {/* Part A - 移动端优化 */}
+          {/* Part A - 响应式重新设计 */}
           {hasContent(course.whyChooseUs.partA?.content) && (
-            <div className="max-w-7xl mx-auto mb-16 sm:mb-20 relative">
+            <div className="max-w-7xl mx-auto mb-12 sm:mb-16 lg:mb-20 relative px-4 sm:px-6 lg:px-8">
               <BirdDecoration
                 bird="5"
                 position="top-4 right-8 md:top-8 md:right-16 hidden lg:block"
               />
 
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-12 text-center relative z-10">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-8 sm:mb-10 lg:mb-12 text-center relative z-10">
                 {course.whyChooseUs.partA.title}
               </h2>
 
-              {/* 主要图片 - 响应式调整 */}
+              {/* 主要图片 - 响应式 */}
               {course.whyChooseUs.partA.image1 && (
-                <div className="relative mb-12 sm:mb-16 group">
-                  <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 rounded-2xl sm:rounded-3xl blur-xl sm:blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="relative mb-12 sm:mb-14 lg:mb-16 group">
+                  {/* 背景装饰 - 桌面端显示 */}
+                  <div className="absolute -inset-2 sm:-inset-4 bg-gradient-to-r from-primary/20 via-transparent to-primary/20 rounded-2xl sm:rounded-3xl blur-xl lg:blur-2xl opacity-70 group-hover:opacity-100 transition-opacity duration-300 hidden sm:block"></div>
 
                   <div className="relative flex justify-center">
-                    <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300 max-w-full">
+                    <div className="rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg sm:shadow-xl lg:shadow-2xl transform group-hover:scale-[1.02] transition-transform duration-300">
                       <Image
                         src={course.whyChooseUs.partA.image1}
                         alt="Why choose us"
                         width={600}
                         height={400}
-                        className="w-full h-auto object-contain"
-                        sizes="(max-width: 768px) 100vw, 600px"
+                        className="w-full h-auto object-contain max-w-full sm:max-w-lg lg:max-w-2xl"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 512px, 600px"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      {/* 图片上的渐变遮罩 - 桌面端显示 */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden lg:block"></div>
                     </div>
                   </div>
 
-                  {/* 装饰性元素 - 移动端调整 */}
-                  <div className="absolute -top-4 sm:-top-8 -right-4 sm:-right-8 w-16 sm:w-24 h-16 sm:h-24 bg-primary/10 rounded-full blur-lg sm:blur-xl"></div>
-                  <div className="absolute -bottom-3 sm:-bottom-6 -left-3 sm:-left-6 w-12 sm:w-16 h-12 sm:h-16 bg-primary/15 rounded-full blur-md sm:blur-lg"></div>
+                  {/* 装饰性元素 - 桌面端显示 */}
+                  <div className="absolute -top-4 -right-4 sm:-top-8 sm:-right-8 w-12 h-12 sm:w-24 sm:h-24 bg-primary/10 rounded-full blur-xl hidden lg:block"></div>
+                  <div className="absolute -bottom-3 -left-3 sm:-bottom-6 sm:-left-6 w-8 h-8 sm:w-16 sm:h-16 bg-primary/15 rounded-full blur-lg hidden lg:block"></div>
                 </div>
               )}
 
-              {/* 内容卡片 - 移动端垂直排列 */}
-              <div className="space-y-12 sm:space-y-16">
+              {/* 内容卡片 - 响应式交错布局 */}
+              <div className="space-y-8 sm:space-y-12 lg:space-y-16">
                 {course.whyChooseUs.partA.content.map((item, i) => (
                   <div
                     key={i}
-                    className="flex flex-col lg:flex-row items-center gap-8 sm:gap-12"
+                    className={`flex flex-col gap-6 sm:gap-8 lg:gap-12 items-center ${
+                      i % 2 === 1 ? "lg:flex-row-reverse" : "lg:flex-row"
+                    }`}
                   >
-                    {/* 内容区域 */}
-                    <div className={`flex-1 space-y-4 sm:space-y-6 order-2 lg:order-1 ${
-                      i % 2 === 1 ? "lg:order-2" : ""
-                    }`}>
-                      {/* 数字标识 */}
-                      <div className="flex items-center gap-3 sm:gap-4">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-primary to-primary/80 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-xl sm:text-2xl font-bold shadow-lg">
+                    {/* 内容区域 - 响应式 */}
+                    <div className="w-full lg:flex-1 space-y-4 sm:space-y-6">
+                      {/* 数字标识 - 响应式 */}
+                      <div className="flex items-center gap-3 sm:gap-4 justify-center lg:justify-start">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 bg-gradient-to-br from-primary to-primary/80 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-lg sm:text-xl lg:text-2xl font-bold shadow-lg">
                           {i + 1}
                         </div>
-                        <div className="h-1 flex-1 bg-gradient-to-r from-primary/30 to-transparent rounded-full"></div>
+                        <div className="h-0.5 sm:h-1 flex-1 max-w-16 sm:max-w-24 lg:max-w-none lg:flex-1 bg-gradient-to-r from-primary/30 to-transparent rounded-full"></div>
                       </div>
 
-                      {/* 标题和内容 */}
-                      <div className="bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100/50">
-                        <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent">
+                      {/* 标题和内容 - 响应式 */}
+                      <div className="bg-white p-4 sm:p-6 lg:p-8 rounded-2xl sm:rounded-3xl shadow-lg sm:shadow-xl hover:shadow-2xl transition-shadow duration-300 border border-gray-100/50">
+                        <h3 className="text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 lg:mb-6 bg-gradient-to-r from-primary to-primary/80 bg-clip-text text-transparent text-center lg:text-left">
                           {item.title}
                         </h3>
-                        <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
+                        <p className="text-sm sm:text-base lg:text-lg text-gray-700 leading-relaxed sm:leading-relaxed lg:leading-[2rem] text-center lg:text-left">
                           {item.paragraph}
                         </p>
                       </div>
                     </div>
 
-                    {/* 视觉装饰区域 - 移动端简化 */}
-                    <div className={`flex-shrink-0 relative order-1 lg:order-2 ${
-                      i % 2 === 1 ? "lg:order-1" : ""
-                    }`}>
-                      <div className="w-32 h-32 sm:w-40 sm:h-40 relative">
+                    {/* 视觉装饰区域 - 响应式 */}
+                    <div className="flex-shrink-0 relative lg:block hidden">
+                      <div className="w-32 h-32 sm:w-36 sm:h-36 lg:w-40 lg:h-40 relative">
                         {/* 背景圆圈 */}
                         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 rounded-full"></div>
                         <div className="absolute inset-3 sm:inset-4 bg-gradient-to-br from-primary/15 to-primary/5 rounded-full"></div>
@@ -954,10 +962,10 @@ export default function CoursePageClient({ localizedData }) {
 
                         {/* 中心图标 */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="w-20 h-20 sm:w-24 sm:h-24 bg-primary/60 rounded-full flex items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
+                          <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 bg-primary/60 rounded-full flex items-center justify-center text-white shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-300">
                             {i === 0 && (
                               <svg
-                                className="w-10 h-10 sm:w-12 sm:h-12"
+                                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -972,7 +980,7 @@ export default function CoursePageClient({ localizedData }) {
                             )}
                             {i === 1 && (
                               <svg
-                                className="w-10 h-10 sm:w-12 sm:h-12"
+                                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -987,7 +995,7 @@ export default function CoursePageClient({ localizedData }) {
                             )}
                             {i === 2 && (
                               <svg
-                                className="w-10 h-10 sm:w-12 sm:h-12"
+                                className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12"
                                 fill="none"
                                 stroke="currentColor"
                                 viewBox="0 0 24 24"
@@ -1000,50 +1008,68 @@ export default function CoursePageClient({ localizedData }) {
                                 />
                               </svg>
                             )}
-                            {i === 3 && <ChartColumnIncreasing className="w-10 h-10 sm:w-12 sm:h-12" />}
-                            {i === 4 && <Trophy className="w-10 h-10 sm:w-12 sm:h-12" />}
-                            {i >= 5 && <PlaneTakeoff className="w-10 h-10 sm:w-12 sm:h-12" />}
+                            {i === 3 && (
+                              <ChartColumnIncreasing className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                            )}
+                            {i === 4 && <Trophy className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />}
+                            {i >= 5 && <PlaneTakeoff className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />}
                           </div>
                         </div>
 
                         {/* 浮动装饰点 */}
-                        <div className="absolute top-6 sm:top-8 right-8 sm:right-12 w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full animate-pulse"></div>
+                        <div className="absolute top-6 right-8 sm:top-8 sm:right-12 w-2 h-2 sm:w-3 sm:h-3 bg-primary rounded-full animate-pulse"></div>
                         <div
-                          className="absolute bottom-8 sm:bottom-12 left-6 sm:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary/60 rounded-full animate-pulse"
+                          className="absolute bottom-8 left-6 sm:bottom-12 sm:left-8 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary/60 rounded-full animate-pulse"
                           style={{ animationDelay: "0.5s" }}
                         ></div>
+                      </div>
+                    </div>
+
+                    {/* 移动端简化装饰 */}
+                    <div className="flex lg:hidden justify-center w-full">
+                      <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/60 rounded-full flex items-center justify-center text-white">
+                          {i === 0 && <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>}
+                          {i === 1 && <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>}
+                          {i === 2 && <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>}
+                          {i === 3 && <ChartColumnIncreasing className="w-5 h-5 sm:w-6 sm:h-6" />}
+                          {i === 4 && <Trophy className="w-5 h-5 sm:w-6 sm:h-6" />}
+                          {i >= 5 && <PlaneTakeoff className="w-5 h-5 sm:w-6 sm:h-6" />}
+                        </div>
                       </div>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* 第二张图片 - 移动端优化 */}
+              {/* 第二张图片 - 响应式 */}
               {course.whyChooseUs.partA.image2 && (
-                <div className="mt-16 sm:mt-20 relative">
-                  <div className="text-center mb-8 sm:mb-12">
-                    <div className="inline-flex items-center gap-3 sm:gap-4 px-4 sm:px-6 py-2 sm:py-3 bg-primary/10 rounded-full">
-                      <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                      <span className="text-sm sm:text-base text-primary font-semibold">
+                <div className="mt-12 sm:mt-16 lg:mt-20 relative">
+                  {/* 标题装饰 - 响应式 */}
+                  <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+                    <div className="inline-flex items-center gap-2 sm:gap-4 px-3 sm:px-6 py-2 sm:py-3 bg-primary/10 rounded-full">
+                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-pulse"></div>
+                      <span className="text-primary font-semibold text-sm sm:text-base">
                         Our Process
                       </span>
                       <div
-                        className="w-2 h-2 bg-primary rounded-full animate-pulse"
+                        className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-pulse"
                         style={{ animationDelay: "0.5s" }}
                       ></div>
                     </div>
                   </div>
 
+                  {/* 图片容器 - 响应式 */}
                   <div className="relative group">
-                    <div className="relative flex justify-center transform group-hover:scale-105 transition-transform duration-500 max-w-full sm:max-w-2xl mx-auto">
-                      <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl sm:shadow-2xl border-2 sm:border-4 border-white">
+                    <div className="relative flex justify-center transform group-hover:scale-105 transition-transform duration-500 max-w-full sm:max-w-lg lg:max-w-2xl mx-auto">
+                      <div className="rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden shadow-lg sm:shadow-xl lg:shadow-2xl border-2 sm:border-4 border-white">
                         <Image
                           src={course.whyChooseUs.partA.image2}
                           alt="Process"
                           width={975}
                           height={650}
                           className="w-full h-auto object-contain"
-                          sizes="(max-width: 768px) 100vw, 768px"
+                          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 512px, 768px"
                         />
                       </div>
                     </div>
@@ -1052,6 +1078,7 @@ export default function CoursePageClient({ localizedData }) {
               )}
             </div>
           )}
+
 
           {/* Part C - 响应式网格 */}
           {hasContent(course.whyChooseUs.partC?.list) && (
