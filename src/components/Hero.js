@@ -2,7 +2,7 @@ import { useContext } from "react";
 import Image from "next/image";
 import { LangContext } from "@/app/layout";
 import { Button } from "./ui/button";
-import { homeContent } from "@/app/content";
+import { homeContent } from "@/data/home_content";
 import Link from "next/link";
 
 export default function Hero() {

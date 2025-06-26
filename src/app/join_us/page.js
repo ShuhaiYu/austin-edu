@@ -23,7 +23,7 @@ import {
   SelectItem,
 } from "@/components/ui/select";
 import FAQ from "@/components/FAQ";
-import { joinUsContent } from "./join_us_content.js"; // 引入多语言内容
+import { joinUsContent } from "../../data/join_us_content.js"; // 引入多语言内容
 import { joinUsFaqItems } from "@/data/faq_content.js";
 import BirdDecoration from "@/components/BirdDecoration";
 import { Upload, X, FileText } from "lucide-react";

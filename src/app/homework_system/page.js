@@ -14,7 +14,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Autoplay from "embla-carousel-autoplay";
-import { myAustinContent } from "./my_austin_content";
+import { myAustinContent } from "../../data/my_austin_content";
 import FAQ from "@/components/FAQ";
 import { homeworkSystemFaqItems } from "@/data/faq_content";
 import BirdDecoration from "@/components/BirdDecoration";

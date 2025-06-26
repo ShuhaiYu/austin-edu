@@ -18,7 +18,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { LangContext } from "@/app/layout";
-import { coursesContent } from "../content";
+import { coursesContent } from "../../../data/courses_content";
 
 export const CourseDetail = ({ searchFilter }) => {
   const { lang } = useContext(LangContext) || { lang: "en" };

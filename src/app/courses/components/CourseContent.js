@@ -3,7 +3,7 @@ import { Card } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { useContext, Fragment } from "react";
 import { LangContext } from "@/app/layout";
-import { coursesContent } from "../content";
+import { coursesContent } from "../../../data/courses_content";
 import Image from "next/image";
 import {
   BookOpen,

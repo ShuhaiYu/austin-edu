@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
-import { homeContent } from "@/app/content";
+import { homeContent } from "@/data/home_content";
 
 const COURSE_DATABASE = [
   // Primary School 1-6 Years - Enrichment Courses

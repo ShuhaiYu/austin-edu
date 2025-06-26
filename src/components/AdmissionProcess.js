@@ -5,7 +5,7 @@ import { useState, useContext } from "react";
 import { LangContext } from "@/app/layout";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { homeContent } from "@/app/content";
+import { homeContent } from "@/data/home_content";
 import { Button } from "./ui/button";
 import { SquareArrowOutUpRight } from "lucide-react";
 import Link from "next/link";

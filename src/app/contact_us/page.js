@@ -2,7 +2,7 @@
 
 import { useContext, useEffect } from "react";
 import { LangContext } from "@/app/layout";
-import { contactUsContent } from "./contact_us_content";
+import { contactUsContent } from "../../data/contact_us_content";
 import Image from "next/image";
 import { MapPin, Mail, Phone } from "lucide-react";
 import FAQ from "@/components/FAQ";

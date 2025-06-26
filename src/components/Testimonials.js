@@ -1,7 +1,7 @@
 "use client";
 import { useContext, useState, useEffect } from "react";
 import { LangContext } from "@/app/layout";
-import { homeContent } from "@/app/content";
+import { homeContent } from "@/data/home_content";
 import { Play, X } from "lucide-react";
 
 export default function Testimonials() {

@@ -5,7 +5,7 @@ import { LangContext } from "@/app/layout";
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { aboutUsContent } from "./about_us_content";
+import { aboutUsContent } from "../../data/about_us_content";
 import FAQ from "@/components/FAQ";
 import TimelineSection from "./components/TimeLine";
 import Map from "@/components/Map";

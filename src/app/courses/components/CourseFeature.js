@@ -2,7 +2,7 @@
 
 import { useContext } from "react";
 import { LangContext } from "@/app/layout";
-import { coursesContent } from "../content";
+import { coursesContent } from "../../../data/courses_content";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Carousel } from "@/components/ui/carousel";

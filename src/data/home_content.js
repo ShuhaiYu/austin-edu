@@ -90,7 +90,7 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
           title: "Extensive Resources",
           desc: "Comprehensive resources for smarter learning.",
           buttonText: "Learn More",
-          buttonLink: "/my_austin",
+          buttonLink: "/homework_system",
         },
       ],
     },
@@ -155,7 +155,7 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
     • Austin provides a systematic homework management model, combining in-class paper assignments with an online system. Students have assigned homework after every class. Additional practice materials and mock exams are available online or on-site.
     • The system includes an error collection function to help students identify and correct mistakes. Teachers can monitor homework progress and provide timely feedback to students and parents.`,
               buttonText: "Learn More",
-              buttonLink: "/my_austin",
+              buttonLink: "/homework_system",
             },
             {
               step: 6,
@@ -365,7 +365,7 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
           title: "丰富教育资源 ",
           desc: "海量学习资源，助力高效备考与提升。",
           buttonText: "了解更多",
-          buttonLink: "/my_austin",
+          buttonLink: "/homework_system",
         },
       ],
     },
@@ -429,7 +429,7 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
              • 此外，学生如需更多练习机会，还可以在澳升的作业系统、或线下，获取海量题库和模拟考试。
              • 澳升作业系统包含错题集功能，学生所有错题会被自动收集，方便查漏补缺。作业系统便于老师后台跟踪作业情况和学习状态，能够及时与学生和家长沟通学习上出现的问题和改进建议。`,
               buttonText: "查看更多",
-              buttonLink: "/my_austin",
+              buttonLink: "/homework_system",
             },
             {
               step: 6,

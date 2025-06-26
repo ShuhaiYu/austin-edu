@@ -19,10 +19,10 @@ const menuItems = [
   },
   { key: "courses", label_en: "Courses", label_zh: "课程", href: "/courses" },
   {
-    key: "my_austin",
+    key: "homework_system",
     label_en: "Homework System",
     label_zh: "作业系统",
-    href: "/my_austin",
+    href: "/homework_system",
   },
   {
     key: "resource_hub",

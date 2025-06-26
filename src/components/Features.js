@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useContext } from "react";
 import { LangContext } from "@/app/layout";
-import { homeContent } from "@/app/content";
+import { homeContent } from "@/data/home_content";
 import Link from "next/link";
 import BirdDecoration from "@/components/BirdDecoration";
 
