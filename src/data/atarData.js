@@ -2,13 +2,14 @@
 import { UNIVERSITY_PREREQUISITES } from "@/data/atarUni";
 
 /**
- * ATAR Calculator Data Management
- * 包含VCE科目、分数映射、ATAR转换等核心数据
+ * ATAR Calculator Data Management - 2024 VTAC Official Data
+ * 基于2024年12月12日发布的官方VTAC数据更新
+ * 包含VCE科目、精确分数映射、ATAR转换等核心数据
  */
 
-// VCE科目完整数据库 - 基于真实VCE课程数据
+// VCE科目完整数据库 - 基于2024年真实VCE课程数据和官方scaling report
 export const VCE_SUBJECTS_DB = [
-  // === 英语类科目（必修，main_course_state = 1） ===
+  // === 英语类科目（必修） ===
   {
     id: "14",
     name: "English",
@@ -16,7 +17,10 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: true,
     category: "English",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 17, 25: 22, 30: 28, 35: 33, 40: 39, 45: 45, 50: 50 },
+    mean: 28.2,
+    stdDev: 7.6
   },
   {
     id: "15",
@@ -25,16 +29,22 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: true,
     category: "English",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 16, 25: 21, 30: 27, 35: 34, 40: 40, 45: 46, 50: 50 },
+    mean: 27.7,
+    stdDev: 8.3
   },
   {
     id: "16",
     name: "English Language",
-    code: "EL EG",
+    code: "EG",
     maxScore: 50,
     isEnglish: true,
     category: "English",
-    scalingType: "medium_scaling"
+    scalingType: "high_scaling",
+    officialMapping: { 20: 22, 25: 27, 30: 33, 35: 38, 40: 43, 45: 47, 50: 50 },
+    mean: 32.6,
+    stdDev: 7.1
   },
   {
     id: "76",
@@ -43,45 +53,60 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: true,
     category: "English",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 20, 25: 26, 30: 31, 35: 36, 40: 41, 45: 46, 50: 50 },
+    mean: 31.2,
+    stdDev: 7.3
   },
 
   // === 数学类科目 ===
   {
     id: "78",
     name: "Mathematical Methods",
-    code: "MM NJ",
-    maxScore: 51,
+    code: "NJ",
+    maxScore: 51, // 注意：2024年此科目最高分为51
     isEnglish: false,
     category: "Mathematics",
-    scalingType: "high_scaling"
+    scalingType: "high_scaling",
+    officialMapping: { 20: 21, 25: 29, 30: 35, 35: 41, 40: 46, 45: 49, 50: 51 },
+    mean: 34.5,
+    stdDev: 8.4
   },
   {
     id: "79",
     name: "Specialist Mathematics",
-    code: "SM NS",
-    maxScore: 50,
+    code: "NS",
+    maxScore: 55, // 注意：2024年此科目最高分为55
     isEnglish: false,
     category: "Mathematics",
-    scalingType: "high_scaling"
+    scalingType: "very_high_scaling",
+    officialMapping: { 20: 28, 25: 36, 30: 43, 35: 48, 40: 52, 45: 54, 50: 55 },
+    mean: 41.6,
+    stdDev: 8.3
   },
   {
     id: "77",
     name: "General Mathematics",
-    code: "FM NF",
+    code: "NF",
     maxScore: 50,
     isEnglish: false,
     category: "Mathematics",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 18, 25: 23, 30: 28, 35: 33, 40: 38, 45: 44, 50: 50 },
+    mean: 27.8,
+    stdDev: 7.2
   },
   {
     id: "777",
     name: "Foundation Mathematics",
-    code: "FM NF",
+    code: "MA10",
     maxScore: 50,
     isEnglish: false,
     category: "Mathematics",
-    scalingType: "medium_scaling"
+    scalingType: "low_scaling",
+    officialMapping: { 20: 12, 25: 16, 30: 20, 35: 25, 40: 31, 45: 39, 50: 50 },
+    mean: 21.3,
+    stdDev: 6.9
   },
 
   // === 科学类科目 ===
@@ -92,7 +117,10 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Science",
-    scalingType: "high_scaling"
+    scalingType: "high_scaling",
+    officialMapping: { 20: 21, 25: 27, 30: 32, 35: 38, 40: 43, 45: 47, 50: 50 },
+    mean: 32.2,
+    stdDev: 7.4
   },
   {
     id: "9",
@@ -101,7 +129,10 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Science",
-    scalingType: "high_scaling"
+    scalingType: "high_scaling",
+    officialMapping: { 20: 23, 25: 28, 30: 34, 35: 39, 40: 44, 45: 47, 50: 50 },
+    mean: 33.7,
+    stdDev: 7.3
   },
   {
     id: "7",
@@ -110,7 +141,10 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Science",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 19, 25: 25, 30: 31, 35: 36, 40: 41, 45: 46, 50: 50 },
+    mean: 30.4,
+    stdDev: 7.4
   },
   {
     id: "91",
@@ -119,45 +153,60 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Science",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 18, 25: 23, 30: 28, 35: 34, 40: 39, 45: 45, 50: 50 },
+    mean: 28.4,
+    stdDev: 7.4
   },
   {
     id: "17",
     name: "Environmental Science",
-    code: "ES EV",
+    code: "EV",
     maxScore: 50,
     isEnglish: false,
     category: "Science",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 18, 25: 23, 30: 28, 35: 33, 40: 38, 45: 44, 50: 50 },
+    mean: 28.0,
+    stdDev: 7.0
   },
 
   // === 人文社科类科目 ===
   {
     id: "24",
     name: "Revolutions",
-    code: "R HR",
+    code: "HR",
     maxScore: 50,
     isEnglish: false,
     category: "Humanities",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 17, 25: 23, 30: 28, 35: 34, 40: 40, 45: 45, 50: 50 },
+    mean: 28.6,
+    stdDev: 7.7
   },
   {
     id: "22",
     name: "Ancient History",
-    code: "AH HI17",
+    code: "HI17",
     maxScore: 50,
     isEnglish: false,
     category: "Humanities",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 16, 25: 22, 30: 28, 35: 34, 40: 40, 45: 46, 50: 50 },
+    mean: 27.9,
+    stdDev: 8.0
   },
   {
     id: "23",
     name: "Australian History",
-    code: "AH HA",
+    code: "HA",
     maxScore: 50,
     isEnglish: false,
     category: "Humanities",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 16, 25: 22, 30: 28, 35: 34, 40: 40, 45: 46, 50: 50 },
+    mean: 27.8,
+    stdDev: 8.2
   },
   {
     id: "20",
@@ -166,7 +215,10 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Humanities",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 18, 25: 23, 30: 28, 35: 34, 40: 39, 45: 45, 50: 50 },
+    mean: 28.5,
+    stdDev: 7.4
   },
   {
     id: "75",
@@ -175,7 +227,10 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Humanities",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 17, 25: 23, 30: 28, 35: 34, 40: 40, 45: 45, 50: 50 },
+    mean: 28.4,
+    stdDev: 7.6
   },
   {
     id: "85",
@@ -184,34 +239,10 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Humanities",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "92",
-    name: "Religion and Society",
-    code: "RS RAS",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Humanities",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "93",
-    name: "Sociology",
-    code: "SO03",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Humanities",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "96",
-    name: "Texts and Traditions",
-    code: "TT TAT",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Humanities",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 19, 25: 24, 30: 30, 35: 35, 40: 40, 45: 45, 50: 50 },
+    mean: 29.6,
+    stdDev: 7.4
   },
 
   // === 商科类科目 ===
@@ -222,7 +253,10 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Business",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 21, 25: 26, 30: 32, 35: 37, 40: 42, 45: 46, 50: 50 },
+    mean: 31.5,
+    stdDev: 7.2
   },
   {
     id: "1",
@@ -231,7 +265,10 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Business",
-    scalingType: "low_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 20, 25: 25, 30: 31, 35: 36, 40: 41, 45: 46, 50: 50 },
+    mean: 30.8,
+    stdDev: 7.4
   },
   {
     id: "8",
@@ -240,337 +277,74 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Business",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "25",
-    name: "Industry and Enterprise",
-    code: "IE IAE",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Business",
-    scalingType: "low_scaling"
+    scalingType: "low_scaling",
+    officialMapping: { 20: 17, 25: 21, 30: 27, 35: 32, 40: 38, 45: 44, 50: 50 },
+    mean: 27.1,
+    stdDev: 7.3
   },
 
   // === 政治学科目 ===
   {
     id: "88",
     name: "Australian Politics",
-    code: "AP PS03",
+    code: "PS03",
     maxScore: 50,
     isEnglish: false,
     category: "Politics",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 21, 25: 26, 30: 32, 35: 37, 40: 42, 45: 47, 50: 50 },
+    mean: 32.2,
+    stdDev: 7.1
   },
   {
     id: "89",
     name: "Global Politics",
-    code: "GP PS05",
+    code: "PS05",
     maxScore: 50,
     isEnglish: false,
     category: "Politics",
-    scalingType: "medium_scaling"
+    scalingType: "medium_scaling",
+    officialMapping: { 20: 22, 25: 27, 30: 33, 35: 38, 40: 42, 45: 47, 50: 50 },
+    mean: 32.2,
+    stdDev: 7.1
   },
 
-  // === 语言类科目 ===
+  // === 语言类科目（高缩放） ===
   {
     id: "31",
     name: "Chinese First Language",
-    code: "CFL CN",
+    code: "CN",
     maxScore: 50,
     isEnglish: false,
     category: "Languages",
-    scalingType: "high_scaling"
+    scalingType: "high_scaling",
+    officialMapping: { 20: 19, 25: 26, 30: 33, 35: 39, 40: 44, 45: 48, 50: 50 },
+    mean: 32.5,
+    stdDev: 8.6
   },
   {
     id: "34",
     name: "Chinese Second Language",
-    code: "CSL CL",
-    maxScore: 50,
+    code: "CL",
+    maxScore: 54, // 注意最高分
     isEnglish: false,
     category: "Languages",
-    scalingType: "medium_scaling"
+    scalingType: "very_high_scaling",
+    officialMapping: { 20: 31, 25: 37, 30: 42, 35: 46, 40: 49, 45: 52, 50: 54 },
+    mean: 40.6,
+    stdDev: 6.5
   },
   {
     id: "33",
     name: "Chinese Second Language Advanced",
-    code: "CSLA CK",
-    maxScore: 50,
+    code: "CK",
+    maxScore: 53, // 注意最高分
     isEnglish: false,
     category: "Languages",
-    scalingType: "high_scaling"
-  },
-  {
-    id: "32",
-    name: "Chinese Language Culture and Society",
-    code: "CLCS CLCAS LO57",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "50",
-    name: "Japanese First Language",
-    code: "JFL JA",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "high_scaling"
-  },
-  {
-    id: "51",
-    name: "Japanese Second Language",
-    code: "JSL JS",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "54",
-    name: "Korean First Language",
-    code: "KFL KO",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "high_scaling"
-  },
-  {
-    id: "55",
-    name: "Korean Second Language",
-    code: "KSL KS",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "71",
-    name: "Vietnamese First Language",
-    code: "VFL LO54",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "high_scaling"
-  },
-  {
-    id: "72",
-    name: "Vietnamese Second Language",
-    code: "VT",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "47",
-    name: "Indonesian First Language",
-    code: "IFL IN",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "high_scaling"
-  },
-  {
-    id: "48",
-    name: "Indonesian Second Language",
-    code: "IX",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "40",
-    name: "French",
-    code: "FR",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "41",
-    name: "German",
-    code: "GN",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "49",
-    name: "Italian",
-    code: "IL",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "67",
-    name: "Spanish",
-    code: "S SP",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "56",
-    name: "Latin",
-    code: "LA",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "35",
-    name: "Classical Greek",
-    code: "AG",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "43",
-    name: "Hebrew",
-    code: "HB",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "26",
-    name: "Arabic",
-    code: "AR",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "28",
-    name: "Auslan",
-    code: "AU",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Languages",
-    scalingType: "medium_scaling"
-  },
-
-  // === 艺术类科目 ===
-  {
-    id: "6",
-    name: "Art Creative Practice",
-    code: "AT",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "666",
-    name: "Art Making and Exhibiting",
-    code: "SA",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "94",
-    name: "Studio Arts",
-    code: "SA",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "98",
-    name: "Visual Communication Design",
-    code: "VCD VC",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "11",
-    name: "Dance",
-    code: "DA",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "12",
-    name: "Drama",
-    code: "DR",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "97",
-    name: "Theatre Studies",
-    code: "TS TS",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "80",
-    name: "Media",
-    code: "ME",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "881",
-    name: "Music Composition",
-    code: "MD",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "81",
-    name: "Music Contemporary Performance",
-    code: "MI MC05",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "82",
-    name: "Music Inquiry",
-    code: "MP MC04",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "83",
-    name: "Music Repertoire Performance",
-    code: "MSC MSAC MD",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Arts",
-    scalingType: "low_scaling"
+    scalingType: "very_high_scaling",
+    officialMapping: { 20: 25, 25: 31, 30: 37, 35: 43, 40: 47, 45: 51, 50: 53 },
+    mean: 37.5,
+    stdDev: 7.6
   },
 
   // === 技术类科目 ===
@@ -578,57 +352,51 @@ export const VCE_SUBJECTS_DB = [
     id: "3",
     name: "Algorithmics(HESS)",
     code: "AL03",
-    maxScore: 50,
+    maxScore: 51, // 注意最高分
     isEnglish: false,
     category: "Technology",
-    scalingType: "medium_scaling"
+    scalingType: "high_scaling",
+    officialMapping: { 20: 26, 25: 33, 30: 38, 35: 43, 40: 47, 45: 49, 50: 51 },
+    mean: 37.9,
+    stdDev: 6.6
   },
   {
     id: "4",
     name: "Data Analytics",
-    code: "DA IT02",
+    code: "IT02",
     maxScore: 50,
     isEnglish: false,
     category: "Technology",
-    scalingType: "medium_scaling"
+    scalingType: "low_scaling",
+    officialMapping: { 20: 16, 25: 21, 30: 26, 35: 32, 40: 38, 45: 44, 50: 50 },
+    mean: 26.9,
+    stdDev: 7.2
   },
   {
     id: "5",
     name: "Software Development",
-    code: "SD IT03",
+    code: "IT03",
     maxScore: 50,
     isEnglish: false,
     category: "Technology",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "90",
-    name: "Product Design and Technology",
-    code: "PDT PDAT DT",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Technology",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "95",
-    name: "Systems Engineering",
-    code: "SE03",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Technology",
-    scalingType: "medium_scaling"
+    scalingType: "low_scaling",
+    officialMapping: { 20: 18, 25: 23, 30: 28, 35: 34, 40: 39, 45: 45, 50: 50 },
+    mean: 28.8,
+    stdDev: 7.1
   },
 
   // === 健康与体育类科目 ===
   {
     id: "21",
     name: "Health and Human Development",
-    code: "HHD HAHD HH",
+    code: "HH",
     maxScore: 50,
     isEnglish: false,
     category: "Health",
-    scalingType: "medium_scaling"
+    scalingType: "low_scaling",
+    officialMapping: { 20: 16, 25: 21, 30: 26, 35: 31, 40: 37, 45: 43, 50: 50 },
+    mean: 26.3,
+    stdDev: 7.3
   },
   {
     id: "86",
@@ -637,322 +405,279 @@ export const VCE_SUBJECTS_DB = [
     maxScore: 50,
     isEnglish: false,
     category: "Health",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "84",
-    name: "Outdoor and Environmental Studies",
-    code: "OES OAES OS",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Health",
-    scalingType: "medium_scaling"
+    scalingType: "low_scaling",
+    officialMapping: { 20: 17, 25: 22, 30: 27, 35: 33, 40: 38, 45: 44, 50: 50 },
+    mean: 27.5,
+    stdDev: 7.3
   },
 
-  // === 其他学科 ===
+  // === 艺术类科目（低缩放） ===
   {
-    id: "19",
-    name: "Food Studies",
-    code: "FS FT",
+    id: "94",
+    name: "Studio Arts",
+    code: "SA",
     maxScore: 50,
     isEnglish: false,
-    category: "Other",
-    scalingType: "low_scaling"
+    category: "Arts",
+    scalingType: "low_scaling",
+    officialMapping: { 20: 15, 25: 20, 30: 25, 35: 31, 40: 37, 45: 44, 50: 50 },
+    mean: 26.6,
+    stdDev: 7.3
   },
   {
-    id: "10",
-    name: "Classical Studies",
-    code: "CC",
+    id: "98",
+    name: "Visual Communication Design",
+    code: "VC",
     maxScore: 50,
     isEnglish: false,
-    category: "Other",
-    scalingType: "medium_scaling"
+    category: "Arts",
+    scalingType: "low_scaling",
+    officialMapping: { 20: 16, 25: 21, 30: 26, 35: 32, 40: 38, 45: 44, 50: 50 },
+    mean: 27.4,
+    stdDev: 7.2
   },
   {
-    id: "18",
-    name: "Extended Investigation",
-    code: "EI XI03",
+    id: "80",
+    name: "Media",
+    code: "ME",
     maxScore: 50,
     isEnglish: false,
-    category: "Other",
-    scalingType: "medium_scaling"
-  },
-  {
-    id: "2",
-    name: "Agricultural & Horticultural Studies",
-    code: "AHS AH",
-    maxScore: 50,
-    isEnglish: false,
-    category: "Other",
-    scalingType: "low_scaling"
-  },
-
-  // === VET科目 ===
-  {
-    id: "114",
-    name: "VCE VET Sport and Recreation",
-    code: "VVSR VVSAR SR41",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "113",
-    name: "VCE VET Music Sound Production",
-    code: "VVMSP MI30",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "112",
-    name: "VCE VET Music Performance",
-    code: "VVMP MI19",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "111",
-    name: "VCE VET Laboratory Skills",
-    code: "VVLS LB21",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "110",
-    name: "VCE VET Integrated Technologies",
-    code: "ET16",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "109",
-    name: "VCE VET Information Technology",
-    code: "VVIT IN60",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "108",
-    name: "VCE VET Hospitality (Kitchen Operations)",
-    code: "VVHKP HS32",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "107",
-    name: "VCE VET Hospitality",
-    code: "VVH HS31",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "106",
-    name: "VCE VET Health Services",
-    code: "VVHS CT37",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "105",
-    name: "VCE VET Furnishing",
-    code: "VVF FN19",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "104",
-    name: "VCE VET Equine Studies",
-    code: "VVES EQ05",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "103",
-    name: "VCE VET Engineering Studies",
-    code: "VVES EG16",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "102",
-    name: "VCE VET Dance",
-    code: "VVD DN06",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "101",
-    name: "VCE VET Creative and Digital Media",
-    code: "VVCDM VVCADM MU07",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "100",
-    name: "VCE VET Community Services",
-    code: "VVCS CT41",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
-  },
-  {
-    id: "99",
-    name: "VCE VET Business",
-    code: "VVB BU23",
-    maxScore: 50,
-    isEnglish: false,
-    category: "VET",
-    scalingType: "low_scaling"
+    category: "Arts",
+    scalingType: "low_scaling",
+    officialMapping: { 20: 16, 25: 21, 30: 26, 35: 32, 40: 38, 45: 44, 50: 50 },
+    mean: 27.1,
+    stdDev: 7.1
   }
 ];
 
-// 详细的分数映射数据（基于2023年VCE数据）
-export const DETAILED_SCORE_MAPPING = {
-  // 高缩放科目 (数学、物理、化学、中文第一语言等)
-  high_scaling: [
-    { rawMin: 45, rawMax: 50, scaledMin: 47, scaledMax: 50 },
-    { rawMin: 40, rawMax: 45, scaledMin: 41, scaledMax: 47 },
-    { rawMin: 35, rawMax: 40, scaledMin: 35, scaledMax: 41 },
-    { rawMin: 30, rawMax: 35, scaledMin: 29, scaledMax: 35 },
-    { rawMin: 25, rawMax: 30, scaledMin: 23, scaledMax: 29 },
-    { rawMin: 20, rawMax: 25, scaledMin: 17, scaledMax: 23 },
-    { rawMin: 15, rawMax: 20, scaledMin: 11, scaledMax: 17 },
-    { rawMin: 10, rawMax: 15, scaledMin: 6, scaledMax: 11 },
-    { rawMin: 0, rawMax: 10, scaledMin: 0, scaledMax: 6 },
-  ],
-
-  // 中等缩放科目 (英语、生物、经济学等)
-  medium_scaling: [
-    { rawMin: 45, rawMax: 50, scaledMin: 44, scaledMax: 50 },
-    { rawMin: 40, rawMax: 45, scaledMin: 37, scaledMax: 44 },
-    { rawMin: 35, rawMax: 40, scaledMin: 31, scaledMax: 37 },
-    { rawMin: 30, rawMax: 35, scaledMin: 26, scaledMax: 31 },
-    { rawMin: 25, rawMax: 30, scaledMin: 20, scaledMax: 26 },
-    { rawMin: 20, rawMax: 25, scaledMin: 15, scaledMax: 20 },
-    { rawMin: 15, rawMax: 20, scaledMin: 10, scaledMax: 15 },
-    { rawMin: 10, rawMax: 15, scaledMin: 5, scaledMax: 10 },
-    { rawMin: 0, rawMax: 10, scaledMin: 0, scaledMax: 5 },
-  ],
-
-  // 低缩放科目 (艺术、VET、部分商科等)
-  low_scaling: [
-    { rawMin: 45, rawMax: 50, scaledMin: 40, scaledMax: 47 },
-    { rawMin: 40, rawMax: 45, scaledMin: 33, scaledMax: 40 },
-    { rawMin: 35, rawMax: 40, scaledMin: 28, scaledMax: 33 },
-    { rawMin: 30, rawMax: 35, scaledMin: 23, scaledMax: 28 },
-    { rawMin: 25, rawMax: 30, scaledMin: 18, scaledMax: 23 },
-    { rawMin: 20, rawMax: 25, scaledMin: 13, scaledMax: 18 },
-    { rawMin: 15, rawMax: 20, scaledMin: 8, scaledMax: 13 },
-    { rawMin: 10, rawMax: 15, scaledMin: 4, scaledMax: 8 },
-    { rawMin: 0, rawMax: 10, scaledMin: 0, scaledMax: 4 },
-  ]
-};
-
-// 精确的ATAR映射表（基于2023年数据）
-export const PRECISE_ATAR_MAPPING = [
-  { aggregateMin: 199.5, aggregateMax: 210, atar: 99.95 },
-  { aggregateMin: 197.0, aggregateMax: 199.5, atar: 99.90 },
-  { aggregateMin: 194.5, aggregateMax: 197.0, atar: 99.85 },
-  { aggregateMin: 192.0, aggregateMax: 194.5, atar: 99.80 },
-  { aggregateMin: 189.5, aggregateMax: 192.0, atar: 99.75 },
-  { aggregateMin: 187.0, aggregateMax: 189.5, atar: 99.70 },
-  { aggregateMin: 184.5, aggregateMax: 187.0, atar: 99.65 },
-  { aggregateMin: 182.0, aggregateMax: 184.5, atar: 99.60 },
-  { aggregateMin: 179.5, aggregateMax: 182.0, atar: 99.55 },
-  { aggregateMin: 177.0, aggregateMax: 179.5, atar: 99.50 },
-  { aggregateMin: 174.5, aggregateMax: 177.0, atar: 99.40 },
-  { aggregateMin: 172.0, aggregateMax: 174.5, atar: 99.30 },
-  { aggregateMin: 169.5, aggregateMax: 172.0, atar: 99.20 },
-  { aggregateMin: 167.0, aggregateMax: 169.5, atar: 99.10 },
-  { aggregateMin: 164.5, aggregateMax: 167.0, atar: 99.00 },
-  { aggregateMin: 162.0, aggregateMax: 164.5, atar: 98.80 },
-  { aggregateMin: 159.5, aggregateMax: 162.0, atar: 98.60 },
-  { aggregateMin: 157.0, aggregateMax: 159.5, atar: 98.40 },
-  { aggregateMin: 154.5, aggregateMax: 157.0, atar: 98.20 },
-  { aggregateMin: 152.0, aggregateMax: 154.5, atar: 98.00 },
-  { aggregateMin: 149.5, aggregateMax: 152.0, atar: 97.70 },
-  { aggregateMin: 147.0, aggregateMax: 149.5, atar: 97.40 },
-  { aggregateMin: 144.5, aggregateMax: 147.0, atar: 97.10 },
-  { aggregateMin: 142.0, aggregateMax: 144.5, atar: 96.80 },
-  { aggregateMin: 139.5, aggregateMax: 142.0, atar: 96.50 },
-  { aggregateMin: 137.0, aggregateMax: 139.5, atar: 96.00 },
-  { aggregateMin: 134.5, aggregateMax: 137.0, atar: 95.50 },
-  { aggregateMin: 132.0, aggregateMax: 134.5, atar: 95.00 },
-  { aggregateMin: 129.5, aggregateMax: 132.0, atar: 94.50 },
-  { aggregateMin: 127.0, aggregateMax: 129.5, atar: 94.00 },
-  { aggregateMin: 124.5, aggregateMax: 127.0, atar: 93.00 },
-  { aggregateMin: 122.0, aggregateMax: 124.5, atar: 92.00 },
-  { aggregateMin: 119.5, aggregateMax: 122.0, atar: 91.00 },
-  { aggregateMin: 117.0, aggregateMax: 119.5, atar: 90.00 },
-  { aggregateMin: 114.5, aggregateMax: 117.0, atar: 89.00 },
-  { aggregateMin: 112.0, aggregateMax: 114.5, atar: 88.00 },
-  { aggregateMin: 109.5, aggregateMax: 112.0, atar: 87.00 },
-  { aggregateMin: 107.0, aggregateMax: 109.5, atar: 86.00 },
-  { aggregateMin: 104.5, aggregateMax: 107.0, atar: 85.00 },
-  { aggregateMin: 102.0, aggregateMax: 104.5, atar: 84.00 },
-  { aggregateMin: 99.5, aggregateMax: 102.0, atar: 83.00 },
-  { aggregateMin: 97.0, aggregateMax: 99.5, atar: 82.00 },
-  { aggregateMin: 94.5, aggregateMax: 97.0, atar: 81.00 },
-  { aggregateMin: 92.0, aggregateMax: 94.5, atar: 80.00 },
-  { aggregateMin: 89.5, aggregateMax: 92.0, atar: 78.00 },
-  { aggregateMin: 87.0, aggregateMax: 89.5, atar: 76.00 },
-  { aggregateMin: 84.5, aggregateMax: 87.0, atar: 74.00 },
-  { aggregateMin: 82.0, aggregateMax: 84.5, atar: 72.00 },
-  { aggregateMin: 79.5, aggregateMax: 82.0, atar: 70.00 },
-  { aggregateMin: 77.0, aggregateMax: 79.5, atar: 68.00 },
-  { aggregateMin: 74.5, aggregateMax: 77.0, atar: 66.00 },
-  { aggregateMin: 72.0, aggregateMax: 74.5, atar: 64.00 },
-  { aggregateMin: 69.5, aggregateMax: 72.0, atar: 62.00 },
-  { aggregateMin: 67.0, aggregateMax: 69.5, atar: 60.00 },
-  { aggregateMin: 64.5, aggregateMax: 67.0, atar: 58.00 },
-  { aggregateMin: 62.0, aggregateMax: 64.5, atar: 56.00 },
-  { aggregateMin: 59.5, aggregateMax: 62.0, atar: 54.00 },
-  { aggregateMin: 57.0, aggregateMax: 59.5, atar: 52.00 },
-  { aggregateMin: 54.5, aggregateMax: 57.0, atar: 50.00 },
-  { aggregateMin: 52.0, aggregateMax: 54.5, atar: 48.00 },
-  { aggregateMin: 49.5, aggregateMax: 52.0, atar: 46.00 },
-  { aggregateMin: 47.0, aggregateMax: 49.5, atar: 44.00 },
-  { aggregateMin: 44.5, aggregateMax: 47.0, atar: 42.00 },
-  { aggregateMin: 42.0, aggregateMax: 44.5, atar: 40.00 },
-  { aggregateMin: 39.5, aggregateMax: 42.0, atar: 38.00 },
-  { aggregateMin: 37.0, aggregateMax: 39.5, atar: 36.00 },
-  { aggregateMin: 34.5, aggregateMax: 37.0, atar: 34.00 },
-  { aggregateMin: 32.0, aggregateMax: 34.5, atar: 32.00 },
-  { aggregateMin: 29.5, aggregateMax: 32.0, atar: 30.00 },
-  { aggregateMin: 0, aggregateMax: 29.5, atar: 0.00 },
+// 2024年精确ATAR映射表 - 基于官方VTAC 2024年12月12日数据
+export const PRECISE_ATAR_MAPPING_2024 = [
+  { atar: 99.95, aggregateMin: 211.60, aggregateMax: 230.00 },
+  { atar: 99.90, aggregateMin: 208.16, aggregateMax: 211.59 },
+  { atar: 99.85, aggregateMin: 206.35, aggregateMax: 208.15 },
+  { atar: 99.80, aggregateMin: 205.09, aggregateMax: 206.34 },
+  { atar: 99.75, aggregateMin: 203.82, aggregateMax: 205.08 },
+  { atar: 99.70, aggregateMin: 202.15, aggregateMax: 203.81 },
+  { atar: 99.65, aggregateMin: 200.99, aggregateMax: 202.14 },
+  { atar: 99.60, aggregateMin: 199.80, aggregateMax: 200.98 },
+  { atar: 99.55, aggregateMin: 198.80, aggregateMax: 199.79 },
+  { atar: 99.50, aggregateMin: 198.02, aggregateMax: 198.79 },
+  { atar: 99.45, aggregateMin: 197.21, aggregateMax: 198.01 },
+  { atar: 99.40, aggregateMin: 196.56, aggregateMax: 197.20 },
+  { atar: 99.35, aggregateMin: 196.11, aggregateMax: 196.55 },
+  { atar: 99.30, aggregateMin: 195.62, aggregateMax: 196.10 },
+  { atar: 99.25, aggregateMin: 194.97, aggregateMax: 195.61 },
+  { atar: 99.20, aggregateMin: 194.48, aggregateMax: 194.96 },
+  { atar: 99.15, aggregateMin: 193.85, aggregateMax: 194.47 },
+  { atar: 99.10, aggregateMin: 193.25, aggregateMax: 193.84 },
+  { atar: 99.05, aggregateMin: 192.66, aggregateMax: 193.24 },
+  { atar: 99.00, aggregateMin: 192.07, aggregateMax: 192.65 },
+  { atar: 98.95, aggregateMin: 191.38, aggregateMax: 192.06 },
+  { atar: 98.90, aggregateMin: 190.82, aggregateMax: 191.37 },
+  { atar: 98.85, aggregateMin: 190.50, aggregateMax: 190.81 },
+  { atar: 98.80, aggregateMin: 190.15, aggregateMax: 190.49 },
+  { atar: 98.75, aggregateMin: 189.65, aggregateMax: 190.14 },
+  { atar: 98.70, aggregateMin: 189.18, aggregateMax: 189.64 },
+  { atar: 98.65, aggregateMin: 188.71, aggregateMax: 189.17 },
+  { atar: 98.60, aggregateMin: 188.24, aggregateMax: 188.70 },
+  { atar: 98.55, aggregateMin: 187.81, aggregateMax: 188.23 },
+  { atar: 98.50, aggregateMin: 187.35, aggregateMax: 187.80 },
+  { atar: 98.00, aggregateMin: 183.84, aggregateMax: 184.04 },
+  { atar: 97.50, aggregateMin: 180.73, aggregateMax: 181.01 },
+  { atar: 97.00, aggregateMin: 178.13, aggregateMax: 178.35 },
+  { atar: 96.50, aggregateMin: 175.77, aggregateMax: 175.97 },
+  { atar: 96.00, aggregateMin: 173.65, aggregateMax: 173.82 },
+  { atar: 95.50, aggregateMin: 171.41, aggregateMax: 171.60 },
+  { atar: 95.00, aggregateMin: 169.54, aggregateMax: 169.70 },
+  { atar: 94.50, aggregateMin: 167.91, aggregateMax: 168.06 },
+  { atar: 94.00, aggregateMin: 166.18, aggregateMax: 166.37 },
+  { atar: 93.50, aggregateMin: 164.43, aggregateMax: 164.57 },
+  { atar: 93.00, aggregateMin: 162.88, aggregateMax: 163.03 },
+  { atar: 92.50, aggregateMin: 161.38, aggregateMax: 161.50 },
+  { atar: 92.00, aggregateMin: 159.98, aggregateMax: 160.11 },
+  { atar: 91.50, aggregateMin: 158.74, aggregateMax: 158.86 },
+  { atar: 91.00, aggregateMin: 157.43, aggregateMax: 157.55 },
+  { atar: 90.50, aggregateMin: 156.18, aggregateMax: 156.31 },
+  { atar: 90.00, aggregateMin: 154.85, aggregateMax: 154.99 },
+  { atar: 89.50, aggregateMin: 153.62, aggregateMax: 153.73 },
+  { atar: 89.00, aggregateMin: 152.52, aggregateMax: 152.63 },
+  { atar: 88.50, aggregateMin: 151.45, aggregateMax: 151.55 },
+  { atar: 88.00, aggregateMin: 150.38, aggregateMax: 150.46 },
+  { atar: 87.50, aggregateMin: 149.37, aggregateMax: 149.45 },
+  { atar: 87.00, aggregateMin: 148.26, aggregateMax: 148.37 },
+  { atar: 86.50, aggregateMin: 147.31, aggregateMax: 147.37 },
+  { atar: 86.00, aggregateMin: 146.34, aggregateMax: 146.43 },
+  { atar: 85.50, aggregateMin: 145.38, aggregateMax: 145.47 },
+  { atar: 85.00, aggregateMin: 144.51, aggregateMax: 144.58 },
+  { atar: 84.50, aggregateMin: 143.52, aggregateMax: 143.62 },
+  { atar: 84.00, aggregateMin: 142.60, aggregateMax: 142.68 },
+  { atar: 83.50, aggregateMin: 141.58, aggregateMax: 141.65 },
+  { atar: 83.00, aggregateMin: 140.65, aggregateMax: 140.74 },
+  { atar: 82.50, aggregateMin: 139.83, aggregateMax: 139.90 },
+  { atar: 82.00, aggregateMin: 138.99, aggregateMax: 139.05 },
+  { atar: 81.50, aggregateMin: 138.15, aggregateMax: 138.24 },
+  { atar: 81.00, aggregateMin: 137.30, aggregateMax: 137.36 },
+  { atar: 80.50, aggregateMin: 136.38, aggregateMax: 136.47 },
+  { atar: 80.00, aggregateMin: 135.55, aggregateMax: 135.62 },
+  { atar: 79.50, aggregateMin: 134.65, aggregateMax: 134.72 },
+  { atar: 79.00, aggregateMin: 133.83, aggregateMax: 133.91 },
+  { atar: 78.50, aggregateMin: 133.01, aggregateMax: 133.08 },
+  { atar: 78.00, aggregateMin: 132.20, aggregateMax: 132.26 },
+  { atar: 77.50, aggregateMin: 131.45, aggregateMax: 131.55 },
+  { atar: 77.00, aggregateMin: 130.67, aggregateMax: 130.74 },
+  { atar: 76.50, aggregateMin: 130.00, aggregateMax: 130.05 },
+  { atar: 76.00, aggregateMin: 129.25, aggregateMax: 129.30 },
+  { atar: 75.50, aggregateMin: 128.51, aggregateMax: 128.57 },
+  { atar: 75.00, aggregateMin: 127.72, aggregateMax: 127.77 },
+  { atar: 74.50, aggregateMin: 126.98, aggregateMax: 127.05 },
+  { atar: 74.00, aggregateMin: 126.28, aggregateMax: 126.34 },
+  { atar: 73.50, aggregateMin: 125.53, aggregateMax: 125.59 },
+  { atar: 73.00, aggregateMin: 124.73, aggregateMax: 124.78 },
+  { atar: 72.50, aggregateMin: 124.00, aggregateMax: 124.06 },
+  { atar: 72.00, aggregateMin: 123.25, aggregateMax: 123.32 },
+  { atar: 71.50, aggregateMin: 122.52, aggregateMax: 122.59 },
+  { atar: 71.00, aggregateMin: 121.80, aggregateMax: 121.85 },
+  { atar: 70.50, aggregateMin: 121.10, aggregateMax: 121.16 },
+  { atar: 70.00, aggregateMin: 120.37, aggregateMax: 120.42 },
+  { atar: 69.50, aggregateMin: 119.65, aggregateMax: 119.71 },
+  { atar: 69.00, aggregateMin: 118.97, aggregateMax: 119.04 },
+  { atar: 68.50, aggregateMin: 118.25, aggregateMax: 118.30 },
+  { atar: 68.00, aggregateMin: 117.59, aggregateMax: 117.64 },
+  { atar: 67.50, aggregateMin: 116.91, aggregateMax: 116.95 },
+  { atar: 67.00, aggregateMin: 116.23, aggregateMax: 116.28 },
+  { atar: 66.50, aggregateMin: 115.57, aggregateMax: 115.62 },
+  { atar: 66.00, aggregateMin: 114.90, aggregateMax: 114.97 },
+  { atar: 65.50, aggregateMin: 114.16, aggregateMax: 114.21 },
+  { atar: 65.00, aggregateMin: 113.43, aggregateMax: 113.52 },
+  { atar: 64.50, aggregateMin: 112.72, aggregateMax: 112.79 },
+  { atar: 64.00, aggregateMin: 112.08, aggregateMax: 112.12 },
+  { atar: 63.50, aggregateMin: 111.47, aggregateMax: 111.53 },
+  { atar: 63.00, aggregateMin: 110.89, aggregateMax: 110.94 },
+  { atar: 62.50, aggregateMin: 110.25, aggregateMax: 110.32 },
+  { atar: 62.00, aggregateMin: 109.61, aggregateMax: 109.68 },
+  { atar: 61.50, aggregateMin: 108.97, aggregateMax: 109.02 },
+  { atar: 61.00, aggregateMin: 108.28, aggregateMax: 108.33 },
+  { atar: 60.50, aggregateMin: 107.52, aggregateMax: 107.59 },
+  { atar: 60.00, aggregateMin: 106.90, aggregateMax: 106.94 },
+  { atar: 59.50, aggregateMin: 106.26, aggregateMax: 106.30 },
+  { atar: 59.00, aggregateMin: 105.58, aggregateMax: 105.61 },
+  { atar: 58.50, aggregateMin: 104.93, aggregateMax: 104.99 },
+  { atar: 58.00, aggregateMin: 104.27, aggregateMax: 104.32 },
+  { atar: 57.50, aggregateMin: 103.66, aggregateMax: 103.71 },
+  { atar: 57.00, aggregateMin: 102.98, aggregateMax: 103.04 },
+  { atar: 56.50, aggregateMin: 102.32, aggregateMax: 102.40 },
+  { atar: 56.00, aggregateMin: 101.68, aggregateMax: 101.73 },
+  { atar: 55.50, aggregateMin: 101.01, aggregateMax: 101.05 },
+  { atar: 55.00, aggregateMin: 100.30, aggregateMax: 100.37 },
+  { atar: 54.50, aggregateMin: 99.67, aggregateMax: 99.72 },
+  { atar: 54.00, aggregateMin: 99.02, aggregateMax: 99.07 },
+  { atar: 53.50, aggregateMin: 98.38, aggregateMax: 98.42 },
+  { atar: 53.00, aggregateMin: 97.64, aggregateMax: 97.69 },
+  { atar: 52.50, aggregateMin: 97.00, aggregateMax: 97.08 },
+  { atar: 52.00, aggregateMin: 96.30, aggregateMax: 96.37 },
+  { atar: 51.50, aggregateMin: 95.61, aggregateMax: 95.68 },
+  { atar: 51.00, aggregateMin: 94.95, aggregateMax: 95.00 },
+  { atar: 50.50, aggregateMin: 94.28, aggregateMax: 94.34 },
+  { atar: 50.00, aggregateMin: 93.66, aggregateMax: 93.70 },
+  { atar: 49.50, aggregateMin: 93.05, aggregateMax: 93.09 },
+  { atar: 49.00, aggregateMin: 92.35, aggregateMax: 92.41 },
+  { atar: 48.50, aggregateMin: 91.65, aggregateMax: 91.72 },
+  { atar: 48.00, aggregateMin: 90.97, aggregateMax: 91.03 },
+  { atar: 47.50, aggregateMin: 90.25, aggregateMax: 90.31 },
+  { atar: 47.00, aggregateMin: 89.51, aggregateMax: 89.57 },
+  { atar: 46.50, aggregateMin: 88.90, aggregateMax: 88.93 },
+  { atar: 46.00, aggregateMin: 88.15, aggregateMax: 88.21 },
+  { atar: 45.50, aggregateMin: 87.45, aggregateMax: 87.54 },
+  { atar: 45.00, aggregateMin: 86.80, aggregateMax: 86.84 },
+  { atar: 44.50, aggregateMin: 86.14, aggregateMax: 86.18 },
+  { atar: 44.00, aggregateMin: 85.52, aggregateMax: 85.59 },
+  { atar: 43.50, aggregateMin: 84.80, aggregateMax: 84.86 },
+  { atar: 43.00, aggregateMin: 84.05, aggregateMax: 84.11 },
+  { atar: 42.50, aggregateMin: 83.33, aggregateMax: 83.41 },
+  { atar: 42.00, aggregateMin: 82.50, aggregateMax: 82.55 },
+  { atar: 41.50, aggregateMin: 81.71, aggregateMax: 81.78 },
+  { atar: 41.00, aggregateMin: 80.94, aggregateMax: 81.01 },
+  { atar: 40.50, aggregateMin: 80.14, aggregateMax: 80.23 },
+  { atar: 40.00, aggregateMin: 79.51, aggregateMax: 79.56 },
+  { atar: 39.50, aggregateMin: 78.76, aggregateMax: 78.79 },
+  { atar: 39.00, aggregateMin: 78.01, aggregateMax: 78.05 },
+  { atar: 38.50, aggregateMin: 77.27, aggregateMax: 77.36 },
+  { atar: 38.00, aggregateMin: 76.63, aggregateMax: 76.67 },
+  { atar: 37.50, aggregateMin: 75.91, aggregateMax: 75.98 },
+  { atar: 37.00, aggregateMin: 75.30, aggregateMax: 75.34 },
+  { atar: 36.50, aggregateMin: 74.61, aggregateMax: 74.67 },
+  { atar: 36.00, aggregateMin: 73.83, aggregateMax: 73.88 },
+  { atar: 35.50, aggregateMin: 73.11, aggregateMax: 73.18 },
+  { atar: 35.00, aggregateMin: 72.41, aggregateMax: 72.47 },
+  { atar: 34.50, aggregateMin: 71.75, aggregateMax: 71.80 },
+  { atar: 34.00, aggregateMin: 70.97, aggregateMax: 71.03 },
+  { atar: 33.50, aggregateMin: 70.28, aggregateMax: 70.34 },
+  { atar: 33.00, aggregateMin: 69.63, aggregateMax: 69.68 },
+  { atar: 32.50, aggregateMin: 68.94, aggregateMax: 68.96 },
+  { atar: 32.00, aggregateMin: 68.32, aggregateMax: 68.35 },
+  { atar: 31.50, aggregateMin: 67.70, aggregateMax: 67.75 },
+  { atar: 31.00, aggregateMin: 67.00, aggregateMax: 67.06 },
+  { atar: 30.50, aggregateMin: 66.37, aggregateMax: 66.42 },
+  { atar: 30.00, aggregateMin: 65.62, aggregateMax: 65.65 },
+  { atar: 0.00, aggregateMin: 0.00, aggregateMax: 65.61 }
 ];
 
+// 基于2024年官方数据的精确缩放算法
+export const calculateScaledScore = (rawScore, subjectId) => {
+  const subject = VCE_SUBJECTS_DB.find(s => s.id === subjectId);
+  if (!subject || !subject.officialMapping) {
+    return rawScore; // 如果没有官方映射数据，返回原始分数
+  }
+  
+  const mapping = subject.officialMapping;
+  const scores = [20, 25, 30, 35, 40, 45, 50];
+  
+  // 边界情况处理
+  if (rawScore <= 20) return mapping[20];
+  if (rawScore >= 50) return mapping[50];
+  
+  // 在映射点之间进行线性插值
+  for (let i = 0; i < scores.length - 1; i++) {
+    const lowerScore = scores[i];
+    const upperScore = scores[i + 1];
+    
+    if (rawScore >= lowerScore && rawScore <= upperScore) {
+      const lowerScaled = mapping[lowerScore];
+      const upperScaled = mapping[upperScore];
+      
+      // 线性插值
+      const ratio = (rawScore - lowerScore) / (upperScore - lowerScore);
+      const scaledScore = lowerScaled + ratio * (upperScaled - lowerScaled);
+      
+      return Math.round(scaledScore * 10) / 10; // 保留一位小数
+    }
+  }
+  
+  return rawScore;
+};
 
+// 基于2024年官方ATAR映射表的精确查找
+export const getATARFromAggregate = (aggregate) => {
+  // 使用2024年官方映射表进行精确查找
+  for (const mapping of PRECISE_ATAR_MAPPING_2024) {
+    if (aggregate >= mapping.aggregateMin && aggregate <= mapping.aggregateMax) {
+      return mapping.atar;
+    }
+  }
+  
+  // 如果找不到精确匹配，找最接近的ATAR值
+  const sortedMappings = [...PRECISE_ATAR_MAPPING_2024].sort((a, b) => b.atar - a.atar);
+  
+  for (const mapping of sortedMappings) {
+    if (aggregate >= mapping.aggregateMin) {
+      return mapping.atar;
+    }
+  }
+  
+  return 0; // 如果aggregate太低，返回0
+};
 
-// 学习建议配置
+// 学习建议配置（基于2024年数据更新）
 export const STUDY_RECOMMENDATIONS = {
   english_missing: {
     priority: "critical",
@@ -961,8 +686,13 @@ export const STUDY_RECOMMENDATIONS = {
   },
   low_scaling_heavy: {
     priority: "warning", 
-    message: "Consider adding higher-scaling subjects like Mathematical Methods, Chemistry, or Physics to improve your aggregate.",
+    message: "Consider adding higher-scaling subjects like Mathematical Methods, Specialist Mathematics, Chemistry, or Physics to improve your aggregate.",
     action: "Review Subject Selection"
+  },
+  very_high_scaling_subjects: {
+    priority: "info",
+    message: "Excellent choice! You've selected high-scaling subjects. Focus on achieving your best possible scores.",
+    action: "Maximize Performance"
   },
   good_balance: {
     priority: "info",
@@ -976,37 +706,7 @@ export const STUDY_RECOMMENDATIONS = {
   }
 };
 
-// 工具函数：计算缩放分数
-export const calculateScaledScore = (rawScore, subjectId) => {
-  const subject = VCE_SUBJECTS_DB.find(s => s.id === subjectId);
-  if (!subject) return rawScore;
-  
-  const scalingType = subject.scalingType;
-  const mappings = DETAILED_SCORE_MAPPING[scalingType];
-  
-  const mapping = mappings.find(m => 
-    rawScore >= m.rawMin && rawScore <= m.rawMax
-  );
-  
-  if (!mapping) return rawScore;
-  
-  // 线性插值计算
-  const ratio = (rawScore - mapping.rawMin) / (mapping.rawMax - mapping.rawMin);
-  const scaledScore = mapping.scaledMin + ratio * (mapping.scaledMax - mapping.scaledMin);
-  
-  return Math.round(scaledScore * 10) / 10;
-};
-
-// 工具函数：获取ATAR
-export const getATARFromAggregate = (aggregate) => {
-  const mapping = PRECISE_ATAR_MAPPING.find(m => 
-    aggregate >= m.aggregateMin && aggregate < m.aggregateMax
-  );
-  
-  return mapping ? mapping.atar : 0;
-};
-
-// 工具函数：获取学习建议
+// 更新的学习建议函数
 export const getStudyRecommendations = (subjects, results) => {
   const recommendations = [];
   
@@ -1015,19 +715,26 @@ export const getStudyRecommendations = (subjects, results) => {
     recommendations.push(STUDY_RECOMMENDATIONS.english_missing);
   }
   
-  // 检查低缩放科目比例
+  // 检查科目组合质量
   const validSubjects = subjects.filter(s => s.subjectId && s.rawScore > 0);
-  const lowScalingCount = validSubjects.filter(s => {
+  const subjectTypes = validSubjects.map(s => {
     const subject = VCE_SUBJECTS_DB.find(sub => sub.id === s.subjectId);
-    return subject?.scalingType === 'low_scaling';
-  }).length;
+    return subject?.scalingType;
+  });
   
-  if (lowScalingCount >= 3) {
+  const veryHighScalingCount = subjectTypes.filter(type => type === 'very_high_scaling').length;
+  const highScalingCount = subjectTypes.filter(type => type === 'high_scaling').length;
+  const lowScalingCount = subjectTypes.filter(type => type === 'low_scaling').length;
+  
+  // 推荐逻辑
+  if (veryHighScalingCount >= 2 || highScalingCount >= 3) {
+    recommendations.push(STUDY_RECOMMENDATIONS.very_high_scaling_subjects);
+  } else if (lowScalingCount >= 3) {
     recommendations.push(STUDY_RECOMMENDATIONS.low_scaling_heavy);
   }
   
   // 基于ATAR给出建议
-  if (results.atar >= 90) {
+  if (results.atar >= 95) {
     recommendations.push(STUDY_RECOMMENDATIONS.high_achiever);
   } else if (results.atar >= 70) {
     recommendations.push(STUDY_RECOMMENDATIONS.good_balance);
@@ -1036,15 +743,23 @@ export const getStudyRecommendations = (subjects, results) => {
   return recommendations;
 };
 
-// 修复ESLint警告：先定义对象再导出
+// 数据版本信息
+export const DATA_VERSION = {
+  version: "2024.12.12",
+  source: "VTAC Official 2024 Aggregate to ATAR Table",
+  lastUpdated: "2024-12-12",
+  description: "Based on official 2024 VTAC scaling and aggregation data"
+};
+
+// 导出所有功能
 const atarDataModule = {
   VCE_SUBJECTS_DB,
-  DETAILED_SCORE_MAPPING, 
-  PRECISE_ATAR_MAPPING,
+  PRECISE_ATAR_MAPPING_2024,
   STUDY_RECOMMENDATIONS,
   calculateScaledScore,
   getATARFromAggregate,
-  getStudyRecommendations
+  getStudyRecommendations,
+  DATA_VERSION
 };
 
 export default atarDataModule;

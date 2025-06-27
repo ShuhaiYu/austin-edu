@@ -16,21 +16,22 @@ import { useContext, useState, useRef, useEffect } from "react";
 import { LangContext } from "@/app/layout";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDebouncedCallback } from "use-debounce";
-import { AlertCircle, BookOpen, Calculator, TrendingUp, Lightbulb, Trophy, Target } from "lucide-react";
+import { AlertCircle, BookOpen, Calculator, TrendingUp, Lightbulb, Trophy, Target, Info } from "lucide-react";
 
-// 导入数据管理模块
+// 导入更新的数据管理模块
 import {
   VCE_SUBJECTS_DB,
   calculateScaledScore,
   getATARFromAggregate,
-  getStudyRecommendations
+  getStudyRecommendations,
+  DATA_VERSION
 } from "@/data/atarData";
 import { UNIVERSITY_PREREQUISITES } from "@/data/atarUni";
 
 const content = {
   en: {
-    title: "VCE ATAR Calculator",
-    description: "Calculate your ATAR based on VCE subject scores with precise scaling",
+    title: "VCE ATAR Calculator 2024",
+    description: "Calculate your ATAR based on official 2024 VCE scaling data",
     selectSubject: "Select Subject",
     rawScore: "Raw Score",
     scaledScore: "Scaled Score",
@@ -40,7 +41,8 @@ const content = {
     results: "ATAR Results",
     aggregate: "Aggregate Score",
     predictedATAR: "Predicted ATAR",
-    disclaimer: "This is an estimation tool. Actual ATAR may vary based on cohort performance.",
+    disclaimer: "Based on official 2024 VTAC data. Actual ATAR may vary based on cohort performance.",
+    dataVersion: "Data Version",
     englishRequired: "English subject required",
     primary4: "Primary 4 (100%)",
     increment: "10% Increment",
@@ -63,8 +65,8 @@ const content = {
     }
   },
   zh: {
-    title: "VCE ATAR计算器",
-    description: "基于VCE科目成绩精确计算ATAR，包含分数缩放",
+    title: "VCE ATAR计算器 2024",
+    description: "基于2024年官方VCE缩放数据计算ATAR",
     selectSubject: "选择科目",
     rawScore: "原始分数",
     scaledScore: "缩放分数",
@@ -74,7 +76,8 @@ const content = {
     results: "ATAR结果",
     aggregate: "总分",
     predictedATAR: "预估ATAR",
-    disclaimer: "本工具仅为预估，实际ATAR可能因考生整体表现而有所不同。",
+    disclaimer: "基于2024年官方VTAC数据。实际ATAR可能因考生整体表现而有所不同。",
+    dataVersion: "数据版本",
     englishRequired: "需要英语科目",
     primary4: "主要4门 (100%)",
     increment: "10%加分",
@@ -115,7 +118,7 @@ const AnimatedNumber = ({ value, suffix = "" }) => {
   );
 };
 
-// 计算ATAR的主要逻辑（使用数据模块中的函数）
+// 更新的ATAR计算逻辑 - 使用2024年官方算法
 const calculateATAR = (subjects) => {
   const validSubjects = subjects
     .filter(s => s.subjectId && s.rawScore > 0)
@@ -196,7 +199,7 @@ const calculateATAR = (subjects) => {
     });
   }
   
-  // 使用精确的ATAR映射
+  // 使用2024年精确的ATAR映射
   const atar = getATARFromAggregate(aggregate);
   
   return {
@@ -235,7 +238,9 @@ const SubjectRow = ({ subject, onUpdate, onRemove, lang }) => {
   };
 
   const handleScoreChange = (e) => {
-    const value = Math.min(50, Math.max(0, Number(e.target.value) || 0));
+    const subjectInfo = VCE_SUBJECTS_DB.find(s => s.id === selectedSubject);
+    const maxScore = subjectInfo?.maxScore || 50;
+    const value = Math.min(maxScore, Math.max(0, Number(e.target.value) || 0));
     setRawScore(value);
     onUpdate({ 
       ...subject, 
@@ -249,7 +254,7 @@ const SubjectRow = ({ subject, onUpdate, onRemove, lang }) => {
     <Card className="border-0 bg-gray-50/50 shadow-sm">
       <CardContent className="p-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-          {/* 科目选择 - 居中对齐 */}
+          {/* 科目选择 */}
           <div className="md:col-span-2">
             <Select value={selectedSubject} onValueChange={handleSubjectChange}>
               <SelectTrigger className="w-full bg-white border-0 text-center">
@@ -286,12 +291,12 @@ const SubjectRow = ({ subject, onUpdate, onRemove, lang }) => {
               <label className="text-xs text-muted-foreground block">{t.rawScore}</label>
               <Input
                 type="number"
-                placeholder="0-50"
+                placeholder={`0-${subjectData?.maxScore || 50}`}
                 value={rawScore}
                 onChange={handleScoreChange}
                 className="w-16 text-center bg-white border-0"
                 min="0"
-                max="50"
+                max={subjectData?.maxScore || 50}
               />
             </div>
           </div>
@@ -301,8 +306,11 @@ const SubjectRow = ({ subject, onUpdate, onRemove, lang }) => {
             {selectedSubject && rawScore > 0 && (
               <div className="text-center space-y-1">
                 <label className="text-xs text-muted-foreground block">{t.scaledScore}</label>
-                <div className="w-16 h-9 flex items-center justify-center bg-primary/10 text-primary rounded text-sm font-semibold border-0">
-                  <AnimatedNumber value={scaledScore} />
+                <div className="flex flex-col items-center gap-1">
+                  <div className="w-16 h-9 flex items-center justify-center bg-primary/10 text-primary rounded text-sm font-semibold border-0">
+                    <AnimatedNumber value={scaledScore} />
+                  </div>
+                  
                 </div>
               </div>
             )}
@@ -323,7 +331,7 @@ const SubjectRow = ({ subject, onUpdate, onRemove, lang }) => {
   );
 };
 
-// 学习建议组件
+// 更新的学习建议组件
 const RecommendationsPanel = ({ subjects, results, lang }) => {
   const t = content[lang];
   const recommendations = getStudyRecommendations(subjects, results);
@@ -360,10 +368,12 @@ const RecommendationsPanel = ({ subjects, results, lang }) => {
   );
 };
 
-// 大学课程选择组件
+// 保持原有的大学课程选择组件（无需修改）
 const UniversityOptions = ({ atar, lang }) => {
   const t = content[lang];
   const [showMore, setShowMore] = useState(false);
+  
+  if (atar === 0) return null;
   
   if (atar === 0) return null;
   
@@ -490,7 +500,7 @@ const UniversityOptions = ({ atar, lang }) => {
       </div>
     );
   };
-
+  
   return (
     <Card className="border-0 bg-primary/5">
       <CardHeader>
@@ -579,6 +589,7 @@ const UniversityOptions = ({ atar, lang }) => {
       </CardContent>
     </Card>
   );
+
 };
 
 export const ATARCalculatorTab = () => {
@@ -664,7 +675,7 @@ export const ATARCalculatorTab = () => {
 
   return (
     <div className="mx-auto space-y-6">
-      {/* Header */}
+      {/* Header with Data Version Info */}
       <Card className="border-0 bg-white shadow-lg">
         <CardHeader className="text-center">
           <CardTitle className="flex items-center justify-center gap-2 text-2xl">
@@ -672,6 +683,15 @@ export const ATARCalculatorTab = () => {
             {t.title}
           </CardTitle>
           <p className="text-muted-foreground">{t.description}</p>
+          <div className="flex items-center justify-center gap-2 mt-2">
+            <Badge variant="outline" className="bg-primary/10 text-primary border-0 text-xs">
+              <Info className="w-3 h-3 mr-1" />
+              {t.dataVersion}: {DATA_VERSION.version}
+            </Badge>
+            <Badge variant="outline" className="bg-green-100 text-green-800 border-0 text-xs">
+              Official VTAC Data
+            </Badge>
+          </div>
         </CardHeader>
       </Card>
 
@@ -797,6 +817,25 @@ export const ATARCalculatorTab = () => {
               <p className="text-xs text-muted-foreground leading-relaxed text-center">
                 {t.disclaimer}
               </p>
+              <div className="flex justify-center items-center gap-2 mt-3 flex-wrap">
+                <span className="text-xs text-muted-foreground">Sources:</span>
+                <a 
+                  href="/resource_hub/atar-to-aggregate-24.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs bg-white hover:bg-primary/5 text-primary border border-primary/20 rounded px-2 py-1 transition-colors"
+                >
+                  📊 ATAR to Aggregate Table 2024
+                </a>
+                <a 
+                  href="/resource_hub/Scaling report 2024.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 text-xs bg-white hover:bg-primary/5 text-primary border border-primary/20 rounded px-2 py-1 transition-colors"
+                >
+                  📈 Scaling Report 2024
+                </a>
+              </div>
             </CardContent>
           </Card>
         </div>
