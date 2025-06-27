@@ -27,7 +27,7 @@ const joinUsFaqItems = {
     {
       question: "Can I start teaching right after passing the interview?",
       answer:
-        "No. After passing the interview, candidates must complete onboarding: contracts, system setup, and training. This includes education philosophy, platform operations, a 15-day demo and refinement phase, simulated teaching, and expert feedback. Final placement depends on subject level and student age.",
+        "No. After passing the interview, candidates are required to complete the onboarding process, which includes signing contracts, system setup, and training on our education philosophy and platform operations. This is followed by a 15-day demo and refinement phase, during which candidates will participate in simulated teaching sessions and receive expert feedback and evaluation. Final placement is determined based on subject level and student age.",
     },
   ],
   zh: [
@@ -49,15 +49,15 @@ const contactUsFaqItems = {
   en: [
     {
       question: "What if I encounter issues during my learning experience?",
-      answer: `If you have any concerns about your course or service, please reach out. Our dedicated customer team will listen carefully and respond promptly to resolve any issues. 
-        📩 Email: Austinedu251@gmail.com`,
+      answer: `Should you have any concerns about your course or service, please reach out to us.Our dedicated customer service team will listen carefully and respond promptly to resolve any issues.
+        📩 Email: austinedu251@gmail.com`,
     },
   ],
   zh: [
     {
       question: "如果我在澳升学习过程中，问题得不到解决，我该联系谁？",
       answer: `如果您对我们的课程、服务或任何环节有任何不满意之处，欢迎您第一时间与我们反馈。我们高度重视每一位学员和家长的意见，专门的客户服务团队将会尽快与您取得联系，认真倾听您的需求，并提供及时、有效的解决方案，力求不断优化我们的教学与服务质量。
-        📩 您可以通过以下邮箱与我们联系：Austinedu251@gmail.com`,
+        📩 您可以通过以下邮箱与我们联系：austinedu251@gmail.com`,
     },
   ],
 };
@@ -68,7 +68,7 @@ const courseFaqItems = {
     {
       question: "Why is tutoring necessary?",
       answer:
-        "Australian day schools can be slow-paced and inconsistent. Especially at the VCE level, students often lack depth in understanding, exam strategies, and pacing. Systematic tutoring offers structured preparation, repetitive practice, and targeted feedback to improve performance and confidence.",
+        "Australian day schools can be slow-paced and inconsistent. Especially at the VCE level, students often lack depth in understanding, effective exam strategies, and the ability to manage their time and pace during assessments. Systematic tutoring offers structured preparation, repetitive practice, and targeted feedback to improve performance and confidence.",
     },
     {
       question: "When is the best time to start tutoring?",
@@ -83,22 +83,22 @@ const courseFaqItems = {
     {
       question: "Are your student results strong?",
       answer:
-        "Exceptionally strong. In 2024 alone, we had 3 students score ATAR 99.95, 10 students at 99.90+, and 40+ subjects with 45+ raw scores. Our top Maths Methods classes average 42 raw, Specialist Math 39, and our results in English, Chinese, Sciences, UCAT, and AMC are among the best in Victoria.",
+        "Exceptionally strong. In 2024 alone, we had 3 students score ATAR 99.95, 10 students at 99.90+, and 40+ subjects with 45+ raw scores. The average raw scores of our top Maths Methods and Specialist Maths classes were 42 and 39, respectively. And our results in English, Chinese, Sciences, UCAT, and AMC are among the best in Victoria.",
     },
     {
       question: "How many students are in each class?",
       answer:
-        "We offer large, medium, and boutique classes (under 8 students), assigned based on student level and goals. Small classes offer high interaction; medium classes emphasize pacing and structure; large classes suit high-motivation learners. Each format includes standardized resources and learning manager follow-up.",
+        "We offer large, medium, and boutique classes (under 8 students), assigned based on student level and goals. Small classes offer high interaction; medium classes emphasise pacing and structure; large classes suit high-motivation learners. Each format includes standardised resources and learning manager follow-up.",
     },
     {
       question: "What qualifications do your teachers have?",
       answer:
-        "All instructors have relevant academic backgrounds and years of experience. Most have Master's or higher degrees from universities like Melbourne Uni, Monash, or ANU. Over 60% are full-time and regularly undergo training and lesson optimization.",
+        "All instructors have relevant academic backgrounds and years of experience. Most have Master's or higher degrees from universities like Melbourne Uni, Monash, or ANU. Over 60% are full-time and regularly undergo training and lesson optimisation.",
     },
     {
       question: "Which is better: 1-on-1 or group classes?",
       answer:
-        "It depends. Group classes are recommended for structured, full-course learning; 1-on-1 works best for targeted support like SAC prep or mock review. Contact us for a personalized consultation.",
+        "It depends. Group classes are recommended for structured, full-course learning; 1-on-1 works best for targeted support like SAC prep or mock review. Contact us for a personalised consultation.",
     },
     {
       question: "How do I start learning at Austin?",
@@ -120,7 +120,7 @@ const courseFaqItems = {
     {
       question: "Can I attend a trial class?",
       answer:
-        "Yes! Our trial classes are led by official teachers and offer a true classroom experience. Afterward, we provide personalized recommendations based on your child's performance.",
+        "Yes! Our trial classes are led by official teachers and offer a true classroom experience. Afterward, we provide personalised recommendations based on your child's performance.",
     },
     {
       question: "What are your fees?",
@@ -135,9 +135,9 @@ const courseFaqItems = {
     {
       question: "What happens if I miss a class?",
       answer: `To ensure every student stays on track, we offer a comprehensive make-up support system:
-        • In-class make-up: Students may attend another class in the same week and teaching progress level, subject to availability.
-        • Online catch-up sessions: Our course coordinator can arrange one-on-one or small-group online sessions.
-        • Class recordings: If attending a make-up session is not possible, students can request access to recorded lessons for self-paced review.
+        • In-class make-up: students may attend another class in the same week and teaching progress level, subject to availability.
+        • Online catch-up sessions: our course coordinator can arrange one-on-one or small-group online sessions.
+        • Class recordings: if attending a make-up session is not possible, students can request access to recorded lessons for self-paced review.
 `,
     },
     {
@@ -249,8 +249,8 @@ const achievementFaqItems = {
   en: [
     {
       question: "Why do Austin students achieve such outstanding results?",
-      answer: `We personalize learning pathways through leveled classes and systematic training, ensuring students follow the most suitable track:
-        • **Flexible class levels**: from foundation to accelerated
+      answer: `We personalised learning pathways through leveled classes and systematic training, ensuring students follow the most suitable track:
+        • **Flexible class levels**: from foundation to advanced
         • **Internal resources**: tightly aligned with exam points
         • **Mock exams + diagnostics**: identify and target weaknesses
         • **Learning manager support**: track progress and adjust plans
@@ -318,13 +318,13 @@ const homeFAQContent = {
         • **Systematic teaching research and tracking mechanisms**
         • **Self-developed homework platform with data analytics**
         • **Victoria's leading mock exam system**
-        • **Wide variety of class types for true personalized teaching**`,
+        • **Wide variety of class types for true personalised teaching**`,
     },
     {
       question: "What services does Austin offer?",
-      answer: `**Academic Courses**: Comprehensive subject tutoring from primary to high school, including VCE, IB, UCAT, full-subject Y1–Y9 tutoring, writing and reading focus programs, scholarship training, selective school prep, AEAS, AMC, and language courses (e.g., Latin). We also offer music and university-level support.
+      answer: `**Academic Courses**: Comprehensive subject tutoring from primary to high school, including VCE, IB, UCAT, full-subject Y1–Y9 tutoring, writing and reading-focused programs, scholarship training, selective school prep, AEAS, AMC, and language courses (e.g., Latin). We also offer music and university-level support.
 
-        **Consulting Services**: Our team provides personalized academic planning, subject selection, and career guidance. We help eliminate information gaps and offer expert advice for VCE, scholarships, selective schools, studying in Australia, overseas applications (UK/US), and medical school pathways.
+        **Consulting Services**: Our team provides personalised academic planning, subject selection, and career guidance. We help eliminate information gaps and offer expert advice for VCE, scholarships, selective schools, local or overseas applications (UK/US), and medical school pathways.
 
         **Educational Resources**: Additional learning materials and academic enrichment resources.`,
     },

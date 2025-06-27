@@ -6,7 +6,7 @@ export const homeContent = {
       description: `At Austin Education, we believe that real academic progress comes from expert guidance and consistent support—not luck. That’s why we are committed to providing every student with the highest-quality resources and the most genuine care.
 Since 2013, we have specialised in comprehensive tutoring for students from Year 1 to Year 12, covering all major academic pathways including VCE, IB, UCAT, and more—always upholding the highest teaching standards.
 What we offer is a fully structured learning system: Curriculum precisely aligned with exam standards； A handpicked team of outstanding teachers； High-quality in-house textbooks； Efficient and targeted practice tasks, supported by a full suite of academic resources.
-Our mission is to: Help every student achieve real, visible progress; Provide Australia’s highest-quality teaching team; Build the most complete academic support system.`,
+Our mission is to: help every student make real, measurable progress; bring together Australia's best teaching talent; build the most complete and caring academic support system.`,
       getStarted: "Trial Lesson",
       contact: "Contact Us",
     },
@@ -95,18 +95,18 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
       ],
     },
     admissionProcess: {
-      title: "Admission Service Process",
+      title: "STEP-BY-STEP ADMISSION GUIDE",
       desc: "Besides exceptional teachers and resources, Austin Education is known for its systematic and comprehensive service process. From consultation to the end of their studies, we provide full support, ensuring the best learning outcomes with a responsible attitude and meticulous service.",
       parts: [
         {
           part: 1,
-          title: "Enrolment Steps",
+          title: "Enrolment",
           steps: [
             {
               step: 0,
               title: "Step 0: Free Consultation",
-              desc: `• Conducted by experienced Australian education professionals and expert advisors with extensive knowledge of the field, the consultation provides a comprehensive analysis of the student’s situation. This ensures personalised study recommendations, course selection guidance, and career planning. The goal is to eliminate any information gaps parents might face in the Australian education system, helping students access the best academic advice and planning.
-    • Recommendations may include (but are not limited to): school transfer advice, VCE subject selection, guidance on study destinations, participation in extracurricular activities, competition planning, scholarship exam preparation, and elite school entry exam strategies.`,
+              desc: `• Our consultations are led by experienced Australian education professionals and expert advisors who bring deep knowledge of the local system. Each session offers a comprehensive review of the student’s situation, providing tailored study recommendations, course selection support, and career planning guidance. We aim to bridge the information gap many parents face when navigating the Australian education system — making sure students receive the best possible academic advice and long-term planning support.
+    • Recommendations may include (but not limited to): school transfer advice, VCE subject selection, guidance on study outcomes, participation in extracurricular activities, competition planning, scholarship exam preparation, and entry exam strategies for elite school.`,
               buttonText: "Book Now",
               buttonLink: "/contact_us",
             },
@@ -122,7 +122,7 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
             {
               step: 2,
               title: "Step 2: Confirming Courses",
-              desc: `• Austin Education brings together Victoria’s top educators, matching students with teachers suited to their learning styles. If students find the class or teacher unsuitable after starting, they are supported in switching to ensure the best experience, fostering learning interest and efficient progress.`,
+              desc: `• Austin Education brings together Victoria’s top educators, matching students with teachers suited to their learning styles. Should a student find the class or instructor unsuitable after commencing, we offer full support in arranging a suitable alternative. This ensures an optimal learning environment that promotes sustained engagement and academic progress.`,
               buttonText: "Explore Courses",
               buttonLink: "/courses",
             },
@@ -130,8 +130,8 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               step: 3,
               title:
                 "Step 3: Payment (Unconditional Refund Policy) and Student Record Creation",
-              desc: `• After payment, a receipt will be sent to the designated contact, and student information will be entered into Austin’s system.
-    • If dissatisfied with the course, you may request an unconditional refund, processed within two weeks.
+              desc: `• After payment, a receipt will be sent to the designated contact, and student information will be into Austin’s system added.
+    • If dissatisfied with the course, you may request an unconditional refund, which will be processed within two weeks.
     * Refunds exclude promotional discounts applied at enrolment.`,
             },
           ],
@@ -144,14 +144,14 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               step: 4,
               title:
                 "Step 4: Joining Class Groups & Private Academic Manager Services",
-              desc: `• After enrolment, students will join class groups where multiple teachers provide dedicated support, addressing academic and scheduling questions.
-   • Each student is assigned a private academic manager responsible for all academic-related matters at Austin and day school, including leave requests, rescheduling, class transferring, homework supervision, and study plans, guiding them through to VCE exams.
+              desc: `• After enrolment, students will join classes where multiple teachers provide dedicated support, addressing academic and scheduling questions.
+   • Each student will be assigned a private academic manager that is responsible for all academic-related matters at Austin and day school, including leave requests, rescheduling, class transferring, homework supervision, and study plans. Such service will be provided until the VCE exams.
     * Services apply to group class students only.`,
             },
             {
               step: 5,
               title: "Step 5: Accessing Homework System",
-              desc: `• Staff assist students in setting up their homework system account and learning how to use it.
+              desc: `• Students will be provided with their own account to access Austin Homework System and guided to learn how to use it.
     • Austin provides a systematic homework management model, combining in-class paper assignments with an online system. Students have assigned homework after every class. Additional practice materials and mock exams are available online or on-site.
     • The system includes an error collection function to help students identify and correct mistakes. Teachers can monitor homework progress and provide timely feedback to students and parents.`,
               buttonText: "Learn More",
@@ -173,24 +173,24 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
             {
               step: 7,
               title: "Step 7: During Classes",
-              desc: `• Group classes run for four terms, aligned with day school schedules. Each term’s curriculum is designed to optimise learning through extensive research and refinement.
-    • Flexible class options allow students to adjust between standard and accelerated levels to match their progress.
-    • Learning includes four components: regular classes, homework, term-end tests, and reports/parent-teacher interviews.`,
+              desc: `• Group classes are delivered for four terms, aligned with day school schedules. Each term’s curriculum is designed to optimise learning through extensive research.
+    • Flexible class options allow students to adjust between standard and advanced levels to match their current level and pace.
+    • Learning includes four components: regular classes, homework, exams, and reports/parent-teacher interviews.`,
             },
             {
               step: 8,
               title: "Step 8: Term-End Tests & Reports/Parents Meetings",
-              desc: `• For Year 1–9 students, parents receive feedback after term-end tests in various formats, including parent-teacher interviews, exam rankings, or reports.
-    • For Year 10–12 students, mock exam reports and periodic parent-teacher interviews provide updates and strategies for improvement.`,
+              desc: `• For Year 1–9 students, parents will receive feedback after exams in various formats, including parent-teacher interviews, exam rankings, or reports.
+    •  For Year 10–12 students, mock exam reports and periodic parent-teacher interviews will be offered to update students’ overall academic performance and provide corresponding strategies for improvement.`,
             },
             {
               step: 9,
               title: "Step 9: Holiday Courses",
-              desc: `• Austin offers targeted holiday courses lasting two weeks (4–6 sessions). These address missed knowledge points, help students catch up, and cover VCE-specific topics not addressed in regular courses.
+              desc: `• Austin offers targeted holiday courses lasting two weeks (4–6 sessions). These are designed to help students catch up by addressing missed knowledge points, and cover VCE-specific topics not addressed in regular courses.
     Services include:
-    1) Addressing Knowledge Gaps: Based on students' transcripts and assessment reports, teachers conduct a precise analysis of their performance in each subject, identifying key areas, difficulties, and missed topics. Tailored explanations are provided to help students fill in the gaps and reinforce their understanding.
-    2) Catching Up on Progress: For students who may have fallen behind due to learning difficulties or personal reasons, our holiday courses offer the perfect opportunity to close the gap. Austin is committed to helping students quickly catch up during the holiday period, ensuring a smooth transition into the new semester.
-    3) Specialised Tutoring for Less Common Exam Topics: We offer targeted tutoring for VCE exam topics that are not covered in regular school or Austin courses. This ensures no topic is overlooked and helps students broaden their knowledge base during the holiday period, improving their overall cognitive abilities.
+    1) Addressing Knowledge Gaps: based on students' transcripts and assessment reports, teachers will conduct a precise analysis of their performance in each subject to identify key areas, difficulties, and missed topics. Tailored explanations are provided to help students fill in the gaps and deepen their understanding.
+    2) Catching Up on Progress: for students who may have fallen behind due to learning difficulties or personal reasons, our holiday courses offer the perfect opportunity to help them keep up. Austin is committed to helping students quickly catch up during the holiday period, ensuring a smooth transition into the new semester.
+    3) Specialised Tutoring for Less Common Exam Topics: we offer targeted tutoring for VCE exam topics that are not covered in regular school or Austin courses. This ensures no topic is overlooked and helps students expand their knowledge during the holiday period, improving their overall cognitive abilities.
     * Holiday courses are also available for trial sessions.`,
             },
             {
@@ -215,7 +215,7 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
               step: "Service 1",
               title: "Authentic Mock Exams",
               desc: `• Austin’s mock exams are renowned for their exceptional quality, covering nearly 100% of VCE exam content. They are recognised as one of Victoria’s top four mock exams and are the only ones provided by a Chinese-run institution.
-                     • Full mock exams serve as an additional assurance for Austin students to deliver outstanding results every year. With extensive experience and unmatched professionalism, our academic team ensures the difficulty level and question types of the mock exams align with actual VCE exams. We also recreate exam conditions and timing to provide a fully authentic simulation. After the exams, teachers thoroughly analyse each student's papers to identify weak areas and offer targeted revision plans, helping students build exam readiness, adapt to the test environment, and achieve exceptional results.
+                     •  Full mock exams serve as an additional assurance for Austin students to deliver outstanding results every year. With extensive experience and unparalleled professionalism, our academic team ensures the difficulty level and question types of the mock exams align with actual VCE exams. We also recreate exam conditions and timing to provide a fully authentic simulation. After the exams, teachers thoroughly analyse each student's papers to identify weak areas and offer targeted revision plans. This can help them build exam readiness, adapt to the test environment, and achieve exceptional results.
     
                      Mock Exams Offered:
                    • NAPLAN Mock Exams
@@ -291,7 +291,7 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
     hero: {
       title: "墨尔本优质教学的第一选择",
       description: `在澳升教育，我们相信，真正的进步来自专业的引导与持续的支持，而不是运气。正因如此，我们始终致力于为每一位学生提供最优质的资源与最用心的陪伴。
-自 2013 年起，我们专注于提供 Y1–12全科补习，涵盖 VCE、IB 、UCAT等所有核心学科，始终坚持最高教学标准。
+自 2013 年起，我们专注于提供 Y1–Y12全科补习，涵盖 VCE、IB 、UCAT等所有核心学科，始终坚持最高教学标准。
 澳升提供的是一整套系统化教学方案：严格贴合考纲的课程设计、精挑细选的教师团队、高质量的内部教材、以及高效有针对性的课后练习与辅助资源。
 我们的使命是：让每位学生都实现真正可见的进步; 提供全澳最高质量的教学团队; 打造最全面的学术支持体系。`,
       getStarted: "预约试听",
@@ -454,8 +454,8 @@ Our mission is to: Help every student achieve real, visible progress; Provide Au
             {
               step: 8,
               title: "Step 8 期末测试 & 报告评估/家长会",
-              desc: `• Y1-9的学生，每个学期期未测试后，家长都会收到一份学习反馈，反馈形式各学期不同，包括家长会、考试排名、Report。
-              • Y10-12的学生，模考后收到考试Report，不定期开设家长会。`,
+              desc: `• Y1-Y9的学生，每个学期期未测试后，家长都会收到一份学习反馈，反馈形式各学期不同，包括家长会、考试排名、Report。
+              • Y10-Y12的学生，模考后收到考试Report，不定期开设家长会。`,
             },
             {
               step: 9,

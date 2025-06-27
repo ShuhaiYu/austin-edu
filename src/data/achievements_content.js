@@ -21,7 +21,7 @@ export const achievementContent = {
       ],
     },
     juniorHigh: {
-      title: "Junior High Results",
+      title: "Secondary School Results",
       description:
         "Austin Education Selective Program achieved\nan average annual admission rate of:",
       admissionRate: "83.7%",
@@ -30,7 +30,7 @@ export const achievementContent = {
           title: "Scholarship Program",
           content:
             "Receiving offers from nearly 40 private schools each year, with an average admission rate of 51%",
-          note: "*Scholarship results include scores from the 3-of-5, 5-of-7, and 7-of-9 assessments",
+          note: "*Scholarship results include scores from the Years 3, 5, 7 and 9 assessments",
         },
         amc: {
           title: "AMC Math Competition Program",
@@ -56,7 +56,7 @@ export const achievementContent = {
           rate: "51%",
         },
         advanced: {
-          title: "Y3-5 Advanced Program",
+          title: "Y3-Y5 Advanced Program",
           content:
             "On average, each year, 84.7% of students achieve top scores in NAPLAN exams.",
         },
@@ -67,7 +67,7 @@ export const achievementContent = {
             {
               value: "100%",
               label:
-                "of children believe that the teachers are approachable and enjoy class time.",
+                "of children believe that the teachers are approachable and they enjoy class time.",
             },
             {
               value: "98%",
@@ -143,7 +143,7 @@ export const achievementContent = {
             {
               title: "Meticulous Essay Revision",
               description:
-                "We are the only institution in Victoria that offers dedicated, thorough essay revisions. Our teachers help refine each student's essay—from structure and logic to grammar and vocabulary—with some revised essays even being selected as model examples by the VCAA in 2023.",
+                "We are the only institution in Victoria that offers dedicated, thorough essay revisions. Our teachers help refine each student's essay from structure and logic to grammar and vocabulary. Some revised essays were even being selected as model examples by the VCAA in 2023.",
             },
             {
               title: "Focus on SACs in English",
@@ -173,7 +173,7 @@ export const achievementContent = {
           </span>
         ),
         block1: {
-          title: "We don't boast ourselves, let the Numbers Speak.",
+          title: "We don’t boast about ourselves. Numbers speak for us.",
           points: [
             "In the 2023 VCE Math Exam:",
             "**4** Chinese background students achieved **perfect score 50 in SM**, with **2 coming from Austin Education**.",
@@ -213,7 +213,7 @@ export const achievementContent = {
           ],
         },
         block4: {
-          title: "Why is Austin Education Math Dominating Victoria?",
+          title: "Why Is Austin Education Math Dominating Victoria?",
           points: [
             {
               title: "Precise Exam Forecasting:",
@@ -223,7 +223,7 @@ export const achievementContent = {
             {
               title: "Unmatched Focus on SACs:",
               description:
-                "Austin Education Math is the only institution in Victoria that incorporates SACs into its curriculum and syllabus. This unique focus ensures that many top SAC ranks in day school math exams come from our program.",
+                "Austin Education is the only institution in Victoria that incorporates SACs into its curriculum and syllabus. This unique focus ensures that many top SAC ranks in day school math exams come from our program.",
             },
           ],
         },
@@ -283,7 +283,7 @@ export const achievementContent = {
             {
               title: "Customized Bound Reference",
               description:
-                "We offer a personalised Bound Reference that neither day schools nor students can create on their own. This resource includes all exam points predicted by our teachers.",
+                "We offer a personalised bound reference that neither day schools nor students can create on their own. This resource includes all exam points predicted by our teachers.",
             },
             {
               title: "Teacher Credentials",
@@ -328,9 +328,9 @@ export const achievementContent = {
           },
         ],
         additionalInfo: [
-          "Comprehensive UCAT preparation with personalized strategies",
+          "Comprehensive UCAT preparation with personalised strategies",
           "Expert guidance on medical school applications and interviews",
-          "ATAR optimization strategies tailored for medical aspirants",
+          "ATAR optimisation strategies tailored for medical aspirants",
         ],
         buttonText: "Learn More About Our MD Program",
       },
@@ -450,7 +450,7 @@ export const achievementContent = {
         block1: {
           title: "Primary Education Focus",
           content:
-            "At the Australian primary school stage, the most important goal is to cultivate good study habits and the interest of learning. At Austin Education's primary school program, we offer high-quality classes in Mathematics, English, Chinese, and Writing. Our teaching content is based on the day school curriculum and is enhanced at different levels to suit each child's abilities. All our primary school teachers at Austin Education are very approachable, ensuring that children experience both engaging learning and personalized attention.",
+            "At the Australian primary school stage, the most important goal is to cultivate good study habits and the interest of learning. Austin Education's primary school programs offer high-quality classes in Mathematics, English, Chinese, and Writing. Our teaching content is based on the day school curriculum and tailored for different levels to suit each child's abilities. All our primary school teachers at Austin Education are very approachable, ensuring that children experience both engaging learning and personalised attention.",
         },
         block2: {
           title: "Parent & Student Feedback",

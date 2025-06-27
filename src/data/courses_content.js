@@ -509,7 +509,7 @@ export const coursesContent = {
             "20 complete practice papers",
             "1000+ practice questions in the question bank",
             "4 full-length mock exams",
-            "4 topic tests",
+            "4 topic-based tests",
             "2 original practice papers",
             "2 one-on-one post-exam paper analysis sessions",
             "Recorded lessons",
@@ -587,7 +587,7 @@ export const coursesContent = {
             "1 exclusive Austin Education textbooks",
             "1 exclusive Austin Education workbooks",
             "1 hours of weekly homework",
-            "3 stage/topic assessments",
+            "3 stage/assessments topic-based",
             "2 semester assessment exams",
             "4 exam reports",
             "Recorded lessons",
@@ -660,7 +660,7 @@ export const coursesContent = {
             "5+ full-length Year 12 VCE exam practice sessions",
             "6+ SAC-focused revision sessions",
             "Tailored SAC-preparation materials aligned with individual school preferences and themes",
-            "Collection of high-scoring VCE sample essays (45+ ATAR level)",
+            "Collection of high-scoring VCE sample essays (45+ English / EAL)",
             "Exclusive EAL listening practice workbook",
             "Austin-designed full-scale mock exams",
             "Complete workbook set for Creating and Presenting Texts",
@@ -693,7 +693,7 @@ export const coursesContent = {
           ],
         },
         "vce-maths-methods-unit1-4": {
-          title: "VCE Mathematical Methods Unit1-4",
+          title: "VCE Mathematical Methods Unit 1-4",
           slug: "vce-maths-methods-unit1-4",
           content: [
             "2-hour weekly group class",
@@ -715,7 +715,7 @@ export const coursesContent = {
           ],
         },
         "vce-specialist-maths-unit1-4": {
-          title: "VCE Specialist Mathematics Unit1-4",
+          title: "VCE Specialist Mathematics Unit 1-4",
           slug: "vce-specialist-maths-unit1-4",
           content: [
             "2-hour weekly group class",
@@ -737,7 +737,7 @@ export const coursesContent = {
           ],
         },
         "vce-general-maths-unit-1-4": {
-          title: "VCE General Mathematics Unit1-4",
+          title: "VCE General Mathematics Unit 1-4",
           slug: "vce-general-maths-unit-1-4",
           content: [
             "2 hours of weekly class sessions",
@@ -753,7 +753,7 @@ export const coursesContent = {
           ],
         },
         "vce-chemistry-unit-1-4": {
-          title: "VCE Chemistry Unit1-4",
+          title: "VCE Chemistry Unit 1-4",
           slug: "vce-chemistry-unit-1-4",
           content: [
             "2 hours of weekly class sessions",
@@ -769,7 +769,7 @@ export const coursesContent = {
           ],
         },
         "vce-biology-unit-1-4": {
-          title: "VCE Biology Unit1-4",
+          title: "VCE Biology Unit 1-4",
           slug: "vce-biology-unit-1-4",
           content: [
             "2 hours of weekly class sessions",
@@ -786,7 +786,7 @@ export const coursesContent = {
           ],
         },
         "vce-physics-unit-1-4": {
-          title: "VCE Physics Unit1-4",
+          title: "VCE Physics Unit 1-4",
           slug: "vce-physics-unit-1-4",
           content: [
             "2-hour weekly group class",
@@ -1109,7 +1109,7 @@ export const coursesContent = {
       title: "Well-Structured Course Content",
       subtitle: "Six Core Strengths of Austin Education’s Curriculum",
       description:
-        "Austin Education's courses are buit on six core principles: comprehensive coverage, appropriate depth, clear objectives, structured progression, real-time updates, and personalised design. These elements work together to support students in making significant academic progress while equipping them for future success.",
+        "Austin Education's courses are built on six core principles: comprehensive coverage, appropriate depth, clear objectives, structured progression, real-time updates, and personalised design. These elements work together to support students in making significant academic progress while equipping them for future success.",
       features: [
         "Thorough Coverage: A Complete Learning Experience; Our courses comprehensively address all essential areas of the exam syllabus, ensuring a solid academic foundation. With a structured progression tailored to different learning levels, students can advance with confidence. Real-world applications and interdisciplinary links further enrich their understanding.",
         "In-Depth Learning: Beyond School Standards; Our courses go beyond regular school lessons, offering more advanced content and effective exam techniques. We focus on developing critical thinking and problem-solving skills, with a well-planned structure that helps students improve steadily and gain full mastery of the subject.",
@@ -1220,7 +1220,7 @@ export const coursesContent = {
         },
         {
           value: "y10-y12",
-          title: "Y10–Y12 | Maximising VCE Success with Tailored Teaching",
+          title: "Maximising VCE Success with Tailored Teaching",
           description:
             "The senior years play a key role in shaping students’ academic outcomes and future pathways. Austin Education provides structured support to help students refine their knowledge, develop effective exam strategies, and work towards achieving strong VCE results.",
           contents: [
@@ -1453,7 +1453,7 @@ export const coursesContent = {
           {
             title: "Close Parent–School Communication",
             description:
-              "Through regular progress reports and parent-teacher meetings, we provide real-time feedback on students' learning progress and maintain close communication with parents to collaboratively optimise learning plans.",
+              "Through regular progress reports and parent-teacher meetings, we provide prompt feedback on students' learning progress and maintain close communication with parents to collaboratively optimise learning plans.",
             icon: "/courses/icons/sat icon 2.svg",
           },
           {
