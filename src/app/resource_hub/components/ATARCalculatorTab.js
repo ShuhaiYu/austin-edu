@@ -717,7 +717,7 @@ export const ATARCalculatorTab = () => {
                 variant="outline" 
                 size="sm" 
                 onClick={resetAll} 
-                className="bg-white hover:bg-gray-50 border-0"
+                className="bg-white hover:bg-gray-50 hover:text-primary border-0"
               >
                 {t.reset}
               </Button>
