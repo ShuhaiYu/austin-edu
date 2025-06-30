@@ -368,12 +368,10 @@ const RecommendationsPanel = ({ subjects, results, lang }) => {
   );
 };
 
-// 保持原有的大学课程选择组件（无需修改）
+// 更新的大学课程选择组件 - 统一显示所有课程
 const UniversityOptions = ({ atar, lang }) => {
   const t = content[lang];
   const [showMore, setShowMore] = useState(false);
-  
-  if (atar === 0) return null;
   
   if (atar === 0) return null;
   
@@ -401,105 +399,23 @@ const UniversityOptions = ({ atar, lang }) => {
       targetCourses = eligibleCourses;
     }
     
-    // 进一步优化：优先显示知名大学和热门专业
-    const priorityInstitutions = ['University of Melbourne', 'Monash University', 'RMIT University', 'Deakin University'];
-    const priorityCourses = targetCourses.filter(c => 
-      priorityInstitutions.some(inst => c.institution.includes(inst))
-    );
-    const otherCourses = targetCourses.filter(c => 
-      !priorityInstitutions.some(inst => c.institution.includes(inst))
-    );
+    // // 进一步优化：优先显示知名大学和热门专业
+    // const priorityInstitutions = ['University of Melbourne', 'Monash University', 'RMIT University', 'Deakin University'];
+    // const priorityCourses = targetCourses.filter(c => 
+    //   priorityInstitutions.some(inst => c.institution.includes(inst))
+    // );
+    // const otherCourses = targetCourses.filter(c => 
+    //   !priorityInstitutions.some(inst => c.institution.includes(inst))
+    // );
     
-    // 合并并限制数量
-    const finalCourses = [...priorityCourses, ...otherCourses];
+    // // 合并并限制数量
+    // const finalCourses = [...priorityCourses, ...otherCourses];
     
-    return showMore ? finalCourses : finalCourses.slice(0, 12); // 默认显示12个
+    return showMore ? targetCourses : targetCourses.slice(0, 12); // 默认显示12个
   };
   
   const relevantCourses = getRelevantCourses();
-  const totalRelevantCourses = showMore ? UNIVERSITY_PREREQUISITES.filter(course => atar >= course.score).length : relevantCourses.length;
-  
-  // 按分数范围分组显示的课程
-  const coursesByLevel = {
-    stretch: relevantCourses.filter(c => c.score > atar - 5), // 冲刺课程
-    match: relevantCourses.filter(c => c.score <= atar - 5 && c.score >= atar - 15), // 匹配课程  
-    safety: relevantCourses.filter(c => c.score < atar - 15) // 保底课程
-  };
-
-  const LevelSection = ({ title, courses, color, icon, description }) => {
-    if (courses.length === 0) return null;
-    
-    return (
-      <div className="space-y-3">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="text-sm">{icon}</span>
-          <div>
-            <h5 className="font-semibold text-sm text-gray-700">{title}</h5>
-            <p className="text-xs text-gray-500">{description}</p>
-          </div>
-          <Badge variant="outline" className={`text-xs ${color} border-0 ml-auto`}>
-            {courses.length}
-          </Badge>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
-          {courses.slice(0, showMore ? courses.length : Math.min(6, courses.length)).map((course, index) => (
-            <div key={index} className="p-4 bg-white rounded-lg border-0 shadow-sm space-y-3 h-full flex flex-col">
-              {/* 课程标题和分数要求 */}
-              <div className="flex-1">
-                <div className="flex justify-between items-start gap-2 mb-2">
-                  <h4 className="font-medium text-sm text-gray-900 leading-tight flex-1">
-                    {course.name}
-                  </h4>
-                  <Badge 
-                    className={`text-xs border-0 whitespace-nowrap ${
-                      course.score === 0 
-                        ? 'bg-gray-100 text-gray-600' 
-                        : course.score > atar - 5
-                        ? 'bg-primary text-white'
-                        : course.score >= atar - 15
-                        ? 'bg-primary/70 text-white'
-                        : 'bg-primary/50 text-white'
-                    }`}
-                  >
-                    {course.score === 0 ? 'No ATAR' : `${course.score}`}
-                  </Badge>
-                </div>
-                
-                {/* 机构和地点信息 */}
-                <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
-                  <div className="flex items-center gap-1">
-                    <span className="font-medium">{course.institution}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <span>📍 {course.location}</span>
-                  </div>
-                </div>
-              </div>
-              
-              {/* 入学要求 */}
-              <div className="mt-auto">
-                {course.requisites && course.requisites !== "None" ? (
-                  <div className="text-xs text-gray-700 bg-primary/5 p-2 rounded border-0">
-                    <span className="font-medium text-gray-800">
-                      {lang === 'en' ? 'Prerequisites: ' : '入学要求: '}
-                    </span>
-                    <span className="leading-relaxed">{course.requisites}</span>
-                  </div>
-                ) : (
-                  <div className="text-xs text-primary bg-primary/10 p-2 rounded border-0">
-                    <span className="font-medium">
-                      {lang === 'en' ? '✓ No specific prerequisites required' : '✓ 无特殊入学要求'}
-                    </span>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-  };
+  const totalRelevantCourses = UNIVERSITY_PREREQUISITES.filter(course => atar >= course.score).length;
   
   return (
     <Card className="border-0 bg-primary/5">
@@ -520,32 +436,82 @@ const UniversityOptions = ({ atar, lang }) => {
       <CardContent className="space-y-6">
         {relevantCourses.length > 0 ? (
           <>
-            <LevelSection 
-              title={lang === 'en' ? "Stretch Goals" : "冲刺目标"}
-              courses={coursesByLevel.stretch}
-              color="bg-primary/20 text-primary"
-              icon="🚀"
-              description={lang === 'en' ? "Ambitious but achievable with strong performance" : "需要优异表现的挑战性课程"}
-            />
+            {/* 统一显示所有课程 */}
+            <div className="space-y-3">
+              <div className="flex items-center gap-2 mb-3">
+                <span className="text-sm">🎯</span>
+                <div>
+                  <h5 className="font-semibold text-sm text-gray-700">
+                    {lang === 'en' ? "Good Matches" : "合适选择"}
+                  </h5>
+                  <p className="text-xs text-gray-500">
+                    {lang === 'en' ? "Well-suited to your current ATAR level" : "与您当前ATAR水平匹配的课程"}
+                  </p>
+                </div>
+                <Badge variant="outline" className="text-xs bg-primary/15 text-primary border-0 ml-auto">
+                  {relevantCourses.length}
+                </Badge>
+              </div>
+              
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+                {relevantCourses.map((course, index) => (
+                  <div key={index} className="p-4 bg-white rounded-lg border-0 shadow-sm space-y-3 h-full flex flex-col">
+                    {/* 课程标题和分数要求 */}
+                    <div className="flex-1">
+                      <div className="flex justify-between items-start gap-2 mb-2">
+                        <h4 className="font-medium text-sm text-gray-900 leading-tight flex-1">
+                          {course.name}
+                        </h4>
+                        <Badge 
+                          className={`text-xs border-0 whitespace-nowrap ${
+                            course.score === 0 
+                              ? 'bg-gray-100 text-gray-600' 
+                              : course.score > atar - 5
+                              ? 'bg-primary text-white'
+                              : course.score >= atar - 15
+                              ? 'bg-primary/70 text-white'
+                              : 'bg-primary/50 text-white'
+                          }`}
+                        >
+                          {course.score === 0 ? 'No ATAR' : `${course.score}`}
+                        </Badge>
+                      </div>
+                      
+                      {/* 机构和地点信息 */}
+                      <div className="flex items-center justify-between text-xs text-gray-600 mb-3">
+                        <div className="flex items-center gap-1">
+                          <span className="font-medium">{course.institution}</span>
+                        </div>
+                        <div className="flex items-center gap-1">
+                          <span>📍 {course.location}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    {/* 入学要求 */}
+                    <div className="mt-auto">
+                      {course.requisites && course.requisites !== "None" ? (
+                        <div className="text-xs text-gray-700 bg-primary/5 p-2 rounded border-0">
+                          <span className="font-medium text-gray-800">
+                            {lang === 'en' ? 'Prerequisites: ' : '入学要求: '}
+                          </span>
+                          <span className="leading-relaxed">{course.requisites}</span>
+                        </div>
+                      ) : (
+                        <div className="text-xs text-primary bg-primary/10 p-2 rounded border-0">
+                          <span className="font-medium">
+                            {lang === 'en' ? '✓ No specific prerequisites required' : '✓ 无特殊入学要求'}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
             
-            <LevelSection 
-              title={lang === 'en' ? "Good Matches" : "合适选择"}
-              courses={coursesByLevel.match}
-              color="bg-primary/15 text-primary"
-              icon="🎯"
-              description={lang === 'en' ? "Well-suited to your current ATAR level" : "与您当前ATAR水平匹配的课程"}
-            />
-            
-            <LevelSection 
-              title={lang === 'en' ? "Safe Options" : "保底选择"}
-              courses={coursesByLevel.safety}
-              color="bg-primary/10 text-primary"
-              icon="✅"
-              description={lang === 'en' ? "Secure options with comfortable entry requirements" : "入学要求宽松的安全选择"}
-            />
-            
-            {/* 全局显示更多/收起按钮 */}
-            {!showMore && (coursesByLevel.stretch.length > 6 || coursesByLevel.match.length > 6 || coursesByLevel.safety.length > 6) && (
+            {/* 显示更多/收起按钮 */}
+            {!showMore && totalRelevantCourses > 12 && (
               <div className="text-center pt-4">
                 <Button 
                   variant="outline" 
@@ -553,7 +519,7 @@ const UniversityOptions = ({ atar, lang }) => {
                   onClick={() => setShowMore(true)}
                   className="bg-white text-primary border-primary/20 hover:bg-primary/5"
                 >
-                  {lang === 'en' ? 'Show more courses' : '显示更多课程'}
+                  {lang === 'en' ? `Show more courses` : `显示更多课程`}
                 </Button>
               </div>
             )}
@@ -589,7 +555,6 @@ const UniversityOptions = ({ atar, lang }) => {
       </CardContent>
     </Card>
   );
-
 };
 
 export const ATARCalculatorTab = () => {

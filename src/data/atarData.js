@@ -633,7 +633,16 @@ export const calculateScaledScore = (rawScore, subjectId) => {
   const scores = [20, 25, 30, 35, 40, 45, 50];
   
   // 边界情况处理
-  if (rawScore <= 20) return mapping[20];
+  if (rawScore < 20) {
+    const lowerScore = 20;
+    const upperScore = 25;
+    const lowerScaled = mapping[lowerScore];
+    const upperScaled = mapping[upperScore];
+    const ratio = (rawScore - lowerScore) / (upperScore - lowerScore);
+    let scaled = lowerScaled + ratio * (upperScaled - lowerScaled);
+    if (scaled < 0) scaled = 0;
+    return Math.round(scaled * 10) / 10; // 保留一位小数
+  }
   if (rawScore >= 50) return mapping[50];
   
   // 在映射点之间进行线性插值
