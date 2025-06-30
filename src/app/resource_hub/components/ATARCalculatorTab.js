@@ -517,7 +517,7 @@ const UniversityOptions = ({ atar, lang }) => {
                   variant="outline" 
                   size="sm" 
                   onClick={() => setShowMore(true)}
-                  className="bg-white text-primary border-primary/20 hover:bg-primary/5"
+                  className="bg-white text-primary border-primary/20 hover:bg-primary/5 hover:text-primary"
                 >
                   {lang === 'en' ? `Show more courses` : `显示更多课程`}
                 </Button>
@@ -530,7 +530,7 @@ const UniversityOptions = ({ atar, lang }) => {
                   variant="ghost" 
                   size="sm" 
                   onClick={() => setShowMore(false)}
-                  className="text-primary hover:bg-primary/10"
+                  className="text-primary hover:bg-primary/10 hover:text-primary"
                 >
                   {lang === 'en' ? 'Show less' : '收起'}
                 </Button>
