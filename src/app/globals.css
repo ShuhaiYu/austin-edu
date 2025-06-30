@@ -180,14 +180,14 @@
 
 /* 左侧向上滚动 */
 .scroll-up-smooth {
-  animation: scrollUpSmooth 12s linear infinite;
+  animation: scrollUpSmooth 18s linear infinite;
   will-change: transform;
   transform: translateZ(0);
 }
 
 /* 右侧向下滚动 */
 .scroll-down-smooth {
-  animation: scrollDownSmooth 15s linear infinite;
+  animation: scrollDownSmooth 24s linear infinite;
   will-change: transform;
   transform: translateZ(0);
 }
@@ -211,27 +211,6 @@
   );
   transform: translateZ(0);
 }
-
-/* 速度调整 - 修改这些duration值来改变速度 */
-/* 
-更快速度示例：
-.scroll-up-smooth {
-  animation: scrollUpSmooth 5s linear infinite;
-}
-
-.scroll-down-smooth {
-  animation: scrollDownSmooth 6s linear infinite;
-}
-
-更慢速度示例：
-.scroll-up-smooth {
-  animation: scrollUpSmooth 12s linear infinite;
-}
-
-.scroll-down-smooth {
-  animation: scrollDownSmooth 15s linear infinite;
-}
-*/
 
 /* 性能优化 */
 .scroll-up-smooth,
