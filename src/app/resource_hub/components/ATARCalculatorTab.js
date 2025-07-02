@@ -16,7 +16,7 @@ import { useContext, useState, useRef, useEffect } from "react";
 import { LangContext } from "@/app/layout";
 import { motion, AnimatePresence } from "framer-motion";
 import { useDebouncedCallback } from "use-debounce";
-import { AlertCircle, BookOpen, Calculator, TrendingUp, Lightbulb, Trophy, Target, Info } from "lucide-react";
+import { AlertCircle, BookOpen, Calculator, TrendingUp, Lightbulb, Trophy, Target, Info, X } from "lucide-react";
 
 // 导入更新的数据管理模块
 import {
@@ -44,6 +44,7 @@ const content = {
     disclaimer: "Based on official 2024 VTAC data. Actual ATAR may vary based on cohort performance.",
     dataVersion: "Data Version",
     englishRequired: "English subject required",
+    minimumSubjects: "At least 4 subjects required for ATAR calculation",
     primary4: "Primary 4 (100%)",
     increment: "10% Increment",
     notCounted: "Not Counted",
@@ -79,6 +80,7 @@ const content = {
     disclaimer: "基于2024年官方VTAC数据。实际ATAR可能因考生整体表现而有所不同。",
     dataVersion: "数据版本",
     englishRequired: "需要英语科目",
+    minimumSubjects: "ATAR计算至少需要4门科目",
     primary4: "主要4门 (100%)",
     increment: "10%加分",
     notCounted: "不计入",
@@ -210,17 +212,39 @@ const calculateATAR = (subjects) => {
   };
 };
 
+// 新增函数：检查学科选择状态
+const checkSubjectStatus = (subjects) => {
+  // 检查已选择的科目（不管分数）
+  const selectedSubjects = subjects.filter(s => s.subjectId);
+  
+  // 检查有效科目（有科目且分数>0）
+  const validSubjects = subjects.filter(s => s.subjectId && s.rawScore > 0);
+  
+  // 检查是否有英语科目（在已选择的科目中检查，不管分数）
+  const hasEnglishSelected = selectedSubjects.some(s => {
+    const subjectData = VCE_SUBJECTS_DB.find(sub => sub.id === s.subjectId);
+    return subjectData?.isEnglish || false;
+  });
+  
+  return {
+    selectedCount: selectedSubjects.length,
+    validCount: validSubjects.length,
+    hasEnglishSelected: hasEnglishSelected,
+    needsMoreSubjects: validSubjects.length < 4,
+    needsEnglish: !hasEnglishSelected && selectedSubjects.length > 0
+  };
+};
+
 const SubjectRow = ({ subject, onUpdate, onRemove, lang }) => {
   const t = content[lang];
   const [selectedSubject, setSelectedSubject] = useState(subject.subjectId || "");
-  const [rawScore, setRawScore] = useState(subject.rawScore || "");
+  const [rawScore, setRawScore] = useState(subject.rawScore || 30);
   
   const scaledScore = selectedSubject && rawScore ? 
     calculateScaledScore(Number(rawScore), selectedSubject) : 0;
 
   const subjectData = VCE_SUBJECTS_DB.find(s => s.id === selectedSubject);
   
-  // 按类别分组科目
   const subjectsByCategory = VCE_SUBJECTS_DB.reduce((acc, subject) => {
     if (!acc[subject.category]) acc[subject.category] = [];
     acc[subject.category].push(subject);
@@ -232,7 +256,7 @@ const SubjectRow = ({ subject, onUpdate, onRemove, lang }) => {
     onUpdate({ 
       ...subject, 
       subjectId, 
-      rawScore: Number(rawScore) || 0,
+      rawScore: Number(rawScore) || 30,
       scaledScore 
     });
   };
@@ -251,83 +275,76 @@ const SubjectRow = ({ subject, onUpdate, onRemove, lang }) => {
   };
 
   return (
-    <Card className="border-0 bg-gray-50/50 shadow-sm">
-      <CardContent className="p-4">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 items-center">
-          {/* 科目选择 */}
-          <div className="md:col-span-2">
-            <Select value={selectedSubject} onValueChange={handleSubjectChange}>
-              <SelectTrigger className="w-full bg-white border-0 text-center">
-                <SelectValue placeholder={t.selectSubject} />
-              </SelectTrigger>
-              <SelectContent>
-                {Object.entries(subjectsByCategory).map(([category, subjects]) => (
-                  <div key={category}>
-                    <div className="px-2 py-1.5 text-sm font-semibold text-primary">
-                      {t.categories[category]}
-                    </div>
-                    {subjects.map((sub) => (
-                      <SelectItem key={sub.id} value={sub.id}>
-                        <div className="flex items-center gap-2">
-                          {sub.name}
-                          {sub.isEnglish && (
-                            <Badge className="text-xs bg-primary text-white border-0">
-                              English
-                            </Badge>
-                          )}
-                        </div>
-                      </SelectItem>
-                    ))}
-                    <Separator className="my-1" />
-                  </div>
-                ))}
-              </SelectContent>
-            </Select>
-          </div>
-
-          {/* 分数输入区域 */}
-          <div className="flex justify-center">
-            <div className="text-center space-y-1">
-              <label className="text-xs text-muted-foreground block">{t.rawScore}</label>
-              <Input
-                type="number"
-                placeholder={`0-${subjectData?.maxScore || 50}`}
-                value={rawScore}
-                onChange={handleScoreChange}
-                className="w-16 text-center bg-white border-0"
-                min="0"
-                max={subjectData?.maxScore || 50}
-              />
-            </div>
-          </div>
-
-          {/* 缩放分数显示 */}
-          <div className="flex justify-center items-center gap-4">
-            {selectedSubject && rawScore > 0 && (
-              <div className="text-center space-y-1">
-                <label className="text-xs text-muted-foreground block">{t.scaledScore}</label>
-                <div className="flex flex-col items-center gap-1">
-                  <div className="w-16 h-9 flex items-center justify-center bg-primary/10 text-primary rounded text-sm font-semibold border-0">
-                    <AnimatedNumber value={scaledScore} />
-                  </div>
-                  
+    <div className="grid grid-cols-8 gap-2 py-2 px-1 items-center hover:bg-gray-50/70 rounded">
+      {/* 科目选择 */}
+      <div className="col-span-4">
+        <Select value={selectedSubject} onValueChange={handleSubjectChange}>
+          <SelectTrigger className="w-full border-0 bg-gray-50 hover:bg-white h-8 text-sm">
+            <SelectValue placeholder={t.selectSubject} />
+          </SelectTrigger>
+          <SelectContent>
+            {Object.entries(subjectsByCategory).map(([category, subjects]) => (
+              <div key={category}>
+                <div className="px-2 py-1.5 text-sm font-semibold text-primary">
+                  {t.categories[category]}
                 </div>
+                {subjects.map((sub) => (
+                  <SelectItem key={sub.id} value={sub.id}>
+                    <div className="flex items-center gap-2">
+                      {sub.name}
+                      {sub.isEnglish && (
+                        <Badge className="text-xs bg-primary text-white border-0">English</Badge>
+                      )}
+                    </div>
+                  </SelectItem>
+                ))}
+                <Separator className="my-1" />
               </div>
-            )}
-            
-            {/* 删除按钮 */}
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-red-600 hover:text-red-800 hover:bg-red-50 border-0 ml-2"
-              onClick={onRemove}
-            >
-              ×
-            </Button>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
+
+      {/* 原始分数 */}
+      <div className="col-span-1 text-center">
+        <Input
+          type="number"
+          value={rawScore}
+          onChange={handleScoreChange}
+          className="w-full text-center border-0 bg-gray-50 hover:bg-white h-8 text-sm"
+          min="0"
+          max={subjectData?.maxScore || 50}
+        />
+      </div>
+
+      {/* 箭头 */}
+      <div className="col-span-1 text-center text-gray-400 text-sm">→</div>
+
+      {/* 缩放分数 */}
+      <div className="col-span-1 text-center">
+        {selectedSubject && rawScore > 0 ? (
+          <div className="w-full h-8 flex items-center justify-center bg-primary/10 text-primary rounded text-sm font-medium">
+            <AnimatedNumber value={scaledScore} />
           </div>
-        </div>
-      </CardContent>
-    </Card>
+        ) : (
+          <div className="w-full h-8 flex items-center justify-center bg-gray-100 text-gray-400 rounded text-sm">
+            --
+          </div>
+        )}
+      </div>
+
+      {/* 删除按钮 */}
+      <div className="col-span-1 text-center">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="text-gray-400 hover:text-red-500 hover:bg-red-200 h-6 w-6 p-0"
+          onClick={onRemove}
+        >
+          <X className="w-4 h-4" />
+        </Button>
+      </div>
+    </div>
   );
 };
 
@@ -340,13 +357,13 @@ const RecommendationsPanel = ({ subjects, results, lang }) => {
 
   return (
     <Card className="border-0 bg-primary/5">
-      <CardHeader>
+      <CardHeader className="pb-4">
         <CardTitle className="flex items-center gap-2 text-base">
           <Lightbulb className="w-4 h-4 text-primary" />
           {t.recommendations}
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-3">
+      <CardContent className="space-y-3 pt-0">
         {recommendations.map((rec, index) => (
           <div key={index} className="p-3 bg-white rounded-lg border-0 shadow-sm">
             <div className="flex items-start gap-2">
@@ -399,18 +416,6 @@ const UniversityOptions = ({ atar, lang }) => {
       targetCourses = eligibleCourses;
     }
     
-    // // 进一步优化：优先显示知名大学和热门专业
-    // const priorityInstitutions = ['University of Melbourne', 'Monash University', 'RMIT University', 'Deakin University'];
-    // const priorityCourses = targetCourses.filter(c => 
-    //   priorityInstitutions.some(inst => c.institution.includes(inst))
-    // );
-    // const otherCourses = targetCourses.filter(c => 
-    //   !priorityInstitutions.some(inst => c.institution.includes(inst))
-    // );
-    
-    // // 合并并限制数量
-    // const finalCourses = [...priorityCourses, ...otherCourses];
-    
     return showMore ? targetCourses : targetCourses.slice(0, 12); // 默认显示12个
   };
   
@@ -419,7 +424,7 @@ const UniversityOptions = ({ atar, lang }) => {
   
   return (
     <Card className="border-0 bg-primary/5">
-      <CardHeader>
+      <CardHeader className="pb-4">
         <CardTitle className="flex items-center gap-2 text-lg">
           <Trophy className="w-5 h-5 text-primary" />
           {t.universityOptions}
@@ -433,7 +438,7 @@ const UniversityOptions = ({ atar, lang }) => {
             : '根据您的ATAR分数和学术背景精选的课程'}
         </div>
       </CardHeader>
-      <CardContent className="space-y-6">
+      <CardContent className="space-y-6 pt-0">
         {relevantCourses.length > 0 ? (
           <>
             {/* 统一显示所有课程 */}
@@ -565,7 +570,7 @@ export const ATARCalculatorTab = () => {
     Array.from({ length: 4 }, (_, i) => ({ 
       id: Date.now() + i, 
       subjectId: "", 
-      rawScore: 0,
+      rawScore: 30,
       scaledScore: 0 
     }))
   );
@@ -583,7 +588,7 @@ export const ATARCalculatorTab = () => {
       { 
         id: Date.now(), 
         subjectId: "", 
-        rawScore: 0,
+        rawScore: 30,
         scaledScore: 0 
       },
     ]);
@@ -605,7 +610,7 @@ export const ATARCalculatorTab = () => {
 
   const resetAll = () => {
     setSubjects([
-      { id: Date.now(), subjectId: "", rawScore: 0, scaledScore: 0 }
+      { id: Date.now(), subjectId: "", rawScore: 30, scaledScore: 0 }
     ]);
     setResults({ aggregate: 0, atar: 0, breakdown: [], hasEnglish: false });
   };
@@ -619,6 +624,9 @@ export const ATARCalculatorTab = () => {
   useEffect(() => {
     debouncedCalculate();
   }, [subjects, debouncedCalculate]);
+
+  // 检查学科选择状态
+  const subjectStatus = checkSubjectStatus(subjects);
 
   const getTypeLabel = (type) => {
     switch(type) {
@@ -642,7 +650,7 @@ export const ATARCalculatorTab = () => {
     <div className="mx-auto space-y-6">
       {/* Header with Data Version Info */}
       <Card className="border-0 bg-white shadow-lg">
-        <CardHeader className="text-center">
+        <CardHeader className="text-center pb-4">
           <CardTitle className="flex items-center justify-center gap-2 text-2xl">
             <Calculator className="w-6 h-6 text-primary" />
             {t.title}
@@ -663,7 +671,7 @@ export const ATARCalculatorTab = () => {
       {/* Main Content - Subjects and Results */}
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
         {/* Left Section - Subjects (3/5 width) */}
-        <div className="lg:col-span-3 space-y-4">
+        <div className="lg:col-span-3 space-y-3">
           <div className="flex items-center justify-between">
             <h3 className="font-semibold flex items-center gap-2">
               <BookOpen className="w-5 h-5 text-primary" />
@@ -689,19 +697,29 @@ export const ATARCalculatorTab = () => {
             </div>
           </div>
 
-          {/* English Warning */}
-          {!results.hasEnglish && subjects.some(s => s.subjectId) && (
-            <Card className="border-0 bg-amber-50 shadow-sm">
-              <CardContent className="p-4">
-                <div className="flex items-center gap-2 text-amber-800">
-                  <AlertCircle className="w-4 h-4" />
-                  <span className="text-sm font-medium">{t.englishRequired}</span>
+          {/* 更新的警告信息 - 更紧凑的设计 */}
+          {(subjectStatus.needsEnglish || subjectStatus.needsMoreSubjects) && (
+            <div className="space-y-2">
+              {subjectStatus.needsEnglish && (
+                <div className="flex items-center gap-2 p-2 bg-amber-50 rounded border-l-4 border-amber-400">
+                  <AlertCircle className="w-4 h-4 text-amber-600" />
+                  <span className="text-sm font-medium text-amber-800">{t.englishRequired}</span>
                 </div>
-              </CardContent>
-            </Card>
+              )}
+              
+              {subjectStatus.needsMoreSubjects && (
+                <div className="flex items-center gap-2 p-2 bg-blue-50 rounded border-l-4 border-blue-400">
+                  <Info className="w-4 h-4 text-blue-600" />
+                  <span className="text-sm font-medium text-blue-800">{t.minimumSubjects}</span>
+                  <Badge variant="outline" className="ml-auto bg-blue-100 text-blue-700 border-0 text-xs">
+                    {subjectStatus.validCount}/4
+                  </Badge>
+                </div>
+              )}
+            </div>
           )}
 
-          <div className="space-y-3">
+          <div className="space-y-2">
             {subjects.map((subject) => (
               <SubjectRow
                 key={subject.id}
@@ -718,13 +736,13 @@ export const ATARCalculatorTab = () => {
         <div className="lg:col-span-2 space-y-4">
           {/* ATAR Results */}
           <Card className="border-0 bg-white shadow-lg">
-            <CardHeader>
+            <CardHeader className="pb-4">
               <CardTitle className="flex items-center gap-2 text-lg">
                 <TrendingUp className="w-5 h-5 text-primary" />
                 {t.results}
               </CardTitle>
             </CardHeader>
-            <CardContent className="space-y-6">
+            <CardContent className="space-y-6 pt-0">
               {/* ATAR Display */}
               <div className="text-center p-6 bg-gradient-to-br from-primary/10 to-primary/20 rounded-lg border-0">
                 <div className="text-sm text-muted-foreground mb-1">{t.predictedATAR}</div>
