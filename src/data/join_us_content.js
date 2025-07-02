@@ -63,7 +63,7 @@ export const joinUsContent = {
           ],
         },
         {
-          title: "VCE English Teacher",
+          title: "VCE English / EAL Teacher",
           responsibilities: [
             "Teach English First Language, EAL, Literature, or English Language at the VCE level.",
             "Guide students in essay writing, textual analysis, and exam techniques.",
@@ -251,7 +251,7 @@ export const joinUsContent = {
                 "Year 1-9 English Teacher (First Language/EAL)",
                 "Year 1-9 Mathematics Teacher",
                 "Year 7-9 Science Teacher",
-                "VCE English Teacher",
+                "VCE English / EAL Teacher",
                 "VCE Mathematics Teacher",
                 "VCE Science Teacher",
                 "IB English Teacher",
