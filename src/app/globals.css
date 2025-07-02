@@ -192,6 +192,20 @@
   transform: translateZ(0);
 }
 
+/* 新增：hover时暂停动画 */
+.scroll-container:hover .scroll-up-smooth {
+  animation-play-state: paused;
+}
+
+.scroll-container:hover .scroll-down-smooth {
+  animation-play-state: paused;
+}
+
+.scroll-up-smooth,
+.scroll-down-smooth {
+  transition: transform 0.3s ease-out;
+}
+
 /* 滚动容器 */
 .scroll-container {
   overflow: hidden;
@@ -227,6 +241,15 @@
   
   .scroll-down-smooth {
     animation-duration: 12s;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  .scroll-container:hover .scroll-up-smooth,
+  .scroll-container:hover .scroll-down-smooth,
+  .hero-carousel-container:hover .scroll-up-smooth,
+  .hero-carousel-container:hover .scroll-down-smooth {
+    animation-play-state: running;
   }
 }
 

@@ -73,7 +73,7 @@ export default function Hero() {
           </div>
 
           {/* 右侧双列滚动容器 */}
-          <div className="relative w-full aspect-[600/600]">
+          <div className="relative w-full aspect-[600/600] hero-carousel-container">
             {/* 左侧列 - 向上滚动 */}
             <div className="absolute left-0 w-1/2 h-full z-10">
               <div className="scroll-container h-full">
