@@ -794,7 +794,7 @@ export default function CoursePageClient({ localizedData }) {
         </section>
       )}
 
-    {/* Why Choose Us Section - 响应式移动端优化 */}
+      {/* Why Choose Us Section - 响应式移动端优化 */}
       {hasContent(course.whyChooseUs) && (
         <section className="my-8 sm:my-12 lg:my-16">
           {/* Part B */}
@@ -823,39 +823,75 @@ export default function CoursePageClient({ localizedData }) {
                     <div className="w-full lg:w-1/2 space-y-4 sm:space-y-6">
                       <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6 justify-center lg:justify-start">
                         <div className="p-2 sm:p-3 rounded-full bg-primary/10 text-primary/70">
-                          {content.icon === "book" && <BookOpen size={20} className="sm:w-6 sm:h-6" />}
-                          {content.icon === "repeat" && <Repeat size={20} className="sm:w-6 sm:h-6" />}
-                          {content.icon === "check" && <Check size={20} className="sm:w-6 sm:h-6" />}
-                          {content.icon === "test" && <TestTube size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "book" && (
+                            <BookOpen size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "repeat" && (
+                            <Repeat size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "check" && (
+                            <Check size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "test" && (
+                            <TestTube size={20} className="sm:w-6 sm:h-6" />
+                          )}
                           {content.icon === "communication" && (
-                            <MessageCircle size={20} className="sm:w-6 sm:h-6" />
+                            <MessageCircle
+                              size={20}
+                              className="sm:w-6 sm:h-6"
+                            />
                           )}
                           {content.icon === "graduation" && (
-                            <GraduationCap size={20} className="sm:w-6 sm:h-6" />
+                            <GraduationCap
+                              size={20}
+                              className="sm:w-6 sm:h-6"
+                            />
                           )}
-                          {content.icon === "school" && <School size={20} className="sm:w-6 sm:h-6" />}
-                          {content.icon === "compass" && <Compass size={20} className="sm:w-6 sm:h-6" />}
-                          {content.icon === "file-text" && <FileText size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "school" && (
+                            <School size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "compass" && (
+                            <Compass size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "file-text" && (
+                            <FileText size={20} className="sm:w-6 sm:h-6" />
+                          )}
                           {content.icon === "sliders-horizontal" && (
-                            <SlidersHorizontal size={20} className="sm:w-6 sm:h-6" />
+                            <SlidersHorizontal
+                              size={20}
+                              className="sm:w-6 sm:h-6"
+                            />
                           )}
-                          {content.icon === "users" && <Users size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "users" && (
+                            <Users size={20} className="sm:w-6 sm:h-6" />
+                          )}
                           {content.icon === "clipboard-list" && (
-                            <ClipboardList size={20} className="sm:w-6 sm:h-6" />
+                            <ClipboardList
+                              size={20}
+                              className="sm:w-6 sm:h-6"
+                            />
                           )}
                           {content.icon === "bar-chart-2" && (
                             <BarChart2 size={20} className="sm:w-6 sm:h-6" />
                           )}
-                          {content.icon === "target" && <Target size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "target" && (
+                            <Target size={20} className="sm:w-6 sm:h-6" />
+                          )}
                           {content.icon === "list-checks" && (
                             <ListChecks size={20} className="sm:w-6 sm:h-6" />
                           )}
                           {content.icon === "chalkboard" && (
                             <Presentation size={20} className="sm:w-6 sm:h-6" />
                           )}
-                          {content.icon === "clock" && <Clock size={20} className="sm:w-6 sm:h-6" />}
-                          {content.icon === "award" && <Award size={20} className="sm:w-6 sm:h-6" />}
-                          {content.icon === "calendar" && <Calendar size={20} className="sm:w-6 sm:h-6" />}
+                          {content.icon === "clock" && (
+                            <Clock size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "award" && (
+                            <Award size={20} className="sm:w-6 sm:h-6" />
+                          )}
+                          {content.icon === "calendar" && (
+                            <Calendar size={20} className="sm:w-6 sm:h-6" />
+                          )}
                         </div>
                         <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-center lg:text-left">
                           {content.title}
@@ -1011,8 +1047,12 @@ export default function CoursePageClient({ localizedData }) {
                             {i === 3 && (
                               <ChartColumnIncreasing className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
                             )}
-                            {i === 4 && <Trophy className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />}
-                            {i >= 5 && <PlaneTakeoff className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />}
+                            {i === 4 && (
+                              <Trophy className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                            )}
+                            {i >= 5 && (
+                              <PlaneTakeoff className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12" />
+                            )}
                           </div>
                         </div>
 
@@ -1029,12 +1069,60 @@ export default function CoursePageClient({ localizedData }) {
                     <div className="flex lg:hidden justify-center w-full">
                       <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary/20 to-primary/10 rounded-full flex items-center justify-center">
                         <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/60 rounded-full flex items-center justify-center text-white">
-                          {i === 0 && <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>}
-                          {i === 1 && <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>}
-                          {i === 2 && <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>}
-                          {i === 3 && <ChartColumnIncreasing className="w-5 h-5 sm:w-6 sm:h-6" />}
-                          {i === 4 && <Trophy className="w-5 h-5 sm:w-6 sm:h-6" />}
-                          {i >= 5 && <PlaneTakeoff className="w-5 h-5 sm:w-6 sm:h-6" />}
+                          {i === 0 && (
+                            <svg
+                              className="w-5 h-5 sm:w-6 sm:h-6"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="1.5"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"
+                              />
+                            </svg>
+                          )}
+                          {i === 1 && (
+                            <svg
+                              className="w-5 h-5 sm:w-6 sm:h-6"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="1.5"
+                                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+                              />
+                            </svg>
+                          )}
+                          {i === 2 && (
+                            <svg
+                              className="w-5 h-5 sm:w-6 sm:h-6"
+                              fill="none"
+                              stroke="currentColor"
+                              viewBox="0 0 24 24"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="1.5"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+                              />
+                            </svg>
+                          )}
+                          {i === 3 && (
+                            <ChartColumnIncreasing className="w-5 h-5 sm:w-6 sm:h-6" />
+                          )}
+                          {i === 4 && (
+                            <Trophy className="w-5 h-5 sm:w-6 sm:h-6" />
+                          )}
+                          {i >= 5 && (
+                            <PlaneTakeoff className="w-5 h-5 sm:w-6 sm:h-6" />
+                          )}
                         </div>
                       </div>
                     </div>
@@ -1078,7 +1166,6 @@ export default function CoursePageClient({ localizedData }) {
               )}
             </div>
           )}
-
 
           {/* Part C - 响应式网格 */}
           {hasContent(course.whyChooseUs.partC?.list) && (
@@ -1603,7 +1690,143 @@ export default function CoursePageClient({ localizedData }) {
                   )}
 
                 {/* Steps和其他部分的处理同上... */}
-                {/* 为了保持代码简洁，这里省略了重复的步骤处理代码 */}
+                {hasContent(course.customCourseFeature.steps) && (
+                  <div className="mb-12 sm:mb-16">
+                    {/* 移动端：步骤垂直排列，图片在底部 */}
+                    <div className="lg:hidden">
+                      <div className="relative space-y-8 sm:space-y-12 mb-8">
+                        {/* 时间线竖线 */}
+                        <div
+                          className="absolute left-4 sm:left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"
+                          aria-hidden="true"
+                        />
+
+                        {course.customCourseFeature.steps.map((step) => (
+                          <div
+                            key={step.step}
+                            className="group relative flex gap-4 sm:gap-6 transition-transform duration-300"
+                          >
+                            {/* 步骤指示器 */}
+                            <div className="relative z-10 flex h-8 w-8 sm:h-12 sm:w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-sm sm:text-lg font-bold text-white shadow-lg">
+                              {step.step}
+                              <div className="absolute inset-0 rounded-full bg-white/10 mix-blend-overlay" />
+                            </div>
+
+                            {/* 内容卡片 */}
+                            <div className="flex-1 rounded-lg sm:rounded-xl border border-gray-100 bg-white p-4 sm:p-6 shadow-md">
+                              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
+                                {step.title}
+                              </h3>
+                              <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                                {step.content}
+                              </p>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+
+                      {/* 移动端步骤图片 */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        {course.customCourseFeature.images[2] && (
+                          <div className="relative rounded-xl overflow-hidden shadow-lg">
+                            <Image
+                              src={course.customCourseFeature.images[2]}
+                              alt="Step Process Image 1"
+                              width={320}
+                              height={480}
+                              className="object-contain w-full h-auto"
+                              sizes="(max-width: 640px) 100vw, 50vw"
+                            />
+                          </div>
+                        )}
+
+                        {course.customCourseFeature.images[3] && (
+                          <div className="relative rounded-xl overflow-hidden shadow-lg">
+                            <Image
+                              src={course.customCourseFeature.images[3]}
+                              alt="Step Process Image 2"
+                              width={320}
+                              height={480}
+                              className="object-contain w-full h-auto"
+                              sizes="(max-width: 640px) 100vw, 50vw"
+                            />
+                          </div>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* 桌面端：保持原有布局 */}
+                    <div className="hidden lg:flex gap-8">
+                      {/* 左侧：步骤流程 */}
+                      <div className="flex-1 max-w-2xl">
+                        <div className="relative space-y-12">
+                          <div
+                            className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary to-transparent"
+                            aria-hidden="true"
+                          />
+
+                          {course.customCourseFeature.steps.map((step) => (
+                            <div
+                              key={step.step}
+                              className="group relative flex gap-6 transition-transform duration-300 hover:scale-[1.02]"
+                            >
+                              <div className="relative z-10 flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-primary to-primary/80 text-lg font-bold text-white shadow-lg transition-all duration-300 group-hover:scale-110">
+                                {step.step}
+                                <div className="absolute inset-0 rounded-full bg-white/10 mix-blend-overlay" />
+                              </div>
+
+                              <div className="flex-1 rounded-xl border border-gray-100 bg-white p-6 shadow-md transition-all duration-300 hover:shadow-lg">
+                                <div className="flex items-start gap-4">
+                                  <div className="flex-1">
+                                    <h3 className="text-xl font-semibold text-gray-900">
+                                      {step.title}
+                                    </h3>
+                                    <p className="mt-2 text-gray-600 leading-relaxed">
+                                      {step.content}
+                                    </p>
+                                  </div>
+                                  <ArrowRight className="h-6 w-6 text-gray-400 transition-transform duration-300 group-hover:translate-x-1" />
+                                </div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* 右侧：步骤相关图片（竖图） */}
+                      {(course.customCourseFeature.images[2] ||
+                        course.customCourseFeature.images[3]) && (
+                        <div className="w-80 space-y-4">
+                          {course.customCourseFeature.images[2] && (
+                            <div className="relative rounded-xl overflow-hidden shadow-lg">
+                              <Image
+                                src={course.customCourseFeature.images[2]}
+                                alt="Step Process Image 1"
+                                width={320}
+                                height={480}
+                                className="object-contain w-full h-auto"
+                                sizes="320px"
+                              />
+                            </div>
+                          )}
+
+                          {course.customCourseFeature.images[3] && (
+                            <div className="relative rounded-xl overflow-hidden shadow-lg">
+                              <Image
+                                src={course.customCourseFeature.images[3]}
+                                alt="Step Process Image 2"
+                                width={320}
+                                height={480}
+                                className="object-contain w-full h-auto"
+                                sizes="320px"
+                              />
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
             </section>
           )}
