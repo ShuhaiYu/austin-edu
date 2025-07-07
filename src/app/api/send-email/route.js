@@ -356,10 +356,10 @@ function generateWebinarConfirmation(data, userEmail) {
           <div class="section">
             <h3>🚀 What's Next?</h3>
             <ul>
-              <li>We'll send you webinar details and the joining link 24-48 hours before the event</li>
-              <li>Make sure to check your email (including spam folder) for updates</li>
-              <li>Prepare any questions you'd like to ask during the Q&A session</li>
-              <li>Follow us on social media for the latest updates</li>
+              <li>We’ll get in touch with you shortly to provide more details</li>
+              <li>Make sure your contact information is correct so we can reach you easily</li>
+              <li>If you have any specific questions, feel free to prepare them in advance</li>
+              <li>Follow us on social media for the latest updates and announcements</li>
             </ul>
           </div>
 
