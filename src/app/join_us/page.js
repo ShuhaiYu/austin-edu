@@ -40,11 +40,11 @@ export default function JoinUsPage() {
     if (file) {
       // 检查文件类型
       const allowedTypes = [
-        'application/pdf',
-        'application/msword',
-        'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        "application/pdf",
+        "application/msword",
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
       ];
-      
+
       if (!allowedTypes.includes(file.type)) {
         toast.error(
           lang === "en"
@@ -74,8 +74,14 @@ export default function JoinUsPage() {
     // 清空文件输入
     const fileInput = document.querySelector('input[type="file"]');
     if (fileInput) {
-      fileInput.value = '';
+      fileInput.value = "";
     }
+  };
+
+  // 验证邮箱格式
+  const isValidEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
   };
 
   // 处理表单提交
@@ -86,20 +92,38 @@ export default function JoinUsPage() {
     try {
       // 使用FormData来处理表单数据和文件上传
       const formData = new FormData(e.target);
-      
+
+      // 验证邮箱是否存在且格式正确
+      const email = formData.get("emailAddress");
+      if (!email || email.trim() === "") {
+        toast.error(
+          lang === "en" ? "Email address is required" : "邮箱地址为必填项"
+        );
+        return;
+      }
+
+      if (!isValidEmail(email)) {
+        toast.error(
+          lang === "en"
+            ? "Please enter a valid email address"
+            : "请输入有效的邮箱地址"
+        );
+        return;
+      }
+
       // 添加表单类型
-      formData.append('type', 'job-application');
-      
+      formData.append("type", "job-application");
+
       // 添加时间戳
-      formData.append('timestamp', new Date().toISOString());
+      formData.append("timestamp", new Date().toISOString());
 
       // 如果有选择的文件，添加到FormData
       if (selectedFile) {
-        formData.append('resume', selectedFile);
+        formData.append("resume", selectedFile);
       }
 
       // 调试：打印FormData内容
-      console.log('FormData contents:');
+      console.log("FormData contents:");
       for (let [key, value] of formData.entries()) {
         console.log(key, value);
       }
@@ -115,14 +139,13 @@ export default function JoinUsPage() {
 
       toast.success(
         lang === "en"
-          ? "Application submitted successfully! We'll contact you soon."
-          : "申请提交成功！我们会尽快与您联系。"
+          ? "Application submitted successfully! We'll contact you soon. A confirmation email has been sent to your email address."
+          : "申请提交成功！我们会尽快与您联系。确认邮件已发送到您的邮箱。"
       );
 
       // 重置表单和文件选择
       e.target.reset();
       setSelectedFile(null);
-      
     } catch (error) {
       console.error("Error submitting application:", error);
       toast.error(
@@ -187,7 +210,7 @@ export default function JoinUsPage() {
               className="hidden"
               required={field.required}
             />
-            
+
             {/* 自定义文件上传区域 */}
             <div className="space-y-3">
               {!selectedFile ? (
@@ -198,17 +221,21 @@ export default function JoinUsPage() {
                   <Upload className="w-8 h-8 text-gray-400" />
                   <div>
                     <p className="text-sm font-medium">
-                      {lang === "en" ? "Click to upload resume" : "点击上传简历"}
+                      {lang === "en"
+                        ? "Click to upload resume"
+                        : "点击上传简历"}
                     </p>
                     <p className="text-xs text-gray-500">
-                      {lang === "en" 
-                        ? "PDF, DOC, DOCX (max 5MB)" 
+                      {lang === "en"
+                        ? "PDF, DOC, DOCX (max 5MB)"
                         : "PDF、DOC、DOCX (最大5MB)"}
                     </p>
                   </div>
                 </label>
               ) : (
-                <div className={`${commonClassNames} border border-gray-300 rounded-lg p-4 flex items-center justify-between`}>
+                <div
+                  className={`${commonClassNames} border border-gray-300 rounded-lg p-4 flex items-center justify-between`}
+                >
                   <div className="flex items-center space-x-3">
                     <FileText className="w-5 h-5 text-primary" />
                     <div>
@@ -248,22 +275,34 @@ export default function JoinUsPage() {
     }
   }
 
-  // 添加简历上传到表单字段中
-  const enhancedFormSections = t.form.sections.map(section => {
+  // 添加简历上传到表单字段中，并确保邮箱字段是必填的
+  const enhancedFormSections = t.form.sections.map((section) => {
     if (section.id === "personalInformation") {
-      // 在个人信息部分添加简历上传字段
+      // 在个人信息部分，确保邮箱字段是必填的，并添加简历上传字段
       return {
         ...section,
-        fields: [
-          ...section.fields,
-          {
-            name: "resume",
-            label: lang === "en" ? "Resume/CV" : "简历",
-            type: "file",
-            required: true,
-            placeholder: lang === "en" ? "Upload your resume" : "上传您的简历"
-          }
-        ]
+        fields: section.fields
+          .map((field) => {
+            // 确保邮箱字段是必填的
+            if (field.name === "emailAddress") {
+              return {
+                ...field,
+                required: true,
+              };
+            }
+            return field;
+          })
+          .concat([
+            // 添加简历上传字段
+            {
+              name: "resume",
+              label: lang === "en" ? "Resume/CV" : "简历",
+              type: "file",
+              required: true,
+              placeholder:
+                lang === "en" ? "Upload your resume" : "上传您的简历",
+            },
+          ]),
       };
     }
     return section;
@@ -384,6 +423,7 @@ export default function JoinUsPage() {
         {/* 右侧：在线申请表 */}
         <div className="w-full md:w-1/2 sticky top-4">
           <h2 className="text-3xl font-bold mb-6">{t.form.title}</h2>
+
           <form
             onSubmit={handleSubmit}
             className="space-y-4 p-4 md:p-8 rounded-lg shadow-lg bg-primary text-primary-foreground"
@@ -411,13 +451,15 @@ export default function JoinUsPage() {
                             "yearOfGraduation",
                           ].includes(f.name)
                       )
-                      // 个人信息部分的简历字段全宽显示
+                      // 个人信息部分的简历字段和邮箱字段全宽显示
                       .map((field) => (
                         <div
                           key={field.name}
                           className={
-                            field.type === "select-multiple" || field.type === "file" 
-                              ? "col-span-1 md:col-span-2" 
+                            field.type === "select-multiple" ||
+                            field.type === "file" ||
+                            field.name === "emailAddress"
+                              ? "col-span-1 md:col-span-2"
                               : ""
                           }
                         >

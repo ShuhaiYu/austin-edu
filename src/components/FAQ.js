@@ -97,7 +97,7 @@ const defaultContent = {
       question: "Write your questions here...",
     },
     successMessage: "Question submitted successfully!",
-    successDescription: "We'll get back to you as soon as possible.",
+    successDescription: "We'll get back to you as soon as possible. A confirmation email has been sent to your email address.",
     errorMessage: "Failed to submit question",
     errorDescription: "Please try again later.",
     faqItems: [
@@ -133,7 +133,7 @@ const defaultContent = {
       question: "请在此输入您的问题...",
     },
     successMessage: "问题提交成功！",
-    successDescription: "我们将尽快回复您。",
+    successDescription: "我们将尽快回复您。确认邮件已发送到您的邮箱。",
     errorMessage: "提交失败",
     errorDescription: "请稍后重试。",
     faqItems: [
@@ -216,6 +216,7 @@ export default function FAQ({
       if (response.ok) {
         toast.success(successMessage, {
           description: successDescription,
+          duration: 6000, // 延长显示时间，让用户看到确认邮件信息
         });
         form.reset({
           name: "",

@@ -16,93 +16,93 @@ const COURSE_DATABASE = [
     title: "Year 1-6 English Enrichment",
     grades: [1, 2, 3, 4, 5, 6],
     states: ["Victoria", "South Australia"],
-    category: "Enrichment Courses"
+    category: "Enrichment Courses",
   },
   {
     slug: "y1-6-maths-enrichment",
     title: "Year 1-6 Maths Enrichment",
     grades: [1, 2, 3, 4, 5, 6],
     states: ["Victoria", "South Australia"],
-    category: "Enrichment Courses"
+    category: "Enrichment Courses",
   },
   {
     slug: "y1-6-chinese-enrichment",
     title: "Year 1-6 Chinese Enrichment",
     grades: [1, 2, 3, 4, 5, 6],
     states: ["Victoria", "South Australia"],
-    category: "Enrichment Courses"
+    category: "Enrichment Courses",
   },
   {
     slug: "y3-6-writing",
     title: "Year 3-6 Writing",
     grades: [3, 4, 5, 6],
     states: ["Victoria", "South Australia"],
-    category: "Enrichment Courses"
+    category: "Enrichment Courses",
   },
 
   // Primary School 1-6 Years - Scholarship / Selective Courses
   {
     slug: "3-to-5-scholarship-victoria",
     title: "Year 3-to-5 Scholarship Victoria",
-    grades: [2,3],
+    grades: [2, 3],
     states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "3-to-5-scholarship-interview-victoria",
     title: "Year 3-to-5 Scholarship Interview Victoria",
-    grades: [2,3],
+    grades: [2, 3],
     states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "3-to-5-scholarship-mock-exam-victoria",
     title: "Year 3-to-5 Scholarship Mock Exam Victoria",
-    grades: [2,3],
+    grades: [2, 3],
     states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "5-to-7-scholarship-victoria",
     title: "Year 5-to-7 Scholarship Victoria",
-    grades: [4,5],
+    grades: [4, 5],
     states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "5-to-7-scholarship-interview-victoria",
     title: "Year 5-to-7 Scholarship Interview Victoria",
-    grades: [4,5],
+    grades: [4, 5],
     states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "5-to-7-scholarship-mock-exam-victoria",
     title: "Year 5-to-7 Scholarship Mock Exam Victoria",
-    grades: [4,5],
+    grades: [4, 5],
     states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "3-to-5-scholarship-south-australia",
     title: "Year 3-to-5 Scholarship South Australia",
-    grades: [2,3],
+    grades: [2, 3],
     states: ["South Australia"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "5-to-7-scholarship-south-australia",
     title: "Year 5-to-7 Scholarship South Australia",
-    grades: [4,5],
+    grades: [4, 5],
     states: ["South Australia"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "5-to-7-selective-school-south-australia",
     title: "Year 5-to-7 Selective School South Australia",
-    grades: [4,5],
+    grades: [4, 5],
     states: ["South Australia"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
 
   // Primary School 1-6 Years - Competition Courses
@@ -111,14 +111,14 @@ const COURSE_DATABASE = [
     title: "Year 3-4 AMC",
     grades: [3, 4],
     states: ["Victoria"],
-    category: "Competition Courses"
+    category: "Competition Courses",
   },
   {
     slug: "y5-6-amc",
     title: "Year 5-6 AMC",
     grades: [5, 6],
     states: ["Victoria"],
-    category: "Competition Courses"
+    category: "Competition Courses",
   },
 
   // Primary School 1-6 Years - Exam Preparation
@@ -127,14 +127,14 @@ const COURSE_DATABASE = [
     title: "Year 3, Year 5 Naplan & holiday program",
     grades: [3, 5],
     states: ["Victoria"],
-    category: "Exam Preparation"
+    category: "Exam Preparation",
   },
   {
     slug: "aeas",
     title: "AEAS",
     grades: [1, 2, 3, 4, 5, 6], // 适用1-6年级
     states: ["Victoria"],
-    category: "Exam Preparation"
+    category: "Exam Preparation",
   },
 
   // Primary School 1-6 Years - Other Courses
@@ -143,7 +143,7 @@ const COURSE_DATABASE = [
     title: "Extra holiday class",
     grades: [1, 2, 3, 4, 5, 6],
     states: ["Victoria", "South Australia"],
-    category: "Other Courses"
+    category: "Other Courses",
   },
 
   // Junior High School 7-9 Years - Enrichment Courses
@@ -152,28 +152,28 @@ const COURSE_DATABASE = [
     title: "Year 7-9 English Enrichment",
     grades: [7, 8, 9],
     states: ["Victoria", "South Australia"],
-    category: "Enrichment Courses"
+    category: "Enrichment Courses",
   },
   {
     slug: "y7-9-maths",
     title: "Year 7-9 Maths Enrichment",
     grades: [7, 8, 9],
     states: ["Victoria", "South Australia"],
-    category: "Enrichment Courses"
+    category: "Enrichment Courses",
   },
   {
     slug: "y7-9-writing",
     title: "Year 7-9 Writing",
     grades: [7, 8, 9],
     states: ["Victoria", "South Australia"],
-    category: "Enrichment Courses"
+    category: "Enrichment Courses",
   },
   {
     slug: "y8-9-science",
     title: "Year 8-9 Science",
     grades: [8, 9],
     states: ["Victoria", "South Australia"],
-    category: "Enrichment Courses"
+    category: "Enrichment Courses",
   },
 
   // Junior High School 7-9 Years - Language Courses
@@ -182,51 +182,51 @@ const COURSE_DATABASE = [
     title: "Year 7-9 Latin Enrichment",
     grades: [7, 8, 9],
     states: ["Victoria", "South Australia"],
-    category: "Language Courses"
+    category: "Language Courses",
   },
   {
     slug: "y7-9-france-enrichment",
     title: "Year 7-9 France Enrichment",
     grades: [7, 8, 9],
     states: ["Victoria", "South Australia"],
-    category: "Language Courses"
+    category: "Language Courses",
   },
   {
     slug: "y7-9-japanese-enrichment",
     title: "Year 7-9 Japanese Enrichment",
     grades: [7, 8, 9],
     states: ["Victoria", "South Australia"],
-    category: "Language Courses"
+    category: "Language Courses",
   },
 
   // Junior High School 7-9 Years - Scholarship / Selective Courses
   {
     slug: "7-to-9-scholarship-victoria",
     title: "Year 7-to-9 Scholarship Victoria",
-    grades: [6,7],
+    grades: [6, 7],
     states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "7-to-9-scholarship-interview-victoria",
     title: "Year 7-to-9 Scholarship Interview Victoria",
-    grades: [6,7],
+    grades: [6, 7],
     states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "7-to-9-scholarship-mock-exam-victoria",
     title: "Year 7-to-9 Scholarship Mock Exam Victoria",
-    grades: [6,7],
+    grades: [6, 7],
     states: ["Victoria"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
   {
     slug: "y8-9-selective",
     title: "Year 8-to-9 Selective School Program",
-    grades: [7,8],
+    grades: [7, 8],
     states: ["Victoria", "South Australia"],
-    category: "Scholarship / Selective Courses"
+    category: "Scholarship / Selective Courses",
   },
 
   // Junior High School 7-9 Years - Competition Courses
@@ -235,7 +235,7 @@ const COURSE_DATABASE = [
     title: "Year 7-8 AMC",
     grades: [7, 8],
     states: ["Victoria", "South Australia"],
-    category: "Competition Courses"
+    category: "Competition Courses",
   },
 
   // Junior High School 7-9 Years - Other Courses
@@ -244,14 +244,14 @@ const COURSE_DATABASE = [
     title: "Year 7, Year 9 Naplan",
     grades: [7, 9],
     states: ["Victoria", "South Australia"],
-    category: "Other Courses"
+    category: "Other Courses",
   },
   {
     slug: "y7-9-extra-holiday-class",
     title: "Extra holiday class",
     grades: [7, 8, 9],
     states: ["Victoria", "South Australia"],
-    category: "Other Courses"
+    category: "Other Courses",
   },
 
   // Senior High School 10-12 Years - Year 10 Pre-VCE Courses
@@ -260,49 +260,49 @@ const COURSE_DATABASE = [
     title: "Year 10 Pre-VCE English",
     grades: [10],
     states: ["Victoria"],
-    category: "Year 10 Pre-VCE Courses"
+    category: "Year 10 Pre-VCE Courses",
   },
   {
     slug: "y10-eal",
     title: "Year 10 EAL Foundation Class",
     grades: [10],
     states: ["Victoria"],
-    category: "Year 10 Pre-VCE Courses"
+    category: "Year 10 Pre-VCE Courses",
   },
   {
     slug: "y10-maths-advance",
     title: "Year 10 Pre-VCE Maths Advance",
     grades: [10],
     states: ["Victoria"],
-    category: "Year 10 Pre-VCE Courses"
+    category: "Year 10 Pre-VCE Courses",
   },
   {
     slug: "y10-maths-standard",
     title: "Year 10 Pre-VCE Maths Standard",
     grades: [10],
     states: ["Victoria"],
-    category: "Year 10 Pre-VCE Courses"
+    category: "Year 10 Pre-VCE Courses",
   },
   {
     slug: "y9-10-science",
     title: "Year 9-10 Pre-VCE Science",
     grades: [9, 10],
     states: ["Victoria"],
-    category: "Year 10 Pre-VCE Courses"
+    category: "Year 10 Pre-VCE Courses",
   },
   {
     slug: "y10-chemistry",
     title: "Year 10 Pre-VCE Chemistry",
     grades: [10],
     states: ["Victoria"],
-    category: "Year 10 Pre-VCE Courses"
+    category: "Year 10 Pre-VCE Courses",
   },
   {
     slug: "y10-latin",
     title: "Year 10 Pre-VCE Latin",
     grades: [10],
     states: ["Victoria"],
-    category: "Year 10 Pre-VCE Courses"
+    category: "Year 10 Pre-VCE Courses",
   },
 
   // Senior High School 10-12 Years - VCE English Courses
@@ -311,14 +311,14 @@ const COURSE_DATABASE = [
     title: "VCE English / EAL Unit 1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE English Courses"
+    category: "VCE English Courses",
   },
   {
     slug: "vce-english-language-unit1-4",
     title: "VCE English Language Unit 1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE English Courses"
+    category: "VCE English Courses",
   },
 
   // Senior High School 10-12 Years - VCE Maths Courses
@@ -327,21 +327,21 @@ const COURSE_DATABASE = [
     title: "VCE Mathematical Methods Unit1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Maths Courses"
+    category: "VCE Maths Courses",
   },
   {
     slug: "vce-specialist-maths-unit1-4",
     title: "VCE Specialist Mathematics Unit1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Maths Courses"
+    category: "VCE Maths Courses",
   },
   {
     slug: "vce-general-maths-unit-1-4",
     title: "VCE General Mathematics Unit1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Maths Courses"
+    category: "VCE Maths Courses",
   },
 
   // Senior High School 10-12 Years - VCE Science Courses
@@ -350,28 +350,28 @@ const COURSE_DATABASE = [
     title: "VCE Chemistry Unit1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Science Courses"
+    category: "VCE Science Courses",
   },
   {
     slug: "vce-biology-unit-1-4",
     title: "VCE Biology Unit1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Science Courses"
+    category: "VCE Science Courses",
   },
   {
     slug: "vce-physics-unit-1-4",
     title: "VCE Physics Unit1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Science Courses"
+    category: "VCE Science Courses",
   },
   {
     slug: "vce-psychology-unit-1-4",
     title: "VCE Psychology Unit 1–4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Science Courses"
+    category: "VCE Science Courses",
   },
 
   // Senior High School 10-12 Years - VCE Languages Courses
@@ -380,35 +380,35 @@ const COURSE_DATABASE = [
     title: "VCE Latin Unit 1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Languages Courses"
+    category: "VCE Languages Courses",
   },
   {
     slug: "vce-chinese-first-language-unit-1-4",
     title: "VCE Chinese First Language Unit 1–4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Languages Courses"
+    category: "VCE Languages Courses",
   },
   {
     slug: "vce-chinese-second-language-unit-1-4",
     title: "VCE Chinese Second Language Unit 1–4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Languages Courses"
+    category: "VCE Languages Courses",
   },
   {
     slug: "vce-chinese-second-language-advanced-unit-1-4",
     title: "VCE Chinese Second Language Advanced Unit 1–4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Languages Courses"
+    category: "VCE Languages Courses",
   },
   {
     slug: "vce-japanese-second-language",
     title: "VCE Japanese Second Language",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Languages Courses"
+    category: "VCE Languages Courses",
   },
 
   // Senior High School 10-12 Years - VCE Business and Economics Courses
@@ -417,28 +417,28 @@ const COURSE_DATABASE = [
     title: "VCE Accounting Unit 1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Business and Economics Courses"
+    category: "VCE Business and Economics Courses",
   },
   {
     slug: "vce-economics-unit-1-4",
     title: "VCE Economics Unit 1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Business and Economics Courses"
+    category: "VCE Business and Economics Courses",
   },
   {
     slug: "vce-business-management-unit-1-4",
     title: "VCE Business Management Unit 1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Business and Economics Courses"
+    category: "VCE Business and Economics Courses",
   },
   {
     slug: "vce-legal-studies-unit-1-4",
     title: "VCE Legal Studies Unit 1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Business and Economics Courses"
+    category: "VCE Business and Economics Courses",
   },
 
   // Senior High School 10-12 Years - VCE Other Courses
@@ -447,21 +447,21 @@ const COURSE_DATABASE = [
     title: "VCE Visual Communication Design Unit 1-4",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "VCE Other Courses"
+    category: "VCE Other Courses",
   },
   {
     slug: "y10-12-extra-holiday-class",
     title: "Extra holiday class",
     grades: [10, 11, 12],
     states: ["Victoria"],
-    category: "VCE Other Courses"
+    category: "VCE Other Courses",
   },
   {
     slug: "y10-12-mock-exam",
     title: "Mock Exam",
     grades: [10, 11, 12],
     states: ["Victoria"],
-    category: "VCE Other Courses"
+    category: "VCE Other Courses",
   },
 
   // Senior High School 10-12 Years - IB Courses
@@ -470,136 +470,136 @@ const COURSE_DATABASE = [
     title: "IB English A: Literature — Standard Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-english-a-literature-higher-level",
     title: "IB English A: Literature — Higher Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-english-a-language-literature-standard-level",
     title: "IB English A: Language and Literature — Standard Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-english-a-language-literature-higher-level",
     title: "IB English A: Language and Literature — Higher Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-english-b-standard-level",
     title: "IB English B: Standard Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-english-b-higher-level",
     title: "IB English B: Higher Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-maths-analysis-approaches-standard-level",
     title: "IB Mathematics: Analysis and Approaches (AA) — Standard Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-maths-analysis-approaches-higher-level",
     title: "IB Mathematics: Analysis and Approaches (AA) — Higher Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-chemistry-standard-level",
     title: "IB Chemistry (Sciences) — Standard Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-chemistry-higher-level",
     title: "IB Chemistry (Sciences) — Higher Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-chinese-a-standard-level",
     title: "IB Chinese A: Literature — Standard Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-chinese-a-higher-level",
     title: "IB Chinese A: Literature — Higher Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-chinese-b-standard-level",
     title: "IB Chinese B: Standard Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-chinese-b-higher-level",
     title: "IB Chinese B: Higher Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-chinese-ab-initio-standard-level",
     title: "IB Chinese ab initio: Standard Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-economics-standard-level",
     title: "IB Economics — Standard Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
   {
     slug: "ib-economics-higher-level",
     title: "IB Economics — Higher Level",
     grades: [11, 12],
     states: ["Victoria"],
-    category: "IB Courses"
+    category: "IB Courses",
   },
 
   // Medical Preparation Courses
   {
     slug: "ucat",
     title: "UCAT Preparation Program",
-    grades: [10,11,12],
+    grades: [10, 11, 12],
     states: ["Victoria"],
-    category: "Medical Foundation Courses"
+    category: "Medical Foundation Courses",
   },
   {
     slug: "y12-ucat-medical-interview",
     title: "Y12 Medical Interview Preparation Program",
-    grades: [10,11,12],
+    grades: [10, 11, 12],
     states: ["Victoria"],
-    category: "Medical Foundation Courses"
-  }
+    category: "Medical Foundation Courses",
+  },
 ];
 
 const content = {
@@ -640,6 +640,8 @@ const content = {
       campusRequired: "Please select a campus",
       contactRequired:
         "Please provide contact information: fill in either Parent OR Student email/phone",
+      emailRequired:
+        "Please provide at least one email address to receive confirmation",
       emailInvalid: "Please enter a valid email address",
       phoneInvalid: "Please enter a valid phone number (Australian format)",
       gradeRequired: "Please select at least one grade level",
@@ -686,6 +688,7 @@ const content = {
     validation: {
       campusRequired: "请选择校区",
       contactRequired: "请提供联系信息：填写家长或学生的邮箱/电话",
+      emailRequired: "请至少提供一个邮箱地址以接收确认邮件",
       emailInvalid: "请输入有效的电子邮箱地址",
       phoneInvalid: "请输入有效的电话号码（澳洲格式）",
       gradeRequired: "请至少选择一个年级",
@@ -759,13 +762,15 @@ export const TrialLessonTab = () => {
   const availableSubjects = useMemo(() => {
     if (schoolYear.length === 0) return [];
     // map selected Year strings back to numeric grades:
-    const selectedGrades = schoolYear.map((g) => parseInt(g.replace(/[^0-9]/g, '')));
+    const selectedGrades = schoolYear.map((g) =>
+      parseInt(g.replace(/[^0-9]/g, ""))
+    );
     return COURSE_DATABASE.filter((course) =>
       course.grades.some((grade) => selectedGrades.includes(grade))
     );
   }, [schoolYear]);
 
-  // 表单验证
+  // 表单验证 - 更新版本，确保邮箱必填
   const validateForm = (formData) => {
     const errors = [];
 
@@ -785,6 +790,11 @@ export const TrialLessonTab = () => {
 
     if (!hasParentContact && !hasStudentContact) {
       errors.push(t.validation.contactRequired);
+    }
+
+    // 新增：确保至少有一个有效邮箱（用于发送确认邮件）
+    if (!parentEmail && !studentEmail) {
+      errors.push(t.validation.emailRequired);
     }
 
     // 验证邮箱格式
@@ -901,8 +911,12 @@ export const TrialLessonTab = () => {
       <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
         {/* Left Text Section - 移动端在上方 */}
         <div className="w-full lg:w-1/3 lg:pr-8 lg:border-r border-gray-200">
-          <h2 className="text-xl sm:text-2xl font-bold mb-4 lg:mb-6">{t.title}</h2>
-          <p className="text-muted-foreground text-justify text-sm sm:text-base">{t.description}</p>
+          <h2 className="text-xl sm:text-2xl font-bold mb-4 lg:mb-6">
+            {t.title}
+          </h2>
+          <p className="text-muted-foreground text-justify text-sm sm:text-base">
+            {t.description}
+          </p>
         </div>
 
         {/* Right Form Section - 移动端在下方 */}
@@ -947,10 +961,14 @@ export const TrialLessonTab = () => {
 
               {/* Parent Information */}
               <div className="space-y-4 pb-4 lg:pb-6">
-                <h4 className="font-medium text-sm sm:text-base">{t.parentInfo}</h4>
+                <h4 className="font-medium text-sm sm:text-base">
+                  {t.parentInfo}
+                </h4>
                 <div className="flex flex-col gap-3 lg:gap-4">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                    <label className="w-full sm:w-28 text-sm">{t.fullName}</label>
+                    <label className="w-full sm:w-28 text-sm">
+                      {t.fullName}
+                    </label>
                     <Input
                       name="parentName"
                       placeholder={t.placeholders.fullName}
@@ -970,10 +988,7 @@ export const TrialLessonTab = () => {
                     />
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                    <label className="w-full sm:w-28 text-sm">
-                      {t.phone}
-                      <span className="text-red-500 ml-1">*</span>
-                    </label>
+                    <label className="w-full sm:w-28 text-sm">{t.phone}</label>
                     <Input
                       name="parentPhone"
                       type="tel"
@@ -981,20 +996,19 @@ export const TrialLessonTab = () => {
                       className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
                   </div>
-                  <div className="text-xs text-gray-500 mt-2">
-                    {lang === "en"
-                      ? "Either email or phone is required"
-                      : "邮箱或电话至少填写一项"}
-                  </div>
                 </div>
               </div>
 
               {/* Student Information */}
               <div className="space-y-4">
-                <h4 className="font-medium text-sm sm:text-base">{t.studentInfo}</h4>
+                <h4 className="font-medium text-sm sm:text-base">
+                  {t.studentInfo}
+                </h4>
                 <div className="flex flex-col gap-3 lg:gap-4">
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                    <label className="w-full sm:w-28 text-sm">{t.fullName}</label>
+                    <label className="w-full sm:w-28 text-sm">
+                      {t.fullName}
+                    </label>
                     <Input
                       name="studentName"
                       placeholder={t.placeholders.fullName}
@@ -1014,21 +1028,13 @@ export const TrialLessonTab = () => {
                     />
                   </div>
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                    <label className="w-full sm:w-28 text-sm">
-                      {t.phone}
-                      <span className="text-red-500 ml-1">*</span>
-                    </label>
+                    <label className="w-full sm:w-28 text-sm">{t.phone}</label>
                     <Input
                       name="studentPhone"
                       type="tel"
                       placeholder={t.placeholders.phone}
                       className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
-                  </div>
-                  <div className="text-xs text-gray-500 mt-2">
-                    {lang === "en"
-                      ? "Either email or phone is required"
-                      : "邮箱或电话至少填写一项"}
                   </div>
                 </div>
               </div>
@@ -1092,7 +1098,9 @@ export const TrialLessonTab = () => {
 
               {/* Add Student Button */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mt-6">
-                <label className="w-full sm:w-1/2 text-sm">{t.AddTrailText}</label>
+                <label className="w-full sm:w-1/2 text-sm">
+                  {t.AddTrailText}
+                </label>
                 <Button
                   type="button"
                   onClick={addStudent}
@@ -1125,7 +1133,9 @@ export const TrialLessonTab = () => {
                   </div>
                   <div className="space-y-4">
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                      <label className="w-full sm:w-28 text-sm">{t.fullName}</label>
+                      <label className="w-full sm:w-28 text-sm">
+                        {t.fullName}
+                      </label>
                       <Input
                         placeholder={t.placeholders.fullName}
                         value={student.name}
@@ -1136,7 +1146,9 @@ export const TrialLessonTab = () => {
                       />
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                      <label className="w-full sm:w-28 text-sm">{t.email}</label>
+                      <label className="w-full sm:w-28 text-sm">
+                        {t.email}
+                      </label>
                       <Input
                         type="email"
                         placeholder={t.placeholders.email}
@@ -1148,7 +1160,9 @@ export const TrialLessonTab = () => {
                       />
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                      <label className="w-full sm:w-28 text-sm">{t.phone}</label>
+                      <label className="w-full sm:w-28 text-sm">
+                        {t.phone}
+                      </label>
                       <Input
                         type="tel"
                         placeholder={t.placeholders.phone}
@@ -1160,7 +1174,9 @@ export const TrialLessonTab = () => {
                       />
                     </div>
                     <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                      <label className="w-full sm:w-1/2 text-sm">{t.schoolYear}</label>
+                      <label className="w-full sm:w-1/2 text-sm">
+                        {t.schoolYear}
+                      </label>
                       <div className="w-full sm:w-1/2">
                         <MultiSelect
                           placeholder={
@@ -1185,7 +1201,9 @@ export const TrialLessonTab = () => {
 
             {/* Questions */}
             <div className="">
-              <h3 className="font-semibold mb-4 text-sm sm:text-base">{t.questionsTitle}</h3>
+              <h3 className="font-semibold mb-4 text-sm sm:text-base">
+                {t.questionsTitle}
+              </h3>
               <textarea
                 name="questions"
                 className="w-full text-sm rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6 bg-white"

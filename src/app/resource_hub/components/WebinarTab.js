@@ -54,6 +54,7 @@ const content = {
     validation: {
       contactRequired:
         "Please provide contact information: fill in either Parent OR Student email/phone",
+      emailRequired: "Please provide at least one email address to receive confirmation",
       emailInvalid: "Please enter a valid email address",
       phoneInvalid: "Please enter a valid phone number (Australian format)",
       gradeRequired: "Please select at least one grade level",
@@ -100,6 +101,7 @@ const content = {
     // Validation messages
     validation: {
       contactRequired: "请提供联系信息：填写家长或学生的邮箱/电话",
+      emailRequired: "请至少提供一个邮箱地址以接收确认邮件",
       emailInvalid: "请输入有效的电子邮箱地址",
       phoneInvalid: "请输入有效的电话号码（澳洲格式）",
       gradeRequired: "请至少选择一个年级",
@@ -134,7 +136,7 @@ export const WebinarTab = () => {
     return phoneRegex.test(cleanPhone) || /^[0-9]{10}$/.test(cleanPhone);
   };
 
-  // 表单验证
+  // 表单验证 - 更新版本，确保邮箱必填
   const validateForm = (formData) => {
     const errors = [];
 
@@ -149,6 +151,11 @@ export const WebinarTab = () => {
 
     if (!hasParentContact && !hasStudentContact) {
       errors.push(t.validation.contactRequired);
+    }
+
+    // 新增：确保至少有一个有效邮箱（用于发送确认邮件）
+    if (!parentEmail && !studentEmail) {
+      errors.push(t.validation.emailRequired);
     }
 
     // 验证邮箱格式
@@ -307,18 +314,12 @@ export const WebinarTab = () => {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                     <label className="w-full sm:w-28 text-sm">
                       {t.phone}
-                      <span className="text-red-500 ml-1">*</span>
                     </label>
                     <Input
                       name="parentPhone"
                       placeholder={t.placeholders.phone}
                       className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
-                  </div>
-                  <div className="text-xs text-gray-500 mt-2">
-                    {lang === "en"
-                      ? "Either email or phone is required"
-                      : "邮箱或电话至少填写一项"}
                   </div>
                 </div>
               </div>
@@ -349,18 +350,12 @@ export const WebinarTab = () => {
                   <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
                     <label className="w-full sm:w-28 text-sm">
                       {t.phone}
-                      <span className="text-red-500 ml-1">*</span>
                     </label>
                     <Input
                       name="studentPhone"
                       placeholder={t.placeholders.phone}
                       className="rounded-xl lg:rounded-[2rem] border border-gray-200 p-4 lg:p-6"
                     />
-                  </div>
-                  <div className="text-xs text-gray-500 mt-2">
-                    {lang === "en"
-                      ? "Either email or phone is required"
-                      : "邮箱或电话至少填写一项"}
                   </div>
                 </div>
               </div>
