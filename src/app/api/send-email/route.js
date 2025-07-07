@@ -1,44 +1,54 @@
 // app/api/send-email/route.js
-import { Resend } from "resend";
+import {
+  MailerSend,
+  EmailParams,
+  Sender,
+  Recipient,
+  Attachment,
+} from "mailersend";
 import { NextResponse } from "next/server";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+const mailerSend = new MailerSend({
+  apiKey: process.env.MAILERSEND_API_KEY,
+});
 
 export async function POST(request) {
   try {
     const url = new URL(request.url);
-    const contentType = request.headers.get('content-type');
-    
+    const contentType = request.headers.get("content-type");
+
     let data;
     let type;
     let attachments = [];
-    
+
     // 处理 FormData (文件上传) 或 JSON 数据
-    if (contentType && contentType.includes('multipart/form-data')) {
+    if (contentType && contentType.includes("multipart/form-data")) {
       // 处理 FormData (包含文件上传)
       const formData = await request.formData();
-      
+
       // 提取 type
-      type = formData.get('type');
-      
+      type = formData.get("type");
+
       // 构建数据对象
       data = {};
       for (const [key, value] of formData.entries()) {
-        if (key !== 'type') { // 跳过 type 字段
+        if (key !== "type") {
+          // 跳过 type 字段
           if (value instanceof File && value.size > 0) {
-            // 处理文件 - 准备作为附件
+            // 处理文件 - 准备作为附件（MailerSend格式）
             const fileBuffer = await value.arrayBuffer();
-            attachments.push({
-              filename: value.name,
-              content: Array.from(new Uint8Array(fileBuffer)),
-              type: value.type,
-              disposition: 'attachment'
-            });
+            attachments.push(
+              new Attachment(
+                Buffer.from(fileBuffer).toString("base64"),
+                value.name,
+                "attachment"
+              )
+            );
             // 同时保存文件信息到data中用于邮件内容
             data[key] = {
               name: value.name,
               size: value.size,
-              type: value.type
+              type: value.type,
             };
           } else {
             // 处理普通字段
@@ -93,23 +103,28 @@ export async function POST(request) {
       );
     }
 
-    // 发送给内部人员的邮件
-    const emailOptions = {
-      from: "Austin Education <noreply@austinedu.com.au>",
-      to: toEmail,
-      subject: subject,
-      html: emailContent,
-    };
+    // 发送给内部人员的邮件（MailerSend格式）
+    const sentFrom = new Sender(
+      "marketing@austinedu.com.au",
+      "Austin Education"
+    );
+    const recipients = toEmail.map((email) => new Recipient(email));
 
-    // 如果有附件，添加到邮件选项中
+    const emailParams = new EmailParams()
+      .setFrom(sentFrom)
+      .setTo(recipients)
+      .setSubject(subject)
+      .setHtml(emailContent);
+
+    // 如果有附件，添加到邮件参数中
     if (attachments.length > 0) {
-      emailOptions.attachments = attachments;
+      emailParams.setAttachments(attachments);
     }
 
-    const { data: emailData, error } = await resend.emails.send(emailOptions);
+    const response = await mailerSend.email.send(emailParams);
 
-    if (error) {
-      console.error("Resend error:", error);
+    if (!response) {
+      console.error("MailerSend error: No response received");
       return NextResponse.json(
         { error: "Failed to send email" },
         { status: 500 }
@@ -118,24 +133,24 @@ export async function POST(request) {
 
     // 发送用户确认邮件
     if (userEmail && userConfirmationEmail) {
-      const userEmailOptions = {
-        from: "Austin Education <noreply@austinedu.com.au>",
-        to: [userEmail],
-        subject: getConfirmationSubject(type),
-        html: userConfirmationEmail,
-      };
+      const userRecipients = [new Recipient(userEmail)];
+      const userEmailParams = new EmailParams()
+        .setFrom(sentFrom)
+        .setTo(userRecipients)
+        .setSubject(getConfirmationSubject(type))
+        .setHtml(userConfirmationEmail);
 
-      const { error: userEmailError } = await resend.emails.send(userEmailOptions);
-      
-      if (userEmailError) {
+      try {
+        await mailerSend.email.send(userEmailParams);
+      } catch (userEmailError) {
         console.error("User confirmation email error:", userEmailError);
         // 不要因为确认邮件失败而让整个请求失败
       }
     }
 
-    return NextResponse.json({ success: true, data: emailData });
+    return NextResponse.json({ success: true, data: response });
   } catch (error) {
-    console.error("API error:", error);
+    console.error("MailerSend API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -146,24 +161,26 @@ export async function POST(request) {
 // 获取用户邮箱的辅助函数
 function getUserEmail(data) {
   // 优先使用家长邮箱，其次学生邮箱
-  return data.parentEmail || data.studentEmail || data.email || data.emailAddress;
+  return (
+    data.parentEmail || data.studentEmail || data.email || data.emailAddress
+  );
 }
 
 // 获取确认邮件主题的辅助函数
 function getConfirmationSubject(type) {
   const subjects = {
     "trial-lesson": "Trial Lesson Request Confirmation - Austin Education",
-    "consultation": "Consultation Meeting Request Confirmation - Austin Education", 
-    "webinar": "Webinar Registration Confirmation - Austin Education",
+    consultation:
+      "Consultation Meeting Request Confirmation - Austin Education",
+    webinar: "Webinar Registration Confirmation - Austin Education",
     "faq-question": "Question Received - Austin Education",
-    "job-application": "Job Application Received - Austin Education"
+    "job-application": "Job Application Received - Austin Education",
   };
-  
+
   return subjects[type] || "Confirmation - Austin Education";
 }
 
 // 用户确认邮件模板
-
 function generateTrialLessonConfirmation(data, userEmail) {
   return `
     <!DOCTYPE html>
@@ -190,7 +207,7 @@ function generateTrialLessonConfirmation(data, userEmail) {
         
         <div class="content">
           <div class="section">
-            <h3>Dear ${data.parentName || data.studentName || 'Student/Parent'},</h3>
+            <h3>Dear ${data.parentName || data.studentName || "Student/Parent"},</h3>
             <p>Thank you for submitting your trial lesson request. We have successfully received your application and our team will review it shortly.</p>
           </div>
 
@@ -205,9 +222,12 @@ function generateTrialLessonConfirmation(data, userEmail) {
           <div class="section">
             <h3>🚀 What's Next?</h3>
             <ul>
-              <li>Our academic team will review your request within 24 hours</li>
-              <li>We'll contact you via your preferred method to schedule your trial lesson</li>
-              <li>Before the trial, we'll provide you with a free consultation to find the most suitable class</li>
+              <li>Our academic team will review your request and reach out to you shortly</li>
+              <li>We’ll contact you via your preferred method to arrange your trial lesson</li>
+              <li>Before the trial, we’ll offer a free consultation to help find the most suitable class for you</li>
+              <li>Make sure your contact details are correct so we can reach you easily</li>
+              <li>If you have any specific questions, feel free to prepare them in advance</li>
+              <li>Follow us on social media for the latest updates and announcements</li>
             </ul>
           </div>
 
@@ -215,8 +235,8 @@ function generateTrialLessonConfirmation(data, userEmail) {
             <h3>📞 Contact Information</h3>
             <p>If you have any questions, please don't hesitate to contact us:</p>
             <p>📧 Email: info@austinedu.com.au</p>
-            <p>📱 Phone: +61 3 9898 1866</p>
-            <p>🌐 Website: www.austinedu.com.au</p>
+            <p>📱 Phone: +61 426 800 815</p>
+            <p>🌐 Website: www.austineducation.com.au</p>
           </div>
 
           <div class="section">
@@ -256,7 +276,7 @@ function generateConsultationConfirmation(data, userEmail) {
         
         <div class="content">
           <div class="section">
-            <h3>Dear ${data.parentName || data.studentName || 'Student/Parent'},</h3>
+            <h3>Dear ${data.parentName || data.studentName || "Student/Parent"},</h3>
             <p>Thank you for your consultation request. We have successfully received your inquiry and our experienced academic advisors will be in touch with you soon.</p>
           </div>
 
@@ -270,7 +290,7 @@ function generateConsultationConfirmation(data, userEmail) {
           <div class="section">
             <h3>🚀 What's Next?</h3>
             <ul>
-              <li>Our academic advisor will contact you within 24 hours</li>
+              <li>Our academic advisor will contact you shortly</li>
               <li>We'll schedule a convenient time for your free consultation</li>
               <li>During the consultation, we'll provide personalized academic planning advice</li>
               <li>You can also book directly at: <a href="https://calendly.com/rachelle-austinedu/30min">calendly.com/rachelle-austinedu/30min</a></li>
@@ -281,8 +301,8 @@ function generateConsultationConfirmation(data, userEmail) {
             <h3>📞 Contact Information</h3>
             <p>If you have any urgent questions, please contact us:</p>
             <p>📧 Email: info@austinedu.com.au</p>
-            <p>📱 Phone: +61 3 9898 1866</p>
-            <p>🌐 Website: www.austinedu.com.au</p>
+            <p>📱 Phone: +61 426 800 815</p>
+            <p>🌐 Website: www.austineducation.com.au </p>
           </div>
 
           <div class="section">
@@ -322,7 +342,7 @@ function generateWebinarConfirmation(data, userEmail) {
         
         <div class="content">
           <div class="section">
-            <h3>Dear ${data.parentName || data.studentName || 'Participant'},</h3>
+            <h3>Dear ${data.parentName || data.studentName || "Participant"},</h3>
             <p>Thank you for registering for our webinar! We're excited to share valuable insights about academic planning and educational opportunities with you.</p>
           </div>
 
@@ -347,8 +367,8 @@ function generateWebinarConfirmation(data, userEmail) {
             <h3>📞 Contact Information</h3>
             <p>If you have any questions about the webinar:</p>
             <p>📧 Email: info@austinedu.com.au</p>
-            <p>📱 Phone: +61 3 9898 1866</p>
-            <p>🌐 Website: www.austinedu.com.au</p>
+            <p>📱 Phone: +61 426 800 815</p>
+            <p>🌐 Website: www.austineducation.com.au</p>
           </div>
 
           <div class="section">
@@ -410,8 +430,8 @@ function generateFAQConfirmation(data) {
             <h3>📞 Contact Information</h3>
             <p>For immediate assistance:</p>
             <p>📧 Email: info@austinedu.com.au</p>
-            <p>📱 Phone: +61 3 9898 1866</p>
-            <p>🌐 Website: www.austinedu.com.au</p>
+            <p>📱 Phone: +61 426 800 815</p>
+            <p>🌐 Website: www.austineducation.com.au </p>
           </div>
 
           <div class="section">
@@ -476,8 +496,7 @@ function generateJobApplicationConfirmation(data) {
             <h3>📞 Contact Information</h3>
             <p>If you have any questions about your application:</p>
             <p>📧 Email: hr@austinedu.com.au</p>
-            <p>📱 Phone: +61 3 9898 1866</p>
-            <p>🌐 Website: www.austinedu.com.au</p>
+            <p>🌐 Website: www.austineducation.com.au</p>
           </div>
 
           <div class="section">
@@ -910,11 +929,11 @@ function generateJobApplicationEmail(data) {
           </div>
           <div class="info-row">
             <span class="label">File Size:</span>
-            <span class="value">${data.resume.size ? Math.round(data.resume.size / 1024) + ' KB' : 'Unknown'}</span>
+            <span class="value">${data.resume.size ? Math.round(data.resume.size / 1024) + " KB" : "Unknown"}</span>
           </div>
           <div class="info-row">
             <span class="label">File Type:</span>
-            <span class="value">${data.resume.type || 'Unknown'}</span>
+            <span class="value">${data.resume.type || "Unknown"}</span>
           </div>
           <p style="margin-top: 10px; color: #27ae60; font-weight: bold;">
             ✅ Resume file is attached to this email.
@@ -1011,18 +1030,26 @@ function generateJobApplicationEmail(data) {
               <span class="label">Year of Graduation:</span>
               <span class="value">${data.yearOfGraduation || "Not provided"}</span>
             </div>
-            ${data.vceSubjectsAndScores ? `
+            ${
+              data.vceSubjectsAndScores
+                ? `
             <div class="info-row">
               <span class="label">VCE Subjects & Scores:</span>
               <div class="text-area">${data.vceSubjectsAndScores}</div>
             </div>
-            ` : ""}
-            ${data.educationSummary ? `
+            `
+                : ""
+            }
+            ${
+              data.educationSummary
+                ? `
             <div class="info-row">
               <span class="label">Education Summary:</span>
               <div class="text-area">${data.educationSummary}</div>
             </div>
-            ` : ""}
+            `
+                : ""
+            }
           </div>
 
           <div class="section">
@@ -1031,12 +1058,16 @@ function generateJobApplicationEmail(data) {
               <span class="label">Teaching Qualification:</span>
               <span class="value">${data.teachingQualification || "Not specified"}</span>
             </div>
-            ${data.workExperienceSummary ? `
+            ${
+              data.workExperienceSummary
+                ? `
             <div class="info-row">
               <span class="label">Work Experience Summary:</span>
               <div class="text-area">${data.workExperienceSummary}</div>
             </div>
-            ` : `<p class="text-muted">No work experience summary provided</p>`}
+            `
+                : `<p class="text-muted">No work experience summary provided</p>`
+            }
           </div>
 
           <div class="section">
@@ -1045,12 +1076,16 @@ function generateJobApplicationEmail(data) {
               <span class="label">Right to Work in Australia:</span>
               <span class="value">${data.rightToWork || "Not specified"}</span>
             </div>
-            ${data.additionalInfo ? `
+            ${
+              data.additionalInfo
+                ? `
             <div class="info-row">
               <span class="label">Additional Information:</span>
               <div class="text-area">${data.additionalInfo}</div>
             </div>
-            ` : ""}
+            `
+                : ""
+            }
           </div>
 
           <div class="section">
@@ -1060,15 +1095,19 @@ function generateJobApplicationEmail(data) {
               <li><strong>Email:</strong> ${data.emailAddress || "Not provided"}</li>
               <li><strong>Phone:</strong> ${data.phoneNumber || "Not provided"}</li>
             </ul>
-            ${data.resume && data.resume.name ? `
+            ${
+              data.resume && data.resume.name
+                ? `
             <p style="color: #27ae60; font-weight: bold;">
               📎 Resume file "${data.resume.name}" is attached to this email.
             </p>
-            ` : `
+            `
+                : `
             <p style="color: #e74c3c; font-weight: bold;">
               ⚠️ No resume file was uploaded with this application.
             </p>
-            `}
+            `
+            }
           </div>
         </div>
       </div>
