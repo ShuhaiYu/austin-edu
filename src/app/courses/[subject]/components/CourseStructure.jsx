@@ -19,6 +19,27 @@ export function CourseStructure({ data }) {
   const isLockGlobally = data.islock ?? true;
   const isContentLocked = isLockGlobally;
 
+  // 只有当有多个sections且每个section都有title时才显示tabs
+  const shouldShowTabs = years.length > 1 && years.every(year => year.title);
+
+  // 计算文本长度和布局策略
+  const calculateTabLayout = () => {
+    if (!shouldShowTabs) return { useVertical: false, useCompact: false };
+    
+    const totalChars = years.reduce((sum, year) => sum + (year.title?.length || 0), 0);
+    const avgChars = totalChars / years.length;
+    const maxChars = Math.max(...years.map(year => year.title?.length || 0));
+    
+    // 如果平均字符数超过20或最长超过35，使用垂直布局
+    const useVertical = avgChars > 20 || maxChars > 35;
+    // 如果平均字符数超过15，使用紧凑模式
+    const useCompact = avgChars > 15 && !useVertical;
+    
+    return { useVertical, useCompact };
+  };
+
+  const { useVertical, useCompact } = calculateTabLayout();
+
   return (
     <section className="py-12 sm:py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,35 +47,76 @@ export function CourseStructure({ data }) {
           {data.title}
         </h2>
 
-        {/* Year Tabs - 响应式调整 */}
-        {years[0].title && (
-          <Tabs
-            value={selectedYear.toString()}
-            onValueChange={(val) => {
-              const idx = Number(val);
-              setSelectedYear(idx);
-              setSelectedModule(0);
-            }}
-            className="mb-8 sm:mb-12"
-          >
-            <TabsList className="flex flex-wrap justify-center gap-2 sm:gap-4 lg:gap-6 bg-transparent">
-              {years.map((year, idx) => {
-                const lockedTab = isLockGlobally;
-                return (
-                  <TabsTrigger
-                    key={year.title}
-                    value={idx.toString()}
-                    className="relative px-3 sm:px-4 py-2 rounded-lg data-[state=active]:bg-primary data-[state=active]:text-white capitalize text-sm sm:text-base whitespace-nowrap"
-                  >
-                    {year.title}
-                    {lockedTab && (
-                      <Lock className="absolute -top-1 -right-1 w-4 h-4 sm:w-6 sm:h-6 rounded-full bg-[#dfb67e] text-white p-0.5 sm:p-1" />
-                    )}
-                  </TabsTrigger>
-                );
-              })}
-            </TabsList>
-          </Tabs>
+        {/* Year Tabs - 动态布局版本 */}
+        {shouldShowTabs && (
+          <div className="mb-8 sm:mb-12">
+            <Tabs
+              value={selectedYear.toString()}
+              onValueChange={(val) => {
+                const idx = Number(val);
+                setSelectedYear(idx);
+                setSelectedModule(0);
+              }}
+            >
+              {useVertical ? (
+                // 垂直布局 - 用于长文本
+                <div className="flex justify-center">
+                  <TabsList className="flex flex-col gap-2 bg-gray-100/50 p-2 rounded-xl max-w-2xl w-full">
+                    {years.map((year, idx) => {
+                      const lockedTab = isLockGlobally;
+                      return (
+                        <TabsTrigger
+                          key={`${year.title}-${idx}`}
+                          value={idx.toString()}
+                          className="relative w-full px-4 py-3 rounded-lg text-sm sm:text-base font-medium transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-gray-900 data-[state=inactive]:hover:bg-white/60 text-left"
+                        >
+                          <span className="block leading-relaxed">{year.title}</span>
+                          {lockedTab && (
+                            <div className="absolute top-2 right-2 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#dfb67e] flex items-center justify-center">
+                              <Lock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
+                            </div>
+                          )}
+                        </TabsTrigger>
+                      );
+                    })}
+                  </TabsList>
+                </div>
+              ) : (
+                // 水平布局 - 根据文本长度调整
+                <div className="flex justify-center">
+                  <TabsList className={`flex flex-wrap justify-center gap-2 bg-gray-100/50 p-2 rounded-xl ${useCompact ? 'max-w-6xl' : 'max-w-4xl'} mx-auto`}>
+                    {years.map((year, idx) => {
+                      const lockedTab = isLockGlobally;
+                      const isLongText = year.title && year.title.length > 25;
+                      
+                      return (
+                        <TabsTrigger
+                          key={`${year.title}-${idx}`}
+                          value={idx.toString()}
+                          className={`relative ${
+                            useCompact 
+                              ? 'min-w-[200px] px-3 py-3' 
+                              : isLongText 
+                                ? 'min-w-[250px] px-4 py-3' 
+                                : 'flex-1 min-w-[120px] px-3 sm:px-6 py-2.5 sm:py-3'
+                          } rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 data-[state=active]:bg-primary data-[state=active]:text-white data-[state=inactive]:text-gray-600 data-[state=inactive]:hover:text-gray-900 data-[state=inactive]:hover:bg-white/60 text-center`}
+                        >
+                          <span className={`block ${isLongText ? 'leading-tight' : 'leading-relaxed'}`}>
+                            {year.title}
+                          </span>
+                          {lockedTab && (
+                            <div className="absolute -top-1 -right-1 w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#dfb67e] flex items-center justify-center">
+                              <Lock className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-white" />
+                            </div>
+                          )}
+                        </TabsTrigger>
+                      );
+                    })}
+                  </TabsList>
+                </div>
+              )}
+            </Tabs>
+          </div>
         )}
 
         <div className="flex flex-col lg:flex-row gap-6 sm:gap-8">
@@ -64,17 +126,17 @@ export function CourseStructure({ data }) {
               const lockedModule = isLockGlobally;
               return (
                 <button
-                  key={idx}
+                  key={`${mod.title}-${idx}`}
                   onClick={() => setSelectedModule(idx)}
-                  className={`relative w-full p-4 sm:p-6 text-left rounded-lg sm:rounded-xl transition-all ${
+                  className={`relative w-full p-4 sm:p-6 text-left rounded-lg sm:rounded-xl transition-all duration-200 ${
                     selectedModule === idx
-                      ? "bg-primary/10 border-0 border-none shadow-lg"
-                      : "bg-white hover:bg-gray-100 border-2 border-transparent shadow-sm"
+                      ? "bg-primary/10 border-2 border-primary/20 shadow-lg"
+                      : "bg-white hover:bg-gray-50 border-2 border-gray-100 hover:border-gray-200 shadow-sm hover:shadow-md"
                   }`}
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex-1 pr-2">
-                      <p className="text-xs sm:text-sm font-semibold text-primary">
+                    <div className="flex-1 pr-2 min-w-0">
+                      <p className="text-xs sm:text-sm font-semibold text-primary truncate">
                         {mod.subtitle}
                       </p>
                       <h3 className="text-base sm:text-lg font-bold text-gray-900 mt-1 sm:mt-2 leading-tight">
@@ -82,7 +144,7 @@ export function CourseStructure({ data }) {
                       </h3>
                     </div>
                     <ChevronRight
-                      className={`w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 ${
+                      className={`w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 transition-colors ${
                         selectedModule === idx
                           ? "text-primary"
                           : "text-gray-400"
@@ -90,7 +152,9 @@ export function CourseStructure({ data }) {
                     />
                   </div>
                   {lockedModule && (
-                    <Lock className="absolute top-2 right-2 rounded-full bg-[#dfb67e] p-1 sm:p-2 w-6 h-6 sm:w-8 sm:h-8 text-white" />
+                    <div className="absolute top-2 right-2 w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-[#dfb67e] flex items-center justify-center">
+                      <Lock className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+                    </div>
                   )}
                 </button>
               );
@@ -115,7 +179,7 @@ export function CourseStructure({ data }) {
               <div className="space-y-3 sm:space-y-4">
                 {modules[selectedModule]?.lessons?.map((lesson, i) => (
                   <div
-                    key={i}
+                    key={`lesson-${i}`}
                     className="flex items-start p-3 sm:p-4 rounded-lg hover:bg-gray-50 transition-colors"
                   >
                     <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 text-sm sm:text-base font-medium">

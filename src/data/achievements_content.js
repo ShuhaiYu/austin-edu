@@ -13,7 +13,7 @@ export const achievementContent = {
         { count: "608", description: "students earned an impressive ATAR of" },
         { count: "Over 100", description: "students attained a perfect" },
       ],
-      atarValues: ["99.95", "99+", "97+", "Row 50"],
+      atarValues: ["99.95", "99+", "97+", "Raw 50"],
       percentages: [
         { value: "18%", label: "ATAR 99+" },
         { value: "36%", label: "ATAR 97+" },
@@ -494,7 +494,7 @@ export const achievementContent = {
         { count: "608", description: "学生获得杰出ATAR分数" },
         { count: "超过100", description: "学生在至少一门VCE科目中获得完美" },
       ],
-      atarValues: ["99.95", "99+", "97+", "Row 50"],
+      atarValues: ["99.95", "99+", "97+", "Raw 50"],
       percentages: [
         { value: "18%", label: "ATAR 99+" },
         { value: "36%", label: "ATAR 97+" },

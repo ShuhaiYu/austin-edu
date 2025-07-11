@@ -141,7 +141,11 @@ export const coursesContent = {
             },
             {
               title: "VCE Other Courses",
-              courses: ["vce-vcd-unit-1-4","y10-12-extra-holiday-class", "y10-12-mock-exam"],
+              courses: [
+                "vce-vcd-unit-1-4",
+                "y10-12-extra-holiday-class",
+                "y10-12-mock-exam",
+              ],
             },
             {
               title: "IB Courses",
@@ -173,6 +177,33 @@ export const coursesContent = {
             {
               title: "Medical Foundation Courses",
               courses: ["ucat", "y12-ucat-medical-interview"],
+            },
+          ],
+        },
+        {
+          title: "AusYouth Music Courses",
+          subcategories: [
+            {
+              title: "Music Theory & Skills",
+              courses: [
+                "ameb-theory-music-grade-1-6-term",
+                "ameb-theory-music-grade-1-6-holiday",
+                "ameb-musicianship-grade-5-6",
+                "ameb-aural-sight-reading-grade-4-8",
+                "ameb-general-knowledge-coaching",
+                "music-appreciation-course",
+              ],
+            },
+            {
+              title: "VCE Music Courses",
+              courses: [
+                "vce-music-performance-unit-1-2",
+                "vce-music-performance-unit-3-4",
+              ],
+            },
+            {
+              title: "Masterclasses",
+              courses: ["ausyouth-music-instrumental-masterclasses"],
             },
           ],
         },
@@ -1103,6 +1134,110 @@ export const coursesContent = {
             "For details about our courses, please contact us for more information.",
           ],
         },
+        "ameb-theory-music-grade-1-6-term": {
+          title: "AMEB Theory of Music Grade 1-6 Term Dates Program",
+          slug: "ameb-theory-music-grade-1-6-term",
+          content: [
+            "Master Your Theory Grade 1-6 by Dulcie Holland – Textbook",
+            "Master Your Theory Grade 1-6 by Dulcie Holland – Answer book",
+            "Practice Exams – Past exam papers and mock exam papers",
+            "Detailed written feedback on each submission",
+            "Aural Tests Book (Instrument Grade 4–8)",
+            "Sight Reading Books (Instrument-Specific)",
+          ],
+        },
+        "ameb-theory-music-grade-1-6-holiday": {
+          title: "AMEB Theory of Music Grade 1-6 Holiday Program",
+          slug: "ameb-theory-music-grade-1-6-holiday",
+          content: [
+            "Master Your Theory Grade 1-5 by Dulcie Holland – Textbook",
+            "Master Your Theory Grade 1-5 by Dulcie Holland – Answer book",
+            "Practice Exams – Past exam papers and mock exam papers",
+            "Detailed written feedback on each submission",
+            "Aural Tests Book (Instrument Grade 4–8)",
+            "Sight Reading Books (Instrument-Specific)",
+          ],
+        },
+        "ameb-musicianship-grade-5-6": {
+          title: "AMEB Musicianship Grade 5/6",
+          slug: "ameb-musicianship-grade-5-6",
+          content: [
+            "AMEB Musicianship Grade 5/6 workbook",
+            "Dulcie Holland resources (as support material)",
+            "Supplemental exercises and aural practice",
+            "15 - 20 weekly lessons, 1 hour per lesson",
+            "Theory, harmony, melody writing, and stylistic analysis",
+          ],
+        },
+        "ameb-aural-sight-reading-grade-4-8": {
+          title: "AMEB Aural & Sight Reading (Instrument/Voice Grade 4-8)",
+          slug: "ameb-aural-sight-reading-grade-4-8",
+          content: [
+            "AMEB Aural Tests Book (Grades 4–8)",
+            "AMEB Sight Reading Books (instrument-specific)",
+            "Piano or backing tracks for harmonic support",
+            "Total Hours: 10 hours (face-to-face instruction)",
+            "Small group or individual lessons",
+          ],
+        },
+        "ameb-general-knowledge-coaching": {
+          title:
+            "AMEB General Knowledge Coaching for AMEB Grade 8 / Certificate of Performance / AMusA / LMusA",
+          slug: "ameb-general-knowledge-coaching",
+          content: [
+            "Instructor: Dr Sharon Lierse – Internationally Renowned Music Educator",
+            "Individualised lessons (1 V 1 online delivery)",
+            "Customised worksheets, writing templates, and listening materials",
+            "Flexible scheduling based on student need and exam timeline",
+            "Repertoire-specific general knowledge preparation",
+          ],
+        },
+        "music-appreciation-course": {
+          title: "Music Appreciation Course",
+          slug: "music-appreciation-course",
+          content: [
+            "Instructor: Dr Sharon Lierse – Internationally Renowned Music Educator",
+            "10 lessons, 60 minutes each",
+            "Small group format (online delivery)",
+            "Overview of major music history periods (Baroque to 20th Century)",
+            "Writing strategies and terminology usage for high-level exams",
+          ],
+        },
+        "vce-music-performance-unit-1-2": {
+          title:
+            "VCE Music Repertoire Performance & VCE Music Contemporary Performance Unit 1 & 2 – Written",
+          slug: "vce-music-performance-unit-1-2",
+          content: [
+            "Instructor: Miss Lorraine Zhang",
+            "20 lessons total, 60 minutes each",
+            "Small group / 1 V 1 online delivery format",
+            "Introduction to listening analysis and terminology",
+            "Foundation for Unit 3 & 4 success",
+          ],
+        },
+        "vce-music-performance-unit-3-4": {
+          title:
+            "VCE Music Repertoire Performance & VCE Music Contemporary Performance Unit 3 & 4 – Written",
+          slug: "vce-music-performance-unit-3-4",
+          content: [
+            "Instructor: Mr Gareth De Korte – Head of Music, Melbourne High School",
+            "20 x 1-hour lessons across the academic year",
+            "Phase 1: SAC Preparation (15 Fortnightly Lessons)",
+            "Phase 2: Final Written Exam Support (5 Weekly Lessons)",
+            "Performance-driven listening analysis",
+          ],
+        },
+        "ausyouth-music-instrumental-masterclasses": {
+          title: "Ausyouth Music Instrumental Masterclasses",
+          slug: "ausyouth-music-instrumental-masterclasses",
+          content: [
+            "Led by Australia's Leading Musicians",
+            "Guest artists: Wilma Smith (former MSO Concertmaster) and Rohan De Korte (MSO Cellist)",
+            "One-on-One Instruction with personalised feedback",
+            "Performance focus with Q&A and career insights",
+            "Repertoire & style mastery guidance",
+          ],
+        },
       },
     },
     content: {
@@ -1677,7 +1812,11 @@ export const coursesContent = {
             },
             {
               title: "VCE 其他课程",
-              courses: ["vce-vcd-unit-1-4","y10-12-extra-holiday-class", "y10-12-mock-exam"],
+              courses: [
+                "vce-vcd-unit-1-4",
+                "y10-12-extra-holiday-class",
+                "y10-12-mock-exam",
+              ],
             },
             {
               title: "IB 课程",
@@ -1709,6 +1848,33 @@ export const coursesContent = {
             {
               title: "医学预科课程",
               courses: ["ucat", "y12-ucat-medical-interview"],
+            },
+          ],
+        },
+        {
+          title: "Ausyouth Music 课程",
+          subcategories: [
+            {
+              title: "乐理与技能课程",
+              courses: [
+                "ameb-theory-music-grade-1-6-term",
+                "ameb-theory-music-grade-1-6-holiday",
+                "ameb-musicianship-grade-5-6",
+                "ameb-aural-sight-reading-grade-4-8",
+                "ameb-general-knowledge-coaching",
+                "music-appreciation-course",
+              ],
+            },
+            {
+              title: "VCE 音乐课程",
+              courses: [
+                "vce-music-performance-unit-1-2",
+                "vce-music-performance-unit-3-4",
+              ],
+            },
+            {
+              title: "大师课",
+              courses: ["ausyouth-music-instrumental-masterclasses"],
             },
           ],
         },
@@ -2539,6 +2705,108 @@ export const coursesContent = {
           slug: "y12-ucat-medical-interview",
           content: ["关于课程详情，欢迎联系我们获取更多信息。"],
         },
+        "ameb-theory-music-grade-1-6-term": {
+          title: "AMEB 乐理学期班 Grade 1–6",
+          slug: "ameb-theory-music-grade-1-6-term",
+          content: [
+            "《Master Your Theory》1-6级（作者：Dulcie Holland）– 教材",
+            "《Master Your Theory》1-6级（作者：Dulcie Holland）– 答案册",
+            "模拟试卷与历年真题 – 提供备考练习和自测",
+            "每份作业附有详细书面反馈",
+            "试唱训练教材（适用于乐器考试4–8级）",
+            "视奏教材（根据不同乐器定制）",
+          ],
+        },
+        "ameb-theory-music-grade-1-6-holiday": {
+          title: "AMEB 乐理假期班 Grade 1–6",
+          slug: "ameb-theory-music-grade-1-6-holiday",
+          content: [
+            "《Master Your Theory》1-5级（作者：Dulcie Holland）– 教材",
+            "《Master Your Theory》1-5级（作者：Dulcie Holland）– 答案册",
+            "模拟试卷与历年真题 – 提供备考练习和自测",
+            "每份作业附有详细书面反馈",
+            "试唱训练教材（适用于乐器考试4–8级）",
+            "视奏教材（根据不同乐器定制）",
+          ],
+        },
+        "ameb-musicianship-grade-5-6": {
+          title: "AMEB Musicianship Grade 5 级/6 级 高阶课程",
+          slug: "ameb-musicianship-grade-5-6",
+          content: [
+            "AMEB 《Musicianship Grade 5/6》教材",
+            "Dulcie Holland 教材作为辅助资料",
+            "补充练习与听觉训练资料",
+            "每周1次课，每次1小时，共15-20周",
+            "乐理、和声、旋律写作与风格分析",
+          ],
+        },
+        "ameb-aural-sight-reading-grade-4-8": {
+          title: "AMEB 试唱与视奏课程（乐器/声乐 Grade 4–8）",
+          slug: "ameb-aural-sight-reading-grade-4-8",
+          content: [
+            "AMEB 试唱测试教材（四级至八级）",
+            "AMEB 视奏教材（根据所学乐器选择）",
+            "钢琴或伴奏录音用于和声训练",
+            "总课时：10小时（面对面授课）",
+            "小组课或一对一课程",
+          ],
+        },
+        "ameb-general-knowledge-coaching": {
+          title:
+            "AMEB 音乐常识冲刺课程（适用于 AMEB 8级 / Certificate of Performance / AMusA / LMusA）",
+          slug: "ameb-general-knowledge-coaching",
+          content: [
+            "授课教师：Dr. Sharon Lierse —— 国际知名音乐教育家与学者",
+            "一对一授课（可线上或面授，视情况安排）",
+            "提供专属学习资料，包括写作模板、术语表、听力参考",
+            "灵活课时安排，根据学生需求与考试时间量身定制",
+            "针对曲目的深度讲解",
+          ],
+        },
+        "music-appreciation-course": {
+          title: "音乐赏析课程",
+          slug: "music-appreciation-course",
+          content: [
+            "主讲教师：Dr Sharon Lierse —— 国际知名音乐教育学者",
+            "共计 10节课，每节 60分钟",
+            "小组授课，在线教学形式",
+            "从巴洛克到20世纪的音乐历史概览",
+            "高阶考试写作技巧与术语运用",
+          ],
+        },
+        "vce-music-performance-unit-1-2": {
+          title: "VCE 音乐作品演奏 & 当代音乐演奏 Unit 1&2 —— 笔试课程",
+          slug: "vce-music-performance-unit-1-2",
+          content: [
+            "授课教师：Miss Lorraine Zhang",
+            "共20次课程，每次60分钟",
+            "小班授课/一对一形式，灵活安排",
+            "引导学生掌握基础听觉分析、术语、写作表达",
+            "为进入Unit 3&4做好基础准备",
+          ],
+        },
+        "vce-music-performance-unit-3-4": {
+          title: "VCE 音乐作品演奏 & 当代音乐演奏 Unit 3&4 —— 笔试课程",
+          slug: "vce-music-performance-unit-3-4",
+          content: [
+            "授课教师：Gareth De Korte 先生 —— 墨尔本中学音乐系主任",
+            "全年共 20 节课，每节 1 小时",
+            "阶段一：SAC 准备阶段（学期 1–3，共 15 节）",
+            "阶段二：期末笔试强化阶段（第四学期，共5 节）",
+            "演奏导向的试听分析",
+          ],
+        },
+        "ausyouth-music-instrumental-masterclasses": {
+          title: "澳升音乐乐器大师课",
+          slug: "ausyouth-music-instrumental-masterclasses",
+          content: [
+            "澳洲顶尖音乐家亲自授课",
+            "特邀嘉宾：Wilma Smith（前墨尔本交响乐团首席）和 Rohan De Korte（墨尔本交响乐团大提琴演奏家）",
+            "一对一针对性指导，获得个性化反馈",
+            "注重表演训练，问答交流与职业分享",
+            "曲目与风格精修指导",
+          ],
+        },
       },
     },
     content: {
@@ -2821,7 +3089,7 @@ export const coursesContent = {
             icon: "/courses/icons/meth icon 3.svg",
           },
         ],
-         carousel: {
+        carousel: {
           images: [
             "/courses/carousel-1/1.png",
             "/courses/carousel-1/2.png",

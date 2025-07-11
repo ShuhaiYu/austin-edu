@@ -193,7 +193,7 @@ export default function CoursePageClient({ localizedData }) {
         />
         <BirdDecoration
           bird="3"
-          position="top-16 left-8 md:-top-8 md:left-16 hidden lg:block"
+          position="top-16 left-8 md:-top-0 md:left-0 hidden lg:block"
         />
 
         <div className="max-w-7xl mx-auto px-4 relative z-10">

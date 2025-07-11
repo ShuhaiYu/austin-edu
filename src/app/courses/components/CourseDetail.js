@@ -325,6 +325,7 @@ export const CourseDetail = ({ searchFilter }) => {
                 "bg-gradient-to-r from-[#C6DCF2] to-[#C6DCF2]",
                 "bg-gradient-to-r from-[#B2CEEA] to-[#81A7D1]",
                 "bg-gradient-to-r from-[#A3C4E6] to-[#6C92C4]",
+                "bg-gradient-to-r from-[#8FB8E0] to-[#5A7FB8]",
               ];
               const bgColor = bgShades[idx % bgShades.length];
 

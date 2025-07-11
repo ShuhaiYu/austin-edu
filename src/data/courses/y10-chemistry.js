@@ -133,7 +133,7 @@ const courseData = {
           title: "year 10",
           modules: [
             {
-              title: "term 1",
+              title: "Term 1",
               subtitle: "",
               lessons: [
                 "Atoms, electron configuration, period table",
